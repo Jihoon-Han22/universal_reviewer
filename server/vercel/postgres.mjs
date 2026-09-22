@@ -1,4 +1,6 @@
 import pg from 'pg';
+import { readFileSync } from 'node:fs';
+import { rootCertificates } from 'node:tls';
 
 // Preserve the existing transactional repository and cost-accounting contracts.
 // Only SQL dialect and transport change; no state is kept in a function instance.
@@ -18,5 +20,15 @@ export function createPostgresBinding(pool) {
 export function createDatabase(env) {
   const connectionString=env.POSTGRES_URL||env.POSTGRES_PRISMA_URL||env.DATABASE_URL;
   if(!connectionString)throw new Error('Vercel database connection is missing');
-  return createPostgresBinding(new pg.Pool({connectionString,max:3,idleTimeoutMillis:10000,connectionTimeoutMillis:15000}));
+  return createPostgresBinding(new pg.Pool({...postgresConnectionOptions(connectionString),max:3,idleTimeoutMillis:10000,connectionTimeoutMillis:15000}));
+}
+
+export function postgresConnectionOptions(connectionString) {
+  const url = new URL(connectionString);
+  if (!/(^|\.)supabase\.(com|co)$/.test(url.hostname)) return { connectionString };
+  // pg URL SSL parameters replace the explicit SSL object. Keep full certificate
+  // and hostname verification while trusting Supabase's published database CA.
+  for (const key of ['sslmode', 'sslcert', 'sslkey', 'sslrootcert', 'uselibpqcompat', 'ssl']) url.searchParams.delete(key);
+  const ca = readFileSync(new URL('../assets/supabase-ca-2021.crt', import.meta.url), 'utf8');
+  return { connectionString: url.toString(), ssl: { rejectUnauthorized: true, ca: [...rootCertificates, ca] } };
 }
