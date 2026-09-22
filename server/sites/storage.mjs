@@ -27,7 +27,7 @@ export const SITES_SCHEMA = [
 
 export const LEASE_TTL_MS = 90_000;
 const STATE_KINDS = new Set(['run', 'dashboard', 'activity']);
-const MAX_DOCUMENT_BYTES = 20 * 1024 * 1024;
+const MAX_DOCUMENT_BYTES = 250 * 1024 * 1024;
 const MAX_METADATA_BYTES = 32 * 1024;
 
 export class StorageConflictError extends Error {
@@ -228,7 +228,7 @@ export class SitesStorage {
     // would consume memory without adding any isolation to the R2 write.
     const buffer = Buffer.isBuffer(input) ? input : input instanceof ArrayBuffer
       ? Buffer.from(input) : Buffer.from(input.buffer, input.byteOffset, input.byteLength);
-    if (buffer.byteLength > MAX_DOCUMENT_BYTES) throw new StorageError('파일당 20MB까지 업로드할 수 있습니다.', 413);
+    if (buffer.byteLength > MAX_DOCUMENT_BYTES) throw new StorageError('문서 저장 용량은 총 250MB까지입니다.', 413);
     snapshot.size = buffer.byteLength;
     const id = identifier(document.id);
     // Analyzer results contain the same original buffer and model inlineData

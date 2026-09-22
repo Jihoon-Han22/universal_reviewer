@@ -8,7 +8,8 @@ import { parse } from 'csv-parse/sync';
 import { SaxesParser } from 'saxes';
 import { pdfText } from './pdf-text.mjs';
 
-export const MAX_FILE_BYTES = 20 * 1024 * 1024;
+// A request cannot exceed the existing total document storage quota.
+export const MAX_FILE_BYTES = 250 * 1024 * 1024;
 const MAX_SOURCE = 1_500_000;
 const MIME = { pdf: 'application/pdf', docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', csv: 'text/csv', txt: 'text/plain', md: 'text/markdown', json: 'application/json', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp' };
 export class DocumentError extends Error {
@@ -272,7 +273,7 @@ export class DocumentStore {
     if (!['target','criteria','ledger'].includes(role)) throw new DocumentError('문서 역할을 확인해 주세요.');
     if (!MIME[kind]) throw new DocumentError('지원하지 않는 파일 형식입니다. PDF, DOCX, XLSX, CSV, TXT, MD, JSON 또는 이미지를 업로드해 주세요.');
     if (!buffer.length) throw new DocumentError('빈 파일은 업로드할 수 없습니다.');
-    if (buffer.length > MAX_FILE_BYTES) throw new DocumentError('파일당 20MB까지 업로드할 수 있습니다.', 413);
+    if (buffer.length > MAX_FILE_BYTES) throw new DocumentError('문서 저장 용량은 총 250MB까지입니다.', 413);
     if (this.size + this.pendingDocuments >= 100) throw new DocumentError('문서는 최대 100개까지 보관할 수 있습니다.', 413);
     if (this.totalBytes + this.pendingBytes + buffer.length > 250 * 1024 * 1024) throw new DocumentError('문서 저장 용량은 총 250MB까지입니다.', 413);
     this.pendingDocuments++; this.pendingBytes += buffer.length;

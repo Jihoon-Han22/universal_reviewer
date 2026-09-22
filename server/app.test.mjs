@@ -41,7 +41,7 @@ test('upload rollback, original download MIME/filename and retained evidence del
 test('multipart size/count limits return exact contract errors',async t=>{
   const h=await serve(t);const many=new FormData();many.append('role','target');for(let i=0;i<11;i++)many.append('files',new Blob(['x']),`${i}.txt`);
   let r=await h.request('/api/documents',{method:'POST',body:many});assert.equal(r.status,400);assert.equal((await r.json()).error,'한 번에 최대 10개 파일까지 업로드할 수 있습니다.');
-  const huge=new FormData();huge.append('role','target');huge.append('files',new Blob([new Uint8Array(20*1024*1024+1)]),'big.txt');r=await h.request('/api/documents',{method:'POST',body:huge});assert.equal(r.status,413);assert.equal((await r.json()).error,'파일당 20MB까지 업로드할 수 있습니다.');assert.equal(h.documents.size,0);
+  const huge=new FormData();huge.append('role','target');huge.append('files',new Blob([Buffer.from([137,80,78,71,13,10,26,10]),new Uint8Array(20*1024*1024-7)]),'big.png');r=await h.request('/api/documents',{method:'POST',body:huge});assert.equal(r.status,201);const uploaded=(await r.json()).documents[0];assert.equal(uploaded.size,20*1024*1024+1);assert.equal(h.documents.size,1);
 });
 test('missing run errors apply to every command, invalid cursors and unknown API paths',async t=>{
   const h=await serve(t);

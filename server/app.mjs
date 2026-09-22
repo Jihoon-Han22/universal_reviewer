@@ -88,7 +88,7 @@ export function createApp(options = {}) {
   if (existsSync(path.join(dist,'index.html'))) { app.use(express.static(dist)); app.get('/{*path}',(req,res) => res.sendFile(path.join(dist,'index.html'))); }
   app.use((error,req,res,next) => {
     if (res.headersSent) return next(error);
-    if (error instanceof multer.MulterError) return res.status(error.code === 'LIMIT_FILE_SIZE' ? 413 : 400).json({error:error.code === 'LIMIT_FILE_SIZE' ? '파일당 20MB까지 업로드할 수 있습니다.' : '한 번에 최대 10개 파일까지 업로드할 수 있습니다.'});
+    if (error instanceof multer.MulterError) return res.status(error.code === 'LIMIT_FILE_SIZE' ? 413 : 400).json({error:error.code === 'LIMIT_FILE_SIZE' ? '문서 저장 용량은 총 250MB까지입니다.' : '한 번에 최대 10개 파일까지 업로드할 수 있습니다.'});
     if (error.type === 'entity.parse.failed' || error instanceof SyntaxError && 'body' in error) return res.status(400).json({error:'요청 JSON 형식이 올바르지 않습니다.'});
     if (error.type === 'entity.too.large') return res.status(413).json({error:'요청 크기는 2MB까지입니다.'});
     const message = safeMessage(error); res.status(message === SAFE_MESSAGE ? 500 : (Number.isInteger(error.status) && error.status >= 400 && error.status <= 599 ? error.status : 400)).json({error:message});

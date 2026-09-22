@@ -114,10 +114,10 @@ class Reader:
         self.path, self.kind = path or self.path, kind or self.kind
         self.profile['kind'] = self.kind
         size = os.path.getsize(self.path)
-        if size < 1 or size > 20 * 1024 * 1024:
+        if size < 1:
             raise ValueError('source size')
         with open(self.path, 'rb') as handle:
-            data = handle.read(20 * 1024 * 1024 + 1)
+            data = handle.read()
         digest = hashlib.sha256(data).hexdigest()
         self.profile['sha256'] = digest
         self.profile['inventory'].update(sourceBytes=len(data), bytesRead=len(data), sha256=digest)

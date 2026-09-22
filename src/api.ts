@@ -12,7 +12,6 @@ export const get = <T,>(path:string, signal?:AbortSignal) => request<T>(path,{si
 export const post = <T,>(path:string, body:unknown={}, signal?:AbortSignal) => request<T>(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal});
 export async function upload(files:File[],role:Doc['role'],signal?:AbortSignal) {
   if (!files.length || files.length>10) throw new Error('한 번에 1~10개 파일을 선택해 주세요.');
-  if (files.some(file=>file.size>20*1024*1024)) throw new Error('파일당 20MB까지 업로드할 수 있습니다.');
   const documents:Doc[]=[];
   try {
     // Persist one file at a time so a batch does not occupy the Worker heap.

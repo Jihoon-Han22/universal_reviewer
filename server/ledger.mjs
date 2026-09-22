@@ -19,7 +19,7 @@ const reasons = {headers_not_found:'성적서번호, 판정, 비고 열을 함�
 
 // Validate declarations and bounded decompression before either workbook parser runs.
 export function validateLedgerZip(buffer) {
-  if (!Buffer.isBuffer(buffer) || buffer.length < 22 || buffer.length > 20*1024*1024) fail('20MB 이하의 올바른 XLSX 파일을 선택해 주세요.');
+  if (!Buffer.isBuffer(buffer) || buffer.length < 22) fail('올바른 XLSX 파일을 선택해 주세요.');
   let eocd=-1;
   for(let p=buffer.length-22;p>=Math.max(0,buffer.length-65557);p--) if(buffer.readUInt32LE(p)===0x06054b50 && p+22+buffer.readUInt16LE(p+20)===buffer.length){eocd=p;break;}
   if(eocd<0) fail('XLSX 압축 파일의 구조가 올바르지 않습니다.');

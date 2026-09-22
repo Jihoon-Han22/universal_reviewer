@@ -67,14 +67,14 @@ export async function createRuntime(env,sessionId,options={}) {
   router.get('/api/health',(req,res)=>res.json({...publicConfig(config),model:config.modelExtract,runtime:'sites'}));
   router.post('/api/documents',async(req,res)=>{
     const max=MAX_FILE_BYTES+1024*1024;
-    if(Number(req.native.headers.get('content-length')??0)>max)throw new HttpError('파일은 한 번에 하나씩, 20MB까지 업로드해 주세요.',413);
+    if(Number(req.native.headers.get('content-length')??0)>max)throw new HttpError('문서 저장 용량은 총 250MB까지입니다.',413);
     let form,size=0,tooLarge=false;
-    const bounded=req.native.body?.pipeThrough(new TransformStream({transform(chunk,controller){size+=chunk.byteLength;if(size>max){tooLarge=true;throw new HttpError('파일은 한 번에 하나씩, 20MB까지 업로드해 주세요.',413);}controller.enqueue(chunk);}}));
-    try{form=await new Response(bounded,{headers:{'Content-Type':req.native.headers.get('content-type')??''}}).formData();}catch{throw new HttpError(tooLarge?'파일은 한 번에 하나씩, 20MB까지 업로드해 주세요.':'업로드 요청 형식을 확인해 주세요.',tooLarge?413:400);}
+    const bounded=req.native.body?.pipeThrough(new TransformStream({transform(chunk,controller){size+=chunk.byteLength;if(size>max){tooLarge=true;throw new HttpError('문서 저장 용량은 총 250MB까지입니다.',413);}controller.enqueue(chunk);}}));
+    try{form=await new Response(bounded,{headers:{'Content-Type':req.native.headers.get('content-type')??''}}).formData();}catch{throw new HttpError(tooLarge?'문서 저장 용량은 총 250MB까지입니다.':'업로드 요청 형식을 확인해 주세요.',tooLarge?413:400);}
     const files=form.getAll('files'),role=form.get('role');
     if(!['target','criteria','ledger'].includes(role))throw new DocumentError('문서 역할을 확인해 주세요.');
     if(!files.length||files.length>10||files.some(file=>typeof file==='string'))throw new DocumentError('업로드할 파일을 선택해 주세요.');
-    if(files.reduce((sum,file)=>sum+file.size,0)>MAX_FILE_BYTES)throw new DocumentError('파일은 한 번에 하나씩, 20MB까지 업로드해 주세요.',413);
+    if(files.reduce((sum,file)=>sum+file.size,0)>MAX_FILE_BYTES)throw new DocumentError('문서 저장 용량은 총 250MB까지입니다.',413);
     const existing=await storage.listDocuments();
     if(existing.length+files.length>100||existing.reduce((sum,file)=>sum+file.size,0)+files.reduce((sum,file)=>sum+file.size,0)>250*1024*1024)throw new DocumentError('문서 보관 한도를 초과했습니다.',413);
     const added=[];
