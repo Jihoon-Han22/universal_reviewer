@@ -30,7 +30,9 @@ export async function withSandbox(work, { config = loadConfig(), timeoutMs = 600
         if (!sandboxFactory) {
           failureStage = 'sdk_import';
           if (!live) throw new IntegrationError('e2b', 'CONFIG_INVALID');
-          sandboxFactory = (await import('e2b')).Sandbox;
+          // The package's default main is CommonJS but requires ESM-only chalk.
+          // Use its native ESM build when require(ESM) is disabled by the host.
+          sandboxFactory = (await import('e2b/dist/index.mjs')).Sandbox;
         }
         store.transition(taskId, { step: 'provisioning', title: '실행 환경 준비', status: 'running' });
         failureStage = 'provisioning';
