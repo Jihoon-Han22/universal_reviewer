@@ -12,6 +12,7 @@ export async function withSandbox(work, { config = loadConfig(), timeoutMs = 600
   const taskId = store.create({ ...parent?.input, ...activity, runtime: 'e2b', title: activity.title || '실행 환경 준비', parentTaskId: activity.parentTaskId ?? parent?.taskId });
   const report = event => { store.report(taskId, event); };
   report.taskId = taskId;
+  let failureStage = 'queue';
   try {
     return await sandboxPool.submit(async () => {
       let sandbox, cleanupPromise, workError, result, workFailed = false;
@@ -27,14 +28,17 @@ export async function withSandbox(work, { config = loadConfig(), timeoutMs = 600
       try {
         throwIfAborted(signal);
         if (!sandboxFactory) {
+          failureStage = 'sdk_import';
           if (!live) throw new IntegrationError('e2b', 'CONFIG_INVALID');
           sandboxFactory = (await import('e2b')).Sandbox;
         }
         store.transition(taskId, { step: 'provisioning', title: '실행 환경 준비', status: 'running' });
+        failureStage = 'provisioning';
         sandbox = await sandboxFactory.create(config.e2bTemplate, { apiKey, timeoutMs, requestTimeoutMs: 30000 });
         signal?.addEventListener('abort', abort, { once: true });
         throwIfAborted(signal);
         store.report(taskId, { step: 'work', title: '실행 환경 작업', status: 'running' });
+        failureStage = 'work';
         result = await runInActivity({ taskId, store, report, input: { ...parent?.input, ...activity, runtime: 'e2b' } }, () => work(sandbox, report));
         throwIfAborted(signal);
       } catch (error) { workFailed = true; workError = error; }
@@ -52,6 +56,9 @@ export async function withSandbox(work, { config = loadConfig(), timeoutMs = 600
       return result;
     }, signal);
   } catch (error) {
+    // Log only machine identifiers, never provider messages, keys or documents.
+    const identifier = value => typeof value === 'string' && /^[A-Za-z0-9_]{1,80}$/.test(value) ? value : null;
+    console.error('Sandbox failure', {stage: failureStage, name: identifier(error?.name), code: identifier(error?.code), causeCode: identifier(error?.cause?.code), status: Number.isInteger(error?.status) ? error.status : null});
     const safe = safeError(error, 'e2b');
     store.transition(taskId, { step: safe.code === 'CLEANUP_FAILED' ? 'cleanup' : signal?.aborted ? 'cancelled' : 'failed', title: safe.code === 'CLEANUP_FAILED' ? '실행 환경 종료를 확인하지 못했습니다' : signal?.aborted ? '작업 취소' : '작업 실패', status: safe.code === 'CLEANUP_FAILED' ? 'failed' : signal?.aborted ? 'cancelled' : 'failed' });
     throw safe;
