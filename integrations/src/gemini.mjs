@@ -3,6 +3,11 @@ import { IntegrationError, safeError, throwIfAborted } from './errors.mjs';
 import { geminiPool } from './task-pool.mjs';
 import { activityStore, currentActivity, observeActivity } from './activity.mjs';
 
+function logFailure(error) {
+  const identifier = value => typeof value === 'string' && /^[A-Za-z0-9_]{1,80}$/.test(value) ? value : null;
+  console.error('Gemini failure', {name: identifier(error?.name), code: identifier(error?.code), causeCode: identifier(error?.cause?.code), status: Number.isInteger(error?.status) ? error.status : null});
+}
+
 function requestFor(options, config) {
   const { contents, prompt, role = 'extract', schema, systemInstruction, maxOutputTokens = 2048, signal } = options ?? {};
   if (!['extract', 'explore'].includes(role) || (!contents && !prompt) || !Number.isInteger(maxOutputTokens) || maxOutputTokens < 1 || maxOutputTokens > 32768) throw new IntegrationError('gemini', 'CONFIG_INVALID');
@@ -49,7 +54,7 @@ export function createGemini({ config = loadConfig(), client, live = false, budg
     : observeActivity({ runtime: 'gemini', title: '문서 해석 요청' }, work, { signal: options?.signal, deferStart: true });
   const generateText = async (options = {}) => {
       try { return await observed(() => requestText(options), options); }
-      catch (error) { throw safeError(error, 'gemini'); }
+      catch (error) { logFailure(error); throw safeError(error, 'gemini'); }
   };
   return {
     generateText,
@@ -90,6 +95,7 @@ export function createGemini({ config = loadConfig(), client, live = false, budg
         complete = true;
         yield { type: 'done' };
       } catch (error) {
+        logFailure(error);
         if (taskId) store.transition(taskId, { step: 'failed', title: options.signal?.aborted ? '작업 취소' : '작업 실패', status: options.signal?.aborted ? 'cancelled' : 'failed' });
         throw safeError(error, 'gemini');
       } finally {
