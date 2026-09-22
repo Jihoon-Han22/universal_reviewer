@@ -1,0 +1,50 @@
+{
+  "loop": 11,
+  "capturedFromCurrentSource": true,
+  "sourceDigest": "af6b5d67348e41f96a46b9a9de60067d7a9699f1609a8e320537610977283917",
+  "captures": [
+    {
+      "scenario": "criteria-tree",
+      "source": {
+        "path": ".cache/rebuild/g10-family-b-loop009/loop011-af6-v9/development-smoke-root-002/criteria-tree/final.png",
+        "sha256": "9d33f4df1447671f2635959a00f41923a03ef155180bca840baaace52dff1940"
+      },
+      "published": {
+        "path": "artifacts/rebuild/loop-011/regression-smoke-002/criteria-tree.png",
+        "sha256": "9d33f4df1447671f2635959a00f41923a03ef155180bca840baaace52dff1940",
+        "bytes": 73297
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "sourceDigest": "af6b5d67348e41f96a46b9a9de60067d7a9699f1609a8e320537610977283917",
+      "startedAt": "2026-09-21T22:43:40.289Z",
+      "endedAt": "2026-09-21T22:44:20.936Z",
+      "mode": "Actual React component, native Chromium, synthetic fixture served by localhost replay; not full App reference image",
+      "rootVisualInspection": "Both images opened and inspected. Criteria selection links to actual table-cell highlight; analysis shows 검증 제한, 검증 1/보완 2 and limited coverage label. Top release-confirm/release-revise controls belong to the test fixture."
+    },
+    {
+      "scenario": "analysis-sheets",
+      "source": {
+        "path": ".cache/rebuild/g10-family-b-loop009/loop011-af6-v9/development-smoke-root-002/analysis-sheets/final.png",
+        "sha256": "05c88a645f7ed459fe5bb57bc5aaace586918f6e50bbe532c0d6b2c8014fc909"
+      },
+      "published": {
+        "path": "artifacts/rebuild/loop-011/regression-smoke-002/analysis-sheets.png",
+        "sha256": "05c88a645f7ed459fe5bb57bc5aaace586918f6e50bbe532c0d6b2c8014fc909",
+        "bytes": 212749
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "sourceDigest": "af6b5d67348e41f96a46b9a9de60067d7a9699f1609a8e320537610977283917",
+      "startedAt": "2026-09-21T22:44:21.007Z",
+      "endedAt": "2026-09-21T22:44:38.494Z",
+      "mode": "Actual React component, native Chromium, synthetic fixture served by localhost replay; not full App reference image",
+      "rootVisualInspection": "Both images opened and inspected. Criteria selection links to actual table-cell highlight; analysis shows 검증 제한, 검증 1/보완 2 and limited coverage label. Top release-confirm/release-revise controls belong to the test fixture."
+    }
+  ],
+  "full34ReferenceComparison": false
+}

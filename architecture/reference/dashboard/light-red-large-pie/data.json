@@ -1,0 +1,124 @@
+{
+  "runId": "run-example",
+  "createdAt": "2026-09-20T00:00:00.000Z",
+  "criterionVersion": 2,
+  "partial": false,
+  "summary": {
+    "total": 3,
+    "pass": 1,
+    "fail": 1,
+    "review": 1,
+    "humanReviewed": 1,
+    "documents": 2
+  },
+  "documents": [
+    {
+      "id": "doc-a",
+      "name": "합성 측정표 A.xlsx"
+    },
+    {
+      "id": "doc-b",
+      "name": "합성 측정표 B.csv"
+    }
+  ],
+  "items": [
+    {
+      "id": "item-a",
+      "documentId": "doc-a",
+      "documentName": "합성 측정표 A.xlsx",
+      "label": "밀도",
+      "value": "1.10",
+      "unit": "g/cm3",
+      "criterionId": "c-density",
+      "criterion": "1.00 이상 1.20 이하",
+      "status": "pass",
+      "explanation": "확인된 수치가 허용 범위 안입니다.",
+      "reviewedByHuman": false,
+      "humanNote": "",
+      "sourceEvidence": [
+        {
+          "documentId": "doc-a",
+          "sheet": "측정",
+          "cell": "B2",
+          "quote": "밀도 1.10 g/cm3"
+        }
+      ],
+      "evidence": {
+        "page": null,
+        "sheet": "측정",
+        "cell": "B2",
+        "quote": "밀도 1.10 g/cm3"
+      }
+    },
+    {
+      "id": "item-b",
+      "documentId": "doc-b",
+      "documentName": "합성 측정표 B.csv",
+      "label": "밀도",
+      "value": "1.30",
+      "unit": "g/cm3",
+      "criterionId": "c-density",
+      "criterion": "1.00 이상 1.20 이하",
+      "status": "fail",
+      "explanation": "확인된 수치가 상한을 초과합니다.",
+      "reviewedByHuman": true,
+      "humanNote": "단위를 다시 확인했습니다.",
+      "sourceEvidence": [
+        {
+          "documentId": "doc-b",
+          "cell": "B2",
+          "quote": "밀도,1.30,g/cm3"
+        }
+      ],
+      "evidence": {
+        "page": null,
+        "sheet": "",
+        "cell": "B2",
+        "quote": "밀도,1.30,g/cm3"
+      }
+    },
+    {
+      "id": "item-c",
+      "documentId": "doc-b",
+      "documentName": "합성 측정표 B.csv",
+      "label": "외관",
+      "value": "",
+      "unit": "",
+      "criterionId": "c-look",
+      "criterion": "균열 없음",
+      "status": "review",
+      "explanation": "전사에서 외관 기입 내용을 판독하지 못했습니다.",
+      "reviewedByHuman": false,
+      "humanNote": "",
+      "sourceEvidence": [],
+      "evidence": {
+        "page": null,
+        "sheet": "",
+        "cell": "",
+        "quote": ""
+      }
+    }
+  ],
+  "numericGroups": [
+    {
+      "label": "밀도",
+      "unit": "g/cm3",
+      "criterion": "1.00 이상 1.20 이하",
+      "total": 2,
+      "values": [
+        {
+          "id": "item-a",
+          "documentId": "doc-a",
+          "documentName": "합성 측정표 A.xlsx",
+          "value": 1.1
+        },
+        {
+          "id": "item-b",
+          "documentId": "doc-b",
+          "documentName": "합성 측정표 B.csv",
+          "value": 1.3
+        }
+      ]
+    }
+  ]
+}

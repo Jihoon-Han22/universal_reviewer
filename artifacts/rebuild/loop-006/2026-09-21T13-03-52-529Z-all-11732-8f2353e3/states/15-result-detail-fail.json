@@ -1,0 +1,72 @@
+{
+  "id": "15-result-detail-fail",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "15-result-detail-fail",
+    "screenshot": {
+      "path": "15-result-detail-fail.png",
+      "bytes": 181083,
+      "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/15-result-detail-fail.json",
+      "bytes": 710697,
+      "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T13:05:05.518Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/diagnostics/15-result-detail-fail-font-readiness.json",
+    "bytes": 2301120,
+    "sha256": "84cac36aec4f25587f4fbc49b07bedd9ea22d9504a82020b45ca1a54fc0e95f7"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/15-result-detail-fail.png",
+    "bytes": 176678,
+    "sha256": "d1d3c90e35c36f3ac1575ed210649bd40f75ba47524f0884e095cdbaf3f2b639",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T13:05:07.613Z",
+    "capturedAt": "2026-09-21T13:05:07.802Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/dom/15-result-detail-fail.json",
+    "bytes": 1103187,
+    "sha256": "ad9e9f488a0f524255349f163c6425df663731e854f4cff844ed5e2d3c6c6b3b"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/15-result-detail-fail-measurement.json",
+    "bytes": 213244,
+    "sha256": "334357932064d59fa824c441559840917bb9198521b07183eb01dc3ee1d872f2"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T13:05:08.870Z"
+}

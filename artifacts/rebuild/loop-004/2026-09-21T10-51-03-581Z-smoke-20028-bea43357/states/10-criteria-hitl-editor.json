@@ -1,0 +1,35 @@
+{
+  "id": "10-criteria-hitl-editor",
+  "selected": false,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Outside the three-state smoke subset.",
+  "reference": {
+    "id": "10-criteria-hitl-editor",
+    "screenshot": {
+      "path": "10-criteria-hitl-editor.png",
+      "bytes": 114513,
+      "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/10-criteria-hitl-editor.json",
+      "bytes": 1025043,
+      "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

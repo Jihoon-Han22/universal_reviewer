@@ -1,0 +1,44 @@
+[
+  {
+    "case_id": "B101",
+    "field_id": "thermal",
+    "source_v2_page": 4,
+    "v3_page": 3,
+    "original": {
+      "raw_value": "0.033",
+      "value": 0.033,
+      "verdict": "pass"
+    },
+    "v3_value": null,
+    "v3_verdict": "review",
+    "reason": "불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가"
+  },
+  {
+    "case_id": "I201",
+    "field_id": "cbr",
+    "source_v2_page": 19,
+    "v3_page": 21,
+    "original": {
+      "raw_value": "79",
+      "value": 79,
+      "verdict": "fail"
+    },
+    "v3_value": null,
+    "v3_verdict": "review",
+    "reason": "인쇄값 79와 확인되지 않은 수기 89 ?가 충돌하므로 원본 확인 필요"
+  },
+  {
+    "case_id": "P301",
+    "field_id": "impact",
+    "source_v2_page": 113,
+    "v3_page": 118,
+    "original": {
+      "raw_value": "27",
+      "value": 27,
+      "verdict": "fail"
+    },
+    "v3_value": null,
+    "v3_verdict": "review",
+    "reason": "불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가"
+  }
+]

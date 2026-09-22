@@ -1,0 +1,38 @@
+{
+  "id": "ledger-escape",
+  "startedAt": "2026-09-21T12:33:45.326Z",
+  "state": "passed",
+  "expected": {
+    "nativeModal": true,
+    "closed": true
+  },
+  "observations": {
+    "nativeModal": true,
+    "closed": true
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.dom.json",
+      "sha256": "078538161541a88d852d200fd2237b5f2892d9b37bb9c1a81c23547dbe467a97"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.png",
+      "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "nativeModal",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "closed",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:33:51.030Z"
+}

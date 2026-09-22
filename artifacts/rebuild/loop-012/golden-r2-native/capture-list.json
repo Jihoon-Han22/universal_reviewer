@@ -1,0 +1,49 @@
+{
+  "loop": "LOOP-012",
+  "captures": [
+    {
+      "name": "all-initial",
+      "artifact": {
+        "path": "artifacts/rebuild/loop-012/golden-r2-native/all-initial.png",
+        "sha256": "3e3b4b3c01d31502532806171c895bc7e9398b4749783b7bc7634430d405b0f8",
+        "bytes": 107859
+      },
+      "nativeSource": {
+        "path": ".cache/rebuild/golden-current-native-loop012-r2-prep/diagnostic-2026-09-21T23-14-48-500Z-cac8abec/golden-current-component-all-initial.png",
+        "sha256": "3e3b4b3c01d31502532806171c895bc7e9398b4749783b7bc7634430d405b0f8",
+        "bytes": 107859
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      },
+      "deviceScaleFactor": 1,
+      "mode": "Actual native Chrome, actual GoldenPicker component, synthetic catalog, provider-disabled replay",
+      "review": "Root visually inspected both native images; this is not a reference pixel comparison or formal PASS."
+    },
+    {
+      "name": "ledger-p10-png",
+      "artifact": {
+        "path": "artifacts/rebuild/loop-012/golden-r2-native/ledger-p10-png.png",
+        "sha256": "bd89bbab0d3288a2243e7825fd3fd4ba7bd5650633ed57e6381c605ff44997b3",
+        "bytes": 122334
+      },
+      "nativeSource": {
+        "path": ".cache/rebuild/golden-current-native-loop012-r2-prep/diagnostic-2026-09-21T23-14-48-500Z-cac8abec/golden-current-component-ledger-p10-png.png",
+        "sha256": "bd89bbab0d3288a2243e7825fd3fd4ba7bd5650633ed57e6381c605ff44997b3",
+        "bytes": 122334
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      },
+      "deviceScaleFactor": 1,
+      "mode": "Actual native Chrome, actual GoldenPicker component, synthetic catalog, provider-disabled replay",
+      "review": "Root visually inspected both native images; this is not a reference pixel comparison or formal PASS."
+    }
+  ],
+  "sourceAtAdmission": "1ed2d5ad9feb7d9f148f403440cc1b1a09af0d785be59ca8b346ea44e747b2a4",
+  "sourceAfterStatus": "NOT_RUN: unresolved owned operation; persist immediately for parent termination",
+  "runState": "failed",
+  "scope": "Completed native component screenshots retained despite subsequent browser-close failure."
+}

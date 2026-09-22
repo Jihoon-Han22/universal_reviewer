@@ -1,0 +1,72 @@
+{
+  "id": "28-results-mobile-motion-off",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "28-results-mobile-motion-off",
+    "screenshot": {
+      "path": "28-results-mobile-motion-off.png",
+      "bytes": 95954,
+      "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+      "width": 390,
+      "height": 844,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/28-results-mobile-motion-off.json",
+      "bytes": 709181,
+      "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "reduced",
+      "osReduce": true,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T12:25:24.683Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/diagnostics/28-results-mobile-motion-off-font-readiness.json",
+    "bytes": 2301220,
+    "sha256": "2d26d7aa9af4f37f4038f241ba1ef04f16fb2bb6b24d0e084685e6a0fe7949ea"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/28-results-mobile-motion-off.png",
+    "bytes": 94859,
+    "sha256": "b78d3d4a3553752a92440fe748a917b4270bcadbdb570a5c2414ceadc32bf001",
+    "width": 390,
+    "height": 844,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T12:25:28.064Z",
+    "capturedAt": "2026-09-21T12:25:28.167Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/dom/28-results-mobile-motion-off.json",
+    "bytes": 1103289,
+    "sha256": "f5acfbd5a516bda6d74ab1a8cccd148492f256303ae3dd51f6dfbe4cdb62cbda"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/28-results-mobile-motion-off-measurement.json",
+    "bytes": 205776,
+    "sha256": "3bcbda2479fe742eabbe239fc102e71cb2661e651c86aef4a95de903a751476c"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T12:25:29.529Z"
+}

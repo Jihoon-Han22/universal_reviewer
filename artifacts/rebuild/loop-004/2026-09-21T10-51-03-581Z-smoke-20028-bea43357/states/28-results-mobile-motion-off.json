@@ -1,0 +1,35 @@
+{
+  "id": "28-results-mobile-motion-off",
+  "selected": false,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Outside the three-state smoke subset.",
+  "reference": {
+    "id": "28-results-mobile-motion-off",
+    "screenshot": {
+      "path": "28-results-mobile-motion-off.png",
+      "bytes": 95954,
+      "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+      "width": 390,
+      "height": 844,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/28-results-mobile-motion-off.json",
+      "bytes": 709181,
+      "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "reduced",
+      "osReduce": true,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

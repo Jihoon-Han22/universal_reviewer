@@ -1,0 +1,35 @@
+{
+  "id": "21-dashboard-light",
+  "selected": true,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "An earlier required transition/capture failed (06-criteria-input-file); state was not synthesized.",
+  "reference": {
+    "id": "21-dashboard-light",
+    "screenshot": {
+      "path": "21-dashboard-light.png",
+      "bytes": 148135,
+      "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/21-dashboard-light.json",
+      "bytes": 1360988,
+      "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

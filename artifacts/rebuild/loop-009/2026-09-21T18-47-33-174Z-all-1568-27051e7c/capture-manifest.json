@@ -1,0 +1,2655 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "loop": "LOOP-009",
+  "mode": "all",
+  "origin": "actual-browser-current-react-synthetic-http",
+  "synthetic": true,
+  "fixtureId": "architecture-visual-v1",
+  "startedAt": "2026-09-21T18:47:33.180Z",
+  "endedAt": "2026-09-21T18:55:26.804Z",
+  "command": [
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\.cache\\runtime\\node-v24.13.1-win-x64\\node.exe",
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs",
+    "--all",
+    "--loop",
+    "LOOP-009"
+  ],
+  "referenceManifest": {
+    "path": "architecture/ui/reference/manifest.json",
+    "bytes": 78163,
+    "sha256": "9f066974df90c7af348b2be59853d21377469cb02c4961057d831a358e3f7d72"
+  },
+  "inputRefs": [
+    {
+      "path": "architecture/ui/reference/synthetic-fixture.json",
+      "bytes": 4535,
+      "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+    },
+    {
+      "path": "architecture/ui/reference/mock-api.mjs",
+      "bytes": 8824,
+      "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+    },
+    {
+      "path": "architecture/ui/reference/capture-flow.js",
+      "bytes": 18830,
+      "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+    },
+    {
+      "path": "architecture/ui/reference/capture-required-viewports.js",
+      "bytes": 11653,
+      "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+    },
+    {
+      "path": "architecture/ui/reference/synthetic-dashboard.html",
+      "bytes": 441713,
+      "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+    },
+    {
+      "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+      "bytes": 441706,
+      "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+    }
+  ],
+  "output": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c",
+  "browser": {
+    "playwrightVersion": "1.62.1",
+    "bundledExecutable": "C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+    "bundledExists": false,
+    "executable": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "selection": "explicit-installed-chrome-fallback",
+    "userProfile": "none; Playwright isolated temporary profile",
+    "headless": true,
+    "node": "v24.13.1",
+    "browserVersion": "153.0.8010.48",
+    "browserName": "chromium",
+    "referenceBrowser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "environmentMatchNotAssumed": true
+  },
+  "contexts": [
+    {
+      "name": "states-01-28",
+      "createdAt": "2026-09-21T18:47:55.617Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "language": "ko-KR",
+      "languages": [
+        "ko-KR"
+      ],
+      "timeZone": "Asia/Seoul",
+      "devicePixelRatio": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 960,
+        "scale": 1
+      },
+      "prefersColorScheme": "light",
+      "reducedMotion": false
+    },
+    {
+      "name": "states-29-34",
+      "createdAt": "2026-09-21T18:54:17.160Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "language": "ko-KR",
+      "languages": [
+        "ko-KR"
+      ],
+      "timeZone": "Asia/Seoul",
+      "devicePixelRatio": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 960,
+        "scale": 1
+      },
+      "prefersColorScheme": "light",
+      "reducedMotion": false
+    }
+  ],
+  "traceRefs": [
+    {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/states-01-28-trace.zip",
+      "bytes": 52973105,
+      "sha256": "0dc015ffbb9ce7ee3eaa71300d95263c9908d7a9c89da508c4ae7881a5b51334"
+    },
+    {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/states-29-34-trace.zip",
+      "bytes": 17810423,
+      "sha256": "6fbc76a00a1fdc3deff173cbb5f9fa7f1e34352656590eeb0f8a109f03c65538"
+    }
+  ],
+  "captureCounts": {
+    "captured": 34,
+    "error": 0,
+    "notRun": 0
+  },
+  "selectedCount": 34,
+  "allSelectedCaptured": true,
+  "sourceParity": {
+    "verified": true,
+    "preflightVerified": true,
+    "postflightVerified": true,
+    "serverStartup": {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/server-startup-source.json",
+      "bytes": 112014,
+      "sha256": "5caca377bd06de0ee78159fa572807a6d264bb09b36ef7189e163cf2d5074d46"
+    },
+    "diskBefore": {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/disk-source-before.json",
+      "bytes": 106225,
+      "sha256": "b36050ab657df8d94408893de5424d95bc0fae070f4673f8dc3aa9e875666177"
+    },
+    "startupDigest": "e63c33a536e0f441b28f804a45e0110321b777434d42f8828da76fc3b2f95242",
+    "freezeMatchesImplementation": null,
+    "serverAfter": {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/server-after-source.json",
+      "bytes": 112014,
+      "sha256": "5caca377bd06de0ee78159fa572807a6d264bb09b36ef7189e163cf2d5074d46"
+    },
+    "diskAfter": {
+      "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/disk-source-after.json",
+      "bytes": 106225,
+      "sha256": "caa7cc577ce2d04f0cf6e40c9285c756aad742e1cc5e83f2efdde787422a3001"
+    }
+  },
+  "visualAcceptance": "NOT_RUN",
+  "parityCompared": false,
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "providerCountsScope": "Replay configuration disables providers; captures do not prove provider execution.",
+  "locatorMappings": [
+    {
+      "time": "2026-09-21T18:48:43.676Z",
+      "reference": "file-open button named 합성_품질기준.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_품질기준.xlsx",
+      "actual": "button.workflow-file-open containing 합성_품질기준.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:49:43.847Z",
+      "reference": "file-open button named 합성_시험성적서_A.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_시험성적서_A.xlsx",
+      "actual": "button.workflow-file-open containing 합성_시험성적서_A.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:54:56.124Z",
+      "reference": "file-open button named 합성_품질기준.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_품질기준.xlsx",
+      "actual": "button.workflow-file-open containing 합성_품질기준.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:55:10.095Z",
+      "reference": "file-open button named 합성_시험성적서_A.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_시험성적서_A.xlsx",
+      "actual": "button.workflow-file-open containing 합성_시험성적서_A.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    }
+  ],
+  "blockedExternal": [],
+  "browserErrors": [],
+  "cleanupErrors": [],
+  "runError": null,
+  "cases": [
+    {
+      "id": "01-landing-desktop",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "01-landing-desktop",
+        "screenshot": {
+          "path": "01-landing-desktop.png",
+          "bytes": 556576,
+          "sha256": "1ee4967e8ba0f70aecbf71e206fbb7fb259536812a69cf7eaa399433a4a3e8dc",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/01-landing-desktop.json",
+          "bytes": 941783,
+          "sha256": "e7f9d8919135181d92eaa758b1525e2797f2d6115f4e6add35456790e0f96c65"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:47:57.159Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/01-landing-desktop-font-readiness.json",
+        "bytes": 2301315,
+        "sha256": "6fe492aa403ab5b5dda2419baf86199a13ce69af78df0b89b085940db31ce31d"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/01-landing-desktop.png",
+        "bytes": 534829,
+        "sha256": "e27d4f853a12382fa689c43f7af886d5448b51f440db4742d93c62add85facf3",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:05.981Z",
+        "capturedAt": "2026-09-21T18:48:07.252Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/01-landing-desktop.json",
+        "bytes": 1469627,
+        "sha256": "274a4ebc0ce71b31b750edd11c3da903ab932dd5edd4c87cef135f1108804814"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/01-landing-desktop-measurement.json",
+        "bytes": 189135,
+        "sha256": "6494423effc4ab3990413e552b7b2d48ffa05a82133df6ec4e325725dad3e4d3"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:15.172Z"
+    },
+    {
+      "id": "02-landing-mobile",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "02-landing-mobile",
+        "screenshot": {
+          "path": "02-landing-mobile.png",
+          "bytes": 201448,
+          "sha256": "10cab1b24e702fabe1ead162376d07b92fa3bb264a0abfa26b67aa3f94b9e2bf",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/02-landing-mobile.json",
+          "bytes": 923798,
+          "sha256": "20b804064b493d13449f7707c55b89ad9a08ccc69c334f03620b781d612b95f2"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:15.330Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/02-landing-mobile-font-readiness.json",
+        "bytes": 2301220,
+        "sha256": "218ae6ff284c8d46508b13debdfa4861b752d77d7b5dc4479c718bbd602fef23"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/02-landing-mobile.png",
+        "bytes": 197569,
+        "sha256": "c0a8b62c3e0f716a8adf2f0ec9340de2ff427a29a7a70b79a307a73905764627",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:18.410Z",
+        "capturedAt": "2026-09-21T18:48:18.693Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/02-landing-mobile.json",
+        "bytes": 1440223,
+        "sha256": "d9941d7adf6d96320548f9b7fff8deaf27d926aae5e6fcbd858ff262cc3b0da1"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/02-landing-mobile-measurement.json",
+        "bytes": 188805,
+        "sha256": "8be53ce0e9faaf81e27748ebe5b82f2d64a1aa4f019d0e927eb21c8fe15a541f"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:24.097Z"
+    },
+    {
+      "id": "03-landing-mobile-motion-off",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "03-landing-mobile-motion-off",
+        "screenshot": {
+          "path": "03-landing-mobile-motion-off.png",
+          "bytes": 201732,
+          "sha256": "19ec769de804243c49b189eff25b0726212891ebb3c0dc7a3f8971efdaa166c2",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/03-landing-mobile-motion-off.json",
+          "bytes": 816188,
+          "sha256": "659eb6409822428ceb48c9a3b44b139a5e14c7b2d3fbf239c03ff8d72690cc43"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "reduced",
+          "osReduce": true,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:24.282Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/03-landing-mobile-motion-off-font-readiness.json",
+        "bytes": 2301220,
+        "sha256": "218ae6ff284c8d46508b13debdfa4861b752d77d7b5dc4479c718bbd602fef23"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/03-landing-mobile-motion-off.png",
+        "bytes": 197916,
+        "sha256": "7c933a58ad64a1439e71958c7746f0d521f3074c2047129ad243fe99e2a518f4",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:27.045Z",
+        "capturedAt": "2026-09-21T18:48:27.295Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/03-landing-mobile-motion-off.json",
+        "bytes": 1268662,
+        "sha256": "2c391dad5cee33dd05e524fa3c3d1735bc43cb7b4468ef73df8b7be5332b8895"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/03-landing-mobile-motion-off-measurement.json",
+        "bytes": 188829,
+        "sha256": "0fd499ace2dc312e9afac53eb98f1bdf03249d39028daf95890fec437145d1be"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:29.790Z"
+    },
+    {
+      "id": "04-criteria-input-empty",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "04-criteria-input-empty",
+        "screenshot": {
+          "path": "04-criteria-input-empty.png",
+          "bytes": 314566,
+          "sha256": "a55e9b8b0dca2def309571788e93bc38aee45cc98d7b5c8e00120a740ed2ad08",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/04-criteria-input-empty.json",
+          "bytes": 328754,
+          "sha256": "1a6201a11ac5a3a036f32ac39f57828234dd3cc3c5102f4b27ec90771adb8bd1"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:29.807Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/04-criteria-input-empty-font-readiness.json",
+        "bytes": 2301204,
+        "sha256": "1b57966f7748cb71656e6321c11e657bb98cdb923327103c88147cc938501256"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/04-criteria-input-empty.png",
+        "bytes": 307720,
+        "sha256": "f93bbedf777e8b015282fa8d14f5bb1755116b55553121ab7acd05a8ef607b66",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:34.972Z",
+        "capturedAt": "2026-09-21T18:48:35.670Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/04-criteria-input-empty.json",
+        "bytes": 511248,
+        "sha256": "6dda5826b3777e44bd28af46804abeed8155924ffd91e267e692fc53ddb79591"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/04-criteria-input-empty-measurement.json",
+        "bytes": 189722,
+        "sha256": "d7af339580e4ab7a32e85f3030305dbb85afa9e870fba65d346d2576d657a00d"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:36.968Z"
+    },
+    {
+      "id": "05-criteria-natural-language",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "05-criteria-natural-language",
+        "screenshot": {
+          "path": "05-criteria-natural-language.png",
+          "bytes": 183906,
+          "sha256": "496f9aee60702896da1cf37d807cd40778e3834cb6f91407ce05303a2ec28229",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/05-criteria-natural-language.json",
+          "bytes": 195586,
+          "sha256": "f25f45e4cbcae24ea7f8602e3957dc4947e965ea9962e6b9e323bf4cd1265142"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:37.119Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/05-criteria-natural-language-font-readiness.json",
+        "bytes": 2301204,
+        "sha256": "1b57966f7748cb71656e6321c11e657bb98cdb923327103c88147cc938501256"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/05-criteria-natural-language.png",
+        "bytes": 175350,
+        "sha256": "41169657691d31bf5ab8d494d996db0549d2ac9fca8cf94a841a95a3538ba7e0",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:40.272Z",
+        "capturedAt": "2026-09-21T18:48:40.726Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/05-criteria-natural-language.json",
+        "bytes": 305115,
+        "sha256": "b1aac6fe3f91c57dea72f01f417753acf62e1cc061d2d6ada2f749b4ebb412bb"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/05-criteria-natural-language-measurement.json",
+        "bytes": 189651,
+        "sha256": "9a9aa7a3ea87bf7cd80be6c198e2a3d075e9e69685c5ceb78bf5f64e6ac38638"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:42.251Z"
+    },
+    {
+      "id": "06-criteria-input-file",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "06-criteria-input-file",
+        "screenshot": {
+          "path": "06-criteria-input-file.png",
+          "bytes": 277119,
+          "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/06-criteria-input-file.json",
+          "bytes": 376314,
+          "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:42.272Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/06-criteria-input-file-font-readiness.json",
+        "bytes": 2301204,
+        "sha256": "1b57966f7748cb71656e6321c11e657bb98cdb923327103c88147cc938501256"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/06-criteria-input-file.png",
+        "bytes": 269232,
+        "sha256": "78b954338b6f9b86cf047e03554507c57f87afa5667541c8514d59d36f71dab0",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:46.924Z",
+        "capturedAt": "2026-09-21T18:48:47.313Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/06-criteria-input-file.json",
+        "bytes": 581449,
+        "sha256": "bfac27ae3bef8051171845629687ef219c027ebf38dd3aec291e6e58e55e32aa"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/06-criteria-input-file-measurement.json",
+        "bytes": 189760,
+        "sha256": "79c9fbe259d1810a49e47fbc380c89d653eddbeed0db3b0cf40e6b270a7d178f"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:48:49.017Z"
+    },
+    {
+      "id": "07-criteria-reading",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "07-criteria-reading",
+        "screenshot": {
+          "path": "07-criteria-reading.png",
+          "bytes": 324650,
+          "sha256": "536e6595f9bf1c7d10ae081b899fe749e68a1787e92256800882cc20552c95d1",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/07-criteria-reading.json",
+          "bytes": 1075157,
+          "sha256": "c17b16aadd35c92c0754bb40c6ce4de3fcf9981a54cd26f3dd8fc2d520e37ecb"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:48:49.060Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/07-criteria-reading-font-readiness.json",
+        "bytes": 2301176,
+        "sha256": "a0659bbb5d13d43d28698fc3c04c71608470edbb85ca2a1cdcf4f7d9f91fe0bd"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/07-criteria-reading.png",
+        "bytes": 315556,
+        "sha256": "dfec321d90beca2956df920f4f0939a0cf0abbc54149f95fb83a8299d2891f3f",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:48:55.812Z",
+        "capturedAt": "2026-09-21T18:48:56.694Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/07-criteria-reading.json",
+        "bytes": 1674146,
+        "sha256": "923e449aa9700ddf42969d4bc924e1db3cee6384b79778356d4a0d8188f47efb"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/07-criteria-reading-measurement.json",
+        "bytes": 190612,
+        "sha256": "9bc8de52b13e4e34134a49046c6defa2cb54a08557164e4072c0df9a3bc3b744"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "read",
+      "endedAt": "2026-09-21T18:49:02.003Z"
+    },
+    {
+      "id": "08-criteria-context",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "08-criteria-context",
+        "screenshot": {
+          "path": "08-criteria-context.png",
+          "bytes": 326785,
+          "sha256": "aa08d865864d35005041fe8480d42fcb7861b7af6617dd3f6fca6f476be11a9c",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/08-criteria-context.json",
+          "bytes": 1127761,
+          "sha256": "6472a1550a59e47f8db1e4e29b77ccf4528c360951abe67c346031a52c616c51"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:02.116Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/08-criteria-context-font-readiness.json",
+        "bytes": 2301176,
+        "sha256": "a0659bbb5d13d43d28698fc3c04c71608470edbb85ca2a1cdcf4f7d9f91fe0bd"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/08-criteria-context.png",
+        "bytes": 315565,
+        "sha256": "b675c16d1fad992850fe07be2907d699af86d70fe5ca87fa98a8680dce9f95e0",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:08.544Z",
+        "capturedAt": "2026-09-21T18:49:14.585Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/08-criteria-context.json",
+        "bytes": 1723457,
+        "sha256": "b69f8456b497b734e4195c870ae882c19241a8b042555d7f377ca55e682c49b4"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/08-criteria-context-measurement.json",
+        "bytes": 190618,
+        "sha256": "8f84be4c1ef2f301675b421cc2f4ded0e01528ee544035dd8fde8f0b5499bd41"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "context",
+      "endedAt": "2026-09-21T18:49:22.101Z"
+    },
+    {
+      "id": "09-criteria-confirmation",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "09-criteria-confirmation",
+        "screenshot": {
+          "path": "09-criteria-confirmation.png",
+          "bytes": 106138,
+          "sha256": "2af44d66ac0c90c71b2f9807fa9c36b91725a73680e9a8278b67f64f059fde4d",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/09-criteria-confirmation.json",
+          "bytes": 1022826,
+          "sha256": "6102b431732ddc21f8a561e2e09f207d791e8aaa385e6ed0daf545b5aa878dc9"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:22.257Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/09-criteria-confirmation-font-readiness.json",
+        "bytes": 2301160,
+        "sha256": "5448b6f26275862719f0c02dd4800a0fd8f50b27ec20dc657d7ac1c900daead7"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/09-criteria-confirmation.png",
+        "bytes": 105064,
+        "sha256": "080d86d7417b8682314cecd789437320cf85ba8a08fb69e16e22540823271f65",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:26.452Z",
+        "capturedAt": "2026-09-21T18:49:26.721Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/09-criteria-confirmation.json",
+        "bytes": 1592511,
+        "sha256": "b0f670f9e2a9497ae036577ea375422ce0d9c393511ef4c880713de358ae85ab"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/09-criteria-confirmation-measurement.json",
+        "bytes": 202856,
+        "sha256": "aa4c8e608344e39a219b7ed7cfa87ddb6a3600326237e89bc8f8ee69ee6a6531"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:49:29.672Z"
+    },
+    {
+      "id": "10-criteria-hitl-editor",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "10-criteria-hitl-editor",
+        "screenshot": {
+          "path": "10-criteria-hitl-editor.png",
+          "bytes": 114513,
+          "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/10-criteria-hitl-editor.json",
+          "bytes": 1025043,
+          "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:29.904Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/10-criteria-hitl-editor-font-readiness.json",
+        "bytes": 2301160,
+        "sha256": "5448b6f26275862719f0c02dd4800a0fd8f50b27ec20dc657d7ac1c900daead7"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/10-criteria-hitl-editor.png",
+        "bytes": 113572,
+        "sha256": "d0cc8436114ba96a6e90c72d2fb9c7c04b6c19b350343a285973e33acde8d691",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:33.999Z",
+        "capturedAt": "2026-09-21T18:49:34.452Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/10-criteria-hitl-editor.json",
+        "bytes": 1594923,
+        "sha256": "95fef07981ab74270909411ed5d6b66fa334a178c73e2c1509a0d7c2b084e77d"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/10-criteria-hitl-editor-measurement.json",
+        "bytes": 203369,
+        "sha256": "485b3954196d41bddfd76694c583227d41ea9018fb190867660e7ec733f515c0"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:49:38.955Z"
+    },
+    {
+      "id": "11-target-input-empty",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "11-target-input-empty",
+        "screenshot": {
+          "path": "11-target-input-empty.png",
+          "bytes": 287371,
+          "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/11-target-input-empty.json",
+          "bytes": 399799,
+          "sha256": "1a288902baeb491a0d187d847640475d05802a68f0f049354dab966a1f7ac78b"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:38.969Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/11-target-input-empty-font-readiness.json",
+        "bytes": 2301148,
+        "sha256": "87386ff93aeea31d7d667a5a6ae7e52516329e010e6f7d7e983381ee5adf539c"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/11-target-input-empty.png",
+        "bytes": 285900,
+        "sha256": "c2920856edc20d3b8d772a3619b9eeba9bb933cb0d904c897bfee27a1c217dde",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:42.133Z",
+        "capturedAt": "2026-09-21T18:49:42.490Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/11-target-input-empty.json",
+        "bytes": 621139,
+        "sha256": "01bf1626d0a7336ebe8a9a52242bdcb58be7796e3267d8f9589acccee6037ac4"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/11-target-input-empty-measurement.json",
+        "bytes": 190326,
+        "sha256": "9a83cfd87354d6b86f99da19f46eb49fcb656992b88ae97870eab2df2b582a76"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:49:43.558Z"
+    },
+    {
+      "id": "12-target-input-file",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "12-target-input-file",
+        "screenshot": {
+          "path": "12-target-input-file.png",
+          "bytes": 268349,
+          "sha256": "c7e9783a859541d1be04d72b12c45e9ca17744d8dbd2042203e79522d74e4df1",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/12-target-input-file.json",
+          "bytes": 447427,
+          "sha256": "ff939bf2b30412ac084e75356d23a3d048c191685cae33be74c0d22bcbebf595"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:43.601Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/12-target-input-file-font-readiness.json",
+        "bytes": 2301148,
+        "sha256": "87386ff93aeea31d7d667a5a6ae7e52516329e010e6f7d7e983381ee5adf539c"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/12-target-input-file.png",
+        "bytes": 265920,
+        "sha256": "5a7c708502ae9dca1f1b937983503a32c084764fc1d3671d89bce1a26d7f0412",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:45.533Z",
+        "capturedAt": "2026-09-21T18:49:45.815Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/12-target-input-file.json",
+        "bytes": 691332,
+        "sha256": "76dba72bfd14e39cbdba9a589faec01896abe570d5ec47e0d44280833d44e80c"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/12-target-input-file-measurement.json",
+        "bytes": 190369,
+        "sha256": "9253d7d03dd978a7e90824e6866f20d9fc01292f32d56d6c8834399959f8a984"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:49:46.659Z"
+    },
+    {
+      "id": "13-review-active",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "13-review-active",
+        "screenshot": {
+          "path": "13-review-active.png",
+          "bytes": 422812,
+          "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/13-review-active.json",
+          "bytes": 2021983,
+          "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:49:46.676Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/13-review-active-font-readiness.json",
+        "bytes": 2301136,
+        "sha256": "acbba7649501b909a03b6609d8868c869bcd2bf73def0b918e43629a81d78ccf"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/13-review-active.png",
+        "bytes": 415801,
+        "sha256": "0e03c9258fc25a8e50c66d7cfc296e8f3d1515d79c8ebb38bf794e369341440e",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:49:55.340Z",
+        "capturedAt": "2026-09-21T18:49:58.274Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/13-review-active.json",
+        "bytes": 3125947,
+        "sha256": "76aad67461b0ecc647c57063eb799434e88b7b09b02279e4abee1a3844883cc1"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/13-review-active-measurement.json",
+        "bytes": 192747,
+        "sha256": "27c78e4bcac2b55a96049cf4b2a488313d8011e6611326013a22fc55878ed192"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "review",
+      "endedAt": "2026-09-21T18:50:22.562Z"
+    },
+    {
+      "id": "14-results",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "14-results",
+        "screenshot": {
+          "path": "14-results.png",
+          "bytes": 167390,
+          "sha256": "4ced148dc6a926f9079cc2fae75743b35ff18b3b8ffa763f59fac6e5cd0cb183",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/14-results.json",
+          "bytes": 667893,
+          "sha256": "c1997bc687362e8cd26edd395a4dace87c78159c2c38e791ab8f3075e6b90059"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:50:25.121Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/14-results-font-readiness.json",
+        "bytes": 2301120,
+        "sha256": "84cac36aec4f25587f4fbc49b07bedd9ea22d9504a82020b45ca1a54fc0e95f7"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/14-results.png",
+        "bytes": 162021,
+        "sha256": "78cf59a7c1683aabb53702e62d34dd2dcfb4c55fcc0f478ad345097026832248",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:50:37.786Z",
+        "capturedAt": "2026-09-21T18:50:38.184Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/14-results.json",
+        "bytes": 1037443,
+        "sha256": "81730aeb1855c2f0cc982aa4c90c830717a599922fe9ca005efb2a551e3e3ce9"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/14-results-measurement.json",
+        "bytes": 213027,
+        "sha256": "f94e3e02a42b7018fd9b61376de36608d8e7199d481f27ec9cf21ad2cdd2f40b"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:50:45.289Z"
+    },
+    {
+      "id": "15-result-detail-fail",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "15-result-detail-fail",
+        "screenshot": {
+          "path": "15-result-detail-fail.png",
+          "bytes": 181083,
+          "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/15-result-detail-fail.json",
+          "bytes": 710697,
+          "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:50:45.463Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/15-result-detail-fail-font-readiness.json",
+        "bytes": 2301120,
+        "sha256": "84cac36aec4f25587f4fbc49b07bedd9ea22d9504a82020b45ca1a54fc0e95f7"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/15-result-detail-fail.png",
+        "bytes": 176105,
+        "sha256": "8ef776beab147204b1e217caa7203444cfb609eafb18bd784947ea0c1b1ea588",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:50:49.092Z",
+        "capturedAt": "2026-09-21T18:50:49.335Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/15-result-detail-fail.json",
+        "bytes": 1103406,
+        "sha256": "600f9c63b2a0de84a41ab2304c789e0133478a654798086d9028c8b2d8233d70"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/15-result-detail-fail-measurement.json",
+        "bytes": 213243,
+        "sha256": "df050ceb99bbd3ec9498564feedeed6bf022fceeb063d581ea8b84176fc523b6"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:50:53.903Z"
+    },
+    {
+      "id": "16-result-detail-review",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "16-result-detail-review",
+        "screenshot": {
+          "path": "16-result-detail-review.png",
+          "bytes": 184302,
+          "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/16-result-detail-review.json",
+          "bytes": 713312,
+          "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:50:53.923Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/16-result-detail-review-font-readiness.json",
+        "bytes": 2301116,
+        "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/16-result-detail-review.png",
+        "bytes": 179037,
+        "sha256": "03dae2d0b230c20518c767221fa130c02bc8b2661ae2523afc93a6878bc0ee78",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:50:57.904Z",
+        "capturedAt": "2026-09-21T18:50:58.366Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/16-result-detail-review.json",
+        "bytes": 1107394,
+        "sha256": "f7b5e4d451af47d272aa6aa2d85d1dfe053e6921453ef6113fc62a084b026b79"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/16-result-detail-review-measurement.json",
+        "bytes": 205788,
+        "sha256": "91f5972e1bc5f3205596c7b4d437033868fbf40c94dccbd83eaca6699ce10cb3"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:00.761Z"
+    },
+    {
+      "id": "17-result-applied-criteria",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "17-result-applied-criteria",
+        "screenshot": {
+          "path": "17-result-applied-criteria.png",
+          "bytes": 176272,
+          "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/17-result-applied-criteria.json",
+          "bytes": 766801,
+          "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:00.997Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/17-result-applied-criteria-font-readiness.json",
+        "bytes": 2301116,
+        "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/17-result-applied-criteria.png",
+        "bytes": 171079,
+        "sha256": "efd761fae9d59ca89a2accb82a7a825c9bded9ad985368fe008f7ef795b917c5",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:04.293Z",
+        "capturedAt": "2026-09-21T18:51:05.851Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/17-result-applied-criteria.json",
+        "bytes": 1190459,
+        "sha256": "d8e02e73a12d1c849c4282b04fd9f67bb843136f7ff7dd4b98d3661539abd0c2"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/17-result-applied-criteria-measurement.json",
+        "bytes": 205848,
+        "sha256": "1157ad67d79dc6a84f9b280a018a4ba0e4275c8b4af7ab468151751bcff7751f"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:08.787Z"
+    },
+    {
+      "id": "18-result-criterion-source",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "18-result-criterion-source",
+        "screenshot": {
+          "path": "18-result-criterion-source.png",
+          "bytes": 173692,
+          "sha256": "117b53ab122df2d0b12ba8937744d0d57fb3740ced3b72b6bb74527b64475380",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/18-result-criterion-source.json",
+          "bytes": 743105,
+          "sha256": "ca6a425267caf467c5fa396f386c206d24e00ab2e82e5eb7f880b4b3b7eca788"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:08.904Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/18-result-criterion-source-font-readiness.json",
+        "bytes": 2301116,
+        "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/18-result-criterion-source.png",
+        "bytes": 168376,
+        "sha256": "a8963abaafee54ad3aa3ee9060302e713ed7e0bac0e564e69db6bfd0cd369b20",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:14.413Z",
+        "capturedAt": "2026-09-21T18:51:14.732Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/18-result-criterion-source.json",
+        "bytes": 1154969,
+        "sha256": "d511a8e750b0d81f2f471cfddb7eb6942cfae2d397cb3fe9d5e1b40967d542d4"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/18-result-criterion-source-measurement.json",
+        "bytes": 205690,
+        "sha256": "507dba4223dce5d7f2622f0806bd2f5ffcae11dc0f37697c0de8d1967f95986d"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:17.996Z"
+    },
+    {
+      "id": "19-dashboard-controls",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "19-dashboard-controls",
+        "screenshot": {
+          "path": "19-dashboard-controls.png",
+          "bytes": 270631,
+          "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/19-dashboard-controls.json",
+          "bytes": 1015625,
+          "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:18.160Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/19-dashboard-controls-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/19-dashboard-controls.png",
+        "bytes": 271009,
+        "sha256": "0f4f325afe99b39c1a5a766890fb920e1fbf16dcdd9e25a8af5029b346392b11",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:22.677Z",
+        "capturedAt": "2026-09-21T18:51:23.302Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/19-dashboard-controls.json",
+        "bytes": 1509218,
+        "sha256": "f142f791b47da93729c36079d162969943e36b7d5a4c49bb7a5f02f6d3c13dc1"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/19-dashboard-controls-measurement.json",
+        "bytes": 206688,
+        "sha256": "20ce9102168c9be788d95eaea1eb85a504a48085ac2b91aff365c7e67252cf50"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:26.748Z"
+    },
+    {
+      "id": "20-dashboard-generating",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "20-dashboard-generating",
+        "screenshot": {
+          "path": "20-dashboard-generating.png",
+          "bytes": 134605,
+          "sha256": "eff1dc8def82bdf0321b3d8886e9fb41d74e7e971a93734cebbfab0a6db5b19c",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/20-dashboard-generating.json",
+          "bytes": 1605885,
+          "sha256": "bc63deb27ee5dc087e973a4c4f5e230a7fe033fdbcf417aa415713d44f899870"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:26.767Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/20-dashboard-generating-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/20-dashboard-generating.png",
+        "bytes": 134451,
+        "sha256": "eee9aa6ba93f8ccded04b88b7870b5ba92597c1492eb9eba49e4a6b2e0ef325c",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:31.131Z",
+        "capturedAt": "2026-09-21T18:51:31.406Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/20-dashboard-generating.json",
+        "bytes": 2363428,
+        "sha256": "42932c9f1efba0c388ea081263031048981c5e41c3ad258473de2ac2c5071216"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/20-dashboard-generating-measurement.json",
+        "bytes": 206634,
+        "sha256": "3c3dd84ab3bb3faa2e5eb72b6a95414f62eb54671cc13ab352982d32facbca1a"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:39.524Z"
+    },
+    {
+      "id": "21-dashboard-light",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "21-dashboard-light",
+        "screenshot": {
+          "path": "21-dashboard-light.png",
+          "bytes": 148135,
+          "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/21-dashboard-light.json",
+          "bytes": 1360988,
+          "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:39.540Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/21-dashboard-light-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/21-dashboard-light.png",
+        "bytes": 140528,
+        "sha256": "6452f7c223e529962a0ea8f652c2b674cb63ebadffd1f516a3a01ea0de02c005",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:44.830Z",
+        "capturedAt": "2026-09-21T18:51:45.272Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/21-dashboard-light.json",
+        "bytes": 1999336,
+        "sha256": "45a997af5ea4dc7aba2ab92b26f53aaccd09b9b12543ded0601ba2228bdac6b3"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/21-dashboard-light-measurement.json",
+        "bytes": 208542,
+        "sha256": "be39639f89f3f8808b80f8f4dcc045055ad3f7a5fb3c9709c28ec6590279363a"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:51:51.014Z"
+    },
+    {
+      "id": "22-dashboard-customize",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "22-dashboard-customize",
+        "screenshot": {
+          "path": "22-dashboard-customize.png",
+          "bytes": 188858,
+          "sha256": "10d6bbaab24c0b82f48631a2a85e075965b651f29c281cf4f4bf67bb174fac86",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/22-dashboard-customize.json",
+          "bytes": 1347144,
+          "sha256": "6e7298a9e41632d55c9da1d13731d1875ead4263aa4da680704edba7149ddea5"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:51:51.029Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/22-dashboard-customize-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/22-dashboard-customize.png",
+        "bytes": 179375,
+        "sha256": "49063e7902b21db6216803280437be1348d818146fd59be87651d0bfbf916791",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:51:57.321Z",
+        "capturedAt": "2026-09-21T18:51:57.913Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/22-dashboard-customize.json",
+        "bytes": 2124974,
+        "sha256": "baabf2afb87faa0367b34c230bfb1a8fd0e29837a7b6c3153c4463cd5628e65c"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/22-dashboard-customize-measurement.json",
+        "bytes": 208909,
+        "sha256": "4fdc6222b7c12aba98631e3d33b69907ed56bcd743fcc01558858dda10f713e6"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:52:03.288Z"
+    },
+    {
+      "id": "23-dashboard-dark",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "23-dashboard-dark",
+        "screenshot": {
+          "path": "23-dashboard-dark.png",
+          "bytes": 155331,
+          "sha256": "75a092c166532753e89139f209c263277217b55d87405fe0d8104b5f9973fcfb",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/23-dashboard-dark.json",
+          "bytes": 1362836,
+          "sha256": "ef78a3268ea9feb4c24cb6b165b2208e87485dcb8d830dbb081c98c5fa4b2e11"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:52:03.304Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/23-dashboard-dark-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/23-dashboard-dark.png",
+        "bytes": 149758,
+        "sha256": "33ece623c0e66aaa6a5c6dfaba50d75b58be764061d261c55d99fa9f584d47fc",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:52:13.073Z",
+        "capturedAt": "2026-09-21T18:52:13.344Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/23-dashboard-dark.json",
+        "bytes": 2001113,
+        "sha256": "97b48debea8d193962e28ebac4fa7fdafefb762502250d2a6911b2ccf32e3d76"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/23-dashboard-dark-measurement.json",
+        "bytes": 208516,
+        "sha256": "b479df34d7f6585f5a58134e53a19697c908c10578642db4ea917e176d42bac1"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:52:17.573Z"
+    },
+    {
+      "id": "24-dashboard-activity",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "24-dashboard-activity",
+        "screenshot": {
+          "path": "24-dashboard-activity.png",
+          "bytes": 153594,
+          "sha256": "ce2ed6f4a743eda17ccc2cfd5148b440ba76133a67764c4b9b96ed70f33cae95",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/24-dashboard-activity.json",
+          "bytes": 1436035,
+          "sha256": "638fbc5abf2af3ea6d82d4fde7968973fcac37004c14637df5adacdd3fb9343e"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:52:17.592Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/24-dashboard-activity-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/24-dashboard-activity.png",
+        "bytes": 153046,
+        "sha256": "ddbf69cd3d130a01adba160d95dd71e912a8d3ee699ca9989453545385e5ffcf",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:52:20.593Z",
+        "capturedAt": "2026-09-21T18:52:20.877Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/24-dashboard-activity.json",
+        "bytes": 2113119,
+        "sha256": "6a9e5a37fa511e9a6319062628c018c0ae0c554bf69ebd48fa2d44fbab01f9ba"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/24-dashboard-activity-measurement.json",
+        "bytes": 208806,
+        "sha256": "c0ebc2ef8ef985767dcb28e818822e450d08f16362fb1725a312cb7e40d08141"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:52:24.336Z"
+    },
+    {
+      "id": "25-dashboard-source",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "25-dashboard-source",
+        "screenshot": {
+          "path": "25-dashboard-source.png",
+          "bytes": 106106,
+          "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/25-dashboard-source.json",
+          "bytes": 1907545,
+          "sha256": "f1510ed6ae3dd8e8f3edb6d3d2cbb5c3b27f5ec702872a9c4d783dc0f2d43451"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:52:24.354Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/25-dashboard-source-font-readiness.json",
+        "bytes": 2301076,
+        "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/25-dashboard-source.png",
+        "bytes": 106246,
+        "sha256": "77c06fc3354e7ffb8687111463727631bc3f3d2c08101e4c53c091bd649c5ea2",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:52:29.259Z",
+        "capturedAt": "2026-09-21T18:52:29.488Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/25-dashboard-source.json",
+        "bytes": 2847490,
+        "sha256": "8a73d944853c1ea4fd9fefdbaf407e27dbc2c39432d5de29dbf20b78f9da8b75"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/25-dashboard-source-measurement.json",
+        "bytes": 245034,
+        "sha256": "cce5b61799808c291623e554c898e9389138cc66d3e408c0e4a986b15f084049"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:53:04.633Z"
+    },
+    {
+      "id": "26-ledger-empty",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "26-ledger-empty",
+        "screenshot": {
+          "path": "26-ledger-empty.png",
+          "bytes": 269941,
+          "sha256": "90507070de870a430d2b5b36095d130a061edb23fbbebf0b47abd0327ddbf576",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/26-ledger-empty.json",
+          "bytes": 954297,
+          "sha256": "b9885415d889df0717af1fb27e7a972874289c3e962ffefd54b365ef2718ddc7"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:53:04.652Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/26-ledger-empty-font-readiness.json",
+        "bytes": 2301064,
+        "sha256": "fbc0f54ec032c0bb55ce113864f4a0b4b3d3cc02221e03da6e64c91e4a29680c"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/26-ledger-empty.png",
+        "bytes": 263993,
+        "sha256": "4c658a3c3ede2dc87cb5769818050081745815e6072c18e00fe2a94e0277c905",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:53:10.236Z",
+        "capturedAt": "2026-09-21T18:53:10.705Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/26-ledger-empty.json",
+        "bytes": 1506166,
+        "sha256": "93e64905d20e0de6e4d3eb1f2eb4f8ac35adab20412fe9d6e5b4e1927cad7250"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/26-ledger-empty-measurement.json",
+        "bytes": 206963,
+        "sha256": "16ad16e97e0ae5f030747179217dbdb3f231994ee7c05c194f7bf826b1347f5c"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:53:13.673Z"
+    },
+    {
+      "id": "27-ledger-mapping",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "27-ledger-mapping",
+        "screenshot": {
+          "path": "27-ledger-mapping.png",
+          "bytes": 220911,
+          "sha256": "b275d25b2e328801c375226c240d2cb4c65e452937ee7fcbb5533c06ef01563b",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/27-ledger-mapping.json",
+          "bytes": 1107615,
+          "sha256": "87005825eeac30c4c72f4e3d65ed7e1bb91b0b5bd1c92f77f398d9176b07441c"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:53:13.748Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/27-ledger-mapping-font-readiness.json",
+        "bytes": 2301052,
+        "sha256": "a3059f61144320d657bee42b6b7636d5de858a3ab409383f103b8c4f4cd212c1"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/27-ledger-mapping.png",
+        "bytes": 217164,
+        "sha256": "51ef8549b396facc1b68ceeafc57b9be10f7daa0425b963e920d94e14b3658fe",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:53:17.540Z",
+        "capturedAt": "2026-09-21T18:53:17.905Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/27-ledger-mapping.json",
+        "bytes": 1584239,
+        "sha256": "951f981db0e290661b081295b7df24ba2d02a63a808d8c2952c18f3d11208d44"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/27-ledger-mapping-measurement.json",
+        "bytes": 207765,
+        "sha256": "68e1be2be294d6d62a168060d91d0ade340b0f0465142b265d173844d3e339f0"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:53:20.817Z"
+    },
+    {
+      "id": "28-results-mobile-motion-off",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "28-results-mobile-motion-off",
+        "screenshot": {
+          "path": "28-results-mobile-motion-off.png",
+          "bytes": 95954,
+          "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/28-results-mobile-motion-off.json",
+          "bytes": 709181,
+          "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "reduced",
+          "osReduce": true,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:53:20.837Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/28-results-mobile-motion-off-font-readiness.json",
+        "bytes": 2301220,
+        "sha256": "2d26d7aa9af4f37f4038f241ba1ef04f16fb2bb6b24d0e084685e6a0fe7949ea"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/28-results-mobile-motion-off.png",
+        "bytes": 94540,
+        "sha256": "1938236c261b72a21bc32ef1d93f21a15409dc90e5273fa48a0b0bf77e52ec6c",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:53:25.700Z",
+        "capturedAt": "2026-09-21T18:53:25.999Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/28-results-mobile-motion-off.json",
+        "bytes": 1103554,
+        "sha256": "0f524b8dd509640e60e5738d622f3606b8c8793c313cba1256cc508b8589f534"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/28-results-mobile-motion-off-measurement.json",
+        "bytes": 205775,
+        "sha256": "2ffbd88c51fc6b7342b8cedbd0796193b8f76f23c77cb5a00290a86ba7e968b3"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:53:28.093Z"
+    },
+    {
+      "id": "29-landing-1600",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "29-landing-1600",
+        "screenshot": {
+          "path": "29-landing-1600.png",
+          "bytes": 591657,
+          "sha256": "62079a27059cd17c79722842cd2110ea7db48793a1c1bd30633020d2f64dd9ee",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/29-landing-1600.json",
+          "bytes": 942017,
+          "sha256": "485148875a175394a2fcc20466e07ef0e78cb40eeefd63f5ccc98e3812c65a81"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:54:17.324Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/29-landing-1600-font-readiness.json",
+        "bytes": 2301315,
+        "sha256": "d56a4ec042c7f08e8aeabdcdaa523a275f105b9779d13c69b3f211b65ad72a8b"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/29-landing-1600.png",
+        "bytes": 576259,
+        "sha256": "8d11d3a67b2b4fb68d306704342685d2a289efe62515b7c5346d082780e7194f",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:54:26.922Z",
+        "capturedAt": "2026-09-21T18:54:28.231Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/29-landing-1600.json",
+        "bytes": 1469819,
+        "sha256": "ffcb33a03eb59d29a6a11df7f0c1bbf20c42343b71f032c5374a888e84f91b34"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/29-landing-1600-measurement.json",
+        "bytes": 189127,
+        "sha256": "b102b7384ad62d2d0b547f3a22719a966943495820be75c1ab1b8c58b015a933"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:54:34.819Z"
+    },
+    {
+      "id": "30-landing-1280",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "30-landing-1280",
+        "screenshot": {
+          "path": "30-landing-1280.png",
+          "bytes": 451355,
+          "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/30-landing-1280.json",
+          "bytes": 941856,
+          "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:54:35.486Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/30-landing-1280-font-readiness.json",
+        "bytes": 2301220,
+        "sha256": "218ae6ff284c8d46508b13debdfa4861b752d77d7b5dc4479c718bbd602fef23"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/30-landing-1280.png",
+        "bytes": 438787,
+        "sha256": "fc7576279443646e7ea81397f4674225f261057de6278991ec038f2020c6d00a",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:54:43.837Z",
+        "capturedAt": "2026-09-21T18:54:44.388Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/30-landing-1280.json",
+        "bytes": 1469858,
+        "sha256": "22f8e2abaf9e25e96325a4ff4bf4b8d8bddb91e3b31f97fd34dcb39f1b5b65be"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/30-landing-1280-measurement.json",
+        "bytes": 189133,
+        "sha256": "949f14cc37cbf92e1be468066d24a53006bafb28fa816a30e9d67bd4dc0a7815"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T18:54:53.113Z"
+    },
+    {
+      "id": "31-criteria-confirmation-1600",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "31-criteria-confirmation-1600",
+        "screenshot": {
+          "path": "31-criteria-confirmation-1600.png",
+          "bytes": 107579,
+          "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/31-criteria-confirmation-1600.json",
+          "bytes": 1022718,
+          "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:54:54.220Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/31-criteria-confirmation-1600-font-readiness.json",
+        "bytes": 2301352,
+        "sha256": "660f7af4c51467a2001d78a8dc620f61554cd0302ff9fcc2107963f5a100b144"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/31-criteria-confirmation-1600.png",
+        "bytes": 106263,
+        "sha256": "9db44a33acf92935dd34da6a227df964af4d40f2ada0fc6c572b517255fb9104",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:55:01.625Z",
+        "capturedAt": "2026-09-21T18:55:01.952Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/31-criteria-confirmation-1600.json",
+        "bytes": 1592441,
+        "sha256": "8aac40e7799f5d3054986a958d43a839c178d0e406458311060bd379d7617c02"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/31-criteria-confirmation-1600-measurement.json",
+        "bytes": 202954,
+        "sha256": "4eb15252d9f2fc980d37e6de6cf3ae0ad37e659d3479e3f15d4cc8fa1976bce5"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:55:04.120Z"
+    },
+    {
+      "id": "32-criteria-confirmation-1280",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "32-criteria-confirmation-1280",
+        "screenshot": {
+          "path": "32-criteria-confirmation-1280.png",
+          "bytes": 101873,
+          "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/32-criteria-confirmation-1280.json",
+          "bytes": 1022523,
+          "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:55:04.155Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/32-criteria-confirmation-1280-font-readiness.json",
+        "bytes": 2301352,
+        "sha256": "660f7af4c51467a2001d78a8dc620f61554cd0302ff9fcc2107963f5a100b144"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/32-criteria-confirmation-1280.png",
+        "bytes": 100372,
+        "sha256": "e797d19c5c9bc698c5b78197fc9964f20bcdc07b5b463feb1eb82b2c3ca39678",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:55:06.098Z",
+        "capturedAt": "2026-09-21T18:55:06.500Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/32-criteria-confirmation-1280.json",
+        "bytes": 1592226,
+        "sha256": "fcb14a0250fa13c9992197c8cd66351fb44f9c09a95f406947c08b0fae491d1a"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/32-criteria-confirmation-1280-measurement.json",
+        "bytes": 202939,
+        "sha256": "5f8d02a407a36b99da64fbd5cab66ee9d9870cca3177cbce3958e61361fd0ec6"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "confirmation",
+      "endedAt": "2026-09-21T18:55:09.195Z"
+    },
+    {
+      "id": "33-result-detail-fail-1600",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "33-result-detail-fail-1600",
+        "screenshot": {
+          "path": "33-result-detail-fail-1600.png",
+          "bytes": 185798,
+          "sha256": "c4828c2e481603ae60a4feb450a0d3debc07df6fc73d0be6e559c884f067659c",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/33-result-detail-fail-1600.json",
+          "bytes": 710713,
+          "sha256": "4d1ac909da477501857a331da5ac880a90b6896f1d07f025041e68784faa74ed"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:55:09.238Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/33-result-detail-fail-1600-font-readiness.json",
+        "bytes": 2301336,
+        "sha256": "c868ecf91813fb82ad952157d8fd4ce17677cfcadf94874f009925d6364ae5b1"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/33-result-detail-fail-1600.png",
+        "bytes": 181020,
+        "sha256": "fcb642f620a1b3c8432316feb86c18b6c711e62fcdba4af679d1ff2d19e1b227",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:55:14.079Z",
+        "capturedAt": "2026-09-21T18:55:14.324Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/33-result-detail-fail-1600.json",
+        "bytes": 1103447,
+        "sha256": "1ecf8b93e8f7088c543fdbf10a6191b0a4b543dc149dc448777b4343cd7ef15e"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/33-result-detail-fail-1600-measurement.json",
+        "bytes": 205804,
+        "sha256": "dc4bcfcd0e3f418db19b52ebf4a85582eb102b48d414eb2400feed0e47eae87d"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:55:15.776Z"
+    },
+    {
+      "id": "34-result-detail-fail-1280",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "34-result-detail-fail-1280",
+        "screenshot": {
+          "path": "34-result-detail-fail-1280.png",
+          "bytes": 157045,
+          "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/34-result-detail-fail-1280.json",
+          "bytes": 710554,
+          "sha256": "962b5996d271694f3a7c2d1c4ac9951a257b70c3f9c7f239453579694708b492"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T18:55:15.790Z",
+      "fontReadiness": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/34-result-detail-fail-1280-font-readiness.json",
+        "bytes": 2301336,
+        "sha256": "c868ecf91813fb82ad952157d8fd4ce17677cfcadf94874f009925d6364ae5b1"
+      },
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/34-result-detail-fail-1280.png",
+        "bytes": 151662,
+        "sha256": "6e5060f85dd4cb77ac6be97ff24b4db62220bd9f2da69958eef9f283b0ec89fa",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T18:55:17.964Z",
+        "capturedAt": "2026-09-21T18:55:18.276Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/34-result-detail-fail-1280.json",
+        "bytes": 1103213,
+        "sha256": "aa27281eab5e117be41908732394e0183a55198e6f1a60941026a19aaee76fcf"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/34-result-detail-fail-1280-measurement.json",
+        "bytes": 205787,
+        "sha256": "d4e72bd0410c097139654c328d5943c6ad5f663f5140184e42401c07d9e58333"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "fontConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "complete",
+      "endedAt": "2026-09-21T18:55:19.928Z"
+    }
+  ]
+}

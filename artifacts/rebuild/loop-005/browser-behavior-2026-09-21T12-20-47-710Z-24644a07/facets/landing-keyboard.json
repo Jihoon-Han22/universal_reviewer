@@ -1,0 +1,80 @@
+{
+  "id": "landing-keyboard",
+  "startedAt": "2026-09-21T12:31:19.587Z",
+  "state": "passed",
+  "expected": {
+    "tabReachable": true,
+    "shiftTabReverses": true,
+    "spaceToggles": true,
+    "enterStarts": true
+  },
+  "observations": {
+    "tabReachable": true,
+    "shiftTabReverses": true,
+    "spaceToggles": true,
+    "enterStarts": true,
+    "traversal": [
+      {
+        "name": "검토 기준부터 시작하기",
+        "motion": false
+      },
+      {
+        "name": "경비 예제로 체험",
+        "motion": false
+      },
+      {
+        "name": "",
+        "motion": false
+      },
+      {
+        "name": "GSPEC.기준부터, 근거까지.모션 ONLLM + 샌드박스DOCUMENT INTELLIGENCE어떤 문서든,당신의 기준으로.문서를 읽고, 기준에 맞는지 근거와 함께 검토합니다.검토 기준부터 시작하기경비 예제로 체험PDFWordXLSXCSV이미지자연어로 기준 입력문서 자동 검토EXAMPLE문서 → 근거 → 판정01문서 스캔02추출 · 대조03자동 분류점심 식비저녁 식비식비 영수증자연어출장 경비 규정판단 기준 · 예시식비 한도30,000원CSV출장_경비_검토.csv검토 대상 · 예시항목금액점심 식비18,000저녁 식비52,000식비 영수증금액 판독 불가경비 내역 + 판단 기준CSV · 자연어 기준GSPEC / REVIEW문서 자동 검토항목 추출 → 기준 대조식비 3만 원 이하적합VERIFIED01점심 식비식비 30,000원 이하18,000원예시부적합EXCEPTION01저녁 식비식비 30,000원 이하52,000원예시확인 필요HUMAN REVIEW01식비 영수증식비 30,000원 이하금액 판독 불가예시01문서02추출 · 대조03자동 분류식비 3건 미리보기",
+        "motion": false
+      },
+      {
+        "name": "GSPEC.",
+        "motion": false
+      },
+      {
+        "name": "모션 ON",
+        "motion": true
+      }
+    ]
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.dom.json",
+      "sha256": "52309aacfed6aa4c61b76f58241abe35c3c5c4475c45583a6aa7e3b6d7df56d6"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.png",
+      "sha256": "cc24af508139f6ef965f01590dd54c724fb6869c5b1a5e9f281a9a08480542cd"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "tabReachable",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "shiftTabReverses",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "spaceToggles",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "enterStarts",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:31:25.752Z"
+}

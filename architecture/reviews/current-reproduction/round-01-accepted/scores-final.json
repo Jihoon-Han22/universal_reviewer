@@ -1,0 +1,953 @@
+{
+  "schemaVersion": 1,
+  "scope": "declared design questions only; no implementation or universal coverage claim",
+  "completeProductAcceptance": false,
+  "total": {
+    "denominator": 240,
+    "clarity": {
+      "passed": 240,
+      "failed": 0,
+      "unverified": 0,
+      "score": 100,
+      "reviewCoverage": 100
+    },
+    "accuracy": {
+      "passed": 240,
+      "failed": 0,
+      "unverified": 0,
+      "score": 100,
+      "reviewCoverage": 100
+    },
+    "ambiguityScore": 0,
+    "unresolvedAmbiguityQuestions": 0
+  },
+  "modules": [
+    {
+      "moduleId": "CORE-01",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-02",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-03",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-04",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-05",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-06",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-07",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-08",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-09",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-10",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-11",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-12",
+      "denominator": 7,
+      "clarity": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-13",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-14",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-15",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-16",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-17",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-18",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-19",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-20",
+      "denominator": 4,
+      "clarity": {
+        "passed": 4,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 4,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-21",
+      "denominator": 14,
+      "clarity": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-01",
+      "denominator": 8,
+      "clarity": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-02",
+      "denominator": 9,
+      "clarity": {
+        "passed": 9,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 9,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-03",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-04",
+      "denominator": 8,
+      "clarity": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-05",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-06",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-07",
+      "denominator": 7,
+      "clarity": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-08",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-09",
+      "denominator": 8,
+      "clarity": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 8,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-10",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-11",
+      "denominator": 7,
+      "clarity": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 7,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-12",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-13",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-14",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-15",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-16",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-17",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-18",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    }
+  ],
+  "steps": [
+    {
+      "stepId": "STEP-00",
+      "denominator": 53,
+      "clarity": {
+        "passed": 53,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 53,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-01",
+      "denominator": 68,
+      "clarity": {
+        "passed": 68,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 68,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-02",
+      "denominator": 110,
+      "clarity": {
+        "passed": 110,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 110,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-03",
+      "denominator": 87,
+      "clarity": {
+        "passed": 87,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 87,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-04",
+      "denominator": 78,
+      "clarity": {
+        "passed": 78,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 78,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-05",
+      "denominator": 131,
+      "clarity": {
+        "passed": 131,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 131,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "stepId": "STEP-06",
+      "denominator": 171,
+      "clarity": {
+        "passed": 171,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 171,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    }
+  ],
+  "openIssues": [],
+  "openIssueCount": 0,
+  "accepted": true,
+  "scoredAt": "2026-09-21T06:31:11.049Z",
+  "evaluatedInputsSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178"
+}

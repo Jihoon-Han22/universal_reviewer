@@ -1,0 +1,62 @@
+# 현재 프로젝트 재현 감사
+
+2026-09-21 사용자의 “지금 이 프로젝트 그대로” 요청에 따라 진행하는 설계 감사다. 과거 `main-session`/`independent-audit` 평가를 이번 점수로 재사용하지 않는다. 이전 235질문은 삭제하지 않고, 변경된 재현 범위와 새 발견을 명시적으로 반영한다.
+
+현재 상태: **선언한 설계 평가 범위에서 완료**. 수정 후 고정본에 대해 독립 평가자 6명이 질문별 판정을 제출했고, 점수·입력·보고서·원본 해시를 재계산하여 통과했다. 실제 새 제품 재현은 NOT_RUN이다.
+
+| 결과 | 최종 값 |
+|---|---:|
+| 모듈 / 질문 | 39 / 240 |
+| 명확성 | 240/240 = 100 |
+| 모호성 (100−명확성) | 0 |
+| 원본 정확성 | 240/240 = 100 |
+| 미검토 / 열린 이슈 | 0 / 0 |
+
+[계산 결과](scores-final.json), [보고서 seal](evaluation-seal.json), [고정 입력](current-inputs.json), [평가 방법](PROTOCOL.md)을 함께 확인한다. 고정 입력 SHA-256은 `a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178`이며 규범 317파일·비밀 제외 원본 210파일·전체 질문이 포함된다. `pre-final-inputs.json`은 수정 중간의 역사이며 최종 기준이 아니다.
+
+작성/수정은 root(목표·평가·패키지), audit_core(API/파이프라인/알고리즘), audit_ui(UI/모션), audit_exports(대시보드/대장), audit_verification(검증 도구)이 맡았다. 최종 승인자는 별도의 6개 에이전트다. 이번 고유 에이전트는 조정자 포함 11개이며 과거 작업의 인원과 합산하지 않는다.
+
+| 독립 평가 | 범위 | 결과 보고서 |
+|---|---|---|
+| 문서만 읽는 명확성 | CORE-01..19, 103질문 | [clarity_core](final-clarity-core.json) |
+| 문서만 읽는 명확성 | UI-01..18, 119질문 | [clarity_ui](final-clarity-ui.json) |
+| 문서만 읽는 명확성 | CORE-20/21, 18질문 | [clarity_verification](final-clarity-verification.json) |
+| 원본 대조 정확성 | CORE-01..13/15/19, 81질문 | [accuracy_core](final-accuracy-core.json) |
+| 원본 대조 정확성 | UI 전체 + CORE-14/16/17/18, 141질문 | [accuracy_ui_exports](final-accuracy-ui-exports.json) |
+| 원본 대조 정확성 | CORE-20/21, 18질문 | [review_verification](final-accuracy-verification.json) |
+
+명확성 평가자는 제품 소스를 읽지 않았다. clarity_core가 최종 초안 작성 후 협업 목록에서 다른 작성자의 완료 요약을 우발적으로 본 사실과 그 요약을 판정 근거로 쓰지 않았다는 설명은 해당 보고서에 공개했다. 최종 6개 보고서의 reviewer ID는 작성자와 다르며 채점기가 역할별 배정을 검사한다.
+
+## 변경과 반복 검토
+
+기존 235질문은 삭제 0개다. 현재 프로젝트 재현이라는 사용자 목표에 맞춰 17개 질문의 표현을 정렬했고, 탭/미리보기 수명·삭제 경쟁·재현 profile·허용 차이·평가 증거에 관한 5개 질문을 추가했다. [변경 전후 원장](population-changes.json)에 원문·수정문·이유를 남겼다. 기능을 삭제하거나 미검토를 통과로 바꾸어 점수를 올리지 않았다.
+
+- 현재 없는 전수 reader/scan geometry, dashboard judge, 전역 OS 모션·새 ARIA·강화 source 검사 요구를 OPTIONAL_FUTURE로 분리했다. 기본 목표는 [CURRENT_REPRODUCTION](../../REPRODUCTION.md)이다.
+- 재조회 fallback·24셀 샘플 선택·판정 정규화·run/target 완료 집계의 순서와 상한, 실제로 검사하지 않는 필드를 명시했다.
+- 탭 unmount·삭제/저장 경쟁·파일 출처 fallback·token과 자연어 정규식·공백 처리까지 입력/결과를 보완했다.
+- 대시보드 schema 요청과 permissive host parser, 정규식 선호 후처리, projection 손실 및 대장 처리 순서를 원본과 맞췄다.
+- 검증기의 profile 누락/혼합·상속키·현재 근거 해시·미해결 이슈 처리와 질문/보고서 seal을 엄격히 검사했다.
+
+각 수정 근거는 [core 감사](core-audit.md), [UI 감사](ui-audit.md), [exports 감사](exports-audit.md), [검증 감사](verification-audit.md)에 있다. 사전 검토에서 발견한 공백을 수정하고, 후속 source-blind/원본 평가자가 실제 수정문을 다시 읽어 해결 여부를 판단했다. 평가 질문 자체에 남은 과거 개선 목표도 정렬 후 재평가했다.
+
+## 실제 확인 범위
+
+- `audit.mjs score`와 `audit.mjs check --source`: 최종 240질문 두 역할의 전수 의견, 6개 보고서 해시, 규범 317파일과 원본 210파일 일치, 열린 이슈0으로 exit 0.
+- 독립 오프라인 검증기 묶음 48/48 PASS(채점6/인수15/패키지15/harness12), 새 audit CLI 정상·음성 사례 10/10, 상속 profile 4종 거부를 확인했다. 변경 중 실행된 묶음이므로 이후 추가한 조건까지 한 번의 실행으로 검사했다고 주장하지 않는다.
+- 검증 작성자의 최초 full run은 13/14였다. 정상 adapter의 3초 테스트 예산을 30초로 정정한 뒤 해당 성공/변경 감지 사례를 재실행해 통과했다. profile echo 음성 테스트도 정확한 오류 사유를 검사하도록 바꾸어 재통과했다. G14와 상속 profile을 포함한 최종 targeted 4개는 각각 PASS. [실패와 재검증 이력](verification-audit.md)을 보존한다.
+- 현재 필수 재현 계약/감사 진입점 4개를 합성 패키지에서 각각 제거하면 manifest refresh로 통과시킬 수 없음을 확인했다. 복원 후 정상 패키지 검사도 PASS였다.
+- 원본과 계약의 bounded probe, 모델 prompt/schema/함수·CSS·lock 해시 대조는 각 감사 보고서의 실제 범위에 한정한다. 여러 실행 수를 더해 제품 테스트 포괄률로 표시하지 않는다.
+- 최초 및 최종 source snapshot 210파일 해시는 일치한다. 제품 코드·비공개 환경·데이터셋은 수정하지 않았다.
+
+제품 재구현, 실제 Gemini/E2B 전수, 새 앱 build·브라우저·모션·접근성·holdout는 **NOT_RUN**이다. 100/0은 이 240질문의 독립 설계 판정이며 임의 입력의 완전성이나 동일한 LLM 결과를 보장하지 않는다.
+
+## 사용할 진입점
+
+[GOAL.md](../../GOAL.md)의 현재 `/goal` 문구를 사용한다. 재현자는 [README](../../README.md) → [DECISIONS](../../DECISIONS.md) → [REPRODUCTION](../../REPRODUCTION.md)부터 읽고 현재 동작만 구현한다. 새 제품의 완료는 [06 실제 실행 gate](../../specs/06-verification.md)에서 별도로 증명한다.
+
+검토 결과를 다시 확인하는 저자 측 명령은 다음과 같다. 원본이 없는 배포 환경에서는 `--source`를 생략하며 원본 freshness는 NOT_RUN으로 표시된다.
+
+```powershell
+node architecture/reviews/current-reproduction/audit.mjs check --source
+node architecture/tools/verify-package.mjs
+```

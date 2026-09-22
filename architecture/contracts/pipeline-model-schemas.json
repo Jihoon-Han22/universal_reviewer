@@ -1,0 +1,1123 @@
+{
+  "formatVersion": 1,
+  "description": "Model response JSON schemas. These are transport schemas, not sufficient validation: enforce the size, provenance, geometry, coverage and semantic rules in specs/02-backend-pipeline.md and specs/03-algorithms.md.",
+  "documentContextSchema": {
+    "type": "object",
+    "required": [
+      "summary",
+      "documentType",
+      "structure",
+      "warnings",
+      "questions"
+    ],
+    "properties": {
+      "summary": {
+        "type": "string"
+      },
+      "documentType": {
+        "type": "string"
+      },
+      "structure": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name",
+            "kind",
+            "description",
+            "headers",
+            "orientation",
+            "uncertain"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "table",
+                "text",
+                "metadata",
+                "image",
+                "list",
+                "other"
+              ]
+            },
+            "sheet": {
+              "type": "string"
+            },
+            "page": {
+              "type": "integer"
+            },
+            "range": {
+              "type": "string"
+            },
+            "headers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "orientation": {
+              "type": "string",
+              "enum": [
+                "horizontal",
+                "vertical",
+                "mixed",
+                "unknown"
+              ]
+            },
+            "uncertain": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "warnings": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "questions": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "documentFieldsSchema": {
+    "type": "object",
+    "required": [
+      "referenceNumber",
+      "documentType",
+      "fields",
+      "warnings"
+    ],
+    "properties": {
+      "referenceNumber": {
+        "type": "string"
+      },
+      "documentType": {
+        "type": "string"
+      },
+      "warnings": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "fields": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "label",
+            "value",
+            "unit",
+            "uncertain",
+            "evidence"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "uncertain": {
+              "type": "boolean"
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "visualTranscriptionSchema": {
+    "type": "object",
+    "required": [
+      "pages",
+      "warnings"
+    ],
+    "properties": {
+      "warnings": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "pages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "page",
+            "rotation",
+            "complete",
+            "blocks",
+            "tables",
+            "warnings"
+          ],
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "rotation": {
+              "type": "integer",
+              "enum": [
+                0,
+                90,
+                180,
+                270
+              ]
+            },
+            "complete": {
+              "type": "boolean"
+            },
+            "warnings": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "blocks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "kind",
+                  "text",
+                  "uncertain"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "table",
+                      "note"
+                    ]
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "uncertain": {
+                    "type": "boolean"
+                  },
+                  "tableId": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "tables": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "cells"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "parentTableId": {
+                    "type": "string"
+                  },
+                  "parentCell": {
+                    "type": "string"
+                  },
+                  "headers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "cells": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "row",
+                        "column",
+                        "rowSpan",
+                        "colSpan",
+                        "text",
+                        "uncertain"
+                      ],
+                      "properties": {
+                        "row": {
+                          "type": "integer"
+                        },
+                        "column": {
+                          "type": "integer"
+                        },
+                        "rowSpan": {
+                          "type": "integer"
+                        },
+                        "colSpan": {
+                          "type": "integer"
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "uncertain": {
+                          "type": "boolean"
+                        },
+                        "childTableIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "visualQualityJudgeSchema": {
+    "type": "object",
+    "required": [
+      "acceptable",
+      "issues",
+      "rereadPages"
+    ],
+    "properties": {
+      "acceptable": {
+        "type": "boolean"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "page",
+            "detail"
+          ],
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "detail": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "rereadPages": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "verificationLimits": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "blankPages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "page",
+            "reason"
+          ],
+          "properties": {
+            "page": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "documentContextReviewSchema": {
+    "type": "object",
+    "required": [
+      "checked",
+      "issues"
+    ],
+    "properties": {
+      "checked": {
+        "type": "boolean"
+      },
+      "issues": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "enum": [
+                "missing_region",
+                "wrong_header",
+                "contradiction",
+                "ambiguity",
+                "missing_unit",
+                "source_limit",
+                "other"
+              ]
+            },
+            "message": {
+              "type": "string"
+            },
+            "request": {
+              "type": "object",
+              "required": [
+                "kind"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "sheet",
+                    "blocks",
+                    "text"
+                  ]
+                },
+                "sheet": {
+                  "type": "string"
+                },
+                "range": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "integer"
+                },
+                "end": {
+                  "type": "integer"
+                }
+              }
+            },
+            "unitEvidence": {
+              "type": "object",
+              "required": [
+                "sheet",
+                "criterionCell",
+                "unitCell",
+                "unitHeaderCell",
+                "quote"
+              ],
+              "properties": {
+                "sheet": {
+                  "type": "string"
+                },
+                "criterionCell": {
+                  "type": "string"
+                },
+                "unitCell": {
+                  "type": "string"
+                },
+                "unitHeaderCell": {
+                  "type": "string"
+                },
+                "quote": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "criteriaSchema": {
+    "type": "object",
+    "required": [
+      "criteria"
+    ],
+    "properties": {
+      "criteria": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "label",
+            "rule",
+            "needsConfirmation"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "needsConfirmation": {
+              "type": "boolean"
+            },
+            "required": {
+              "type": "boolean",
+              "description": "False only when the approved source explicitly makes this field optional; otherwise true."
+            },
+            "sourceDocumentId": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "categoryPath": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sampleName": {
+              "type": "string"
+            },
+            "classificationNeedsConfirmation": {
+              "type": "boolean"
+            },
+            "classificationStatus": {
+              "type": "string",
+              "enum": [
+                "not_applicable",
+                "resolved",
+                "ambiguous"
+              ]
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "comparison": {
+              "type": "object",
+              "required": [
+                "operator",
+                "value",
+                "unit"
+              ],
+              "properties": {
+                "operator": {
+                  "type": "string",
+                  "enum": [
+                    "lt",
+                    "lte",
+                    "gt",
+                    "gte",
+                    "eq",
+                    "range"
+                  ]
+                },
+                "value": {
+                  "type": "number"
+                },
+                "upper": {
+                  "type": "number"
+                },
+                "unit": {
+                  "type": "string"
+                }
+              }
+            },
+            "sourceEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "hierarchyEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "itemSchema": {
+    "type": "object",
+    "required": [
+      "items"
+    ],
+    "properties": {
+      "excludedRows": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "row",
+            "reason"
+          ],
+          "properties": {
+            "row": {
+              "type": "integer"
+            },
+            "sheet": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "label",
+            "value",
+            "unit",
+            "criterionId",
+            "status",
+            "explanation",
+            "uncertain",
+            "evidence"
+          ],
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "criterionId": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "pass",
+                "fail",
+                "review"
+              ]
+            },
+            "explanation": {
+              "type": "string"
+            },
+            "uncertain": {
+              "type": "boolean"
+            },
+            "presence": {
+              "type": "string",
+              "enum": [
+                "present",
+                "missing",
+                "unreadable",
+                "unknown"
+              ]
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "applicability": {
+              "type": "object",
+              "required": [
+                "categoryPath",
+                "matched",
+                "uncertain",
+                "evidence"
+              ],
+              "properties": {
+                "categoryPath": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sampleName": {
+                  "type": "string"
+                },
+                "matched": {
+                  "type": "boolean"
+                },
+                "uncertain": {
+                  "type": "boolean"
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "documentId",
+                      "quote"
+                    ],
+                    "properties": {
+                      "documentId": {
+                        "type": "string"
+                      },
+                      "page": {
+                        "type": "integer"
+                      },
+                      "sheet": {
+                        "type": "string"
+                      },
+                      "cell": {
+                        "type": "string"
+                      },
+                      "quote": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "reviewCoverage": {
+        "type": "object",
+        "required": [
+          "complete",
+          "remainingWork"
+        ],
+        "properties": {
+          "complete": {
+            "type": "boolean"
+          },
+          "remainingWork": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "overlaySchema": {
+    "type": "object",
+    "required": [
+      "changes",
+      "additions"
+    ],
+    "properties": {
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "label",
+            "rule",
+            "needsConfirmation"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "needsConfirmation": {
+              "type": "boolean"
+            },
+            "required": {
+              "type": "boolean",
+              "description": "False only when the approved source explicitly makes this field optional; otherwise true."
+            },
+            "sourceDocumentId": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "categoryPath": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sampleName": {
+              "type": "string"
+            },
+            "classificationNeedsConfirmation": {
+              "type": "boolean"
+            },
+            "classificationStatus": {
+              "type": "string",
+              "enum": [
+                "not_applicable",
+                "resolved",
+                "ambiguous"
+              ]
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "comparison": {
+              "type": "object",
+              "required": [
+                "operator",
+                "value",
+                "unit"
+              ],
+              "properties": {
+                "operator": {
+                  "type": "string",
+                  "enum": [
+                    "lt",
+                    "lte",
+                    "gt",
+                    "gte",
+                    "eq",
+                    "range"
+                  ]
+                },
+                "value": {
+                  "type": "number"
+                },
+                "upper": {
+                  "type": "number"
+                },
+                "unit": {
+                  "type": "string"
+                }
+              }
+            },
+            "sourceEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "hierarchyEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "additions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "label",
+            "rule",
+            "needsConfirmation"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "rule": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "needsConfirmation": {
+              "type": "boolean"
+            },
+            "required": {
+              "type": "boolean",
+              "description": "False only when the approved source explicitly makes this field optional; otherwise true."
+            },
+            "sourceDocumentId": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "categoryPath": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sampleName": {
+              "type": "string"
+            },
+            "classificationNeedsConfirmation": {
+              "type": "boolean"
+            },
+            "classificationStatus": {
+              "type": "string",
+              "enum": [
+                "not_applicable",
+                "resolved",
+                "ambiguous"
+              ]
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "comparison": {
+              "type": "object",
+              "required": [
+                "operator",
+                "value",
+                "unit"
+              ],
+              "properties": {
+                "operator": {
+                  "type": "string",
+                  "enum": [
+                    "lt",
+                    "lte",
+                    "gt",
+                    "gte",
+                    "eq",
+                    "range"
+                  ]
+                },
+                "value": {
+                  "type": "number"
+                },
+                "upper": {
+                  "type": "number"
+                },
+                "unit": {
+                  "type": "string"
+                }
+              }
+            },
+            "sourceEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "hierarchyEvidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "documentId",
+                  "quote"
+                ],
+                "properties": {
+                  "documentId": {
+                    "type": "string"
+                  },
+                  "page": {
+                    "type": "integer"
+                  },
+                  "sheet": {
+                    "type": "string"
+                  },
+                  "cell": {
+                    "type": "string"
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

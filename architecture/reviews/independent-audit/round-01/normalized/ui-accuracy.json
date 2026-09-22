@@ -1,0 +1,2189 @@
+{
+  "schemaVersion": 1,
+  "role": "accuracy",
+  "reviewerId": "/root/ui_accuracy",
+  "evaluatedInputsSha256": "f24266b222b6a58926eba96f14b07a89680492066ea462125ac1066cbd9c1b6d",
+  "questionResults": [
+    {
+      "id": "UI-01-C01",
+      "moduleId": "UI-01",
+      "question": "설계가 7개 page와 4개 표시 단계의 매핑, awaiting_confirmation→확정 화면, awaiting_documents→대상 입력, completed/partial→결과의 전이를 모두 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "7 page와 pageStep 4단계, awaiting_confirmation/awaiting_documents/completed·partial 목적지가 App과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-01-C02",
+      "moduleId": "UI-01",
+      "question": "run ID·요청 epoch·SSE sequence·expectedCriterionVersion을 사용하여 오래된 응답이 현재 화면을 덮어쓰지 못하는 계약이 명시되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "run ID/epoch/sequence/expectedCriterionVersion과 useReview stale gate를 구분하고 sample-load 등 보호되지 않는 현재 경로를 I1에 따로 기록했다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-01-C03",
+      "moduleId": "UI-01",
+      "question": "pending·uploading·sampleLoading 중 입력/삭제/새 검토 잠금, 작업 중지와 reset의 차이, 취소 뒤 자동 재개가 없다는 현재 동작이 구분되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "pending/locked 식, 중지와 reset의 다른 소유 상태, 취소 뒤 resume 부재를 명시한다. reset이 모든 App state를 비운다는 잘못된 주장이 없다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-01-C04",
+      "moduleId": "UI-01",
+      "question": "최종 상태를 실제 완료로 유지하면서 마지막 패킷 1800ms/핸드오프 1600ms/일반120ms만 보여주는 화면 전이 조건을 수치로 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "live page·ON·목적지 조건과 1800/1600/120ms 분기, 의존성 변화 시 타이머가 다시 시작한다는 실제 한계를 일치시켰다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-01-C05",
+      "moduleId": "UI-01",
+      "question": "SSE 연결 오류 시 snapshot 회복, terminal에서 종료, 회복 실패 안내와 시작 실패 시 원래 입력 페이지로 복귀가 각각 정의되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "stream recovery snapshot/terminal close/실패 안내와 start 실패 원래 page 복귀를 명령 결과와 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-01-C06",
+      "moduleId": "UI-01",
+      "question": "전체 7개 page와 새 검토/취소/부분 완료를 빠짐없이 방문하는 검증 시나리오와 관측 가능한 DOM/상태 기대값이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx App/pageStep/reset/navigation effect",
+        "src/useReview.ts request gate/sequence/recovery",
+        "src/review-state.ts",
+        "architecture/specs/04-ui-motion.md §3/5.4/9",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/specs/01-state-api.md"
+      ],
+      "rationale": "§9의 page·취소·partial·stale 응답 시나리오와 DOM/상태 oracle이 있다. 이는 설계 검사 PASS이며 새 브라우저 실행 PASS가 아니다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C01",
+      "moduleId": "UI-02",
+      "question": "설계가 현재 기본 배경 #111318, 카드 #1b2029, 코발트 #3d6dff, 민트 #70f3c4와 실제 상태별 색상 차이를 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "최종 charcoal cascade와 theater/summary의 서로 다른 fail/review 색을 보존한다. 독립 CSS 재추출 결과 semantic JSON이 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C02",
+      "moduleId": "UI-02",
+      "question": "main의 CSS 10개 import 순서와 동적 컴포넌트 CSS, DM Sans/Noto Sans KR 및 고정 라이브러리 버전이 재현 가능한가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "main 10 import와 eager/dynamic graph, 로컬 font 자산/원본 원격 font 차이, React/Motion/Recharts/react-chartjs-2/Chart.js lock 버전이 명시된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C03",
+      "moduleId": "UI-02",
+      "question": "localStorage trace-demo-motion의 on/off, 기본 ON, 저장 실패 fallback, html data-motion과 MotionConfig 설정이 정의되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "off만 OFF, storage 실패 기본ON, html data-motion full/reduced, MotionConfig never/always 및 저장값 on/off가 소스와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C04",
+      "moduleId": "UI-02",
+      "question": "전역 tween 280ms 및 [.22,1,.36,1], 개별 override, hover/focus/disabled와 앱/OS reduced-motion 차이가 명시되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "기본 tween .28/[.22,1,.36,1]과 개별 Motion override, CSS pseudo/focus/disabled, app와 OS reduced 범위 차이를 보존한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C05",
+      "moduleId": "UI-02",
+      "question": "짧은 화면·모바일에서 내부 스크롤/세로 스택과 주요 조작 접근이 정의되고, 미사용 sky CSS를 로드해 테마를 되돌리지 않도록 되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "media/container query·짧은 화면·내부 scroll과 제외된7 CSS를 활성 cascade와 구분한다. JSX/CSS 재추출에 차이가 없다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C06",
+      "moduleId": "UI-02",
+      "question": "라이트인 원문과 다크 셸의 대비, 키보드 focus, 모션 OFF, 현재 OS 모션 제한 범위를 검증할 화면/기준이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/main.tsx CSS imports",
+        "src/motion-preference.tsx MotionPreferenceProvider",
+        "package-lock.json",
+        "src/styles.css",
+        "src/workspace-colors.css",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/specs/04-ui-motion.md §1/2/8/10",
+        "architecture/environment/versions.json",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "§8/9/10에 contrast/focus/OFF/OS gap·viewport·zoom 검증 oracle이 있다. 현재 전체 OS OFF 보장을 허위로 부여하지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C01",
+      "moduleId": "UI-03",
+      "question": "소개 페이지의 제목·설명·검토 기준부터 시작하기·경비 예제로 체험과 두 CTA의 서로 다른 목적지가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "start와 sample CTA의 목적지 및 소개 copy가 LandingIntro/App과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C02",
+      "moduleId": "UI-03",
+      "question": "소개 애니메이션은 EXAMPLE이고 실제 검토 run/document/item에 섞이지 않는다는 데이터 경계가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "EXAMPLE 문서/경비3개를 live documents/items와 분리하며 example packet 반복을 실제 run으로 세지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C03",
+      "moduleId": "UI-03",
+      "question": "체험 준비 중 CTA 잠금·스피너·오류 banner와 성공 시 예제 대상 파일을 아직 검토하지 않고 임시 보관하는 상태가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "sampleLoading 잠금·spinner·실패 banner·sampleTargets 임시 보관 후 확인 단계에서만 target 반영이 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C04",
+      "moduleId": "UI-03",
+      "question": "hero 700ms, CTA120ms 지연, 형식 badge 220ms+45ms stagger, theater200ms 지연 및 모션 OFF 동작이 수치로 적혀 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "hero700ms/CTA120ms/badge220ms+45ms/theater200ms와 reduced 분기를 inline Motion map과 문서 양쪽에서 확인했다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C05",
+      "moduleId": "UI-03",
+      "question": "소개 페이지에는 파일 입력/확정 화면이 동시에 뜨지 않고, 샘플 로드 실패 시 다시 진입 가능한 현재 동작이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "intro 조건부 mount·샘플 실패 후 기존 입력 상태 보존·재시도 가능을 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-03-C06",
+      "moduleId": "UI-03",
+      "question": "소개 화면의 GSPEC 표기, PDF/Word/XLSX/CSV/이미지와 자연어 기준 안내, 예시 일관성을 확인하는 체크가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LandingIntro.tsx",
+        "src/App.tsx loadSample",
+        "src/components/ReviewTheater.tsx exampleDocuments/exampleItems",
+        "architecture/specs/04-ui-motion.md §2.3/3/5.3",
+        "architecture/ui/interaction-contract.md I1"
+      ],
+      "rationale": "GSPEC/지원 형식/자연어/동일 경비 예시를 §9 intro fixture와 catalogue text에서 검사할 수 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C01",
+      "moduleId": "UI-04",
+      "question": "기준 입력은 file/text 두 방식이며 target 업로드는 awaiting_documents 이후만 허용되고, 승인된 기준 요약이 오른쪽에 보이도록 설계되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "file/text와 target awaiting_documents gate, approvedGroups 오른쪽 요약이 App 조건과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C02",
+      "moduleId": "UI-04",
+      "question": "accept 확장자(pdf,docx,xlsx,csv,txt,md,json,png,jpg,jpeg,webp), 파일당20MB 안내, 자연어12000자, role별 POST/DELETE와 filename/size preview가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "accept 확장자,20MB 안내,12000자,role별 POST/DELETE,목록 preview가 명시된다. 별도 추가 질문은 sizeLabel 경계 세부값 누락만 다룬다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C03",
+      "moduleId": "UI-04",
+      "question": "빈 입력·drag-over·uploading·여러 파일·삭제·원문 열기/닫기·모드 전환·예제 파일 불러오기 상태를 모두 정의하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "drag/drop·업로드잠금·파일삭제·viewer·모드변경·sampleTargets 상태를 I1에서 분리하며 늦은 delete/sample 한계를 적었다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C04",
+      "moduleId": "UI-04",
+      "question": "UploadVisual의 파일/스캔 아이콘, 업로드 file-row 진입 opacity/y6, input-stage 진입 opacity/y12와 좁은 화면의 세로 스택이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "UploadVisual SVG 및 row y6/stage y12, 반응형 cascade가 CSS/component 재추출과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C05",
+      "moduleId": "UI-04",
+      "question": "golden catalog 실패/선택 로드 실패/로딩 중 닫기 금지, P10 PNG 첫 페이지만 있다는 notice 및 target 0개 선택 금지가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "GoldenPicker load/catalog 오류, loading close 금지,P10 notice,target0 disable가 D5와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-04-C06",
+      "moduleId": "UI-04",
+      "question": "criteria와 target golden dialog를 별도로 검증하고 파일/자연어가 혼합 전송되지 않음을 확인하는 시나리오가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/App.tsx upload/removeDocument/loadGolden/input branch",
+        "src/components/GoldenPicker.tsx",
+        "src/components/UploadVisual.tsx",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D5",
+        "architecture/specs/04-ui-motion.md §3/9"
+      ],
+      "rationale": "criteria/target dialog 및 file/text 전송 배타성 입력/기대값이 D5/D6/§9에 있다. 실행 여부는 NOT_RUN이다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C01",
+      "moduleId": "UI-05",
+      "question": "문서 탭→실제 categoryPath(최대8단계)→sampleName→기준 행 구조와 유형이 없을 때 일반 기준으로 두는 규칙이 명시되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "문서 provenance→명시 categoryPath→sampleName 계층과 일반 기준 fallback,unknown/중복 filename 처리가 source helper와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C02",
+      "moduleId": "UI-05",
+      "question": "수치/정성/유형 선택, lt/lte/gt/gte/eq/range, 단위·범위·조건·source ID·revision 직렬화 규칙이 모두 문서화되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "편집 모드/operator/range/unit/condition 및 final/revision 직렬화의 comparator 제거/보존 규칙이 명시된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C03",
+      "moduleId": "UI-05",
+      "question": "원문/기준 선택, 전체 파일 제외, 일부 제외, uncertain assessment, 수정 재분석, hidden confirmation 보존, feedback 이력이 상태별로 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "문서·항목 선택/제외/assessment/feedback/hidden confirmation 수명과 서버 revision 기반 draft 초기화를 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C04",
+      "moduleId": "UI-05",
+      "question": "처음에는 조밀한 표 행이며 편집 내용은 펼치고, 오른쪽 원문은 모든 연결 항목을 동시에 표시하며 한 항목 선택과 동기화되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "조밀한 행·펼침 editor·오른쪽 전체 sourceHighlights 및 선택동기화가 컴포넌트/CSS와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C05",
+      "moduleId": "UI-05",
+      "question": "불완전 수치·상하한 역전·조건 초과·빈 항목 등은 확정 전에 해당 행을 드러내고, revision 실패가 사용자 입력을 성공으로 오인하지 않도록 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "불완전 수치/역전/빈문자/조건초과를 행 표시하고 revision 실패를 로컬 success로 바꾸지 않는 제약 및 알려진 cap bypass를 기록한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-05-C06",
+      "moduleId": "UI-05",
+      "question": "다중 sheet·동명 출처·유형 없음·제외 파일·재피드백 사례의 기준 개수/계층/원문 위치를 문서만으로 판정할 수 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/CriteriaConfirmation.tsx",
+        "src/components/criteria-draft.mjs",
+        "src/components/criteria-groups.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D2/D6",
+        "architecture/ui/interaction-contract.md I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "동명 출처/다중sheet/유형없음/제외/revision fixture와 계층·개수·위치 판정 근거가 D2/D6 및 helpers tests에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C01",
+      "moduleId": "UI-06",
+      "question": "파일 리스트·구조 지도·맥락/구조·확인 사항·전사 상세·원문 링크·접힌 작업 기록의 표시 계층이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "파일탭/region map/구조·맥락/quality/전사·원문/접힌 기록을 서로 독립적인 표시 상태로 정의한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C02",
+      "moduleId": "UI-06",
+      "question": "readerComplete/contextComplete/coverage.complete를 구별하고, preview 잘림과 전체 읽기 coverage를 혼동하지 않는 데이터 매핑이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "readerComplete/contextComplete/coverage.complete,preview.truncated와 실제 coverage를 분리한다. arc의 두 번째 complete가 contextComplete라는 원본 특이점도 기록한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C03",
+      "moduleId": "UI-06",
+      "question": "running/ready/partial/failed/limited/needs_review, 실제 quality rounds/maxAttempts와 no-data 상태를 별도로 정의하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "running/ready/partial/failed와 limited/needs_review/attempt/maxAttempts/no-data를 D3와 I7에서 재현할 수 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C04",
+      "moduleId": "UI-06",
+      "question": "phase rail550ms, region 진입520ms+최대5개75ms 지연, drawer400ms 및 실제 active일 때만 map 모션이라는 조건이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "phase550ms/region520ms+최대5×75ms/drawer400ms 및 실제 active 조건이 Motion catalogue와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C05",
+      "moduleId": "UI-06",
+      "question": "사용자 스크롤이 로그 하단에서28px 이상 벗어나면 자동 따라가기 중단, 완료 시 로그 접기, 잘린 전사/원문 부분 미확인 안내가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "strict <28px follow·수동 scroll 보존·완료 로그접기·전사/미확인 안내를 I7에서 정확히 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-06-C06",
+      "moduleId": "UI-06",
+      "question": "단일표뿐 아니라 숨김 sheet·회전 PDF·다중 header/region·일부 coverage에 대한 구조 지도와 원문 이동 사례가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentAnalysis.tsx",
+        "src/components/document-analysis.css",
+        "architecture/ui/detail-controls.md D3/D6",
+        "architecture/ui/interaction-contract.md I7"
+      ],
+      "rationale": "hidden sheets/회전PDF/header·region/coverage의 관측 데이터와 이동 기대값이 D3/D6/§9에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C01",
+      "moduleId": "UI-07",
+      "question": "문서 읽기→항목 추출→기준 대조·분류 milestone과 theater/옆 작업실/현재 파일 context의 배치가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "3 milestone count와 theater/context/workroom 계층 및 실제 documents/items 데이터 경계가 LiveReviewFlow와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C02",
+      "moduleId": "UI-07",
+      "question": "활성 파일은 관측 operation→최신 처리 이벤트→처리 파일→최신 analysis→첫 파일 순서로 고르고, criteria는 승인본 우선이라는 규칙이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "operation→최근 processing event→처리중 file→analysisActivity→첫target 우선순위와 approvedCriteria 우선이 I2와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C03",
+      "moduleId": "UI-07",
+      "question": "긴 LLM 대기 중 실제 operation과 마지막 수신 fields/structure를 보여주고, 완료 뒤 context가 접히며 수동 두 항목씩 탐색하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "실제 fields 또는 analysis structure, busy 강제펼침/idle 자동접힘과 두 개씩 modulo 탐색·파일변경 미초기화를 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C04",
+      "moduleId": "UI-07",
+      "question": "context 전개240ms/페이지 전환160ms, busy&&observing일 때만 bridge2.2s/status2.6s 모션을 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "240/160ms, busy&&observing bridge/status 2.2/2.6s를 컴포넌트와 CSS에서 확인했다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C05",
+      "moduleId": "UI-07",
+      "question": "작업실 연결 끊김 때 마지막 수신 데이터임을 표시하고 theater가 연결 상태 prop을 받지 않는 현재 한계를 구분하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "끊김 context의 마지막 수신 안내와 theater에 connection prop이 없어 배경모션이 남는 한계를 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-07-C06",
+      "moduleId": "UI-07",
+      "question": "추출 먼저/판정 나중, 여러 파일 interleave, 판정 burst, 긴 무출력 대기를 재현하는 검증 시나리오가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx",
+        "src/components/LiveReviewContext.tsx",
+        "src/components/live-review-flow.css",
+        "architecture/ui/interaction-contract.md I2",
+        "architecture/specs/04-ui-motion.md §4.1/9"
+      ],
+      "rationale": "extract-before-verdict/interleave/burst/quiet 시나리오를 실제 이벤트 기반 fixture로 검증하도록 하며 임의 per-item 진행률을 만들지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C01",
+      "moduleId": "UI-08",
+      "question": "문서 스택·가운데 문서 자동 검토 엔진·적합/부적합/확인 필요 세 레인과 모든 연결선(가운데 fail 포함)이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "1120×300 경로·세 레인·수평 fail line과 gradient userSpaceOnUse 좌표가 component catalogue에 동일하게 보존된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C02",
+      "moduleId": "UI-08",
+      "question": "preview 예시와 live 데이터, 변경 identity(id/status/value/unit/label), nonpending 수신만 새 판정 패킷이 되는 규칙이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "example/live 분리,document context와 item JSON signature,status pending 제외,field signature를 I3에서 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C03",
+      "moduleId": "UI-08",
+      "question": "초기 스냅샷/파일 집합 변경/빈 결과는 replay하지 않고, 도착 패킷은 최대6개로 제한하며 counts는 전체실제 결과를 유지하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "처음/문서집합변경/자료초기화 baseline과 최종 packet≤6, 전체 실제 counts 및 status별 sampling을 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C04",
+      "moduleId": "UI-08",
+      "question": "판정1800ms/추출1300ms/75ms stagger, chip높이30px·max126px·font10px, 만료 여유120ms 및 cleanup350ms가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "decision1.8s/extract1.3s/75ms delay/120ms expiry 여유/350ms interval과 chip CSS 수치가 소스와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C05",
+      "moduleId": "UI-08",
+      "question": "작업 중 스캔은 상징적 ambience임을 구분하고, 빠른 작업 누락/중단·motion OFF·mobile에서 숨는 packet layer를 정의하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "ambience와 arrival 분리, 초기·빠른 작업이 replay 안 될 수 있음,OFF packet 제거 및 mobile layer 숨김이 문서화된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-08-C06",
+      "moduleId": "UI-08",
+      "question": "완료 카드만 보여주는 정적 결과와 별도로 수신 시점의 분류 이동을 검증하고 세 레인 수량/색상/클릭이 실제값과 일치하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ReviewTheater.tsx useArrivalPackets/FlowingPacket",
+        "src/components/review-theater.css",
+        "architecture/ui/interaction-contract.md I3",
+        "architecture/specs/04-ui-motion.md §5/9"
+      ],
+      "rationale": "lane count/현재latest item 클릭·세색·수신시점 모션을 정적 완료 screenshot과 별도 oracle로 검사한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C01",
+      "moduleId": "UI-09",
+      "question": "활동 도크가 실제 실행을 시작하지 않는 observer이고, 기준/검토/대시보드/대장 context에 맞는 작업만 표시한다는 규칙이 있는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "observer와 call-site scope는 정확하지만 I4가 groupTasks parent 상속에 document/context 일치 검사가 있다고 잘못 명시한다. 실제 parent 상속에는 해당 guard가 없으며 순수 source probe로 반례를 확인했다(UIA-007).",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C02",
+      "moduleId": "UI-09",
+      "question": "실행은 running&&!waitingForTaskId이며 parent 대기를 별도 표시하고, task100/event200 제한과 생략 개수를 보존하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "running&&!waitingForTaskId와 active/queued count, slice(-100)/events(-200)/history omitted 보존이 일치한다. newest-first에서 오래된100이 남는 한계도 기록한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C03",
+      "moduleId": "UI-09",
+      "question": "실행 시작 펼치기·manual selection 유지·작업완료 자동접기800ms 조건·연결끊김 freeze·재연결 상태가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "scope reset/manual selection/active 시작 펼침/autoCollapse800ms와 presentation·live 조건, freeze/reconnect가 소스와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C04",
+      "moduleId": "UI-09",
+      "question": "현재 backend title/phase/detail와1초 단위 경과시간,3초 새 비heartbeat 출력이 없을 때 대기 안내를 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "currentOperation 우선과 phase/title/detail,live active1초 clock,nonheartbeat 마지막출력3초 quiet가 I4와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C05",
+      "moduleId": "UI-09",
+      "question": "연결 quiet15초/request10초/retry4초→최대60초, frozenAt, 로그28px autoscroll cutoff/최신 내용 복귀가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "observer quiet15초/request10초/retry4..60초/dispose 및 frozenAt,TaskDetail strict28px와 최신내용 버튼이 명시된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-09-C06",
+      "moduleId": "UI-09",
+      "question": "다중run/context 누출, waiting parent 중복실행, 중단/실패, 긴 무출력, 완료접기와 수동로그탐색을 검증하는 trace가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx groupTasks/readTasks/TaskDetail",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "architecture/ui/interaction-contract.md I4",
+        "architecture/specs/04-ui-motion.md §4.2/9",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "다중run/context/waiting parent/terminal/quiet/collapse/manual log 관측 fixture가 있다. 다만 신규 parent identity 반례는 추가 질문으로 분리했다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C01",
+      "moduleId": "UI-10",
+      "question": "양쪽 LLM/샌드박스 chamber, 실제 전달 제목·방향·최근 기록3개와 실행중/대기/작업없음 장면이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "실제 runtime chambers/방향/title/caption·최근3 비로그 단계 이력과 executing/waiting/idle scene을 정의한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C02",
+      "moduleId": "UI-10",
+      "question": "parentTaskId+첫 nonlog runningevent 또는 explicit event.handoff만 전달로 인정하고, 같은runtime/다른run·context·document는 거부하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "actualTransfers parent첫nonlog running 또는 명시handoff,런타임/양쪽 present scope 불일치 거부가 정확하다. groupTasks identity와는 별개 함수다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C03",
+      "moduleId": "UI-10",
+      "question": "처음 live/history 재방문·group 전환·disconnect pause/resume·failed/cancelled·motion OFF 시 queue/seen 동작이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "session Map30/seen512/visited100,live/history baseline,disconnect remaining time,terminal은purge 아님,OFF clear+seen보존을 정확히 적었다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C04",
+      "moduleId": "UI-10",
+      "question": "실제 한 전달 pulse1400ms, 빛1.3s cubic-bezier(.28,.18,.44,1), 보조trail70ms 지연이며 반복핑퐁이 아니라1회 재생인가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "1400ms hold/1300ms beam/.28,.18,.44,1/70ms trail 단회 인계와 장면 ambience를 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C05",
+      "moduleId": "UI-10",
+      "question": "로그/동일상태 갱신이 전달을 재생하지 않고, queue overflow는 오래된 연출만 버리며 실제 실행 결과를 누락시키지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "queue8+active1/seen256,시간+sequence정렬/oldest pending overflow/omitted/dedupe와 실제 결과 보존을 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-10-C06",
+      "moduleId": "UI-10",
+      "question": "문서 read/reread/transcribe/structure/context/quality/repair와 dashboard install/build/validate/complete를 별도로 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/SandboxWorkroomScene.tsx actualTransfers/presentation effects",
+        "src/handoff-queue.mjs",
+        "src/components/SandboxWorkScene.tsx",
+        "src/components/sandbox-workroom-scene.css",
+        "architecture/ui/interaction-contract.md I5/I6",
+        "architecture/specs/04-ui-motion.md §4.3/9",
+        "architecture/ui/component-style-map.json"
+      ],
+      "rationale": "document와 dashboard phaseIndex 및 read/reread/transcribe/structure/context/quality/repair/install/build/validate/complete SVG들을 I6/catalogue에서 각각 찾을 수 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C01",
+      "moduleId": "UI-11",
+      "question": "렌더 우선순위 PDF→image→sheet table→text→원본 링크, PDF page/zoom 및 sheet tab/숨김 상태와 원본 열기를 모두 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "PDF→image→sheet table→text→원본 링크,PDF page·zoom/sheet hidden/original link 경계가 D1과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C02",
+      "moduleId": "UI-11",
+      "question": "Evidence의 documentId/page/sheet/cell/quote와 SourceHighlight의 missing/anchor 규칙, selected→fail→review→pending→pass 우선순위가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "document evidence scope,missing contextual evidence 제외,anchor 증명 및 selected/fail/review/pending/pass 우선순위를 별도 정의한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C03",
+      "moduleId": "UI-11",
+      "question": "document 변경 초기화, 유효 page만 이동, PDF zoom1…2/0.25step, sheet 선택, 중첩근거 선택 및 못 찾은 위치 chip 상태가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "document change reset·유효page/sheet/zoom1..2 step.25/중첩선택·unlocated chip이 source와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C04",
+      "moduleId": "UI-11",
+      "question": "canvas DPR≤2, ResizeObserver min140px, 페이지 진입·선택 근거 내부 scroll과 reduced 즉시이동을 재현할 값이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "DPR cap2/resize min140/render cleanup/internal scroll/ON smooth·OFF 즉시 이동 수치가 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C05",
+      "moduleId": "UI-11",
+      "question": "로드 실패·render취소·text 추출 실패·image 실패·preview.truncated를 서로 구분하고 stale render가 새 문서 위에 나타나지 않도록 정리하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "loadingTask/document/renderTask의 destroy/cancel과 generation cleanup,PDF text/image 오류 및 truncated 안내를 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-11-C06",
+      "moduleId": "UI-11",
+      "question": "PDF 헤더를 missing 항목으로 색칠하지 않는 사례, 중복값·다중sheet·모호한 quote·표 item label 보강을 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DocumentPreview.tsx",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "architecture/ui/detail-controls.md D1/D6",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "PDF witness/missing header 방지,반복값·sheet·quote/item label fixture가 있고 표 baseline permissive와 I9.1 REQUIRED_REBUILD를 명확히 분리한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C01",
+      "moduleId": "UI-12",
+      "question": "파일 탭→현재 파일집계→왼쪽 원문 전체판정/오른쪽 항목·적용기준 탭의 정보 순서와 상세가 목록을 대체하는 현재 UI가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "파일선택·집계·원문·items/criteria탭 순서,항목 상세가 목록을 대체하는 현재 DOM 구조를 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C02",
+      "moduleId": "UI-12",
+      "question": "문서별 결과가 실제 documentId/criterionId로 scope되고, 원문 highlights는 목록 filter와 무관하게 해당파일 전체 결과를 유지하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "정확한 document/criterion ID scope와 filter와 독립된 파일 전체 highlights가 file-review-model 및 component에 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C03",
+      "moduleId": "UI-12",
+      "question": "파일선택은 필터/상세/페이지 reset, 목록↔상세는 scroll·focus 복원, 이전/다음은 현재 필터 내 이동이며 판정수정이 필터를 벗어나면 all로 복귀하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "파일 변경 reset,목록 scroll/focus restoration,필터내 이전다음 및 human status 변경시 all 복귀가 I8과 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C04",
+      "moduleId": "UI-12",
+      "question": "선택상세 진입200ms/x12, 판정bar350ms, <=780px 상세를 원문보다 앞에 두고 workspace scrollTop0으로 이동하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "entry200ms/x12/bar350ms/≤780px 상세 우선·workspace scrollTop0이 catalogue 및 I8에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C05",
+      "moduleId": "UI-12",
+      "question": "문서error·결과없음·필터결과0·적용기준없음·criterion ID 미연결이 서로 구분되고 원본은 계속 확인 가능한가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "document error/no results/filter0/no applied criterion/unmapped ID 각각의 empty UI와 original 접근을 분리한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-12-C06",
+      "moduleId": "UI-12",
+      "question": "파일 A 선택·fail필터·항목상세·원문근거·적용기준·목록복귀 시 헤더와 사유가 즉시 보이는지를 측정할 검증이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/FileReviewResults.tsx",
+        "src/components/file-review-model.mjs",
+        "src/components/file-review-results.css",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "A→fail→detail→source→criteria→back의 header/reason 즉시가시성/복원 oracle이 §9/I8에 있으며 실행 증거와 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C01",
+      "moduleId": "UI-13",
+      "question": "compact 상세에서 항목제목/판정→문서값·기준 나란히→판정이유→source quote→수정 CTA의 순서가 명시되어 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "compact title/status→value/criterion→reason→quote→edit 순서가 ItemInspector와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C02",
+      "moduleId": "UI-13",
+      "question": "onResolve(itemId,status,note), status pass/fail/review, source document/page/sheet/cell와 reviewedByHuman/humanNote의 매핑이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "resolve(itemId,status,note),3status,source location,reviewedByHuman/humanNote를 전달 계약과 연결한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C03",
+      "moduleId": "UI-13",
+      "question": "선택 item 변경 시 편집/오류/note 초기화, compact 제목 focus preventScroll, pending 항목 수정불가 및 저장 중 중복 금지가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "item change editor/error/note reset,compact heading preventScroll focus,pending·saving disable가 정확하다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C04",
+      "moduleId": "UI-13",
+      "question": "full inspector220ms/y14와 compact 내부 초기 모션 없음, 비교 두 칸의 폭·글자 크기와 긴설명 스크롤이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "full220ms/y14,compact initial false와 두 열 layout/긴설명 내부scroll을 visual catalogue가 보존한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C05",
+      "moduleId": "UI-13",
+      "question": "메모 공백 제출 금지·최대1000자·서버 저장실패 inline error·취소 시 서버 변경 없음이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "trim note 필수/max1000/inline 저장실패/cancel의 무요청과 in-flight cancel의 알려진 한계를 I8에서 분리한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-13-C06",
+      "moduleId": "UI-13",
+      "question": "판정수정 뒤 파일집계·요약·원문색상은 갱신되되 기존 생성대시보드는 스냅샷으로 유지됨을 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ItemInspector.tsx",
+        "src/components/ReviewItems.tsx verdict helpers",
+        "src/useReview.ts resolve",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/specs/04-ui-motion.md §7/9"
+      ],
+      "rationale": "resolve 이후 live counts/highlight 재계산과 생성 대시보드 frozen snapshot 불변을 D02/D10 및 I8에서 검증한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C01",
+      "moduleId": "UI-14",
+      "question": "3개 KPI/판정분포/문서별판정/이름있는 항목 맵을 배치하고 tile 클릭이 파일별 결과의 해당 item으로 이동하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "KPI3/distribution/document chart/named tile와 onSelect를 통한 해당 파일+item 상세 진입이 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C02",
+      "moduleId": "UI-14",
+      "question": "총항목·완료(pass+fail+review)·주의(fail+review)·pending을 구분하고 문서순서/빈문서/동명문서 집계가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "전체/완료/주의/pending,document order·empty·동명 ID grouping과 zero chart 처리가 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C03",
+      "moduleId": "UI-14",
+      "question": "도넛/legend 필터 토글, hover와 keyboard focus tooltip, 필터로 나가는 tile의 pointer/focus 제거 및 빈 결과가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "legend/status toggles,hover/focus tooltip,hidden tile pointerEvents/tabIndex 제거와 empty branch를 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C04",
+      "moduleId": "UI-14",
+      "question": "숫자650ms, 도넛850ms, 막대800ms, tile300ms/22ms stagger상한8, hover y-2/tap.98와 reduced 비활성화가 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "number650/donut850/bar800/tile300+22×min(index,8),hover−2/tap.98 및 app OR OS reduced가 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C05",
+      "moduleId": "UI-14",
+      "question": "항목명/파일명 말줄임은 전체 tooltip/접근성 이름을 보존하고 tooltip가 viewport에서 잘리지 않으며 zero-data를 가짜1건으로 집계하지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "현재 tooltip 가로 clamp·세로overflow 결함을 I8.1에서 baseline으로 명시하고 tooltip.height 기반 REQUIRED_REBUILD 수식/음성 사례를 제공한다. 현 원본에서 이미 해결됐다는 주장은 아니다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-14-C06",
+      "moduleId": "UI-14",
+      "question": "기본요약은 Recharts이고 나만의대시보드는 react-chartjs-2인 기술경계를 명확히 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/ResultsVisuals.tsx",
+        "src/components/results-visuals.css",
+        "scripts/dashboard-chart-entry.jsx",
+        "architecture/ui/interaction-contract.md I8/I8.1",
+        "architecture/specs/04-ui-motion.md §6/9",
+        "architecture/specs/05-dashboard-exports.md D10b"
+      ],
+      "rationale": "Recharts(기본)와 react-chartjs-2+Chart.js(standalone)의 책임 및 locked version을 명확히 분리한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C01",
+      "moduleId": "UI-15",
+      "question": "구성 sidebar·4개 예시요청·생성중 full workroom·완료preview·구성수정·원본과판정/대시보드 switch·HTML다운로드 흐름이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "configuration/sample4/fullworkroom/ready/refine/source switch/download UI 분기와 버튼 문구가 D09a에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C02",
+      "moduleId": "UI-15",
+      "question": "POST {runId,instruction,baseDesign?}, 생성 당시 immutable snapshot, ready sourceItems, 검증된 bridgeToken/knownItemIds와 cache≤5가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "POST body와 frozen snapshot,ready sourceItems override,token·knownIds와 module cache5/HMR 정리가 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C03",
+      "moduleId": "UI-15",
+      "question": "queued/generating/building/repairing/ready/failed, cancel/close, retry시 이전preview, 실제 적용tag와 standard fallback 안내를 구분하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "queued/generating/building/repairing/ready/failed,cancel/old preview/retry/applied tag/standard warning을 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C04",
+      "moduleId": "UI-15",
+      "question": "dialog240ms 뒤 content260ms 지연, lazy source viewer, memo iframe, 이미열었던 chart state 보존, 모션설정 존중을 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "shell240ms/content260ms,lazy source viewer,memo iframe 및 이미방문한 source switch iframe 보존,app-only motion 범위가 정확하다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C05",
+      "moduleId": "UI-15",
+      "question": "poll1200ms/연속실패2회재시도/AbortController·sequence stale guard·DELETE취소·빈HTML오류·최종handoff≤1600ms를 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "immediateGET→1200ms,연속3실패 종료,AbortController+sequence,late POST DELETE/emptyHTML/closecleanup/1600ms hold가 명시된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-15-C06",
+      "moduleId": "UI-15",
+      "question": "첫열기/재열기/원문전환/재구성의 프레임·mount수·선택유지와 HTML 다운로드를 검증하는 시나리오가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardModal.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "src/App.tsx loadDashboard/preloadDashboard",
+        "architecture/specs/05-dashboard-exports.md D03/D07/D09/D09a/D11"
+      ],
+      "rationale": "cold/reopen/switch/refine의 mount/selection/frame와 token 주입 없는 HTML download·blob URL revoke1000ms 검증 oracle이 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C01",
+      "moduleId": "UI-16",
+      "question": "title/subtitle/accent/focus/density/layout/distribution/theme/emphasis/chartSize/legend/motion/corners/fileVisualization의14개 축과 조합효과가 모두 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "14 presentation axes의 allowlist/default/DOM attrs/CSS/config mapping이 D05/D06과 schema에 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C02",
+      "moduleId": "UI-16",
+      "question": "LLM이 HTML/JS/판정값을 만들지 않고 디자인계획만 반환하며 기존baseDesign을 유지한 부분수정·부정표현 해석이 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "현재 keyword preference heuristic 및 부분수정 baseline과 의미중심 REQUIRED_REBUILD DB-H02/H03를 구분한다. 모델 HTML/JS/수치 공급을 허용하지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C03",
+      "moduleId": "UI-16",
+      "question": "overview/exceptions/documents focus,4개layout,파일선택·statusfilter·상세전개,0건/한파일/다중파일/긴내용 상태를 정의하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "focus 초기선택/filter·layout4·file/status/detail/empty/single/multi/long/batch100 disclosure를 D05/D07에 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C04",
+      "moduleId": "UI-16",
+      "question": "라이트는 page/card/text/axis/tooltip까지, 도넛은hole/파이는filled, 차트강조는실제크기, 범례 위치·모션·모서리를 바꾸도록 수치화되는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "light 전체 token/axis/tooltip,cutout78% 대0,chartSize/emphasis와 legend/motion/corner mapping이 실제 renderer와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C05",
+      "moduleId": "UI-16",
+      "question": "지원데이터없는추세를 발명하지 않고, plan/렌더검증 실패 때 한계있는standard fallback을 정직하게 표시하며 snapshot값을 보존하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "없는 trend 발명금지/snapshot값불변,standard fallback은 custom 검증완료가 아님을 job/UI와 함께 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-16-C06",
+      "moduleId": "UI-16",
+      "question": "독립적인 최소3개 복합요청과18개 viewport/디자인 조합에서 실제chart type·count·surface·legend·size·detail 가시성을 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-plan.mjs",
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "server/dashboard-plan-validation.mjs",
+        "architecture/specs/05-dashboard-exports.md D05/D05a/D05b/D06/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "독립 compound request와18개 matrix의 count/type/theme/legend/size/detail/viewport/OS oracle이 있다. matrix status NOT_RUN을 실제 실행 PASS로 올리지 않았다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C01",
+      "moduleId": "UI-17",
+      "question": "파일탭·파일별판정수·원본선택·전체하이라이트·선택항목 사유/값/기준/인용의 위치와 차트→원문 전환이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "file tabs/count/source picker/all highlights/compact item reason·value·rule·quote와 bridge selection 전환 위치가 D10a에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C02",
+      "moduleId": "UI-17",
+      "question": "sourceSnapshot의 files/items만 사용하고, sourceHighlights는 선택원본 documentId로 제한하며 pending 집계 표시를 구분하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "frozen snapshot files/items,선택source ID 전체 highlight,primary file grouping/pending 별도 count가 helper와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C03",
+      "moduleId": "UI-17",
+      "question": "다른파일 선택은 filter/source reset, item선택은 해당target근거→다른target근거→존재문서 순서로 원본을 고르는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "file reset와 item선택 source preference/unknown fallback/동일item selectionVersion이 D10a 상태표에 정확히 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C04",
+      "moduleId": "UI-17",
+      "question": "entry320ms/y6 및 system/app reduced를 함께 적용하고, source page의 독립 스크롤·compact원문·전체색상 유지가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "entry320ms/y6,app OR OS reduce,3row grid와 독립source/map/inspector scroll·전체색상유지가 명시된다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C05",
+      "moduleId": "UI-17",
+      "question": "원본연결정보 없는 구형preview에서는 switch를 disabled하고 다시구성 안내, 누락원본·근거없음·알수없는item은 추측하지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "legacy preview sourceSnapshot 부재시disabled/rebuild안내,unknown ID reject/누락 source/근거없음을 추정 없이 처리한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-17-C06",
+      "moduleId": "UI-17",
+      "question": "파일2개 같은항목명·다른source근거·filter변경·같은item 재선택에서 원본과사유가 일치하는 테스트가 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/DashboardEvidence.tsx",
+        "src/components/dashboard-file-scope.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D10a/D11",
+        "architecture/ui/detail-controls.md D1"
+      ],
+      "rationale": "2file 동명항목/cross evidence/filter/same-selection fixture를 file-scope/bridge tests 및 D10a/D11에서 검사할 수 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C01",
+      "moduleId": "UI-18",
+      "question": "결과 내보내기 메뉴의xlsx/csv/json과검토대장 기능, 대장업로드→대상성적서/번호→기입위치확인→사본다운로드 흐름이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "export menu xlsx/csv/json과 ledger flow 업로드→source/key→분석→ready 위치확인→새사본이 App/D4와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C02",
+      "moduleId": "UI-18",
+      "question": "mapping.ready/blocked,정확히targetCells2개,proposal fingerprint와basis(documentId,key,runId,sourceDocumentId)일치가 다운로드gate라는 계약이 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "ready+2cells+fingerprint+basis 4tuple 일치 gate가 LedgerModal canExport와 일치한다. 서버 셀쓰기 검증 자체는 CORE16 담당이다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C03",
+      "moduleId": "UI-18",
+      "question": "upload/analyze/export 직렬화·바쁜중 입력금지·파일/성적서/번호 변경시 analysis무효화·key자동추출·추가메모 상태가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "operationRef 직렬화/AbortController+sequence,입력변경 invalidation/key자동추출/메모/blocked 상태가 D4와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C04",
+      "moduleId": "UI-18",
+      "question": "dialog230ms/scale.985/y14, 분석중inlinedock, 완료후 현재값과기입값 비교 및 모바일레이아웃이 명시되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "dialog230ms/.985/y14/분석중dock/현재값 대기입값/모바일 cascade가 catalogue와 D4에 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C05",
+      "moduleId": "UI-18",
+      "question": "xlsx만/빈파일금지/20MB이하/한개drop,중복행·위치불명 blocked·닫기abort·빈export·서버오류에 대한 사용자인지가 정의되는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "xlsx/빈file/20MB/one-drop/duplicate mapping/closeabort/emptyexport/error branch와 메시지를 D4에 기록했다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-18-C06",
+      "moduleId": "UI-18",
+      "question": "틀린key·중복key·다른source/수정된basis·stale proposal과정상사본을 검증하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/LedgerModal.tsx",
+        "src/App.tsx result export menu",
+        "src/components/ledger-modal.css",
+        "architecture/ui/detail-controls.md D4/D6",
+        "architecture/specs/04-ui-motion.md §3/5.3"
+      ],
+      "rationale": "wrong/duplicate key/source/basis/stale proposal 및 정상2cells/원본bytes불변 사본 검증이 D4/D6에 있다. backend acceptance 실행을 주장하지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-14-C01",
+      "moduleId": "CORE-14",
+      "question": "원본 document/page/sheet/cell/quote, criterion evidence와 review-item evidence, PDF text anchor와 결과 ID의 연결을 구별하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/DocumentPreview.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/ui/detail-controls.md D1",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "criterion/item source ownership과 PDF label witness/페이지·cell·quote/결과ID 연결을 helper별로 명확히 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-14-C02",
+      "moduleId": "CORE-14",
+      "question": "선택 파일의 모든 항목을 한 번에 표시하며 필터 변경이 다른 항목 근거를 삭제하지 않고 파일 전환이 다른 문서의 근거를 섞지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/DocumentPreview.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/ui/detail-controls.md D1",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "file-level all highlights는 filter와 무관하고 source selection에 따라 documentId scope하며 파일변경으로 cross-file 오염을 막는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-14-C03",
+      "moduleId": "CORE-14",
+      "question": "누락 판정에는 대상 원문상 항목 좌표를 발명하지 않고 contextual evidence를 설명에만 유지하며 기준 클릭은 실제 label/rule/unit cell을 포함하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/DocumentPreview.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/ui/detail-controls.md D1",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "missing flags/sentinel의 explanatory evidence 제외와 criterion label/rule/unit source-cell 보강을 명시한다. dashboard missing flag projection 한계도 DB-H01로 구분한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-14-C04",
+      "moduleId": "CORE-14",
+      "question": "표 헤더·시료명·다른 행의 값만 일치하거나 quote/location이 불일치하면 엉뚱한 하이라이트 대신 위치 미확인을 표시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/DocumentPreview.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/ui/detail-controls.md D1",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "현재 표좌표만 채색할 수 있는 baseline을 숨기지 않고 I9.1의 좌표·quote·row witness·number-boundary REQUIRED_REBUILD 및 반례가 있다. 원본 자체의 안전성 PASS라는 뜻은 아니다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-14-C05",
+      "moduleId": "CORE-14",
+      "question": "iframe 근거 메시지를 source window·opaque origin·channel·type·preview token·itemId 허용 목록으로 검사하고, 원본 파일을 다운로드 HTML에 포함하지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/DocumentPreview.tsx",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/ui/detail-controls.md D1",
+        "architecture/ui/interaction-contract.md I9/I9.1",
+        "architecture/specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "sourceWindow/opaque null origin/channel/type/token/knownID 확인,nonce script·trusted action·targetOrigin 및 다운로드 원본bytes 미포함이 source와 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-17-C01",
+      "moduleId": "CORE-17",
+      "question": "snapshotRun의 immutable 검토 데이터와 14-field design, instruction/baseDesign/ready job 계약을 분리하고 기존 7-field 입력의 기본값을 정의하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard.mjs snapshotRun/createDashboardRouter/generateDashboard",
+        "server/dashboard-plan.mjs",
+        "architecture/specs/05-dashboard-exports.md D02/D03/D04/D05a/D05b/D11"
+      ],
+      "rationale": "deep frozen snapshot과14field presentation plan,ready sourceItems/publicJob,legacy7field parser defaults 및 instruction/baseDesign이 일치한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-17-C02",
+      "moduleId": "CORE-17",
+      "question": "색상·light/dark·doughnut/pie/bar/polarArea·emphasis·크기·범례·motion·corners·fileVisualization·layout을 조합하며 부분 수정 시 나머지 취향을 유지하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard.mjs snapshotRun/createDashboardRouter/generateDashboard",
+        "server/dashboard-plan.mjs",
+        "architecture/specs/05-dashboard-exports.md D02/D03/D04/D05a/D05b/D11"
+      ],
+      "rationale": "14축 combination·부분수정保留와 source heuristic 한계/필수 의미검사 개선을 나누어 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-17-C03",
+      "moduleId": "CORE-17",
+      "question": "최대3회 계획·같은 E2B 설치1회·검증 진단 재전달과 ready/generated·ready/standard(fallback)·failed·DELETE 204 취소/제거 계약을 구별하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard.mjs snapshotRun/createDashboardRouter/generateDashboard",
+        "server/dashboard-plan.mjs",
+        "architecture/specs/05-dashboard-exports.md D02/D03/D04/D05a/D05b/D11"
+      ],
+      "rationale": "원본 model loop≤3/sandbox1회설치/diagnostic repair/cleanup과 ready generated/standard/failed/DELETE204를 분리한다. 새semantic budget도 별도 REQUIRED_REBUILD이다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-17-C04",
+      "moduleId": "CORE-17",
+      "question": "모델이 수치·판정을 바꾸거나 HTML/JS/CSS를 공급하지 못하며 잘못된 enum/baseDesign/지나친 입력을 거절하고 fallback을 맞춤 성공으로 표기하지 않는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard.mjs snapshotRun/createDashboardRouter/generateDashboard",
+        "server/dashboard-plan.mjs",
+        "architecture/specs/05-dashboard-exports.md D02/D03/D04/D05a/D05b/D11"
+      ],
+      "rationale": "모델이 데이터/코드를 공급할 수 없고 enum/input/baseDesign bounds,CSP/HTML신뢰경계 및 fallback label이 정확하다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-17-C05",
+      "moduleId": "CORE-17",
+      "question": "초록+라이트+큰 도넛, 유지하며 파이로 수정, 직접 light 단어 없는 밝은 보고서 요청의 계획값/렌더 결과를 독립 검증할 수 있는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard.mjs snapshotRun/createDashboardRouter/generateDashboard",
+        "server/dashboard-plan.mjs",
+        "architecture/specs/05-dashboard-exports.md D02/D03/D04/D05a/D05b/D11"
+      ],
+      "rationale": "green/light/large doughnut→pie partial/semantic bright request의 독립 fixture 및 추후 judge/runtime 검증을 NOT_RUN으로 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-18-C01",
+      "moduleId": "CORE-18",
+      "question": "design → data-* root attrs/CSS variables/chart config/standalone HTML 출력과 chart runtime mount/update/destroy 계약을 지정하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D06/D07/D08/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "design→dataattrs/CSSvars/Chart config/HTML과 registry root mount/update/unmount 함수,offline IIFE build가 연결되어 있다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-18-C02",
+      "moduleId": "CORE-18",
+      "question": "차트의 실제 모양·크기·theme 축/tooltip·범례·선택 파일·필터·항목 상세가 변경되며 전체 수치와 item ID는 snapshot과 동일한가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D06/D07/D08/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "type/cutout/size/surface/axis/tooltip/legend·file/filter/detail 변경과 real snapshot count/id를 D06/D07 및 matrix에 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-18-C03",
+      "moduleId": "CORE-18",
+      "question": "initial file/filter/focus, 차트 강조 중 상세 열기/닫기 배분, prefers-reduced-motion과 design.motion, 재mount 정리를 구분하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D06/D07/D08/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "focus별 initial file/filter,detail-open 강조 크기회복,OS 또는 design motion OFF와 update/destroy 수명이 정확하다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-18-C04",
+      "moduleId": "CORE-18",
+      "question": "CSP nonce·escaping·외부 네트워크 차단·iframe sandbox/bridge를 명시하고 샌드박스 exit 0만으로 승인하지 않고 bytes/report를 대조하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D06/D07/D08/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "nonce CSP/escaping/no external network/allow-scripts-only iframe와 bridge,exit0에 더해 fixed validator report+exact html bytes 검사를 명시한다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "CORE-18-C05",
+      "moduleId": "CORE-18",
+      "question": "검증 11종 input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping과 실제 브라우저 geometry/visibility 검증이 별개임을 명시하는가?",
+      "status": "PASS",
+      "evidence": [
+        "server/dashboard-fallback.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "architecture/specs/05-dashboard-exports.md D06/D07/D08/D11",
+        "architecture/contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "11 DOM checks(input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping)와 실제browser geometry/visibility를 분리하며 JSDOM을 browser 증거로 올리지 않는다.",
+      "assessment": "Design/source accuracy; verification-question PASS means oracle specified, not product execution passed."
+    },
+    {
+      "id": "UI-02-C07",
+      "moduleId": "UI-02",
+      "question": "공통 formatValue와 기준 편집 numberLabel의 서로 다른 정규식·trim·null·15자리·12소수·선행0·부호·과학표기 표시 규칙이 자족적으로 정의되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/format.ts:1",
+        "src/components/CriteriaConfirmation.tsx:131",
+        "architecture/ui/interaction-contract.md:31",
+        ".cache/architecture-independent-audit/ui-source-probes.json"
+      ],
+      "rationale": "문서는 formatValue 호출명을 언급할 뿐 구현 계약이 없다. formatValue는 null/undefined→확인 불가, String후 무trim /^-?\\d{1,15}(\\.\\d+)?$/만 Number/ko-KR/maxFraction12. numberLabel은 trim하고 +/-·무제한자리·선행0·모든소수를 문자열로 보존한다."
+    },
+    {
+      "id": "UI-02-C08",
+      "moduleId": "UI-02",
+      "question": "짧은 활동 title/phase의 Gemini→LLM·E2B→샌드박스 변환과 코드/URL/path/filename/config token 보호, 원문·로그·오류body 무변환 경계가 명시되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/display-names.ts:1",
+        "src/components/SandboxActivityDock.tsx:7",
+        "src/components/DocumentAnalysis.tsx",
+        ".cache/architecture-independent-audit/ui-source-probes.json"
+      ],
+      "rationale": "브랜드 표기는 곳곳에 있지만 formatter의 보호토큰/단어경계/대소문자 처리가 없다. 소스 주석이 금지한 원문·명령·로그/에러-body까지 무차별 치환하는 재구현을 막을 수 없다."
+    },
+    {
+      "id": "UI-04-C07",
+      "moduleId": "UI-04",
+      "question": "업로드와 대장 파일 크기의 KB 반올림·최소1KB·MB1소수 및 정확히1MiB에서 서로 다른 > / >= 분기를 정의하는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/App.tsx:25",
+        "src/components/LedgerModal.tsx:278",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/detail-controls.md D4"
+      ],
+      "rationale": "파일크기 표시 존재만 지정했다. App은 >1048576일 때 MB여서 정확히1MiB=1024 KB, Ledger는 >=여서1.0 MB. 둘 다 작은값 max1KB·반올림이다. 현재 차이를 임의 통일하면 재현 차이다."
+    },
+    {
+      "id": "UI-07-C07",
+      "moduleId": "UI-07",
+      "question": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 검토 진행 중으로 남는 observed baseline과 개선 요구를 명확히 구분하는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/components/LiveReviewFlow.tsx:42",
+        "src/components/LiveReviewFlow.tsx:71",
+        "architecture/specs/04-ui-motion.md §4.1",
+        "architecture/ui/interaction-contract.md I2"
+      ],
+      "rationale": "done은 !busy&&completed/partial뿐이므로 busy=false의 failed/cancelled/null에서도 진행 중이라고 알린다. 문서는 context의 idle 문구는 적지만 이 screen-reader 상태 분기/한계는 누락한다. 현재 정상 안내인 것처럼 해석하면 안 된다."
+    },
+    {
+      "id": "UI-11-C07",
+      "moduleId": "UI-11",
+      "question": "판정색 highlight와 별개 raw <mark> fallback의 호출 조건·case/whitespace·숫자경계 부재·quote당30개 비중첩 검색·범위병합이 정의되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/components/DocumentPreview.tsx:182",
+        "src/components/DocumentPreview.tsx highlightedText call sites",
+        "architecture/ui/detail-controls.md:103",
+        "architecture/ui/interaction-contract.md I9.1"
+      ],
+      "rationale": "단순 <mark>의 존재만 적혀 있다. raw indexOf는 numeric-boundary와 공백정규화가 없고 quote당30 nonoverlap,전체 sort 후 overlap/touch 병합이다. 판정색 matcher나 TABLE-HIGHLIGHT-REBUILD의 witness로 재사용하면 안 된다는 세부 구분이 부족하다."
+    },
+    {
+      "id": "UI-09-C07",
+      "moduleId": "UI-09",
+      "question": "작업실의 container≤1050px group select 및 ≤680px 처리흐름/실행내역 탭, flow초기값·scope reset·aria-selected·data-pane에 따른 내용 가시성이 정의되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx:245",
+        "src/components/SandboxActivityDock.tsx:274",
+        "src/components/SandboxActivityDock.tsx:364",
+        "src/components/sandbox-activity-dock.css:145",
+        "architecture/ui/interaction-contract.md I4"
+      ],
+      "rationale": "CSS/JSX 카탈로그에는 class와 조건만 있고 event handler와 state 초기화 계약이 없다. runId/contextId/startedAfter/defaultExpanded 변화시 flow로 reset; flow는 detail/log-empty 숨김,log는 exchanges 숨김. viewport media와 container query를 구분해야 한다."
+    },
+    {
+      "id": "UI-09-C08",
+      "moduleId": "UI-09",
+      "question": "groupTasks parent identity 상속은 별도 document/run/context 호환 guard 없이 순환만 막고, actualTransfers의 양측 scope guard와 다르다는 현재 동작을 정의하는가?",
+      "status": "FAIL",
+      "evidence": [
+        "src/components/SandboxActivityDock.tsx:31",
+        "src/components/SandboxActivityDock.tsx:38",
+        "architecture/ui/interaction-contract.md:72",
+        ".cache/architecture-independent-audit/ui-source-probes.json"
+      ],
+      "rationale": "I4는 parent 연결에 양쪽 document/context 일치검사가 있다고 잘못 쓴다. 실제 parent에 도달하는 child는 own document/dashboard identity가 없으며 contextB child도 contextA/documentD parent 그룹을 상속한다. 전처리 scope filter 및 전달 허용함수와 혼동했다."
+    },
+    {
+      "id": "UI-01-C07",
+      "moduleId": "UI-01",
+      "question": "health 최초 호출 effect의 시점·실패 null·header/dashboard gate·재시도/timeout/abort/cleanup 부재·reset 비갱신·개발 StrictMode 재실행 가능성을 정의하는가?",
+      "status": "FAIL",
+      "discovery": {
+        "proposedBy": "/root/clarity",
+        "relayedBy": "/root",
+        "independentlySourceVerifiedBy": "/root/ui_accuracy"
+      },
+      "evidence": [
+        "src/App.tsx:47",
+        "src/App.tsx:61",
+        "src/App.tsx:168",
+        "src/App.tsx:195",
+        "src/api.ts:1",
+        "src/main.tsx:17",
+        "architecture/specs/04-ui-motion.md:84"
+      ],
+      "rationale": "header의 boolean 의미만 명세되어 있고 호출 lifecycle은 없다. mount effect [] plain GET이며 실패는 null,재시도/timeout/abort/unmount guard가 없고 reset도 재조회하지 않는다. 성공 둘 다 true에만 connected,대시보드는 e2bConfigured 필수이다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "UIA-001",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C07"
+      ],
+      "files": [
+        "src/format.ts",
+        "src/components/CriteriaConfirmation.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "공통 값 포맷 두 함수의 비동등 경계가 설계에서 누락되었다.",
+      "proposedFix": "formatter 두 개를 별도 표/정규식/예시로 명세하고 null,empty,+1234,001234,공백,16자리,13소수 fixtures를 추가한다. Number 계산/원문 보존과 화면표시를 혼동하지 않는다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-002",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C08"
+      ],
+      "files": [
+        "src/display-names.ts",
+        "architecture/specs/04-ui-motion.md"
+      ],
+      "problem": "활동 표기 formatter의 변환 대상·보호 기술토큰 경계가 없다.",
+      "proposedFix": "정확한 regex 또는 동일 결과를 보장하는 단계 알고리즘,사용호출부와 금지 필드,대소문자/URL/코드/path/filename/env-key 양성·음성 예시를 제공한다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-003",
+      "severity": "low",
+      "questionIds": [
+        "UI-04-C07"
+      ],
+      "files": [
+        "src/App.tsx",
+        "src/components/LedgerModal.tsx",
+        "architecture/ui/detail-controls.md"
+      ],
+      "problem": "두 file-size formatter의1MiB 임계값 차이와 반올림이 누락되었다.",
+      "proposedFix": "App >1MiB/ledger >=1MiB,KB max1·round/MB fixed1을 각각 명시하고0/1023/1048576/1048577bytes의 기대값을 준다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-004",
+      "severity": "medium",
+      "questionIds": [
+        "UI-07-C07"
+      ],
+      "files": [
+        "src/components/LiveReviewFlow.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "실패·취소·idle의 live announcement가 실제로 진행 중으로 남는 한계가 누락되었다.",
+      "proposedFix": "done식과 aria-live 텍스트 분기표를 observed baseline으로 기록한다. 개선을 원하면 failed/cancelled/idle 문구와 실제 count 유지에 대한 REQUIRED_REBUILD를 별도 표시하며 현재 소스가 이미 개선됐다고 쓰지 않는다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-005",
+      "severity": "medium",
+      "questionIds": [
+        "UI-11-C07"
+      ],
+      "files": [
+        "src/components/DocumentPreview.tsx",
+        "architecture/ui/detail-controls.md"
+      ],
+      "problem": "raw quote <mark>는 status matcher와 다른 느슨한 경계/상한을 갖지만 세부 계약이 없다.",
+      "proposedFix": "fallback 적용 조건과 indexOf·30회·nonoverlap·merge 규칙을 명시하고 5 in15 및31회 반복 fixture를 추가한다. raw mark는 판정 witness가 아님을 분명히 하고 I9.1 개선 범위를 구분한다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-006",
+      "severity": "medium",
+      "questionIds": [
+        "UI-09-C07"
+      ],
+      "files": [
+        "src/components/SandboxActivityDock.tsx",
+        "src/components/sandbox-activity-dock.css",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "모바일 작업실의 group선택/flow-log탭 상태전이가 본문에 빠져 있다.",
+      "proposedFix": "container1050/680 조건,초기flow,scope reset dependencies,탭 버튼/aria-selected/data-pane/숨는 panel과 group select handler의 selection reset을 명시한다. 1051/1050/681/680px container 사례를 제공한다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-007",
+      "severity": "medium",
+      "questionIds": [
+        "UI-09-C01",
+        "UI-09-C08"
+      ],
+      "files": [
+        "src/components/SandboxActivityDock.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "I4 parent grouping에 존재하지 않는 document/context guard를 사실로 명시한다.",
+      "proposedFix": "I4의 잘못된 문장을 제거하고 own document→dashboard→parent순환guard→task fallback을 정확히 기술한다. 사전scope 필터 및 actualTransfers의 양측scope 검사를 별도로 설명하고 same-run/context-mismatch parent-child 반례를 추가한다.",
+      "status": "open"
+    },
+    {
+      "id": "UIA-008",
+      "severity": "medium",
+      "questionIds": [
+        "UI-01-C07"
+      ],
+      "files": [
+        "src/App.tsx",
+        "src/api.ts",
+        "src/main.tsx",
+        "architecture/specs/04-ui-motion.md"
+      ],
+      "problem": "health 요청의 초기화·실패·재시도/cleanup 부재가 header boolean 계약 밖에 누락되었다.",
+      "proposedFix": "mount GET lifecycle과 실패null/header 연결확인중/dashboard disabled,reset 비재조회·StrictMode 개발 재실행을 명시한다. retry/abort를 개선한다면 baseline과 REQUIRED_REBUILD를 나누고 거짓 현재 기능을 추가하지 않는다.",
+      "status": "open"
+    }
+  ],
+  "provenance": {
+    "rawReport": "architecture/reviews/independent-audit/round-01/ui-accuracy.json",
+    "rawSha256": "f1ed63515383b22a2aa0c132276c1a0560f02e535e056478a395a76930c5642d",
+    "normalization": "ID collision alias and evidence object textual projection only; status/rationale unchanged; initial snapshot is historical"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "10-criteria-hitl-editor",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "10-criteria-hitl-editor",
+    "screenshot": {
+      "path": "10-criteria-hitl-editor.png",
+      "bytes": 114513,
+      "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/10-criteria-hitl-editor.json",
+      "bytes": 1025043,
+      "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:14:34.152Z",
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/10-criteria-hitl-editor.png",
+    "bytes": 112658,
+    "sha256": "34fc10b1f77fab2563ffc20a2e29ece1d7448cc046ffea71263bb3237d5c46e7",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T11:14:35.369Z",
+    "capturedAt": "2026-09-21T11:14:35.561Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/dom/10-criteria-hitl-editor.json",
+    "bytes": 1571008,
+    "sha256": "c809be522f8b1264ac669712ef0292e3cced1881b372bf280c6432148e5973cd"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/10-criteria-hitl-editor-measurement.json",
+    "bytes": 190389,
+    "sha256": "8acfc7a583f2d456ad54154154672db5e5d33948e6e76cf0b5c4ce516d2b90dd"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T11:14:37.784Z"
+}

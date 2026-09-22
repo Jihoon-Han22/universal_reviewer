@@ -1,0 +1,3027 @@
+{
+  "schemaVersion": 1,
+  "round": 2,
+  "role": "clarity",
+  "reviewerId": "architecture_clarity_ui",
+  "reviewState": "sealed",
+  "scope": "Architecture-only blind reassessment of the unchanged 18 UI modules and 108 questions. No production source, app runtime or provider access.",
+  "modules": [
+    {
+      "moduleId": "UI-01",
+      "checks": [
+        {
+          "id": "UI-01-C01",
+          "status": "pass",
+          "reason": "Seven pages, four displayed steps, terminal/confirmation/target destinations and explicit return actions are defined; failed and cancelled do not impersonate successful results.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§2–3"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§3"
+            }
+          ]
+        },
+        {
+          "id": "UI-01-C02",
+          "status": "pass",
+          "reason": "Generation/run/sequence/revision/localRevision gates distinguish stale GET, command snapshots and item resolve; version mismatch and duplicate events have exact rejection rules.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2; §6–7"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.9 EF-11"
+            }
+          ]
+        },
+        {
+          "id": "UI-01-C03",
+          "status": "pass",
+          "reason": "I1 and RESET-EXACT enumerate reset assignments versus incidental preserved state, upload/sample lock, back-to-criteria retention and optimistic stop; failed cancel does not restore running.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CANCEL-01; UPLOAD-02; RESET-EXACT"
+            }
+          ]
+        },
+        {
+          "id": "UI-01-C04",
+          "status": "pass",
+          "reason": "The 1800/1600/120/0ms choice, exact effect dependencies and last-change timer origin are explicit; TIMER-01 resolves restart versus absolute-deadline interpretations while backend status stays completed.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.4; §9 UI-07"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TIMER-01"
+            }
+          ]
+        },
+        {
+          "id": "UI-01-C05",
+          "status": "pass",
+          "reason": "SSE snapshot recovery, current-generation failure banner, terminal connection close, late error rejection and start-failure destination are specified independently from remote cleanup.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3; §7"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            }
+          ]
+        },
+        {
+          "id": "UI-01-C06",
+          "status": "pass",
+          "reason": "The seven-page scenario, cancellation/reset fixtures, partial-result scenario and EF-11 stale-response case give observable destinations and rejection expectations. They are execution requirements, not executed results.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§9 UI-01/UI-02/UI-08"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§10 cases 1–6"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.9 EF-11"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CANCEL-01; RESET-EXACT; TIMER-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-02",
+      "checks": [
+        {
+          "id": "UI-02-C01",
+          "status": "pass",
+          "reason": "Global dark tokens, per-result/theater status differences, final golden/ledger overrides and the white source-paper exception are explicit; final cascade takes precedence over obsolete base declarations.",
+          "evidence": [
+            {
+              "path": "ui/tokens.json",
+              "section": "color"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§1; §3"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4.3; D5"
+            }
+          ]
+        },
+        {
+          "id": "UI-02-C02",
+          "status": "pass",
+          "reason": "Eager/main/lazy stylesheet order, specificity handling, runtime component bindings, exact dependency versions and fixed font-profile requirements make the visual inputs portable.",
+          "evidence": [
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§1–5"
+            },
+            {
+              "path": "ui/style-catalog.json",
+              "section": "ordered CSS rules/declarations"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "runtime graph, nodes, style bindings"
+            },
+            {
+              "path": "environment/README.md",
+              "section": "dependencies and fonts"
+            }
+          ]
+        },
+        {
+          "id": "UI-02-C03",
+          "status": "pass",
+          "reason": "Storage on/off, default ON, storage failure, root data-motion and MotionConfig are defined alongside queue cleanup and non-replay when toggled back on.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§8"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3; I5"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "id": "UI-02-C04",
+          "status": "pass",
+          "reason": "The global 280ms curve and per-component motion catalogue are subordinate to effective cascade; application OFF and OS media-query coverage are separately stated, including gaps.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5; §8"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§1; §7–8"
+            },
+            {
+              "path": "ui/motion-catalog.json",
+              "section": "Motion and CSS effect records"
+            }
+          ]
+        },
+        {
+          "id": "UI-02-C05",
+          "status": "pass",
+          "reason": "Desktop, short-height, 760/780px and component-specific breakpoints, independent scroll areas, active CSS list and excluded sky styles are explicit.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§2.5"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§3–6"
+            },
+            {
+              "path": "ui/tokens.json",
+              "section": "layout"
+            }
+          ]
+        },
+        {
+          "id": "UI-02-C06",
+          "status": "pass",
+          "reason": "Required viewports, contrast/focus/motion assertions and quantitative geometry tolerances are explicit. Delivered references are distinguished from the unexecuted 15-state acceptance matrix; this pass rates the verification contract only.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§9"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "VISUAL-VIEWPORTS"
+            },
+            {
+              "path": "ui/reference/manifest.json",
+              "section": "capture viewport/state/provenance"
+            },
+            {
+              "path": "ui/reference/README.md",
+              "section": "capture environment and limits"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-03",
+      "checks": [
+        {
+          "id": "UI-03-C01",
+          "status": "pass",
+          "reason": "The exact landing copy and two entry destinations distinguish criteria file entry from expense-example text entry; sample targets wait for approval.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§3 intro"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D5"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            }
+          ]
+        },
+        {
+          "id": "UI-03-C02",
+          "status": "pass",
+          "reason": "Preview theater uses EXAMPLE and empty real documents/items; sample POST data enters application state only through its defined success path.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.2 preview/live"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1; I3"
+            }
+          ]
+        },
+        {
+          "id": "UI-03-C03",
+          "status": "pass",
+          "reason": "Sample pending/success/failure now explicitly lists retained inputs, spinner/lock, preview clearing and sampleTargets; the missing sample epoch guard is disclosed.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "SAMPLE-01"
+            }
+          ]
+        },
+        {
+          "id": "UI-03-C04",
+          "status": "pass",
+          "reason": "Hero 700ms/y16, CTA delay120ms, badge delay220+45ms, theater delay200ms and reduced initial=false are specified in motion recipes/cascade.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.3"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§7–8"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "LandingIntro motion recipes"
+            }
+          ]
+        },
+        {
+          "id": "UI-03-C05",
+          "status": "pass",
+          "reason": "Intro renders separately from input/confirmation; failed sample loading retains page and old input, releases the lock and displays the error.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "SAMPLE-01"
+            }
+          ]
+        },
+        {
+          "id": "UI-03-C06",
+          "status": "pass",
+          "reason": "Landing references and DOM text plus sample/CTA acceptance define GSPEC, formats, natural-language guidance and example consistency. No provider call is inferred from the synthetic capture.",
+          "evidence": [
+            {
+              "path": "ui/reference/manifest.json",
+              "section": "01 and 29–30 landing captures"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§9 UI-01"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "SAMPLE-01"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-04",
+      "checks": [
+        {
+          "id": "UI-04-C01",
+          "status": "pass",
+          "reason": "File/text requests are exclusive; target upload requires awaiting_documents and uses the approved criteria summary in the right pane.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§2; §4.1–4.2"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            }
+          ]
+        },
+        {
+          "id": "UI-04-C02",
+          "status": "pass",
+          "reason": "Extensions, 12000-character text, role endpoints and file preview metadata are defined; the 20MB label is distinguished from server validation and no App client prescreen is invented.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D5"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "UPLOAD-01"
+            }
+          ]
+        },
+        {
+          "id": "UI-04-C03",
+          "status": "pass",
+          "reason": "Drag, locked/uploading, append/delete, preview open/close, mode switches and samples have explicit button and state effects, including existing-preview access during upload.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "UPLOAD-01/02; SAMPLE-01; GOLDEN-01"
+            }
+          ]
+        },
+        {
+          "id": "UI-04-C04",
+          "status": "pass",
+          "reason": "Upload art, file-row y6/input-stage y12 entrances, final styles and responsive stacking are supplied by the mapped visual catalogue and input references.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§2; §5.3"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–7"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "UploadVisual and App input-stage"
+            },
+            {
+              "path": "ui/reference/11-target-input-empty.png",
+              "section": "settled target input"
+            }
+          ]
+        },
+        {
+          "id": "UI-04-C05",
+          "status": "pass",
+          "reason": "Catalog/load errors, P10 PNG notice, loading close lock and empty target selection are explicit; all-mode is component-only and the empty criteria catalog C01 request is documented as a baseline defect.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D5"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "GOLDEN-EMPTY; GOLDEN-02"
+            }
+          ]
+        },
+        {
+          "id": "UI-04-C06",
+          "status": "pass",
+          "reason": "Criteria and target fixtures provide exact request bodies, role-filtered success, deletion/failure/empty outcomes; the page contract forbids mixed file/text transmission.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "GOLDEN-01/02/EMPTY; UPLOAD-01/02"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-05",
+      "checks": [
+        {
+          "id": "UI-05-C01",
+          "status": "pass",
+          "reason": "ID-scoped file grouping, up to eight path levels, sample nesting, implicit general criteria and unlocated sources are deterministic; duplicate filenames do not merge groups.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D2.1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CRITERIA-TREE"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.9 EF-09"
+            }
+          ]
+        },
+        {
+          "id": "UI-05-C02",
+          "status": "pass",
+          "reason": "Draft serialization, numeric/qualitative choice, comparison and inclusive ranges, conditions/source/revision and count limits are explicit. The empty-source add-cap defect is separately preserved.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D2.2"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CRITERIA-LIMIT"
+            }
+          ]
+        },
+        {
+          "id": "UI-05-C03",
+          "status": "pass",
+          "reason": "Selection, exclusion, uncertain assessments, revision reset versus same-props retention and per-source feedback states are enumerated, including all-excluded recovery.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D2.1–D2.3"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CRITERIA-REVISION"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§5"
+            }
+          ]
+        },
+        {
+          "id": "UI-05-C04",
+          "status": "pass",
+          "reason": "Collapsed rows, expanded edit controls, shared preview highlights and selected evidence are mapped to exact DOM/styles; settled criteria references give the intended density and independent scroll.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D2.4"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–6"
+            },
+            {
+              "path": "ui/reference/manifest.json",
+              "section": "criteria-confirm references 31–32"
+            }
+          ]
+        },
+        {
+          "id": "UI-05-C05",
+          "status": "pass",
+          "reason": "Invalid numeric/range/blank/condition drafts reveal errors and block confirmation; feedback failed/sent/applied and draft preservation are distinct.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D2.2–D2.3; D6 detail-06–09"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CRITERIA-REVISION; CRITERIA-LIMIT"
+            }
+          ]
+        },
+        {
+          "id": "UI-05-C06",
+          "status": "pass",
+          "reason": "CRITERIA-TREE/REVISION provide IDs, sheet cells, expected hierarchy and re-feedback; detail fixtures cover exclusions and preview label supplements are explicitly non-mutating.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "CRITERIA-TREE; CRITERIA-REVISION; PREVIEW-LABEL"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D6 detail-07–09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-06",
+      "checks": [
+        {
+          "id": "UI-06-C01",
+          "status": "pass",
+          "reason": "File list, map, drawers, coverage and activity hierarchy and source callbacks are defined, with separate context/checks/transcription transitions.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I7"
+            }
+          ]
+        },
+        {
+          "id": "UI-06-C02",
+          "status": "pass",
+          "reason": "Reader/context/coverage completion, raw units and separate transcription metadata are distinguished; hidden/merged/rotated regions and preview truncation do not imply full reading.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D3.1"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I7"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ANALYSIS-SHEETS; ANALYSIS-PDF"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3"
+            }
+          ]
+        },
+        {
+          "id": "UI-06-C03",
+          "status": "pass",
+          "reason": "I7 enumerates file labels/icons, active map, quality rounds/seals and empty outputs independently; limited or needs-review does not increment complete counts.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I7"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ANALYSIS-EMPTY; ANALYSIS-SHEETS"
+            }
+          ]
+        },
+        {
+          "id": "UI-06-C04",
+          "status": "pass",
+          "reason": "Phase 550ms, region 520ms with capped75ms stagger, 400ms drawer and active-only map arrows/nodes are numerically defined with reduced behavior.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I7"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§7–8"
+            }
+          ]
+        },
+        {
+          "id": "UI-06-C05",
+          "status": "pass",
+          "reason": "The strict 28px log follow boundary, busy-to-idle collapse, manual reopen and truncated/uncertain source messages have explicit outcomes.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D3.1–D3.2; D6 detail-10–11"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I7"
+            }
+          ]
+        },
+        {
+          "id": "UI-06-C06",
+          "status": "pass",
+          "reason": "Hidden-sheet multi-region and rotated-PDF fixtures specify counts, reading/context fractions, warning seals and exact source callbacks; no renderer rotation is invented.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ANALYSIS-SHEETS; ANALYSIS-PDF; ANALYSIS-EMPTY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-07",
+      "checks": [
+        {
+          "id": "UI-07-C01",
+          "status": "pass",
+          "reason": "Milestone order, counts from actual analysis/fields/nonpending items and theater/workroom/context geometry are explicit.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.1; §2.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I2"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–6"
+            }
+          ]
+        },
+        {
+          "id": "UI-07-C02",
+          "status": "pass",
+          "reason": "The active-document precedence, approved empty criteria array semantics and every operation-phase fallback are defined.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I2"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "FLOW-INTERLEAVE"
+            }
+          ]
+        },
+        {
+          "id": "UI-07-C03",
+          "status": "pass",
+          "reason": "Busy/observing/terminal/no-data context titles and expansion behavior are tabulated; records fall back to structure and each side paginates independently two per page.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I2"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "FLOW-STATE"
+            }
+          ]
+        },
+        {
+          "id": "UI-07-C04",
+          "status": "pass",
+          "reason": "Context reveal240ms/page160ms and bridge2.2s/status2.6s require busy&&observing; OFF is static.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.1; §5.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I2"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "id": "UI-07-C05",
+          "status": "pass",
+          "reason": "Disconnected context shows last received data and stops its motion; the theater receives no connection prop and can retain ambience. Cancellation/partial data are not fabricated success.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I2"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§10"
+            }
+          ]
+        },
+        {
+          "id": "UI-07-C06",
+          "status": "pass",
+          "reason": "Interleaved two-file extraction/decision, no-output wait and state variants specify active file, operation, counts and context outputs; cases remain NOT_RUN.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "FLOW-INTERLEAVE; FLOW-STATE; ARRIVAL-BURST"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-08",
+      "checks": [
+        {
+          "id": "UI-08-C01",
+          "status": "pass",
+          "reason": "The 1120×300 routes include the center fail line, all lanes, document stack and engine; mobile hides packet/station layers and stacks the remaining information.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.1"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–6"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "ReviewTheater SVG recipes"
+            }
+          ]
+        },
+        {
+          "id": "UI-08-C02",
+          "status": "pass",
+          "reason": "Live identity includes id/status/value/unit/label, initial/context baselines suppress replay, and only changed nonpending results generate verdict packets; preview loops are isolated.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.2"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3"
+            }
+          ]
+        },
+        {
+          "id": "UI-08-C03",
+          "status": "pass",
+          "reason": "I3 specifies baseline resets, latest lane selection, six-packet sampling/dedupe order and field reservation while counts use all real items; the burst fixture fixes the retained order.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ARRIVAL-BURST"
+            }
+          ]
+        },
+        {
+          "id": "UI-08-C04",
+          "status": "pass",
+          "reason": "Verdict1800ms/extraction1300ms/stagger75ms, chip geometry, expiry padding and 350ms cleanup are explicit; state expiry is separated from visual duration.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.1–5.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3"
+            },
+            {
+              "path": "ui/tokens.json",
+              "section": "motion.arrival"
+            }
+          ]
+        },
+        {
+          "id": "UI-08-C05",
+          "status": "pass",
+          "reason": "Ambience and event-driven packets are distinguished. Mobile hides their visuals without stopping state/timers; OFF/context/empty clearing differs from terminal and busy=false.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§10"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ARRIVAL-BURST"
+            }
+          ]
+        },
+        {
+          "id": "UI-08-C06",
+          "status": "pass",
+          "reason": "Timestamped arrival and click fixtures fix counts, lane color/source card, noninteractive flying chips and maximum six; live selection opens inline evidence and preview cards remain inert.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "ARRIVAL-BURST; THEATER-SELECT"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-09",
+      "checks": [
+        {
+          "id": "UI-09-C01",
+          "status": "pass",
+          "reason": "Observer-only GET/SSE and exact undefined/null/string run/context, cutoff/kind/name predicates plus all four call-site scopes prevent inferred execution or scope inheritance.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-SCOPE"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "id": "UI-09-C02",
+          "status": "pass",
+          "reason": "Running versus waiting parent, group identity/order, event cap and raw-order slice(-100) are defined; newest-first input retaining oldest100 is explicitly a limitation.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-CAP"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7; §7.10"
+            }
+          ]
+        },
+        {
+          "id": "UI-09-C03",
+          "status": "pass",
+          "reason": "Active transitions, manual selection, operation versus selected history, review-only autoCollapse default, exact800ms conjunction and offline elapsed freeze/reconnect jump are explicit.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-COLLAPSE; DOCK-RECONNECT"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-PREFERRED"
+            }
+          ]
+        },
+        {
+          "id": "UI-09-C04",
+          "status": "pass",
+          "reason": "Real title/phase/detail and one-second wall elapsed are distinct from three-second nonheartbeat-output silence; no fabricated percentage or token stream is permitted.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-LOG"
+            }
+          ]
+        },
+        {
+          "id": "UI-09-C05",
+          "status": "pass",
+          "reason": "Snapshot10s, quiet15s, first-error immediate recovery, repeated4..60s backoff, idle no-poll and strict log<28px follow/latest button are specified with disposal guards.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-LOG; DOCK-RECONNECT"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "OBSERVER-REFRESH"
+            }
+          ]
+        },
+        {
+          "id": "UI-09-C06",
+          "status": "pass",
+          "reason": "Scope, caps, logs, collapse/reconnect and interleave fixtures define membership, executing/active counts, operation selection, elapsed and connection expectations without triggering actual work.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "DOCK-SCOPE; DOCK-CAP; DOCK-LOG; DOCK-COLLAPSE; DOCK-RECONNECT; FLOW-INTERLEAVE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-10",
+      "checks": [
+        {
+          "id": "UI-10-C01",
+          "status": "pass",
+          "reason": "I5–I6 specify both chamber selections/statuses, phase captions/icons, actual recent-three history semantics and complete SVG art geometry through the component catalogue.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5–I6"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4; §7–8"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "SandboxWorkroomScene/SandboxWorkScene SVG nodes"
+            }
+          ]
+        },
+        {
+          "id": "UI-10-C02",
+          "status": "pass",
+          "reason": "Parent-first-running and explicit handoff eligibility, runtime/scope rejection and event-ID versus parent canonical key are explicit. HANDOFF-KEY resolves changed endpoints reusing the same event ID.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "HANDOFF-KEY; HANDOFF-LIFECYCLE"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "HANDOFF-DUP-TIME"
+            }
+          ]
+        },
+        {
+          "id": "UI-10-C03",
+          "status": "pass",
+          "reason": "Session/file key, liveSince, first-live exception, baseline/history/group handling, finite age, FIFO caps and terminal/OFF/reconnect queue rules are specified without conflating component seen and queue seen.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "HANDOFF-LIFECYCLE; HANDOFF-20"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            }
+          ]
+        },
+        {
+          "id": "UI-10-C04",
+          "status": "pass",
+          "reason": "1400ms hold/1300ms travel/70ms trail and directional one-shot routes are defined; disconnect at500ms preserves900ms and pauses both timer and descendant/pseudo CSS position.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "HANDOFF-20"
+            }
+          ]
+        },
+        {
+          "id": "UI-10-C05",
+          "status": "pass",
+          "reason": "The exact 20-transfer schedule retains H13…H20, counts omitted12, preserves actual results and suppresses duplicate/history/log transfers; OFF does not erase seen history.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "HANDOFF-20; HANDOFF-LIFECYCLE; HANDOFF-KEY"
+            }
+          ]
+        },
+        {
+          "id": "UI-10-C06",
+          "status": "pass",
+          "reason": "SCENE-MAP now separately specifies25 phase/condition variants, including transcribe/context/repair/read/complete/dashboard validate, OFF, disconnected and waiting chambers, with stage/art/caption/loop expectations.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I6"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "SCENE-MAP"
+            },
+            {
+              "path": "decomposition/ui-modules.json",
+              "section": "UI-10-C06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-11",
+      "checks": [
+        {
+          "id": "UI-11-C01",
+          "status": "pass",
+          "reason": "PDF/image/table/text/link precedence, source links, sheet/hidden metadata, PDF controls and unsupported/empty preview branches are explicit.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.1–D1.2"
+            }
+          ]
+        },
+        {
+          "id": "UI-11-C02",
+          "status": "pass",
+          "reason": "Document/missing/anchor/priority rules are explicit. REQUIRED_REBUILD I9.1 overrides observed coordinate bypass with source-digest, unique-sheet, full-bounds, quote/numeric-boundary and verified-record/anchor checks; failed item admission yields no colored cells and a position chip.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "PREVIEW-WRONG-CELL; PREVIEW-MISSING"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9.1 REQUIRED_REBUILD"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TABLE-HIGHLIGHT-REBUILD"
+            }
+          ]
+        },
+        {
+          "id": "UI-11-C03",
+          "status": "pass",
+          "reason": "Document reset, page prop integer guard, zoom1–2/0.25, sheets/chips and missing-location states are defined; the chip fractional-page exception and error are now separately specified.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.1–D1.3"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "PREVIEW-PDF-FRACTION"
+            }
+          ]
+        },
+        {
+          "id": "UI-11-C04",
+          "status": "pass",
+          "reason": "Canvas DPR≤2, scale/transform, ResizeObserver140px minimum, internal selected-evidence scroll and reduced instant behavior plus table sticky geometry are quantitative.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.1–D1.4"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–6"
+            }
+          ]
+        },
+        {
+          "id": "UI-11-C05",
+          "status": "pass",
+          "reason": "Load/render/text/image/truncated failures and retained source link are separate; loadingTask.destroy, renderTask.cancel, observer cleanup and stale-result guard prevent old document overlays.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.1–D1.2; D6 detail-01/05"
+            }
+          ]
+        },
+        {
+          "id": "UI-11-C06",
+          "status": "pass",
+          "reason": "PDF/missing/multi-sheet/label fixtures remain explicit, while20 required table variants now fix accepted cells and wrong-cell/header/numeric/range/anchor failures; negative observed outputs are separately classified, not copied as product acceptance.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "PREVIEW-LABEL; PREVIEW-LABEL-REJECT; PREVIEW-MISSING; PREVIEW-WRONG-CELL"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D6 detail-02–05"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "PREVIEW-PDF-PAGE"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9.1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TABLE-HIGHLIGHT-REBUILD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-12",
+      "checks": [
+        {
+          "id": "UI-12-C01",
+          "status": "pass",
+          "reason": "The file→summary→source/list-or-detail hierarchy and applied-criteria tab membership/order/nonclickable article behavior are explicit; selecting detail replaces the list immediately.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§2.4; §7"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/reference/15-result-detail-fail.png",
+              "section": "settled selected detail"
+            }
+          ]
+        },
+        {
+          "id": "UI-12-C02",
+          "status": "pass",
+          "reason": "File scoping and all-item highlights remain independent of list filter; required I9.1 admission further limits those highlights to verified source cells without changing item verdict/value/evidence.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "RESULT-SELECTION; RESULT-EMPTY"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9.1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TABLE-HIGHLIGHT-REBUILD"
+            }
+          ]
+        },
+        {
+          "id": "UI-12-C03",
+          "status": "pass",
+          "reason": "The chooseFile/item/filter/clear/tab/external state table specifies all resets, scroll/focus restoration and filtered nonwrapping previous/next; resolve escaping filter changes filter to all.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "RESULT-SELECTION"
+            }
+          ]
+        },
+        {
+          "id": "UI-12-C04",
+          "status": "pass",
+          "reason": "Selected-detail200ms/x12, bar350ms and <=780px order=-1 plus workspace section scrollTop0 are numerical; source and window scroll are distinguished.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§2.5; §5.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "RESULT-MOBILE"
+            },
+            {
+              "path": "ui/reference/34-result-detail-fail-1280.png",
+              "section": "settled desktop-short detail"
+            }
+          ]
+        },
+        {
+          "id": "UI-12-C05",
+          "status": "pass",
+          "reason": "No target, no decision, working, document failure, empty filter, missing criteria and unmapped criterion outputs are enumerated; original preview remains available where a document exists.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "RESULT-EMPTY"
+            }
+          ]
+        },
+        {
+          "id": "UI-12-C06",
+          "status": "pass",
+          "reason": "RESULT-SELECTION/MOBILE define navigation, focus and scroll restoration and full-source highlights; visual tolerance and required viewport matrix define bounds checks without claiming unexecuted states were captured.",
+          "evidence": [
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "RESULT-SELECTION; RESULT-MOBILE; VISUAL-VIEWPORTS"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-13",
+      "checks": [
+        {
+          "id": "UI-13-C01",
+          "status": "pass",
+          "reason": "Compact detail and edit form element order, comparison/value/rule/reason/source/CTA and save/cancel controls are explicitly mapped to DOM/styles and settled detail references.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–6"
+            },
+            {
+              "path": "ui/component-style-map.json",
+              "section": "Inspector"
+            },
+            {
+              "path": "ui/reference/15-result-detail-fail.png",
+              "section": "settled compact hierarchy"
+            }
+          ]
+        },
+        {
+          "id": "UI-13-C02",
+          "status": "pass",
+          "reason": "Resolve passes exact item ID/status/note, success updates current item/summary and human stamp while machine provenance remains; source buttons use document/page/sheet/cell.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2; §7"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            }
+          ]
+        },
+        {
+          "id": "UI-13-C03",
+          "status": "pass",
+          "reason": "Item id/status/humanNote effect resets editing/note/error, compact heading focuses preventScroll, pending/disabled blocks editing and saving disables resubmit. Saving itself is not reset on item swap.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "INSPECTOR-SAVE"
+            }
+          ]
+        },
+        {
+          "id": "UI-13-C04",
+          "status": "pass",
+          "reason": "Full220ms/y14 versus compact initial=false, comparison .85:1.15, gap/padding/type sizes and independently scrolling long detail are explicit in I8 and effective styles.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–7"
+            }
+          ]
+        },
+        {
+          "id": "UI-13-C05",
+          "status": "pass",
+          "reason": "Whitespace/1000-char/error behavior and local cancel are specified. Cancel before save causes no mutation; cancelling an already pending request does not abort it and a late success can close a reopened form.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "INSPECTOR-SAVE"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§7"
+            }
+          ]
+        },
+        {
+          "id": "UI-13-C06",
+          "status": "pass",
+          "reason": "Current item consumers recompute summary/file counts/highlights after resolve; existing dashboard data remains its generation snapshot and requires regeneration to reflect changes.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§6–7"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02; D09"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§7; §10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-14",
+      "checks": [
+        {
+          "id": "UI-14-C01",
+          "status": "pass",
+          "reason": "Three KPIs, distribution, per-file bars and named item map hierarchy are defined; clicking an item selects its file/detail in the results tab.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§6"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10 ResultsVisuals"
+            }
+          ]
+        },
+        {
+          "id": "UI-14-C02",
+          "status": "pass",
+          "reason": "Total/completed/attention/pending formulas, document input order, empty targets/orphans and zero-data neutral ring are explicit; decorative ring1 is not a real item.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§6"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10 ResultsVisuals"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§10"
+            }
+          ]
+        },
+        {
+          "id": "UI-14-C03",
+          "status": "pass",
+          "reason": "Legend/donut toggle, filtered tile exit and empty results remain defined; rebuilt tooltip lifecycle now follows I8.1 hover/focus persistence, scroll reposition, Escape latch and trigger selection.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§6; §5.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8.1"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TOOLTIP-G13-REBUILD"
+            }
+          ]
+        },
+        {
+          "id": "UI-14-C04",
+          "status": "pass",
+          "reason": "650ms count/850ms donut/800ms bars/300ms tiles, 22ms capped stagger, hover/tap and application/OS reduced conditions are quantitative.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§5.3; §6"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§7–8"
+            }
+          ]
+        },
+        {
+          "id": "UI-14-C05",
+          "status": "pass",
+          "reason": "Required I8.1 supersedes observed overflow: exact276px cap/8px clamp, max-height/internal scrolling, resize/capture-scroll rAF, accessible focus/hover, Escape restoration+latch and cleanup have numeric viewport oracles; real zero counts remain zero.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§6; §10"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8–I9"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TOOLTIP-LIMIT"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18 and original observation versus required rebuild policy"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "§4 G13"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I8.1 REQUIRED_REBUILD"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TOOLTIP-G13-REBUILD"
+            }
+          ]
+        },
+        {
+          "id": "UI-14-C06",
+          "status": "pass",
+          "reason": "Recharts summary and react-chartjs-2 generated charts have separate roles and value/type/click/motion acceptance; their differing datasets are not conflated.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§1; §6; §9 UI-05"
+            },
+            {
+              "path": "ui/library-effects.csv",
+              "section": "ResultsVisuals/custom dashboard library rows"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D06; D10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-15",
+      "checks": [
+        {
+          "id": "UI-15-C01",
+          "status": "pass",
+          "reason": "Default instruction, all four complete presets and replace semantics,1500-character limit and builder/workroom/preview/source/download flow are defined.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D09; D09a"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "preset and modal scenarios"
+            }
+          ]
+        },
+        {
+          "id": "UI-15-C02",
+          "status": "pass",
+          "reason": "POST/baseDesign, immutable snapshot/sourceItems, bridge origin/source/token/item validation and five-entry write-order cache are exact. Required notice metadata is defined separately from14-field design and the frozen review snapshot.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02; D03; D07; D09"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2; §7.7"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05b"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RequiredRebuildDashboardNoticeMetadata/PublicReadyJobExtension"
+            }
+          ]
+        },
+        {
+          "id": "UI-15-C03",
+          "status": "pass",
+          "reason": "D09a enumerates job×builder×workroom×resultView states, retry/old preview and actual successful job.design applied tags; standard fallback is identified. Required fixed notice text communicates unsupported/partial/unapplied customization below toolbar/tags without rewriting subtitle.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03; D09a"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05b"
+            }
+          ]
+        },
+        {
+          "id": "UI-15-C04",
+          "status": "pass",
+          "reason": "240ms shell/260ms content, lazy source view, memo iframe, first-visit mount gate, retained already-viewed hidden chart and cleanup/reduced scope are explicit.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D09"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§9 UI-10"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "id": "UI-15-C05",
+          "status": "pass",
+          "reason": "Poll-after-response1200ms, third consecutive failure, sequence/alive/abort, close-before-POST DELETE, blank ready HTML failure/old-preview retention and final handoff limit are specified.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03; D09a"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "MODAL-01…08"
+            }
+          ]
+        },
+        {
+          "id": "UI-15-C06",
+          "status": "pass",
+          "reason": "Eight modal scenarios state timing, mounts/remounts, selection retention, reopen/regenerate and standalone download/bridge exclusion expectations. They are unexecuted fixture contracts.",
+          "evidence": [
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "MODAL-01…08"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-16",
+      "checks": [
+        {
+          "id": "UI-16-C01",
+          "status": "pass",
+          "reason": "All14 fields have closed enums/defaults and observable DOM/CSS/chart effects, including layout/density/focus and fileVisualization independently from overall distribution.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D06"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "properties/required"
+            },
+            {
+              "path": "contracts/dashboard-design.default.json",
+              "section": "all14 defaults"
+            }
+          ]
+        },
+        {
+          "id": "UI-16-C02",
+          "status": "pass",
+          "reason": "D05a/b separates observed matcher output from required scoped changes. Corrected red/subtle targets, independent semantic judge, fixed request-time base, approved-field host merge and shared3-call budget determine new behavior without claiming perfect model interpretation.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D04–D05"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preference cases and expected plans"
+            },
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "design-only constraints"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a REQUIRED_REBUILD"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "PREF-C01/PREF-C03 required targetExpected"
+            }
+          ]
+        },
+        {
+          "id": "UI-16-C03",
+          "status": "pass",
+          "reason": "Reading order for four layouts, focus modes, filters/file/item detail selection and zero/one/many/long-content cases have explicit behavior and sizing.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07"
+            },
+            {
+              "path": "reference/dashboard/standalone-reference.css",
+              "section": "layout/detail/empty rules"
+            }
+          ]
+        },
+        {
+          "id": "UI-16-C04",
+          "status": "pass",
+          "reason": "Light palette includes axis/tooltip, doughnut cutout versus pie, actual chart sizes, legend placement, corners and full/subtle/none/reduced settings are numerical.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D06"
+            },
+            {
+              "path": "reference/dashboard/chart-entry.reference.jsx",
+              "section": "chart options"
+            },
+            {
+              "path": "reference/dashboard/standalone-reference.css",
+              "section": "themes, sizes and motion"
+            }
+          ]
+        },
+        {
+          "id": "UI-16-C05",
+          "status": "pass",
+          "reason": "Required unsupported-trend handling preserves subtitle and verdict data, emits validated fixed notice codes in the app and exported HTML, and distinguishes no approved intent/partial intent/generated success under the bounded planner-judge-repair budget.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02; D04; D08"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "bounded repair/fallback"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.6"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a REQUIRED_REBUILD"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "PREF-C01/PREF-C03 required targetExpected"
+            },
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "unsupported trend limitation in subtitle"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "unsupported trend limitation in subtitle"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05b fixed notices, render placement and budget"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "plannerEnvelopeContract; semantic negative cases; notices"
+            }
+          ]
+        },
+        {
+          "id": "UI-16-C06",
+          "status": "pass",
+          "reason": "Corrected required target plans, multi-step full14-field sequence, semantic negative cases and18 viewport/design browser cases provide consistent expected outputs. All execution statuses remain NOT_RUN; this passes specification clarity only.",
+          "evidence": [
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "full plans;18 browser cases"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D11–D12"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a REQUIRED_REBUILD"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "PREF-C01/PREF-C03 required targetExpected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-17",
+      "checks": [
+        {
+          "id": "UI-17-C01",
+          "status": "pass",
+          "reason": "File tabs/counts, original source/evidence, item detail and bridge selectionVersion transition are fully mapped; source capture matches the intended hierarchy.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D07; D10a–D10b"
+            },
+            {
+              "path": "ui/reference/25-dashboard-source.png",
+              "section": "settled source hierarchy"
+            }
+          ]
+        },
+        {
+          "id": "UI-17-C02",
+          "status": "pass",
+          "reason": "D02 now explicitly separates observed normalization from REQUIRED_REBUILD DB-H01: frozen snapshot/sourceItems preserve presence and missingVerified, including false versus absent, and suppress contextual target evidence for missing items without live merge.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02; D10a–D10b"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "source trace"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18 REQUIRED_REBUILD priority"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "projectionCases observed versus required outputs"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RequiredRebuildDashboardSnapshotItem/SourceItem"
+            }
+          ]
+        },
+        {
+          "id": "UI-17-C03",
+          "status": "pass",
+          "reason": "D10a action table fixes file/source/filter/evidence resets and target-first source selection; external repeated item selection has an explicit selectionVersion trace.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10a"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "eleven-step source trace"
+            }
+          ]
+        },
+        {
+          "id": "UI-17-C04",
+          "status": "pass",
+          "reason": "320ms/y6 uses app OR OS reduced; compact source, independent pane scroll, responsive geometry and retained chart state are explicit.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D09; D10b"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§4–8"
+            }
+          ]
+        },
+        {
+          "id": "UI-17-C05",
+          "status": "pass",
+          "reason": "Legacy missing sourceSnapshot disables switch with regenerate guidance; unknown messages/items and absent source/evidence do not create guessed highlights.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D07; D09; D10a"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1"
+            }
+          ]
+        },
+        {
+          "id": "UI-17-C06",
+          "status": "pass",
+          "reason": "The two-file source trace supplies exact selection/evidence/filter attributes, and DB-H01 projection cases supply required flag roundtrips and missing-target suppression independently of observed negative controls.",
+          "evidence": [
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "source trace"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10a; D11"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "projectionCases REQUIRED_REBUILD"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "UI-18",
+      "checks": [
+        {
+          "id": "UI-18-C01",
+          "status": "pass",
+          "reason": "Standard export URLs/menu and ledger upload→target/key→mapping confirmation→copy-download flow are complete and distinct from a persistent ledger product.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§1–2; §6–7"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4"
+            }
+          ]
+        },
+        {
+          "id": "UI-18-C02",
+          "status": "pass",
+          "reason": "Ready/two-cell/basis/fingerprint gate, full mapping request, server-recomputed proposal and confirmed:true button meaning fix download authorization and old/new value display.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§2.3; §4–6"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4.2"
+            }
+          ]
+        },
+        {
+          "id": "UI-18-C03",
+          "status": "pass",
+          "reason": "Serialized operation lock, sequence/abort, automatically extracted key and input-change invalidation versus note-only retention are explicit.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§6"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4.1–D4.3"
+            }
+          ]
+        },
+        {
+          "id": "UI-18-C04",
+          "status": "pass",
+          "reason": "230ms/scale.985/y14, inline scoped observer during analysis, final charcoal/mint cascade, mapping comparison and <=780px scrolling layout are specified.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§6.1–6.2"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4.3"
+            },
+            {
+              "path": "ui/VISUAL-CONTRACT.md",
+              "section": "§3–8"
+            }
+          ]
+        },
+        {
+          "id": "UI-18-C05",
+          "status": "pass",
+          "reason": "XLSX/size/one-drop validation, blocked candidates, malformed ready response, close abort, empty blob and inline HTTP errors have exact labels and disabled/retry behavior while retaining original bytes.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§2; §6"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D4; D6 detail-12–14"
+            }
+          ]
+        },
+        {
+          "id": "UI-18-C06",
+          "status": "pass",
+          "reason": "LED cases specify wrong/duplicate keys, basis/fingerprint mismatches, unchanged-payload exception, exact two-cell mutation, original-byte invariance, filename and added user note.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§4.1; §5; §8 LED-02/05/07/08/09/12"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R1-UI-001",
+      "moduleId": "UI-01",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§5.4; §9 UI-07",
+      "problem": "Terminal 전이 timer 재시작과 ≤2.3s gate가 양립하는 clock 계약이 없다.",
+      "alternativeInterpretations": [
+        "busy flag가 바뀔 때마다 1800/1600ms를 새로 기다린다.",
+        "첫 terminal 관측 기준 absolute deadline 안에서만 남은 연출을 보여준다."
+      ],
+      "requiredDecision": "first-terminal 기산점, effect dependency, deadline을 고정하고 busy 토글 trace의 이동 시각을 지정한다.",
+      "resolution": "I1 exact effect dependencies and TIMER-01 set the clock origin to the latest dependency change, with cancelled deadlines and final navigation time.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-01-C04"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-002",
+      "moduleId": "UI-02",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§2.1 + ui/detail-controls.md D5",
+      "problem": "GoldenPicker의 최종 색상과 전역 차콜 override의 우선순위가 충돌한다.",
+      "alternativeInterpretations": [
+        "D5 lime/청록은 명시된 observed dialog 예외로 구현한다.",
+        "§2.1 최종 단일 테마에 따라 GoldenPicker 선택/버튼도 코발트로 덮는다."
+      ],
+      "requiredDecision": "GoldenPicker의 최종 computed color 표를 제공하고 대장처럼 예외 여부/우선순위를 명시한다.",
+      "resolution": "VISUAL-CONTRACT §1/§3, tokens golden values and detail D5 fix the effective charcoal dialog and cobalt selection cascade.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-02-C01"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-003",
+      "moduleId": "UI-02",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§5.3 + ui/motion-catalog.json",
+      "problem": "모션 prose와 precise catalog의 유효 값이 다르다.",
+      "alternativeInterpretations": [
+        "scan8.4s, native module y10/row y5를 쓴다.",
+        "scan6.4s, native module y8/row y4를 쓴다."
+      ],
+      "requiredDecision": "활성 selector의 최종 유효값과 문서/카탈로그 parameter precedence를 하나로 고정한다.",
+      "resolution": "Effective style/component catalogues are normative; 04 motion values now match the documented cascade and per-component overrides.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-02-C04"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-004",
+      "moduleId": "UI-02",
+      "severity": "high",
+      "status": "resolved",
+      "document": "ui/reference/README.md",
+      "section": "화면 범위; 캡처 절차",
+      "problem": "필수 뷰포트와 안정화된 정적 시각 참조가 미완성이다.",
+      "alternativeInterpretations": [
+        "1440×960/390px만으로 다른 요구 viewport까지 동등성 통과 처리한다.",
+        "1600×960/1280×800도 별도 reference가 있어야 판정한다."
+      ],
+      "requiredDecision": "요구 viewport별 manifest/측정값을 제공하거나 모집단 변경 이유·영향을 기록한다. reveal 중 캡처는 안정화하여 재수집하거나 동적 phase 참조로 명시한다.",
+      "resolution": "Settled replacements and 34-entry manifest separate supplied viewport references from future NOT_RUN live/list captures; sample PNG inspection confirms readable final opacity.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-02-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-005",
+      "moduleId": "UI-03",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§3 경비 예제",
+      "problem": "sampleLoading과 sample 실패 이후 상태가 불완전하다.",
+      "alternativeInterpretations": [
+        "intro에서 API 성공까지 대기하고 실패시 intro/기존 입력 유지한다.",
+        "요청 시작과 동시에 criteria-input으로 이동하거나 기존 documents/text를 초기화한다."
+      ],
+      "requiredDecision": "intro/input 각각의 요청 전/진행/성공/실패 page, documents, criteriaText, sampleTargets 및 CTA/spinner 행렬을 확정한다.",
+      "resolution": "I1 and SAMPLE-01 specify pending, retained input, success reset/target storage and failure; no epoch guard is falsely added.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-03-C03",
+        "UI-03-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-006",
+      "moduleId": "UI-04",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§3 입력 상태",
+      "problem": "drag-over/uploading/preview 닫기의 상태별 조작과 배치가 누락됐다.",
+      "alternativeInterpretations": [
+        "업로드 중 원문 선택/닫기는 허용하며 preview 닫으면 중앙 카드로 복귀한다.",
+        "locked가 모든 row/preview 조작도 막고 preview 자리 두 열을 유지한다."
+      ],
+      "requiredDecision": "파일picker/drop enter/leave/upload/실패/delete/preview close의 enabled·label·배치를 표로 지정한다.",
+      "resolution": "I1 and UPLOAD-01/02 specify drag, controls, preview exceptions, append/delete/failure/epoch behavior.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-04-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-007",
+      "moduleId": "UI-04",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D5 GoldenPicker",
+      "problem": "all mode의 현재 앱 진입 가능 여부가 불명확하다.",
+      "alternativeInterpretations": [
+        "all 모드는 내부 지원만 하므로 앱에 criteria/target 두 진입만 만든다.",
+        "일반 sample 선택 진입에서 all dialog를 열게 만든다."
+      ],
+      "requiredDecision": "현재 App에서 all 미호출 여부 및 허용 진입점 목록을 명시한다.",
+      "resolution": "D5/I1/GOLDEN-02 explicitly restrict App to criteria/target; all-mode is a component-only path.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-04-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-008",
+      "moduleId": "UI-04",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D5/D6",
+      "problem": "criteria/target golden의 별도 입력/상태 검증 사례가 없다.",
+      "alternativeInterpretations": [
+        "generic mode unit case만으로 두 앱 진입의 사용성을 통과한다.",
+        "각 앱 진입에서 exact payload/성공 append/0개/삭제까지 검증한다."
+      ],
+      "requiredDecision": "두 mode별 입력·조작·요청·반환 documents·오류/빈 상태 oracle를 추가한다.",
+      "resolution": "GOLDEN-01/02/EMPTY specify mode-specific request, role-filtered success, zero selection, deletion and current empty-catalog behavior.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-04-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-009",
+      "moduleId": "UI-05",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D2.1/D6",
+      "problem": "복수출처/동명파일/다중sheet/계층압축을 판정할 expected tree fixture가 없다.",
+      "alternativeInterpretations": [
+        "provenance가 같은 criterion을 탭마다 반복할 때 전체 count도 중복 증가한다.",
+        "탭에는 반복해도 global selected count는 ID별1개로 유지한다."
+      ],
+      "requiredDecision": "복수출처·동명·유형없음·제외·피드백 fixture에 tree, selected count, source 좌표를 명시한다.",
+      "resolution": "CRITERIA-TREE/REVISION supply file-ID groups, duplicate filenames, sheets/cells, hierarchy and re-feedback expected output; PREVIEW-LABEL preserves original Criterion.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-05-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-010",
+      "moduleId": "UI-06",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D3.1–D3.2",
+      "problem": "문서분석 no-data/오류/부분/품질제한의 label/icon/seal 전체 출력표가 없다.",
+      "alternativeInterpretations": [
+        "status complete면 complete icon을 표시하고 limited는 보조 badge만 추가한다.",
+        "quality limited면 주 icon/seal도 확인필요 상태로 바꾼다."
+      ],
+      "requiredDecision": "각 status+quality+coverage 조합의 주 라벨·icon·seal·빈 상태를 명시한다.",
+      "resolution": "I7 and ANALYSIS-EMPTY specify independent file/quality/seal/no-data states and exact labels.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-06-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-011",
+      "moduleId": "UI-06",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D3.2/D6",
+      "problem": "구조지도 특수형태의 조작 및 coverage 기대값 fixture가 없다.",
+      "alternativeInterpretations": [
+        "hidden sheet/rotation은 설명만 보이고 source 이동은 생략한다.",
+        "지도 region에서 sheet/page와 첫 cell로 이동하고 분수/불완전 경고를 같이 검증한다."
+      ],
+      "requiredDecision": "hidden sheet/회전 PDF/다중region/부분coverage의 입력·선택·좌표·분수·문구를 추가한다.",
+      "resolution": "ANALYSIS-SHEETS/PDF specify hidden and rotated source data, multiple regions, coverage fractions and source callbacks.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-06-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-012",
+      "moduleId": "UI-07",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.1",
+      "problem": "currentOperation phase/step에서 live theater stage를 산출하는 매핑이 없다.",
+      "alternativeInterpretations": [
+        "structure는 읽기 stage, context는 추출 stage로 간주한다.",
+        "structure/context 모두 판단준비 stage로 간주한다."
+      ],
+      "requiredDecision": "phase→stage 표와 unknown/absent fallback, approvedCriteria 선택 우선순위를 명시한다.",
+      "resolution": "I2 explicitly maps operation phases and precedence; FLOW-INTERLEAVE fixes active-file/count/context outcomes.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-07-C02"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-013",
+      "moduleId": "UI-07",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.1; §10",
+      "problem": "context no-data/관측중단/완료/취소와 theater 연결 prop 경계가 불명확하다.",
+      "alternativeInterpretations": [
+        "busy만으로 .is-working을 켜고 끊긴 연결에서도 theater ambience를 유지한다.",
+        "busy&&observing에서만 context 모션을 켜고 모든 theater packet까지 동결한다."
+      ],
+      "requiredDecision": "패널별 busy/observing/no-data/completed/partial/cancelled 행렬과 정확한 기존 theater gap, CSS class gate를 명시한다.",
+      "resolution": "I2/FLOW-STATE specify context expansion, paging and observing behavior; disconnected theater remains a separately disclosed limitation.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-07-C03",
+        "UI-07-C04",
+        "UI-07-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-014",
+      "moduleId": "UI-07",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§9 UI-07/UI-08",
+      "problem": "interleave/burst/무출력 trace의 expected activefile/context/counts가 없다.",
+      "alternativeInterpretations": [
+        "latest analysis 이벤트가 현재 파일을 즉시 바꾼다.",
+        "실행중 operation 파일을 유지해 늦은 다른 파일 이벤트는 선택을 바꾸지 않는다."
+      ],
+      "requiredDecision": "timestamp가 있는 복수문서 trace와 매 snapshot의 activefile/context/milestone/counts를 고정한다.",
+      "resolution": "FLOW-INTERLEAVE/STATE, ARRIVAL-BURST and DOCK-LOG supply timestamped interleave and silence expectations.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-07-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-015",
+      "moduleId": "UI-08",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§2.5/§5.2/§8",
+      "problem": "mobile packet layer와 OFF/취소의 기존 arrival 정리 범위가 불명확하다.",
+      "alternativeInterpretations": [
+        "모바일에서 선만 숨기고 DOM packet은 계속 이동시킨다.",
+        "모바일 packet layer를 숨기고 OFF/취소에서는 packet과 cleanup interval을 즉시 제거한다."
+      ],
+      "requiredDecision": "width≤760px layer 표시, OFF/취소/context변경/unmount별 packet/sweep/baseline 처리를 명시한다.",
+      "resolution": "I3 distinguishes OFF/context/empty cleanup from terminal/busy=false and mobile CSS hiding from continuing packet state/timer.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-08-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-016",
+      "moduleId": "UI-08",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§5.1/§9 UI-07",
+      "problem": "세 레인 카드 클릭 동작과 수신시각별 packet oracle가 없다.",
+      "alternativeInterpretations": [
+        "live 카드 클릭은 item의 원문/상세를 연다.",
+        "live 카드는 시각화만 하고 클릭은 results 이후에만 허용한다."
+      ],
+      "requiredDecision": "카드/packet click handler 목적지·enabled gate와 0/1/burst trace의 packet 좌표/수량/count를 정한다.",
+      "resolution": "I3, ARRIVAL-BURST and THEATER-SELECT fix exact six-packet order, full counts and live-card interaction.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-08-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-017",
+      "moduleId": "UI-09",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.2; specs/01-state-api.md §8",
+      "problem": "사용처별 activity filter contract가 없어 이전/다른 작업이 섞일 수 있다.",
+      "alternativeInterpretations": [
+        "현재 runId만 일치하면 오래된 context/task까지 표시한다.",
+        "contextId/startedAfter/kind/document whitelist까지 함께 적용한다."
+      ],
+      "requiredDecision": "criteria/review/dashboard/ledger의 정확한 filter predicate와 ID 누락/parent 상속 우선순위를 제시한다.",
+      "resolution": "I4 and DOCK-SCOPE define exact scope predicates and all four call-site filter combinations.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-09-C01"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-018",
+      "moduleId": "UI-09",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.2 autoCollapse 문단",
+      "problem": "autoCollapse 기본값을 원본 구현 확인으로 남겼다.",
+      "alternativeInterpretations": [
+        "기준분석 dock도800ms후 접힌다.",
+        "명시 true인 대상review만 접히고 기준분석은 유지한다."
+      ],
+      "requiredDecision": "각 도크 위치의 autoCollapse prop/default를 자체 포함 표로 명시한다.",
+      "resolution": "I4/04 specify default false and review true plus the complete 800ms auto-collapse condition.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-09-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-019",
+      "moduleId": "UI-09",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.2/§9",
+      "problem": "dock 자체 로그 autoscroll/최신복귀와 다중context 상태 oracle가 없다.",
+      "alternativeInterpretations": [
+        "DocumentAnalysis의28px 규칙을 dock에 복제한다.",
+        "dock은 항상 follow하거나 다른 임계값을 쓴다."
+      ],
+      "requiredDecision": "dock scroll cutoff·사용자복귀 동작과 waiting/interleave/disconnect/terminal trace의 group/elapsed/activeCount를 명시한다.",
+      "resolution": "I4 and DOCK-LOG/SCOPE/RECONNECT define strict28px follow, latest-button behavior and expected observed task/clock state.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-09-C05",
+        "UI-09-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-020",
+      "moduleId": "UI-10",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.3/§5.3",
+      "problem": "phase별 SVG 장면/아이콘/문구와 최근3개 전달 기록의 정보구조가 없다.",
+      "alternativeInterpretations": [
+        "phase index별로 임의 아이콘 하나를 그린다.",
+        "실제 chamber 안 문서/reader/bin/quality 도형을 상세 배치한다."
+      ],
+      "requiredDecision": "활성 scene별 SVG 구조·viewBox/도형/아이콘/문구/loop와 최근 기록3개의 정렬·선택을 자체 포함한다.",
+      "resolution": "I5 recent-three history and I6/icon/SVG catalogue establish exact chamber scene/art/caption hierarchy.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-10-C01",
+        "UI-10-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-021",
+      "moduleId": "UI-10",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.3 규칙4–7",
+      "problem": "session/group/liveSince·history 재방문 및 seen eviction 기준이 불완전하다.",
+      "alternativeInterpretations": [
+        "liveSince=mount now로 완료된 기존 handoff를 전부 배제하고 FIFO 사용한다.",
+        "liveSince=run start로 최근 완료 handoff를 재생하며 LRU 사용한다."
+      ],
+      "requiredDecision": "session/group keys, liveSince 초기화, first-live/history선택, failed/cancelled/OFF의 queue/seen, 단일 eviction 정책을 고정한다.",
+      "resolution": "I5 defines session/group keys, liveSince, first-live exception, FIFO limits and terminal/OFF seen behavior; handoff lifecycle fixtures make the transitions observable.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-10-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-022",
+      "moduleId": "UI-10",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.3 규칙7/§10",
+      "problem": "disconnect에서 시간만 freeze인지 빛의 위치도 freeze인지 최종 결정이 없다.",
+      "alternativeInterpretations": [
+        "presentation timer만 멈추고 CSS travel은 끝까지 간다.",
+        "CSS animation-play-state까지 pause하고 남은 위치/시간에서 재개한다."
+      ],
+      "requiredDecision": "재현 기본 동작 하나와 알려진 source gap/deviation을 분리하고 disconnect/resume 좌표 assertion을 추가한다.",
+      "resolution": "I5/04/VISUAL §8 specify timer and CSS pause at disconnect, retained900ms after500ms and reconnect continuation.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-10-C04"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-023",
+      "moduleId": "UI-12",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§2.4/§7",
+      "problem": "적용기준 탭과 상세 이전/다음/filter의 상태 전이가 누락됐다.",
+      "alternativeInterpretations": [
+        "적용기준은 파일에 연결된 criterion만, 이전/다음은 현재filter 경계에서 disabled다.",
+        "전체승인 기준을 보이며 이전/다음은 모든항목 또는 wrap-around다."
+      ],
+      "requiredDecision": "tab별 포함/정렬, chooseFile/chooseItem/chooseFilter/clearItem/prev-next의 selection/source/filter/page/scroll/focus 표를 고정한다.",
+      "resolution": "I8 and RESULT-SELECTION fix applied criteria membership/order and complete filter/tab/selection/previous-next transitions.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-12-C01",
+        "UI-12-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-024",
+      "moduleId": "UI-12",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§2.5 결과 responsive",
+      "problem": "모바일 선택상세 순서와 scroll 기준점이 모호하다.",
+      "alternativeInterpretations": [
+        "원문 첫행/상세 둘째행을 유지하고 workspace 위로 스크롤한다.",
+        "상세를 첫행으로 옮긴 다음 workspace scrollTop0으로 간다."
+      ],
+      "requiredDecision": "≤780px 선택 전/후 DOM 또는 CSS order, row size, 이동 scrollport/offset을 명시한다.",
+      "resolution": "I8/RESULT-MOBILE fix <=780 detail order and workspace-only scroll reset, motion/focus and preserved source scroll.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-12-C04"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-025",
+      "moduleId": "UI-12",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§7/§9",
+      "problem": "오류/빈결과/필터0/기준0 상태와 상세 복귀 검증 oracle가 빠졌다.",
+      "alternativeInterpretations": [
+        "필터0과 문서failed를 동일한 빈목록으로 표시한다.",
+        "각기 다른 안내·원문링크·복귀 CTA를 표시한다."
+      ],
+      "requiredDecision": "각 empty/error 문구와 viewer 유지 여부, A/fail/detail/criteria/back 경로의 bounds·scroll/focus assertion을 추가한다.",
+      "resolution": "I8 and RESULT-EMPTY/SELECTION supply distinct empty/error text, source availability and sequence outcomes.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-12-C05",
+        "UI-12-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-026",
+      "moduleId": "UI-13",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§7 inspector",
+      "problem": "compact/full inspector의 edit·cancel/item-swap·geometry/motion 계약이 부족하다.",
+      "alternativeInterpretations": [
+        "cancel은 local 편집만 닫고 saving 중 비활성, item swap은 note/error 모두 초기화한다.",
+        "cancel은 in-flight resolve까지 abort하고 note는 항목별로 보존한다."
+      ],
+      "requiredDecision": "normal/edit/full/compact wireframe과 비교칸 치수·220ms/y14/compact 무진입, swap/save/cancel/pending controls·focus·scroll을 명시한다.",
+      "resolution": "I8, INSPECTOR-SAVE, effective component/style maps and settled detail references specify edit/cancel/save races, typography and full-versus-compact motion.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-13-C01",
+        "UI-13-C03",
+        "UI-13-C04",
+        "UI-13-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-027",
+      "moduleId": "UI-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§6 tooltip",
+      "problem": "tooltip 높이/세로 clamp가 없어 긴 문구에서 viewport 유지 요구를 결정할 수 없다.",
+      "alternativeInterpretations": [
+        "top<220이면 아래 고정하고 내용 높이만큼 화면 밖으로 넘친다.",
+        "available-height를 계산해 max-height/내부scroll 또는 반대편 배치를 쓴다."
+      ],
+      "requiredDecision": "long Korean label/quote에서 최대높이·vertical clamp/flip/scroll와 focus tooltip escape/dismiss를 정한다.",
+      "resolution": "I8 documents the observed limit; required I8.1/TOOLTIP-G13-REBUILD now explicitly replaces it for G13 with clamped geometry, scroll/reposition, Escape and focus behavior. This is a future required implementation contract, not a source fix.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-14-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-028",
+      "moduleId": "UI-15",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D09",
+      "problem": "4개 제안 버튼의 exact instruction과 입력 대체 방식이 없다.",
+      "alternativeInterpretations": [
+        "제안을 누르면 textarea 전체를 대체한다.",
+        "기존 요청 뒤에 제안 문구를 추가한다."
+      ],
+      "requiredDecision": "각 버튼 label/full payload/대체·추가/baseDesign 전달 조건을 표로 명시한다.",
+      "resolution": "05 D09a and dashboard interaction cases provide all four complete preset strings and replace semantics.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-15-C01"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-029",
+      "moduleId": "UI-15",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D03/D04/D09",
+      "problem": "appliedTag와 job×builder×workroom×view 상태표가 없다.",
+      "alternativeInterpretations": [
+        "라이트 제안 선택 즉시 tag를 라이트로 바꾼다.",
+        "ready job.design.theme 수신 때만 실제 적용 tag를 바꾼다."
+      ],
+      "requiredDecision": "입력과 실제 적용태그를 분리하고 실패/취소/기존preview/finishing별 UI 상태를 고정한다.",
+      "resolution": "05 D09a supplies job×builder×workroom×view matrix and appliedTag sourced only from successful preview.job.design.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-15-C03"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-030",
+      "moduleId": "UI-15",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D03/D09",
+      "problem": "ready+missing/empty HTML 응답 처리가 없다.",
+      "alternativeInterpretations": [
+        "ready를 성공으로 처리하고 빈 iframe을 보인다.",
+        "오류로 처리하고 기존 preview를 유지한다."
+      ],
+      "requiredDecision": "HTML 검증/오류문구/최종 job 및 DELETE/재시도/이전preview 상태를 명시한다.",
+      "resolution": "05 D09a defines blank/missing ready HTML as failure, keeps old preview, performs no DELETE or automatic retry.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-15-C05"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-031",
+      "moduleId": "UI-15",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D11",
+      "problem": "modal 재열기/전환/재구성의 mount·selection oracle가 없다.",
+      "alternativeInterpretations": [
+        "cache HTML만 보존하여 재열기 때 파일/filter 선택을 초기화한다.",
+        "iframe 내부 선택까지 별도 보존해 복원한다."
+      ],
+      "requiredDecision": "첫열기/재열기/source전환/재구성의 mount 수·shell/content 시각·선택 유지·export 검사 시나리오를 적는다.",
+      "resolution": "Eight MODAL cases supply mount/selection/reopen/reconstruction/download oracles and timing while remaining NOT_RUN.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-15-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-032",
+      "moduleId": "UI-16",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D08/D11",
+      "problem": "3복합요청/18조합 browser 검증 matrix가 없다.",
+      "alternativeInterpretations": [
+        "두 HTML fixture와 DOM validator만으로 visual 통과를 선언한다.",
+        "18 viewport/design의 실제 canvas 및 surface/detail 조건까지 별도로 측정한다."
+      ],
+      "requiredDecision": "각 case ID, complete input/expected plan, viewport와 browser assertions를 선언하고 미실행은 NOT_RUN으로 남긴다.",
+      "resolution": "Dashboard customization cases provide complex full plans plus18 viewport/design combinations with nine assertion categories each; executionStatus NOT_RUN remains explicit.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-16-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-033",
+      "moduleId": "UI-17",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D02/D10",
+      "problem": "normalized ready sourceItems에서 원래 pending을 복구할 정보가 없다.",
+      "alternativeInterpretations": [
+        "ready sourceItems만 사용하므로 pendingCount는 항상0이다.",
+        "live raw items를 섞어 pending을 복구하여 frozen snapshot과 어긋난다."
+      ],
+      "requiredDecision": "frozen rawStatus/pendingItemIds를 추가하거나 pending표시가 legacy-only임을 명시하여 데이터 계약을 정합화한다.",
+      "resolution": "05 D02/D10a distinguish normalized ready snapshot pending→review from raw legacy pending and explicitly identify lost presence metadata.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-17-C02"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R1-UI-034",
+      "moduleId": "UI-17",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D10/D11",
+      "problem": "source view 직접파일변경/reset·독립scroll/compact와 교차근거 test oracle가 부족하다.",
+      "alternativeInterpretations": [
+        "다른 파일에서도 filter/source/evidenceIndex를 유지하고 전체 source를 단일 scrollport로 둔다.",
+        "파일 변경시 all/source초기값/index0/선택해제하며 원문과 상세가 각각 스크롤한다."
+      ],
+      "requiredDecision": "파일/원문/근거/filter/selectionVersion 표, pane height/overflow/compact/mobile 규칙, 2파일교차근거 fixture의 data-* 기대값을 추가한다.",
+      "resolution": "05 D10a/b and the eleven-step source trace fix file/filter/source/evidence selection reset, responsive independent scroll and repeated same-item selection.",
+      "recheckedBy": "architecture_clarity_ui / round-02",
+      "checkIds": [
+        "UI-17-C03",
+        "UI-17-C04",
+        "UI-17-C06"
+      ],
+      "resolvedInRound": 2
+    },
+    {
+      "id": "R2-UI-001",
+      "moduleId": "UI-10",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/interaction-fixtures.json",
+      "section": "SCENE-MAP; interaction-contract I6; UI-10-C06",
+      "problem": "The scene verification fixture omits explicitly required phase/condition variants, although the scene implementation map is present.",
+      "alternativeInterpretations": [
+        "Only the nine written SCENE-MAP variants are required acceptance coverage.",
+        "Every phase named in UI-10-C06 and both OFF/disconnected conditions must be separately expanded from I6 and verified."
+      ],
+      "requiredDecision": "Add explicit transcribe/context/repair/dashboard validate/ordinary complete and OFF/disconnected variant expectations, or require exhaustive I6 expansion with deterministic stage/art/caption/loop outputs.",
+      "resolution": "Final frozen SCENE-MAP includes25 explicit variants with phase art/stage/caption and OFF/disconnected/waiting expectations. HANDOFF-LIFECYCLE separately provides9 concrete rejection/parent variants.",
+      "recheckedBy": "architecture_clarity_ui / round-02"
+    },
+    {
+      "id": "R2-UI-002",
+      "moduleId": "UI-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/interaction-contract.md",
+      "section": "I8–I9; DECISIONS D18; UI-14-C05",
+      "problem": "The observed tooltip overflow is now unambiguous, but the required rebuilt tooltip behavior lacks an exact vertical placement, max-height and keyboard-dismiss contract.",
+      "alternativeInterpretations": [
+        "Preserve TOOLTIP-LIMIT overflow/no-Escape because it is the only explicit expected UI output.",
+        "Implement required unclipped tooltip under D18/G13, choosing unspecified clamp/placement/internal-scroll/Escape behavior."
+      ],
+      "requiredDecision": "Specify a REQUIRED_REBUILD tooltip oracle with viewport margin, placement/clamp, height/scroll and keyboard/lifecycle behavior; retain TOOLTIP-LIMIT only as observed negative control.",
+      "resolution": "I8.1 and TOOLTIP-G13-REBUILD define required 276px width cap/8px margin, border-box clamp/max-height/scroll, rAF remeasurement,120ms pointer transition, Escape focus+latch and full cleanup; TOOLTIP-LIMIT is explicitly excluded from product G13 acceptance.",
+      "recheckedBy": "architecture_clarity_ui / round-02"
+    },
+    {
+      "id": "R2-UI-003",
+      "moduleId": "UI-16",
+      "severity": "high",
+      "status": "resolved",
+      "document": "contracts/dashboard-customization-cases.json",
+      "section": "PREF-C01/PREF-C03 targetExpected; specs/05 D05a",
+      "problem": "Required target oracles preserve two observed matcher mistakes: a red pie request expects cobalt and a gentle-motion request expects full motion.",
+      "alternativeInterpretations": [
+        "Use copied observedExpected values as the required target, keeping cobalt/full.",
+        "Apply the new semantic contract, producing red/subtle and contradicting the required fixture."
+      ],
+      "requiredDecision": "Correct targetExpected to red for PREF-C01 and subtle for PREF-C03, retain observed values only as negative controls and align semantic improvement explanations.",
+      "resolution": "Final PREF-C01.targetExpected.accent is red and PREF-C03.targetExpected.motion is subtle; frozen observed cobalt/full values remain separate negative controls. D05a and required sequence agree.",
+      "recheckedBy": "architecture_clarity_ui / round-02"
+    },
+    {
+      "id": "R2-UI-004",
+      "moduleId": "UI-16",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D05a vs prompts/dashboard-system.md and prompts/dashboard-loop.md unsupported trend instruction",
+      "problem": "The mandatory planner retention mask preserves unrequested subtitle, while packaged prompts require unsupported trend limitations to be written into subtitle.",
+      "alternativeInterpretations": [
+        "Change subtitle to disclose missing timestamps, violating the new retained-field mask.",
+        "Keep subtitle unchanged to satisfy D05a, violating the packaged prompt and leaving no defined limitation channel."
+      ],
+      "requiredDecision": "Define a narrow validated subtitle exception or a separate limitation/host notice channel, and align planner envelope, owner spec, prompts and exact unsupported-trend expected output.",
+      "resolution": "D05b introduces separate validated notices with fixed host text, app/export placement and no subtitle mutation. Packaged system/loop instructions explicitly supersede the old subtitle sentence. Planner/judge/public ready/standalone extensions and3-call budget agree.",
+      "recheckedBy": "architecture_clarity_ui / round-02"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "DECISIONS.md",
+      "sha256": "29b743be0d89e94fd4fc8ea9b3b176e73f4616bbbee342d9324f8a68b7c82049"
+    },
+    {
+      "path": "contracts/dashboard-customization-cases.json",
+      "sha256": "e96442f6086dbac69ec88248888645d14834ac5d237ccdf34fd8ea8aeb3fcdba"
+    },
+    {
+      "path": "contracts/dashboard-design.default.json",
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "contracts/dashboard-design.schema.json",
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892"
+    },
+    {
+      "path": "contracts/internal-pipeline.ts",
+      "sha256": "75785d4c71661d35235b321ad9794290cc67da67d57392a117c269dc33e7c70b"
+    },
+    {
+      "path": "decomposition/core-modules.json",
+      "sha256": "cf51606f635ef5acb090c59f46fcbae350d9b12697e2bbad8e9c372f6969162e"
+    },
+    {
+      "path": "decomposition/ui-modules.json",
+      "sha256": "9a0306aeaf8cc3c8d272e0ab69db893a06d8c9ef42e460be6e6b13e3ac8dffab"
+    },
+    {
+      "path": "environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb"
+    },
+    {
+      "path": "prompts/dashboard-loop.md",
+      "sha256": "056426a15df4ee452661a2be9681b50268afc8c1276c25747390162a3a26c97e"
+    },
+    {
+      "path": "prompts/dashboard-system.md",
+      "sha256": "9688c6e90d3923c3260a2f889d6934322e372e7fddc9f4312e4e8a927f21f091"
+    },
+    {
+      "path": "reference/dashboard/chart-entry.reference.jsx",
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "reference/dashboard/standalone-reference.css",
+      "sha256": "3c663b94047f6e7a4d5e02e95b8de124a3ab100b7c046efb22971493aca10e80"
+    },
+    {
+      "path": "specs/01-state-api.md",
+      "sha256": "e17e736dc6725b61bdaa397564fe2a848add2438d097262c1edfdb4b18b54024"
+    },
+    {
+      "path": "specs/02-backend-pipeline.md",
+      "sha256": "6d718ab72e0b435cd417eb5e779ee97579f2472bb75bc87d0cc46d7a78fa11f5"
+    },
+    {
+      "path": "specs/03-algorithms.md",
+      "sha256": "30ff7f4c4b396182e2757ed2972067e6a1e4a5d07d2dc49c904da2b7c1c9d389"
+    },
+    {
+      "path": "specs/04-ui-motion.md",
+      "sha256": "739e58c015ade3318558b23d5cb4df23a3f0770fabc74e9b38e3e0466c2131d8"
+    },
+    {
+      "path": "specs/05-dashboard-exports.md",
+      "sha256": "167b8fc7110de3a87bc8af7513fcdc980b60542fe329d52b3091e90226c45743"
+    },
+    {
+      "path": "specs/05a-ledger-export.md",
+      "sha256": "7297f0024bc878c89422636202fa59f870363622926388372b800078990a4f80"
+    },
+    {
+      "path": "specs/06-verification.md",
+      "sha256": "c139c30d7cec0c23af1b0592af05e61fea842a7b8bcbf1c2208595e9164f2889"
+    },
+    {
+      "path": "specs/07-data-algorithms-concurrency.md",
+      "sha256": "c53218ec4b1d57bfa179442805762e8dd2dda300bd0df4623e39b61f74731678"
+    },
+    {
+      "path": "ui/VISUAL-CONTRACT.md",
+      "sha256": "24df36ea02ed3728f7b06b24d7c3f9cf6ce1d4ec6f03f2672d0fa4eb26841f6e"
+    },
+    {
+      "path": "ui/component-style-map.json",
+      "sha256": "22049ab566dd9d3fa9c340fd190d2662915be91184fb46632fca725980a25ce8"
+    },
+    {
+      "path": "ui/dashboard-interaction-cases.json",
+      "sha256": "3e0c645495dfbc3bbabf5e7da4f417a28fce9e1c0003709cc3b8f958ad8c6ac4"
+    },
+    {
+      "path": "ui/detail-controls.md",
+      "sha256": "e1214fcdd2eacf3bf2b60e42192159befe9574f72f634a6b3dd162199a3e53b4"
+    },
+    {
+      "path": "ui/interaction-contract.md",
+      "sha256": "d228621fadc5fb785387d31226bac07ef50583710325dab5664aaa330db4f9db"
+    },
+    {
+      "path": "ui/interaction-fixtures.json",
+      "sha256": "175dcf310c7e60da833fdcc7c4fdf2fa84b0fcbb2945a969c5d840f98d8de358"
+    },
+    {
+      "path": "ui/library-effects.csv",
+      "sha256": "25326c447363c184d174cc3d9c48e0aaf79cff3b7d7677d17f0cf821b5edb784"
+    },
+    {
+      "path": "ui/motion-catalog.json",
+      "sha256": "81f45c1ae0ef402d7944ca4acc2699da1216c333d7f06a2c856ca504489475e6"
+    },
+    {
+      "path": "ui/reference/11-target-input-empty.png",
+      "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea"
+    },
+    {
+      "path": "ui/reference/15-result-detail-fail.png",
+      "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6"
+    },
+    {
+      "path": "ui/reference/25-dashboard-source.png",
+      "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f"
+    },
+    {
+      "path": "ui/reference/34-result-detail-fail-1280.png",
+      "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0"
+    },
+    {
+      "path": "ui/reference/README.md",
+      "sha256": "bed158bb1bdeb74e8674ffc0564d0eaf3522f314f9a6c4b75f04f3f50d8bb8a5"
+    },
+    {
+      "path": "ui/reference/manifest.json",
+      "sha256": "9f066974df90c7af348b2be59853d21377469cb02c4961057d831a358e3f7d72"
+    },
+    {
+      "path": "ui/style-catalog.json",
+      "sha256": "47e76196ad50d2a2f9e42b09e7842b98f77f46850af917ad2869bb76ad1a3527"
+    },
+    {
+      "path": "ui/tokens.json",
+      "sha256": "c55ff8220c494c81c553de4dddca55b628e34e51d1c7c12dbc78c65aef35cf37"
+    }
+  ],
+  "subreviews": [
+    {
+      "reviewerId": "architecture_clarity_ui/motion_clarity_audit",
+      "modules": [
+        "UI-02",
+        "UI-07",
+        "UI-08",
+        "UI-09",
+        "UI-10"
+      ],
+      "method": "Independent architecture-only contract and fixture review; final integration rechecked by principal reviewer."
+    },
+    {
+      "reviewerId": "architecture_clarity_ui/dashboard_clarity_audit",
+      "modules": [
+        "UI-15",
+        "UI-16",
+        "UI-17"
+      ],
+      "method": "Independent architecture-only full question review; NOT_RUN browser cases assessed solely as acceptance definitions."
+    }
+  ],
+  "notes": [
+    "Pass means a clear implementable contract under DECISIONS D18, including required rebuild behavior where specified. It is not a claim that the original or a rebuilt application has executed or passed acceptance.",
+    "All synthetic interaction cases and the dashboard 18-combination browser matrix are NOT_RUN. They provide input and expected-output specifications, not execution evidence.",
+    "The visual manifest records actual synthetic fixture captures. Direct sample inspection covered settled target input, selected result detail, 1280×800 result detail and dashboard source; the report does not claim manual inspection of every capture.",
+    "Observed source limitations are retained as investigation evidence. Where DECISIONS D18/required gates mandate improved behavior, the required oracle supersedes those defect outputs; neither source defects nor negative controls count as rebuilt acceptance pass.",
+    "Additional live-review/results-list captures at 1600×960 and 1280×800 remain NOT_RUN acceptance; supplied baseline captures and future required captures are now distinguished.",
+    "Final global freeze was announced by the main author before sealing. Final re-read included45 NOT_RUN interaction fixtures,25 scene variants,20 required table-highlight variants, required tooltip geometry and the corrected dashboard notice DTO extensions."
+  ],
+  "previousRound": {
+    "report": "reviews/main-session/round-01/ui-clarity.json",
+    "totalIssues": 34,
+    "resolvedIssues": 34
+  },
+  "policy": "DECISIONS D18: required additional acceptance supersedes observed-defect fixtures. All observed and required outcomes are assessed separately; unexecuted requirements remain NOT_RUN.",
+  "finalizedAt": "2026-09-20 17:35:11 UTC",
+  "coverage": {
+    "registeredModules": 18,
+    "registeredQuestions": 108,
+    "reviewedQuestions": 108,
+    "pass": 108,
+    "fail": 0,
+    "unverified": 0,
+    "openIssues": 0,
+    "resolvedIssues": 38
+  }
+}

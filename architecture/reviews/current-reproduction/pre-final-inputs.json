@@ -1,0 +1,5744 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-21T06:22:34.599Z",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "designFiles": [
+    {
+      "path": "baseline/source-snapshot.json",
+      "bytes": 35017,
+      "sha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7"
+    },
+    {
+      "path": "contracts/algorithm-edge-cases.json",
+      "bytes": 46233,
+      "sha256": "6a9ecb6e93413061c7de84bb3e5afd63c61a1bb26e7b1e25b6cf21cde00de1f6"
+    },
+    {
+      "path": "contracts/dashboard-customization-cases.json",
+      "bytes": 125949,
+      "sha256": "c1db40c5fab5710e49c7c42a4f11152f2bdfb1b2a63c879f700e69acfc127cad"
+    },
+    {
+      "path": "contracts/dashboard-design.default.json",
+      "bytes": 431,
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "contracts/dashboard-design.schema.json",
+      "bytes": 2011,
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892"
+    },
+    {
+      "path": "contracts/dashboard-examples.json",
+      "bytes": 7871,
+      "sha256": "d1dabc25e5f13a1eb5ec5afef273f4ea6e535a1afeb5a60364c067fe0dcdc036"
+    },
+    {
+      "path": "contracts/document-negative-cases.json",
+      "bytes": 12603,
+      "sha256": "91e094d6f61451ba11ff6556021debba97eddd7bd4566f08bdb8538221ec75f8"
+    },
+    {
+      "path": "contracts/efficiency-inventory.json",
+      "bytes": 47420,
+      "sha256": "a769aabb9c5029a3baac21c906fdf1dce1df2b7e08c5729c8f13bdbd4f859b56"
+    },
+    {
+      "path": "contracts/examples/01-criteria-first-commands.json",
+      "bytes": 4705,
+      "sha256": "ba592b746c1b56721f3e19e938216868b619d59c1f3e10eb5e2f4cc0a7aaf5cd"
+    },
+    {
+      "path": "contracts/examples/02-errors.json",
+      "bytes": 4357,
+      "sha256": "aa60a88b88a97d6d1b6b57c8a96b5dcb0a66e5cfb4dfe6ca8b659fe8572432e2"
+    },
+    {
+      "path": "contracts/examples/03-run-sse.json",
+      "bytes": 4140,
+      "sha256": "5acca7e52c87ae8ab4430d130f345736c80e680539e66980cf5c1c32549d3a87"
+    },
+    {
+      "path": "contracts/examples/04-activity-snapshot.json",
+      "bytes": 2224,
+      "sha256": "967bac1a4e0dd1e5277ac2ad746fae6e34cc137c7fd80e6ebe304befb1a4f388"
+    },
+    {
+      "path": "contracts/examples/05-ledger-analyze.json",
+      "bytes": 1621,
+      "sha256": "998a4a6cb8bbacac82e0b1e2c9c0b95692da1d355c5a131cf527045cb272ed66"
+    },
+    {
+      "path": "contracts/internal-pipeline.ts",
+      "bytes": 27155,
+      "sha256": "48da9dc3273fce06f5e28a17e794ca6d3c43397da26d7b7824e904ed84baa804"
+    },
+    {
+      "path": "contracts/pipeline-model-schemas.json",
+      "bytes": 27942,
+      "sha256": "476e013b88764213945aa5d6b6ad8eecd3b125f3ee7b820628a1f3b9b635cfa6"
+    },
+    {
+      "path": "contracts/rebuild-extensions.ts",
+      "bytes": 1997,
+      "sha256": "8e391d4ae9d7b261b0bf838fba3eda3480205207639f8470aa3183c97eb9fe46"
+    },
+    {
+      "path": "contracts/sample-recipes.json",
+      "bytes": 3259,
+      "sha256": "74c6aebda0e773d51b4150a386e50bdf54127a3ad9586b79611648bf63b2c081"
+    },
+    {
+      "path": "contracts/types.ts",
+      "bytes": 12431,
+      "sha256": "124e8b34fa38f2b191d9ca03a3e58f9b3b3819740f5c22ded64a022e77c1f32c"
+    },
+    {
+      "path": "DECISIONS.md",
+      "bytes": 9023,
+      "sha256": "181bb841d718888d9422b86e6456df67575c53a77a990bfaf5500d9b086ab097"
+    },
+    {
+      "path": "decomposition/core-modules.json",
+      "bytes": 76900,
+      "sha256": "adff5c40e0238c438a65634246b8940d701787383d9135e5646dfdda09c13801"
+    },
+    {
+      "path": "decomposition/core-tree.md",
+      "bytes": 25727,
+      "sha256": "ec7cdd008a0d144d90c0f943dcf3e346fa2016071d5f853d04324e695f1080a4"
+    },
+    {
+      "path": "decomposition/README.md",
+      "bytes": 3128,
+      "sha256": "bec6f5cbfda61e727a0a8f8fa6e45f6715012703478a20fb2b4ea17a0f01919f"
+    },
+    {
+      "path": "decomposition/source-trace.json",
+      "bytes": 245018,
+      "sha256": "aa99df5ce502ebc1b73b30d927804156c6ac4a32dfb6d04785389ccf3848bf8d"
+    },
+    {
+      "path": "decomposition/ui-modules.json",
+      "bytes": 76685,
+      "sha256": "a443cbf030d5429b0f1ca6e839df9c1cae0ee296a3e8ac84c807c5263f172e75"
+    },
+    {
+      "path": "decomposition/ui-tree.md",
+      "bytes": 26401,
+      "sha256": "5d9203780deb008a07c2c9408bc6387983228b71198e26cbbf277143697af31f"
+    },
+    {
+      "path": "environment/assets/gspec.svg",
+      "bytes": 300,
+      "sha256": "6f4f4bf8dcf4a1bb1ab35269eecfea6855d04b9d45875e500809ea874347fc1e"
+    },
+    {
+      "path": "environment/integrations/package-lock.json",
+      "bytes": 28537,
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441"
+    },
+    {
+      "path": "environment/integrations/package.json",
+      "bytes": 408,
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1"
+    },
+    {
+      "path": "environment/README.md",
+      "bytes": 8201,
+      "sha256": "cbc6fa4ddcc4d2c19498b335c84029dd7d7a019b6336820c1da09a5df8995090"
+    },
+    {
+      "path": "environment/root/package-lock.json",
+      "bytes": 182993,
+      "sha256": "ff0beaeb71a44aea24646852abab25475bf1cfbe8d50260066cdab8253c701c9"
+    },
+    {
+      "path": "environment/root/package.json",
+      "bytes": 1509,
+      "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc"
+    },
+    {
+      "path": "environment/templates/index.html",
+      "bytes": 564,
+      "sha256": "91ed8ae874790d21611b4f07d807aa7902c7a02b9dd2c062ac5ad3209c874c61"
+    },
+    {
+      "path": "environment/templates/scripts/build-dashboard-chart-runtime.mjs",
+      "bytes": 750,
+      "sha256": "0da4c486231b9b72f73dbe291b75dcdef8a1dbaff766d80d2e754585a854c6bf"
+    },
+    {
+      "path": "environment/templates/scripts/copy-pdfjs-assets.mjs",
+      "bytes": 1023,
+      "sha256": "2e8ad9b52b8f31ab642d4077b79d3727b98c2387b321cc7360fc479b147f7fc3"
+    },
+    {
+      "path": "environment/templates/scripts/dev.mjs",
+      "bytes": 771,
+      "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34"
+    },
+    {
+      "path": "environment/templates/tsconfig.json",
+      "bytes": 438,
+      "sha256": "69113c403e8dc40970b465a3f3cbd72b87107bd8392327b12c9c7a0fa8a293de"
+    },
+    {
+      "path": "environment/templates/vite.config.ts",
+      "bytes": 255,
+      "sha256": "a62ae575b8979ee75047080dfaaedd8e606cef4fc409e3d4882c8ee4c507f75a"
+    },
+    {
+      "path": "environment/versions.json",
+      "bytes": 6001,
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf"
+    },
+    {
+      "path": "GOAL.md",
+      "bytes": 4395,
+      "sha256": "c49a2941817b7cb3e12d4e1826031b03d3b06bb3143340991dc4f59fa1d2e0cc"
+    },
+    {
+      "path": "PLAN.md",
+      "bytes": 6493,
+      "sha256": "d043df62b2b645b21e9422cb7110d49237086edd99f580f2e7b1c0385f56e396"
+    },
+    {
+      "path": "prompts/criteria-algorithms.catalog.json",
+      "bytes": 76219,
+      "sha256": "c1b5354f702b02106d2ddbc1d192668f55d041f7980cbb7b7a46cd5cccebfc01"
+    },
+    {
+      "path": "prompts/dashboard-loop.md",
+      "bytes": 5380,
+      "sha256": "5a7a1125ef4bc71ad2be8c61ee90b9d6a6017a33bd4df8116016834bcb65a7b2"
+    },
+    {
+      "path": "prompts/dashboard-system.md",
+      "bytes": 4682,
+      "sha256": "e8c1ff6f1e04b37778bc1bd933eb3e72e77fd4e51f4cece9ef360d55fd16c7b3"
+    },
+    {
+      "path": "prompts/pipeline-prompt-catalog.json",
+      "bytes": 38493,
+      "sha256": "811353999c732fd68706ea1ae051f0c41a68ae838322e298e58f03c4d4763898"
+    },
+    {
+      "path": "prompts/pipeline-prompts.md",
+      "bytes": 13893,
+      "sha256": "0a0601ee7c6a78d7a7db70269395f3572aedff856719304b7c78833f47fbbb0c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5342,
+      "sha256": "fa2da8ec4d174cf85b28fda0ef700d1ef1b36f6e0c823b875ce2d999dc485aa7"
+    },
+    {
+      "path": "reference/dashboard/chart-entry.reference.jsx",
+      "bytes": 2849,
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "reference/dashboard/default-dark/dashboard.html",
+      "bytes": 441417,
+      "sha256": "5dbdc4fbf825a270010dd2a25f9071b060a1d14bd2a53bf7079be6439cfecd14"
+    },
+    {
+      "path": "reference/dashboard/default-dark/data.json",
+      "bytes": 2926,
+      "sha256": "3b4375666e2f6fa49c89d12e85d778b74be2fcde5e0da37c0ee565cbd0e50b52"
+    },
+    {
+      "path": "reference/dashboard/default-dark/plan.json",
+      "bytes": 431,
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "reference/dashboard/default-dark/validation.json",
+      "bytes": 335,
+      "sha256": "99d5781dc5e71ed14a7223caf96e7fa1ea4980ca3182749904d26a8e9f36fac0"
+    },
+    {
+      "path": "reference/dashboard/design-functions.reference.mjs",
+      "bytes": 9187,
+      "sha256": "2d9446c37f0a64f002f69b83e282dbdb9483e9bda3173e576a5ad64a91cb1877"
+    },
+    {
+      "path": "reference/dashboard/light-red-large-pie/dashboard.html",
+      "bytes": 441405,
+      "sha256": "080d37964a708b98fd8d7361a56420f1eb73b07b46fc9895c93a65579733e084"
+    },
+    {
+      "path": "reference/dashboard/light-red-large-pie/data.json",
+      "bytes": 2926,
+      "sha256": "3b4375666e2f6fa49c89d12e85d778b74be2fcde5e0da37c0ee565cbd0e50b52"
+    },
+    {
+      "path": "reference/dashboard/light-red-large-pie/plan.json",
+      "bytes": 420,
+      "sha256": "e8cdc85a417863566f9f4757a74dc2661a349c5d48dd71c4d2964fde1a900450"
+    },
+    {
+      "path": "reference/dashboard/light-red-large-pie/validation.json",
+      "bytes": 335,
+      "sha256": "99d5781dc5e71ed14a7223caf96e7fa1ea4980ca3182749904d26a8e9f36fac0"
+    },
+    {
+      "path": "reference/dashboard/standalone-reference.css",
+      "bytes": 20738,
+      "sha256": "3c663b94047f6e7a4d5e02e95b8de124a3ab100b7c046efb22971493aca10e80"
+    },
+    {
+      "path": "REPRODUCTION.md",
+      "bytes": 5535,
+      "sha256": "e6ff2e1675f3820177e23cefc9305389466913a60bfc825cc450ac36fb949833"
+    },
+    {
+      "path": "reviews/current-reproduction/audit.mjs",
+      "bytes": 9715,
+      "sha256": "8036ebb76229747f1968eda9f973fc5cd8807aa70a5de8aace8733b5758633e7"
+    },
+    {
+      "path": "reviews/current-reproduction/population-changes.json",
+      "bytes": 8479,
+      "sha256": "812bab396e90d5626593f5f38c9866fc3985010b6e46dffe2d831fd2e5373998"
+    },
+    {
+      "path": "reviews/current-reproduction/PROTOCOL.md",
+      "bytes": 4190,
+      "sha256": "0075451011b1ce4253b75ffcf989898a4c4dbbd1e770265b2d1b0e3ac5912d5d"
+    },
+    {
+      "path": "reviews/independent-audit/population.json",
+      "bytes": 152296,
+      "sha256": "bebc6b1f2b78eeb07ad1198661b5903798b873a3ac4868ed6b30c027504fae94"
+    },
+    {
+      "path": "reviews/independent-audit/score.mjs",
+      "bytes": 5039,
+      "sha256": "daa8b10e1c30e9ce59779e6a3e31ec148acad6912a9662690fe8112ac244f2e7"
+    },
+    {
+      "path": "reviews/independent-audit/score.test.mjs",
+      "bytes": 2974,
+      "sha256": "01d6b09f19a3ebf38c3467e68de8e1767a1ab660761eb903c2f559ea432c7d69"
+    },
+    {
+      "path": "specs/01-state-api.md",
+      "bytes": 47012,
+      "sha256": "5f9d192a2819f236cfdfd342f7ed90de41fbdcac5ed673ac4c58e9dfe231438f"
+    },
+    {
+      "path": "specs/02-backend-pipeline.md",
+      "bytes": 65818,
+      "sha256": "dedba15404bb4126325f81bbb153d7fdb76495c30772c7bbcd74d6c2fe64f0cf"
+    },
+    {
+      "path": "specs/03-algorithms.md",
+      "bytes": 76738,
+      "sha256": "3d4e6fced5d1e95378034fbeea8ab28e9bc949aa7b73e0e6134a2b745b1bc260"
+    },
+    {
+      "path": "specs/04-ui-motion.md",
+      "bytes": 48721,
+      "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+    },
+    {
+      "path": "specs/05-dashboard-exports.md",
+      "bytes": 54493,
+      "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+    },
+    {
+      "path": "specs/05a-ledger-export.md",
+      "bytes": 44271,
+      "sha256": "1f3a4b3f8325f91bcb455325b6ec5fb9c3461f8d51b2f5c8dc2fbab107abc83d"
+    },
+    {
+      "path": "specs/06-verification.md",
+      "bytes": 35166,
+      "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+    },
+    {
+      "path": "specs/07-data-algorithms-concurrency.md",
+      "bytes": 54753,
+      "sha256": "931e9136f7904e65cc32bbc0d78eaa09657fdb8c8060cfd7b90f18a11ade0d87"
+    },
+    {
+      "path": "specs/08-rebuild-coverage-geometry.md",
+      "bytes": 8569,
+      "sha256": "e0ef26ba1a37c88fe030d541786a1af9d2b927738610643cf54984cdae829f0b"
+    },
+    {
+      "path": "tools/bootstrap.mjs",
+      "bytes": 2114,
+      "sha256": "6417ec9918f3854cff077ed540a9b5c3145c79a260e7867aa532f7b58830aa45"
+    },
+    {
+      "path": "tools/build-traceability.mjs",
+      "bytes": 2397,
+      "sha256": "8dc61f51f5ac5885c11512a995880095070670d334b0e82b46abc2a4e5ce16ad"
+    },
+    {
+      "path": "tools/capture-environment.mjs",
+      "bytes": 1285,
+      "sha256": "e15def1887c707a106e2d4f801a2024daf2f9639fb5bb64c0b576efbf33f485e"
+    },
+    {
+      "path": "tools/export-visual-contract.mjs",
+      "bytes": 36337,
+      "sha256": "6c4b1bd668ce75f06321a69bfb3bafaa81bcfe67e52a3a277ae673a752178f61"
+    },
+    {
+      "path": "tools/mirror-fonts.mjs",
+      "bytes": 1932,
+      "sha256": "67437eafcd831c18e516d7810844bcfb6540a28cb1fd4cd8b6e22a20fe55cd33"
+    },
+    {
+      "path": "tools/snapshot-source.mjs",
+      "bytes": 1551,
+      "sha256": "3ba73144d96f42b53ee4ca82ce01a9615013a25a98539c8044f24f6b993b66c0"
+    },
+    {
+      "path": "tools/test-bootstrap.mjs",
+      "bytes": 9953,
+      "sha256": "4dd1194a7648ace4dd6b023f31ccd0cc197f23cb15220e385558e652d0f5c3f9"
+    },
+    {
+      "path": "tools/verify-package.mjs",
+      "bytes": 19105,
+      "sha256": "2529be30415b2816f178dd222845b5ff4b1cb281c3b0ce5161fe8bd01849a247"
+    },
+    {
+      "path": "traceability.csv",
+      "bytes": 203143,
+      "sha256": "7bc38b57cb3562b0d3e66489e6569eae21246009675e578ce0e65fb341dbaf1e"
+    },
+    {
+      "path": "ui/auxiliary-contract.md",
+      "bytes": 8000,
+      "sha256": "f78f106b03f167a052065158c8dc33516037a5b9a9d2675501c5c63de821a94d"
+    },
+    {
+      "path": "ui/component-style-map.json",
+      "bytes": 3296587,
+      "sha256": "22049ab566dd9d3fa9c340fd190d2662915be91184fb46632fca725980a25ce8"
+    },
+    {
+      "path": "ui/dashboard-interaction-cases.json",
+      "bytes": 13958,
+      "sha256": "3e0c645495dfbc3bbabf5e7da4f417a28fce9e1c0003709cc3b8f958ad8c6ac4"
+    },
+    {
+      "path": "ui/detail-controls.md",
+      "bytes": 54065,
+      "sha256": "ab04f39eb7bb329525e58b29d83d118666ce379cb29f91f6356347700e4de5b0"
+    },
+    {
+      "path": "ui/fonts/dmsans-OFL.txt",
+      "bytes": 4482,
+      "sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
+    },
+    {
+      "path": "ui/fonts/font-001.woff2",
+      "bytes": 18228,
+      "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+    },
+    {
+      "path": "ui/fonts/font-002.woff2",
+      "bytes": 36932,
+      "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+    },
+    {
+      "path": "ui/fonts/font-003.woff2",
+      "bytes": 34284,
+      "sha256": "3861da36d0eb54b3351f55d43c5ca91e732f0f2c6f8769ed475d3ec6fffdb4e5"
+    },
+    {
+      "path": "ui/fonts/font-004.woff2",
+      "bytes": 56204,
+      "sha256": "71b97f259df4fdc4c9afa9564e9bb781221c2958f3d50bfbff4825024cf783bd"
+    },
+    {
+      "path": "ui/fonts/font-005.woff2",
+      "bytes": 35980,
+      "sha256": "7281418e047de1b4f6123aa5ed97857fac48c4e1080ab7803b6a0747665b7ae1"
+    },
+    {
+      "path": "ui/fonts/font-006.woff2",
+      "bytes": 24792,
+      "sha256": "17129da918ea2daa5b7c41e59a24a18519394b004bb943a42477b818fbdcb370"
+    },
+    {
+      "path": "ui/fonts/font-007.woff2",
+      "bytes": 23336,
+      "sha256": "bdbf18c2147f3b8dae27dab77136e897e33302f971f4564b12c3da4fbe80c1ea"
+    },
+    {
+      "path": "ui/fonts/font-008.woff2",
+      "bytes": 20780,
+      "sha256": "0bbd4e665234190ce6a465dcdb3ccbc5fec3540230ed0a5f1ec8e4fec68d2132"
+    },
+    {
+      "path": "ui/fonts/font-009.woff2",
+      "bytes": 20596,
+      "sha256": "b78680de0ca4a5b82af650f9c7b32300c633400a7978a17ae406ae7588b60b7f"
+    },
+    {
+      "path": "ui/fonts/font-010.woff2",
+      "bytes": 21012,
+      "sha256": "c5c64d6ea9494ae6a231ac27813a98899c582c36ef8532588753fde0ad19b5df"
+    },
+    {
+      "path": "ui/fonts/font-011.woff2",
+      "bytes": 19832,
+      "sha256": "f049e3c819f100098ca7c967795f8804dee3ea8915716a9fb0d145551ea34a60"
+    },
+    {
+      "path": "ui/fonts/font-012.woff2",
+      "bytes": 22404,
+      "sha256": "14173085eb7a70ce51247aae902e2824a40231affe5c67086340b437b01c702c"
+    },
+    {
+      "path": "ui/fonts/font-013.woff2",
+      "bytes": 20488,
+      "sha256": "ae33c538343c38af5b814a2b47c4270a665032715919cbe282ff67421394eef9"
+    },
+    {
+      "path": "ui/fonts/font-014.woff2",
+      "bytes": 20160,
+      "sha256": "62bf66342286ac182b6796d0b5c08171c81ad7233563b11f40a70d6ebf44e05e"
+    },
+    {
+      "path": "ui/fonts/font-015.woff2",
+      "bytes": 22708,
+      "sha256": "f4c76c430a1a1952078c9dd8e2245d325714838a7b4b3401b597628a4f625777"
+    },
+    {
+      "path": "ui/fonts/font-016.woff2",
+      "bytes": 22668,
+      "sha256": "a34b0164bc99e3cf34a059bdfa4bcab2cd94f6a04b1beb5c021ff9d94fe16012"
+    },
+    {
+      "path": "ui/fonts/font-017.woff2",
+      "bytes": 22100,
+      "sha256": "9bef1f1a9e7b7d1e0190f98fb3ece20dc505671fb39a2333e8d2e617d4609375"
+    },
+    {
+      "path": "ui/fonts/font-018.woff2",
+      "bytes": 22756,
+      "sha256": "0a9e68adfa8fdd67d06fb78adb2812d094e4842a3bf0a72218801cf31471edaf"
+    },
+    {
+      "path": "ui/fonts/font-019.woff2",
+      "bytes": 21504,
+      "sha256": "be3125ba6ae564183362929617d36505658829d5cf370d173d7f4945aa1a0d33"
+    },
+    {
+      "path": "ui/fonts/font-020.woff2",
+      "bytes": 23588,
+      "sha256": "0300f785997af852f85c6dd05508ead08a4e6dd256a626a00da3b135d464be85"
+    },
+    {
+      "path": "ui/fonts/font-021.woff2",
+      "bytes": 21660,
+      "sha256": "3c8efefaf5338778b97e49ce50f81ac87bfa4a054047ee40a8d466a2d8ea274d"
+    },
+    {
+      "path": "ui/fonts/font-022.woff2",
+      "bytes": 25156,
+      "sha256": "b11847c60e20c0d8a9614996e36ca2fa37901c83580d8a6f4c9c1a3f0f757314"
+    },
+    {
+      "path": "ui/fonts/font-023.woff2",
+      "bytes": 25912,
+      "sha256": "a1df305f4d0d2790b97c578a07540d34d839815e1f953f4d8e0d9585beff1ab4"
+    },
+    {
+      "path": "ui/fonts/font-024.woff2",
+      "bytes": 22268,
+      "sha256": "38aca236039ea7b1d29e1c0d3cf791fb3752dca9acf98e699279806cfe97ca44"
+    },
+    {
+      "path": "ui/fonts/font-025.woff2",
+      "bytes": 23536,
+      "sha256": "768b2043f9ea35fabf52a2820e97d41023a62f8c305a79ab091a9f0cf89d17a6"
+    },
+    {
+      "path": "ui/fonts/font-026.woff2",
+      "bytes": 24072,
+      "sha256": "ef69248c42aa8a28d823a7557cd43f4210217e94c85a004996a8a27ee9e9d9be"
+    },
+    {
+      "path": "ui/fonts/font-027.woff2",
+      "bytes": 25472,
+      "sha256": "d506c4def1b5075d06d724a43e5badc10915aa25420fb728ab14d7ccc5a77137"
+    },
+    {
+      "path": "ui/fonts/font-028.woff2",
+      "bytes": 19884,
+      "sha256": "b4be1622a4c0a0415c140e1824c8051ed4b34896f963c0313c67a8ed3f6ab859"
+    },
+    {
+      "path": "ui/fonts/font-029.woff2",
+      "bytes": 25640,
+      "sha256": "c10bf867309caa3e82ab075ccb245af7f13633e20de01bcd8f861081cfc49314"
+    },
+    {
+      "path": "ui/fonts/font-030.woff2",
+      "bytes": 24480,
+      "sha256": "82dce56af57bf89a525f9e639bdf7ba98ecbed68aa79553160f60de2ff5c1c09"
+    },
+    {
+      "path": "ui/fonts/font-031.woff2",
+      "bytes": 21952,
+      "sha256": "9bbf59f00e95996c81afedd38dbd438f9436a6ef084a360bbd65f36d680014ee"
+    },
+    {
+      "path": "ui/fonts/font-032.woff2",
+      "bytes": 23136,
+      "sha256": "7a4db36d0c8583d8f34dc8940ec3a45e4b09e9427ee59cb275c17d1d75d6bd0b"
+    },
+    {
+      "path": "ui/fonts/font-033.woff2",
+      "bytes": 23552,
+      "sha256": "d0c5cb446e9e86db80cffaae4df62a8652b55d9011538e2b48c20b0244d9dd5a"
+    },
+    {
+      "path": "ui/fonts/font-034.woff2",
+      "bytes": 23640,
+      "sha256": "4ba18ec04f44f08074bb03350830c33f2664814a91f75a1c53dc95e97ba95f51"
+    },
+    {
+      "path": "ui/fonts/font-035.woff2",
+      "bytes": 26404,
+      "sha256": "b60470d84be80a5ef9b216a42a617de4913f15e160703089863f921e9457836f"
+    },
+    {
+      "path": "ui/fonts/font-036.woff2",
+      "bytes": 25172,
+      "sha256": "fb1c55cd44f95c5f0e02d69b2e37a52e95f01df55e00af51c0449ee44f204bbc"
+    },
+    {
+      "path": "ui/fonts/font-037.woff2",
+      "bytes": 21564,
+      "sha256": "c33e6e78802eb174fadd448197f196ccfad27b3949c0289096b78238af20343f"
+    },
+    {
+      "path": "ui/fonts/font-038.woff2",
+      "bytes": 21364,
+      "sha256": "b494d884301465d934a23274d493d4efe403a67e01ea1ae997c1a461bc3ce9a9"
+    },
+    {
+      "path": "ui/fonts/font-039.woff2",
+      "bytes": 21356,
+      "sha256": "27d60101432576d2326c3fc7c31274ff8a38e6981f3cdc5cedb0b98cae5c1204"
+    },
+    {
+      "path": "ui/fonts/font-040.woff2",
+      "bytes": 21276,
+      "sha256": "aca240294e58e9297b537bcbc7232a43c58e1e7b8043840b1c8de7dbaddc8efc"
+    },
+    {
+      "path": "ui/fonts/font-041.woff2",
+      "bytes": 16692,
+      "sha256": "16279746df830f184e0c0c404809413ed76836f6e87aa6410e97375c463e3158"
+    },
+    {
+      "path": "ui/fonts/font-042.woff2",
+      "bytes": 21436,
+      "sha256": "4d712a27cd8ce21f86b9ede5939706240bd22e494fa7a1f0bc7396d12e201a79"
+    },
+    {
+      "path": "ui/fonts/font-043.woff2",
+      "bytes": 20980,
+      "sha256": "2a13f2490d87963d3c0278757d728f5c4fc1c5cad18d6ea2e53936309d267a52"
+    },
+    {
+      "path": "ui/fonts/font-044.woff2",
+      "bytes": 18140,
+      "sha256": "a9c3d1e69c2b9cc869816f635a0449f053674489e200ce71f838ae5f8f04834f"
+    },
+    {
+      "path": "ui/fonts/font-045.woff2",
+      "bytes": 20228,
+      "sha256": "f74032d4e8f706ecbd908d68e1228a410d88e90a1ee69367baa6b8d2a9249e9a"
+    },
+    {
+      "path": "ui/fonts/font-046.woff2",
+      "bytes": 21468,
+      "sha256": "8040b7ae56e8c768ccc9249998d35b30ee466a33fbf3227a34fa008fbe66272f"
+    },
+    {
+      "path": "ui/fonts/font-047.woff2",
+      "bytes": 18504,
+      "sha256": "be85899aca286cee0d15b20a00f42ed56ecc403329d4d048698a8f74f859daee"
+    },
+    {
+      "path": "ui/fonts/font-048.woff2",
+      "bytes": 19744,
+      "sha256": "40ee6222ed14577bf53e4466da50f5235289e0da8d479004c34f14d201db15ab"
+    },
+    {
+      "path": "ui/fonts/font-049.woff2",
+      "bytes": 20920,
+      "sha256": "4866a0a559e0dd6d5c9ef8f5cbd247a4daa3a9c8a6abec8ff949cde06ae09b06"
+    },
+    {
+      "path": "ui/fonts/font-050.woff2",
+      "bytes": 22200,
+      "sha256": "4ac45ae19e5115ffb8c5f8edfe41f58c9fbbac167fed3428db5abaaebf5f6204"
+    },
+    {
+      "path": "ui/fonts/font-051.woff2",
+      "bytes": 21412,
+      "sha256": "1ad30fe759a0e038181e199ae79c2bc700967d17c3562eadd7fdedc0d440841d"
+    },
+    {
+      "path": "ui/fonts/font-052.woff2",
+      "bytes": 22836,
+      "sha256": "4924784006540380c9beab4fe127cc8b0b35973f26c9ecd31bf4f89fdc23abd7"
+    },
+    {
+      "path": "ui/fonts/font-053.woff2",
+      "bytes": 21500,
+      "sha256": "88629647b500f58e2d74e0c7339b5372eb0ac31b6583ee9a5a973e17a92db339"
+    },
+    {
+      "path": "ui/fonts/font-054.woff2",
+      "bytes": 19744,
+      "sha256": "8ce8dfcc2fad2a92f408d33b5e0af20f4ec329262e95bd60ba9e002aac5d3562"
+    },
+    {
+      "path": "ui/fonts/font-055.woff2",
+      "bytes": 22292,
+      "sha256": "7b4ddda196f3ce57720941db2ae1889c32937375b5b4d037c0269ef647bd0c1c"
+    },
+    {
+      "path": "ui/fonts/font-056.woff2",
+      "bytes": 21112,
+      "sha256": "45a40cb3a43a406c959196dd0ad7bffbb5a3c45c50365cdbf0906148c9c3854f"
+    },
+    {
+      "path": "ui/fonts/font-057.woff2",
+      "bytes": 21076,
+      "sha256": "c5396b0c4028318cbdcf169f3f3d7da6fb3523ed12091e5af1088d5fa77d19e7"
+    },
+    {
+      "path": "ui/fonts/font-058.woff2",
+      "bytes": 20704,
+      "sha256": "b18646a948b64ce725e1a426b4e0b0f54f90340ce69ffb9729a51dfe19c400e3"
+    },
+    {
+      "path": "ui/fonts/font-059.woff2",
+      "bytes": 21424,
+      "sha256": "297bd37fda24bc1a73dec80660bd8b0fb6b0c8068584a43d111299a4c74145da"
+    },
+    {
+      "path": "ui/fonts/font-060.woff2",
+      "bytes": 21332,
+      "sha256": "3aa8588dae822bb07d821c61e21d5cbb328935803a5dfce5cd067375778f50cb"
+    },
+    {
+      "path": "ui/fonts/font-061.woff2",
+      "bytes": 22052,
+      "sha256": "c5f1266baa0787e4b7093593c2b5eb961001dc29e6c9dfb882a87367fce6a488"
+    },
+    {
+      "path": "ui/fonts/font-062.woff2",
+      "bytes": 25252,
+      "sha256": "499d65c381e42140dbb6e0eb413cc4755ae4734fcac3e724e6ec2148cd789b19"
+    },
+    {
+      "path": "ui/fonts/font-063.woff2",
+      "bytes": 24508,
+      "sha256": "70045954fc344c5cd6d4a729e47612d4424e6b26d613745c9058b928149c5c74"
+    },
+    {
+      "path": "ui/fonts/font-064.woff2",
+      "bytes": 23804,
+      "sha256": "23abc68d31b9008ead2d2557abec37ac375b6734b129393707a63023c7c29f36"
+    },
+    {
+      "path": "ui/fonts/font-065.woff2",
+      "bytes": 21952,
+      "sha256": "bc4291982ecc7d4d1955382a564f0092f4d4b4af54e632ec5d5f238a7d62b433"
+    },
+    {
+      "path": "ui/fonts/font-066.woff2",
+      "bytes": 21044,
+      "sha256": "a36cd66e100c3ae59335a0771cedcc68c8cadf06883a50af3d8045f53bd47301"
+    },
+    {
+      "path": "ui/fonts/font-067.woff2",
+      "bytes": 18584,
+      "sha256": "dd7719232de03f667d8aafaef3f5ae71f011f43edfd624546decd9a8cf22b298"
+    },
+    {
+      "path": "ui/fonts/font-068.woff2",
+      "bytes": 64460,
+      "sha256": "3da5b88ce6bbbb42e33c17a0b1b446342e56f7e270add0f4e40e5703a91c077e"
+    },
+    {
+      "path": "ui/fonts/font-069.woff2",
+      "bytes": 56056,
+      "sha256": "e58cd74f4b9f3a558f5417360470f0033637436d878acd75a193d755bf9e52ba"
+    },
+    {
+      "path": "ui/fonts/font-070.woff2",
+      "bytes": 48384,
+      "sha256": "91065b61043d7ef8ee08137ee9053056f832fba51a4b36b16c11323d6c89cfed"
+    },
+    {
+      "path": "ui/fonts/font-071.woff2",
+      "bytes": 51736,
+      "sha256": "ba3f084ff680654c308e4e40e6d90bf56a7717702ec89ee60946574d1f1c05ed"
+    },
+    {
+      "path": "ui/fonts/font-072.woff2",
+      "bytes": 48364,
+      "sha256": "aed822d90d953436f3d15e2172374a2838954efb27f106fdb38f9fb131c5c8a6"
+    },
+    {
+      "path": "ui/fonts/font-073.woff2",
+      "bytes": 47284,
+      "sha256": "2ccc6ff28adfdf7b4683226022c9e22941cefbac2674e28561c18b590c6311bc"
+    },
+    {
+      "path": "ui/fonts/font-074.woff2",
+      "bytes": 56888,
+      "sha256": "aea3fb176095a6bdc4a075f44267da858012b72741499925295d308feb85ee36"
+    },
+    {
+      "path": "ui/fonts/font-075.woff2",
+      "bytes": 45516,
+      "sha256": "4ebc089e15c07f287f24dad0236d79a9b4f8be282a89392fed42df8b863444d1"
+    },
+    {
+      "path": "ui/fonts/font-076.woff2",
+      "bytes": 50296,
+      "sha256": "210b80ddfa82cc3a98b51d72addde32633d63642b01b9fc6a3e1d4538340f740"
+    },
+    {
+      "path": "ui/fonts/font-077.woff2",
+      "bytes": 54440,
+      "sha256": "34cbd2e2a3c7ea6aaa1ca57353ed68c806222a8caa0937b21ca3457f6c1d5c72"
+    },
+    {
+      "path": "ui/fonts/font-078.woff2",
+      "bytes": 56764,
+      "sha256": "50f05146e6524134f63b9657ef675b90316b298a2e91c3bb40cceb0e5306d748"
+    },
+    {
+      "path": "ui/fonts/font-079.woff2",
+      "bytes": 48580,
+      "sha256": "9995f9e2926269d68499f14f85ea51f9ba9aee2605e87ad2a1a92686cf6d981f"
+    },
+    {
+      "path": "ui/fonts/font-080.woff2",
+      "bytes": 52608,
+      "sha256": "e1b8280c9f5c957799ddd34f9193bbb42f63205df8dc81b15d941b6e10b8a5a3"
+    },
+    {
+      "path": "ui/fonts/font-081.woff2",
+      "bytes": 48440,
+      "sha256": "34698f6cb44fb932a81addb2bb18988879aa85be018f2298f87542de7aa53994"
+    },
+    {
+      "path": "ui/fonts/font-082.woff2",
+      "bytes": 60836,
+      "sha256": "bd75d5b9cef6c0e1d1c33d82a47f69aac34bd0e9ef65c72d5cd5af14ca93c33b"
+    },
+    {
+      "path": "ui/fonts/font-083.woff2",
+      "bytes": 51004,
+      "sha256": "07033ae1744806138f7f4ddd8aa92eaca697c9c9e58154a69cb9cfda3c5674a9"
+    },
+    {
+      "path": "ui/fonts/font-084.woff2",
+      "bytes": 48016,
+      "sha256": "3192fb37c0097dd6067b6a855f35a34a710ba8732b8a0b57ea881460d3149d3c"
+    },
+    {
+      "path": "ui/fonts/font-085.woff2",
+      "bytes": 50540,
+      "sha256": "fca9004ef1d6a3a73dbb6581d055670e9d6fa9e261d0811d437e1f95d615cc7b"
+    },
+    {
+      "path": "ui/fonts/font-086.woff2",
+      "bytes": 41156,
+      "sha256": "a3fda4dc21493df5afcd2250b53ce74133ba87b344bb4b55a7ca73afe8746199"
+    },
+    {
+      "path": "ui/fonts/font-087.woff2",
+      "bytes": 54476,
+      "sha256": "daa54d456acb6350d045bcac78928b2f4589076eac758c776ec6f1fd384599e8"
+    },
+    {
+      "path": "ui/fonts/font-088.woff2",
+      "bytes": 52552,
+      "sha256": "4f3c8bdc30a810d960b8182c83408744dac3256d343a935205f3adf2f9bc2866"
+    },
+    {
+      "path": "ui/fonts/font-089.woff2",
+      "bytes": 51620,
+      "sha256": "2c92585b47c61f275f50a766094aad778d04374e0b310ea7fb99ec0024c5501e"
+    },
+    {
+      "path": "ui/fonts/font-090.woff2",
+      "bytes": 45016,
+      "sha256": "4171fc4ee04cbbe6570a6d60f1dcf2e00664263b70db91c12dd30d8e2cd7b245"
+    },
+    {
+      "path": "ui/fonts/font-091.woff2",
+      "bytes": 46464,
+      "sha256": "3e18cbe399921b2d779273826b02ba38b3e2ee31a1c5761e1257afbb9a5c40f8"
+    },
+    {
+      "path": "ui/fonts/font-092.woff2",
+      "bytes": 45532,
+      "sha256": "c3510a055ae1e1c9d78d3e68e69da722dd8a3105a5e69aee2fc1c9ef7c9e33bf"
+    },
+    {
+      "path": "ui/fonts/font-093.woff2",
+      "bytes": 41928,
+      "sha256": "65c732fe80c4b022649032b0ca897d44da312111a815c109220c122fbaee0147"
+    },
+    {
+      "path": "ui/fonts/font-094.woff2",
+      "bytes": 44992,
+      "sha256": "d9839c7e42d7e58ee8dada2cab255ce594a2aea929179ed9ab4b10b7af10700c"
+    },
+    {
+      "path": "ui/fonts/font-095.woff2",
+      "bytes": 42688,
+      "sha256": "811a7f2a0c4fff533b43d3687e31c6d6b516365548cff0d5286e876c2ab85206"
+    },
+    {
+      "path": "ui/fonts/font-096.woff2",
+      "bytes": 29060,
+      "sha256": "ae4408b276bb649deb77ae2145a310cc12b6979989edb72aedf2a942d877a658"
+    },
+    {
+      "path": "ui/fonts/font-097.woff2",
+      "bytes": 19420,
+      "sha256": "4776bd32aee03549c4288005b257be4f06e8de90dffcd9f55c6699e485d97fbb"
+    },
+    {
+      "path": "ui/fonts/font-098.woff2",
+      "bytes": 53260,
+      "sha256": "671d9829370fc25c1e3da974f35b7bf68f4f944c8265609d7e0cbb0cd7ee0dc9"
+    },
+    {
+      "path": "ui/fonts/font-099.woff2",
+      "bytes": 21324,
+      "sha256": "7de168c13cb394eef1e6fa0c779f59628b1de5676db5f45d83edc2ba1eb5eff7"
+    },
+    {
+      "path": "ui/fonts/font-100.woff2",
+      "bytes": 14176,
+      "sha256": "70077a3b110b8717e1ff85a9b9525ed3e0dfb8b61e9b47318dfe1c1f47773a65"
+    },
+    {
+      "path": "ui/fonts/font-101.woff2",
+      "bytes": 12180,
+      "sha256": "af344646e3382ef03bfc693a63d334a1ff409fa948ab7919b128e1c8b9e86b15"
+    },
+    {
+      "path": "ui/fonts/font-102.woff2",
+      "bytes": 16888,
+      "sha256": "0b424ef6881e42a73d698e251919dbe5dc381a9190bd1278f5f7a276eef0ef36"
+    },
+    {
+      "path": "ui/fonts/font-103.woff2",
+      "bytes": 26268,
+      "sha256": "95045eda53125c4cc2655aebca8203a38831186d39d54223f7aeeef3a02924a3"
+    },
+    {
+      "path": "ui/fonts/font-104.woff2",
+      "bytes": 26076,
+      "sha256": "883b6298e4e94168f26845865cf9eb1e1b6ef9e9b2d95b4e7615e8a3dbad4d5c"
+    },
+    {
+      "path": "ui/fonts/font-105.woff2",
+      "bytes": 25584,
+      "sha256": "10e0676c89aad2b4fad449698b9cea46f18da4767e26455619ce57669b46867f"
+    },
+    {
+      "path": "ui/fonts/font-106.woff2",
+      "bytes": 24396,
+      "sha256": "aa6b5671f4158c303d850771c97769f7c5af4364724afb27cfe7d1dfdf34046f"
+    },
+    {
+      "path": "ui/fonts/font-107.woff2",
+      "bytes": 28688,
+      "sha256": "5a9c2053668f781a875e725ec72db67fd44e728b8ec69d45dc3a1f4346ec3b43"
+    },
+    {
+      "path": "ui/fonts/font-108.woff2",
+      "bytes": 25228,
+      "sha256": "750b7a008eef7a4c81f29f173c93961087c27f93042130a514de54f955576291"
+    },
+    {
+      "path": "ui/fonts/font-109.woff2",
+      "bytes": 24748,
+      "sha256": "ae4707a72e4660e8db06899b24b62708b82411857d824b56ed6c6d1521b7a4a8"
+    },
+    {
+      "path": "ui/fonts/font-110.woff2",
+      "bytes": 18424,
+      "sha256": "afba414987102133c5250cb0865ff93d4f4bd6def8dc3222747dca5dada0c3f8"
+    },
+    {
+      "path": "ui/fonts/font-111.woff2",
+      "bytes": 19672,
+      "sha256": "c22ebbb440bca97b15b4db671c81c9bc5aec9d20f1c562d318d6a9fa88e655e9"
+    },
+    {
+      "path": "ui/fonts/font-112.woff2",
+      "bytes": 18060,
+      "sha256": "53125e3d74e595bf3b3a20d3d15ed7b56e2c3dd61bd1c3a64fb79ceeadd07d7e"
+    },
+    {
+      "path": "ui/fonts/font-113.woff2",
+      "bytes": 17608,
+      "sha256": "273bb462b5e609e2740907f1270b8859ac79a4d46a6e8a997c6eae9b7835451b"
+    },
+    {
+      "path": "ui/fonts/font-114.woff2",
+      "bytes": 17464,
+      "sha256": "9ec3df1c9a0c1df8904a9a989f6cd428ea17e76ee02d613ad260c22c1d916075"
+    },
+    {
+      "path": "ui/fonts/font-115.woff2",
+      "bytes": 16448,
+      "sha256": "1275deebcaa012e526b58684c30327dbeb1a923c0e3b4f5a8626be29f3e6ff66"
+    },
+    {
+      "path": "ui/fonts/font-116.woff2",
+      "bytes": 16464,
+      "sha256": "9ba79ece28902db625900fc4727308cda9e04cf2be3de362d280de222d1e7822"
+    },
+    {
+      "path": "ui/fonts/font-117.woff2",
+      "bytes": 16212,
+      "sha256": "efb7e8d1175cde7cc99dac99fb47a74be01afeef6810f34cd6887678991108b1"
+    },
+    {
+      "path": "ui/fonts/font-118.woff2",
+      "bytes": 16272,
+      "sha256": "771102ea71b52ec266607baa28becc9658675fd47c34b94accef3a38b85d48d6"
+    },
+    {
+      "path": "ui/fonts/font-119.woff2",
+      "bytes": 16200,
+      "sha256": "5e02a302c52e0b6c11a3761221ce1ecb8965c78fca4ca4587ecfae48bb75da8a"
+    },
+    {
+      "path": "ui/fonts/font-120.woff2",
+      "bytes": 14460,
+      "sha256": "85a68fced20fc9d0d799f2b64b670387438f72205dfda50e2cccd4c1af1c9042"
+    },
+    {
+      "path": "ui/fonts/font-121.woff2",
+      "bytes": 14664,
+      "sha256": "a37f045e0387b128f3f8c59db92a8e6e32d6ff467d0efe8ac12c6a4f0504b5fc"
+    },
+    {
+      "path": "ui/fonts/font-122.woff2",
+      "bytes": 16676,
+      "sha256": "12f2407b1bf32d201792a1f6635364cefea5b9c1ea1a3196c91823042b4fa2bb"
+    },
+    {
+      "path": "ui/fonts/font-123.woff2",
+      "bytes": 10116,
+      "sha256": "eafc6e0d06f94cb50c420548a6f1d51357f9faf052bca038c0b6bbcd4cdd49bb"
+    },
+    {
+      "path": "ui/fonts/font-124.woff2",
+      "bytes": 9172,
+      "sha256": "e4bedfe7c5a6162df7d2eb72df4960d49664addb0cb843ecd345e66365cf902e"
+    },
+    {
+      "path": "ui/fonts/font-125.woff2",
+      "bytes": 8304,
+      "sha256": "72795dcd57624f5273807a6445e203307ff08ca8bdb2d58fd8a8301283a0af87"
+    },
+    {
+      "path": "ui/fonts/font-126.woff2",
+      "bytes": 26004,
+      "sha256": "2ee54080f0b0dee4fb2a9365ec8b3e3269d7720a7d7f2d62c2913088842e1326"
+    },
+    {
+      "path": "ui/fonts/fonts.css",
+      "bytes": 588002,
+      "sha256": "f88d7a6b0b127879948e2d550a354b1c5eacf157080944d3145389ea94aadaec"
+    },
+    {
+      "path": "ui/fonts/manifest.json",
+      "bytes": 34743,
+      "sha256": "c888c15d896d6c4618b3f6e7c96d3a6c1f2e23ffb4574c9cf8648daf77e9d72e"
+    },
+    {
+      "path": "ui/fonts/notosanskr-OFL.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "path": "ui/interaction-contract.md",
+      "bytes": 51285,
+      "sha256": "36f5e09a3fe438312fb8f3632871ba2c62c62b62f5dbec943e5ba5e4521ce1c9"
+    },
+    {
+      "path": "ui/interaction-fixtures.json",
+      "bytes": 253237,
+      "sha256": "981781c2cc546f2ff29d953216355212653a64e706f03c5017833001145eed77"
+    },
+    {
+      "path": "ui/library-effects.csv",
+      "bytes": 4216,
+      "sha256": "25326c447363c184d174cc3d9c48e0aaf79cff3b7d7677d17f0cf821b5edb784"
+    },
+    {
+      "path": "ui/motion-catalog.json",
+      "bytes": 65106,
+      "sha256": "81f45c1ae0ef402d7944ca4acc2699da1216c333d7f06a2c856ca504489475e6"
+    },
+    {
+      "path": "ui/reference/01-landing-desktop.png",
+      "bytes": 556576,
+      "sha256": "1ee4967e8ba0f70aecbf71e206fbb7fb259536812a69cf7eaa399433a4a3e8dc"
+    },
+    {
+      "path": "ui/reference/02-landing-mobile.png",
+      "bytes": 201448,
+      "sha256": "10cab1b24e702fabe1ead162376d07b92fa3bb264a0abfa26b67aa3f94b9e2bf"
+    },
+    {
+      "path": "ui/reference/03-landing-mobile-motion-off.png",
+      "bytes": 201732,
+      "sha256": "19ec769de804243c49b189eff25b0726212891ebb3c0dc7a3f8971efdaa166c2"
+    },
+    {
+      "path": "ui/reference/04-criteria-input-empty.png",
+      "bytes": 314566,
+      "sha256": "a55e9b8b0dca2def309571788e93bc38aee45cc98d7b5c8e00120a740ed2ad08"
+    },
+    {
+      "path": "ui/reference/05-criteria-natural-language.png",
+      "bytes": 183906,
+      "sha256": "496f9aee60702896da1cf37d807cd40778e3834cb6f91407ce05303a2ec28229"
+    },
+    {
+      "path": "ui/reference/06-criteria-input-file.png",
+      "bytes": 277119,
+      "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f"
+    },
+    {
+      "path": "ui/reference/07-criteria-reading.png",
+      "bytes": 324650,
+      "sha256": "536e6595f9bf1c7d10ae081b899fe749e68a1787e92256800882cc20552c95d1"
+    },
+    {
+      "path": "ui/reference/08-criteria-context.png",
+      "bytes": 326785,
+      "sha256": "aa08d865864d35005041fe8480d42fcb7861b7af6617dd3f6fca6f476be11a9c"
+    },
+    {
+      "path": "ui/reference/09-criteria-confirmation.png",
+      "bytes": 106138,
+      "sha256": "2af44d66ac0c90c71b2f9807fa9c36b91725a73680e9a8278b67f64f059fde4d"
+    },
+    {
+      "path": "ui/reference/10-criteria-hitl-editor.png",
+      "bytes": 114513,
+      "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230"
+    },
+    {
+      "path": "ui/reference/11-target-input-empty.png",
+      "bytes": 287371,
+      "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea"
+    },
+    {
+      "path": "ui/reference/12-target-input-file.png",
+      "bytes": 268349,
+      "sha256": "c7e9783a859541d1be04d72b12c45e9ca17744d8dbd2042203e79522d74e4df1"
+    },
+    {
+      "path": "ui/reference/13-review-active.png",
+      "bytes": 422812,
+      "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164"
+    },
+    {
+      "path": "ui/reference/14-results.png",
+      "bytes": 167390,
+      "sha256": "4ced148dc6a926f9079cc2fae75743b35ff18b3b8ffa763f59fac6e5cd0cb183"
+    },
+    {
+      "path": "ui/reference/15-result-detail-fail.png",
+      "bytes": 181083,
+      "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6"
+    },
+    {
+      "path": "ui/reference/16-result-detail-review.png",
+      "bytes": 184302,
+      "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e"
+    },
+    {
+      "path": "ui/reference/17-result-applied-criteria.png",
+      "bytes": 176272,
+      "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4"
+    },
+    {
+      "path": "ui/reference/18-result-criterion-source.png",
+      "bytes": 173692,
+      "sha256": "117b53ab122df2d0b12ba8937744d0d57fb3740ced3b72b6bb74527b64475380"
+    },
+    {
+      "path": "ui/reference/19-dashboard-controls.png",
+      "bytes": 270631,
+      "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf"
+    },
+    {
+      "path": "ui/reference/20-dashboard-generating.png",
+      "bytes": 134605,
+      "sha256": "eff1dc8def82bdf0321b3d8886e9fb41d74e7e971a93734cebbfab0a6db5b19c"
+    },
+    {
+      "path": "ui/reference/21-dashboard-light.png",
+      "bytes": 148135,
+      "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71"
+    },
+    {
+      "path": "ui/reference/22-dashboard-customize.png",
+      "bytes": 188858,
+      "sha256": "10d6bbaab24c0b82f48631a2a85e075965b651f29c281cf4f4bf67bb174fac86"
+    },
+    {
+      "path": "ui/reference/23-dashboard-dark.png",
+      "bytes": 155331,
+      "sha256": "75a092c166532753e89139f209c263277217b55d87405fe0d8104b5f9973fcfb"
+    },
+    {
+      "path": "ui/reference/24-dashboard-activity.png",
+      "bytes": 153594,
+      "sha256": "ce2ed6f4a743eda17ccc2cfd5148b440ba76133a67764c4b9b96ed70f33cae95"
+    },
+    {
+      "path": "ui/reference/25-dashboard-source.png",
+      "bytes": 106106,
+      "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f"
+    },
+    {
+      "path": "ui/reference/26-ledger-empty.png",
+      "bytes": 269941,
+      "sha256": "90507070de870a430d2b5b36095d130a061edb23fbbebf0b47abd0327ddbf576"
+    },
+    {
+      "path": "ui/reference/27-ledger-mapping.png",
+      "bytes": 220911,
+      "sha256": "b275d25b2e328801c375226c240d2cb4c65e452937ee7fcbb5533c06ef01563b"
+    },
+    {
+      "path": "ui/reference/28-results-mobile-motion-off.png",
+      "bytes": 95954,
+      "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4"
+    },
+    {
+      "path": "ui/reference/29-landing-1600.png",
+      "bytes": 591657,
+      "sha256": "62079a27059cd17c79722842cd2110ea7db48793a1c1bd30633020d2f64dd9ee"
+    },
+    {
+      "path": "ui/reference/30-landing-1280.png",
+      "bytes": 451355,
+      "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c"
+    },
+    {
+      "path": "ui/reference/31-criteria-confirmation-1600.png",
+      "bytes": 107579,
+      "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36"
+    },
+    {
+      "path": "ui/reference/32-criteria-confirmation-1280.png",
+      "bytes": 101873,
+      "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f"
+    },
+    {
+      "path": "ui/reference/33-result-detail-fail-1600.png",
+      "bytes": 185798,
+      "sha256": "c4828c2e481603ae60a4feb450a0d3debc07df6fc73d0be6e559c884f067659c"
+    },
+    {
+      "path": "ui/reference/34-result-detail-fail-1280.png",
+      "bytes": 157045,
+      "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0"
+    },
+    {
+      "path": "ui/reference/capture-flow.js",
+      "bytes": 18830,
+      "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+    },
+    {
+      "path": "ui/reference/capture-required-viewports.js",
+      "bytes": 11653,
+      "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+    },
+    {
+      "path": "ui/reference/dom/01-landing-desktop.json",
+      "bytes": 941783,
+      "sha256": "e7f9d8919135181d92eaa758b1525e2797f2d6115f4e6add35456790e0f96c65"
+    },
+    {
+      "path": "ui/reference/dom/02-landing-mobile.json",
+      "bytes": 923798,
+      "sha256": "20b804064b493d13449f7707c55b89ad9a08ccc69c334f03620b781d612b95f2"
+    },
+    {
+      "path": "ui/reference/dom/03-landing-mobile-motion-off.json",
+      "bytes": 816188,
+      "sha256": "659eb6409822428ceb48c9a3b44b139a5e14c7b2d3fbf239c03ff8d72690cc43"
+    },
+    {
+      "path": "ui/reference/dom/04-criteria-input-empty.json",
+      "bytes": 328754,
+      "sha256": "1a6201a11ac5a3a036f32ac39f57828234dd3cc3c5102f4b27ec90771adb8bd1"
+    },
+    {
+      "path": "ui/reference/dom/05-criteria-natural-language.json",
+      "bytes": 195586,
+      "sha256": "f25f45e4cbcae24ea7f8602e3957dc4947e965ea9962e6b9e323bf4cd1265142"
+    },
+    {
+      "path": "ui/reference/dom/06-criteria-input-file.json",
+      "bytes": 376314,
+      "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+    },
+    {
+      "path": "ui/reference/dom/07-criteria-reading.json",
+      "bytes": 1075157,
+      "sha256": "c17b16aadd35c92c0754bb40c6ce4de3fcf9981a54cd26f3dd8fc2d520e37ecb"
+    },
+    {
+      "path": "ui/reference/dom/08-criteria-context.json",
+      "bytes": 1127761,
+      "sha256": "6472a1550a59e47f8db1e4e29b77ccf4528c360951abe67c346031a52c616c51"
+    },
+    {
+      "path": "ui/reference/dom/09-criteria-confirmation.json",
+      "bytes": 1022826,
+      "sha256": "6102b431732ddc21f8a561e2e09f207d791e8aaa385e6ed0daf545b5aa878dc9"
+    },
+    {
+      "path": "ui/reference/dom/10-criteria-hitl-editor.json",
+      "bytes": 1025043,
+      "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+    },
+    {
+      "path": "ui/reference/dom/11-target-input-empty.json",
+      "bytes": 399799,
+      "sha256": "1a288902baeb491a0d187d847640475d05802a68f0f049354dab966a1f7ac78b"
+    },
+    {
+      "path": "ui/reference/dom/12-target-input-file.json",
+      "bytes": 447427,
+      "sha256": "ff939bf2b30412ac084e75356d23a3d048c191685cae33be74c0d22bcbebf595"
+    },
+    {
+      "path": "ui/reference/dom/13-review-active.json",
+      "bytes": 2021983,
+      "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+    },
+    {
+      "path": "ui/reference/dom/14-results.json",
+      "bytes": 667893,
+      "sha256": "c1997bc687362e8cd26edd395a4dace87c78159c2c38e791ab8f3075e6b90059"
+    },
+    {
+      "path": "ui/reference/dom/15-result-detail-fail.json",
+      "bytes": 710697,
+      "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+    },
+    {
+      "path": "ui/reference/dom/16-result-detail-review.json",
+      "bytes": 713312,
+      "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+    },
+    {
+      "path": "ui/reference/dom/17-result-applied-criteria.json",
+      "bytes": 766801,
+      "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+    },
+    {
+      "path": "ui/reference/dom/18-result-criterion-source.json",
+      "bytes": 743105,
+      "sha256": "ca6a425267caf467c5fa396f386c206d24e00ab2e82e5eb7f880b4b3b7eca788"
+    },
+    {
+      "path": "ui/reference/dom/19-dashboard-controls.json",
+      "bytes": 1015625,
+      "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+    },
+    {
+      "path": "ui/reference/dom/20-dashboard-generating.json",
+      "bytes": 1605885,
+      "sha256": "bc63deb27ee5dc087e973a4c4f5e230a7fe033fdbcf417aa415713d44f899870"
+    },
+    {
+      "path": "ui/reference/dom/21-dashboard-light.json",
+      "bytes": 1360988,
+      "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+    },
+    {
+      "path": "ui/reference/dom/22-dashboard-customize.json",
+      "bytes": 1347144,
+      "sha256": "6e7298a9e41632d55c9da1d13731d1875ead4263aa4da680704edba7149ddea5"
+    },
+    {
+      "path": "ui/reference/dom/23-dashboard-dark.json",
+      "bytes": 1362836,
+      "sha256": "ef78a3268ea9feb4c24cb6b165b2208e87485dcb8d830dbb081c98c5fa4b2e11"
+    },
+    {
+      "path": "ui/reference/dom/24-dashboard-activity.json",
+      "bytes": 1436035,
+      "sha256": "638fbc5abf2af3ea6d82d4fde7968973fcac37004c14637df5adacdd3fb9343e"
+    },
+    {
+      "path": "ui/reference/dom/25-dashboard-source.json",
+      "bytes": 1907545,
+      "sha256": "f1510ed6ae3dd8e8f3edb6d3d2cbb5c3b27f5ec702872a9c4d783dc0f2d43451"
+    },
+    {
+      "path": "ui/reference/dom/26-ledger-empty.json",
+      "bytes": 954297,
+      "sha256": "b9885415d889df0717af1fb27e7a972874289c3e962ffefd54b365ef2718ddc7"
+    },
+    {
+      "path": "ui/reference/dom/27-ledger-mapping.json",
+      "bytes": 1107615,
+      "sha256": "87005825eeac30c4c72f4e3d65ed7e1bb91b0b5bd1c92f77f398d9176b07441c"
+    },
+    {
+      "path": "ui/reference/dom/28-results-mobile-motion-off.json",
+      "bytes": 709181,
+      "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+    },
+    {
+      "path": "ui/reference/dom/29-landing-1600.json",
+      "bytes": 942017,
+      "sha256": "485148875a175394a2fcc20466e07ef0e78cb40eeefd63f5ccc98e3812c65a81"
+    },
+    {
+      "path": "ui/reference/dom/30-landing-1280.json",
+      "bytes": 941856,
+      "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+    },
+    {
+      "path": "ui/reference/dom/31-criteria-confirmation-1600.json",
+      "bytes": 1022718,
+      "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+    },
+    {
+      "path": "ui/reference/dom/32-criteria-confirmation-1280.json",
+      "bytes": 1022523,
+      "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+    },
+    {
+      "path": "ui/reference/dom/33-result-detail-fail-1600.json",
+      "bytes": 710713,
+      "sha256": "4d1ac909da477501857a331da5ac880a90b6896f1d07f025041e68784faa74ed"
+    },
+    {
+      "path": "ui/reference/dom/34-result-detail-fail-1280.json",
+      "bytes": 710554,
+      "sha256": "962b5996d271694f3a7c2d1c4ac9951a257b70c3f9c7f239453579694708b492"
+    },
+    {
+      "path": "ui/reference/finalize-capture.mjs",
+      "bytes": 6271,
+      "sha256": "ab58872830331bdf6ffa54ee304a84a7af1ba6760a8df3f14e405385de5c330b"
+    },
+    {
+      "path": "ui/reference/manifest.json",
+      "bytes": 78163,
+      "sha256": "9f066974df90c7af348b2be59853d21377469cb02c4961057d831a358e3f7d72"
+    },
+    {
+      "path": "ui/reference/measurements.json",
+      "bytes": 241473,
+      "sha256": "dbb944369034f127dec38608c2a57aba737c3c59733c17cc063d4199a2693dc1"
+    },
+    {
+      "path": "ui/reference/mock-api.mjs",
+      "bytes": 8824,
+      "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+    },
+    {
+      "path": "ui/reference/README.md",
+      "bytes": 20580,
+      "sha256": "bed158bb1bdeb74e8674ffc0564d0eaf3522f314f9a6c4b75f04f3f50d8bb8a5"
+    },
+    {
+      "path": "ui/reference/synthetic-dashboard-dark.html",
+      "bytes": 441706,
+      "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+    },
+    {
+      "path": "ui/reference/synthetic-dashboard.html",
+      "bytes": 441713,
+      "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+    },
+    {
+      "path": "ui/reference/synthetic-fixture.json",
+      "bytes": 4535,
+      "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+    },
+    {
+      "path": "ui/style-catalog.json",
+      "bytes": 9485307,
+      "sha256": "47e76196ad50d2a2f9e42b09e7842b98f77f46850af917ad2869bb76ad1a3527"
+    },
+    {
+      "path": "ui/tokens.json",
+      "bytes": 9119,
+      "sha256": "c55ff8220c494c81c553de4dddca55b628e34e51d1c7c12dbc78c65aef35cf37"
+    },
+    {
+      "path": "ui/VISUAL-CONTRACT.md",
+      "bytes": 29083,
+      "sha256": "24df36ea02ed3728f7b06b24d7c3f9cf6ce1d4ec6f03f2672d0fa4eb26841f6e"
+    },
+    {
+      "path": "validation/acceptance-selftest.mjs",
+      "bytes": 14262,
+      "sha256": "f0f0f91944007d6122e485ef458356450acd147c6e739051688a85ca9bf185d5"
+    },
+    {
+      "path": "validation/acceptance.mjs",
+      "bytes": 12279,
+      "sha256": "3b76db55c0ac03ded337c5ca379c6e951c9d6c8bcefcb4f97fe5c8db7a02c662"
+    },
+    {
+      "path": "validation/adapter-result.schema.json",
+      "bytes": 2861,
+      "sha256": "6394e44f3f9b75f4873ee154ce185bbfb05e854ef41ee025a0a6fcfc20183f0c"
+    },
+    {
+      "path": "validation/adapter-worker.mjs",
+      "bytes": 1702,
+      "sha256": "b424092c352fa26c01d4662d02190caa5d22b89a6f21b6230a8012e44ef8b995"
+    },
+    {
+      "path": "validation/dashboard-dom-validator.cjs",
+      "bytes": 26698,
+      "sha256": "710a07958a8ef34fb527b07dc786d292fd8a4d332ba6c065ff2a9a4f35830c60"
+    },
+    {
+      "path": "validation/dataset-inventory.json",
+      "bytes": 51929,
+      "sha256": "a6ba0518df1d236beda204efe0b4927c4b42fd8365f5686bd4458e7b9b5faa36"
+    },
+    {
+      "path": "validation/evaluate-v3.mjs",
+      "bytes": 6093,
+      "sha256": "b443c86b0b443e8ac4132bea1f4110cc05fb2521ecae23ec4a63e9256ebb62e4"
+    },
+    {
+      "path": "validation/evidence.schema.json",
+      "bytes": 8811,
+      "sha256": "94559ac58a7f46f4934730626e3a2f70d285f4dec582088f88a7e2c49a49d941"
+    },
+    {
+      "path": "validation/fixture-generator.mjs",
+      "bytes": 11799,
+      "sha256": "76ebb6eef8a2198cd0ca3e0724fb2a8f9f916b647e1f3661190bbe969e0e11bd"
+    },
+    {
+      "path": "validation/harness.mjs",
+      "bytes": 11146,
+      "sha256": "8914e8ad419bef9e22b849b7e1c0355762d52fa0a3e6c42569043a374d68612f"
+    },
+    {
+      "path": "validation/inventory-datasets.mjs",
+      "bytes": 2322,
+      "sha256": "b67fc584df4cf5ffebad6cfed2b725e36e74ff57d92253cdf8770826751a556f"
+    },
+    {
+      "path": "validation/package-validator-selftest.mjs",
+      "bytes": 16845,
+      "sha256": "bc217cf9a64e1e7230986842c861cb7a56c7bbf5b6e35a92d9f5c61377785c0f"
+    },
+    {
+      "path": "validation/README.md",
+      "bytes": 14504,
+      "sha256": "414727c392f4063bd09de6deafda03c70f9a2450b26f3da37c5504acb2595448"
+    },
+    {
+      "path": "validation/run-gate.mjs",
+      "bytes": 5941,
+      "sha256": "de6b860e0283ccfbafeaf4fbd580fb9577bf887b9b4fbe7918cf72fdaa9f48c7"
+    },
+    {
+      "path": "validation/selftest.mjs",
+      "bytes": 8609,
+      "sha256": "552bb18007c4d0e5a61cd9674ca31b0ee5eb4544fd66f2eae5c588d3a003cb23"
+    },
+    {
+      "path": "validation/test-package-fixture.mjs",
+      "bytes": 6439,
+      "sha256": "27b4473072f1db8efbe7b8c8e9b677200f6aa86ffd7ee0dfd8dbe96ecb604f4e"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "index.html",
+      "bytes": 564,
+      "sha256": "91ed8ae874790d21611b4f07d807aa7902c7a02b9dd2c062ac5ad3209c874c61"
+    },
+    {
+      "path": "integrations/package-lock.json",
+      "bytes": 28537,
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441"
+    },
+    {
+      "path": "integrations/package.json",
+      "bytes": 408,
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1"
+    },
+    {
+      "path": "integrations/scripts/smoke.mjs",
+      "bytes": 2171,
+      "sha256": "ffad404ec2016ec9913d57b44fd85de15e370022359e050a8df4577d6b5fa968"
+    },
+    {
+      "path": "integrations/src/activity.mjs",
+      "bytes": 8529,
+      "sha256": "cfe58234765c3d68406a6bf63d6992a3aaa8ca3d6111cf4ece9ee88321e65b00"
+    },
+    {
+      "path": "integrations/src/command-progress.mjs",
+      "bytes": 7828,
+      "sha256": "6054bb023a58aa6ecafee58ccba7f21e708fb4a78e04b4d2c4c1473b94ca0da1"
+    },
+    {
+      "path": "integrations/src/config.mjs",
+      "bytes": 1598,
+      "sha256": "f658c20eb1280c5c335571bf4893f5e25a1a708db57680e19ab1fc31239a60b6"
+    },
+    {
+      "path": "integrations/src/errors.mjs",
+      "bytes": 2116,
+      "sha256": "bff01f8874ec1bd34a6d2e9ea1fa5fcff379a006d7a3f8e8ba1ef61ac3ad3c10"
+    },
+    {
+      "path": "integrations/src/gemini.mjs",
+      "bytes": 3590,
+      "sha256": "90a267c4371bc01aa20c1e51a68eb9f642fae72109a6b507022e8cf64576cc18"
+    },
+    {
+      "path": "integrations/src/index.mjs",
+      "bytes": 244,
+      "sha256": "b0ce1ef692e375263e4251400c821622c30f9022ed20ff6cac2b4584462482e5"
+    },
+    {
+      "path": "integrations/src/sandbox.mjs",
+      "bytes": 3692,
+      "sha256": "e6186c4708f01fc00cea3023ffe3ec6d50320daeeb149f484eae6a23b1b5b2bf"
+    },
+    {
+      "path": "integrations/src/task-pool.mjs",
+      "bytes": 2406,
+      "sha256": "7ea0c9b199bdc5107c7e8ec5e952a57080441c5e4961006ef916c8f86974ebea"
+    },
+    {
+      "path": "integrations/test/concurrency.test.mjs",
+      "bytes": 7761,
+      "sha256": "fec6df52d5305e8940054b86b3eaf5a6ea7b077faf43d1856edace604178ac9f"
+    },
+    {
+      "path": "integrations/test/gemini-limits.test.mjs",
+      "bytes": 2671,
+      "sha256": "919324021efc9f3144028b59eb11d58178df236dae562edad6f3cc949ef75f1b"
+    },
+    {
+      "path": "integrations/test/integrations.test.mjs",
+      "bytes": 4327,
+      "sha256": "18cacf081a9b611763891505357de2cdc1864d870f3de13b41b311b879b98240"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 182993,
+      "sha256": "ff0beaeb71a44aea24646852abab25475bf1cfbe8d50260066cdab8253c701c9"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1509,
+      "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc"
+    },
+    {
+      "path": "public/gspec.svg",
+      "bytes": 300,
+      "sha256": "6f4f4bf8dcf4a1bb1ab35269eecfea6855d04b9d45875e500809ea874347fc1e"
+    },
+    {
+      "path": "scripts/build-dashboard-chart-runtime.mjs",
+      "bytes": 750,
+      "sha256": "0da4c486231b9b72f73dbe291b75dcdef8a1dbaff766d80d2e754585a854c6bf"
+    },
+    {
+      "path": "scripts/copy-pdfjs-assets.mjs",
+      "bytes": 1023,
+      "sha256": "2e8ad9b52b8f31ab642d4077b79d3727b98c2387b321cc7360fc479b147f7fc3"
+    },
+    {
+      "path": "scripts/dashboard-chart-entry.jsx",
+      "bytes": 2849,
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "bytes": 771,
+      "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34"
+    },
+    {
+      "path": "scripts/ui-qa-dashboard-observe.js",
+      "bytes": 2166,
+      "sha256": "f98c09933872d69af5d16eece4cd86ca0eb241614a2a94943ff37713edd8349c"
+    },
+    {
+      "path": "scripts/ui-qa-observe.js",
+      "bytes": 621,
+      "sha256": "ecae7b60fab0de12344bc911114031d5712829faf4f134f4e7d1b0c168df0485"
+    },
+    {
+      "path": "scripts/verify-criteria-first.mjs",
+      "bytes": 30564,
+      "sha256": "675fea5890ec5660436acef42f088d68fe425a25c3653b2bf4e6b5e2786ff7a4"
+    },
+    {
+      "path": "scripts/verify-golden.mjs",
+      "bytes": 22367,
+      "sha256": "f1b106c3084e715358af86dcbcad2890d19ed476fa7800985c6f9654c28de551"
+    },
+    {
+      "path": "scripts/verify-hierarchy-guards.mjs",
+      "bytes": 4738,
+      "sha256": "26c5defea4ee86d38038038b411dbd9b13300bd214bb7fa1b5d323442cfc30c5"
+    },
+    {
+      "path": "scripts/verify-xlsx-target.mjs",
+      "bytes": 15057,
+      "sha256": "0e3388ec1df98b6f7fde1ab119f2345d60460494d8eabffc1e15b80f872ce627"
+    },
+    {
+      "path": "server/activity-observer.test.mjs",
+      "bytes": 11885,
+      "sha256": "4cde5c287156ff74e4dd786d6e98b6ebbc3df2cd9055244beb79e6eb2ecaf803"
+    },
+    {
+      "path": "server/activity-scope.test.mjs",
+      "bytes": 2766,
+      "sha256": "d7c71418304ee26a164b39e6078ad8f1625ef160f695bf9e756c76c448d50dd1"
+    },
+    {
+      "path": "server/activity.mjs",
+      "bytes": 1124,
+      "sha256": "f3049e62dc8660fa1f7dada649fa0cfe137dd65a6cfb7b9cadad0dc7c1487bc6"
+    },
+    {
+      "path": "server/activity.test.mjs",
+      "bytes": 8072,
+      "sha256": "e5c25ae9bd063388037662cfcc05cbd3fb4c232779c91f276e2c271190bb9bda"
+    },
+    {
+      "path": "server/app.mjs",
+      "bytes": 14362,
+      "sha256": "2637178b138d811d4db854e4bb8fda78431a759755b29fabf97a9614451f31c7"
+    },
+    {
+      "path": "server/app.test.mjs",
+      "bytes": 6268,
+      "sha256": "6cb3599a27a0fc7aa7c59e2377a8f02db25ba33e81166f3e8092c66edce5bbb6"
+    },
+    {
+      "path": "server/assets/dashboard-chart-runtime.js",
+      "bytes": 399912,
+      "sha256": "d1b5ad04f2f0ac7716249e8c7e8d6ff0cfe2944a0324cf417db7823bd5d3ea5d"
+    },
+    {
+      "path": "server/command-progress.test.mjs",
+      "bytes": 7744,
+      "sha256": "cb9118e269279001a51385e355ffdc910e14ecf51eef68e29382e2795ba0ebcb"
+    },
+    {
+      "path": "server/conditions.mjs",
+      "bytes": 7368,
+      "sha256": "4c2ed4769dbccf6ab03eb5c57227ba527fec343f27fb327a5ca2e90f0a443246"
+    },
+    {
+      "path": "server/conditions.test.mjs",
+      "bytes": 8434,
+      "sha256": "0cc5bfeb133dbbd8ec25f37525ab2ec04e91ac00b0dc60f7ae1c060596ed8aa6"
+    },
+    {
+      "path": "server/criteria-adapter.mjs",
+      "bytes": 16191,
+      "sha256": "ce36313a33a5dfc3744716ade693667c2b46aa08f1c9148a8bc98e5a7334d0cb"
+    },
+    {
+      "path": "server/criteria-adapter.test.mjs",
+      "bytes": 10457,
+      "sha256": "9c31c5409adc9738b2289df2c3c988af0fa4690aa43a3f9d615e1fde0f20b442"
+    },
+    {
+      "path": "server/criteria-approval.mjs",
+      "bytes": 13802,
+      "sha256": "148eed7d317ecc80b0b878de652bc5f81389fa9807dc7adf518f189ef909f014"
+    },
+    {
+      "path": "server/criteria-approval.test.mjs",
+      "bytes": 26420,
+      "sha256": "247c0efb3be909ec13b86579b5d8c61755995de3710aef9283394161e5528f9f"
+    },
+    {
+      "path": "server/criteria-context.mjs",
+      "bytes": 26556,
+      "sha256": "0c3ca9c9c34e0e6bacaf9b405f08d44f14577d67b333e02358cace2eeaa3e624"
+    },
+    {
+      "path": "server/criteria-context.test.mjs",
+      "bytes": 15757,
+      "sha256": "4c329045c635842dcf2cd86d766b9459f9a994422402fc4aebf33ad66a30df50"
+    },
+    {
+      "path": "server/criteria-eligibility.mjs",
+      "bytes": 20806,
+      "sha256": "167bdf1475baf053de0a70f311d9df8007138e685721f5e30b8bd3292c995475"
+    },
+    {
+      "path": "server/criteria-eligibility.test.mjs",
+      "bytes": 28630,
+      "sha256": "724e215ef9958726f78658ff98e1ca96022c4f91190b2ecb9b1f63f29405ddba"
+    },
+    {
+      "path": "server/criteria-generalization.test.mjs",
+      "bytes": 17494,
+      "sha256": "7a5c2585639a0078245a20612c4945a04cddfeae4d19718da58bef7f50f6ad5d"
+    },
+    {
+      "path": "server/criteria-layout.mjs",
+      "bytes": 17076,
+      "sha256": "1c155d827d3e830b00ea57e584d4bed7a50b62553be30e8fa3129539a706798c"
+    },
+    {
+      "path": "server/criteria-layout.test.mjs",
+      "bytes": 12608,
+      "sha256": "689eebd942a00b6ad9332bef6ca06eff86af41683aa67468ddcd60555e26fe77"
+    },
+    {
+      "path": "server/criteria-matrix-regression.test.mjs",
+      "bytes": 10175,
+      "sha256": "e0dfa5c1d83c735d9f1f8bfd8f7661b409b486448f3f24f7a6668f56539bb908"
+    },
+    {
+      "path": "server/criteria-normalization.mjs",
+      "bytes": 1875,
+      "sha256": "83cdd7a880b0a97320331f8cf13d70f996c999a106c4a82e178be858f2821a16"
+    },
+    {
+      "path": "server/criteria-notes.mjs",
+      "bytes": 13261,
+      "sha256": "77f8a3530c84320fff740489241c02922d2808257d1fe93b2c31580d97dd72c1"
+    },
+    {
+      "path": "server/criteria-notes.test.mjs",
+      "bytes": 15169,
+      "sha256": "50cb86bff9548c03a74d076d4fc602ae7dee864fd5cacb77d271fdc163970e36"
+    },
+    {
+      "path": "server/criteria-revision.mjs",
+      "bytes": 30183,
+      "sha256": "906d61ab0f20de493c24df8170098d5fa5522130c743b418ddf22b96a0a5809f"
+    },
+    {
+      "path": "server/criteria-revision.test.mjs",
+      "bytes": 40964,
+      "sha256": "da96d6479bddde04e704d0e86473f78407becc2dafe57a2e6ef6d404ac210337"
+    },
+    {
+      "path": "server/criteria-sandbox.mjs",
+      "bytes": 72241,
+      "sha256": "929b02ad1e7ec59e33df4dba1e59e66a5de15525c5e8b9dc2b00fb94aa3b8865"
+    },
+    {
+      "path": "server/criteria-sandbox.test.mjs",
+      "bytes": 57308,
+      "sha256": "ffd7572999c0cabe4d420ffb3ba51b144c5a352e8c656893e2991b7507a23655"
+    },
+    {
+      "path": "server/criteria-table-sources.mjs",
+      "bytes": 7485,
+      "sha256": "2969d09363c65338afa816ceefff8099a72471818266ab7aa55fff60b13d81af"
+    },
+    {
+      "path": "server/criteria-table-sources.test.mjs",
+      "bytes": 6867,
+      "sha256": "e5634fb98c7d3d1d2755dd7a7a18fa5183decd32ec4af7ca454981b84ea5daab"
+    },
+    {
+      "path": "server/criteria-workbook-profile.py",
+      "bytes": 8220,
+      "sha256": "48ba501da57bb8b52ae4cef5831c8508391cdd2649402472c908fe655e87008b"
+    },
+    {
+      "path": "server/criterion-applicability.mjs",
+      "bytes": 14927,
+      "sha256": "fe2cee9904a0606540bcab4ed403a33cb2a2f3861e8f8ebd5a7a2117cf4446a1"
+    },
+    {
+      "path": "server/criterion-applicability.test.mjs",
+      "bytes": 18879,
+      "sha256": "0a5c835c990bb8d24a0cd2523ffbfe5bea17e1f751d5fd0db3109dd0553242a0"
+    },
+    {
+      "path": "server/dashboard-bridge.test.mjs",
+      "bytes": 3872,
+      "sha256": "1e940e88655bcf5333b5e29eb480090ab223a3598fcee8ffe97be87453136bad"
+    },
+    {
+      "path": "server/dashboard-chart-runtime.mjs",
+      "bytes": 299,
+      "sha256": "2a6c08426d1ced7fccdbf925724b24307bb4f44f58fa7275a5a3180b1844b987"
+    },
+    {
+      "path": "server/dashboard-fallback.mjs",
+      "bytes": 49004,
+      "sha256": "2227d62a50b914ccf63b026b503f1e7e7f4a6daccb64c6e64655c7ea48092a74"
+    },
+    {
+      "path": "server/dashboard-fallback.test.mjs",
+      "bytes": 23370,
+      "sha256": "35db9bd8b1504dfa22d50f49e27d66342aeb7a196e87c1b7301fbdd52b393034"
+    },
+    {
+      "path": "server/dashboard-plan-validation.mjs",
+      "bytes": 29655,
+      "sha256": "057962ccee467d9bbe5dc149ef66c2cd3df6c7db6f58ef63709d3f224f510765"
+    },
+    {
+      "path": "server/dashboard-plan-validation.test.mjs",
+      "bytes": 22012,
+      "sha256": "0ccac5e9d86570058ab9dbaa8b1ab454a913c383aea08926e6582a82bfae38e1"
+    },
+    {
+      "path": "server/dashboard-plan.mjs",
+      "bytes": 13168,
+      "sha256": "442ace1fbdb82705ef851f2d39f0cd92e0b66d3efcdb95b2ea614e7ba51485e4"
+    },
+    {
+      "path": "server/dashboard-plan.test.mjs",
+      "bytes": 6824,
+      "sha256": "84526f83fa1c6ffbd6d94aca0fe2a018bd79a8a382cc0b4ec2a8777cfe3b9023"
+    },
+    {
+      "path": "server/dashboard.mjs",
+      "bytes": 23195,
+      "sha256": "8a556f46253e5de0cc35ba52f8f78ddb1c034212cd56123c08c73408ab782f71"
+    },
+    {
+      "path": "server/dashboard.test.mjs",
+      "bytes": 19201,
+      "sha256": "f4aa418aaf425d81e1f3075eea9d0244e9cf2e6c59bd4bd03314b5d7bee0c68e"
+    },
+    {
+      "path": "server/document-activity.test.mjs",
+      "bytes": 11713,
+      "sha256": "25bb645eea031e65187c0ac8198dc1162abd983339fbffb6c1dc5cc857d6f72c"
+    },
+    {
+      "path": "server/document-quality.mjs",
+      "bytes": 24936,
+      "sha256": "ba750d2c50f4cb2e4e22bd0e34e6ac9824cd74e2c9e97ef3d08e18a1322fbb9a"
+    },
+    {
+      "path": "server/document-quality.test.mjs",
+      "bytes": 19614,
+      "sha256": "922807aeddb107b2d5f5f8674c2b59fde1172cc2a3ce097279971a77b4eb534c"
+    },
+    {
+      "path": "server/document-reader.test.py",
+      "bytes": 14190,
+      "sha256": "adf9b96b586b7d420f1ba17d7db44a393979769c9750f7c98083c6337465b758"
+    },
+    {
+      "path": "server/document-requery.mjs",
+      "bytes": 5596,
+      "sha256": "98722f89aec9a4bf705b6c94fff39cb0cede088c37d044f1e4a7a08a07a19c3e"
+    },
+    {
+      "path": "server/document-requery.py",
+      "bytes": 13504,
+      "sha256": "5f58461ad459674df6020c6c2d7446c703c45a554ca1992f5c78309fe448a858"
+    },
+    {
+      "path": "server/document-sandbox-resources.mjs",
+      "bytes": 3108,
+      "sha256": "afcaab6e136bf566cd6dd693e0e624a22a29cad64029e5cd9408b8e911e650de"
+    },
+    {
+      "path": "server/document-sandbox-session.test.mjs",
+      "bytes": 10090,
+      "sha256": "0e244465fe64694c7eb3bdbda790ff3f9f7075bf4e3fc8af02c678b2d6793e65"
+    },
+    {
+      "path": "server/documents.mjs",
+      "bytes": 27493,
+      "sha256": "3c9d0bb1e513f010564f05be189fbf2a640b44ce198c004a8b5a4c834ef926b3"
+    },
+    {
+      "path": "server/documents.test.mjs",
+      "bytes": 19861,
+      "sha256": "c024f622995505a68e3741e04a439711f7ae71e569d8393a87689575bf1ad608"
+    },
+    {
+      "path": "server/field-extraction.mjs",
+      "bytes": 15205,
+      "sha256": "2c57d20ac2056d5948e0327d2f985a656fb216b32cebc7a1019efd2f25fc0cd1"
+    },
+    {
+      "path": "server/field-extraction.test.mjs",
+      "bytes": 9022,
+      "sha256": "7a56c0a1c893cf8fbad453a65aac8ad201694284838fc47af9d918d223b4f277"
+    },
+    {
+      "path": "server/golden-catalog.mjs",
+      "bytes": 5967,
+      "sha256": "d6964dd32397e5a5863df140d6d5492dfa2599a5fd6042b6faa9d1d36feaf323"
+    },
+    {
+      "path": "server/golden-catalog.test.mjs",
+      "bytes": 5877,
+      "sha256": "097b5d18178da4c361e27daffe7d4456643cc52edf62f65286641066e97493cb"
+    },
+    {
+      "path": "server/handoff-queue.test.mjs",
+      "bytes": 5580,
+      "sha256": "3464fb15e09679d2ab90a47e50f4e3ee71d990bbbc5582160246a7146f4fc585"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 418,
+      "sha256": "a60463b2381a9ce3776579aa7efa401196530d90edfc0767a35bffa1dbb5e28a"
+    },
+    {
+      "path": "server/ledger.mjs",
+      "bytes": 21826,
+      "sha256": "a0e3e5183cbe281bbee70c1a33cae53e92ebde43a9897c24d3fce80d211f8eab"
+    },
+    {
+      "path": "server/ledger.test.mjs",
+      "bytes": 16630,
+      "sha256": "db2048b81137872ef0a572246641d80ea25ef0d342d32e81fdab8d37d44ac69e"
+    },
+    {
+      "path": "server/missing-result.mjs",
+      "bytes": 13503,
+      "sha256": "c95403093f7d1a51f8f847b0e8904b6012ec5d71522457cac28efdf116414423"
+    },
+    {
+      "path": "server/missing-result.test.mjs",
+      "bytes": 14009,
+      "sha256": "64a90f7e6c4284dbdf8c730d53caebd8368e7fb385be37aaa3e1beaebd388e4a"
+    },
+    {
+      "path": "server/review-activity.test.mjs",
+      "bytes": 9523,
+      "sha256": "54f87cb3e35f5a92615407a59a137bff8a94fd4fbd2b7cee6113cb5d4132bf5a"
+    },
+    {
+      "path": "server/review-state.test.mjs",
+      "bytes": 13991,
+      "sha256": "4e2313d936f5c089652116bc175e32ad91d7fb265466366d14d3bfb52fda5ecb"
+    },
+    {
+      "path": "server/review.classification.test.mjs",
+      "bytes": 5028,
+      "sha256": "22b09e96c28603b7536b19b0fb543133d095d0cdc801707ad901010401c55c11"
+    },
+    {
+      "path": "server/review.eligibility.test.mjs",
+      "bytes": 9164,
+      "sha256": "948eac062a269594916be30d509f9c80de8bb8161cd27d53a89e65df283c15a7"
+    },
+    {
+      "path": "server/review.integration.test.mjs",
+      "bytes": 7183,
+      "sha256": "542a0de27af426bd722a168a8442ee6419fb63ecd4645c2883fb5e91889f2bf9"
+    },
+    {
+      "path": "server/review.mjs",
+      "bytes": 79525,
+      "sha256": "51715eabc9345480e9499400d714da5ce2bd2d4b7ce11eb0e1fcb05ba28bd8e5"
+    },
+    {
+      "path": "server/review.pipeline.test.mjs",
+      "bytes": 15252,
+      "sha256": "ef33e61668c74dbe61905d4328e98b8659053bc46e9b3d389f0455a2e65ef1b0"
+    },
+    {
+      "path": "server/review.test.mjs",
+      "bytes": 11610,
+      "sha256": "8bf0ffa38ebd3cb2338f854ddb512fa9c3785f7642baa2907f3900160591075f"
+    },
+    {
+      "path": "server/review.wizard.test.mjs",
+      "bytes": 14294,
+      "sha256": "cd64ccb74d9a3116709bcc9055dee8a88698ceb2fd20ba541f01f7f493086d8f"
+    },
+    {
+      "path": "server/sandbox-document-reader.py",
+      "bytes": 41373,
+      "sha256": "35a30c51117b391b6fe8817b6eaba6033a6255a2abbb720c1327a61b1dfc29c7"
+    },
+    {
+      "path": "server/sandbox-documents.mjs",
+      "bytes": 34681,
+      "sha256": "00466f1edd8ac897529920d5333588d684271580dcaa5a1f2a284976c7d43038"
+    },
+    {
+      "path": "server/sandbox-documents.test.mjs",
+      "bytes": 14655,
+      "sha256": "4c6561533e4fc326fbedd2a4aca7aa4b3dc2a0a35a9140e56182260591602ba0"
+    },
+    {
+      "path": "server/spreadsheet-xml-compatibility.mjs",
+      "bytes": 2338,
+      "sha256": "cadf5fa81f3764c2100a06755d4a75f32f62487b6ad95ad2e6fe1c847e7df1a8"
+    },
+    {
+      "path": "server/spreadsheet-xml-compatibility.test.mjs",
+      "bytes": 2262,
+      "sha256": "ee28fa5867c4c821e775db8d9a934c18138591e69cce59229b9f825b1d6d8bff"
+    },
+    {
+      "path": "server/table-records.mjs",
+      "bytes": 3122,
+      "sha256": "daaf7b66209cb582f6b2d64baca50ad948be5bba9899f4b218663ab25529555a"
+    },
+    {
+      "path": "server/table-records.test.mjs",
+      "bytes": 6332,
+      "sha256": "38dd7c1bcccecd592523e7bedb8e30634b0ee2fdca8bda1fa243ebbbb799d53b"
+    },
+    {
+      "path": "server/task-pool.mjs",
+      "bytes": 62,
+      "sha256": "7335a7856684c66ebd4e796e76b9166c2f107a4b973dddb77a8ce365353ddd4f"
+    },
+    {
+      "path": "server/task-pool.test.mjs",
+      "bytes": 5540,
+      "sha256": "5e4825bfee4bb8fa5ec374cefe88d64bce3fce37b30a7d3fc842cc6c3fe6110a"
+    },
+    {
+      "path": "server/test-support.mjs",
+      "bytes": 2466,
+      "sha256": "9d7903a9cb5e2a07c0e77b0d06ac6a2bdddcd399ac732833729fdfd5d851cad0"
+    },
+    {
+      "path": "server/use-review-commands.test.mjs",
+      "bytes": 5738,
+      "sha256": "f5c2138b1729ce26615f9f33dcea38296cb469ce8af0273748245364a034a5da"
+    },
+    {
+      "path": "server/visual-quality-judge.mjs",
+      "bytes": 14634,
+      "sha256": "382c6838b542b6fd946a6008e312f794c140a5cf78e4186a50c9cf39f79fb69f"
+    },
+    {
+      "path": "server/visual-quality-judge.test.mjs",
+      "bytes": 11634,
+      "sha256": "a33a09f9bd5ab7e12bd12d8f670db0922a77ef272b72a48f94df1dbfb3a862da"
+    },
+    {
+      "path": "server/visual-transcription-alignment.test.mjs",
+      "bytes": 5890,
+      "sha256": "dd49c253bd4492795702d5b378d377e812471f47726e7b9e7a6a759d23839654"
+    },
+    {
+      "path": "server/visual-transcription.mjs",
+      "bytes": 39329,
+      "sha256": "954d5fb87589f7a99304b7c648370a96893911cada2841cf4ffc9101e3ad8d61"
+    },
+    {
+      "path": "server/visual-transcription.test.mjs",
+      "bytes": 25830,
+      "sha256": "3532c1c429b9c0954dda917633936f8a84838fbeadff6be98b878dbd38ca1695"
+    },
+    {
+      "path": "src/activity-observer.d.mts",
+      "bytes": 1548,
+      "sha256": "fe1b78c5037cb1ef86356fe7f47b38d5e6da572a097733d404eb30372d1bc9aa"
+    },
+    {
+      "path": "src/activity-observer.mjs",
+      "bytes": 6952,
+      "sha256": "176f53701067d015efe9e651b0a1778be29fcd93e7f2c043adf2a5824a67154b"
+    },
+    {
+      "path": "src/activity-scope.d.mts",
+      "bytes": 244,
+      "sha256": "25a44dc4a0e24a0843006b85cfb96f31838cde408352ca72683254f49370f656"
+    },
+    {
+      "path": "src/activity-scope.mjs",
+      "bytes": 555,
+      "sha256": "e555aff13915231df34e257f98c727c5b0709704d1076317a9240cfdbdf8a6a8"
+    },
+    {
+      "path": "src/api.ts",
+      "bytes": 981,
+      "sha256": "f955820f7d311fefa37e8804e536764f83fd4144bfc2447ef9b00b3e98243de3"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 27265,
+      "sha256": "76748d69a5c9b05efac7c006b21e9fc027f9a5b78da155021ecbb6e448fda8b4"
+    },
+    {
+      "path": "src/cinematic.css",
+      "bytes": 44886,
+      "sha256": "58578d5fc0c8b92301623ccf210fc10797b08affdd2a28f0334a657e9e9d2a63"
+    },
+    {
+      "path": "src/components/charcoal-dialogs.css",
+      "bytes": 30107,
+      "sha256": "8ea8f484624a3cb0b8929a77bbdd01ca1790d8d79d44899e43e407eae8970f21"
+    },
+    {
+      "path": "src/components/charcoal-surfaces.css",
+      "bytes": 50409,
+      "sha256": "799ded7b82495f6e3bba550f503970354effa87e5122adfb68d081984afce95f"
+    },
+    {
+      "path": "src/components/charcoal-workroom.css",
+      "bytes": 20293,
+      "sha256": "ffae502c5e245199d17023dbca76fd1de1b1eef521531a2fb534e03152f3a906"
+    },
+    {
+      "path": "src/components/criteria-confirmation.css",
+      "bytes": 55816,
+      "sha256": "5a5ee11724b779476285ef204264b02750da5770f0099cbdf56a704f4f51f7a8"
+    },
+    {
+      "path": "src/components/criteria-draft.d.mts",
+      "bytes": 1668,
+      "sha256": "42ff9263042ffac8d3268ba326568007819c075ef849f51e92414494b7cf4059"
+    },
+    {
+      "path": "src/components/criteria-draft.mjs",
+      "bytes": 2466,
+      "sha256": "d1a38daea5f4582ad99b38a013c040499a6ca49e5051a9d995a1e5c61d58202d"
+    },
+    {
+      "path": "src/components/criteria-draft.test.mjs",
+      "bytes": 7353,
+      "sha256": "87984b58e2b253754f141d2a75a3ac9201d3d734c9c12b637342db6ff64f4bcf"
+    },
+    {
+      "path": "src/components/criteria-groups.d.mts",
+      "bytes": 1619,
+      "sha256": "19405e9a88a42a02080587a838898506016d49dc214dd4475dee18d38a5d9a5d"
+    },
+    {
+      "path": "src/components/criteria-groups.mjs",
+      "bytes": 7934,
+      "sha256": "be2e10f45f7c873bf930bb702b6e6aa2fe06100d2b92bcbaccdc0f499c713f45"
+    },
+    {
+      "path": "src/components/criteria-groups.test.mjs",
+      "bytes": 17277,
+      "sha256": "c1f964a48a6e57e1cf6493eba26e6b53c91d5e805ef268850550ff34191e6d79"
+    },
+    {
+      "path": "src/components/CriteriaConfirmation.tsx",
+      "bytes": 51658,
+      "sha256": "50b5febf15dd8f2971f9de6366b785906f0df0afb5df556c3b0c0cfcc3f7d3b0"
+    },
+    {
+      "path": "src/components/criterion-preview-evidence.d.mts",
+      "bytes": 240,
+      "sha256": "231befbd44588e5dae9994a496cd4b55c9aa7fe9b732e0bc63bbe942c004cd62"
+    },
+    {
+      "path": "src/components/criterion-preview-evidence.mjs",
+      "bytes": 5788,
+      "sha256": "594ca95fcdc391223a424ac87ab1032fbece0ee02fa7112b67dc65c37864dbc0"
+    },
+    {
+      "path": "src/components/criterion-preview-evidence.test.mjs",
+      "bytes": 5777,
+      "sha256": "2c267f0df4c9b03256c8297ac8d9fd99c49685a34af188250bb29ed01b55b859"
+    },
+    {
+      "path": "src/components/dashboard-bridge.d.mts",
+      "bytes": 566,
+      "sha256": "998e1d5fa1a9a9e1d2f1d8fe1dbab5c9e5eca54d5c51df4c55f30c633b91b68b"
+    },
+    {
+      "path": "src/components/dashboard-bridge.mjs",
+      "bytes": 2786,
+      "sha256": "b3c01d4552b7c78b7fc9c63af3b0321aac40016ba33aaf919cb0380629a129f9"
+    },
+    {
+      "path": "src/components/dashboard-evidence.css",
+      "bytes": 15602,
+      "sha256": "e5a8ce6a08776aa842529fcae926765f5353e197a9a3fa89b3d50131b4014763"
+    },
+    {
+      "path": "src/components/dashboard-file-scope.d.mts",
+      "bytes": 429,
+      "sha256": "15b45cc2fb4745c832a66bd101deddbbe319ef0ca27afe3c073f1d082fd17e1b"
+    },
+    {
+      "path": "src/components/dashboard-file-scope.mjs",
+      "bytes": 1304,
+      "sha256": "458fd6ebc635c5e211e06ee523d25db19bd9c4ddc08733ed31ad6d68a9faab2c"
+    },
+    {
+      "path": "src/components/dashboard-file-scope.test.mjs",
+      "bytes": 2234,
+      "sha256": "95663210d243b92b50d32fb31f76b00c5fdd96e4f68b16b40b0fe249fd84fc0a"
+    },
+    {
+      "path": "src/components/dashboard-modal.css",
+      "bytes": 30773,
+      "sha256": "9184ba41f0c05d0c3455d44940e22cb33948a01931795646a218a051ca3f1268"
+    },
+    {
+      "path": "src/components/dashboard-sky.css",
+      "bytes": 20875,
+      "sha256": "6b72e5a9a3899d8c8379f1a642d71d9f2f2112671a582834c6b0e2ded882954b"
+    },
+    {
+      "path": "src/components/DashboardEvidence.tsx",
+      "bytes": 16080,
+      "sha256": "035bab79b8b8b255c95fa9816198702c86ba887dfb9b0bf52593abf31d3edef4"
+    },
+    {
+      "path": "src/components/DashboardModal.tsx",
+      "bytes": 36093,
+      "sha256": "6eae57135c798d1d131a897c12929ad19740c50fe7fe9e8538126e1d7a580089"
+    },
+    {
+      "path": "src/components/dialogs-sky.css",
+      "bytes": 10680,
+      "sha256": "b711d222dc82a2954ce5f84451f5e1d0838a54f5d5595123b177bf51c6c3d60b"
+    },
+    {
+      "path": "src/components/document-analysis-sky.css",
+      "bytes": 17739,
+      "sha256": "4cb4ae3dac9531c61d10ec6fb8ecad7ea9d101e178414d55f5bde425058172d2"
+    },
+    {
+      "path": "src/components/document-analysis.css",
+      "bytes": 42142,
+      "sha256": "0a42a4f3d4e25111c454335f3e1111513f614d2641296e80348a73735e1979c8"
+    },
+    {
+      "path": "src/components/document-preview.css",
+      "bytes": 15663,
+      "sha256": "a7f75fc14a03ee2c8756b4ca9510b672de1a6d69d2425be9cdaba392fe62acf9"
+    },
+    {
+      "path": "src/components/DocumentAnalysis.tsx",
+      "bytes": 37286,
+      "sha256": "2ae679247eef93865e9fe453c33881496caedc36b59470a0bef88d4e3ee5ebf9"
+    },
+    {
+      "path": "src/components/DocumentPreview.tsx",
+      "bytes": 32644,
+      "sha256": "ff8dfa2d86c3074c08b1857d0aa042a056d8971099543828e7b1646c41f82a70"
+    },
+    {
+      "path": "src/components/extracted-fields.css",
+      "bytes": 3145,
+      "sha256": "f99593e1b83ce74c04f31bde900fc05d3f1c34cc2d59fcad4892c5cd4c03b62e"
+    },
+    {
+      "path": "src/components/ExtractedFields.tsx",
+      "bytes": 2398,
+      "sha256": "e1be20634b43b580adb4957b5eebb7819e92abcadf33874585d6fb9b767599c7"
+    },
+    {
+      "path": "src/components/file-review-model.d.mts",
+      "bytes": 709,
+      "sha256": "5ef75f87ce96d3332d2f9b74eaba02ee957c8bfff3c92604673c612b50e24d8a"
+    },
+    {
+      "path": "src/components/file-review-model.mjs",
+      "bytes": 4072,
+      "sha256": "2caa91c4ff649c5d5139245297bbaf82b201d72913c342b65ff4e97ab691b271"
+    },
+    {
+      "path": "src/components/file-review-model.test.mjs",
+      "bytes": 7797,
+      "sha256": "5e803e13a5f3b925a67950a2445a137121c45554ae68f30e36cdd8f3fb4dbfdb"
+    },
+    {
+      "path": "src/components/file-review-results.css",
+      "bytes": 19415,
+      "sha256": "d4a6ecad8dc95bc16b640e1a305d2253571f0f1ec904a3c3229fdbfb29918cc3"
+    },
+    {
+      "path": "src/components/FileReviewResults.tsx",
+      "bytes": 19022,
+      "sha256": "adfd0c1b4cc4ff2685e9f8dee8b13331049667147936d978cc26ff11c6b4310a"
+    },
+    {
+      "path": "src/components/golden-picker.css",
+      "bytes": 8644,
+      "sha256": "e0b2389ecfee636a0556a79da06f92b510f2668e314343781598138a8b9473bd"
+    },
+    {
+      "path": "src/components/GoldenPicker.tsx",
+      "bytes": 9267,
+      "sha256": "cabf656949e98517ccc14934e4dccb0806635346e2295a919266646f664844fc"
+    },
+    {
+      "path": "src/components/item-source-highlights.d.mts",
+      "bytes": 287,
+      "sha256": "d767813792ac36ab997621cbf772b7ce388364dcb223f6accd03278c604eb563"
+    },
+    {
+      "path": "src/components/item-source-highlights.mjs",
+      "bytes": 1374,
+      "sha256": "339afe338f4d2277b2e266b0d938e1c67f07e1829e386d5f683fef80264fd63a"
+    },
+    {
+      "path": "src/components/item-source-highlights.test.mjs",
+      "bytes": 7657,
+      "sha256": "111e1db5462f758f69061dca4cba82cf9f21ca8afa941ef09b85d53356b417bc"
+    },
+    {
+      "path": "src/components/ItemInspector.tsx",
+      "bytes": 4725,
+      "sha256": "affb2cb6fcd878e58d84487b60b501c5cceebb339154ec59813d5b633a52ae03"
+    },
+    {
+      "path": "src/components/landing-intro.css",
+      "bytes": 30073,
+      "sha256": "875bf0ce961089d319a6517c7e04049050675b28c3c249f30cb52160ce9202b0"
+    },
+    {
+      "path": "src/components/LandingIntro.tsx",
+      "bytes": 2758,
+      "sha256": "c88880740222d93d8ca6fc97df3c5a3e057a263d029bc643feabeae2ad3131df"
+    },
+    {
+      "path": "src/components/ledger-modal.css",
+      "bytes": 17220,
+      "sha256": "a0bd7074d13ba87d72cd7be791209d94fad91133c5acc2cb4b6aa21e01356fba"
+    },
+    {
+      "path": "src/components/LedgerModal.tsx",
+      "bytes": 24467,
+      "sha256": "98e98565a57c1b1c495c9a85db1498598fd267b97e3d628faa1eae318caa571b"
+    },
+    {
+      "path": "src/components/live-review-flow.css",
+      "bytes": 21836,
+      "sha256": "6be5dba88366608a8b05de58c9798e790a699805082e843e5767703685ffecb8"
+    },
+    {
+      "path": "src/components/LiveReviewContext.tsx",
+      "bytes": 6830,
+      "sha256": "49ba1c6ef06854817619e895532dc7ee4ecb99ed78f8aaf65f0c48d68c934c16"
+    },
+    {
+      "path": "src/components/LiveReviewFlow.tsx",
+      "bytes": 7301,
+      "sha256": "7dae4912edd2cbc99632e1f220a2fa3c9b2d26a588981fcc2efa825bdd3a59a9"
+    },
+    {
+      "path": "src/components/results-visuals.css",
+      "bytes": 12416,
+      "sha256": "d089a37804ba0f2529cff6d01d82c5d901ed54195d38189d9f90f506d025a14b"
+    },
+    {
+      "path": "src/components/ResultsVisuals.tsx",
+      "bytes": 15489,
+      "sha256": "d1c04661d0209f3032b18c228907b43b23c50fe0d009c3aa86893c16f26680f1"
+    },
+    {
+      "path": "src/components/review-sky.css",
+      "bytes": 30973,
+      "sha256": "459032aca99ab9e67e68525db24dac0ce971127708c8370e86592a965aac6369"
+    },
+    {
+      "path": "src/components/review-theater.css",
+      "bytes": 46524,
+      "sha256": "620e3f326fcf042ad516ae32e3f563617320c5740759c69c1cdd4a35ffc6b340"
+    },
+    {
+      "path": "src/components/ReviewItems.tsx",
+      "bytes": 4678,
+      "sha256": "583c10523978e01b34bc06d8423f99fd71188665e05ede1206dca7fba1938710"
+    },
+    {
+      "path": "src/components/ReviewTheater.tsx",
+      "bytes": 23142,
+      "sha256": "9afd333c72a2abb7d2faad139833ddd2d61d4d22ab88194ca029c6a24008de2c"
+    },
+    {
+      "path": "src/components/sandbox-activity-dock.css",
+      "bytes": 22327,
+      "sha256": "c78957bcbac88980bc059c8f66fdd50a84efa77ac9b56ce09103a1232847c81e"
+    },
+    {
+      "path": "src/components/sandbox-work-scene.css",
+      "bytes": 8428,
+      "sha256": "cfab50561aa2daa426bb181755abc87c1b8a78c650ca146189dbcc22696ecff7"
+    },
+    {
+      "path": "src/components/sandbox-workroom-scene.css",
+      "bytes": 14930,
+      "sha256": "e618b83bf409d0be539876dbb501c7df28226211e2199baa6db1db612c8eb11f"
+    },
+    {
+      "path": "src/components/SandboxActivityDock.tsx",
+      "bytes": 34267,
+      "sha256": "ff83b20939c49ddbd3078809bd8435938a4103bff89aff31e7f756076f211945"
+    },
+    {
+      "path": "src/components/SandboxWorkroomScene.tsx",
+      "bytes": 19157,
+      "sha256": "30299d19b5b0bf1f02d4b8801e6c20ca13e36c1dfe0ae6f11fe0e2d416f2c5d2"
+    },
+    {
+      "path": "src/components/SandboxWorkScene.tsx",
+      "bytes": 10916,
+      "sha256": "63df07793c3b66f9e1e9eba02edb56309ade045920c8465636e7d395f39216d5"
+    },
+    {
+      "path": "src/components/source-highlights.d.mts",
+      "bytes": 1603,
+      "sha256": "ef6fc215465d318b8d5967894a8092d67e2bf0e1c8a62ab1008db91f73c2e579"
+    },
+    {
+      "path": "src/components/source-highlights.mjs",
+      "bytes": 14515,
+      "sha256": "767b13c8d40e618e2dd703f602ddc3963f75776ba367323ac34165bb3bd57859"
+    },
+    {
+      "path": "src/components/source-highlights.test.mjs",
+      "bytes": 12722,
+      "sha256": "1285caa918a14544cb66078ee738d856cacf5c923a9cd559d5be33e68d1e5dfe"
+    },
+    {
+      "path": "src/components/theater-sky.css",
+      "bytes": 5301,
+      "sha256": "8b645ea2bae87c83e8ee80033353980256bf7999567fd0fa2f07339ba85f07d5"
+    },
+    {
+      "path": "src/components/UploadVisual.tsx",
+      "bytes": 869,
+      "sha256": "6338bd42e11f73860a293bc7c5ca8f58b1740b5cc3e158eae1a9824a9fb011df"
+    },
+    {
+      "path": "src/components/workroom-current-operation.css",
+      "bytes": 2413,
+      "sha256": "a706f84727f0b53c6955996b0369b9b8bb7f69904702bd85beb74527efd28121"
+    },
+    {
+      "path": "src/components/workroom-sky.css",
+      "bytes": 21357,
+      "sha256": "f9b8c39949df8c8da8ddb852b5a322c2549baf5f84a0ce7919f7ffee01485474"
+    },
+    {
+      "path": "src/display-names.ts",
+      "bytes": 867,
+      "sha256": "ec98433e6fabd701b6e61e9bd8bb961ddf254d178389dfbd5a31f1a8b711cbe6"
+    },
+    {
+      "path": "src/format.ts",
+      "bytes": 326,
+      "sha256": "b36250fa5368ab35033bfa860b112615e90b55fb0805c9824a30d2babf031ec6"
+    },
+    {
+      "path": "src/handoff-queue.d.mts",
+      "bytes": 847,
+      "sha256": "78eeee9cf2eb6fcac1dbe5b665329adf4bd095aab5aaaf361d1299b7bc195dff"
+    },
+    {
+      "path": "src/handoff-queue.mjs",
+      "bytes": 2502,
+      "sha256": "c34e812cf26d168128bf99f33aba0ef6b90bf9673cd490e8f03d3f72396ffeb6"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 656,
+      "sha256": "e837fd2cfde60806abc3bce390baa76a858a48a9b59a346ea56cbfc275d28abf"
+    },
+    {
+      "path": "src/motion-preference.tsx",
+      "bytes": 1271,
+      "sha256": "df0d0d8a4f34c67e26df3c6165255197dbfe0f48d07eedcc4cf677643cb2ff50"
+    },
+    {
+      "path": "src/motion-system.css",
+      "bytes": 12330,
+      "sha256": "946d7ada5fa65e901f9a5e03b3dcf1ece992aede7b5d0248a42850017ef6130c"
+    },
+    {
+      "path": "src/presentation.css",
+      "bytes": 27415,
+      "sha256": "1342f52acce5694d185cd8bdd29c2d1610f845b24f483368b5bf0349fbfaca41"
+    },
+    {
+      "path": "src/review-state.ts",
+      "bytes": 10311,
+      "sha256": "003b7d8b623d9fa0b2b75cf45ebb4467f473b390c08e983e21f04eab9cf36c33"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 29884,
+      "sha256": "3400a2eae71efc629379310791908022c2a2a454cf493f21e5ea57ae87665927"
+    },
+    {
+      "path": "src/types.ts",
+      "bytes": 4277,
+      "sha256": "11cd7e2b6b6e6320686ae8478a768bceef93811aa3eeb00ecd00678d8e29ae1c"
+    },
+    {
+      "path": "src/useReview.ts",
+      "bytes": 13787,
+      "sha256": "ccd5bde56816b45d667a12351be854162702159781da18929075995fd831a518"
+    },
+    {
+      "path": "src/workflow-polish.css",
+      "bytes": 8995,
+      "sha256": "a4da9bfaaa204a088155ad9ab125a8665c99487aa1dda5cbf0a81dcba4bc15e9"
+    },
+    {
+      "path": "src/workflow.css",
+      "bytes": 19468,
+      "sha256": "5de6c1bd6ad15d3fb8cfa61143bc3aed529a46e7eb9e5a0c223a6d2040dc66bc"
+    },
+    {
+      "path": "src/workspace-colors.css",
+      "bytes": 10475,
+      "sha256": "e9ccf1616cd8f97d5cdb6268bc0a9d5193ce9a6bb0bb954e1f9c792cf76b7378"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 438,
+      "sha256": "69113c403e8dc40970b465a3f3cbd72b87107bd8392327b12c9c7a0fa8a293de"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 255,
+      "sha256": "a62ae575b8979ee75047080dfaaedd8e606cef4fc409e3d4882c8ee4c507f75a"
+    }
+  ],
+  "questions": [
+    {
+      "id": "CORE-01-C01",
+      "category": "contract",
+      "question": "설계가 .env 우선순위, 필수/선택 키, 역할별 model ID와 기본값을 모두 지정하고 공개 health 응답에 비밀키를 포함하지 않는가?",
+      "requiredEvidence": "환경 변수 표와 publicConfig 예시; integrations/test/integrations.test.mjs의 설정/키 비공개 사례",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-01-C02",
+      "category": "behavior",
+      "question": "generateJson/generateText의 contents·systemInstruction·schema·role 입력과 text/data/usage 출력, provider 오류 분류를 독립 구현할 수 있는가?",
+      "requiredEvidence": "두 메서드의 요청/응답 예시와 integrations/src/gemini.mjs 대응표",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-01-C03",
+      "category": "states",
+      "question": "LLM 요청과 E2B callback의 timeout·abort·finally 정리 순서를 명시하고 작업 취소 후에도 실제 종료까지 자원을 점유하는가?",
+      "requiredEvidence": "호출 상태도와 integrations/test/concurrency.test.mjs의 cancel/cleanup 사례",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-01-C04",
+      "category": "failure",
+      "question": "응답 용량·토큰·파일 부분·JSON 파싱 오류와 E2B kill 실패를 성공으로 처리하지 않는 정책이 수치와 오류 코드로 지정되어 있는가?",
+      "requiredEvidence": "integrations/test/gemini-limits.test.mjs와 integrations/test/integrations.test.mjs의 실패 입력/기대 결과",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-01-C05",
+      "category": "verification",
+      "question": "키를 노출하거나 실제 외부 호출을 필수로 하지 않고 fake client로 설정·응답·정리를 검사하는 재현 명령이 있는가?",
+      "requiredEvidence": "integrations/package.json test/check 명령 및 실제 API smoke와 오프라인 테스트의 구분",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-02-C01",
+      "category": "contract",
+      "question": "각 /api route의 method, body/query, 성공 상태 코드, 오류 응답이 정의되고 문서 private buffer/modelParts/profile과 publicDocument가 분리되어 있는가?",
+      "requiredEvidence": "01-state-api route 표, contracts/types.ts, server/app.test.mjs의 공개 응답 검사",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-02-C02",
+      "category": "behavior",
+      "question": "문서·run·dashboard job이 기본 구현에서는 메모리 저장이고 서버 재시작 시 사라짐을 명시하며 존재하지 않는 ID의 404 동작을 정의하는가?",
+      "requiredEvidence": "저장소 수명 표와 서버 재시작/404 수용 사례; 임시 보존 스크립트와 제품 기본 기능 구분",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-02-C03",
+      "category": "states",
+      "question": "업로드 다중 파일 중 한 개 실패 시 이미 추가한 문서가 rollback되고 run 근거로 쓰이는 문서는 DELETE 409로 보호되는가?",
+      "requiredEvidence": "server/app.test.mjs의 업로드 rollback/근거 삭제 방지 사례",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-02-C04",
+      "category": "failure",
+      "question": "local-origin write guard, 2 MB JSON 한도, multipart 파일/필드 한도, 파일 크기 오류 413와 형식 오류 400이 명시되어 있는가?",
+      "requiredEvidence": "middleware 실행 순서와 공격·경계 요청 예시",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-02-C05",
+      "category": "verification",
+      "question": "실제 포트 기본값/환경 override, dist 정적 서빙, SIGINT/SIGTERM의 run 취소와 종료를 검증할 명령과 기대 응답이 있는가?",
+      "requiredEvidence": "server/index.mjs, app.test.mjs, 환경 실행 명령에 연결된 체크리스트",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-03-C01",
+      "category": "contract",
+      "question": "허용 확장자 pdf/docx/xlsx/csv/txt/md/json/png/jpg/jpeg/webp, role, 파일명 정제와 원본 bytes 보존 계약이 지정되어 있는가?",
+      "requiredEvidence": "지원 형식 표, original-content 응답 및 잘못된 확장자/내용 조합 사례",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-03-C02",
+      "category": "behavior",
+      "question": "XLSX 미리보기의 namespace/comment 호환 보정이 복제본에만 적용되고 hidden/merged/formula cache 정보를 원본과 혼동하지 않는가?",
+      "requiredEvidence": "server/spreadsheet-xml-compatibility.test.mjs와 documents.test.mjs의 원본 digest 비교",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-03-C03",
+      "category": "states",
+      "question": "시트 30개·셀 100,000개·source 1,500,000자 등 로컬 미리보기 한도 초과를 파일 손상으로 거절하지 않고 deferred preview로 넘기는 조건이 명시되어 있는가?",
+      "requiredEvidence": "한도별 ready/deferred/rejected 표와 해당 documents.test.mjs 사례",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-03-C04",
+      "category": "failure",
+      "question": "20 MiB 파일, 100문서, 250 MiB 예약 용량 및 ZIP 20,000 entries/100 MiB 팽창 한도가 동시 add·실패 반환까지 정의되는가?",
+      "requiredEvidence": "예약/반환 의사코드와 ZIP/동시 업로드 경계 테스트 매핑",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-03-C05",
+      "category": "verification",
+      "question": "미리보기 성공이 전체 분석 완료를 의미하지 않으며 formula cache 없음·embedded drawing 생략·PDF 보조 읽기 실패가 어떻게 표시되는지 검증 가능한가?",
+      "requiredEvidence": "경고와 preview.truncated 예시; documents.test.mjs 및 spreadsheet-xml-compatibility.test.mjs",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-04-C01",
+      "category": "contract",
+      "question": "Document.buffer/kind/id → profile/modelParts/sourceSheets/sourceRows/analysis의 반환 형태와 SHA-256·kind 대조가 명시되어 있는가?",
+      "requiredEvidence": "reader profile schema, 공개/내부 필드 구분 및 sandbox-documents.test.mjs digest mismatch 사례",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-04-C02",
+      "category": "behavior",
+      "question": "한 문서의 원본 재조회가 retained sandbox와 TaskPool(1)을 공유하고 source 업로드·parser 설치를 세션당 한 번 수행하는가?",
+      "requiredEvidence": "document-sandbox-session.test.mjs의 동일 sandbox ID·설치 1회·명령 직렬화 증거",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-04-C03",
+      "category": "states",
+      "question": "문서 세션 300,000 ms, Python reader 150초 등 서로 다른 제한과 정상/실패/취소의 세션 종료 책임이 구분되어 있는가?",
+      "requiredEvidence": "세션 상태도와 cleanup 실패 전파 사례",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-04-C04",
+      "category": "failure",
+      "question": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한과 잘림을 partial로 기록하고 원본 전체 완료로 보고하지 않는가?",
+      "requiredEvidence": "reader limits 표 및 server/document-reader.test.py의 한도·악성 archive 검사",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-04-C05",
+      "category": "verification",
+      "question": "업로드 문서의 수식·매크로·링크·문구를 실행하지 않고 고정 reader/명령만 수행함을 재현 테스트로 확인하는가?",
+      "requiredEvidence": "신뢰 경계와 고정 명령 목록, document-reader.test.py 및 sandbox-documents.test.mjs",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-05-C01",
+      "category": "contract",
+      "question": "xlsx/csv의 sheet+A1, Word BLOCK, text L 범위 selector가 코드/경로가 아닌 데이터이며 유효 범위와 응답 digest를 검사하는가?",
+      "requiredEvidence": "validateRequeryRequest 계약과 document-quality.test.mjs의 범위·주입 거절 사례",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-05-C02",
+      "category": "behavior",
+      "question": "150,000자 source chunk, 최대 1,200,000자 맥락 입력에서 모든 retained 구간을 해석/독립 검증하고 미기술 셀·헤더·시트를 찾는가?",
+      "requiredEvidence": "coverage 계산식, initial/verify/requery/replace 흐름 및 sandbox-documents.test.mjs",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-05-C03",
+      "category": "states",
+      "question": "최대 3회 교정의 계속/종료 조건, 교정 후 전체 context 대체·재검증, 같은 E2B 재사용을 명시하는가?",
+      "requiredEvidence": "verifyAndRepairDocumentContext 단계 표와 document-quality.test.mjs·document-sandbox-session.test.mjs",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-05-C04",
+      "category": "failure",
+      "question": "미해결·truncated·검증기 실패를 needsConfirmation/partial로 남기며 정성 기준의 정당한 단위 공백만으로 재시도를 만들지 않는가?",
+      "requiredEvidence": "qualitative unit 예외의 source evidence 조건과 미해결 issues 응답 예시",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-05-C05",
+      "category": "verification",
+      "question": "셀 이동·멀티시트·숨김·행/열 방향·헤더 누락·Word 중첩 표·text line 누락을 특정 파일명 없이 검사하는가?",
+      "requiredEvidence": "document-quality.test.mjs와 document-reader.test.py의 변형 입력별 예상 coverage",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-06-C01",
+      "category": "contract",
+      "question": "page/rotation/block/table/cell/parentTableId/uncertain/coverage 필드를 정의하고 시트 번호를 PDF 페이지로 취급하지 않는가?",
+      "requiredEvidence": "visualTranscriptionSchema와 페이지/중첩 표 JSON 예시",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-06-C02",
+      "category": "behavior",
+      "question": "전사 모델과 독립 visual judge가 실제 원본을 비교하고 빈 페이지·겹친 셀·누락 페이지를 모델 complete=true만으로 승인하지 않는가?",
+      "requiredEvidence": "visual-quality-judge.test.mjs 및 visual-transcription-alignment.test.mjs",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-06-C03",
+      "category": "states",
+      "question": "최대 30페이지·요청당 3페이지·3회 교정·전체 180초·요청 60초 제한과 미완료 배치의 병합/재검증 규칙이 있는가?",
+      "requiredEvidence": "배치/교정 상태도와 visual-transcription.test.mjs의 timeout·partial 사례",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-06-C04",
+      "category": "failure",
+      "question": "원본 이미지/전사 공급 제한이나 회전/표 구조 오류가 있으면 판독불가를 추정 텍스트로 채우지 않고 coverage·경고를 보존하는가?",
+      "requiredEvidence": "PDF page image 8개/16 MiB 제한, judge 요청 3페이지/250,000자 제한 및 기대 경고",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-06-C05",
+      "category": "verification",
+      "question": "서로 다른 문서의 페이지 혼합, invented page, blank-page 거짓 승인, nested table 참조 오류가 오프라인 모델 stub 테스트에서 거절되는가?",
+      "requiredEvidence": "visual-transcription.test.mjs·visual-quality-judge.test.mjs·visual-transcription-alignment.test.mjs",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-06-C06",
+      "category": "independent-audit",
+      "question": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-07-C01",
+      "category": "contract",
+      "question": "criteria/not_criteria/uncertain, hasNormativeContent, sourceKind, reason, evidence의 조합과 제외 파일 공개 응답 형태를 정의하는가?",
+      "requiredEvidence": "자격 schema, criteria.document.assessed 이벤트 예시",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-07-C02",
+      "category": "behavior",
+      "question": "완전 읽기·원문 인용 검증이 충족된 not_criteria만 제외하고 혼합 문서의 실제 재사용 기준은 남기는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs의 순수 결과표/혼합표/역사적 판정 근거 사례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-07-C03",
+      "category": "states",
+      "question": "잘못된 자격 응답에만 추가 1회 교정을 허용하고 일시 실패는 uncertain으로 유지하며 제외한 source가 후보·편집·인용에 재진입하면 거절하는가?",
+      "requiredEvidence": "review.eligibility.test.mjs의 source guard와 수정 요청 사례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-07-C04",
+      "category": "failure",
+      "question": "파일명·upload role·생성 요약을 자격 증거로 쓰지 않고 잘못된 인용·단축 소수·부분 source 전달은 자동 제외를 막는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs의 source-kind별 quote/location 반례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-07-C05",
+      "category": "verification",
+      "question": "정성 규칙·법무/업무 규칙·측정치와 제한이 같은 표·규범 없는 기록·prompt injection을 특정 데이터셋 이름 없이 분류 검증하는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs와 review.eligibility.test.mjs 입력/기대 상태 매핑",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-C01",
+      "category": "contract",
+      "question": "inventory의 sheet/region, ranges, regionAssessments, dispositions, criteria와 citations가 별도 구조로 정의되고 모든 region의 처리 상태가 반환되는가?",
+      "requiredEvidence": "plan/extract schema와 coverage 전체 필드 예시",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-C02",
+      "category": "behavior",
+      "question": "모델이 한 표만 선택해도 다른 시트의 작은 sparse 영역을 보완하고 최소/최대 분리·전치·병합·떨어진 표를 위치/헤더로 탐색하는가?",
+      "requiredEvidence": "criteria-layout.test.mjs·criteria-matrix-regression.test.mjs·criteria-generalization.test.mjs",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-C03",
+      "category": "states",
+      "question": "기준 발견 자체는 별도 E2B 세션이고 내부 최대 2회 상세 추출/추가범위 루프는 같은 세션임을 구조 분석 세션과 구별하는가?",
+      "requiredEvidence": "discoverWorkbookCriteria 수명도 및 criteria-sandbox.test.mjs의 설치/세션 카운트",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-C04",
+      "category": "failure",
+      "question": "첫100시트 cell-profile 대상과 모든 시트 metadata/후속 빈 시트 예외, 200,000 inventory셀/300영역·상세6,000셀/220,000자·18범위·범위12,000·총24,000셀·250기준의 실제 생략과 미확인 coverage를 구별하는가?",
+      "requiredEvidence": "제한별 remainingRanges/unresolvedRanges/criteriaLimitReached 표와 경계 테스트",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-C05",
+      "category": "verification",
+      "question": "시트·항목명 변경, 열/행 이동, 숨김, 옆 표, 신규 유형과 규범 없는 열을 변형해도 기준/근거/coverage가 동치인지 검사하는가?",
+      "requiredEvidence": "criteria-generalization.test.mjs·criteria-matrix-regression.test.mjs의 fixture-independent 변형 목록",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-08-X01",
+      "category": "independent-audit",
+      "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "CORE-09-C01",
+      "category": "contract",
+      "question": "Criterion의 rule/comparison/unit/scope/categoryPath/sampleName/conditions와 각각의 증거를 구별하고 없는 유형은 빈 경로로 표현하는가?",
+      "requiredEvidence": "contracts/types.ts와 not_applicable/resolved/ambiguous 진리표",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-09-C02",
+      "category": "behavior",
+      "question": "비고/참고/notes 열은 나이·온도를 포함해 판정 조건에서 제외하되 실제 조건 열의 재령·기간·온도는 보존하는가?",
+      "requiredEvidence": "criteria-notes.test.mjs·conditions.test.mjs·criteria-table-sources.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-09-C03",
+      "category": "states",
+      "question": "상위 공통 기준, 세부 유형, 명시적 시료, 문서 목차 제목과 규칙 중복/대체/폐기의 우선순위를 source 근거와 함께 지정하는가?",
+      "requiredEvidence": "criteria-context.test.mjs·review.classification.test.mjs의 hierarchy/disposition 사례",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-09-C04",
+      "category": "failure",
+      "question": "250기준·8단계·ID/문구 길이 제한, 잘못된 비교식, 충돌 source 및 미검증 계층은 추정하지 않고 확인 대상으로 유지하는가?",
+      "requiredEvidence": "validateCriteria 입력 경계 표와 review.test.mjs·review.classification.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-09-C05",
+      "category": "verification",
+      "question": "1종/2종 또는 특정 자재명을 규칙에 하드코딩하지 않고 정성 무단위·가변 계층·동일 항목 다른 조건을 구별하는 테스트가 있는가?",
+      "requiredEvidence": "criteria-generalization.test.mjs·criteria-adapter.test.mjs·criteria-notes.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-10-C01",
+      "category": "contract",
+      "question": "confirm/revise의 criteria, feedback, documentId, scope, expectedCriterionVersion 요청과 승인본 approvedCriteria 응답이 정의되는가?",
+      "requiredEvidence": "명령 JSON 예시와 criteria-approval.test.mjs·criteria-revision.test.mjs",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "CORE-10-C02",
+      "category": "behavior",
+      "question": "사용자 직접 편집 가능 필드와 서버 보존 provenance가 분리되고 의미 수정에 userOverride를 기록하는가?",
+      "requiredEvidence": "approveCriteria/normalizeCriterionDraft field allowlist와 provenance 위조 반례",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "CORE-10-C03",
+      "category": "states",
+      "question": "awaiting_confirmation → criteria_revising → 재확인 또는 실패 복귀, confirm → awaiting_documents 전이가 버전 증가 규칙과 함께 정의되는가?",
+      "requiredEvidence": "상태/이벤트 표, review.wizard.test.mjs·criteria-revision.test.mjs",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "CORE-10-C04",
+      "category": "failure",
+      "question": "stale version 409·누락 version 400·피드백20회/12,000자 한도·취소 후 늦은 응답 차단이 지정되는가?",
+      "requiredEvidence": "version/token 가드 의사코드와 실패 경로 테스트",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "CORE-10-C05",
+      "category": "verification",
+      "question": "승인 전 대상 첨부가 거절되고 승인 뒤 기준 배열 deep freeze 및 승인본/수정 이력이 유지되는가?",
+      "requiredEvidence": "review.wizard.test.mjs와 criteria-approval.test.mjs의 불변성/단계 거절 검증",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "CORE-11-C01",
+      "category": "contract",
+      "question": "PDF/image facts extraction과 review proposal의 서로 다른 schema를 정의하고 extraction 최대300개·review 문서당250개를 구별하는가?",
+      "requiredEvidence": "documentFieldsSchema/itemSchema 및 field-extraction.test.mjs·review.test.mjs 경계 사례",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-11-C02",
+      "category": "behavior",
+      "question": "추출은 승인 기준값을 측정값으로 복사하지 않고 실제 대상의 모든 관측 항목·식별번호·원문 표기를 보존하는가?",
+      "requiredEvidence": "field-extraction.test.mjs의 판정과 독립 추출/불일치 검증",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-11-C03",
+      "category": "states",
+      "question": "원문 분석 → 시각 자료 독립 facts → 승인 기준 매칭 → 결정론적 정규화 → item.decided 이벤트 순서가 정의되는가?",
+      "requiredEvidence": "review.pipeline.test.mjs와 review.integration.test.mjs의 순서/중간 이벤트",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-11-C04",
+      "category": "failure",
+      "question": "틀린 criterionId/documentId·다른 시료/행·누락/ND/판독불가를 잘못 매칭한 제안의 거절 또는 review 하향 조건이 명시되는가?",
+      "requiredEvidence": "review.test.mjs·criterion-applicability.test.mjs·field-extraction.test.mjs",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-11-C05",
+      "category": "verification",
+      "question": "CSV/XLSX의 빈값 있는 record도 보존하고 모든 적용 기준을 검토하며 명시적 out-of-scope 제외와 미검토행을 구별하는가?",
+      "requiredEvidence": "table-records.test.mjs·review.integration.test.mjs의 missingRows/excludedRows 사례",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "CORE-12-C01",
+      "category": "contract",
+      "question": "lt/lte/gt/gte/eq/range의 경계와 단위 정규화, 최종 status/machineStatus/presence/missingVerified/missingConditions가 지정되는가?",
+      "requiredEvidence": "numericVerdict 비교표와 review.test.mjs의 등호·range·단위 반례",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-C02",
+      "category": "behavior",
+      "question": "전체 명확한 읽기+필수 적용 항목+실제 누락 증거만 fail, 판독불가·ND·잘림·formula cache 없음은 review, 선택 항목 누락은 결과에서 제외하는가?",
+      "requiredEvidence": "missing-result.test.mjs 진리표와 source evidence/completeAnalysis 조건",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-C03",
+      "category": "states",
+      "question": "확인되지 않은 기준/조건/분류/독립 추출 불일치가 숫자 pass/fail보다 우선하는 순서를 결정론적으로 명시하는가?",
+      "requiredEvidence": "normalizeItems guard 순서와 조건/계층/추출 충돌 복합 테스트",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-C04",
+      "category": "failure",
+      "question": "자재/하위유형/시료 근거가 대상 원문에 없거나 record의 다른 행이면 rule label이 같아도 pass로 확정하지 않는가?",
+      "requiredEvidence": "criterion-applicability.test.mjs의 순서·ancestor·same-record 부정 사례",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-C05",
+      "category": "verification",
+      "question": "0·빈 셀·merged continuation·수식 미캐시·정상 누락·불확실 누락·상충 독립 추출을 서로 다른 결과로 검사하는가?",
+      "requiredEvidence": "missing-result.test.mjs·conditions.test.mjs·review.test.mjs 테스트 매핑",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-X01",
+      "category": "independent-audit",
+      "question": "일반 finding evidence의 permissive regex/미검증 원문과 조건·분류·필수누락의 실제 검증을 구별하고 invalid좌표·가짜quote numeric pass baseline 및 OPTIONAL_FUTURE 강화를 명시하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-12-X02",
+      "category": "independent-audit",
+      "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-13-C01",
+      "category": "contract",
+      "question": "run/document/stage enum, snapshot, sequence/timestamp event 필드, summary 계산식을 정의하고 legacy와 criteria_first 모드를 구별하는가?",
+      "requiredEvidence": "01-state-api 상태표, contracts/types.ts, review-state.test.mjs",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-13-C02",
+      "category": "behavior",
+      "question": "문서 분석과 대상 review의 각각 2-worker 실행에서 한 문서 실패가 다른 문서를 중단하지 않으며 결과가 파일 ID별로 결합되는가?",
+      "requiredEvidence": "review.pipeline.test.mjs·review.integration.test.mjs의 순서 변형/부분 실패",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-13-C03",
+      "category": "states",
+      "question": "running/awaiting_confirmation/awaiting_documents 취소, late event 차단, completed/partial/failed 집계 및 ensureAnalyzed waiter 취소를 정의하는가?",
+      "requiredEvidence": "review.wizard.test.mjs·review.test.mjs·use-review-commands.test.mjs",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-13-C04",
+      "category": "failure",
+      "question": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 coverage 미완료를 완료로 숨기지 않는가?",
+      "requiredEvidence": "start/reviewDocuments 경계표와 review.integration.test.mjs의 outputLimited 사례",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-13-C05",
+      "category": "verification",
+      "question": "사람 판정 변경은 종료 후 사유와 함께만 허용하고 machineStatus·before/after audit·summary·item.resolved를 유지하는가?",
+      "requiredEvidence": "review.test.mjs·app.test.mjs의 resolve와 export 감사 검증",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C01",
+      "category": "contract",
+      "question": "원본 document/page/sheet/cell/quote, criterion evidence와 review-item evidence, PDF text anchor와 결과 ID의 연결을 구별하는가?",
+      "requiredEvidence": "source-highlights 인터페이스 및 contracts/types.ts의 Evidence/Highlight 구조",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C02",
+      "category": "behavior",
+      "question": "선택 파일의 모든 항목을 한 번에 표시하며 필터 변경이 다른 항목 근거를 삭제하지 않고 파일 전환이 다른 문서의 근거를 섞지 않는가?",
+      "requiredEvidence": "file-review-model.test.mjs·dashboard-file-scope.test.mjs·source-highlights.test.mjs",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C03",
+      "category": "states",
+      "question": "누락 판정에는 대상 원문상 항목 좌표를 발명하지 않고 contextual evidence를 설명에만 유지하며 기준 클릭은 실제 label/rule/unit cell을 포함하는가?",
+      "requiredEvidence": "item-source-highlights.test.mjs·criterion-preview-evidence.test.mjs의 누락/항목명 표시 사례",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C04",
+      "category": "failure",
+      "question": "표 좌표·quote와 PDF witness의 현재 검증/미검증 경계, clip·fallback 및 누락 필드 보호의 한계를 명시하고 OPTIONAL_FUTURE 차단 규칙과 구분하는가?",
+      "requiredEvidence": "source-highlights.test.mjs의 header-only·duplicate text·wrong-page 음성 사례",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C05",
+      "category": "verification",
+      "question": "iframe 근거 메시지를 source window·opaque origin·channel·type·preview token·itemId 허용 목록으로 검사하고, 원본 파일을 다운로드 HTML에 포함하지 않는가?",
+      "requiredEvidence": "dashboard-bridge.test.mjs·dashboard-file-scope.test.mjs와 export 안내 수용 기준",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-14-C06",
+      "category": "independent-audit",
+      "question": "scan/image/회전/2-up의 현재 text-layer-only viewer와 bbox 없는 DTO·페이지/근거 chip fallback을 재현하고 OPTIONAL_FUTURE geometry 확장과 구별하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-C01",
+      "category": "contract",
+      "question": "taskId/runId/contextId/documentId/parentTaskId/runtime/step/status/sequence와 handoff from/to를 정의하고 비밀키·명령 출력 길이를 정제하는가?",
+      "requiredEvidence": "activity schema, command-progress.test.mjs와 activity.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-C02",
+      "category": "behavior",
+      "question": "Gemini와 E2B 각각 process-wide 동시2·대기100 FIFO 제한, ReviewEngine ModelQueue2, 문서 retained 명령1의 서로 다른 역할을 명시하는가?",
+      "requiredEvidence": "TaskPool 구성표와 integrations/test/concurrency.test.mjs·server/task-pool.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-C03",
+      "category": "states",
+      "question": "queued/running/completed/failed/cancelled·대기 중 abort·늦은 완료·observer 재연결과 snapshot replay 순서가 명시되는가?",
+      "requiredEvidence": "activity-observer.test.mjs·activity.test.mjs·task-pool.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-C04",
+      "category": "failure",
+      "question": "설치가 조용한 동안 heartbeat를 실제 진행률/가짜 내부 추론으로 표현하지 않으며 command timeout·로그 중복·다른 run 작업 섞임을 방지하는가?",
+      "requiredEvidence": "command-progress.test.mjs·activity-scope.test.mjs·review-activity.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-C05",
+      "category": "verification",
+      "question": "빠른 실제 handoff를 UI 재생 큐에서 읽기 가능한 순서로 보이되 작업 완료 후 접힘과 reduced-motion이 상태를 바꾸지 않는가?",
+      "requiredEvidence": "handoff-queue.test.mjs·activity-observer.test.mjs와 UI 모션 수용 기준",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-15-X01",
+      "category": "independent-audit",
+      "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C01",
+      "category": "contract",
+      "question": "JSON/CSV/XLSX 결과 필드, XLSX 4시트, 최종/원판정/사람 사유/근거와 export 허용 run 상태를 지정하는가?",
+      "requiredEvidence": "app.mjs exportRows/headings 대응 및 app.test.mjs export 검증",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C02",
+      "category": "behavior",
+      "question": "대장 매핑은 사용자가 지정한 성적서번호와 실제 header/row를 확인하고 원본 대신 복사본의 허용된 결과·비고 셀만 쓰는가?",
+      "requiredEvidence": "05a-ledger-export 셀 매핑/보존 계약 및 ledger.test.mjs ZIP-entry 비교",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C03",
+      "category": "states",
+      "question": "대장 analyze → 제안/대상 셀 확인 → confirmed export이며 결과 변경 시 proposalFingerprint mismatch 409로 재확인을 요구하는가?",
+      "requiredEvidence": "contracts/examples/05-ledger-analyze.json 및 ledger.test.mjs 상태 사례",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C04",
+      "category": "failure",
+      "question": "CSV formula injection, 대장 수식/기존 셀 구조 훼손, 경로 traversal/부적절한 sample 경로를 거절하고 파일 부분 실패를 성공으로 쓰지 않는가?",
+      "requiredEvidence": "app.test.mjs·ledger.test.mjs·golden-catalog.test.mjs의 공격·불완전 검토 사례",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C05",
+      "category": "verification",
+      "question": "golden은 UI 예제 원본 선택, ralph-golden-v3는 직접 업로드/검증용이라는 현재 범위를 구별하고 정답·파일명 패턴을 판정 알고리즘에 주입하지 않는가?",
+      "requiredEvidence": "golden-catalog source allowlist, fixture provenance 표와 generalization 검증 계획",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-16-C06",
+      "category": "independent-audit",
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-17-C01",
+      "category": "contract",
+      "question": "snapshotRun의 immutable 검토 데이터와 14-field design, instruction/baseDesign/ready job 계약을 분리하고 기존 7-field 입력의 기본값을 정의하는가?",
+      "requiredEvidence": "dashboard-design.schema/default/examples와 dashboard-plan.test.mjs",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-17-C02",
+      "category": "behavior",
+      "question": "14개 디자인 필드의 정규식 선호 후처리와 baseDesign 기본값/전달을 재현하며 미요청 필드 보존과 자연어 scope 해석의 현재 한계를 명시하는가?",
+      "requiredEvidence": "dashboard-plan.test.mjs의 복합/부정문/비문자적 표현/baseDesign 사례",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-17-C03",
+      "category": "states",
+      "question": "현재 최대 3회 plan 호출·같은 sandbox/설치 1회·fallback·취소·정리를 재현하고 OPTIONAL_FUTURE planner/judge/repair와 구별하는가?",
+      "requiredEvidence": "dashboard.test.mjs의 generate loop와 job 상태 전이 표",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-17-C04",
+      "category": "failure",
+      "question": "모델이 수치·판정을 바꾸거나 HTML/JS/CSS를 공급하지 못하며 잘못된 enum/baseDesign/지나친 입력을 거절하고 fallback을 맞춤 성공으로 표기하지 않는가?",
+      "requiredEvidence": "parseDashboardPlan allowlist·route validation·fallback 표시 예시",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-17-C05",
+      "category": "verification",
+      "question": "복합/부분 수정/비문자적 표현에 대한 현재 observed 계획값과 렌더 결과를 OPTIONAL_FUTURE desired 값과 구분해 독립 검증할 수 있는가?",
+      "requiredEvidence": "contracts/dashboard-examples.json과 dashboard-plan.test.mjs·dashboard.test.mjs; 실제 서비스 검증은 별도 evidence",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-18-C01",
+      "category": "contract",
+      "question": "design → data-* root attrs/CSS variables/chart config/standalone HTML 출력과 chart runtime mount/update/destroy 계약을 지정하는가?",
+      "requiredEvidence": "dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs와 design-to-render 표",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-18-C02",
+      "category": "behavior",
+      "question": "차트의 실제 모양·크기·theme 축/tooltip·범례·선택 파일·필터·항목 상세가 변경되며 전체 수치와 item ID는 snapshot과 동일한가?",
+      "requiredEvidence": "11 validation checks 및 dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-18-C03",
+      "category": "states",
+      "question": "initial file/filter/focus, 차트 강조 중 상세 열기/닫기 배분, prefers-reduced-motion과 design.motion, 재mount 정리를 구분하는가?",
+      "requiredEvidence": "렌더 상태 표와 차트/상세 수용 화면·검증 사례",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-18-C04",
+      "category": "failure",
+      "question": "CSP nonce·escaping·외부 네트워크 차단·iframe sandbox/bridge를 명시하고 샌드박스 exit 0만으로 승인하지 않고 bytes/report를 대조하는가?",
+      "requiredEvidence": "dashboard-plan-validation.test.mjs·dashboard.test.mjs의 악성 문구·오프라인·tamper 사례",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-18-C05",
+      "category": "verification",
+      "question": "검증 11종 input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping과 실제 브라우저 geometry/visibility 검증이 별개임을 명시하는가?",
+      "requiredEvidence": "validation report schema 및 1600/1280/390px 화면에서 overflow·detail visibility·canvas 종류 수용 기준",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-C01",
+      "category": "contract",
+      "question": "원문/run/분석 Promise/물리 sandbox/기준 셀/활동/dashboard/UI 캐시의 key·owner·수명·상한·무효화를 명시하고 FIFO를 LRU로 오표기하지 않는가?",
+      "requiredEvidence": "07 §§7.2,7.7; efficiency-inventory ES01..22",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-C02",
+      "category": "algorithm",
+      "question": "sparse inventory, 두 방향 역할 탐색, coverage sweep, 기준 dedup·매칭·누락 판정의 단계와 시간/공간 가정을 명시하고 중첩 스캔·파서 비용을 선형으로 과장하지 않는가?",
+      "requiredEvidence": "07 §§7.1,7.3,7.4; EA01..07; 합성 EF05..10",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-C03",
+      "category": "concurrency",
+      "question": "전역 LLM/E2B 풀·엔진 큐·문서 worker·로컬 재조회 큐의 정확한 cap과 실행/취소/cleanup 순서, 같은 sandbox 재사용 경계 및 중첩 슬롯 교착 방지를 지정하는가?",
+      "requiredEvidence": "07 §§7.5–7.6; EC01..05; EF01..04",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-C04",
+      "category": "events",
+      "question": "로그 폭주·SSE 순서·재접속·늦은 응답·핑퐁 큐·PDF/iframe 수명과 화면용 생략의 상한을 명시하며 없는 batching/backpressure/visibility pause를 구현됐다고 주장하지 않는가?",
+      "requiredEvidence": "07 §7.7; EC06..10; EF11..14/16",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-C05",
+      "category": "verification",
+      "question": "byte/문자/cell/page/시간/token 상한 및 stop/partial 의미가 재현 가능하고 성능 계측과 음성 시험 조건을 정해 실제 측정 없는 FPS/처리시간·완료 증거를 주장하지 않는가?",
+      "requiredEvidence": "07 §§7.8–7.10; EL01..35; EF01..16; knownLimitations",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-19-X01",
+      "category": "independent-audit",
+      "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-20-C01",
+      "category": "independent-audit",
+      "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "CORE-20-C02",
+      "category": "independent-audit",
+      "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "CORE-20-C03",
+      "category": "independent-audit",
+      "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "CORE-20-C04",
+      "category": "independent-audit",
+      "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "CORE-21-C01",
+      "category": "independent-audit",
+      "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C02",
+      "category": "independent-audit",
+      "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C03",
+      "category": "independent-audit",
+      "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C04",
+      "category": "independent-audit",
+      "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C05",
+      "category": "independent-audit",
+      "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C06",
+      "category": "independent-audit",
+      "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C07",
+      "category": "independent-audit",
+      "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C08",
+      "category": "independent-audit",
+      "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C09",
+      "category": "independent-audit",
+      "question": "harness와 run-gate timeout의 1..21600000ms 안전정수 상한 및 Node timer clamp 거부를 명시하고 실패 시험으로 검증하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C10",
+      "category": "independent-audit",
+      "question": "채점기가 독립 명확성/정확성 reviewer, nonblank 근거, 현재 평가입력 hash를 강제하고 미검토·중복·stale 의견을 통과시키지 않는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C11",
+      "category": "independent-audit",
+      "question": "evidence 경로의 모든 ancestor symlink/junction·프로젝트 밖 파일을 거부하고 현재 패키지의 정규 경로만 승인하는가?",
+      "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C12",
+      "category": "current-reproduction",
+      "question": "현재 프로젝트 재현 profile이 모든 진입점·fixture·gate에서 일치하며 과거 강화 기능을 임의로 추가하지 않는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C13",
+      "category": "current-reproduction",
+      "question": "동일성 대상·허용 차이·고정 provider 응답과 실제 provider의 비결정성·현재 처리 한계를 원본 없이 결정할 수 있는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "CORE-21-C14",
+      "category": "current-reproduction",
+      "question": "이번 점수의 고정 입력·전체 질문·독립 의견·보고서 해시를 재계산하며 제품 완료와 설계 완료를 혼동하지 않는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C01",
+      "category": "behavior",
+      "question": "설계가 7개 page와 4개 표시 단계의 매핑, awaiting_confirmation→확정 화면, awaiting_documents→대상 입력, completed/partial→결과의 전이를 모두 명시하는가?",
+      "requiredEvidence": "page×run.status 전이표와 사용자 진입/복귀 버튼의 목적지.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C02",
+      "category": "contract",
+      "question": "run ID·요청 epoch·SSE sequence·expectedCriterionVersion을 사용하여 오래된 응답이 현재 화면을 덮어쓰지 못하는 계약이 명시되어 있는가?",
+      "requiredEvidence": "시작 A 후 시작 B, 취소 후 늦은 POST, SSE보다 늦은 snapshot, 수정 충돌의 입력/기대 상태 표.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C03",
+      "category": "states",
+      "question": "pending·uploading·sampleLoading 중 입력/삭제/새 검토 잠금, 작업 중지와 reset의 차이, 취소 뒤 자동 재개가 없다는 현재 동작이 구분되어 있는가?",
+      "requiredEvidence": "UI 잠금 행렬과 cancel/reset/backToCriteria 후 보존·삭제되는 상태 목록.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C04",
+      "category": "visual-motion",
+      "question": "최종 상태를 실제 완료로 유지하면서 마지막 패킷 1800ms/핸드오프 1600ms/일반120ms만 보여주는 화면 전이 조건을 수치로 명시하는가?",
+      "requiredEvidence": "motion ON/live view 여부, reviewFlowBusy/presentationBusy 별 타이밍 표; backend status를 연출 중 running으로 바꾸지 않는 규칙.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C05",
+      "category": "failure",
+      "question": "SSE 연결 오류 시 snapshot 회복, terminal에서 종료, 회복 실패 안내와 시작 실패 시 원래 입력 페이지로 복귀가 각각 정의되어 있는가?",
+      "requiredEvidence": "연결 오류와 요청 실패별 메시지·목적지·재시도 방식, stale 오류 무시 규칙.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C06",
+      "category": "verification",
+      "question": "전체 7개 page와 새 검토/취소/부분 완료를 빠짐없이 방문하는 검증 시나리오와 관측 가능한 DOM/상태 기대값이 있는가?",
+      "requiredEvidence": "STEP-00…06별 최소 1개 시나리오, stale response와 cancelled run 분리 테스트 케이스 ID.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C07",
+      "category": "independent-audit",
+      "question": "health 조회의 최초 시점·기본값·실패·재시도/폴링·unmount/늦은응답 처리와 의존 UI gating을 동일하게 구현할 수 있는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-01-C08",
+      "category": "current-reproduction-audit",
+      "question": "App 탭·상단 원문 preview가 pane을 unmount하는 조건, 기준 확인 재수정의 hidden 보존, local filter/scroll 초기화와 App 선택 유지, 내보내기 메뉴의 외부 클릭·Escape 미지원이 명확한가?",
+      "requiredEvidence": "interaction-contract I1.1, APP-PANE-LIFECYCLE의 mount/상태/메뉴 이벤트 기대값; 같은 mount의 목록복귀와 다른 탭 복귀를 구분.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C01",
+      "category": "behavior",
+      "question": "설계가 현재 기본 배경 #111318, 카드 #1b2029, 코발트 #3d6dff, 민트 #70f3c4와 실제 상태별 색상 차이를 명시하는가?",
+      "requiredEvidence": "전역 토큰 표와 화면별 override; 원문 종이가 흰색을 유지하는 예외.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C02",
+      "category": "contract",
+      "question": "main의 CSS 10개 import 순서와 동적 컴포넌트 CSS, DM Sans/Noto Sans KR 및 고정 라이브러리 버전이 재현 가능한가?",
+      "requiredEvidence": "순서 있는 stylesheet 목록, package-lock 실제 버전, 폰트 파일 또는 원격/오프라인 대체 계약.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C03",
+      "category": "states",
+      "question": "localStorage trace-demo-motion의 on/off, 기본 ON, 저장 실패 fallback, html data-motion과 MotionConfig 설정이 정의되어 있는가?",
+      "requiredEvidence": "모션 설정 초기화/토글/재방문 상태 표; disabled effects/cleanup 목록.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C04",
+      "category": "visual-motion",
+      "question": "전역 tween 280ms 및 [.22,1,.36,1], 개별 override, hover/focus/disabled와 앱/OS reduced-motion 차이가 명시되어 있는가?",
+      "requiredEvidence": "모션 토큰 표와 OS 설정을 JS가 전역 합성하지 않는 현재 한계 또는 이를 바꾼 별도 승인된 acceptance.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C05",
+      "category": "failure",
+      "question": "짧은 화면·모바일에서 내부 스크롤/세로 스택과 주요 조작 접근이 정의되고, 미사용 sky CSS를 로드해 테마를 되돌리지 않도록 되어 있는가?",
+      "requiredEvidence": "desktop/short-height/mobile 분기와 활성/미사용 CSS 목록, 가로 넘침 방지 기대값.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C06",
+      "category": "verification",
+      "question": "라이트인 원문과 다크 셸의 대비, 키보드 focus, 모션 OFF, 현재 OS 모션 제한 범위를 검증할 화면/기준이 있는가?",
+      "requiredEvidence": "최소 1600×960,1280×800,390px 폭 참조 및 색상·배치·모션별 pass/fail 판정 기준.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C09",
+      "category": "independent-audit",
+      "question": "I9의 모든 추가 acceptance 후보가 CURRENT_REPRODUCTION 기준선과 OPTIONAL_FUTURE 개선으로 개별 결정되고, 서로 다른 기대값·gate 추적·목표 fixture를 혼합하지 않는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C07",
+      "category": "independent-audit",
+      "question": "공통 formatValue와 기준 편집 numberLabel의 서로 다른 정규식·trim·null·15자리·12소수·선행0·부호·과학표기 표시 규칙이 자족적으로 정의되는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-02-C08",
+      "category": "independent-audit",
+      "question": "짧은 활동 title/phase의 Gemini→LLM·E2B→샌드박스 변환과 코드/URL/path/filename/config token 보호, 원문·로그·오류body 무변환 경계가 명시되는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-03-C01",
+      "category": "behavior",
+      "question": "소개 페이지의 제목·설명·검토 기준부터 시작하기·경비 예제로 체험과 두 CTA의 서로 다른 목적지가 명시되는가?",
+      "requiredEvidence": "현재 한국어 문구와 CTA→STEP-01/file 또는 STEP-01/text+sample 기준 연결표.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-03-C02",
+      "category": "contract",
+      "question": "소개 애니메이션은 EXAMPLE이고 실제 검토 run/document/item에 섞이지 않는다는 데이터 경계가 정의되는가?",
+      "requiredEvidence": "ReviewTheater preview=true, documents/items 빈 배열, demo POST /api/samples 계약.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-03-C03",
+      "category": "states",
+      "question": "체험 준비 중 CTA 잠금·스피너·오류 banner와 성공 시 예제 대상 파일을 아직 검토하지 않고 임시 보관하는 상태가 정의되는가?",
+      "requiredEvidence": "busy 및 sampleTargets 생명주기 표.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-03-C04",
+      "category": "visual-motion",
+      "question": "hero 700ms, CTA120ms 지연, 형식 badge 220ms+45ms stagger, theater200ms 지연 및 모션 OFF 동작이 수치로 적혀 있는가?",
+      "requiredEvidence": "각 요소의 opacity/y16→0/easing 타임라인, reduced initial=false 규칙.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-03-C05",
+      "category": "failure",
+      "question": "소개 페이지에는 파일 입력/확정 화면이 동시에 뜨지 않고, 샘플 로드 실패 시 다시 진입 가능한 현재 동작이 정의되는가?",
+      "requiredEvidence": "실패 전후 page/criteria/documents의 기대 상태.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-03-C06",
+      "category": "verification",
+      "question": "소개 화면의 GSPEC 표기, PDF/Word/XLSX/CSV/이미지와 자연어 기준 안내, 예시 일관성을 확인하는 체크가 있는가?",
+      "requiredEvidence": "참조 screenshot/문구 snapshot과 CTA 시나리오.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ]
+    },
+    {
+      "id": "UI-04-C01",
+      "category": "behavior",
+      "question": "기준 입력은 file/text 두 방식이며 target 업로드는 awaiting_documents 이후만 허용되고, 승인된 기준 요약이 오른쪽에 보이도록 설계되어 있는가?",
+      "requiredEvidence": "STEP-01/04 별 화면 구조·CTA·gate; 선택 모드에 따른 실제 전송 documentIds/criteriaText.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C02",
+      "category": "contract",
+      "question": "accept 확장자(pdf,docx,xlsx,csv,txt,md,json,png,jpg,jpeg,webp), 파일당20MB 안내, 자연어12000자, role별 POST/DELETE와 filename/size preview가 명시되는가?",
+      "requiredEvidence": "UI 허용 목록과 서버 별도 검증의 경계, 입력/응답 계약.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C03",
+      "category": "states",
+      "question": "빈 입력·drag-over·uploading·여러 파일·삭제·원문 열기/닫기·모드 전환·예제 파일 불러오기 상태를 모두 정의하는가?",
+      "requiredEvidence": "상태별 버튼 disabled, 파일 리스트 변경 및 preview clearing 표.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C04",
+      "category": "visual-motion",
+      "question": "UploadVisual의 파일/스캔 아이콘, 업로드 file-row 진입 opacity/y6, input-stage 진입 opacity/y12와 좁은 화면의 세로 스택이 명시되는가?",
+      "requiredEvidence": "입력 화면 실제 참조와 모션/레이아웃 규칙.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C05",
+      "category": "failure",
+      "question": "golden catalog 실패/선택 로드 실패/로딩 중 닫기 금지, P10 PNG 첫 페이지만 있다는 notice 및 target 0개 선택 금지가 정의되는가?",
+      "requiredEvidence": "catalog/selection 오류/notice 사례와 재시도 가능한 UI; all 모드는 현재 App에서 미호출임을 명시.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C06",
+      "category": "verification",
+      "question": "criteria와 target golden dialog를 별도로 검증하고 파일/자연어가 혼합 전송되지 않음을 확인하는 시나리오가 있는가?",
+      "requiredEvidence": "2개 mode의 요청 body·성공 결과·빈 상태·파일 삭제 시나리오.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C07",
+      "category": "independent-audit",
+      "question": "업로드와 대장 파일 크기의 KB 반올림·최소1KB·MB1소수 및 정확히1MiB에서 서로 다른 > / >= 분기를 정의하는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-04-C08",
+      "category": "current-reproduction-audit",
+      "question": "문서 삭제의 요청 중 잠금·epoch·AbortSignal·dedupe 부재, 시작 시 preview closure로 인한 늦은 응답 동작과 파일 input value 초기화·같은 파일 재업로드의 중복 정책을 정확히 명시하는가?",
+      "requiredEvidence": "interaction-contract I1, INPUT-DELETE-RACE의 A 삭제 중 B 원문 열기/늦은 성공·실패 및 파일 재선택 입력·기대값.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ]
+    },
+    {
+      "id": "UI-05-C01",
+      "category": "behavior",
+      "question": "문서 탭→실제 categoryPath(최대8단계)→sampleName→기준 행 구조와 유형이 없을 때 일반 기준으로 두는 규칙이 명시되어 있는가?",
+      "requiredEvidence": "파일 2개·같은 항목명·유형 없음·여러 계층 fixture에 대한 예상 그룹 tree; 출처 불명 그룹도 포함.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-05-C02",
+      "category": "contract",
+      "question": "수치/정성/유형 선택, lt/lte/gt/gte/eq/range, 단위·범위·조건·source ID·revision 직렬화 규칙이 모두 문서화되어 있는가?",
+      "requiredEvidence": "Draft→Criterion 계약, 1…250개/조건12개×500자/계층8×200자 및 range 양끝 포함 제약.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-05-C03",
+      "category": "states",
+      "question": "원문/기준 선택, 전체 파일 제외, 일부 제외, uncertain assessment, 수정 재분석, hidden confirmation 보존, feedback 이력이 상태별로 정의되는가?",
+      "requiredEvidence": "선택 파일별 피드백 scope, 제외 badge/이유/원본 확인, 모든 파일 제외 시 재선택 CTA 행렬.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-05-C04",
+      "category": "visual-motion",
+      "question": "처음에는 조밀한 표 행이며 편집 내용은 펼치고, 오른쪽 원문은 모든 연결 항목을 동시에 표시하며 한 항목 선택과 동기화되는가?",
+      "requiredEvidence": "기본 행/확장 편집/원문 양쪽 참조, 7개 기준이 비교 가능한 높이·글자·스크롤 규칙.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-05-C05",
+      "category": "failure",
+      "question": "불완전 수치·상하한 역전·조건 초과·빈 항목 등은 확정 전에 해당 행을 드러내고, revision 실패가 사용자 입력을 성공으로 오인하지 않도록 명시되는가?",
+      "requiredEvidence": "각 invalid draft의 오류 문구/제출 금지/입력 보존 기대값; feedback sent/applied/failed 구분.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-05-C06",
+      "category": "verification",
+      "question": "다중 sheet·동명 출처·유형 없음·제외 파일·재피드백 사례의 기준 개수/계층/원문 위치를 문서만으로 판정할 수 있는가?",
+      "requiredEvidence": "fixture별 expected tree, sourceEvidence 좌표, preview-only 보강이 원본 Criterion을 변조하지 않는 검증.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ]
+    },
+    {
+      "id": "UI-06-C01",
+      "category": "behavior",
+      "question": "파일 리스트·구조 지도·맥락/구조·확인 사항·전사 상세·원문 링크·접힌 작업 기록의 표시 계층이 명시되는가?",
+      "requiredEvidence": "DocumentAnalysis 내부 hierarchy와 context/checks/transcription drawer 전환표.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-06-C02",
+      "category": "contract",
+      "question": "readerComplete/contextComplete/coverage.complete를 구별하고, preview 잘림과 전체 읽기 coverage를 혼동하지 않는 데이터 매핑이 있는가?",
+      "requiredEvidence": "원본 unitsRead/unitsTotal, 전사 page수, contextSegments, hidden/merged/rotation/headers/uncertain 지역 field 표.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-06-C03",
+      "category": "states",
+      "question": "running/ready/partial/failed/limited/needs_review, 실제 quality rounds/maxAttempts와 no-data 상태를 별도로 정의하는가?",
+      "requiredEvidence": "status→label/icon/seal 표와 검증·재조회·재해석 round 출력 예시.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-06-C04",
+      "category": "visual-motion",
+      "question": "phase rail550ms, region 진입520ms+최대5개75ms 지연, drawer400ms 및 실제 active일 때만 map 모션이라는 조건이 명시되는가?",
+      "requiredEvidence": "read/structure/transcribe/extract와 quality 재시도별 활성 node·arrow 조건.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-06-C05",
+      "category": "failure",
+      "question": "사용자 스크롤이 로그 하단에서28px 이상 벗어나면 자동 따라가기 중단, 완료 시 로그 접기, 잘린 전사/원문 부분 미확인 안내가 정의되는가?",
+      "requiredEvidence": "activity append, busy→false, warnings/truncated에 대한 스크롤/문구 기대값.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-06-C06",
+      "category": "verification",
+      "question": "단일표뿐 아니라 숨김 sheet·회전 PDF·다중 header/region·일부 coverage에 대한 구조 지도와 원문 이동 사례가 있는가?",
+      "requiredEvidence": "각 fixture의 파일 선택·좌표 이동·coverage 문구/분수 기대값.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-07-C01",
+      "category": "behavior",
+      "question": "문서 읽기→항목 추출→기준 대조·분류 milestone과 theater/옆 작업실/현재 파일 context의 배치가 명시되는가?",
+      "requiredEvidence": "LiveReviewFlow layout와 실제 analyzed/fields/decided counts 산식.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C02",
+      "category": "contract",
+      "question": "활성 파일은 관측 operation→최신 처리 이벤트→처리 파일→최신 analysis→첫 파일 순서로 고르고, criteria는 승인본 우선이라는 규칙이 있는가?",
+      "requiredEvidence": "우선순위와 operation phase→stage 매핑; 확정 기준 후보가 모두 실제 적용 기준이라는 주장을 금지.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C03",
+      "category": "states",
+      "question": "긴 LLM 대기 중 실제 operation과 마지막 수신 fields/structure를 보여주고, 완료 뒤 context가 접히며 수동 두 항목씩 탐색하는가?",
+      "requiredEvidence": "busy/observing/no-data/completed context 행렬, 2개/page prev-next 경계.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C04",
+      "category": "visual-motion",
+      "question": "context 전개240ms/페이지 전환160ms, busy&&observing일 때만 bridge2.2s/status2.6s 모션을 명시하는가?",
+      "requiredEvidence": "조건별 애니메이션 on/off와 모션 OFF 정적 화면.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C05",
+      "category": "failure",
+      "question": "작업실 연결 끊김 때 마지막 수신 데이터임을 표시하고 theater가 연결 상태 prop을 받지 않는 현재 한계를 구분하는가?",
+      "requiredEvidence": "연결 끊김/취소/부분 결과 시 각 패널의 label/animation 상태와 known gap.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C06",
+      "category": "verification",
+      "question": "추출 먼저/판정 나중, 여러 파일 interleave, 판정 burst, 긴 무출력 대기를 재현하는 검증 시나리오가 있는가?",
+      "requiredEvidence": "수신 이벤트 순서와 expected counts·activefile·현재 context를 비교하는 trace.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-07-C07",
+      "category": "independent-audit",
+      "question": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 진행 중으로 남는 observed baseline과 OPTIONAL_FUTURE ARIA-TERMINAL의 다른 문구를 정확히 구분하는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C01",
+      "category": "behavior",
+      "question": "문서 스택·가운데 문서 자동 검토 엔진·적합/부적합/확인 필요 세 레인과 모든 연결선(가운데 fail 포함)이 명시되는가?",
+      "requiredEvidence": "1120×300 route 좌표와 fail M556 150 L782 150, desktop/mobile 도식.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C02",
+      "category": "contract",
+      "question": "preview 예시와 live 데이터, 변경 identity(id/status/value/unit/label), nonpending 수신만 새 판정 패킷이 되는 규칙이 정의되는가?",
+      "requiredEvidence": "EXAMPLE fixture 및 초기 mount/동일 데이터/revision/burst에 대한 packet 생성 기대값.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C03",
+      "category": "states",
+      "question": "초기 스냅샷/파일 집합 변경/빈 결과는 replay하지 않고, 도착 패킷은 최대6개로 제한하며 counts는 전체실제 결과를 유지하는가?",
+      "requiredEvidence": "baseline establish·burst sampling·selected lane·empty/pending/complete 상태 표.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C04",
+      "category": "visual-motion",
+      "question": "판정1800ms/추출1300ms/75ms stagger, chip높이30px·max126px·font10px, 만료 여유120ms 및 cleanup350ms가 명시되는가?",
+      "requiredEvidence": "수신→전달→착지 타임라인, 긴 라벨 title/말줄임, preview 반복과 live 반복 금지 차이.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C05",
+      "category": "failure",
+      "question": "작업 중 스캔은 상징적 ambience임을 구분하고, 빠른 작업 누락/중단·motion OFF·mobile에서 숨는 packet layer를 정의하는가?",
+      "requiredEvidence": "ambience vs event-driven 목록 및 <=760px fallback; 기존 수신 패킷 정리 조건.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-08-C06",
+      "category": "verification",
+      "question": "완료 카드만 보여주는 정적 결과와 별도로 수신 시점의 분류 이동을 검증하고 세 레인 수량/색상/클릭이 실제값과 일치하는가?",
+      "requiredEvidence": "time-stamped trace와 0/1/다량 항목 시나리오, 3개 선·수치·패킷 상한 assertion.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ]
+    },
+    {
+      "id": "UI-09-C01",
+      "category": "behavior",
+      "question": "활동 도크가 실제 실행을 시작하지 않는 observer이고, 기준/검토/대시보드/대장 context에 맞는 작업만 표시한다는 규칙이 있는가?",
+      "requiredEvidence": "GET /api/activity + SSE 경계, run/context/start cutoff/kind/document 필터 매핑.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C02",
+      "category": "contract",
+      "question": "실행은 running&&!waitingForTaskId이며 parent 대기를 별도 표시하고, task100/event200 제한과 생략 개수를 보존하는가?",
+      "requiredEvidence": "server task/event→UI task/group contract와 history truncation 문구.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C03",
+      "category": "states",
+      "question": "실행 시작 펼치기·manual selection 유지·작업완료 자동접기800ms 조건·연결끊김 freeze·재연결 상태가 정의되는가?",
+      "requiredEvidence": "autoCollapse&&!busy&&activeCount=0&&!presentationBusy&&live&&tasks>0 조건을 포함한 상태표.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C04",
+      "category": "visual-motion",
+      "question": "현재 backend title/phase/detail와1초 단위 경과시간,3초 새 비heartbeat 출력이 없을 때 대기 안내를 명시하는가?",
+      "requiredEvidence": "실제 대기 표현·상태 heartbeat와 stdout/stderr 분리·가짜 진행률/토큰 생성 금지.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C05",
+      "category": "failure",
+      "question": "연결 quiet15초/request10초/retry4초→최대60초, frozenAt, 로그28px autoscroll cutoff/최신 내용 복귀가 정의되는가?",
+      "requiredEvidence": "관측 오류와 사용자 스크롤 시나리오; settled history에서 불필요한 polling이 없는 조건.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C06",
+      "category": "verification",
+      "question": "다중run/context 누출, waiting parent 중복실행, 중단/실패, 긴 무출력, 완료접기와 수동로그탐색을 검증하는 trace가 있는가?",
+      "requiredEvidence": "각 trace expected activeCount/group/tasks/elapsed/connection label 및 관측-only assertion.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C07",
+      "category": "independent-audit",
+      "question": "작업실의 container≤1050px group select 및 ≤680px 처리흐름/실행내역 탭, flow초기값·scope reset·aria-selected·data-pane에 따른 내용 가시성이 정의되는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-09-C08",
+      "category": "independent-audit",
+      "question": "groupTasks parent identity 상속은 별도 document/run/context 호환 guard 없이 순환만 막고, actualTransfers의 양측 scope guard와 다르다는 현재 동작을 정의하는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C01",
+      "category": "behavior",
+      "question": "양쪽 LLM/샌드박스 chamber, 실제 전달 제목·방향·최근 기록3개와 실행중/대기/작업없음 장면이 명시되는가?",
+      "requiredEvidence": "문서 작업 및 대시보드 단계별 SVG scene 표와 두 런타임 표시.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C02",
+      "category": "contract",
+      "question": "parentTaskId+첫 nonlog runningevent 또는 explicit event.handoff만 전달로 인정하고, 같은runtime/다른run·context·document는 거부하는가?",
+      "requiredEvidence": "허용/거부 event fixture와 canonical dedupe key; 시간상 연속만으로 전달 생성 금지.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C03",
+      "category": "states",
+      "question": "처음 live/history 재방문·group 전환·disconnect pause/resume·failed/cancelled·motion OFF 시 queue/seen 동작이 정의되는가?",
+      "requiredEvidence": "event age[-5s,15s],liveSince, pending≤8/queue seen256/component seen512/groups100/session30 및 취소 한계.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C04",
+      "category": "visual-motion",
+      "question": "실제 한 전달 pulse1400ms, 빛1.3s cubic-bezier(.28,.18,.44,1), 보조trail70ms 지연이며 반복핑퐁이 아니라1회 재생인가?",
+      "requiredEvidence": "양방향 x축 route와 잔여 시간 pause/resume, +N은 연출 대기 수라는 정의.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C05",
+      "category": "failure",
+      "question": "로그/동일상태 갱신이 전달을 재생하지 않고, queue overflow는 오래된 연출만 버리며 실제 실행 결과를 누락시키지 않는가?",
+      "requiredEvidence": "20건 burst·중복 event·재연결·오래된 history 기대 trace; 전달 없는 actor는 호출되었다고 표시하지 않음.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-10-C06",
+      "category": "verification",
+      "question": "문서 read/reread/transcribe/structure/context/quality/repair와 dashboard install/build/validate/complete를 별도로 검증하는가?",
+      "requiredEvidence": "phase→scene/icon/caption/loop mapping과 모션 OFF, 연결끊김의 시각 검증.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C01",
+      "category": "behavior",
+      "question": "렌더 우선순위 PDF→image→sheet table→text→원본 링크, PDF page/zoom 및 sheet tab/숨김 상태와 원본 열기를 모두 명시하는가?",
+      "requiredEvidence": "각 파일형식의 viewer 입력/제어/빈 상태·지원하지 않는 preview 동작.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C02",
+      "category": "contract",
+      "question": "Evidence의 documentId/page/sheet/cell/quote와 SourceHighlight의 missing/anchor 규칙, selected→fail→review→pending→pass 우선순위가 정의되는가?",
+      "requiredEvidence": "동일숫자·header·다른sheet·missing 항목에서 false highlight를 막는 좌표/문자일치 규칙.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C03",
+      "category": "states",
+      "question": "document 변경 초기화, 유효 page만 이동, PDF zoom1…2/0.25step, sheet 선택, 중첩근거 선택 및 못 찾은 위치 chip 상태가 명시되는가?",
+      "requiredEvidence": "소스 선택별 state/output mapping와 다른 페이지/시트/근거 없음/항목 누락 문구.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C04",
+      "category": "visual-motion",
+      "question": "canvas DPR≤2, ResizeObserver min140px, 페이지 진입·선택 근거 내부 scroll과 reduced 즉시이동을 재현할 값이 있는가?",
+      "requiredEvidence": "PDF scale/좌표변환/스크롤 여백·텍스트 overlay 설정과 table sticky row/column 규칙.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C05",
+      "category": "failure",
+      "question": "로드 실패·render취소·text 추출 실패·image 실패·preview.truncated를 서로 구분하고 stale render가 새 문서 위에 나타나지 않도록 정리하는가?",
+      "requiredEvidence": "loadingTask.destroy/renderTask.cancel/observer disconnect와 각 오류메시지·원본 링크 보존.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C06",
+      "category": "verification",
+      "question": "PDF 헤더를 missing 항목으로 색칠하지 않는 사례, 중복값·다중sheet·모호한 quote·표 item label 보강을 검증하는가?",
+      "requiredEvidence": "정확한 예상 highlight 좌표/건수와 부정 사례; preview 일부만 표시됨이 전체분석 누락을 뜻하지 않는 경계.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-11-C07",
+      "category": "independent-audit",
+      "question": "판정색 highlight와 별개 raw <mark> fallback의 호출 조건·case/whitespace·숫자경계 부재·quote당30개 비중첩 검색·범위병합이 정의되는가?",
+      "requiredEvidence": "현재 재현 계약과 관찰 기준선/OPTIONAL_FUTURE 개선 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C01",
+      "category": "behavior",
+      "question": "파일 탭→현재 파일집계→왼쪽 원문 전체판정/오른쪽 항목·적용기준 탭의 정보 순서와 상세가 목록을 대체하는 현재 UI가 명시되는가?",
+      "requiredEvidence": "상세 미선택/선택/기준탭/다른 기준원문 화면 hierarchy 및 항목을 눌러 페이지 아래 패널을 찾게 하지 않는 계약.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C02",
+      "category": "contract",
+      "question": "문서별 결과가 실제 documentId/criterionId로 scope되고, 원문 highlights는 목록 filter와 무관하게 해당파일 전체 결과를 유지하는가?",
+      "requiredEvidence": "다중파일·미연결criterion·동일label·외부selectedItemId 모델 fixture와 expected counts.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C03",
+      "category": "states",
+      "question": "파일선택은 필터/상세/페이지 reset, 목록↔상세는 scroll·focus 복원, 이전/다음은 현재 필터 내 이동이며 판정수정이 필터를 벗어나면 all로 복귀하는가?",
+      "requiredEvidence": "chooseFile/chooseItem/clearItem/chooseFilter/resolve 후 상태표.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C04",
+      "category": "visual-motion",
+      "question": "선택상세 진입200ms/x12, 판정bar350ms, <=780px 상세를 원문보다 앞에 두고 workspace scrollTop0으로 이동하는가?",
+      "requiredEvidence": "데스크톱 및 모바일 상세참조와 height/overflow/focus 기대값.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C05",
+      "category": "failure",
+      "question": "문서error·결과없음·필터결과0·적용기준없음·criterion ID 미연결이 서로 구분되고 원본은 계속 확인 가능한가?",
+      "requiredEvidence": "실패/빈 상태 문구 및 링크 가능 여부.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-12-C06",
+      "category": "verification",
+      "question": "파일 A 선택·fail필터·항목상세·원문근거·적용기준·목록복귀 시 헤더와 사유가 즉시 보이는지를 측정할 검증이 있는가?",
+      "requiredEvidence": "viewport별 상세 bounding rect/scroll/focus assertion, 원문 색상은 전체유지 assertion.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C01",
+      "category": "behavior",
+      "question": "compact 상세에서 항목제목/판정→문서값·기준 나란히→판정이유→source quote→수정 CTA의 순서가 명시되어 있는가?",
+      "requiredEvidence": "compact 기본 화면과 edit 상태 와이어프레임; 판정 근거는 목록 하단에 누적되지 않음.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C02",
+      "category": "contract",
+      "question": "onResolve(itemId,status,note), status pass/fail/review, source document/page/sheet/cell와 reviewedByHuman/humanNote의 매핑이 정의되는가?",
+      "requiredEvidence": "수정 요청·응답·보이는 사람확인 stamp와 source 버튼 계약.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C03",
+      "category": "states",
+      "question": "선택 item 변경 시 편집/오류/note 초기화, compact 제목 focus preventScroll, pending 항목 수정불가 및 저장 중 중복 금지가 정의되는가?",
+      "requiredEvidence": "item swap/save/cancel/pending/disabled 상태별 controls.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C04",
+      "category": "visual-motion",
+      "question": "full inspector220ms/y14와 compact 내부 초기 모션 없음, 비교 두 칸의 폭·글자 크기와 긴설명 스크롤이 명시되는가?",
+      "requiredEvidence": "원문·상세 동시시야 참조 및 typography/compact layout.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C05",
+      "category": "failure",
+      "question": "저장 전 취소의 서버 변경 없음과 저장 중 취소의 폼 닫힘·이미 전송된 resolve 지속, 실패·연속 클릭·race 상태를 관찰 기준선과 선택 개선으로 구분하는가?",
+      "requiredEvidence": "유효/무효 note·실패/재시도 expected mutation 및 UI상태.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-13-C06",
+      "category": "verification",
+      "question": "판정수정 뒤 파일집계·요약·원문색상은 갱신되되 기존 생성대시보드는 스냅샷으로 유지됨을 검증하는가?",
+      "requiredEvidence": "하나의 수정에 대한 각 consumer 예상 변화 및 대시보드 재구성 필요 안내.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C01",
+      "category": "behavior",
+      "question": "3개 KPI/판정분포/문서별판정/이름있는 항목 맵을 배치하고 tile 클릭이 파일별 결과의 해당 item으로 이동하는가?",
+      "requiredEvidence": "summary hierarchy와 onSelect→resultTab files·selectedItemId 연결.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C02",
+      "category": "contract",
+      "question": "총항목·완료(pass+fail+review)·주의(fail+review)·pending을 구분하고 문서순서/빈문서/동명문서 집계가 명시되는가?",
+      "requiredEvidence": "집계 산식과 데이터 fixture별 KPI/도넛/stackedbar 기대수.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C03",
+      "category": "states",
+      "question": "도넛/legend 필터 토글, hover와 keyboard focus tooltip, 필터로 나가는 tile의 pointer/focus 제거 및 빈 결과가 정의되는가?",
+      "requiredEvidence": "all/pass/fail/review/pending 및 tooltip/exit 상태표.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C04",
+      "category": "visual-motion",
+      "question": "숫자650ms, 도넛850ms, 막대800ms, tile300ms/22ms stagger상한8, hover y-2/tap.98와 reduced 비활성화가 명시되는가?",
+      "requiredEvidence": "차트·panel·tile timing table, graph가 정적 즉시등장만 하지 않는 검증.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C05",
+      "category": "failure",
+      "question": "항목명/파일명 말줄임의 tooltip·접근성 이름, 현재 tooltip의 280px/12px 위치·세로 넘침·Escape 미지원과 OPTIONAL_FUTURE 개선 경계, zero-data의 중립 ring과 실제 0건 집계가 모두 정확히 규정되는가?",
+      "requiredEvidence": "TOOLTIP-LIMIT의 현재 좌표·닫힘·넘침 기대값, TOOLTIP-G13-REBUILD의 별도 선택 개선 분류, zero-data 차트와 tooltip 입력/기대값.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-14-C06",
+      "category": "verification",
+      "question": "기본요약은 Recharts이고 나만의대시보드는 react-chartjs-2인 기술경계를 명확히 검증하는가?",
+      "requiredEvidence": "컴포넌트별 chart library 표, 실제 type/수치/클릭/모션 조건 assertion.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C01",
+      "category": "behavior",
+      "question": "구성 sidebar·4개 예시요청·생성중 full workroom·완료preview·구성수정·원본과판정/대시보드 switch·HTML다운로드 흐름이 명시되는가?",
+      "requiredEvidence": "빈상태→생성→완료→부분 수정→재생성 transition와 기본instruction/1500자 제한.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C02",
+      "category": "contract",
+      "question": "POST {runId,instruction,baseDesign?}, 생성 당시 immutable snapshot, ready sourceItems, 검증된 bridgeToken/knownItemIds와 cache≤5가 정의되는가?",
+      "requiredEvidence": "요청/ready Preview 계약 및 임의 message/다른iframe/알수없는item 무시 사례.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C03",
+      "category": "states",
+      "question": "queued/generating/building/repairing/ready/failed, cancel/close, retry시 이전preview, 실제 적용tag와 standard fallback 안내를 구분하는가?",
+      "requiredEvidence": "job×builderOpen×showingWorkroom×resultView 상태행렬; appliedTag는 실제job.design만 사용.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C04",
+      "category": "visual-motion",
+      "question": "dialog240ms 뒤 content260ms 지연, lazy source viewer, memo iframe, 이미열었던 chart state 보존, 모션설정 존중을 명시하는가?",
+      "requiredEvidence": "mount/unmount 시간선과 hidden chart 신규mount 금지·lazy preload·reduced stylesheet 계약.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C05",
+      "category": "failure",
+      "question": "poll1200ms/연속실패2회재시도/AbortController·sequence stale guard·DELETE취소·빈HTML오류·최종handoff≤1600ms를 명시하는가?",
+      "requiredEvidence": "close-before-POST-return/오류/취소/재시도 expected job/API/view 상태.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-15-C06",
+      "category": "verification",
+      "question": "첫열기/재열기/원문전환/재구성의 프레임·mount수·선택유지와 HTML 다운로드를 검증하는 시나리오가 있는가?",
+      "requiredEvidence": "modal shell이 먼저보이는 timing, iframe remount count, exportedHTML은 host원문/bridge 미포함이라는 확인.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C01",
+      "category": "behavior",
+      "question": "title/subtitle/accent/focus/density/layout/distribution/theme/emphasis/chartSize/legend/motion/corners/fileVisualization의14개 축과 조합효과가 모두 명시되는가?",
+      "requiredEvidence": "각 enum/default/DOM data-attr/CSS/chart option 대응표; 색상 변경만으로 테마 요청을 충족했다고 하지 않음.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C02",
+      "category": "contract",
+      "question": "LLM이 HTML/JS/판정값을 만들지 않고 디자인계획만 반환하며 기존baseDesign을 유지한 부분수정·부정표현 해석이 정의되는가?",
+      "requiredEvidence": "라이트 큰도넛→색상유지 밤테마 파이, 막대말고도넛, 파일만막대 사례의 exact expected plan.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C03",
+      "category": "states",
+      "question": "overview/exceptions/documents focus,4개layout,파일선택·statusfilter·상세전개,0건/한파일/다중파일/긴내용 상태를 정의하는가?",
+      "requiredEvidence": "layout reading order와 filtering/selection 상태표; detail-open에서 chartfocus와 가독성 재배분.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C04",
+      "category": "visual-motion",
+      "question": "라이트는 page/card/text/axis/tooltip까지, 도넛은hole/파이는filled, 차트강조는실제크기, 범례 위치·모션·모서리를 바꾸도록 수치화되는가?",
+      "requiredEvidence": "chart types/options/CSS 계산식·full/subtle/none·OS reduced 처리와 색상대비 명세.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C05",
+      "category": "failure",
+      "question": "지원데이터없는추세를 발명하지 않고, plan/렌더검증 실패 때 한계있는standard fallback을 정직하게 표시하며 snapshot값을 보존하는가?",
+      "requiredEvidence": "실패 진단→동일sandbox 수정loop→fallback 계약, unknown enum/변조 count/theme 무시 검증.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-16-C06",
+      "category": "verification",
+      "question": "독립적인 최소3개 복합요청과18개 viewport/디자인 조합에서 실제chart type·count·surface·legend·size·detail 가시성을 검증하는가?",
+      "requiredEvidence": "문서에 선언한 expected plans와 browser assertion specification; 실행되지 않은 케이스는 증거로 계산하지 않음.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C01",
+      "category": "behavior",
+      "question": "파일탭·파일별판정수·원본선택·전체하이라이트·선택항목 사유/값/기준/인용의 위치와 차트→원문 전환이 명시되는가?",
+      "requiredEvidence": "source view hierarchy와 selectedItemId/selectionVersion 외부선택 흐름.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C02",
+      "category": "contract",
+      "question": "sourceSnapshot의 files/items만 사용하고, sourceHighlights는 선택원본 documentId로 제한하며 pending 집계 표시를 구분하는가?",
+      "requiredEvidence": "freeze 당시 snapshot·문서 scope·pending→review 그룹 변환 및 pendingCount 안내.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C03",
+      "category": "states",
+      "question": "다른파일 선택은 filter/source reset, item선택은 해당target근거→다른target근거→존재문서 순서로 원본을 고르는가?",
+      "requiredEvidence": "파일/원본문서/근거index/filter/외부selectionVersion 변화 표.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C04",
+      "category": "visual-motion",
+      "question": "entry320ms/y6 및 system/app reduced를 함께 적용하고, source page의 독립 스크롤·compact원문·전체색상 유지가 정의되는가?",
+      "requiredEvidence": "source view 가시성/레이아웃/animation 조건과 chartview 숨김 시 선택상태 유지.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C05",
+      "category": "failure",
+      "question": "원본연결정보 없는 구형preview에서는 switch를 disabled하고 다시구성 안내, 누락원본·근거없음·알수없는item은 추측하지 않는가?",
+      "requiredEvidence": "legacy ready HTML/no sourceSnapshot/잘못된 bridge message의 UI상태.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-17-C06",
+      "category": "verification",
+      "question": "파일2개 같은항목명·다른source근거·filter변경·같은item 재선택에서 원본과사유가 일치하는 테스트가 있는가?",
+      "requiredEvidence": "data-review-document-id/data-source-document-id/data-selected-evidence-index/filter 기대값.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C01",
+      "category": "behavior",
+      "question": "결과 내보내기 메뉴의xlsx/csv/json과검토대장 기능, 대장업로드→대상성적서/번호→기입위치확인→사본다운로드 흐름이 명시되는가?",
+      "requiredEvidence": "표준export URL과 ledger dialog hierarchy/CTA 흐름.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C02",
+      "category": "contract",
+      "question": "mapping.ready/blocked,정확히targetCells2개,proposal fingerprint와basis(documentId,key,runId,sourceDocumentId)일치가 다운로드gate라는 계약이 있는가?",
+      "requiredEvidence": "analyze/export 요청·기존값/기입값 table·confirmed:true·proposalFingerprint 계약.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C03",
+      "category": "states",
+      "question": "upload/analyze/export 직렬화·바쁜중 입력금지·파일/성적서/번호 변경시 analysis무효화·key자동추출·추가메모 상태가 정의되는가?",
+      "requiredEvidence": "beginOperation sequence/AbortController와 canAnalyze/canExport 행렬.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C04",
+      "category": "visual-motion",
+      "question": "dialog230ms/scale.985/y14, 분석중inlinedock, 완료후 현재값과기입값 비교 및 모바일레이아웃이 명시되는가?",
+      "requiredEvidence": "3개 상태 참조,작업진행은 결과와구분하고표시하는 규칙.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C05",
+      "category": "failure",
+      "question": "xlsx만/빈파일금지/20MB이하/한개drop,중복행·위치불명 blocked·닫기abort·빈export·서버오류에 대한 사용자인지가 정의되는가?",
+      "requiredEvidence": "각실패의메시지/대상후보표시/다운로드disabled/재시도행동;원본보존.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    },
+    {
+      "id": "UI-18-C06",
+      "category": "verification",
+      "question": "틀린key·중복key·다른source/수정된basis·stale proposal과정상사본을 검증하는가?",
+      "requiredEvidence": "예상2개셀만변경,원본bytes동일,새파일명·결과숫자·사용자메모반영검증명세.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ]
+    }
+  ]
+}

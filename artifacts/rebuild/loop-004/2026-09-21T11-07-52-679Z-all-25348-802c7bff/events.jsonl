@@ -1,0 +1,62 @@
+{"time":"2026-09-21T11:07:52.759Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}
+{"time":"2026-09-21T11:07:53.936Z","kind":"source-preflight","verified":true,"digest":"b410826af5274b28d2a0072074f9b2d2bfb1de1a1e808625520fe49947687a87","implementationDigest":"27f854f12ca965072b101774ccbbccd804806998f404df3250aeedcf4556a41f","fileCount":661,"serverProcessId":4740}
+{"time":"2026-09-21T11:07:53.945Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:07:53.947Z","kind":"pre-reset-state","phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:07:53.987Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200,"phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:07:55.898Z","kind":"browser-launched","playwrightVersion":"1.62.1","bundledExecutable":"C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe","bundledExists":false,"executable":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe","selection":"explicit-installed-chrome-fallback","userProfile":"none; Playwright isolated temporary profile","headless":true,"node":"v24.13.1","browserVersion":"153.0.8010.48","browserName":"chromium","referenceBrowser":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","environmentMatchNotAssumed":true}
+{"time":"2026-09-21T11:07:59.099Z","kind":"local-font-intercept","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;450;500;550;600;650;700&display=swap"}
+{"time":"2026-09-21T11:07:59.692Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:07:59.696Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:08:02.336Z","kind":"browser-context","name":"states-01-28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","platform":"Win32","language":"ko-KR","languages":["ko-KR"],"timeZone":"Asia/Seoul","devicePixelRatio":1,"viewport":{"width":1440,"height":960},"visualViewport":{"width":1440,"height":960,"scale":1},"prefersColorScheme":"light","reducedMotion":false}
+{"time":"2026-09-21T11:08:03.161Z","kind":"state-start","id":"01-landing-desktop"}
+{"time":"2026-09-21T11:08:12.763Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:13.180Z","kind":"state-captured","id":"01-landing-desktop","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:08:13.584Z","kind":"state-start","id":"02-landing-mobile"}
+{"time":"2026-09-21T11:08:13.589Z","kind":"action","action":"set viewport","width":390,"height":844}
+{"time":"2026-09-21T11:08:21.261Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:21.865Z","kind":"state-captured","id":"02-landing-mobile","png":{"width":390,"height":844},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:08:22.168Z","kind":"state-start","id":"03-landing-mobile-motion-off"}
+{"time":"2026-09-21T11:08:22.169Z","kind":"action","action":"set OS reduced motion","reducedMotion":"reduce"}
+{"time":"2026-09-21T11:08:22.630Z","kind":"action","action":"click","role":"button","name":"모션 ON"}
+{"time":"2026-09-21T11:08:30.252Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:30.381Z","kind":"state-captured","id":"03-landing-mobile-motion-off","png":{"width":390,"height":844},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:08:30.397Z","kind":"state-start","id":"04-criteria-input-empty"}
+{"time":"2026-09-21T11:08:30.398Z","kind":"action","action":"set viewport","width":1440,"height":960}
+{"time":"2026-09-21T11:08:30.898Z","kind":"action","action":"set OS reduced motion","reducedMotion":"no-preference"}
+{"time":"2026-09-21T11:08:31.020Z","kind":"action","action":"click","role":"button","name":"모션 OFF"}
+{"time":"2026-09-21T11:08:31.292Z","kind":"action","action":"click","role":"button","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T11:08:34.228Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:34.331Z","kind":"state-captured","id":"04-criteria-input-empty","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:08:34.348Z","kind":"state-start","id":"05-criteria-natural-language"}
+{"time":"2026-09-21T11:08:34.348Z","kind":"action","action":"click","role":"button","name":"말로 기준 알려주기 원하는 조건을 직접 입력"}
+{"time":"2026-09-21T11:08:36.548Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:36.704Z","kind":"state-captured","id":"05-criteria-natural-language","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:08:36.723Z","kind":"state-start","id":"06-criteria-input-file"}
+{"time":"2026-09-21T11:08:36.724Z","kind":"action","action":"click","role":"button","name":"기준 파일 넣기 기준서·규정·표준 문서"}
+{"time":"2026-09-21T11:08:37.036Z","kind":"action","action":"upload","role":"criteria","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:08:37.471Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:08:37.556Z","kind":"state-error","id":"06-criteria-input-file","name":"Error","message":"locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n","stack":"locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n\n    at upload (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:103:96)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:226:92\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:203:9)\n    at async flow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:226:9)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:301:39)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:340:22"}
+{"time":"2026-09-21T11:08:44.993Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:44.998Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:08:45.001Z","kind":"pre-reset-state","phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:08:45.012Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200,"phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:08:48.354Z","kind":"local-font-intercept","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;450;500;550;600;650;700&display=swap"}
+{"time":"2026-09-21T11:08:49.731Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:08:49.756Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:08:52.144Z","kind":"browser-context","name":"states-29-34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","platform":"Win32","language":"ko-KR","languages":["ko-KR"],"timeZone":"Asia/Seoul","devicePixelRatio":1,"viewport":{"width":1440,"height":960},"visualViewport":{"width":1440,"height":960,"scale":1},"prefersColorScheme":"light","reducedMotion":false}
+{"time":"2026-09-21T11:08:52.145Z","kind":"state-start","id":"29-landing-1600"}
+{"time":"2026-09-21T11:08:52.146Z","kind":"action","action":"set viewport","width":1600,"height":960}
+{"time":"2026-09-21T11:09:05.671Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:09:05.714Z","kind":"state-captured","id":"29-landing-1600","png":{"width":1600,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:09:05.741Z","kind":"state-start","id":"30-landing-1280"}
+{"time":"2026-09-21T11:09:05.743Z","kind":"action","action":"set viewport","width":1280,"height":800}
+{"time":"2026-09-21T11:09:15.789Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:09:16.323Z","kind":"state-captured","id":"30-landing-1280","png":{"width":1280,"height":800},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:09:16.363Z","kind":"state-start","id":"31-criteria-confirmation-1600"}
+{"time":"2026-09-21T11:09:16.364Z","kind":"action","action":"click","role":"button","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T11:09:16.729Z","kind":"action","action":"upload","role":"criteria","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:09:16.836Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:09:17.213Z","kind":"state-error","id":"31-criteria-confirmation-1600","name":"Error","message":"locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n","stack":"locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n\n    at upload (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:103:96)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:271:90\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:203:9)\n    at async requiredFlow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:271:9)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:304:55)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:340:22"}
+{"time":"2026-09-21T11:10:21.876Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}
+{"time":"2026-09-21T11:10:30.613Z","kind":"source-postflight","verified":true,"digest":"b410826af5274b28d2a0072074f9b2d2bfb1de1a1e808625520fe49947687a87","fileCount":661}
+{"time":"2026-09-21T11:10:31.188Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}

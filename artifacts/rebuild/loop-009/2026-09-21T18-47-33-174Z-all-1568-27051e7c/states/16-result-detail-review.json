@@ -1,0 +1,72 @@
+{
+  "id": "16-result-detail-review",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "16-result-detail-review",
+    "screenshot": {
+      "path": "16-result-detail-review.png",
+      "bytes": 184302,
+      "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/16-result-detail-review.json",
+      "bytes": 713312,
+      "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T18:50:53.923Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/16-result-detail-review-font-readiness.json",
+    "bytes": 2301116,
+    "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/16-result-detail-review.png",
+    "bytes": 179037,
+    "sha256": "03dae2d0b230c20518c767221fa130c02bc8b2661ae2523afc93a6878bc0ee78",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T18:50:57.904Z",
+    "capturedAt": "2026-09-21T18:50:58.366Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/16-result-detail-review.json",
+    "bytes": 1107394,
+    "sha256": "f7b5e4d451af47d272aa6aa2d85d1dfe053e6921453ef6113fc62a084b026b79"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/16-result-detail-review-measurement.json",
+    "bytes": 205788,
+    "sha256": "91f5972e1bc5f3205596c7b4d437033868fbf40c94dccbd83eaca6699ce10cb3"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T18:51:00.761Z"
+}

@@ -1,0 +1,30 @@
+{
+  "case_id": "N402",
+  "report": "inputs/reports/N402.pdf",
+  "criteria": "inputs/criteria/N402_criteria.xlsx",
+  "output_template": "inputs/criteria/N402_criteria.xlsx",
+  "target_identity": "MODEL PVX-72 / BATCH Q-51",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "power",
+      "name": "Maximum power Pmax"
+    },
+    {
+      "field_id": "insulation",
+      "name": "Insulation resistance"
+    },
+    {
+      "field_id": "wetleak",
+      "name": "Wet leakage resistance"
+    },
+    {
+      "field_id": "model",
+      "name": "Model designation"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

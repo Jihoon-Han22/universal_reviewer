@@ -1,0 +1,3572 @@
+{
+  "schemaVersion": 1,
+  "scope": "CURRENT_REPRODUCTION uses observed source outputs, including known limitations. OPTIONAL_FUTURE enhancements are retained separately and excluded from current acceptance.",
+  "fieldCount": 14,
+  "preferenceCases": [
+    {
+      "id": "PREF-C01",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "라이트 테마, 빨간 파이, 차트를 크게 강조, 애니메이션 없이",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "right",
+        "motion": "none",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "right",
+        "motion": "none",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "right",
+        "motion": "none",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C02",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "파일은 비교 막대로, 전체는 파이. 촘촘하게, 범례 아래로, 각진 모서리로",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "compact",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "square",
+        "fileVisualization": "bars"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "compact",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "square",
+        "fileVisualization": "bars"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "compact",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "square",
+        "fileVisualization": "bars"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C03",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "다크 테마에 민트색, 큰 도넛 차트를 맨 위에 강조. 범례는 숨기고 움직임은 잔잔하게",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "mint",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "charts-first",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "hidden",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "mint",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "charts-first",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "hidden",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "mint",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "charts-first",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "hidden",
+        "motion": "subtle",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C04",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "Keep the dark page; make the charts light blue.",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": {
+        "gate": "DB-H02",
+        "desiredExpected": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "status": "OPTIONAL_FUTURE_NOT_IMPLEMENTED_IN_BASELINE",
+        "executionStatus": "NOT_RUN"
+      },
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C05",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "전체는 파이, 파일별 결과는 비교 막대로",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "bar",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "bars"
+      },
+      "semanticImprovement": {
+        "gate": "DB-H02",
+        "desiredExpected": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "bars"
+        },
+        "status": "OPTIONAL_FUTURE_NOT_IMPLEMENTED_IN_BASELINE",
+        "executionStatus": "NOT_RUN"
+      },
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "bar",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "bars"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "bars"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C06",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "밤 테마",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": {
+        "gate": "DB-H02",
+        "desiredExpected": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "status": "OPTIONAL_FUTURE_NOT_IMPLEMENTED_IN_BASELINE",
+        "executionStatus": "NOT_RUN"
+      },
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C07",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "파일만 막대로",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "bar",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": {
+        "gate": "DB-H02",
+        "desiredExpected": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "bars"
+        },
+        "status": "OPTIONAL_FUTURE_NOT_IMPLEMENTED_IN_BASELINE",
+        "executionStatus": "NOT_RUN"
+      },
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "bar",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "bars"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C08",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "막대 말고 도넛",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "bar",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C09",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "파란색 말고 초록색",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "#198b58",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "#198b58",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "#198b58",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "doughnut",
+        "theme": "dark",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    },
+    {
+      "id": "PREF-C10",
+      "scope": "CURRENT_REPRODUCTION",
+      "instruction": "범례 아래로",
+      "inputDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "observedExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "semanticImprovement": null,
+      "pureFunctionExpectedValues": "verified-against-packaged-reference",
+      "browserStatus": "NOT_RUN",
+      "targetExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "targetRequirement": "CURRENT_REPRODUCTION",
+      "futureExpected": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "futureRequirement": "OPTIONAL_FUTURE"
+    }
+  ],
+  "baseDesignCase": {
+    "id": "PREF-RETENTION",
+    "instruction": "범례 아래로",
+    "baseDesign": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "red",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "pie",
+      "theme": "light",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "right",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "modelReturns": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "cobalt",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "doughnut",
+      "theme": "dark",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "right",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "observedSuccessfulExpected": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "cobalt",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "doughnut",
+      "theme": "dark",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "bottom",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "observedFallbackExpected": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "red",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "pie",
+      "theme": "light",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "bottom",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "status": "CURRENT_REPRODUCTION_OBSERVED",
+    "targetExpected": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "cobalt",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "doughnut",
+      "theme": "dark",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "bottom",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "futureExpected": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "red",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "pie",
+      "theme": "light",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "bottom",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "futureRequirement": "OPTIONAL_FUTURE",
+    "futureGate": "DB-H03",
+    "futureAlgorithm": "If a supported unchanged field differs from baseDesign, diagnose and repair within the shared three model call budget. Exhaustion produces an explicitly marked fallback; never label drifted design generated success."
+  },
+  "browserMatrix": [
+    {
+      "id": "DB-V01",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 7,
+        "radiusPx": 16,
+        "bodyBackground": "#111318",
+        "largeDesktopGeometry": {
+          "mediaQuery": "(min-width:1500px) and (min-height:800px)",
+          "root": {
+            "selector": "[data-dashboard=\"root\"]",
+            "paddingTopPx": 30,
+            "paddingRightPx": 40,
+            "paddingBottomPx": 30,
+            "paddingLeftPx": 40,
+            "rowGapPx": 20,
+            "columnGapPx": 20
+          },
+          "panelHeading": {
+            "selector": ".panel-heading",
+            "padding": "20px 24px 0px",
+            "headingFontSizePx": 15
+          },
+          "fileList": {
+            "selector": ".file-list",
+            "padding": "16px 20px 20px",
+            "gapPx": 12
+          },
+          "fileCard": {
+            "selector": ".file-card",
+            "paddingPx": 16,
+            "titleFontSizePx": 14,
+            "countsFontSizePx": 11
+          },
+          "distributionContent": {
+            "selector": ".distribution-content",
+            "padding": "16px 28px 22px",
+            "gapPx": 24
+          },
+          "legend": {
+            "labelFontSizePx": 13,
+            "countFontSizePx": 29
+          },
+          "fileBarHeightPx": 7
+        },
+        "motionScope": {
+          "surface": "standalone HTML inside iframe or downloaded file",
+          "chartAnimated": true,
+          "cssAnimations": "full design timings",
+          "hostModalShell": "not measured by this case; shell follows host app motion preference, not standalone OS CSS"
+        }
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior",
+        "At actual viewport1600x900, matchMedia large-desktop query is true; computed padding/gap/font sizes match expected.largeDesktopGeometry. A1440 capture cannot satisfy this assertion."
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V02",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "pie",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": 0,
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V03",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "bar",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": "y",
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V04",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "polarArea",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": "r",
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V05",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V06",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "pie",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": 0,
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V07",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "bar",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": "y",
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V08",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "polarArea",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": "r",
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V09",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "red",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "charts-first",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "bottom",
+          "motion": "none",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "red",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "charts-first",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "bottom",
+          "motion": "none",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "pie",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": 0,
+        "chartPalette": [
+          "#f56377",
+          "#f99eab",
+          "#9c4a5f"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "bottom",
+        "animated": false,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V10",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "mint",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "hidden",
+          "motion": "subtle",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "mint",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "hidden",
+          "motion": "subtle",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#70f3c4",
+          "#b5f9e0",
+          "#4a997f"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "hidden",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V11",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "compact",
+          "layout": "files-first",
+          "distribution": "bar",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "square",
+          "fileVisualization": "bars"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "compact",
+          "layout": "files-first",
+          "distribution": "bar",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "square",
+          "fileVisualization": "bars"
+        },
+        "type": "bar",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#198b58",
+          "#70b797",
+          "#18624c"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": "y",
+        "polarScale": null,
+        "fileBarHeightPx": 10,
+        "radiusPx": 0,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V12",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "orange",
+          "focus": "exceptions",
+          "density": "comfortable",
+          "layout": "findings-first",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "findings",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "orange",
+          "focus": "exceptions",
+          "density": "comfortable",
+          "layout": "findings-first",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "findings",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#ffac65",
+          "#ffd4af",
+          "#a06f46"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V13",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "large",
+          "legend": "bottom",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "large",
+          "legend": "bottom",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "bottom",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V14",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "none",
+          "corners": "square",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "none",
+          "corners": "square",
+          "fileVisualization": "cards"
+        },
+        "type": "polarArea",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": false,
+        "barIndexAxis": null,
+        "polarScale": "r",
+        "fileBarHeightPx": 5,
+        "radiusPx": 0,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V15",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "hidden",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "hidden",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "pie",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": 0,
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "hidden",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V16",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "compact",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "bars"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "compact",
+          "layout": "balanced",
+          "distribution": "bar",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "bars"
+        },
+        "type": "bar",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": true,
+        "barIndexAxis": "y",
+        "polarScale": null,
+        "fileBarHeightPx": 10,
+        "radiusPx": 16,
+        "bodyBackground": "#111318"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V17",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "bottom",
+          "motion": "subtle",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": false
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "polarArea",
+          "theme": "light",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "bottom",
+          "motion": "subtle",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "polarArea",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": null,
+        "chartPalette": [
+          "#3d6dff",
+          "#87a4ff",
+          "#2e50b1"
+        ],
+        "panelBackground": "#ffffff",
+        "ink": "#17243b",
+        "legend": "bottom",
+        "animated": true,
+        "barIndexAxis": null,
+        "polarScale": "r",
+        "fileBarHeightPx": 5,
+        "radiusPx": 16,
+        "bodyBackground": "#f3f6fc"
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior"
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "id": "DB-V18",
+      "input": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "snapshot": "contracts/dashboard-examples.json#/snapshot",
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "hostMotion": "on",
+        "osReducedMotion": true
+      },
+      "expected": {
+        "plan": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "type": "doughnut",
+        "labels": [
+          "적합",
+          "부적합",
+          "확인 필요"
+        ],
+        "data": [
+          1,
+          1,
+          1
+        ],
+        "cutout": "78%",
+        "chartPalette": [
+          "#3d6dff",
+          "#9ab3ff",
+          "#2b49a3"
+        ],
+        "panelBackground": "#1b2029",
+        "ink": "#eef2f8",
+        "legend": "right",
+        "animated": false,
+        "barIndexAxis": null,
+        "polarScale": null,
+        "fileBarHeightPx": 7,
+        "radiusPx": 16,
+        "bodyBackground": "#111318",
+        "largeDesktopGeometry": {
+          "mediaQuery": "(min-width:1500px) and (min-height:800px)",
+          "root": {
+            "selector": "[data-dashboard=\"root\"]",
+            "paddingTopPx": 30,
+            "paddingRightPx": 40,
+            "paddingBottomPx": 30,
+            "paddingLeftPx": 40,
+            "rowGapPx": 20,
+            "columnGapPx": 20
+          },
+          "panelHeading": {
+            "selector": ".panel-heading",
+            "padding": "20px 24px 0px",
+            "headingFontSizePx": 15
+          },
+          "fileList": {
+            "selector": ".file-list",
+            "padding": "16px 20px 20px",
+            "gapPx": 12
+          },
+          "fileCard": {
+            "selector": ".file-card",
+            "paddingPx": 16,
+            "titleFontSizePx": 14,
+            "countsFontSizePx": 11
+          },
+          "distributionContent": {
+            "selector": ".distribution-content",
+            "padding": "16px 28px 22px",
+            "gapPx": 24
+          },
+          "legend": {
+            "labelFontSizePx": 13,
+            "countFontSizePx": 29
+          },
+          "fileBarHeightPx": 7
+        },
+        "motionScope": {
+          "surface": "standalone HTML inside iframe or downloaded file",
+          "chartAnimated": false,
+          "cssAnimations": "none under OS prefers-reduced-motion:reduce",
+          "hostModalShell": "not measured by this case; shell follows host app motion preference, not standalone OS CSS"
+        }
+      },
+      "assertions": [
+        "actual TraceCharts.inspect agrees with type, labels, three dataset values, cutout, colors and animated",
+        "canvas CSS width and height > 0; no canvas overflow outside plot",
+        "computed body background (root may be transparent) and panel surface match expected palette; compare RGB-normalized colors",
+        "root data attributes agree with all supported plan fields",
+        "legend hidden => display:none; bottom => legend below plot with 3 columns; right desktop => legend right of plot; narrow <=759 rule in standalone CSS takes precedence",
+        "emphasis=charts => chart section height exceeds same-viewport balanced reference; chartSize=large => plot minimum follows CSS breakpoint",
+        "select doc-b then fail => item-b visible, item-a/item-c absent; open item-b => exact value 1.30 and criterion visible; Escape closes detail and restores row focus",
+        "no horizontal page overflow at declared viewport; visible controls have positive rects; long content uses declared internal scrollport",
+        "export HTML offline: exactly two embedded scripts, no bridge, zero external requests, same inspect counts and filter/detail behavior",
+        "At actual viewport1600x900, matchMedia large-desktop query is true; computed padding/gap/font sizes match expected.largeDesktopGeometry. A1440 capture cannot satisfy this assertion."
+      ],
+      "status": "NOT_RUN",
+      "evidence": null
+    }
+  ],
+  "viewportCoverage": {
+    "required": [
+      {
+        "width": 1600,
+        "height": 900,
+        "caseIds": [
+          "DB-V01",
+          "DB-V18"
+        ],
+        "branch": "min-width1500 and min-height800; full and OS-reduced motion"
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "caseIds": [
+          "DB-V13",
+          "DB-V14"
+        ],
+        "branch": "short desktop max-height740"
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "caseIds": [
+          "DB-V15",
+          "DB-V16"
+        ],
+        "branch": "mobile max-width759"
+      }
+    ],
+    "additional": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": "NOT_RUN",
+    "note": "Every named viewport is an actual browser execution requirement. Logical design combinations remain18; no screenshot at a different size substitutes for a branch."
+  },
+  "requiredGates": [
+    {
+      "id": "DB-H01",
+      "requirement": "OPTIONAL_FUTURE",
+      "executionStatus": "NOT_RUN",
+      "observedSourceImplements": false
+    },
+    {
+      "id": "DB-H02",
+      "requirement": "OPTIONAL_FUTURE",
+      "executionStatus": "NOT_RUN",
+      "observedSourceImplements": false
+    },
+    {
+      "id": "DB-H03",
+      "requirement": "OPTIONAL_FUTURE",
+      "executionStatus": "NOT_RUN",
+      "observedSourceImplements": false
+    }
+  ],
+  "legacyParserContract": {
+    "requiredStoredFields": [
+      "title",
+      "subtitle",
+      "accent",
+      "focus",
+      "density"
+    ],
+    "defaultableStoredFields": {
+      "layout": "balanced",
+      "distribution": "doughnut",
+      "theme": "dark",
+      "emphasis": "balanced",
+      "chartSize": "standard",
+      "legend": "right",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "generatedPlanRequiresAll14": false,
+    "undefinedOrAbsentDefaulted": true,
+    "nullDefaulted": false,
+    "providerGenerationSchemaRequiresAll14": true,
+    "hostParserRequiresAll14": false,
+    "hostParserSharedForGeneratedAndStored": true
+  },
+  "legacyParserCases": [
+    {
+      "id": "LEGACY-5",
+      "input": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable"
+      },
+      "expected": {
+        "accepted": true,
+        "design": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        }
+      },
+      "sourceCheck": "verified",
+      "rebuildStatus": "NOT_RUN"
+    },
+    {
+      "id": "LEGACY-7",
+      "input": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "files-first",
+        "distribution": "pie"
+      },
+      "expected": {
+        "accepted": true,
+        "design": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "files-first",
+          "distribution": "pie",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        }
+      },
+      "sourceCheck": "verified",
+      "rebuildStatus": "NOT_RUN"
+    },
+    {
+      "id": "LEGACY-NULL",
+      "input": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": null
+      },
+      "expected": {
+        "accepted": false,
+        "error": "layout는 허용된 선택지 중 하나여야 합니다."
+      },
+      "sourceCheck": "verified",
+      "rebuildStatus": "NOT_RUN"
+    },
+    {
+      "id": "LEGACY-MISSING-FOCUS",
+      "input": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "density": "comfortable"
+      },
+      "expected": {
+        "accepted": false,
+        "error": "focus는 허용된 선택지 중 하나여야 합니다."
+      },
+      "sourceCheck": "verified",
+      "rebuildStatus": "NOT_RUN"
+    },
+    {
+      "id": "LEGACY-EXTRA",
+      "input": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "cobalt",
+        "focus": "overview",
+        "density": "comfortable",
+        "unrecognized": "x"
+      },
+      "expected": {
+        "accepted": false,
+        "error": "화면 구성에는 지원하는 디자인 속성만 사용할 수 있습니다."
+      },
+      "sourceCheck": "verified",
+      "rebuildStatus": "NOT_RUN"
+    }
+  ],
+  "requiredRebuildSequence": {
+    "id": "DB-SEQ-01",
+    "snapshot": "contracts/dashboard-examples.json#/snapshot",
+    "steps": [
+      {
+        "id": "SEQ-1",
+        "request": "초록색 라이트 테마로, 전체 판정은 큰 도넛 차트를 강조해 주세요. 나머지 구성은 유지해 주세요.",
+        "baseDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "cobalt",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "expectedDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "requestedFields": [
+          "accent",
+          "theme",
+          "distribution",
+          "emphasis",
+          "chartSize"
+        ],
+        "unchangedFields": [
+          "title",
+          "subtitle",
+          "focus",
+          "density",
+          "layout",
+          "legend",
+          "motion",
+          "corners",
+          "fileVisualization"
+        ],
+        "requestSpan": {
+          "start": 0,
+          "end": 31,
+          "text": "초록색 라이트 테마로, 전체 판정은 큰 도넛 차트를 강조"
+        },
+        "renderOracle": {
+          "viewport": {
+            "width": 1600,
+            "height": 900
+          },
+          "rootAttributes": {
+            "theme": "light",
+            "distribution": "doughnut",
+            "emphasis": "charts",
+            "chartSize": "large",
+            "layout": "balanced",
+            "density": "comfortable"
+          },
+          "canvasInspect": {
+            "type": "doughnut",
+            "cutout": "78%",
+            "labels": [
+              "적합",
+              "부적합",
+              "확인 필요"
+            ],
+            "data": [
+              1,
+              1,
+              1
+            ],
+            "colors": [
+              "#198b58",
+              "#70b797",
+              "#18624c"
+            ]
+          },
+          "computedStyle": {
+            "bodyBackground": "#f3f6fc",
+            "panelBackground": "#ffffff",
+            "textColor": "#17243b"
+          },
+          "chartEmphasis": "charts section taller than same-viewport balanced baseline; large plan attrs and CSS weights apply; no invented counts",
+          "sharedChecks": [
+            "same frozen snapshot and counts across steps",
+            "all14fields equal expectedDesign",
+            "unrequested fields unchanged from baseDesign",
+            "actual canvas positive size; title not rewritten without request"
+          ],
+          "status": "NOT_RUN",
+          "evidence": null
+        },
+        "requirement": "OPTIONAL_FUTURE",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "SEQ-2",
+        "request": "다른 설정은 그대로 유지하고 전체 판정 차트만 파이로 바꿔 주세요.",
+        "baseDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "doughnut",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "expectedDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "requestedFields": [
+          "distribution"
+        ],
+        "unchangedFields": [
+          "title",
+          "subtitle",
+          "accent",
+          "focus",
+          "density",
+          "layout",
+          "theme",
+          "emphasis",
+          "chartSize",
+          "legend",
+          "motion",
+          "corners",
+          "fileVisualization"
+        ],
+        "requestSpan": {
+          "start": 16,
+          "end": 28,
+          "text": "전체 판정 차트만 파이"
+        },
+        "renderOracle": {
+          "viewport": {
+            "width": 1600,
+            "height": 900
+          },
+          "rootAttributes": {
+            "theme": "light",
+            "distribution": "pie",
+            "emphasis": "charts",
+            "chartSize": "large",
+            "layout": "balanced",
+            "density": "comfortable"
+          },
+          "canvasInspect": {
+            "type": "pie",
+            "cutout": 0,
+            "labels": [
+              "적합",
+              "부적합",
+              "확인 필요"
+            ],
+            "data": [
+              1,
+              1,
+              1
+            ],
+            "colors": [
+              "#198b58",
+              "#70b797",
+              "#18624c"
+            ]
+          },
+          "computedStyle": {
+            "bodyBackground": "#f3f6fc",
+            "panelBackground": "#ffffff",
+            "textColor": "#17243b"
+          },
+          "chartEmphasis": "charts section taller than same-viewport balanced baseline; large plan attrs and CSS weights apply; no invented counts",
+          "sharedChecks": [
+            "same frozen snapshot and counts across steps",
+            "all14fields equal expectedDesign",
+            "unrequested fields unchanged from baseDesign",
+            "actual canvas positive size; title not rewritten without request"
+          ],
+          "status": "NOT_RUN",
+          "evidence": null
+        },
+        "requirement": "OPTIONAL_FUTURE",
+        "status": "NOT_RUN"
+      },
+      {
+        "id": "SEQ-3",
+        "request": "종이처럼 하얀 바탕의 밝은 보고서로 보여 주세요. 여백은 넉넉하게 하고 차트의 모양과 색, 크기는 유지해 주세요.",
+        "baseDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "expectedDesign": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "#198b58",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "light",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "legend": "right",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "requestedFields": [
+          "theme",
+          "density"
+        ],
+        "unchangedFields": [
+          "title",
+          "subtitle",
+          "accent",
+          "focus",
+          "layout",
+          "distribution",
+          "emphasis",
+          "chartSize",
+          "legend",
+          "motion",
+          "corners",
+          "fileVisualization"
+        ],
+        "requestSpan": {
+          "start": 0,
+          "end": 18,
+          "text": "종이처럼 하얀 바탕의 밝은 보고서"
+        },
+        "renderOracle": {
+          "viewport": {
+            "width": 1600,
+            "height": 900
+          },
+          "rootAttributes": {
+            "theme": "light",
+            "distribution": "pie",
+            "emphasis": "charts",
+            "chartSize": "large",
+            "layout": "balanced",
+            "density": "comfortable"
+          },
+          "canvasInspect": {
+            "type": "pie",
+            "cutout": 0,
+            "labels": [
+              "적합",
+              "부적합",
+              "확인 필요"
+            ],
+            "data": [
+              1,
+              1,
+              1
+            ],
+            "colors": [
+              "#198b58",
+              "#70b797",
+              "#18624c"
+            ]
+          },
+          "computedStyle": {
+            "bodyBackground": "#f3f6fc",
+            "panelBackground": "#ffffff",
+            "textColor": "#17243b"
+          },
+          "chartEmphasis": "charts section taller than same-viewport balanced baseline; large plan attrs and CSS weights apply; no invented counts",
+          "sharedChecks": [
+            "same frozen snapshot and counts across steps",
+            "all14fields equal expectedDesign",
+            "unrequested fields unchanged from baseDesign",
+            "actual canvas positive size; title not rewritten without request"
+          ],
+          "status": "NOT_RUN",
+          "evidence": null
+        },
+        "requirement": "OPTIONAL_FUTURE",
+        "status": "NOT_RUN"
+      }
+    ],
+    "implicitDarkControl": {
+      "id": "SEQ-3-DARK-CONTROL",
+      "request": "종이처럼 하얀 바탕의 밝은 보고서로 보여 주세요. 여백은 넉넉하게 하고 차트의 모양과 색, 크기는 유지해 주세요.",
+      "baseDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "#198b58",
+        "focus": "overview",
+        "density": "compact",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "dark",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "expectedDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "#198b58",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "charts",
+        "chartSize": "large",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "requestedFields": [
+        "theme",
+        "density"
+      ],
+      "unchangedFields": [
+        "title",
+        "subtitle",
+        "accent",
+        "focus",
+        "layout",
+        "distribution",
+        "emphasis",
+        "chartSize",
+        "legend",
+        "motion",
+        "corners",
+        "fileVisualization"
+      ],
+      "requestSpan": {
+        "start": 0,
+        "end": 18,
+        "text": "종이처럼 하얀 바탕의 밝은 보고서"
+      },
+      "renderOracle": {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "rootAttributes": {
+          "theme": "light",
+          "distribution": "pie",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "layout": "balanced",
+          "density": "comfortable"
+        },
+        "canvasInspect": {
+          "type": "pie",
+          "cutout": 0,
+          "labels": [
+            "적합",
+            "부적합",
+            "확인 필요"
+          ],
+          "data": [
+            1,
+            1,
+            1
+          ],
+          "colors": [
+            "#198b58",
+            "#70b797",
+            "#18624c"
+          ]
+        },
+        "computedStyle": {
+          "bodyBackground": "#f3f6fc",
+          "panelBackground": "#ffffff",
+          "textColor": "#17243b"
+        },
+        "chartEmphasis": "charts section taller than same-viewport balanced baseline; large plan attrs and CSS weights apply; no invented counts",
+        "sharedChecks": [
+          "same frozen snapshot and counts across steps",
+          "all14fields equal expectedDesign",
+          "unrequested fields unchanged from baseDesign",
+          "actual canvas positive size; title not rewritten without request"
+        ],
+        "status": "NOT_RUN",
+        "evidence": null
+      },
+      "requirement": "OPTIONAL_FUTURE",
+      "status": "NOT_RUN"
+    },
+    "note": "SEQ-3 follows SEQ-2. Its dark+compact control separately proves nonliteral theme/density inference rather than merely retaining an already-light base. No phrase-wide or fixture-ID production branches.",
+    "requirement": "OPTIONAL_FUTURE"
+  },
+  "plannerEnvelopeContract": {
+    "requirement": "OPTIONAL_FUTURE",
+    "publicDesignFieldCount": 14,
+    "modelCallCountPerEnvelope": 1,
+    "totalModelCallBudget": 3,
+    "envelope": {
+      "required": [
+        "design",
+        "changes",
+        "notices"
+      ],
+      "additionalProperties": false,
+      "designSchema": "contracts/dashboard-design.schema.json",
+      "changes": {
+        "minItems": 0,
+        "maxItems": 14,
+        "uniqueBy": "field",
+        "required": [
+          "field",
+          "value",
+          "scope",
+          "basis",
+          "requestSpan",
+          "dependsOn"
+        ],
+        "additionalProperties": false,
+        "field": "one of14 DashboardDesign keys",
+        "value": "matches field schema AND design[field]",
+        "scope": [
+          "page",
+          "overall-chart",
+          "file-chart",
+          "content",
+          "motion"
+        ],
+        "basis": [
+          "explicit",
+          "semantic",
+          "dependent"
+        ],
+        "requestSpan": {
+          "required": [
+            "start",
+            "end",
+            "text"
+          ],
+          "unit": "UTF-16",
+          "predicate": "0 <= start < end <= instruction.length AND instruction.slice(start,end)===text"
+        },
+        "dependsOn": "explicit/semantic => []; dependent => only field=chartSize,value=large,dependsOn=[emphasis], design.emphasis=charts with valid emphasis change"
+      },
+      "notices": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 5,
+        "uniqueItems": true,
+        "items": {
+          "enum": [
+            "UNSUPPORTED_TREND",
+            "UNSUPPORTED_VISUALIZATION",
+            "SHARED_ACCENT_SCOPE",
+            "CUSTOMIZATION_NOT_APPLIED",
+            "CUSTOMIZATION_PARTIAL"
+          ]
+        }
+      }
+    },
+    "scopeByField": {
+      "theme": [
+        "page"
+      ],
+      "distribution": [
+        "overall-chart"
+      ],
+      "fileVisualization": [
+        "file-chart"
+      ],
+      "motion": [
+        "motion"
+      ],
+      "accent": [
+        "page",
+        "overall-chart",
+        "file-chart"
+      ],
+      "layout": [
+        "page"
+      ],
+      "density": [
+        "page"
+      ],
+      "corners": [
+        "page"
+      ],
+      "emphasis": [
+        "page"
+      ],
+      "chartSize": [
+        "overall-chart"
+      ],
+      "legend": [
+        "overall-chart"
+      ],
+      "title": [
+        "content"
+      ],
+      "subtitle": [
+        "content"
+      ],
+      "focus": [
+        "content"
+      ]
+    },
+    "mergeRule": "Only independently judged approvedChanges become mask; final=normalize({...requestTimeBase,...approvedChangeValues}). Schema/span checks alone do not prove semantic relevance.",
+    "unknownIntent": "No approved intent => preserve base/default with CUSTOMIZATION_NOT_APPLIED; incomplete coverage => approved subset only, standard fallback with CUSTOMIZATION_PARTIAL.",
+    "status": "NOT_RUN",
+    "normalPathCalls": {
+      "planner": 1,
+      "independentSemanticJudge": 1,
+      "total": 2
+    },
+    "semanticJudge": {
+      "role": "explore",
+      "maxOutputTokens": 2000,
+      "input": [
+        "request",
+        "requestTimeBase",
+        "candidateEnvelope",
+        "capabilities"
+      ],
+      "output": {
+        "required": [
+          "coverage",
+          "approvedChanges",
+          "rejectedFields",
+          "notices"
+        ],
+        "additionalProperties": false,
+        "coverage": [
+          "complete",
+          "incomplete"
+        ],
+        "approvedChanges": "0..14unique Change; field schema and span/scope/dependency checked; value may correct candidate and is not required to equal candidate.design[field]",
+        "rejectedFields": "0..14unique supported fields removed entirely; disjoint approved fields",
+        "notices": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "UNSUPPORTED_TREND",
+              "UNSUPPORTED_VISUALIZATION",
+              "SHARED_ACCENT_SCOPE",
+              "CUSTOMIZATION_NOT_APPLIED",
+              "CUSTOMIZATION_PARTIAL"
+            ]
+          }
+        }
+      },
+      "trustBoundary": "LLM semantic judgment can be wrong. Host guarantees no field outside approvedChanges changes, not perfect interpretation. Required real-judge negative QA is separate from mocked host-merge QA."
+    },
+    "budgetRules": [
+      "planner and judge and retries share total3calls",
+      "planner1->judge2 normal",
+      "planner1 parse failure->planner2->judge3; no later model call",
+      "judge2 parse failure->judge3 with same candidate",
+      "third call after sandbox failure may not change judge-approved intent; changed intent rejected and standard fallback",
+      "no budget for judge => no generated success"
+    ]
+  },
+  "semanticNegativeCases": [
+    {
+      "id": "SEM-UNREQUESTED-THEME",
+      "requirement": "OPTIONAL_FUTURE",
+      "request": "범례 아래로",
+      "baseDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "candidate": {
+        "design": {
+          "title": "검토 결과, 한눈에.",
+          "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+          "accent": "red",
+          "focus": "overview",
+          "density": "comfortable",
+          "layout": "balanced",
+          "distribution": "pie",
+          "theme": "dark",
+          "emphasis": "balanced",
+          "chartSize": "standard",
+          "legend": "bottom",
+          "motion": "full",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        },
+        "changes": [
+          {
+            "field": "legend",
+            "value": "bottom",
+            "scope": "overall-chart",
+            "basis": "semantic",
+            "requestSpan": {
+              "start": 0,
+              "end": 6,
+              "text": "범례 아래로"
+            },
+            "dependsOn": []
+          },
+          {
+            "field": "theme",
+            "value": "dark",
+            "scope": "page",
+            "basis": "semantic",
+            "requestSpan": {
+              "start": 0,
+              "end": 6,
+              "text": "범례 아래로"
+            },
+            "dependsOn": []
+          }
+        ],
+        "notices": []
+      },
+      "structuralExpectation": "Both spans and field values are structurally valid; structural validation alone MUST NOT be claimed to reject theme.",
+      "requiredJudge": {
+        "coverage": "complete",
+        "approvedChanges": [
+          {
+            "field": "legend",
+            "value": "bottom",
+            "scope": "overall-chart",
+            "basis": "semantic",
+            "requestSpan": {
+              "start": 0,
+              "end": 6,
+              "text": "범례 아래로"
+            },
+            "dependsOn": []
+          }
+        ],
+        "rejectedFields": [
+          "theme"
+        ],
+        "notices": []
+      },
+      "expectedFinalDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "bottom",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "expectedModelCalls": 2,
+      "hostRepair": "merge approved legend into fixed base; discard candidate.theme; no third call needed",
+      "checks": [
+        "mock judge output => host preserves light",
+        "actual semantic judge given candidate => rejects theme",
+        "if mocked wrong judge also approves theme, record that host structurally accepts this semantic error; do not claim universal language proof"
+      ],
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "SEM-UNSUPPORTED-TREND",
+      "requirement": "OPTIONAL_FUTURE",
+      "request": "지난달부터 오늘까지 추이 그래프를 추가해 주세요. 제목과 기존 설정은 유지해 주세요.",
+      "baseDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "capabilities": {
+        "hasTimeSeries": false,
+        "supportedDistribution": [
+          "doughnut",
+          "pie",
+          "bar",
+          "polarArea"
+        ],
+        "sharedAccent": true
+      },
+      "requiredJudge": {
+        "coverage": "complete",
+        "approvedChanges": [],
+        "rejectedFields": [],
+        "notices": [
+          "UNSUPPORTED_TREND"
+        ]
+      },
+      "expectedFinalDesign": {
+        "title": "검토 결과, 한눈에.",
+        "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+        "accent": "red",
+        "focus": "overview",
+        "density": "comfortable",
+        "layout": "balanced",
+        "distribution": "pie",
+        "theme": "light",
+        "emphasis": "balanced",
+        "chartSize": "standard",
+        "legend": "right",
+        "motion": "full",
+        "corners": "rounded",
+        "fileVisualization": "cards"
+      },
+      "expectedPublicNotices": [
+        "UNSUPPORTED_TREND"
+      ],
+      "expectedHostText": "시간 정보가 없어 추이 그래프는 만들 수 없어요. 현재 판정 분포를 보여드려요.",
+      "expectedSubtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "noticeLocation": "separate host/standalone notice channel, never subtitle",
+      "status": "NOT_RUN"
+    }
+  ],
+  "noticeContract": {
+    "requirement": "OPTIONAL_FUTURE",
+    "maxItems": 5,
+    "unique": true,
+    "codes": [
+      "UNSUPPORTED_TREND",
+      "UNSUPPORTED_VISUALIZATION",
+      "SHARED_ACCENT_SCOPE",
+      "CUSTOMIZATION_NOT_APPLIED",
+      "CUSTOMIZATION_PARTIAL"
+    ],
+    "publicJobField": "notices?",
+    "designFieldsRemain14": true,
+    "forbidFreeText": true,
+    "subtitleUnchangedUnlessExplicitRequest": true
+  },
+  "currentReproduction": {
+    "profile": "CURRENT_REPRODUCTION",
+    "preferenceOracle": "preferenceCases[].observedExpected",
+    "baseDesignSuccessOracle": "baseDesignCase.observedSuccessfulExpected",
+    "baseDesignFallbackOracle": "baseDesignCase.observedFallbackExpected",
+    "parserOracle": "legacyParserCases (same host parser for generated and saved plans)",
+    "rendererOracle": "browserMatrix (explicit supplied design; not proof of natural-language planner behavior)",
+    "modelCalls": "At most 3 plan calls total; no semantic judge",
+    "snapshot": "Current allowlist omits presence/missingVerified; pending normalizes to review",
+    "excludedFutureSections": [
+      "requiredGates",
+      "requiredRebuildSequence",
+      "plannerEnvelopeContract",
+      "semanticNegativeCases",
+      "noticeContract"
+    ],
+    "executionStatus": "NOT_RUN"
+  }
+}

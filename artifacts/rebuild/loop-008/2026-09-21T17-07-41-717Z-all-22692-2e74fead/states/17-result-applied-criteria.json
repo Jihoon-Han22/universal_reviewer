@@ -1,0 +1,72 @@
+{
+  "id": "17-result-applied-criteria",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "17-result-applied-criteria",
+    "screenshot": {
+      "path": "17-result-applied-criteria.png",
+      "bytes": 176272,
+      "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/17-result-applied-criteria.json",
+      "bytes": 766801,
+      "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:10:07.149Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/17-result-applied-criteria-font-readiness.json",
+    "bytes": 2301116,
+    "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/17-result-applied-criteria.png",
+    "bytes": 171079,
+    "sha256": "efd761fae9d59ca89a2accb82a7a825c9bded9ad985368fe008f7ef795b917c5",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:10:09.826Z",
+    "capturedAt": "2026-09-21T17:10:10.024Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/17-result-applied-criteria.json",
+    "bytes": 1190470,
+    "sha256": "8e7c03a162ab2d94a5e980736175f37ccbceb4840959b6c4832ae74999abe162"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/17-result-applied-criteria-measurement.json",
+    "bytes": 205849,
+    "sha256": "0662e7ee681a1e8730fc604cf30d050e20eb2c5dcee5e92e202c4f97e5b5ca31"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T17:10:11.853Z"
+}

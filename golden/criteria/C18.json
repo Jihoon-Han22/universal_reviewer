@@ -1,0 +1,60 @@
+{
+  "id": "C18",
+  "desc": "시트 폭 40열, 기준표는 AA~AE 열에 위치",
+  "expect": "adapter",
+  "sheet": "품질기준",
+  "table": {
+    "header_row": 6,
+    "data_from": 7
+  },
+  "columns": {
+    "item": "AA",
+    "op_value": "AB",
+    "unit": "AC",
+    "note": "AE"
+  },
+  "criteria": [
+    {
+      "item": "산화마그네슘",
+      "op": ">=",
+      "value": 2.0,
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "op": "<=",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "item": "비표면적",
+      "op": ">=",
+      "value": 4000,
+      "unit": "cm2/g"
+    },
+    {
+      "item": "활성도지수",
+      "op": ">=",
+      "value": 80,
+      "unit": "%"
+    },
+    {
+      "item": "밀도",
+      "op": ">=",
+      "value": 2.2,
+      "unit": "g/cm3"
+    },
+    {
+      "item": "압축강도",
+      "op": ">=",
+      "value": 24.0,
+      "unit": "MPa"
+    }
+  ]
+}

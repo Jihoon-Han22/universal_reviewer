@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-20T17:36:00.988Z",
+  "scope": "architecture authoring checks, not rebuilt product acceptance",
+  "designReview": {
+    "modules": 37,
+    "questions": 203,
+    "assessments": 406,
+    "passed": true
+  },
+  "package": {
+    "schemaVersion": 1,
+    "checkedAt": "2026-09-20T17:36:00.966Z",
+    "scope": "package integrity only, not product equivalence",
+    "implementationExecuted": false,
+    "completeProductAcceptance": false,
+    "files": 342,
+    "jsonFiles": 93,
+    "checkedLinks": 161,
+    "requiredFiles": 63,
+    "moduleCount": 37,
+    "questionCount": 203,
+    "referenceCaptures": 34,
+    "goalCharacters": 812,
+    "errors": [],
+    "warnings": [],
+    "status": "pass"
+  },
+  "cleanRoomEvidence": "cleanroom-smoke.json",
+  "bootstrapEvidence": "bootstrap-portability.json",
+  "selftestEvidence": "verification-selftests.json",
+  "sourceIntegrityEvidence": "source-integrity.json",
+  "implementationExecuted": false,
+  "completeProductAcceptance": false
+}

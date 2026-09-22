@@ -1,0 +1,214 @@
+{
+  "timestamp": "2026-09-21T05:58:23.985Z",
+  "kind": "LOCAL_CURRENT_SOURCE_PROBES",
+  "providerCalls": 0,
+  "productModified": false,
+  "results": [
+    {
+      "id": "CORE-PROBE-ADMISSION-1",
+      "status": "PASS",
+      "input": {
+        "data": {
+          "items": [
+            {
+              "criterionId": "c",
+              "label": "강도",
+              "value": "2",
+              "unit": "%",
+              "status": "pass",
+              "uncertain": false,
+              "explanation": "합성 admission 검사",
+              "evidence": [
+                {
+                  "documentId": "d",
+                  "quote": "원문에 없는 값",
+                  "sheet": "없는시트",
+                  "cell": "A0"
+                }
+              ]
+            }
+          ]
+        },
+        "document": {
+          "id": "d",
+          "name": "probe.csv",
+          "kind": "csv"
+        },
+        "criteria": [
+          {
+            "id": "c",
+            "label": "강도",
+            "rule": "1 % 이상",
+            "comparison": {
+              "operator": "gte",
+              "value": 1,
+              "unit": "%"
+            },
+            "conditions": [],
+            "categoryPath": [],
+            "needsConfirmation": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "pass",
+        "evidence": [
+          {
+            "documentId": "d",
+            "quote": "원문에 없는 값",
+            "sheet": "없는시트",
+            "cell": "A0"
+          }
+        ]
+      },
+      "source": "server/review.mjs:137-182",
+      "interpretation": "Syntactic admission accepts the location; no general quote/bounds guard exists. This is a current limitation, not a semantic safety pass."
+    },
+    {
+      "id": "CORE-PROBE-ADMISSION-2",
+      "status": "PASS",
+      "input": {
+        "data": {
+          "items": [
+            {
+              "criterionId": "c",
+              "label": "강도",
+              "value": "2",
+              "unit": "%",
+              "status": "pass",
+              "uncertain": false,
+              "explanation": "합성 admission 검사",
+              "evidence": [
+                {
+                  "documentId": "d",
+                  "quote": "원문에 없는 값",
+                  "sheet": "없는시트",
+                  "cell": "B2:A1"
+                }
+              ]
+            }
+          ]
+        },
+        "document": {
+          "id": "d",
+          "name": "probe.csv",
+          "kind": "csv"
+        },
+        "criteria": [
+          {
+            "id": "c",
+            "label": "강도",
+            "rule": "1 % 이상",
+            "comparison": {
+              "operator": "gte",
+              "value": 1,
+              "unit": "%"
+            },
+            "conditions": [],
+            "categoryPath": [],
+            "needsConfirmation": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "pass",
+        "evidence": [
+          {
+            "documentId": "d",
+            "quote": "원문에 없는 값",
+            "sheet": "없는시트",
+            "cell": "B2:A1"
+          }
+        ]
+      },
+      "source": "server/review.mjs:137-182",
+      "interpretation": "Syntactic admission accepts the location; no general quote/bounds guard exists. This is a current limitation, not a semantic safety pass."
+    },
+    {
+      "id": "CORE-PROBE-ADMISSION-3",
+      "status": "PASS",
+      "input": {
+        "data": {
+          "items": [
+            {
+              "criterionId": "c",
+              "label": "강도",
+              "value": "2",
+              "unit": "%",
+              "status": "pass",
+              "uncertain": false,
+              "explanation": "합성 admission 검사",
+              "evidence": [
+                {
+                  "documentId": "d",
+                  "quote": "원문에 없는 값",
+                  "sheet": "없는시트",
+                  "cell": "ZZZ9999999"
+                }
+              ]
+            }
+          ]
+        },
+        "document": {
+          "id": "d",
+          "name": "probe.csv",
+          "kind": "csv"
+        },
+        "criteria": [
+          {
+            "id": "c",
+            "label": "강도",
+            "rule": "1 % 이상",
+            "comparison": {
+              "operator": "gte",
+              "value": 1,
+              "unit": "%"
+            },
+            "conditions": [],
+            "categoryPath": [],
+            "needsConfirmation": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "pass",
+        "evidence": [
+          {
+            "documentId": "d",
+            "quote": "원문에 없는 값",
+            "sheet": "없는시트",
+            "cell": "ZZZ9999999"
+          }
+        ]
+      },
+      "source": "server/review.mjs:137-182",
+      "interpretation": "Syntactic admission accepts the location; no general quote/bounds guard exists. This is a current limitation, not a semantic safety pass."
+    },
+    {
+      "id": "CORE-PROBE-CONDITION-01",
+      "status": "PASS",
+      "actual": {
+        "conditions": [
+          "7일",
+          "28일"
+        ]
+      },
+      "source": "server/conditions.mjs:preserveSourceConditions",
+      "interpretation": "sourceEvidence-only does not constrain recovered source rows; current output merges both same-label rows."
+    },
+    {
+      "id": "CORE-PROBE-GROUND-01",
+      "status": "PASS",
+      "actual": {
+        "categoryPath": [
+          "없는유형"
+        ],
+        "classificationStatus": "resolved",
+        "needsConfirmation": false,
+        "hasComparison": false
+      },
+      "source": "server/review.mjs:validateCriteria",
+      "interpretation": "Shape normalization does not independently prove hierarchy and does not force confirmation after dropping this malformed comparator."
+    }
+  ]
+}

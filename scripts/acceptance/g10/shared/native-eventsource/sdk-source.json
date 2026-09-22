@@ -1,0 +1,70 @@
+{
+  "kind": "eventsource-native-request-sdk-source",
+  "version": "1.62.1",
+  "refs": [
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json",
+      "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af",
+      "bytes": 1416
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f",
+      "bytes": 704
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44",
+      "bytes": 648
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/package.json",
+      "sha256": "07c47543631fef9508760365dee9fbe958c562093ec8d122543949ed231f233f",
+      "bytes": 876
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/index.mjs",
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd",
+      "bytes": 1063
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/index.js",
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b",
+      "bytes": 697
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "9393fa79e1c67c74edc26b610d65a4f7ed73d345a762465cc88340a33a2454ac",
+      "bytes": 3425603
+    }
+  ],
+  "donor": {
+    "path": ".cache/rebuild/g10-a-next-native-loop011-prep/playwright-network-source.json",
+    "sha256": "e99cc65b4b57f3e29d71bded11fbf58d660f761c99edc826a9ed0e3effa5ea0b",
+    "bytes": 15813
+  },
+  "selectedAdditionalExcerpts": [
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 36001,
+      "last": 36067,
+      "text": "        let redirectedFrom = null;\n        if (requestWillBeSentEvent.redirectResponse) {\n          const request3 = this._requestIdToRequest.get(requestWillBeSentEvent.requestId);\n          if (request3) {\n            this._handleRequestRedirect(request3, requestWillBeSentEvent.redirectResponse, requestWillBeSentEvent.timestamp, requestWillBeSentEvent.redirectHasExtraInfo);\n            redirectedFrom = request3;\n          }\n        }\n        let frame = requestWillBeSentEvent.frameId ? this._page?.frameManager.frame(requestWillBeSentEvent.frameId) : requestWillBeSentSessionInfo.workerFrame;\n        if (!frame && this._page && requestPausedEvent && requestPausedEvent.frameId)\n          frame = this._page.frameManager.frame(requestPausedEvent.frameId);\n        if (!frame && this._page && requestWillBeSentEvent.frameId === (this._page?.delegate)._targetId) {\n          frame = this._page.frameManager.frameAttached(requestWillBeSentEvent.frameId, null);\n        }\n        const isInterceptedOptionsPreflight = !!requestPausedEvent && requestPausedEvent.request.method === \"OPTIONS\" && requestWillBeSentEvent.initiator.type === \"preflight\";\n        if (isInterceptedOptionsPreflight && (this._page || this._serviceWorker).needsRequestInterception()) {\n          const requestHeaders = requestPausedEvent.request.headers;\n          const responseHeaders = [\n            { name: \"Access-Control-Allow-Origin\", value: requestHeaders[\"Origin\"] || \"*\" },\n            { name: \"Access-Control-Allow-Methods\", value: requestHeaders[\"Access-Control-Request-Method\"] || \"GET, POST, OPTIONS, DELETE\" },\n            { name: \"Access-Control-Allow-Credentials\", value: \"true\" }\n          ];\n          if (requestHeaders[\"Access-Control-Request-Headers\"])\n            responseHeaders.push({ name: \"Access-Control-Allow-Headers\", value: requestHeaders[\"Access-Control-Request-Headers\"] });\n          requestPausedSessionInfo.session._sendMayFail(\"Fetch.fulfillRequest\", {\n            requestId: requestPausedEvent.requestId,\n            responseCode: 204,\n            responsePhrase: statusText(204),\n            responseHeaders,\n            body: \"\"\n          });\n          return;\n        }\n        if (!frame && !this._serviceWorker) {\n          if (requestPausedEvent)\n            requestPausedSessionInfo.session._sendMayFail(\"Fetch.continueRequest\", { requestId: requestPausedEvent.requestId });\n          return;\n        }\n        let route2 = null;\n        let headersOverride;\n        if (requestPausedEvent) {\n          if (redirectedFrom || !this._userRequestInterceptionEnabled && this._protocolRequestInterceptionEnabled) {\n            headersOverride = redirectedFrom?._originalRequestRoute?._alreadyContinuedParams?.headers;\n            if (headersOverride) {\n              const originalHeaders = Object.entries(requestPausedEvent.request.headers).map(([name, value2]) => ({ name, value: value2 }));\n              headersOverride = removeCookieHeader(applyHeadersOverrides(originalHeaders, headersOverride));\n            }\n            requestPausedSessionInfo.session._sendMayFail(\"Fetch.continueRequest\", { requestId: requestPausedEvent.requestId, headers: headersOverride });\n          } else {\n            route2 = new RouteImpl(requestPausedSessionInfo.session, requestPausedEvent.requestId);\n          }\n        }\n        const isNavigationRequest = requestWillBeSentEvent.requestId === requestWillBeSentEvent.loaderId && requestWillBeSentEvent.type === \"Document\";\n        const documentId = isNavigationRequest ? requestWillBeSentEvent.loaderId : void 0;\n        const request2 = new InterceptableRequest({\n          session: requestWillBeSentSessionInfo.session,\n          context: (this._page || this._serviceWorker).browserContext,\n          frame: frame || null,\n          serviceWorker: this._serviceWorker || null,\n          documentId,\n          route: route2,\n          requestWillBeSentEvent,\n          requestPausedEvent,\n          redirectedFrom,\n          headersOverride: headersOverride || null\n        });\n        this._requestIdToRequest.set(requestWillBeSentEvent.requestId, request2);"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 59133,
+      "last": 59146,
+      "text": "      constructor(parent, type3, guid, initializer) {\n        super(parent, type3, guid, initializer);\n        this._redirectedFrom = null;\n        this._redirectedTo = null;\n        this._failureText = null;\n        this._response = null;\n        this._fallbackOverrides = {};\n        this._redirectedFrom = _Request.fromNullable(initializer.redirectedFrom);\n        if (this._redirectedFrom)\n          this._redirectedFrom._redirectedTo = this;\n        this._provisionalHeaders = new RawHeaders(initializer.headers);\n        this._timing = {\n          startTime: 0,\n          domainLookupStart: -1,"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "text": " postData, headers, wallTimeMs) {\n        super(frame || context2, \"request\");\n        this._response = null;\n        this._redirectedTo = null;\n        this._failureText = null;\n        this._frame = null;\n        this._serviceWorker = null;\n        this._rawRequestHeadersPromise = new ManualPromise();\n        this._waitForResponsePromise = new ManualPromise();\n        this._responseEndTiming = -1;\n        assert(!url3.startsWith(\"data:\"), \"Data urls should not fire requests\");\n        this._context = context2;\n        this._frame = frame;\n        this._serviceWorker = serviceWorker;\n        this._redirectedFrom = redirectedFrom;\n        if (redirectedFrom)\n          redirectedFrom._redirectedTo = this;\n        this._documentId = documentId;\n        this._url = stripFragmentFromUrl(url3);\n        this._resourceType = resourceType;\n        this._method = method;\n        this._postData = postData;\n        this._headers = headers;\n        this._wallTimeMs = wallTimeMs;\n        this._isFavicon = url3.endsWith(\"/favicon.ico\") || !!redirectedFrom?._",
+      "characterOffsetUtf16": 512862
+    }
+  ],
+  "findings": [
+    "Redirect hops share native requestId but retain distinct native timestamps/wallTimes and distinct reciprocal public Request identities.",
+    "Final capture must retain public/server reciprocal redirect links after successor creation; request-created predecessor has no successor yet.",
+    "Native Request failure forwards the original public Request identity. Object-to-first-request correspondence is qualified only by complete unique calibrated lifecycle membership, never by public delivery order."
+  ]
+}

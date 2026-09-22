@@ -1,0 +1,35 @@
+{
+  "id": "18-result-criterion-source",
+  "selected": true,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "An earlier required transition/capture failed (06-criteria-input-file); state was not synthesized.",
+  "reference": {
+    "id": "18-result-criterion-source",
+    "screenshot": {
+      "path": "18-result-criterion-source.png",
+      "bytes": 173692,
+      "sha256": "117b53ab122df2d0b12ba8937744d0d57fb3740ced3b72b6bb74527b64475380",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/18-result-criterion-source.json",
+      "bytes": 743105,
+      "sha256": "ca6a425267caf467c5fa396f386c206d24e00ab2e82e5eb7f880b4b3b7eca788"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

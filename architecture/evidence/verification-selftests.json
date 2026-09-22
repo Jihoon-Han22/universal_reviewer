@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-20T17:21:42.883Z",
+  "origin": "observed tool execution in authoring session",
+  "command": "node --test architecture/validation/selftest.mjs architecture/validation/acceptance-selftest.mjs architecture/validation/package-validator-selftest.mjs architecture/reviews/main-session/score.test.mjs",
+  "exitCode": 0,
+  "tests": 83,
+  "pass": 83,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "durationMs": 6436.4971,
+  "inputs": [
+    {
+      "path": "validation/selftest.mjs",
+      "sha256": "e1dc5f0fbf4a78f84bfb15669e29c9a637de9db28b80be4da9d0113936666ba0"
+    },
+    {
+      "path": "validation/acceptance-selftest.mjs",
+      "sha256": "59ae22484ebaf4459146ce96b8c32b3e006c6b4369aa6e294996ae84a8b92ca3"
+    },
+    {
+      "path": "validation/package-validator-selftest.mjs",
+      "sha256": "392e8a54a27f12428239d009a30a371f4dc97f0762ab14201812e44a4ced8812"
+    },
+    {
+      "path": "reviews/main-session/score.test.mjs",
+      "sha256": "aeb7662bd4de6fe8bdafee2b40fe3c70ba893e92234f0cce0ad08adc87219440"
+    }
+  ],
+  "scope": "validator and design-score harness self-tests only",
+  "implementationExecuted": false,
+  "completeProductAcceptance": false
+}

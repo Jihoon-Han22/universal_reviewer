@@ -1,0 +1,35 @@
+{
+  "id": "25-dashboard-source",
+  "selected": true,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "An earlier required transition/capture failed (06-criteria-input-file); state was not synthesized.",
+  "reference": {
+    "id": "25-dashboard-source",
+    "screenshot": {
+      "path": "25-dashboard-source.png",
+      "bytes": 106106,
+      "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/25-dashboard-source.json",
+      "bytes": 1907545,
+      "sha256": "f1510ed6ae3dd8e8f3edb6d3d2cbb5c3b27f5ec702872a9c4d783dc0f2d43451"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

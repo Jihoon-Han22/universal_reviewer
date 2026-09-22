@@ -1,0 +1,72 @@
+{
+  "id": "34-result-detail-fail-1280",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "34-result-detail-fail-1280",
+    "screenshot": {
+      "path": "34-result-detail-fail-1280.png",
+      "bytes": 157045,
+      "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/34-result-detail-fail-1280.json",
+      "bytes": 710554,
+      "sha256": "962b5996d271694f3a7c2d1c4ac9951a257b70c3f9c7f239453579694708b492"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:26:56.635Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/34-result-detail-fail-1280-font-readiness.json",
+    "bytes": 2301320,
+    "sha256": "4a83fe84d4865b4bb1ef2a423e158a165901826d947fe7bc8c0f6864da44e095"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/34-result-detail-fail-1280.png",
+    "bytes": 152079,
+    "sha256": "1d7f14d0d8f073b4d554d5c139bd4bdb7429e486ade65cffa6d727191d2f7e24",
+    "width": 1280,
+    "height": 800,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:26:58.860Z",
+    "capturedAt": "2026-09-21T15:26:59.133Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/34-result-detail-fail-1280.json",
+    "bytes": 1102968,
+    "sha256": "13a9d85376338765794bd3ce1476ec48dd027c0c710c093f605a043ef13916c0"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/34-result-detail-fail-1280-measurement.json",
+    "bytes": 205779,
+    "sha256": "932a749cb303e6b0dedd5decd62d537390dc6bd0ea611c89cfe83fc8fe03c867"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T15:27:00.885Z"
+}

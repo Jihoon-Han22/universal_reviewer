@@ -1,0 +1,1391 @@
+{
+  "schemaVersion": 1,
+  "scope": "declared design questions only; no implementation or universal coverage claim",
+  "completeProductAcceptance": false,
+  "total": {
+    "denominator": 235,
+    "clarity": {
+      "passed": 201,
+      "failed": 7,
+      "unverified": 27,
+      "score": 85.53191489361703,
+      "reviewCoverage": 88.51063829787235
+    },
+    "accuracy": {
+      "passed": 202,
+      "failed": 26,
+      "unverified": 7,
+      "score": 85.95744680851064,
+      "reviewCoverage": 97.02127659574468
+    },
+    "ambiguityScore": 14.468085106382972,
+    "unresolvedAmbiguityQuestions": 34
+  },
+  "modules": [
+    {
+      "moduleId": "CORE-01",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-02",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-03",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-04",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-05",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-06",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 1,
+        "unverified": 0,
+        "score": 83.33333333333333,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-07",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-08",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "accuracy": {
+        "passed": 4,
+        "failed": 2,
+        "unverified": 0,
+        "score": 66.66666666666667,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-09",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-10",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-11",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 4,
+        "failed": 1,
+        "unverified": 0,
+        "score": 80,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-12",
+      "denominator": 7,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 2,
+        "score": 71.42857142857143,
+        "reviewCoverage": 71.42857142857143
+      },
+      "accuracy": {
+        "passed": 3,
+        "failed": 4,
+        "unverified": 0,
+        "score": 42.857142857142854,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 28.57142857142857,
+      "unresolvedAmbiguityQuestions": 2
+    },
+    {
+      "moduleId": "CORE-13",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-14",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 1,
+        "unverified": 0,
+        "score": 83.33333333333333,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-15",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "accuracy": {
+        "passed": 4,
+        "failed": 2,
+        "unverified": 0,
+        "score": 66.66666666666667,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-16",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 1,
+        "unverified": 0,
+        "score": 83.33333333333333,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-17",
+      "denominator": 5,
+      "clarity": {
+        "passed": 4,
+        "failed": 1,
+        "unverified": 0,
+        "score": 80,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 20,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "CORE-18",
+      "denominator": 5,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-19",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 0,
+        "unverified": 1,
+        "score": 83.33333333333333,
+        "reviewCoverage": 83.33333333333333
+      },
+      "accuracy": {
+        "passed": 3,
+        "failed": 3,
+        "unverified": 0,
+        "score": 50,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-01",
+      "denominator": 7,
+      "clarity": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 0,
+        "score": 85.71428571428571,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 0,
+        "score": 85.71428571428571,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 14.285714285714292,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-02",
+      "denominator": 9,
+      "clarity": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 2,
+        "score": 66.66666666666667,
+        "reviewCoverage": 77.77777777777777
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 2,
+        "unverified": 1,
+        "score": 66.66666666666667,
+        "reviewCoverage": 88.88888888888889
+      },
+      "ambiguityScore": 33.33333333333333,
+      "unresolvedAmbiguityQuestions": 3
+    },
+    {
+      "moduleId": "UI-03",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-04",
+      "denominator": 7,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 1,
+        "score": 85.71428571428571,
+        "reviewCoverage": 85.71428571428571
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 0,
+        "score": 85.71428571428571,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 14.285714285714292,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-05",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-06",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-07",
+      "denominator": 7,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 1,
+        "score": 85.71428571428571,
+        "reviewCoverage": 85.71428571428571
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 0,
+        "score": 85.71428571428571,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 14.285714285714292,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-08",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-09",
+      "denominator": 8,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 2,
+        "score": 75,
+        "reviewCoverage": 75
+      },
+      "accuracy": {
+        "passed": 5,
+        "failed": 3,
+        "unverified": 0,
+        "score": 62.5,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 25,
+      "unresolvedAmbiguityQuestions": 2
+    },
+    {
+      "moduleId": "UI-10",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-11",
+      "denominator": 7,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 1,
+        "score": 85.71428571428571,
+        "reviewCoverage": 85.71428571428571
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 1,
+        "unverified": 0,
+        "score": 85.71428571428571,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 14.285714285714292,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-12",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-13",
+      "denominator": 6,
+      "clarity": {
+        "passed": 5,
+        "failed": 1,
+        "unverified": 0,
+        "score": 83.33333333333333,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 16.66666666666667,
+      "unresolvedAmbiguityQuestions": 1
+    },
+    {
+      "moduleId": "UI-14",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-15",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-16",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-17",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "UI-18",
+      "denominator": 6,
+      "clarity": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "accuracy": {
+        "passed": 6,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 0,
+      "unresolvedAmbiguityQuestions": 0
+    },
+    {
+      "moduleId": "CORE-20",
+      "denominator": 4,
+      "clarity": {
+        "passed": 0,
+        "failed": 0,
+        "unverified": 4,
+        "score": 0,
+        "reviewCoverage": 0
+      },
+      "accuracy": {
+        "passed": 4,
+        "failed": 0,
+        "unverified": 0,
+        "score": 100,
+        "reviewCoverage": 100
+      },
+      "ambiguityScore": 100,
+      "unresolvedAmbiguityQuestions": 4
+    },
+    {
+      "moduleId": "CORE-21",
+      "denominator": 11,
+      "clarity": {
+        "passed": 0,
+        "failed": 0,
+        "unverified": 11,
+        "score": 0,
+        "reviewCoverage": 0
+      },
+      "accuracy": {
+        "passed": 3,
+        "failed": 5,
+        "unverified": 3,
+        "score": 27.272727272727273,
+        "reviewCoverage": 72.72727272727273
+      },
+      "ambiguityScore": 100,
+      "unresolvedAmbiguityQuestions": 11
+    }
+  ],
+  "steps": [
+    {
+      "stepId": "STEP-00",
+      "denominator": 49,
+      "clarity": {
+        "passed": 29,
+        "failed": 2,
+        "unverified": 18,
+        "score": 59.183673469387756,
+        "reviewCoverage": 63.265306122448976
+      },
+      "accuracy": {
+        "passed": 34,
+        "failed": 11,
+        "unverified": 4,
+        "score": 69.38775510204081,
+        "reviewCoverage": 91.83673469387755
+      },
+      "ambiguityScore": 40.816326530612244,
+      "unresolvedAmbiguityQuestions": 20
+    },
+    {
+      "stepId": "STEP-01",
+      "denominator": 63,
+      "clarity": {
+        "passed": 44,
+        "failed": 3,
+        "unverified": 16,
+        "score": 69.84126984126983,
+        "reviewCoverage": 74.60317460317461
+      },
+      "accuracy": {
+        "passed": 45,
+        "failed": 13,
+        "unverified": 5,
+        "score": 71.42857142857143,
+        "reviewCoverage": 92.06349206349206
+      },
+      "ambiguityScore": 30.158730158730165,
+      "unresolvedAmbiguityQuestions": 19
+    },
+    {
+      "stepId": "STEP-02",
+      "denominator": 106,
+      "clarity": {
+        "passed": 85,
+        "failed": 3,
+        "unverified": 18,
+        "score": 80.18867924528301,
+        "reviewCoverage": 83.01886792452831
+      },
+      "accuracy": {
+        "passed": 83,
+        "failed": 18,
+        "unverified": 5,
+        "score": 78.30188679245283,
+        "reviewCoverage": 95.28301886792453
+      },
+      "ambiguityScore": 19.811320754716988,
+      "unresolvedAmbiguityQuestions": 21
+    },
+    {
+      "stepId": "STEP-03",
+      "denominator": 83,
+      "clarity": {
+        "passed": 64,
+        "failed": 3,
+        "unverified": 16,
+        "score": 77.10843373493977,
+        "reviewCoverage": 80.72289156626506
+      },
+      "accuracy": {
+        "passed": 64,
+        "failed": 14,
+        "unverified": 5,
+        "score": 77.10843373493977,
+        "reviewCoverage": 93.97590361445783
+      },
+      "ambiguityScore": 22.891566265060234,
+      "unresolvedAmbiguityQuestions": 19
+    },
+    {
+      "stepId": "STEP-04",
+      "denominator": 73,
+      "clarity": {
+        "passed": 54,
+        "failed": 3,
+        "unverified": 16,
+        "score": 73.97260273972603,
+        "reviewCoverage": 78.08219178082192
+      },
+      "accuracy": {
+        "passed": 55,
+        "failed": 13,
+        "unverified": 5,
+        "score": 75.34246575342466,
+        "reviewCoverage": 93.15068493150685
+      },
+      "ambiguityScore": 26.027397260273972,
+      "unresolvedAmbiguityQuestions": 19
+    },
+    {
+      "stepId": "STEP-05",
+      "denominator": 127,
+      "clarity": {
+        "passed": 103,
+        "failed": 3,
+        "unverified": 21,
+        "score": 81.10236220472441,
+        "reviewCoverage": 83.46456692913385
+      },
+      "accuracy": {
+        "passed": 99,
+        "failed": 23,
+        "unverified": 5,
+        "score": 77.95275590551181,
+        "reviewCoverage": 96.06299212598425
+      },
+      "ambiguityScore": 18.897637795275585,
+      "unresolvedAmbiguityQuestions": 24
+    },
+    {
+      "stepId": "STEP-06",
+      "denominator": 167,
+      "clarity": {
+        "passed": 141,
+        "failed": 6,
+        "unverified": 20,
+        "score": 84.4311377245509,
+        "reviewCoverage": 88.02395209580838
+      },
+      "accuracy": {
+        "passed": 140,
+        "failed": 21,
+        "unverified": 6,
+        "score": 83.83233532934132,
+        "reviewCoverage": 96.40718562874251
+      },
+      "ambiguityScore": 15.568862275449106,
+      "unresolvedAmbiguityQuestions": 26
+    }
+  ],
+  "openIssues": [
+    {
+      "id": "CLARITY-001",
+      "severity": "medium",
+      "questionIds": [
+        "UI-13-C05"
+      ],
+      "files": [
+        "decomposition/ui-modules.json",
+        "specs/04-ui-motion.md:216",
+        "ui/interaction-contract.md I8",
+        "ui/interaction-fixtures.json INSPECTOR-SAVE"
+      ],
+      "problem": "질문은 취소 시 서버 변경 없음이라고 하지만 saving 중 취소는 editing=false만 수행하며 in-flight resolve를 abort하지 않는다. INSPECTOR-SAVE도 cancelDisabled=false/abortRequest=false/뒤늦은 성공을 요구한다.",
+      "proposedFix": "질문 ID를 보존하고 저장 전 취소는 변경 없음, 저장 중 취소는 폼만 닫고 이미 전송된 resolve가 저장될 수 있음을 구분한다. baseline과 필수 개선 여부를 결정하고 변경이력과 두 race fixture를 둔다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-002",
+      "severity": "high",
+      "questionIds": [
+        "CORE-17-C03"
+      ],
+      "files": [
+        "specs/05-dashboard-exports.md:133",
+        "specs/05-dashboard-exports.md:143",
+        "specs/07-data-algorithms-concurrency.md:280",
+        "specs/06-verification.md:64"
+      ],
+      "problem": "EF-14는 invalid dashboard plan→validation 실패→세번째 성공을 G11 필수로 연결한다. D05b는 planner#1 오류→planner#2→judge#3 뒤 모델호출 없음이므로 DOM 실패까지 발생한 경로를 세번째 수정 성공으로 요구할 수 없다.",
+      "proposedFix": "구 EF-14를 관찰용 baseline으로 분리한다. REQUIRED_REBUILD에는 정상 planner+judge 뒤 constrained repair#3 성공, invalid planner 뒤 planner#2+judge#3 및 DOM 실패 fallback, #3에서 최초 유효plan인 경우 judge예산 부재 fallback을 각각 지정한다. 질문의 최대3회 계획도 전체 모델호출3회로 정합화한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-003",
+      "severity": "medium",
+      "questionIds": [
+        "UI-01-C07"
+      ],
+      "files": [
+        "specs/01-state-api.md §4.1",
+        "specs/04-ui-motion.md:84",
+        "contracts/types.ts HealthResponse"
+      ],
+      "problem": "health DTO와 configured header 문구·E2B 의존 control은 있지만 초기 요청시점·기본값·실패·retry/poll·unmount/stale 수명이 없다. activity observer의 수명으로 대신 추론할 수 없다.",
+      "proposedFix": "health 단독 lifecycle을 명시한다. mount/요청·초기값·success/error UI·retry 유무·cleanup/late guard와 dashboard gate를 하나의 trace로 고정한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-004",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-16-C06"
+      ],
+      "files": [
+        "specs/01-state-api.md /api/samples",
+        "ui/interaction-contract.md I1",
+        "ui/interaction-fixtures.json SAMPLE-01"
+      ],
+      "problem": "expenses/materials route 입력·201 documents/criteriaText 출력·UI 전이는 있지만 실제 샘플 파일명/개수/role/MIME/내용/criteriaText 생성계약이 없다. SAMPLE-01의 CA/CB/A.pdf는 상태전이 합성fixture이며 실제 샘플 recipe가 아니다.",
+      "proposedFix": "expenses/materials 각각 정확한 바이트 또는 결정론적 생성recipe와 기대 documents/criteriaText manifest를 architecture 안에 제공한다. 가변 ID/timestamp와 고정내용, intro 장식예제와 API 샘플을 구분한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-005",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C09"
+      ],
+      "files": [
+        "DECISIONS.md D16/D18",
+        "ui/interaction-contract.md:201",
+        "specs/04-ui-motion.md:125",
+        "ui/detail-controls.md D1/D2"
+      ],
+      "problem": "I9의 PDF chip 정수검사·빈 출처 추가상한·activity 최신100·OS motion 일관성·저장중 취소정책은 gate 연결 여부로 필수/선택을 판정하라지만 개별 target policy와 gate/expected fixture가 없다. baseline은 현재한계 재현 또는 별도 deviation으로 기술되어 개선범위를 결정하기 어렵다.",
+      "proposedFix": "후보별 OBSERVED_ONLY/REQUIRED_REBUILD/OPTIONAL 결정표와 owner·gate·baseline/target fixture·정확한 기대행동을 지정한다. OPTIONAL만 선택 가능이라는 상위규칙과 후보 문구를 정합화한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-006",
+      "severity": "high",
+      "questionIds": [
+        "CORE-06-C06"
+      ],
+      "files": [
+        "specs/02-backend-pipeline.md:253",
+        "specs/02-backend-pipeline.md:280",
+        "specs/07-data-algorithms-concurrency.md:71",
+        "specs/06-verification.md:25",
+        "specs/06-verification.md:53"
+      ],
+      "problem": "문서당 VLM30쪽/180초와 >30쪽 unread/partial이 규범이고 G07은8보고서575물리쪽 실제처리 및35필드/105셀 exactPass를 요구한다. 전체원본의 후속모델 첨부는 가능하나 30쪽 이후를 어떤 경로로 판독/검증해 G07 완료를 인정하는지, cap이 baseline인지 target제한인지 결정이 없다. inventory575만으로 전체 시각검증을 주장할 수 없다.",
+      "proposedFix": "baseline cap과 G07 target의 관계를 명시한다. 전체페이지 전사/검증이 필요하면 chunk/session·물리페이지 mapping·전체budget/partial semantics를 규정한다. 미지원이면 G07 BLOCKED/NOT_RUN 조건과 필요한 확장을 기록한다. cap 임의상향 또는 partial PASS를 금지한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CLARITY-007",
+      "severity": "high",
+      "questionIds": [
+        "CORE-14-C06"
+      ],
+      "files": [
+        "ui/detail-controls.md:58",
+        "ui/detail-controls.md:114",
+        "ui/detail-controls.md:319",
+        "specs/06-verification.md:38",
+        "specs/06-verification.md:53",
+        "contracts/types.ts Evidence"
+      ],
+      "problem": "UI는 image bbox 없음, text-layer 없는 scanned PDF는 fallback chip만이며 OCR bbox 추정엔진을 추가하지 말라고 한다. G07은35필드 actual value/qualifier overlay와 회전/2-up polygon/bbox 검사다. Evidence DTO는 page/sheet/cell/quote이며 raster geometry 전달·좌표변환/tolerance가 없다. fallback이 gate를 만족하는지 별도 필수개선인지 정의되지 않는다.",
+      "proposedFix": "source/renderer별 geometry gate 적용조건을 명시하고 scan/image required contract를 추가하거나 미지원 BLOCKED로 기록한다. polygon/bbox 좌표계·rotation/2-up mapping·tolerance·실제근거 provenance를 정의하고 임의bbox는 금지한다.",
+      "status": "open",
+      "reviewerId": "/root/clarity"
+    },
+    {
+      "id": "CA-01",
+      "severity": "P2",
+      "questionIds": [
+        "CORE-15-C01",
+        "CORE-15-X01"
+      ],
+      "files": [
+        "server/sandbox-documents.mjs",
+        "architecture/specs/02-backend-pipeline.md"
+      ],
+      "problem": "문서activity log prefix1500자와설계suffix1500자불일치.",
+      "proposedFix": "String변환→앞20000자→정제→trim→앞1500자와observedcommand stdout/stderr tail을분리해기록한다.",
+      "status": "open",
+      "reviewerId": "/root/core_accuracy"
+    },
+    {
+      "id": "CA-02",
+      "severity": "P1",
+      "questionIds": [
+        "CORE-11-C04",
+        "CORE-12-X01"
+      ],
+      "files": [
+        "server/review.mjs",
+        "server/criterion-applicability.mjs",
+        "architecture/specs/03-algorithms.md"
+      ],
+      "problem": "일반numeric finding의없는sheet/가짜quote/invalid좌표가pass가능하나설계표현이원본검증보다강하다.",
+      "proposedFix": "baseline regex/미검증영역과반례fixture를정확히기록한다. 강화는원문/좌표검증·review혹은reject정책을REQUIRED_REBUILD/NOT_RUN으로별도선언한다.",
+      "status": "open",
+      "reviewerId": "/root/core_accuracy"
+    },
+    {
+      "id": "CA-03",
+      "severity": "P2",
+      "questionIds": [
+        "CORE-12-C04",
+        "CORE-12-X02"
+      ],
+      "files": [
+        "server/criterion-applicability.mjs",
+        "server/criteria-eligibility.mjs",
+        "architecture/specs/03-algorithms.md"
+      ],
+      "problem": "전역coverageguard와cited-pageblock/cellguard범위를혼동한다.",
+      "proposedFix": "03§5.3/자격교차참조에서전역과인용page전용조건을분리하고비인용uncertainpage반례를추가한다. 전체page강화는새재구현요구로만기록한다.",
+      "status": "open",
+      "reviewerId": "/root/core_accuracy"
+    },
+    {
+      "id": "CA-04",
+      "severity": "P2",
+      "questionIds": [
+        "CORE-08-C04",
+        "CORE-19-C05",
+        "CORE-08-X01"
+      ],
+      "files": [
+        "server/criteria-workbook-profile.py",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "problem": "criteria100sheet한도의allmetadata/후속emptycomplete분기누락.",
+      "proposedFix": "cellprofileindex한도와후속empty/populated의서로다른complete를fixture로기록하고genericreader100sheetpartial와구분한다.",
+      "status": "open",
+      "reviewerId": "/root/core_accuracy"
+    },
+    {
+      "id": "CA-05",
+      "severity": "P2",
+      "questionIds": [
+        "CORE-12-C03",
+        "CORE-19-C02",
+        "CORE-19-X01"
+      ],
+      "files": [
+        "server/review.mjs",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "problem": "07normalizeItems순서가03/source의guard순서와상충한다.",
+      "proposedFix": "07표를source의shape/누락·수치/conditions/applicability/extraction/label/machineStatus순서로고치고03§5를단일정의로연결한다.",
+      "status": "open",
+      "reviewerId": "/root/core_accuracy"
+    },
+    {
+      "id": "UIA-001",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C07"
+      ],
+      "files": [
+        "src/format.ts",
+        "src/components/CriteriaConfirmation.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "공통 값 포맷 두 함수의 비동등 경계가 설계에서 누락되었다.",
+      "proposedFix": "formatter 두 개를 별도 표/정규식/예시로 명세하고 null,empty,+1234,001234,공백,16자리,13소수 fixtures를 추가한다. Number 계산/원문 보존과 화면표시를 혼동하지 않는다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-002",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C08"
+      ],
+      "files": [
+        "src/display-names.ts",
+        "architecture/specs/04-ui-motion.md"
+      ],
+      "problem": "활동 표기 formatter의 변환 대상·보호 기술토큰 경계가 없다.",
+      "proposedFix": "정확한 regex 또는 동일 결과를 보장하는 단계 알고리즘,사용호출부와 금지 필드,대소문자/URL/코드/path/filename/env-key 양성·음성 예시를 제공한다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-003",
+      "severity": "low",
+      "questionIds": [
+        "UI-04-C07"
+      ],
+      "files": [
+        "src/App.tsx",
+        "src/components/LedgerModal.tsx",
+        "architecture/ui/detail-controls.md"
+      ],
+      "problem": "두 file-size formatter의1MiB 임계값 차이와 반올림이 누락되었다.",
+      "proposedFix": "App >1MiB/ledger >=1MiB,KB max1·round/MB fixed1을 각각 명시하고0/1023/1048576/1048577bytes의 기대값을 준다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-004",
+      "severity": "medium",
+      "questionIds": [
+        "UI-07-C07"
+      ],
+      "files": [
+        "src/components/LiveReviewFlow.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "실패·취소·idle의 live announcement가 실제로 진행 중으로 남는 한계가 누락되었다.",
+      "proposedFix": "done식과 aria-live 텍스트 분기표를 observed baseline으로 기록한다. 개선을 원하면 failed/cancelled/idle 문구와 실제 count 유지에 대한 REQUIRED_REBUILD를 별도 표시하며 현재 소스가 이미 개선됐다고 쓰지 않는다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-005",
+      "severity": "medium",
+      "questionIds": [
+        "UI-11-C07"
+      ],
+      "files": [
+        "src/components/DocumentPreview.tsx",
+        "architecture/ui/detail-controls.md"
+      ],
+      "problem": "raw quote <mark>는 status matcher와 다른 느슨한 경계/상한을 갖지만 세부 계약이 없다.",
+      "proposedFix": "fallback 적용 조건과 indexOf·30회·nonoverlap·merge 규칙을 명시하고 5 in15 및31회 반복 fixture를 추가한다. raw mark는 판정 witness가 아님을 분명히 하고 I9.1 개선 범위를 구분한다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-006",
+      "severity": "medium",
+      "questionIds": [
+        "UI-09-C07"
+      ],
+      "files": [
+        "src/components/SandboxActivityDock.tsx",
+        "src/components/sandbox-activity-dock.css",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "모바일 작업실의 group선택/flow-log탭 상태전이가 본문에 빠져 있다.",
+      "proposedFix": "container1050/680 조건,초기flow,scope reset dependencies,탭 버튼/aria-selected/data-pane/숨는 panel과 group select handler의 selection reset을 명시한다. 1051/1050/681/680px container 사례를 제공한다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-007",
+      "severity": "medium",
+      "questionIds": [
+        "UI-09-C01",
+        "UI-09-C08"
+      ],
+      "files": [
+        "src/components/SandboxActivityDock.tsx",
+        "architecture/ui/interaction-contract.md"
+      ],
+      "problem": "I4 parent grouping에 존재하지 않는 document/context guard를 사실로 명시한다.",
+      "proposedFix": "I4의 잘못된 문장을 제거하고 own document→dashboard→parent순환guard→task fallback을 정확히 기술한다. 사전scope 필터 및 actualTransfers의 양측scope 검사를 별도로 설명하고 same-run/context-mismatch parent-child 반례를 추가한다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "UIA-008",
+      "severity": "medium",
+      "questionIds": [
+        "UI-01-C07"
+      ],
+      "files": [
+        "src/App.tsx",
+        "src/api.ts",
+        "src/main.tsx",
+        "architecture/specs/04-ui-motion.md"
+      ],
+      "problem": "health 요청의 초기화·실패·재시도/cleanup 부재가 header boolean 계약 밖에 누락되었다.",
+      "proposedFix": "mount GET lifecycle과 실패null/header 연결확인중/dashboard disabled,reset 비재조회·StrictMode 개발 재실행을 명시한다. retry/abort를 개선한다면 baseline과 REQUIRED_REBUILD를 나누고 거짓 현재 기능을 추가하지 않는다.",
+      "status": "open",
+      "reviewerId": "/root/ui_accuracy"
+    },
+    {
+      "id": "VER-01",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-21-C01"
+      ],
+      "files": [
+        "decomposition/core-modules.json",
+        "decomposition/ui-modules.json",
+        "tools/verify-package.mjs"
+      ],
+      "problem": "전수 reverse source inventory와 환경/검증 자체의 평가 모듈이 없다.",
+      "proposedFix": "CORE-20 환경 및 CORE-21 검증 모듈/질문 추가. inventory는 runtime/config/test/declaration/generated/unused를 module/question 또는 명시적 제외와 연결. 무조건 sourceFiles에 97개를 채워 점수를 올리지 말고 source coverage와 질문 pass를 분리.",
+      "status": "open",
+      "reviewerId": "/root/verification_audit"
+    },
+    {
+      "id": "VER-02",
+      "severity": "high",
+      "questionIds": [
+        "CORE-21-C02"
+      ],
+      "files": [
+        "validation/adapter-worker.mjs",
+        "validation/run-gate.mjs",
+        "validation/harness.mjs"
+      ],
+      "problem": "취소 signal 이후 늦은 정상 반환을 통과 처리한다.",
+      "proposedFix": "worker는 adapter 반환 직후 signal.aborted면 ADAPTER_ABORTED로 실패. supervisor도 deadline 이후 성공을 허용하지 않도록 elapsed/deadline 체크 또는 확정 timeout flag. grace는 cleanup 전용. runGate와 runSuite 음성 selftest 추가.",
+      "status": "open",
+      "reviewerId": "/root/verification_audit"
+    },
+    {
+      "id": "VER-03",
+      "severity": "high",
+      "questionIds": [
+        "CORE-21-C03"
+      ],
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/run-gate.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "problem": "packageManifest가 실제 architecture/package-manifest.json일 필요도 유효 package manifest일 필요도 없고 gate가 당시 설계 hash에 묶이지 않는다.",
+      "proposedFix": "현재 architecture verifyPackage(default, refresh금지)를 acceptance에서 실행하고 index manifest 경로/실제bytes를 검증. runGate가 packageManifestSha256를 기록하고 checker에서 현재 hash와 비교. 빈 manifest/변경된 architecture/stale gate 음성 selftest. 선언 진위 인증 제한은 유지.",
+      "status": "open",
+      "reviewerId": "/root/verification_audit"
+    },
+    {
+      "id": "VER-04",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-21-C04"
+      ],
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "problem": "providerCalls와 heldoutSeedCount가 수치 형식 검증 없이 비교되어 문자열/소수/boolean을 성공 수치로 받는다.",
+      "proposedFix": "Number.isSafeInteger와 양수/min3 검사를 강제하고 schema 조건을 일치시킨다. string, fractional, boolean, null, overflow negative tests 추가.",
+      "status": "open",
+      "reviewerId": "/root/verification_audit"
+    },
+    {
+      "id": "VER-05",
+      "severity": "low",
+      "questionIds": [
+        "CORE-21-C06"
+      ],
+      "files": [
+        "specs/06-verification.md",
+        "validation/README.md"
+      ],
+      "problem": "P10.png 첫쪽4개 vs PDF전체8개의 평가 전용 projection이 모호하다.",
+      "proposedFix": "golden 전수 평가 contract에 P10 PDF8/PNG4와 underlying reason를 명시. P13 원문0.025 충돌정책과 함께 evaluation-only로 두고 앱 하드코딩 금지.",
+      "status": "open",
+      "reviewerId": "/root/verification_audit"
+    }
+  ],
+  "openIssueCount": 25,
+  "accepted": false,
+  "inputFiles": [
+    {
+      "path": "architecture/reviews/independent-audit/round-01/population-expanded.json",
+      "sha256": "c7c514072c4a499ff11d903453d401dc07f4fe85d82e466e0119203ef07c9cef"
+    },
+    {
+      "path": "architecture/reviews/independent-audit/round-01/normalized/clarity.json",
+      "sha256": "bfcda7d4671559211a436d2cdbf91d614d13fe7bd6e8544718c7a5f4bf856b16"
+    },
+    {
+      "path": "architecture/reviews/independent-audit/round-01/normalized/core-accuracy.json",
+      "sha256": "e6a19bdff024cfa2d8b3e576750f814170f5d0cb71f757e45636460c7d6d3e63"
+    },
+    {
+      "path": "architecture/reviews/independent-audit/round-01/normalized/ui-accuracy.json",
+      "sha256": "7238a93dad4624268e954a467317afb642d5dc6db2a3329f37057a68c687dd26"
+    },
+    {
+      "path": "architecture/reviews/independent-audit/round-01/normalized/verification-accuracy.json",
+      "sha256": "507b982703d6016e33c70cbc82ffaa7a39ba7c651591eb6505a4f8026ea13ee9"
+    },
+    {
+      "path": "architecture/reviews/independent-audit/initial-inputs.json",
+      "sha256": "f24266b222b6a58926eba96f14b07a89680492066ea462125ac1066cbd9c1b6d"
+    }
+  ],
+  "scoredAt": "2026-09-20T17:57:25.709Z"
+}

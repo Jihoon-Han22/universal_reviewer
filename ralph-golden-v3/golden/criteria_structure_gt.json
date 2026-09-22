@@ -1,0 +1,877 @@
+[
+  {
+    "case_id": "B101",
+    "file": "inputs/criteria/B101_criteria.xlsx",
+    "sheet": "표지",
+    "merged_ranges": [
+      "B2:D3",
+      "B4:D4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "B101",
+    "file": "inputs/criteria/B101_criteria.xlsx",
+    "sheet": "단열 성능",
+    "merged_ranges": [
+      "B2:I3",
+      "B4:I4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          9
+        ],
+        "range": "B9:I11"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 9,
+        "start": "B",
+        "end": "I"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "단열 성능",
+        "value_cell": "G10",
+        "status_cell": "H10",
+        "reason_cell": "I10"
+      },
+      {
+        "sheet": "단열 성능",
+        "value_cell": "G11",
+        "status_cell": "H11",
+        "reason_cell": "I11"
+      }
+    ]
+  },
+  {
+    "case_id": "B101",
+    "file": "inputs/criteria/B101_criteria.xlsx",
+    "sheet": "마감재 기준",
+    "merged_ranges": [
+      "B2:H3",
+      "B4:H4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          6
+        ],
+        "range": "B6:H8"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 6,
+        "start": "B",
+        "end": "H"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "마감재 기준",
+        "value_cell": "E7",
+        "status_cell": "F7",
+        "reason_cell": "G7"
+      },
+      {
+        "sheet": "마감재 기준",
+        "value_cell": "E8",
+        "status_cell": "F8",
+        "reason_cell": "G8"
+      }
+    ]
+  },
+  {
+    "case_id": "B102",
+    "file": "inputs/criteria/B102_criteria.xlsx",
+    "sheet": "현장 종합기준",
+    "merged_ranges": [
+      "B2:I3",
+      "B4:I4",
+      "B52:I53",
+      "B15:I16",
+      "B18:I19",
+      "B31:I32",
+      "B35:I36"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          6
+        ],
+        "range": "B6:I11"
+      },
+      {
+        "header_rows": [
+          22
+        ],
+        "range": "B22:I27"
+      },
+      {
+        "header_rows": [
+          41
+        ],
+        "range": "B41:I42"
+      },
+      {
+        "header_rows": [
+          45
+        ],
+        "range": "B45:I46"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 6,
+        "start": "B",
+        "end": "I"
+      },
+      {
+        "row": 22,
+        "start": "B",
+        "end": "I"
+      },
+      {
+        "row": 41,
+        "start": "B",
+        "end": "I"
+      },
+      {
+        "row": 45,
+        "start": "B",
+        "end": "I"
+      }
+    ],
+    "notes": [
+      "B52:I53"
+    ],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "현장 종합기준",
+        "value_cell": "F7",
+        "status_cell": "G7",
+        "reason_cell": "H7"
+      },
+      {
+        "sheet": "현장 종합기준",
+        "value_cell": "F23",
+        "status_cell": "G23",
+        "reason_cell": "H23"
+      },
+      {
+        "sheet": "현장 종합기준",
+        "value_cell": "F42",
+        "status_cell": "G42",
+        "reason_cell": "H42"
+      },
+      {
+        "sheet": "현장 종합기준",
+        "value_cell": "F46",
+        "status_cell": "G46",
+        "reason_cell": "H46"
+      }
+    ]
+  },
+  {
+    "case_id": "B102",
+    "file": "inputs/criteria/B102_criteria.xlsx",
+    "sheet": "개정 이력",
+    "merged_ranges": [
+      "B2:E3",
+      "B4:E4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          5
+        ],
+        "range": "B5:E7"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 5,
+        "start": "B",
+        "end": "E"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "I201",
+    "file": "inputs/criteria/I201_criteria.xlsx",
+    "sheet": "노체 기준 행렬",
+    "merged_ranges": [
+      "B2:F3",
+      "B4:F4",
+      "C5:D5",
+      "E5:F5"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          6
+        ],
+        "range": "B6:F9"
+      },
+      {
+        "header_rows": [
+          15
+        ],
+        "range": "B15:E17"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 5,
+        "start": "B",
+        "end": "F"
+      },
+      {
+        "row": 6,
+        "start": "B",
+        "end": "F"
+      },
+      {
+        "row": 15,
+        "start": "B",
+        "end": "E"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "노체 기준 행렬",
+        "value_cell": "C16",
+        "status_cell": "D16",
+        "reason_cell": "E16"
+      },
+      {
+        "sheet": "노체 기준 행렬",
+        "value_cell": "C17",
+        "status_cell": "D17",
+        "reason_cell": "E17"
+      }
+    ]
+  },
+  {
+    "case_id": "I201",
+    "file": "inputs/criteria/I201_criteria.xlsx",
+    "sheet": "입도 범위",
+    "merged_ranges": [
+      "B2:G3",
+      "B4:G4",
+      "C20:D20"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          21
+        ],
+        "range": "B21:G23"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 20,
+        "start": "B",
+        "end": "G"
+      },
+      {
+        "row": 21,
+        "start": "B",
+        "end": "G"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "입도 범위",
+        "value_cell": "E22",
+        "status_cell": "F22",
+        "reason_cell": "G22"
+      },
+      {
+        "sheet": "입도 범위",
+        "value_cell": "E23",
+        "status_cell": "F23",
+        "reason_cell": "G23"
+      }
+    ]
+  },
+  {
+    "case_id": "I201",
+    "file": "inputs/criteria/I201_criteria.xlsx",
+    "sheet": "단위 해설",
+    "merged_ranges": [
+      "B2:B3",
+      "B4:B4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "I202",
+    "file": "inputs/templates/I202_form.xlsx",
+    "sheet": "현장 검토서",
+    "merged_ranges": [
+      "B2:D3",
+      "B4:D4",
+      "B8:F8",
+      "C10:H11",
+      "B15:F15",
+      "C17:H18",
+      "B22:F22",
+      "C24:H25",
+      "B29:F29",
+      "C31:H32"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "현장 검토서",
+        "value_cell": "C9",
+        "status_cell": "E9",
+        "reason_cell": "C10"
+      },
+      {
+        "sheet": "현장 검토서",
+        "value_cell": "C16",
+        "status_cell": "E16",
+        "reason_cell": "C17"
+      },
+      {
+        "sheet": "현장 검토서",
+        "value_cell": "C23",
+        "status_cell": "E23",
+        "reason_cell": "C24"
+      },
+      {
+        "sheet": "현장 검토서",
+        "value_cell": "C30",
+        "status_cell": "E30",
+        "reason_cell": "C31"
+      }
+    ]
+  },
+  {
+    "case_id": "I202",
+    "file": "inputs/templates/I202_form.xlsx",
+    "sheet": "보존 기록",
+    "merged_ranges": [
+      "B2:B3",
+      "B4:B4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [
+      {
+        "cell": "B9",
+        "formula": "=2+2"
+      }
+    ],
+    "output_cells": []
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Document Control",
+    "merged_ranges": [
+      "B2:K3",
+      "B4:K4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Design Basis",
+    "merged_ranges": [
+      "B2:D3",
+      "B4:D4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Mechanical R3",
+    "merged_ranges": [
+      "B2:K3",
+      "B4:K4",
+      "D13:E13"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          14
+        ],
+        "range": "B14:K17"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 13,
+        "start": "B",
+        "end": "K"
+      },
+      {
+        "row": 14,
+        "start": "B",
+        "end": "K"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "Mechanical R3",
+        "value_cell": "G15",
+        "status_cell": "H15",
+        "reason_cell": "I15"
+      },
+      {
+        "sheet": "Mechanical R3",
+        "value_cell": "G16",
+        "status_cell": "H16",
+        "reason_cell": "I16"
+      },
+      {
+        "sheet": "Mechanical R3",
+        "value_cell": "G17",
+        "status_cell": "H17",
+        "reason_cell": "I17"
+      }
+    ]
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Chemistry R3",
+    "merged_ranges": [
+      "B2:H3",
+      "B4:H4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          7
+        ],
+        "range": "B7:H9"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 7,
+        "start": "B",
+        "end": "H"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "Chemistry R3",
+        "value_cell": "E8",
+        "status_cell": "F8",
+        "reason_cell": "G8"
+      }
+    ]
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Hydro R3",
+    "merged_ranges": [
+      "B2:K3",
+      "B4:K4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          12
+        ],
+        "range": "B12:H14"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 12,
+        "start": "B",
+        "end": "H"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [
+      {
+        "cell": "K8",
+        "formula": "='Design Basis'!D8*'Design Basis'!D10"
+      },
+      {
+        "cell": "C13",
+        "formula": "=K8"
+      }
+    ],
+    "output_cells": [
+      {
+        "sheet": "Hydro R3",
+        "value_cell": "E13",
+        "status_cell": "F13",
+        "reason_cell": "G13"
+      },
+      {
+        "sheet": "Hydro R3",
+        "value_cell": "E14",
+        "status_cell": "F14",
+        "reason_cell": "G14"
+      }
+    ]
+  },
+  {
+    "case_id": "P301",
+    "file": "inputs/criteria/P301_criteria.xlsx",
+    "sheet": "Superseded R2",
+    "merged_ranges": [
+      "B2:E3",
+      "B4:E4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          5
+        ],
+        "range": "B5:E8"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 5,
+        "start": "B",
+        "end": "E"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "P302",
+    "file": "inputs/templates/P302_form.xlsx",
+    "sheet": "Release Form",
+    "merged_ranges": [
+      "B2:H3",
+      "B4:H4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          18
+        ],
+        "range": "B18:H23"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 18,
+        "start": "B",
+        "end": "H"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "Release Form",
+        "value_cell": "E19",
+        "status_cell": "F19",
+        "reason_cell": "G19"
+      },
+      {
+        "sheet": "Release Form",
+        "value_cell": "E20",
+        "status_cell": "F20",
+        "reason_cell": "G20"
+      },
+      {
+        "sheet": "Release Form",
+        "value_cell": "E21",
+        "status_cell": "F21",
+        "reason_cell": "G21"
+      },
+      {
+        "sheet": "Release Form",
+        "value_cell": "E22",
+        "status_cell": "F22",
+        "reason_cell": "G22"
+      },
+      {
+        "sheet": "Release Form",
+        "value_cell": "E23",
+        "status_cell": "F23",
+        "reason_cell": "G23"
+      }
+    ]
+  },
+  {
+    "case_id": "P302",
+    "file": "inputs/templates/P302_form.xlsx",
+    "sheet": "Review Notes",
+    "merged_ranges": [
+      "B2:B3",
+      "B4:B4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [
+      {
+        "cell": "B10",
+        "formula": "=5*2"
+      }
+    ],
+    "output_cells": []
+  },
+  {
+    "case_id": "N401",
+    "file": "inputs/criteria/N401_criteria.xlsx",
+    "sheet": "채수 계획",
+    "merged_ranges": [
+      "B2:D3",
+      "B4:D4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "N401",
+    "file": "inputs/criteria/N401_criteria.xlsx",
+    "sheet": "분석 허용치",
+    "merged_ranges": [
+      "B2:I3",
+      "B4:I4",
+      "B26:I27"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          5
+        ],
+        "range": "B5:I7"
+      },
+      {
+        "header_rows": [
+          18
+        ],
+        "range": "B18:I21"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 5,
+        "start": "B",
+        "end": "I"
+      },
+      {
+        "row": 18,
+        "start": "B",
+        "end": "I"
+      }
+    ],
+    "notes": [
+      "B26:I27"
+    ],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "분석 허용치",
+        "value_cell": "F19",
+        "status_cell": "G19",
+        "reason_cell": "H19"
+      },
+      {
+        "sheet": "분석 허용치",
+        "value_cell": "F20",
+        "status_cell": "G20",
+        "reason_cell": "H20"
+      },
+      {
+        "sheet": "분석 허용치",
+        "value_cell": "F21",
+        "status_cell": "G21",
+        "reason_cell": "H21"
+      }
+    ]
+  },
+  {
+    "case_id": "N401",
+    "file": "inputs/criteria/N401_criteria.xlsx",
+    "sheet": "현장 측정",
+    "merged_ranges": [
+      "B2:H3",
+      "B4:H4"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          11
+        ],
+        "range": "B11:H12"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 11,
+        "start": "B",
+        "end": "H"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "현장 측정",
+        "value_cell": "F12",
+        "status_cell": "G12",
+        "reason_cell": "H12"
+      }
+    ]
+  },
+  {
+    "case_id": "N402",
+    "file": "inputs/criteria/N402_criteria.xlsx",
+    "sheet": "적용 모델",
+    "merged_ranges": [
+      "B2:D3",
+      "B4:D4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "N402",
+    "file": "inputs/criteria/N402_criteria.xlsx",
+    "sheet": "성능 매트릭스",
+    "merged_ranges": [
+      "B2:F3",
+      "B4:F4",
+      "B15:H16"
+    ],
+    "table_regions": [
+      {
+        "header_rows": [
+          8
+        ],
+        "range": "B8:F11"
+      }
+    ],
+    "header_bands": [
+      {
+        "row": 8,
+        "start": "B",
+        "end": "F"
+      }
+    ],
+    "notes": [
+      "B15:H16"
+    ],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "N402",
+    "file": "inputs/criteria/N402_criteria.xlsx",
+    "sheet": "환경 조건",
+    "merged_ranges": [
+      "B2:C3",
+      "B4:C4"
+    ],
+    "table_regions": [],
+    "header_bands": [],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": []
+  },
+  {
+    "case_id": "N402",
+    "file": "inputs/criteria/N402_criteria.xlsx",
+    "sheet": "완성 검토",
+    "merged_ranges": [
+      "B2:F3",
+      "B4:F4"
+    ],
+    "table_regions": [],
+    "header_bands": [
+      {
+        "row": 6,
+        "start": "B",
+        "end": "F"
+      }
+    ],
+    "notes": [],
+    "formula_cells": [],
+    "output_cells": [
+      {
+        "sheet": "완성 검토",
+        "value_cell": "C8",
+        "status_cell": "C10",
+        "reason_cell": "C12"
+      },
+      {
+        "sheet": "완성 검토",
+        "value_cell": "D8",
+        "status_cell": "D10",
+        "reason_cell": "D12"
+      },
+      {
+        "sheet": "완성 검토",
+        "value_cell": "E8",
+        "status_cell": "E10",
+        "reason_cell": "E12"
+      },
+      {
+        "sheet": "완성 검토",
+        "value_cell": "F8",
+        "status_cell": "F10",
+        "reason_cell": "F12"
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "id": "13-review-active",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "13-review-active",
+    "screenshot": {
+      "path": "13-review-active.png",
+      "bytes": 422812,
+      "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/13-review-active.json",
+      "bytes": 2021983,
+      "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T13:04:49.414Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/diagnostics/13-review-active-font-readiness.json",
+    "bytes": 2301136,
+    "sha256": "acbba7649501b909a03b6609d8868c869bcd2bf73def0b918e43629a81d78ccf"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/13-review-active.png",
+    "bytes": 411183,
+    "sha256": "97912b7b30931225efe4b155d0579fc5137e926a173a08e5e2f2b6021d8f1f48",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T13:04:54.323Z",
+    "capturedAt": "2026-09-21T13:04:54.833Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/dom/13-review-active.json",
+    "bytes": 3096494,
+    "sha256": "a342a3776f1e1f2179c06d86610f26fbb881e8ad75fec655c57c99452349cb28"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/13-review-active-measurement.json",
+    "bytes": 192692,
+    "sha256": "8f93438aa64c6bc6d0387fe662d8ec81cef711ee0b9e0973b6c329397676a263"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": true,
+    "finiteAnimationsSettled": null,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "review",
+  "endedAt": "2026-09-21T13:05:00.393Z"
+}

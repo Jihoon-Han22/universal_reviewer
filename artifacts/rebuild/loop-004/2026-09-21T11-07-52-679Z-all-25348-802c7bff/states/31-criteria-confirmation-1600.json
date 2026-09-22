@@ -1,0 +1,52 @@
+{
+  "id": "31-criteria-confirmation-1600",
+  "selected": true,
+  "captureStatus": "ERROR",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Actual state setup/capture failed; any diagnostic is not a successful state screenshot.",
+  "reference": {
+    "id": "31-criteria-confirmation-1600",
+    "screenshot": {
+      "path": "31-criteria-confirmation-1600.png",
+      "bytes": 107579,
+      "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36",
+      "width": 1600,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/31-criteria-confirmation-1600.json",
+      "bytes": 1022718,
+      "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+    },
+    "viewport": {
+      "width": 1600,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:09:16.362Z",
+  "error": {
+    "name": "Error",
+    "message": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n",
+    "stack": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n\n    at upload (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:103:96)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:271:90\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:203:9)\n    at async requiredFlow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:271:9)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:304:55)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:340:22"
+  },
+  "failureScreenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/diagnostics/31-criteria-confirmation-1600-failure.png",
+    "bytes": 224585,
+    "sha256": "ee8b8b1a3f328a418296f57c921abc7f0faf4269b55d41aa7d5ff18a01c7a1b5"
+  },
+  "failureDom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/diagnostics/31-criteria-confirmation-1600-failure-dom.json",
+    "bytes": 545421,
+    "sha256": "d18b66de7742ab0f96c6d9d71e583f5fd7d392cd8b3a0269ebf344bbe20ec43e"
+  },
+  "endedAt": "2026-09-21T11:09:19.707Z"
+}

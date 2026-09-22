@@ -1,0 +1,72 @@
+{
+  "id": "03-landing-mobile-motion-off",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "03-landing-mobile-motion-off",
+    "screenshot": {
+      "path": "03-landing-mobile-motion-off.png",
+      "bytes": 201732,
+      "sha256": "19ec769de804243c49b189eff25b0726212891ebb3c0dc7a3f8971efdaa166c2",
+      "width": 390,
+      "height": 844,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/03-landing-mobile-motion-off.json",
+      "bytes": 816188,
+      "sha256": "659eb6409822428ceb48c9a3b44b139a5e14c7b2d3fbf239c03ff8d72690cc43"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "reduced",
+      "osReduce": true,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T13:04:13.256Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/diagnostics/03-landing-mobile-motion-off-font-readiness.json",
+    "bytes": 2301220,
+    "sha256": "218ae6ff284c8d46508b13debdfa4861b752d77d7b5dc4479c718bbd602fef23"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/03-landing-mobile-motion-off.png",
+    "bytes": 197916,
+    "sha256": "88fc248b61dd0a3b7b06e47a6db295f1002f6f386190af64e998d64da7e30dbc",
+    "width": 390,
+    "height": 844,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T13:04:15.449Z",
+    "capturedAt": "2026-09-21T13:04:15.640Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/dom/03-landing-mobile-motion-off.json",
+    "bytes": 1268660,
+    "sha256": "4c4cfde8b5599b2d6a6b844a774a85ac88e3ae86bb7babd9751673a10a22d32a"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/03-landing-mobile-motion-off-measurement.json",
+    "bytes": 188830,
+    "sha256": "d202000e886a4b7f12c7b5d09e3512d36e9c07549dd3c46b8ae4e8832a344e8a"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T13:04:16.756Z"
+}

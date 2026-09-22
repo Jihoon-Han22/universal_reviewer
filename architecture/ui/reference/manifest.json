@@ -1,0 +1,2300 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-20T17:10:39.287Z",
+  "pathBase": ".",
+  "synthetic": true,
+  "fixtureId": "architecture-visual-v1",
+  "scope": "Actual GSPEC components driven by local synthetic fetch/EventSource responses. No provider execution, document extraction or workbook export is asserted.",
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "platform": "Win32",
+    "language": "ko-KR",
+    "languages": [
+      "ko-KR",
+      "ko",
+      "en-US",
+      "en"
+    ],
+    "timeZone": "Asia/Seoul",
+    "devicePixelRatio": 1,
+    "node": "v24.13.1",
+    "captureEngine": "Playwright CLI / Chromium 153 (see userAgent)",
+    "captureMode": "viewport",
+    "freshNamedBrowserSession": true
+  },
+  "network": {
+    "mockOrigin": "http://127.0.0.1:5209",
+    "externalPolicy": "Nonlocal requests blocked; Google Fonts stylesheet fulfilled from packaged local fonts.",
+    "blockedExternal": [],
+    "apiRequests": [
+      {
+        "path": "/api/health",
+        "method": "GET"
+      },
+      {
+        "path": "/api/health",
+        "method": "GET"
+      },
+      {
+        "path": "/api/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/runs",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/runs/visual-run",
+        "method": "GET"
+      },
+      {
+        "path": "/api/runs/visual-run/criteria/confirm",
+        "method": "POST"
+      },
+      {
+        "path": "/api/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/runs/visual-run/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/runs/visual-run",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards/visual-dashboard",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards/visual-dashboard",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards/visual-dashboard",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards/visual-dashboard",
+        "method": "GET"
+      },
+      {
+        "path": "/api/dashboards/visual-dashboard",
+        "method": "GET"
+      },
+      {
+        "path": "/api/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/ledgers/analyze",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/health",
+        "method": "GET"
+      },
+      {
+        "path": "/api/health",
+        "method": "GET"
+      },
+      {
+        "path": "/api/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/runs",
+        "method": "POST"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/activity",
+        "method": "GET"
+      },
+      {
+        "path": "/api/runs/visual-run",
+        "method": "GET"
+      },
+      {
+        "path": "/api/runs/visual-run/criteria/confirm",
+        "method": "POST"
+      },
+      {
+        "path": "/api/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/runs/visual-run/documents",
+        "method": "POST"
+      },
+      {
+        "path": "/api/runs/visual-run",
+        "method": "GET"
+      }
+    ]
+  },
+  "sourceSnapshot": {
+    "path": "../../baseline/source-snapshot.json",
+    "bytes": 35017,
+    "sha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7"
+  },
+  "sourceVerification": {
+    "checkedAt": "2026-09-20T17:10:37.337Z",
+    "scope": "Captured src/** and server/dashboard* files against packaged baseline source snapshot",
+    "checked": 101,
+    "mismatches": []
+  },
+  "fontManifest": {
+    "path": "../fonts/manifest.json",
+    "bytes": 34743,
+    "sha256": "c888c15d896d6c4618b3f6e7c96d3a6c1f2e23ffb4574c9cf8648daf77e9d72e"
+  },
+  "inputs": [
+    {
+      "path": "synthetic-fixture.json",
+      "bytes": 4535,
+      "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+    },
+    {
+      "path": "mock-api.mjs",
+      "bytes": 8824,
+      "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+    },
+    {
+      "path": "capture-flow.js",
+      "bytes": 18830,
+      "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+    },
+    {
+      "path": "capture-required-viewports.js",
+      "bytes": 11653,
+      "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+    },
+    {
+      "path": "finalize-capture.mjs",
+      "bytes": 6271,
+      "sha256": "ab58872830331bdf6ffa54ee304a84a7af1ba6760a8df3f14e405385de5c330b"
+    },
+    {
+      "path": "synthetic-dashboard.html",
+      "bytes": 441713,
+      "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+    },
+    {
+      "path": "synthetic-dashboard-dark.html",
+      "bytes": 441706,
+      "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+    }
+  ],
+  "measurements": {
+    "path": "measurements.json",
+    "bytes": 241473,
+    "sha256": "dbb944369034f127dec38608c2a57aba737c3c59733c17cc063d4199a2693dc1"
+  },
+  "captures": [
+    {
+      "id": "01-landing-desktop",
+      "state": "Built-in landing example, no uploaded data.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:35.092Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "01-landing-desktop.png",
+        "bytes": 556576,
+        "sha256": "1ee4967e8ba0f70aecbf71e206fbb7fb259536812a69cf7eaa399433a4a3e8dc",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/01-landing-desktop.json",
+        "bytes": 941783,
+        "sha256": "e7f9d8919135181d92eaa758b1525e2797f2d6115f4e6add35456790e0f96c65"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "01-landing-desktop"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 369,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "02-landing-mobile",
+      "state": "390 × 844 responsive landing.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:36.671Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "02-landing-mobile.png",
+        "bytes": 201448,
+        "sha256": "10cab1b24e702fabe1ead162376d07b92fa3bb264a0abfa26b67aa3f94b9e2bf",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/02-landing-mobile.json",
+        "bytes": 923798,
+        "sha256": "20b804064b493d13449f7707c55b89ad9a08ccc69c334f03620b781d612b95f2"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "02-landing-mobile"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 369,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "03-landing-mobile-motion-off",
+      "state": "Both OS reduced motion and explicit app motion OFF.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:38.009Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "reduced",
+        "osReduce": true,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "03-landing-mobile-motion-off.png",
+        "bytes": 201732,
+        "sha256": "19ec769de804243c49b189eff25b0726212891ebb3c0dc7a3f8971efdaa166c2",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/03-landing-mobile-motion-off.json",
+        "bytes": 816188,
+        "sha256": "659eb6409822428ceb48c9a3b44b139a5e14c7b2d3fbf239c03ff8d72690cc43"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "03-landing-mobile-motion-off"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 339,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "04-criteria-input-empty",
+      "state": "File input mode before upload.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:39.153Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "04-criteria-input-empty.png",
+        "bytes": 314566,
+        "sha256": "a55e9b8b0dca2def309571788e93bc38aee45cc98d7b5c8e00120a740ed2ad08",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/04-criteria-input-empty.json",
+        "bytes": 328754,
+        "sha256": "1a6201a11ac5a3a036f32ac39f57828234dd3cc3c5102f4b27ec90771adb8bd1"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "04-criteria-input-empty"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 136,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "05-criteria-natural-language",
+      "state": "Synthetic criteria text entered; no model called.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:40.104Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "05-criteria-natural-language.png",
+        "bytes": 183906,
+        "sha256": "496f9aee60702896da1cf37d807cd40778e3834cb6f91407ce05303a2ec28229",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/05-criteria-natural-language.json",
+        "bytes": 195586,
+        "sha256": "f25f45e4cbcae24ea7f8602e3957dc4947e965ea9962e6b9e323bf4cd1265142"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "05-criteria-natural-language"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 82,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "06-criteria-input-file",
+      "state": "Mock upload response returns synthetic structured workbook preview.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:41.513Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "06-criteria-input-file.png",
+        "bytes": 277119,
+        "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/06-criteria-input-file.json",
+        "bytes": 376314,
+        "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "06-criteria-input-file"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 156,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "07-criteria-reading",
+      "state": "Synthetic activity snapshot: E2B read operation, not a real external execution.",
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:44.383Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "07-criteria-reading.png",
+        "bytes": 324650,
+        "sha256": "536e6595f9bf1c7d10ae081b899fe749e68a1787e92256800882cc20552c95d1",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/07-criteria-reading.json",
+        "bytes": 1075157,
+        "sha256": "c17b16aadd35c92c0754bb40c6ce4de3fcf9981a54cd26f3dd8fc2d520e37ecb"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "07-criteria-reading"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 439,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "08-criteria-context",
+      "state": "Synthetic context activity; distinguishes reading from interpretation.",
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:46.721Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "08-criteria-context.png",
+        "bytes": 326785,
+        "sha256": "aa08d865864d35005041fe8480d42fcb7861b7af6617dd3f6fca6f476be11a9c",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/08-criteria-context.json",
+        "bytes": 1127761,
+        "sha256": "6472a1550a59e47f8db1e4e29b77ccf4528c360951abe67c346031a52c616c51"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "08-criteria-context"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 462,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "09-criteria-confirmation",
+      "state": "Three synthetic criteria, editable HITL table and original source pane.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:48.996Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "09-criteria-confirmation.png",
+        "bytes": 106138,
+        "sha256": "2af44d66ac0c90c71b2f9807fa9c36b91725a73680e9a8278b67f64f059fde4d",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/09-criteria-confirmation.json",
+        "bytes": 1022826,
+        "sha256": "6102b431732ddc21f8a561e2e09f207d791e8aaa385e6ed0daf545b5aa878dc9"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "09-criteria-confirmation"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 433,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "10-criteria-hitl-editor",
+      "state": "Inline editor opened for the synthetic absorption criterion.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:50.607Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "10-criteria-hitl-editor.png",
+        "bytes": 114513,
+        "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/10-criteria-hitl-editor.json",
+        "bytes": 1025043,
+        "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "10-criteria-hitl-editor"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 433,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "11-target-input-empty",
+      "state": "Explicit criteria confirmation completed before target upload.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:51.818Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "11-target-input-empty.png",
+        "bytes": 287371,
+        "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/11-target-input-empty.json",
+        "bytes": 399799,
+        "sha256": "1a288902baeb491a0d187d847640475d05802a68f0f049354dab966a1f7ac78b"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "11-target-input-empty"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 166,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "12-target-input-file",
+      "state": "Synthetic target added.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:52.953Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "12-target-input-file.png",
+        "bytes": 268349,
+        "sha256": "c7e9783a859541d1be04d72b12c45e9ca17744d8dbd2042203e79522d74e4df1",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/12-target-input-file.json",
+        "bytes": 447427,
+        "sha256": "ff939bf2b30412ac084e75356d23a3d048c191685cae33be74c0d22bcbebf595"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "12-target-input-file"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 186,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "13-review-active",
+      "state": "Synthetic received events: one pass, one fail and one review branch.",
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:56.911Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "13-review-active.png",
+        "bytes": 422812,
+        "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/13-review-active.json",
+        "bytes": 2021983,
+        "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "13-review-active"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 831,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "14-results",
+      "state": "Completed synthetic review: counts 1/1/1.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:06:59.488Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "14-results.png",
+        "bytes": 167390,
+        "sha256": "4ced148dc6a926f9079cc2fae75743b35ff18b3b8ffa763f59fac6e5cd0cb183",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/14-results.json",
+        "bytes": 667893,
+        "sha256": "c1997bc687362e8cd26edd395a4dace87c78159c2c38e791ab8f3075e6b90059"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "14-results"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 280,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "15-result-detail-fail",
+      "state": "Synthetic failed absorption item selected; target row and decision explanation.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:00.934Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "15-result-detail-fail.png",
+        "bytes": 181083,
+        "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/15-result-detail-fail.json",
+        "bytes": 710697,
+        "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "15-result-detail-fail"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 298,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "16-result-detail-review",
+      "state": "Unreadable synthetic appearance result, human review controls displayed; no resolution submitted.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:02.391Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "16-result-detail-review.png",
+        "bytes": 184302,
+        "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/16-result-detail-review.json",
+        "bytes": 713312,
+        "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "16-result-detail-review"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 299,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "17-result-applied-criteria",
+      "state": "Applied criteria with their original source references.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:03.846Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "17-result-applied-criteria.png",
+        "bytes": 176272,
+        "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/17-result-applied-criteria.json",
+        "bytes": 766801,
+        "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "17-result-applied-criteria"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 322,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "18-result-criterion-source",
+      "state": "Criterion source replaces target preview, focused on the synthetic source row.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:05.277Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "18-result-criterion-source.png",
+        "bytes": 173692,
+        "sha256": "117b53ab122df2d0b12ba8937744d0d57fb3740ced3b72b6bb74527b64475380",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/18-result-criterion-source.json",
+        "bytes": 743105,
+        "sha256": "ca6a425267caf467c5fa396f386c206d24e00ab2e82e5eb7f880b4b3b7eca788"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "18-result-criterion-source"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 313,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "19-dashboard-controls",
+      "state": "Actual DashboardModal customization inputs before generation.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:07.422Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "19-dashboard-controls.png",
+        "bytes": 270631,
+        "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/19-dashboard-controls.json",
+        "bytes": 1015625,
+        "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "19-dashboard-controls"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 425,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "20-dashboard-generating",
+      "state": "Synthetic generating job; no model, E2B or build was invoked by this UI action.",
+      "settling": {
+        "livePhase": true,
+        "finiteAnimationsSettled": null,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:09.409Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "20-dashboard-generating.png",
+        "bytes": 134605,
+        "sha256": "eff1dc8def82bdf0321b3d8886e9fb41d74e7e971a93734cebbfab0a6db5b19c",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/20-dashboard-generating.json",
+        "bytes": 1605885,
+        "sha256": "bc63deb27ee5dc087e973a4c4f5e230a7fe033fdbcf417aa415713d44f899870"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "20-dashboard-generating"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 672,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "21-dashboard-light",
+      "state": "Self-contained deterministic GSPEC designer HTML in actual sandboxed host modal; synthetic data.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:12.620Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "21-dashboard-light.png",
+        "bytes": 148135,
+        "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/21-dashboard-light.json",
+        "bytes": 1360988,
+        "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "21-dashboard-light"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 414,
+        "iframeElements": 161,
+        "dashboardCanvasCount": 1
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "22-dashboard-customize",
+      "state": "Dark/bar-chart suggestion selected while current light preview remains visible.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:14.392Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "22-dashboard-customize.png",
+        "bytes": 188858,
+        "sha256": "10d6bbaab24c0b82f48631a2a85e075965b651f29c281cf4f4bf67bb174fac86",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/22-dashboard-customize.json",
+        "bytes": 1347144,
+        "sha256": "6e7298a9e41632d55c9da1d13731d1875ead4263aa4da680704edba7149ddea5"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "22-dashboard-customize"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 408,
+        "iframeElements": 161,
+        "dashboardCanvasCount": 1
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "23-dashboard-dark",
+      "state": "Synthetic deterministic dark theme and bar chart delivered through the real regeneration controls.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:18.261Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "23-dashboard-dark.png",
+        "bytes": 155331,
+        "sha256": "75a092c166532753e89139f209c263277217b55d87405fe0d8104b5f9973fcfb",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/23-dashboard-dark.json",
+        "bytes": 1362836,
+        "sha256": "ef78a3268ea9feb4c24cb6b165b2208e87485dcb8d830dbb081c98c5fa4b2e11"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "23-dashboard-dark"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 414,
+        "iframeElements": 161,
+        "dashboardCanvasCount": 1
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "24-dashboard-activity",
+      "state": "Actual activity disclosure showing explicitly synthetic local fixture log.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:20.015Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "24-dashboard-activity.png",
+        "bytes": 153594,
+        "sha256": "ce2ed6f4a743eda17ccc2cfd5148b440ba76133a67764c4b9b96ed70f33cae95",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/24-dashboard-activity.json",
+        "bytes": 1436035,
+        "sha256": "638fbc5abf2af3ea6d82d4fde7968973fcac37004c14637df5adacdd3fb9343e"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "24-dashboard-activity"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 444,
+        "iframeElements": 161,
+        "dashboardCanvasCount": 1
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "25-dashboard-source",
+      "state": "Host-owned source/evidence view with frozen synthetic review snapshot.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:22.560Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "25-dashboard-source.png",
+        "bytes": 106106,
+        "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/25-dashboard-source.json",
+        "bytes": 1907545,
+        "sha256": "f1510ed6ae3dd8e8f3edb6d3d2cbb5c3b27f5ec702872a9c4d783dc0f2d43451"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "25-dashboard-source"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 642,
+        "iframeElements": 161,
+        "dashboardCanvasCount": 1
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "26-ledger-empty",
+      "state": "Ledger modal before upload; no workbook has been written.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:24.690Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "26-ledger-empty.png",
+        "bytes": 269941,
+        "sha256": "90507070de870a430d2b5b36095d130a061edb23fbbebf0b47abd0327ddbf576",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/26-ledger-empty.json",
+        "bytes": 954297,
+        "sha256": "b9885415d889df0717af1fb27e7a972874289c3e962ffefd54b365ef2718ddc7"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "26-ledger-empty"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 400,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "27-ledger-mapping",
+      "state": "Synthetic mapping/proposal and optional human note; download is not executed and workbook processing is not asserted.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:26.286Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1440,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "27-ledger-mapping.png",
+        "bytes": 220911,
+        "sha256": "b275d25b2e328801c375226c240d2cb4c65e452937ee7fcbb5533c06ef01563b",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/27-ledger-mapping.json",
+        "bytes": 1107615,
+        "sha256": "87005825eeac30c4c72f4e3d65ed7e1bb91b0b5bd1c92f77f398d9176b07441c"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "27-ledger-mapping"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 467,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "28-results-mobile-motion-off",
+      "state": "390 × 844 responsive results; OS reduced motion and app motion OFF; viewport crop, not full page.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:07:27.618Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "reduced",
+        "osReduce": true,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "28-results-mobile-motion-off.png",
+        "bytes": 95954,
+        "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/28-results-mobile-motion-off.json",
+        "bytes": 709181,
+        "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "28-results-mobile-motion-off"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 299,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "29-landing-1600",
+      "state": "Settled landing at required 1600 × 960 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:08.031Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1600,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "29-landing-1600.png",
+        "bytes": 591657,
+        "sha256": "62079a27059cd17c79722842cd2110ea7db48793a1c1bd30633020d2f64dd9ee",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/29-landing-1600.json",
+        "bytes": 942017,
+        "sha256": "485148875a175394a2fcc20466e07ef0e78cb40eeefd63f5ccc98e3812c65a81"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "29-landing-1600"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 369,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "30-landing-1280",
+      "state": "Settled landing at required 1280 × 800 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:09.400Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "30-landing-1280.png",
+        "bytes": 451355,
+        "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/30-landing-1280.json",
+        "bytes": 941856,
+        "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "30-landing-1280"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 369,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "31-criteria-confirmation-1600",
+      "state": "Settled synthetic criteria confirmation at required 1600 × 960 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:11.809Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1600,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "31-criteria-confirmation-1600.png",
+        "bytes": 107579,
+        "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/31-criteria-confirmation-1600.json",
+        "bytes": 1022718,
+        "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "31-criteria-confirmation-1600"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 433,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "32-criteria-confirmation-1280",
+      "state": "Settled synthetic criteria confirmation at required 1280 × 800 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:13.088Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "32-criteria-confirmation-1280.png",
+        "bytes": 101873,
+        "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/32-criteria-confirmation-1280.json",
+        "bytes": 1022523,
+        "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "32-criteria-confirmation-1280"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 433,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "33-result-detail-fail-1600",
+      "state": "Settled synthetic failed result detail at required 1600 × 960 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:15.226Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1600,
+        "height": 960,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "33-result-detail-fail-1600.png",
+        "bytes": 185798,
+        "sha256": "c4828c2e481603ae60a4feb450a0d3debc07df6fc73d0be6e559c884f067659c",
+        "width": 1600,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/33-result-detail-fail-1600.json",
+        "bytes": 710713,
+        "sha256": "4d1ac909da477501857a331da5ac880a90b6896f1d07f025041e68784faa74ed"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "33-result-detail-fail-1600"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 298,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    },
+    {
+      "id": "34-result-detail-fail-1280",
+      "state": "Settled synthetic failed result detail at required 1280 × 800 viewport.",
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "synthetic": true,
+      "capturedAt": "2026-09-20T17:09:16.389Z",
+      "url": "http://127.0.0.1:5209/.cache/architecture-visual/index.html",
+      "mockOrigin": "http://127.0.0.1:5209",
+      "viewport": {
+        "width": 1280,
+        "height": 800,
+        "dpr": 1
+      },
+      "motion": {
+        "app": "full",
+        "osReduce": false,
+        "animationFreeze": "none",
+        "finiteTransitionSettleMs": 650
+      },
+      "screenshot": {
+        "path": "34-result-detail-fail-1280.png",
+        "bytes": 157045,
+        "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0",
+        "width": 1280,
+        "height": 800,
+        "mode": "viewport",
+        "scale": "device; DPR 1 required by dimension validation"
+      },
+      "dom": {
+        "path": "dom/34-result-detail-fail-1280.json",
+        "bytes": 710554,
+        "sha256": "962b5996d271694f3a7c2d1c4ac9951a257b70c3f9c7f239453579694708b492"
+      },
+      "measurement": {
+        "path": "measurements.json",
+        "id": "34-result-detail-fail-1280"
+      },
+      "sourceSnapshotSha256": "f11f2d97c1b415f0dd90a481183357b88d5c309b43bb78034310f227a35a35f7",
+      "fixtureSha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff",
+      "fonts": {
+        "ready": true,
+        "dmSans": true,
+        "notoSansKr": true,
+        "manifest": "../fonts/manifest.json"
+      },
+      "visibleChecks": {
+        "bodyTextPresent": true,
+        "horizontalOverflow": false,
+        "domElements": 298,
+        "iframeElements": 0,
+        "dashboardCanvasCount": 0
+      },
+      "visualInspection": "All 34 images reviewed in contact sheets; result detail, dashboard source, ledger mapping and mobile/required desktop states also inspected at full size."
+    }
+  ],
+  "comparison": {
+    "pixelEqualityAcrossPlatforms": false,
+    "domIsReferenceTemplate": true,
+    "doNotHardcodeSyntheticFixtureIntoProduction": true,
+    "animationFreeze": "none",
+    "finiteTransitionSettleMs": 650,
+    "dynamicRegionsToNormalize": [
+      {
+        "selector": "time",
+        "reason": "Synthetic event timestamps and locale formatting."
+      },
+      {
+        "selector": ".workroom-current-time time, .sandbox-workroom-elapsed time",
+        "reason": "Elapsed time changes while a synthetic task is active."
+      },
+      {
+        "selector": ".workroom-current-time span",
+        "reason": "Inspect DOM animation targets/timings for active animation phase; do not mask static layout."
+      }
+    ],
+    "maskingAppliedToPng": false
+  },
+  "limitations": [
+    "Static images and DOM samples do not prove motion equivalence.",
+    "The dashboard iframe uses its own system font stack and bundled chart runtime; host local web fonts do not cross its sandbox/CSP boundary.",
+    "Ledger upload uses a synthetic filename token and mocked parsed response; no real XLSX workbook is read or written.",
+    "Snapshots omit SCRIPT/STYLE/NOSCRIPT contents, handlers and application source; canvas pixels are represented by PNG, not DOM.",
+    "Mobile captures are viewport crops; DOM includes offscreen geometry.",
+    "Error/cancel/reconnect, many-file/PDF/multisheet, download and long-duration behavior require separate acceptance evidence."
+  ]
+}

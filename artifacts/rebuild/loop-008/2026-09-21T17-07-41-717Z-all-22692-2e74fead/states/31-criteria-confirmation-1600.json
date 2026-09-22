@@ -1,0 +1,72 @@
+{
+  "id": "31-criteria-confirmation-1600",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "31-criteria-confirmation-1600",
+    "screenshot": {
+      "path": "31-criteria-confirmation-1600.png",
+      "bytes": 107579,
+      "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36",
+      "width": 1600,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/31-criteria-confirmation-1600.json",
+      "bytes": 1022718,
+      "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+    },
+    "viewport": {
+      "width": 1600,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:12:43.838Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/31-criteria-confirmation-1600-font-readiness.json",
+    "bytes": 2301352,
+    "sha256": "660f7af4c51467a2001d78a8dc620f61554cd0302ff9fcc2107963f5a100b144"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/31-criteria-confirmation-1600.png",
+    "bytes": 106262,
+    "sha256": "0e1eefa0c10ba702de16fefd08043f41951a3c94715703d204d0517832f51746",
+    "width": 1600,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:12:49.788Z",
+    "capturedAt": "2026-09-21T17:12:50.197Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/31-criteria-confirmation-1600.json",
+    "bytes": 1592441,
+    "sha256": "34f77b2fe87dd3b4980f061551890b67899a9faa9de6cde64aaf43685599605b"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/31-criteria-confirmation-1600-measurement.json",
+    "bytes": 202955,
+    "sha256": "3da0d6d435dfee7c6b46951ebbc18ea1ca610e99e72f81b6b0f9a5a111b3034b"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T17:12:52.534Z"
+}

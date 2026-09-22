@@ -1,0 +1,2332 @@
+{
+  "formatVersion": 1,
+  "provenance": "Source declarations observed 2026-09-21; declarative motion parameters only, not application source. Apply in source order, then scoped charcoal overrides. Unused historical CSS selectors may appear; behavior ownership and activation are defined in 04-ui-motion.md.",
+  "keyframes": [
+    {
+      "source": "motion-system.css",
+      "name": "motion-module-arrive",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": "0",
+            "transform": "translateY(8px)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "motion-system.css",
+      "name": "motion-row-arrive",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": "0",
+            "transform": "translateY(4px)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "motion-system.css",
+      "name": "motion-fade-in",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "workflow-polish.css",
+      "name": "upload-scan",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translateY(-18px)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "15%,80%",
+          "values": {
+            "opacity": ".8"
+          }
+        },
+        {
+          "at": "90%",
+          "values": {
+            "transform": "translateY(55px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "workflow-polish.css",
+      "name": "upload-plus",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "scale(.85)"
+          }
+        },
+        {
+          "at": "55%",
+          "values": {
+            "transform": "scale(1.15)"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "scale(1)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-status",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".76"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-paper-back",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translate(-31px, -11px) rotate(-14deg) rotateY(13deg)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translate(-31px, -14px) rotate(-14deg) rotateY(13deg)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-paper-middle",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translate(24px, -6px) rotate(11deg) rotateY(-16deg)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translate(24px, -10px) rotate(11deg) rotateY(-16deg)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-paper-front",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translate(-4px, 18px) rotate(-4deg) rotateY(-10deg)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translate(-4px, 14px) rotate(-4deg) rotateY(-10deg)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-paper-single",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translate(0, 8px) rotate(-6deg) rotateY(-8deg)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translate(0, 4px) rotate(-6deg) rotateY(-8deg)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-paper-scan",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateY(-110%)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "13%,76%",
+          "values": {
+            "opacity": "var(--scan-opacity, .6)"
+          }
+        },
+        {
+          "at": "90%",
+          "values": {
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateY(24%)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-lens-scan",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateY(-110%)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "13%,76%",
+          "values": {
+            "opacity": ".55"
+          }
+        },
+        {
+          "at": "90%",
+          "values": {
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateY(24%)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-readout",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "scaleY(.72)",
+            "opacity": ".52"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "scaleY(1)",
+            "opacity": ".85"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-path-trace",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "stroke-dashoffset": "100",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "15%,78%",
+          "values": {
+            "opacity": ".42"
+          }
+        },
+        {
+          "at": "94%",
+          "values": {
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "stroke-dashoffset": "0",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-path-particle",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "offset-distance": "0%",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "12%,80%",
+          "values": {
+            "opacity": "var(--particle-opacity, .82)"
+          }
+        },
+        {
+          "at": "96%",
+          "values": {
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "offset-distance": "100%",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-core-scan",
+      "frames": [
+        {
+          "at": "0%, 8%, 84%, 100%",
+          "values": {
+            "opacity": "0",
+            "transform": "translateY(0)"
+          }
+        },
+        {
+          "at": "14%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "75%",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(40px)"
+          }
+        },
+        {
+          "at": "83%",
+          "values": {
+            "opacity": "0",
+            "transform": "translateY(43px)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-core-extract",
+      "frames": [
+        {
+          "at": "0%, 12%, 100%",
+          "values": {
+            "transform": "scaleX(.6)",
+            "opacity": ".35"
+          }
+        },
+        {
+          "at": "35%, 75%",
+          "values": {
+            "transform": "scaleX(1)",
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-core-confirm",
+      "frames": [
+        {
+          "at": "0%, 30%, 100%",
+          "values": {
+            "opacity": ".2",
+            "transform": "translateX(-3px)"
+          }
+        },
+        {
+          "at": "48%, 78%",
+          "values": {
+            "opacity": "1",
+            "transform": "translateX(0)",
+            "box-shadow": "0 0 6px #70f3c433"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/review-theater.css",
+      "name": "theater-station-cycle",
+      "frames": [
+        {
+          "at": "0%, 36%, 100%",
+          "values": {
+            "color": "#8194b3"
+          }
+        },
+        {
+          "at": "8%, 25%",
+          "values": {
+            "color": "#b5ffdf"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/landing-intro.css",
+      "name": "intro-light-breathe",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": ".5",
+            "transform": "translate3d(-8px, 0, 0)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": ".85",
+            "transform": "translate3d(12px, -5px, 0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/landing-intro.css",
+      "name": "intro-record-select",
+      "frames": [
+        {
+          "at": "0%, 17%, 100%",
+          "values": {
+            "box-shadow": "inset 2px 0 0 transparent",
+            "background-color": "transparent"
+          }
+        },
+        {
+          "at": "4%, 11%",
+          "values": {
+            "box-shadow": "inset 2px 0 0 #70b675",
+            "background-color": "#d5eeaf78"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-arrival",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": ".2",
+            "transform": "translateY(4px)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-paper",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translateY(1px)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translateY(-3px)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-transfer",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateX(0)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "15%,75%",
+          "values": {
+            "opacity": ".9"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateX(83px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-transfer-short",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateX(0)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "15%,75%",
+          "values": {
+            "opacity": ".9"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateX(51px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-scan",
+      "frames": [
+        {
+          "at": "0%,5%",
+          "values": {
+            "transform": "translateY(0)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "16%,77%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "92%,100%",
+          "values": {
+            "transform": "translateY(37px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-cell",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".35",
+            "transform": "translateX(-3px)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "opacity": "1",
+            "transform": "translateX(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-header",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translateY(3px)",
+            "opacity": ".65"
+          }
+        },
+        {
+          "at": "40%,65%",
+          "values": {
+            "transform": "translateY(-1px)",
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-route",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "stroke-dashoffset": "47"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "stroke-dashoffset": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-bin",
+      "frames": [
+        {
+          "at": "0%,75%,100%",
+          "values": {
+            "opacity": ".55",
+            "transform": "translateX(2px)"
+          }
+        },
+        {
+          "at": "25%,45%",
+          "values": {
+            "opacity": "1",
+            "transform": "translateX(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-tile",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".65",
+            "transform": "translateY(1.5px)"
+          }
+        },
+        {
+          "at": "35%,65%",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-verify",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".65"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-gather",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateX(-8px)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "25%",
+          "values": {
+            "opacity": ".9"
+          }
+        },
+        {
+          "at": "85%,100%",
+          "values": {
+            "transform": "translateX(34px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-check",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "stroke-dashoffset": "31"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "stroke-dashoffset": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-return",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "stroke-dashoffset": "36"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "stroke-dashoffset": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-inspect",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translate(-3px,-3px)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "translate(3px,4px)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "name": "sandbox-work-repair",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "translateX(-5px)",
+            "opacity": ".55"
+          }
+        },
+        {
+          "at": "35%,70%",
+          "values": {
+            "transform": "translateX(0)",
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "name": "workroom-handoff-forward",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "left": "-32px",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "12%,82%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "left": "100%",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "name": "workroom-handoff-backward",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "right": "-32px",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "12%,82%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "right": "100%",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "name": "workroom-source-scan",
+      "frames": [
+        {
+          "at": "0%,10%",
+          "values": {
+            "transform": "translateY(0)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "20%,70%",
+          "values": {
+            "opacity": ".8"
+          }
+        },
+        {
+          "at": "95%,100%",
+          "values": {
+            "transform": "translateY(72px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "name": "workroom-glass-scan",
+      "frames": [
+        {
+          "at": "0%,15%",
+          "values": {
+            "left": "-40%",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "25%,65%",
+          "values": {
+            "opacity": ".8"
+          }
+        },
+        {
+          "at": "85%,100%",
+          "values": {
+            "left": "110%",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "name": "workroom-live-breathe",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".55"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "name": "sandbox-room-beacon",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "opacity": ".4"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "name": "sandbox-room-scan",
+      "frames": [
+        {
+          "at": "0%,10%",
+          "values": {
+            "transform": "translateY(0)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "30%,75%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateY(69px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "name": "sandbox-room-wave",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "scaleY(1)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "scaleY(3)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "name": "sandbox-room-event",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "opacity": ".3",
+            "transform": "translateY(3px)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "name": "workroom-operation-wave",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "transform": "scaleY(1)",
+            "opacity": ".45"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "transform": "scaleY(3)",
+            "opacity": "1"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "name": "workroom-operation-light",
+      "frames": [
+        {
+          "at": "from",
+          "values": {
+            "transform": "translateX(-100%)"
+          }
+        },
+        {
+          "at": "to",
+          "values": {
+            "transform": "translateX(390%)"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "name": "review-context-beam",
+      "frames": [
+        {
+          "at": "0%",
+          "values": {
+            "transform": "translateX(-10px)",
+            "opacity": "0"
+          }
+        },
+        {
+          "at": "15%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "85%",
+          "values": {
+            "opacity": "1"
+          }
+        },
+        {
+          "at": "100%",
+          "values": {
+            "transform": "translateX(38px)",
+            "opacity": "0"
+          }
+        }
+      ]
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "name": "review-context-pulse",
+      "frames": [
+        {
+          "at": "0%,100%",
+          "values": {
+            "filter": "drop-shadow(0 0 0 #70f3c400)"
+          }
+        },
+        {
+          "at": "50%",
+          "values": {
+            "color": "#a0f6d9",
+            "filter": "drop-shadow(0 0 5px #70f3c466)"
+          }
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "source": "motion-system.css",
+      "selector": ":root",
+      "conditions": [],
+      "values": {
+        "--motion-fast": "160ms",
+        "--motion-state": "280ms",
+        "--motion-reveal": "520ms",
+        "--motion-ease": "cubic-bezier(.22, 1, .36, 1)",
+        "--motion-focus": "#c5f65d",
+        "--motion-focus-halo": "#c5f65d18"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ":is(.app-shell, .golden-picker, .ledger-modal, .dashboard-modal) :is(button, a, summary)",
+      "conditions": [],
+      "values": {
+        "transition-property": "color, background-color, border-color, box-shadow, outline-color",
+        "transition-duration": "var(--motion-fast)",
+        "transition-timing-function": "var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell :is(.button, .landing-primary, .landing-secondary, .landing-sample,\n  .golden-open, .new-review, .dashboard-cta, .resolve-button, .text-action),\n.criteria-confirmation :is(.criteria-add, .criteria-confirm, .criteria-cancel),\n.golden-picker :is(.golden-picker-load, .golden-picker-close),\n.ledger-modal :is(.ledger-analyze, .ledger-download, .ledger-close, .ledger-change-file),\n.dashboard-modal :is(.dashboard-generate, .dashboard-icon-button, .dashboard-download)",
+      "conditions": [],
+      "values": {
+        "transition-property": "transform, color, background-color, border-color, box-shadow, outline-color",
+        "transition-duration": "var(--motion-fast)",
+        "transition-timing-function": "var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell :is(.landing-primary, .run-button, .dashboard-cta) > svg:last-child,\n.golden-picker-load > svg:last-child, .ledger-analyze > svg:last-child,\n.dashboard-button-arrow",
+      "conditions": [],
+      "values": {
+        "transition": "translate var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell :is(input:not([type='checkbox']):not([type='radio']):not([type='file']), textarea, select),\n.golden-picker select,\n.ledger-modal :is(input:not([type='file']), textarea, select),\n.dashboard-modal textarea",
+      "conditions": [],
+      "values": {
+        "transition": "border-color var(--motion-state) var(--motion-ease),\n    background-color var(--motion-state) var(--motion-ease),\n    box-shadow var(--motion-state) var(--motion-ease),\n    outline-color var(--motion-fast) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell .upload-zone, .ledger-modal .ledger-upload",
+      "conditions": [],
+      "values": {
+        "transition": "transform var(--motion-state) var(--motion-ease),\n    border-color var(--motion-state) var(--motion-ease),\n    background-color var(--motion-state) var(--motion-ease),\n    box-shadow var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell .upload-icon",
+      "conditions": [],
+      "values": {
+        "transition": "translate var(--motion-state) var(--motion-ease),\n    color var(--motion-state) var(--motion-ease),\n    border-color var(--motion-state) var(--motion-ease),\n    background-color var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell :is(.file-row, .file-type, .review-item, .item-status, .verdict-badge,\n  .criteria-card, .criteria-type, .analysis-file, .analysis-status, .analysis-phase-list > li,\n  .analysis-section-heading > span, .analysis-log-state, .criteria-log-state, .analysis-inventory li,\n  .analysis-regions > li, .extracted-field, .extracted-field-value),\n.golden-picker :is(.golden-picker-entry, .golden-picker-marker, .golden-picker-entry-description),\n.ledger-modal :is(.ledger-status-chip, .ledger-cell-address, .ledger-new-value),\n.dashboard-modal :is(.dashboard-suggestion, .dashboard-stages li, .dashboard-stage-icon,\n  .dashboard-sandbox-steps li, .dashboard-sandbox-step-icon, .dashboard-log-status,\n  .dashboard-preview-dot)",
+      "conditions": [],
+      "values": {
+        "transition": "color var(--motion-state) var(--motion-ease),\n    background-color var(--motion-state) var(--motion-ease),\n    border-color var(--motion-state) var(--motion-ease),\n    box-shadow var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell :is(.workspace-nav, .view-tabs, .item-filters, .source-document-tabs) button,\n.app-shell .doc-preview__sheets button, .golden-picker-format button,\n.dashboard-suggestion",
+      "conditions": [],
+      "values": {
+        "transition-duration": "var(--motion-state)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell .view-tabs button::after",
+      "conditions": [],
+      "values": {
+        "transition": "opacity var(--motion-state) var(--motion-ease),\n    transform var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".app-shell .understood-criteria > button > svg:last-child,\n.extracted-fields-chevron,\n.criteria-card-toggle > svg:last-child,\n.criteria-discovery > summary > svg:last-child,\n.criteria-activity > summary > svg:last-child,\n.analysis-activity-toggle > svg:last-child,\n.dashboard-activity-chevron",
+      "conditions": [],
+      "values": {
+        "transition": "transform var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".criteria-card-summary, .criteria-card-toggle, .criteria-source-links,\n.criteria-editor fieldset",
+      "conditions": [],
+      "values": {
+        "transition": "opacity var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".criteria-include > span",
+      "conditions": [],
+      "values": {
+        "transition": "color var(--motion-fast) var(--motion-ease),\n    border-color var(--motion-fast) var(--motion-ease),\n    background-color var(--motion-fast) var(--motion-ease),\n    box-shadow var(--motion-fast) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": ".criteria-include > span > svg, .golden-picker-marker > svg",
+      "conditions": [],
+      "values": {
+        "transition": "opacity var(--motion-fast) var(--motion-ease),\n    transform var(--motion-state) var(--motion-ease)"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.criteria-confirmation, .document-analysis)",
+      "conditions": [],
+      "values": {
+        "animation": "motion-module-arrive var(--motion-reveal) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] .golden-picker[open] .golden-picker-shell",
+      "conditions": [],
+      "values": {
+        "animation": "motion-module-arrive var(--motion-reveal) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.golden-picker, .ledger-modal, .dashboard-modal)[open]::backdrop",
+      "conditions": [],
+      "values": {
+        "animation": "motion-fade-in var(--motion-state) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.criteria-card, .analysis-file,\n  .analysis-inventory li, .analysis-regions > li, .golden-picker-entry)",
+      "conditions": [],
+      "values": {
+        "animation": "motion-row-arrive var(--motion-reveal) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "40ms"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "80ms"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(n + 4)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "120ms"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.export-popover, .resolution-form,\n  .criteria-editor:not([hidden]), .criteria-numeric-controls,\n  .extracted-fields[open] .extracted-fields-body,\n  .criteria-discovery[open] .criteria-discovery-content,\n  .criteria-activity[open] > ol,\n  .analysis-activity-content:not([hidden]),\n  .dashboard-activity-content:not([hidden]),\n  .ledger-uploaded, .ledger-mapping-table-wrap, .ledger-extra-note)",
+      "conditions": [],
+      "values": {
+        "animation": "motion-row-arrive var(--motion-state) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='full'] :is(.ready-note, .changed-note, .error-banner, .outcome-strip,\n  .criteria-submit-error, .criteria-row-errors, .analysis-warnings,\n  .golden-picker-error, .golden-picker-notices,\n  .ledger-callout, .ledger-success, .dashboard-error, .dashboard-notice,\n  .dashboard-log-entry, .analysis-activity-content li)",
+      "conditions": [],
+      "values": {
+        "animation": "motion-fade-in var(--motion-state) var(--motion-ease) backwards"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='reduced']",
+      "conditions": [],
+      "values": {
+        "--motion-fast": "0ms",
+        "--motion-state": "0ms",
+        "--motion-reveal": "0ms"
+      }
+    },
+    {
+      "source": "motion-system.css",
+      "selector": "html[data-motion='reduced'] *,\nhtml[data-motion='reduced'] *::before,\nhtml[data-motion='reduced'] *::after,\nhtml[data-motion='reduced'] dialog::backdrop",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "workflow-polish.css",
+      "selector": ".workflow-upload-paper",
+      "conditions": [],
+      "values": {
+        "transition": "transform .6s cubic-bezier(.2,.8,.2,1)"
+      }
+    },
+    {
+      "source": "workflow-polish.css",
+      "selector": ".workflow-drop:hover .workflow-upload-scan, .workflow-drop.is-over .workflow-upload-scan",
+      "conditions": [],
+      "values": {
+        "animation": "upload-scan 2s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "workflow-polish.css",
+      "selector": ".workflow-drop:hover .workflow-upload-plus",
+      "conditions": [],
+      "values": {
+        "animation": "upload-plus .6s cubic-bezier(.2,.8,.2,1)"
+      }
+    },
+    {
+      "source": "workflow-polish.css",
+      "selector": ".workflow-shell .button.primary > svg:last-child",
+      "conditions": [],
+      "values": {
+        "transition": "transform .25s"
+      }
+    },
+    {
+      "source": "workflow-polish.css",
+      "selector": ".workflow-file",
+      "conditions": [],
+      "values": {
+        "transition": "background .22s, border-color .22s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater",
+      "conditions": [],
+      "values": {
+        "--theater-flow-duration": "6.4s",
+        "--theater-scan-duration": "8.4s",
+        "--theater-float-duration": "12s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-status-light",
+      "conditions": [],
+      "values": {
+        "transition": "background-color .5s ease, box-shadow .5s ease"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-status-light",
+      "conditions": [],
+      "values": {
+        "animation": "theater-status 5.6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-path-particle",
+      "conditions": [],
+      "values": {
+        "offset-distance": "0%"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-path-trace",
+      "conditions": [],
+      "values": {
+        "animation": "theater-path-trace var(--theater-flow-duration) linear infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-path-particle",
+      "conditions": [],
+      "values": {
+        "animation": "theater-path-particle var(--theater-flow-duration) linear infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-route-input",
+      "conditions": [],
+      "values": {
+        "--theater-flow-duration": "5.6s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-live .theater-route:not(.theater-route-input) .theater-path-trace,\n.review-theater.is-live .theater-route:not(.theater-route-input) .theater-path-particle",
+      "conditions": [],
+      "values": {
+        "animation": "none"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-classifier-node",
+      "conditions": [],
+      "values": {
+        "transition": "filter .45s ease"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-stream-packet",
+      "conditions": [],
+      "values": {
+        "will-change": "transform, opacity"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-paper-position-0",
+      "conditions": [],
+      "values": {
+        "animation": "theater-paper-back var(--theater-float-duration) ease-in-out infinite paused"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-paper-position-1",
+      "conditions": [],
+      "values": {
+        "animation": "theater-paper-middle var(--theater-float-duration) ease-in-out infinite paused"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-paper-position-2",
+      "conditions": [],
+      "values": {
+        "animation": "theater-paper-front var(--theater-float-duration) ease-in-out infinite paused"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-paper-position",
+      "conditions": [],
+      "values": {
+        "animation-play-state": "running"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-live .theater-source .theater-document-stack:not(:has(.theater-paper-position-1)) .theater-paper-position-0",
+      "conditions": [],
+      "values": {
+        "animation": "theater-paper-single var(--theater-float-duration) ease-in-out infinite paused"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-live.is-active .theater-source .theater-document-stack:not(:has(.theater-paper-position-1)) .theater-paper-position-0",
+      "conditions": [],
+      "values": {
+        "animation-play-state": "running"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-paper-scanner",
+      "conditions": [],
+      "values": {
+        "animation": "theater-paper-scan var(--theater-scan-duration) linear infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-paper-position-0 .theater-paper-scanner",
+      "conditions": [],
+      "values": {
+        "animation-delay": "-5.6s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-paper-position-1 .theater-paper-scanner",
+      "conditions": [],
+      "values": {
+        "animation-delay": "-2.8s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-lens-readout > i",
+      "conditions": [],
+      "values": {
+        "animation": "theater-readout 4.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-lens-readout > i:nth-child(2n)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "-.6s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-lens-readout > i:nth-child(3n)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "-1.2s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-lens-readout > i:nth-child(4n)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "-1.8s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".is-active .theater-lens-scan",
+      "conditions": [],
+      "values": {
+        "animation": "theater-lens-scan var(--theater-scan-duration) linear infinite",
+        "animation-delay": "-1.4s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".theater-result-card",
+      "conditions": [],
+      "values": {
+        "transition": "border-color .24s ease, box-shadow .24s ease"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ":root[data-motion='reduced'] .review-theater *, :root[data-motion='reduced'] .review-theater *::before, :root[data-motion='reduced'] .review-theater *::after,\n.review-theater.is-reduced *, .review-theater.is-reduced *::before, .review-theater.is-reduced *::after",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.review-theater",
+      "conditions": [],
+      "values": {
+        "--theater-scan-duration": "6.4s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-core-scanbeam",
+      "conditions": [],
+      "values": {
+        "animation": "theater-core-scan 3.2s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-core-readlines i",
+      "conditions": [],
+      "values": {
+        "animation": "theater-core-extract 3.2s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-core-checks i",
+      "conditions": [],
+      "values": {
+        "animation": "theater-core-confirm 3.2s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-core-readlines i:nth-child(2), .review-theater.is-active .theater-core-checks i:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".2s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-active .theater-core-readlines i:nth-child(3), .review-theater.is-active .theater-core-checks i:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".4s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-example .theater-scene-stations > span",
+      "conditions": [],
+      "values": {
+        "animation": "theater-station-cycle 6.4s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-example .theater-scene-stations > span:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "1.4s"
+      }
+    },
+    {
+      "source": "components/review-theater.css",
+      "selector": ".review-theater.is-example .theater-scene-stations > span:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "2.8s"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .landing-intro-buttons button",
+      "conditions": [],
+      "values": {
+        "transition": "background .2s, border-color .2s, box-shadow .25s"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .landing-intro-start svg",
+      "conditions": [],
+      "values": {
+        "transition": "transform .3s cubic-bezier(.22, 1, .36, 1)"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage.is-reduced *, .landing-intro-stage.is-reduced *::before, .landing-intro-stage.is-reduced *::after",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .landing-intro-start:hover:not(:disabled)::before,\n.landing-intro-stage .landing-intro-start:focus-visible::before",
+      "conditions": [],
+      "values": {
+        "transition": "transform .8s cubic-bezier(.22, 1, .36, 1)"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .review-theater::after",
+      "conditions": [],
+      "values": {
+        "animation": "intro-light-breathe 17s ease-in-out infinite alternate"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .is-example .theater-example-table > div:nth-child(n + 2)",
+      "conditions": [],
+      "values": {
+        "animation": "intro-record-select 6.4s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .is-example .theater-example-table > div:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".4s"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .is-example .theater-example-table > div:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "1.95s"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage .is-example .theater-example-table > div:nth-child(4)",
+      "conditions": [],
+      "values": {
+        "animation-delay": "3.5s"
+      }
+    },
+    {
+      "source": "components/landing-intro.css",
+      "selector": ".landing-intro-stage.is-reduced::before, .landing-intro-stage.is-reduced::after,\n.landing-intro-stage.is-reduced .review-theater::before, .landing-intro-stage.is-reduced .review-theater::after",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene > svg",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-arrival .48s cubic-bezier(.22,1,.36,1) both"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-arrive",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-paper 3.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-packet",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-transfer 2.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-packet.is-late",
+      "conditions": [],
+      "values": {
+        "animation-delay": "1.4s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-packet.is-short",
+      "conditions": [],
+      "values": {
+        "animation-name": "sandbox-work-transfer-short"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-scanner",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-scan 3.5s cubic-bezier(.42,0,.58,1) infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-read-cells > rect",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-cell 3.5s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-read-cells > rect:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".3s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-read-cells > rect:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".6s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-lift-header",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-header 4.3s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .group-1 .work-scene-lift-header",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".3s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .group-2 .work-scene-lift-header",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".6s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-routing",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-route 4s linear infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-bin",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-bin 3.9s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .bin-1",
+      "conditions": [],
+      "values": {
+        "animation-delay": "1.3s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .bin-2",
+      "conditions": [],
+      "values": {
+        "animation-delay": "2.6s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-package",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-paper 3.4s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .package-1",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".3s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .package-2",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".6s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.stage-2.is-running .work-scene-dashboard-tile",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-tile 4s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.stage-2.is-running .tile-1",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".4s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.stage-2.is-running .tile-2",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".8s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-verifier",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-verify 3.6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-gather",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-gather 3.5s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .gather-1",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".4s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .gather-2",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".8s"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-return-path",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-return 4s linear infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running .work-scene-magnifier",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-inspect 4s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-running.is-repair .work-scene-bin",
+      "conditions": [],
+      "values": {
+        "animation-name": "sandbox-work-repair"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene.is-completed .work-scene-final-check .work-scene-check",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-work-check .48s ease-out both"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene[data-reduced-motion='true'] *, .sandbox-work-scene[data-reduced-motion='true'] *::before",
+      "conditions": [],
+      "values": {
+        "animation": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-work-scene.css",
+      "selector": ".sandbox-work-scene *, .sandbox-work-scene *::before",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "animation": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-chamber",
+      "conditions": [],
+      "values": {
+        "transition": "border-color .45s, box-shadow .45s, background .45s"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-transfer-packet > b, .workroom-transfer-packet > em",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-handoff-forward 1.3s cubic-bezier(.28,.18,.44,1) both"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-transfer-packet > em",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".07s"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-transfer-packet.is-backward > b, .workroom-transfer-packet.is-backward > em",
+      "conditions": [],
+      "values": {
+        "animation-name": "workroom-handoff-backward"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".reading-source .workroom-front-sheet > i",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-source-scan 4.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-chamber.is-active .workroom-ambient-scan",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-glass-scan 6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".workroom-chamber.is-active .workroom-runtime-capacity > i",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-live-breathe 2.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".sandbox-workroom-scene[data-reduced-motion='true'] *, .sandbox-workroom-scene[data-reduced-motion='true'] *::before, .sandbox-workroom-scene[data-reduced-motion='true'] *::after",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-workroom-scene.css",
+      "selector": ".sandbox-workroom-scene *, .sandbox-workroom-scene *::before, .sandbox-workroom-scene *::after",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".has-active .sandbox-dock-symbol > i",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-room-beacon 2.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-dock-task",
+      "conditions": [],
+      "values": {
+        "transition": "background .25s,border-color .25s"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".is-running .sandbox-workroom-operation-icon > i",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-room-scan 3.6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-pulse.is-running > i",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-room-wave 1.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-pulse.is-running > i:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".15s"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-pulse.is-running > i:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".3s"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-pulse.is-running > i:nth-child(4)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".45s"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-pulse.is-running > i:nth-child(5)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".6s"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-feed li",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-room-event .3s ease-out both"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-workroom-wait > i",
+      "conditions": [],
+      "values": {
+        "animation": "sandbox-room-beacon 2.8s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-activity-dock:not([data-connection='live']) *, .sandbox-activity-dock:not([data-connection='live']) *::before, .sandbox-activity-dock:not([data-connection='live']) *::after",
+      "conditions": [],
+      "values": {
+        "animation-play-state": "paused !important"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-activity-dock *, .sandbox-activity-dock *::before, .sandbox-activity-dock *::after",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/sandbox-activity-dock.css",
+      "selector": ".sandbox-activity-dock[data-reduced-motion='true'] *, .sandbox-activity-dock[data-reduced-motion='true'] *::before, .sandbox-activity-dock[data-reduced-motion='true'] *::after",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-operation.is-running .workroom-current-time i",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-operation-wave 1.3s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-time i:nth-child(2)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".15s !important"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-time i:nth-child(3)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".3s !important"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-time i:nth-child(4)",
+      "conditions": [],
+      "values": {
+        "animation-delay": ".45s !important"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-operation.is-running::after",
+      "conditions": [],
+      "values": {
+        "animation": "workroom-operation-light 2.6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": "[data-reduced-motion=\"true\"] .workroom-current-operation::after,[data-reduced-motion=\"true\"] .workroom-current-time i",
+      "conditions": [],
+      "values": {
+        "animation": "none !important"
+      }
+    },
+    {
+      "source": "components/workroom-current-operation.css",
+      "selector": ".workroom-current-operation::after,.workroom-current-time i",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "animation": "none !important"
+      }
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "selector": ".is-working>.review-context-body>.review-context-bridge>i",
+      "conditions": [],
+      "values": {
+        "animation": "review-context-beam 2.2s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "selector": ".is-working .review-context-mark",
+      "conditions": [],
+      "values": {
+        "animation": "review-context-pulse 2.6s ease-in-out infinite"
+      }
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "selector": ".live-review-context.is-reduced *",
+      "conditions": [],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/live-review-flow.css",
+      "selector": ".live-review-context *",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "animation": "none !important",
+        "transition": "none !important"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-dashboard",
+      "conditions": [],
+      "values": {
+        "transition": "border-color .2s,background .2s,box-shadow .2s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-attention",
+      "conditions": [],
+      "values": {
+        "transition": "border-color .2s,background .2s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-mini-bars i",
+      "conditions": [],
+      "values": {
+        "transition": "height .7s cubic-bezier(.22,1,.36,1)"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-donut-area .recharts-pie-sector",
+      "conditions": [],
+      "values": {
+        "transition": "opacity .25s,filter .25s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-legend button",
+      "conditions": [],
+      "values": {
+        "transition": "background .2s,border-color .2s,color .2s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-item-tile",
+      "conditions": [],
+      "values": {
+        "transition": "border-color .2s,background .2s,box-shadow .2s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".rv-tile-arrow",
+      "conditions": [],
+      "values": {
+        "transition": "opacity .2s,transform .2s"
+      }
+    },
+    {
+      "source": "components/results-visuals.css",
+      "selector": ".results-visuals *,.rv-item-tooltip",
+      "conditions": [
+        "@media (prefers-reduced-motion:reduce)"
+      ],
+      "values": {
+        "transition": "none !important",
+        "animation": "none !important"
+      }
+    }
+  ]
+}

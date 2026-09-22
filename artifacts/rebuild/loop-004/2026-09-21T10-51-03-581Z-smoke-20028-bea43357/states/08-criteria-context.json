@@ -1,0 +1,35 @@
+{
+  "id": "08-criteria-context",
+  "selected": false,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Outside the three-state smoke subset.",
+  "reference": {
+    "id": "08-criteria-context",
+    "screenshot": {
+      "path": "08-criteria-context.png",
+      "bytes": 326785,
+      "sha256": "aa08d865864d35005041fe8480d42fcb7861b7af6617dd3f6fca6f476be11a9c",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/08-criteria-context.json",
+      "bytes": 1127761,
+      "sha256": "6472a1550a59e47f8db1e4e29b77ccf4528c360951abe67c346031a52c616c51"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "launch": {
+    "playwrightVersion": "1.62.1",
+    "bundledExecutable": "C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+    "bundledExists": false,
+    "executable": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "selection": "explicit-installed-chrome-fallback",
+    "userProfile": "none; Playwright isolated temporary profile",
+    "headless": true,
+    "node": "v24.13.1",
+    "browserVersion": "153.0.8010.48",
+    "browserName": "chromium",
+    "referenceBrowser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "environmentMatchNotAssumed": true
+  },
+  "contexts": [
+    {
+      "name": "states-01-28",
+      "createdAt": "2026-09-21T18:47:55.617Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "language": "ko-KR",
+      "languages": [
+        "ko-KR"
+      ],
+      "timeZone": "Asia/Seoul",
+      "devicePixelRatio": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 960,
+        "scale": 1
+      },
+      "prefersColorScheme": "light",
+      "reducedMotion": false
+    },
+    {
+      "name": "states-29-34",
+      "createdAt": "2026-09-21T18:54:17.160Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "platform": "Win32",
+      "language": "ko-KR",
+      "languages": [
+        "ko-KR"
+      ],
+      "timeZone": "Asia/Seoul",
+      "devicePixelRatio": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 960,
+        "scale": 1
+      },
+      "prefersColorScheme": "light",
+      "reducedMotion": false
+    }
+  ],
+  "baseline": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "platform": "Win32",
+    "language": "ko-KR",
+    "languages": [
+      "ko-KR",
+      "ko",
+      "en-US",
+      "en"
+    ],
+    "timeZone": "Asia/Seoul",
+    "devicePixelRatio": 1,
+    "node": "v24.13.1",
+    "captureEngine": "Playwright CLI / Chromium 153 (see userAgent)",
+    "captureMode": "viewport",
+    "freshNamedBrowserSession": true
+  },
+  "blockedExternal": [],
+  "browserErrors": [],
+  "locatorMappings": [
+    {
+      "time": "2026-09-21T18:48:43.676Z",
+      "reference": "file-open button named 합성_품질기준.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_품질기준.xlsx",
+      "actual": "button.workflow-file-open containing 합성_품질기준.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:49:43.847Z",
+      "reference": "file-open button named 합성_시험성적서_A.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_시험성적서_A.xlsx",
+      "actual": "button.workflow-file-open containing 합성_시험성적서_A.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:54:56.124Z",
+      "reference": "file-open button named 합성_품질기준.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_품질기준.xlsx",
+      "actual": "button.workflow-file-open containing 합성_품질기준.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    },
+    {
+      "time": "2026-09-21T18:55:10.095Z",
+      "reference": "file-open button named 합성_시험성적서_A.xlsx XLSX",
+      "previousDriver": "button accessible name containing 합성_시험성적서_A.xlsx",
+      "actual": "button.workflow-file-open containing 합성_시험성적서_A.xlsx",
+      "difference": "The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."
+    }
+  ],
+  "cleanupErrors": []
+}

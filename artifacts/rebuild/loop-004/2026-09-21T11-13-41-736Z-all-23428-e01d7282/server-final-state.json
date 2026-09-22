@@ -1,0 +1,1980 @@
+{
+  "synthetic": true,
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "origin": "actual-react-with-reference-synthetic-http",
+  "fixtureId": "architecture-visual-v1",
+  "started": true,
+  "phase": "complete",
+  "run": {
+    "id": "visual-run",
+    "mode": "criteria_first",
+    "status": "completed",
+    "stage": "complete",
+    "criterionVersion": 1,
+    "criteriaRevision": 0,
+    "criteriaDocuments": [
+      {
+        "id": "visual-criteria",
+        "name": "합성_품질기준.xlsx",
+        "kind": "xlsx",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size": 4820,
+        "role": "criteria",
+        "url": "/api/documents/visual-criteria/file",
+        "preview": {
+          "type": "spreadsheet",
+          "sheets": [
+            {
+              "name": "검토 기준",
+              "rows": [
+                [
+                  "시료",
+                  "시험 항목",
+                  "판정 기준",
+                  "단위",
+                  "조건"
+                ],
+                [
+                  "표준 시료",
+                  "압축강도",
+                  "25 이상",
+                  "MPa",
+                  "28일"
+                ],
+                [
+                  "표준 시료",
+                  "흡수율",
+                  "5 이하",
+                  "%",
+                  "상온"
+                ],
+                [
+                  "표준 시료",
+                  "외관",
+                  "균열 없음",
+                  "",
+                  "육안 확인"
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "documents": [
+      {
+        "id": "visual-target",
+        "name": "합성_시험성적서_A.xlsx",
+        "kind": "xlsx",
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "size": 5260,
+        "role": "target",
+        "url": "/api/documents/visual-target/file",
+        "preview": {
+          "type": "spreadsheet",
+          "sheets": [
+            {
+              "name": "시험 결과",
+              "rows": [
+                [
+                  "시험성적서",
+                  "SYN-2026-001",
+                  "",
+                  ""
+                ],
+                [
+                  "시료",
+                  "표준 시료",
+                  "시험일",
+                  "2026-09-01"
+                ],
+                [
+                  "시험 항목",
+                  "측정값",
+                  "단위",
+                  "조건"
+                ],
+                [
+                  "압축강도",
+                  "28.4",
+                  "MPa",
+                  "28일"
+                ],
+                [
+                  "흡수율",
+                  "6.2",
+                  "%",
+                  "상온"
+                ],
+                [
+                  "외관",
+                  "사진 판독 불명확",
+                  "",
+                  "육안 확인"
+                ]
+              ]
+            }
+          ]
+        },
+        "extraction": {
+          "referenceNumber": "SYN-2026-001",
+          "documentType": "시험성적서",
+          "fields": [
+            {
+              "label": "압축강도",
+              "value": "28.4",
+              "unit": "MPa"
+            },
+            {
+              "label": "흡수율",
+              "value": "6.2",
+              "unit": "%"
+            },
+            {
+              "label": "외관",
+              "value": "사진 판독 불명확",
+              "uncertain": true
+            }
+          ]
+        },
+        "status": "completed"
+      }
+    ],
+    "criteria": [
+      {
+        "id": "visual-c1",
+        "label": "압축강도",
+        "rule": "28일 압축강도 25 MPa 이상",
+        "required": true,
+        "sourceDocumentId": "visual-criteria",
+        "sourceName": "합성_품질기준.xlsx",
+        "sampleName": "표준 시료",
+        "classificationStatus": "not_applicable",
+        "categoryPath": [],
+        "conditions": [
+          "28일"
+        ],
+        "comparison": {
+          "operator": "gte",
+          "value": 25,
+          "unit": "MPa"
+        },
+        "comparatorConfirmed": true,
+        "sourceEvidence": [
+          {
+            "documentId": "visual-criteria",
+            "sheet": "검토 기준",
+            "cell": "B2:E2",
+            "quote": "압축강도 25 이상 MPa 28일"
+          }
+        ]
+      },
+      {
+        "id": "visual-c2",
+        "label": "흡수율",
+        "rule": "흡수율 5% 이하",
+        "required": true,
+        "sourceDocumentId": "visual-criteria",
+        "sourceName": "합성_품질기준.xlsx",
+        "sampleName": "표준 시료",
+        "classificationStatus": "not_applicable",
+        "categoryPath": [],
+        "conditions": [
+          "상온"
+        ],
+        "comparison": {
+          "operator": "lte",
+          "value": 5,
+          "unit": "%"
+        },
+        "comparatorConfirmed": true,
+        "sourceEvidence": [
+          {
+            "documentId": "visual-criteria",
+            "sheet": "검토 기준",
+            "cell": "B3:E3",
+            "quote": "흡수율 5 이하 % 상온"
+          }
+        ]
+      },
+      {
+        "id": "visual-c3",
+        "label": "외관",
+        "rule": "육안 확인 시 균열 없음",
+        "required": true,
+        "sourceDocumentId": "visual-criteria",
+        "sourceName": "합성_품질기준.xlsx",
+        "sampleName": "표준 시료",
+        "classificationStatus": "not_applicable",
+        "categoryPath": [],
+        "conditions": [
+          "육안 확인"
+        ],
+        "sourceEvidence": [
+          {
+            "documentId": "visual-criteria",
+            "sheet": "검토 기준",
+            "cell": "B4:E4",
+            "quote": "외관 균열 없음 육안 확인"
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "visual-i1",
+        "documentId": "visual-target",
+        "label": "압축강도",
+        "value": 28.4,
+        "unit": "MPa",
+        "criterionId": "visual-c1",
+        "criterion": "28일 압축강도 25 MPa 이상",
+        "status": "pass",
+        "presence": "present",
+        "explanation": "28일 측정값 28.4 MPa가 기준 25 MPa 이상을 충족합니다.",
+        "evidence": [
+          {
+            "documentId": "visual-target",
+            "sheet": "시험 결과",
+            "cell": "A4:D4",
+            "quote": "압축강도 28.4 MPa 28일"
+          }
+        ]
+      },
+      {
+        "id": "visual-i2",
+        "documentId": "visual-target",
+        "label": "흡수율",
+        "value": 6.2,
+        "unit": "%",
+        "criterionId": "visual-c2",
+        "criterion": "흡수율 5% 이하",
+        "status": "fail",
+        "presence": "present",
+        "explanation": "상온 측정값 6.2%가 허용 상한 5%를 초과합니다. 기준과 측정값의 단위가 같습니다.",
+        "evidence": [
+          {
+            "documentId": "visual-target",
+            "sheet": "시험 결과",
+            "cell": "A5:D5",
+            "quote": "흡수율 6.2 % 상온"
+          }
+        ]
+      },
+      {
+        "id": "visual-i3",
+        "documentId": "visual-target",
+        "label": "외관",
+        "value": "사진 판독 불명확",
+        "unit": "",
+        "criterionId": "visual-c3",
+        "criterion": "육안 확인 시 균열 없음",
+        "status": "review",
+        "presence": "unreadable",
+        "explanation": "판독 가능한 외관 결과가 없어 균열 없음 조건의 충족 여부를 확인할 수 없습니다. 원본 사진을 사람이 확인해 주세요.",
+        "evidence": [
+          {
+            "documentId": "visual-target",
+            "sheet": "시험 결과",
+            "cell": "A6:D6",
+            "quote": "외관 사진 판독 불명확 육안 확인"
+          }
+        ]
+      }
+    ],
+    "analyses": [
+      {
+        "documentId": "visual-criteria",
+        "name": "합성_품질기준.xlsx",
+        "role": "criteria",
+        "status": "complete",
+        "documentType": "품질 기준서",
+        "summary": "전체 시트를 읽고 시료·항목·단위·적용 조건의 관계를 확인했습니다.",
+        "structure": [
+          {
+            "name": "검토 기준",
+            "kind": "table",
+            "sheet": "검토 기준",
+            "range": "A1:E4",
+            "description": "항목별 기준과 측정값, 조건을 구분한 표"
+          }
+        ],
+        "coverage": {
+          "complete": true,
+          "readerComplete": true,
+          "contextComplete": true,
+          "unitsTotal": 1,
+          "unitsRead": 1,
+          "contextSegmentsTotal": 1,
+          "contextSegmentsRead": 1
+        },
+        "quality": {
+          "status": "verified",
+          "attempts": 1,
+          "maxAttempts": 3,
+          "issues": [],
+          "rounds": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "issueCount": 0,
+              "rereadRanges": []
+            }
+          ]
+        }
+      },
+      {
+        "documentId": "visual-target",
+        "name": "합성_시험성적서_A.xlsx",
+        "role": "target",
+        "status": "complete",
+        "documentType": "시험성적서",
+        "summary": "전체 시트를 읽고 시료·항목·단위·적용 조건의 관계를 확인했습니다.",
+        "structure": [
+          {
+            "name": "시험 결과",
+            "kind": "table",
+            "sheet": "시험 결과",
+            "range": "A1:D6",
+            "description": "항목별 기준과 측정값, 조건을 구분한 표"
+          }
+        ],
+        "coverage": {
+          "complete": true,
+          "readerComplete": true,
+          "contextComplete": true,
+          "unitsTotal": 1,
+          "unitsRead": 1,
+          "contextSegmentsTotal": 1,
+          "contextSegmentsRead": 1
+        },
+        "quality": {
+          "status": "verified",
+          "attempts": 1,
+          "maxAttempts": 3,
+          "issues": [],
+          "rounds": [
+            {
+              "attempt": 1,
+              "status": "verified",
+              "issueCount": 0,
+              "rereadRanges": []
+            }
+          ]
+        }
+      }
+    ],
+    "analysisActivity": [],
+    "events": [
+      {
+        "type": "run.started",
+        "runId": "visual-run",
+        "sequence": 1,
+        "timestamp": "2026-09-21T11:17:07.430Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing",
+        "criterionVersion": 1,
+        "runStatus": "running"
+      },
+      {
+        "type": "document.analysis.started",
+        "runId": "visual-run",
+        "sequence": 2,
+        "timestamp": "2026-09-21T11:17:07.431Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing",
+        "criterionVersion": 1,
+        "documentId": "visual-criteria",
+        "name": "합성_품질기준.xlsx",
+        "role": "criteria",
+        "analysis": {
+          "status": "processing"
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "criteria.confirmation_required",
+        "runId": "visual-run",
+        "sequence": 3,
+        "timestamp": "2026-09-21T11:17:07.437Z",
+        "mode": "criteria_first",
+        "status": "awaiting_confirmation",
+        "stage": "criteria_confirmation",
+        "criterionVersion": 1,
+        "criteria": [
+          {
+            "id": "visual-c1",
+            "label": "압축강도",
+            "rule": "28일 압축강도 25 MPa 이상",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "28일"
+            ],
+            "comparison": {
+              "operator": "gte",
+              "value": 25,
+              "unit": "MPa"
+            },
+            "comparatorConfirmed": true,
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B2:E2",
+                "quote": "압축강도 25 이상 MPa 28일"
+              }
+            ]
+          },
+          {
+            "id": "visual-c2",
+            "label": "흡수율",
+            "rule": "흡수율 5% 이하",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "상온"
+            ],
+            "comparison": {
+              "operator": "lte",
+              "value": 5,
+              "unit": "%"
+            },
+            "comparatorConfirmed": true,
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B3:E3",
+                "quote": "흡수율 5 이하 % 상온"
+              }
+            ]
+          },
+          {
+            "id": "visual-c3",
+            "label": "외관",
+            "rule": "육안 확인 시 균열 없음",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "육안 확인"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B4:E4",
+                "quote": "외관 균열 없음 육안 확인"
+              }
+            ]
+          }
+        ],
+        "analyses": [
+          {
+            "documentId": "visual-criteria",
+            "name": "합성_품질기준.xlsx",
+            "role": "criteria",
+            "status": "complete",
+            "documentType": "품질 기준서",
+            "summary": "전체 시트를 읽고 시료·항목·단위·적용 조건의 관계를 확인했습니다.",
+            "structure": [
+              {
+                "name": "검토 기준",
+                "kind": "table",
+                "sheet": "검토 기준",
+                "range": "A1:E4",
+                "description": "항목별 기준과 측정값, 조건을 구분한 표"
+              }
+            ],
+            "coverage": {
+              "complete": true,
+              "readerComplete": true,
+              "contextComplete": true,
+              "unitsTotal": 1,
+              "unitsRead": 1,
+              "contextSegmentsTotal": 1,
+              "contextSegmentsRead": 1
+            },
+            "quality": {
+              "status": "verified",
+              "attempts": 1,
+              "maxAttempts": 3,
+              "issues": [],
+              "rounds": [
+                {
+                  "attempt": 1,
+                  "status": "verified",
+                  "issueCount": 0,
+                  "rereadRanges": []
+                }
+              ]
+            }
+          },
+          {
+            "documentId": "visual-target",
+            "name": "합성_시험성적서_A.xlsx",
+            "role": "target",
+            "status": "complete",
+            "documentType": "시험성적서",
+            "summary": "전체 시트를 읽고 시료·항목·단위·적용 조건의 관계를 확인했습니다.",
+            "structure": [
+              {
+                "name": "시험 결과",
+                "kind": "table",
+                "sheet": "시험 결과",
+                "range": "A1:D6",
+                "description": "항목별 기준과 측정값, 조건을 구분한 표"
+              }
+            ],
+            "coverage": {
+              "complete": true,
+              "readerComplete": true,
+              "contextComplete": true,
+              "unitsTotal": 1,
+              "unitsRead": 1,
+              "contextSegmentsTotal": 1,
+              "contextSegmentsRead": 1
+            },
+            "quality": {
+              "status": "verified",
+              "attempts": 1,
+              "maxAttempts": 3,
+              "issues": [],
+              "rounds": [
+                {
+                  "attempt": 1,
+                  "status": "verified",
+                  "issueCount": 0,
+                  "rereadRanges": []
+                }
+              ]
+            }
+          }
+        ],
+        "criteriaDocumentAssessments": [
+          {
+            "documentId": "visual-criteria",
+            "name": "합성_품질기준.xlsx",
+            "status": "criteria",
+            "reason": "항목별 판정 조건이 명시된 합성 기준서입니다.",
+            "evidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B2:E2",
+                "quote": "압축강도 25 이상 MPa 28일"
+              }
+            ]
+          }
+        ],
+        "runStatus": "awaiting_confirmation"
+      },
+      {
+        "type": "documents.attached",
+        "runId": "visual-run",
+        "sequence": 4,
+        "timestamp": "2026-09-21T11:17:17.809Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documents": [
+          {
+            "id": "visual-target",
+            "name": "합성_시험성적서_A.xlsx",
+            "kind": "xlsx",
+            "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "size": 5260,
+            "role": "target",
+            "url": "/api/documents/visual-target/file",
+            "preview": {
+              "type": "spreadsheet",
+              "sheets": [
+                {
+                  "name": "시험 결과",
+                  "rows": [
+                    [
+                      "시험성적서",
+                      "SYN-2026-001",
+                      "",
+                      ""
+                    ],
+                    [
+                      "시료",
+                      "표준 시료",
+                      "시험일",
+                      "2026-09-01"
+                    ],
+                    [
+                      "시험 항목",
+                      "측정값",
+                      "단위",
+                      "조건"
+                    ],
+                    [
+                      "압축강도",
+                      "28.4",
+                      "MPa",
+                      "28일"
+                    ],
+                    [
+                      "흡수율",
+                      "6.2",
+                      "%",
+                      "상온"
+                    ],
+                    [
+                      "외관",
+                      "사진 판독 불명확",
+                      "",
+                      "육안 확인"
+                    ]
+                  ]
+                }
+              ]
+            },
+            "extraction": {
+              "referenceNumber": "SYN-2026-001",
+              "documentType": "시험성적서",
+              "fields": [
+                {
+                  "label": "압축강도",
+                  "value": "28.4",
+                  "unit": "MPa"
+                },
+                {
+                  "label": "흡수율",
+                  "value": "6.2",
+                  "unit": "%"
+                },
+                {
+                  "label": "외관",
+                  "value": "사진 판독 불명확",
+                  "uncertain": true
+                }
+              ]
+            },
+            "status": "processing"
+          }
+        ],
+        "runStatus": "running"
+      },
+      {
+        "type": "document.analysis.completed",
+        "runId": "visual-run",
+        "sequence": 5,
+        "timestamp": "2026-09-21T11:17:17.809Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "analysis": {
+          "documentId": "visual-target",
+          "name": "합성_시험성적서_A.xlsx",
+          "role": "target",
+          "status": "complete",
+          "documentType": "시험성적서",
+          "summary": "전체 시트를 읽고 시료·항목·단위·적용 조건의 관계를 확인했습니다.",
+          "structure": [
+            {
+              "name": "시험 결과",
+              "kind": "table",
+              "sheet": "시험 결과",
+              "range": "A1:D6",
+              "description": "항목별 기준과 측정값, 조건을 구분한 표"
+            }
+          ],
+          "coverage": {
+            "complete": true,
+            "readerComplete": true,
+            "contextComplete": true,
+            "unitsTotal": 1,
+            "unitsRead": 1,
+            "contextSegmentsTotal": 1,
+            "contextSegmentsRead": 1
+          },
+          "quality": {
+            "status": "verified",
+            "attempts": 1,
+            "maxAttempts": 3,
+            "issues": [],
+            "rounds": [
+              {
+                "attempt": 1,
+                "status": "verified",
+                "issueCount": 0,
+                "rereadRanges": []
+              }
+            ]
+          }
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "document.started",
+        "runId": "visual-run",
+        "sequence": 6,
+        "timestamp": "2026-09-21T11:17:17.809Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "runStatus": "running"
+      },
+      {
+        "type": "document.extracted",
+        "runId": "visual-run",
+        "sequence": 7,
+        "timestamp": "2026-09-21T11:17:17.809Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "items": [
+          {
+            "id": "visual-i1",
+            "documentId": "visual-target",
+            "label": "압축강도",
+            "value": 28.4,
+            "unit": "MPa",
+            "criterionId": "visual-c1",
+            "criterion": "28일 압축강도 25 MPa 이상",
+            "status": "pending",
+            "presence": "present",
+            "explanation": "28일 측정값 28.4 MPa가 기준 25 MPa 이상을 충족합니다.",
+            "evidence": [
+              {
+                "documentId": "visual-target",
+                "sheet": "시험 결과",
+                "cell": "A4:D4",
+                "quote": "압축강도 28.4 MPa 28일"
+              }
+            ]
+          },
+          {
+            "id": "visual-i2",
+            "documentId": "visual-target",
+            "label": "흡수율",
+            "value": 6.2,
+            "unit": "%",
+            "criterionId": "visual-c2",
+            "criterion": "흡수율 5% 이하",
+            "status": "pending",
+            "presence": "present",
+            "explanation": "상온 측정값 6.2%가 허용 상한 5%를 초과합니다. 기준과 측정값의 단위가 같습니다.",
+            "evidence": [
+              {
+                "documentId": "visual-target",
+                "sheet": "시험 결과",
+                "cell": "A5:D5",
+                "quote": "흡수율 6.2 % 상온"
+              }
+            ]
+          },
+          {
+            "id": "visual-i3",
+            "documentId": "visual-target",
+            "label": "외관",
+            "value": "사진 판독 불명확",
+            "unit": "",
+            "criterionId": "visual-c3",
+            "criterion": "육안 확인 시 균열 없음",
+            "status": "pending",
+            "presence": "unreadable",
+            "explanation": "판독 가능한 외관 결과가 없어 균열 없음 조건의 충족 여부를 확인할 수 없습니다. 원본 사진을 사람이 확인해 주세요.",
+            "evidence": [
+              {
+                "documentId": "visual-target",
+                "sheet": "시험 결과",
+                "cell": "A6:D6",
+                "quote": "외관 사진 판독 불명확 육안 확인"
+              }
+            ]
+          }
+        ],
+        "extraction": {
+          "referenceNumber": "SYN-2026-001",
+          "documentType": "시험성적서",
+          "fields": [
+            {
+              "label": "압축강도",
+              "value": "28.4",
+              "unit": "MPa"
+            },
+            {
+              "label": "흡수율",
+              "value": "6.2",
+              "unit": "%"
+            },
+            {
+              "label": "외관",
+              "value": "사진 판독 불명확",
+              "uncertain": true
+            }
+          ]
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "item.decided",
+        "runId": "visual-run",
+        "sequence": 8,
+        "timestamp": "2026-09-21T11:17:17.810Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "item": {
+          "id": "visual-i1",
+          "documentId": "visual-target",
+          "label": "압축강도",
+          "value": 28.4,
+          "unit": "MPa",
+          "criterionId": "visual-c1",
+          "criterion": "28일 압축강도 25 MPa 이상",
+          "status": "pass",
+          "presence": "present",
+          "explanation": "28일 측정값 28.4 MPa가 기준 25 MPa 이상을 충족합니다.",
+          "evidence": [
+            {
+              "documentId": "visual-target",
+              "sheet": "시험 결과",
+              "cell": "A4:D4",
+              "quote": "압축강도 28.4 MPa 28일"
+            }
+          ]
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "item.decided",
+        "runId": "visual-run",
+        "sequence": 9,
+        "timestamp": "2026-09-21T11:17:17.810Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "item": {
+          "id": "visual-i2",
+          "documentId": "visual-target",
+          "label": "흡수율",
+          "value": 6.2,
+          "unit": "%",
+          "criterionId": "visual-c2",
+          "criterion": "흡수율 5% 이하",
+          "status": "fail",
+          "presence": "present",
+          "explanation": "상온 측정값 6.2%가 허용 상한 5%를 초과합니다. 기준과 측정값의 단위가 같습니다.",
+          "evidence": [
+            {
+              "documentId": "visual-target",
+              "sheet": "시험 결과",
+              "cell": "A5:D5",
+              "quote": "흡수율 6.2 % 상온"
+            }
+          ]
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "item.decided",
+        "runId": "visual-run",
+        "sequence": 10,
+        "timestamp": "2026-09-21T11:17:17.810Z",
+        "mode": "criteria_first",
+        "status": "running",
+        "stage": "analyzing_targets",
+        "criterionVersion": 1,
+        "documentId": "visual-target",
+        "item": {
+          "id": "visual-i3",
+          "documentId": "visual-target",
+          "label": "외관",
+          "value": "사진 판독 불명확",
+          "unit": "",
+          "criterionId": "visual-c3",
+          "criterion": "육안 확인 시 균열 없음",
+          "status": "review",
+          "presence": "unreadable",
+          "explanation": "판독 가능한 외관 결과가 없어 균열 없음 조건의 충족 여부를 확인할 수 없습니다. 원본 사진을 사람이 확인해 주세요.",
+          "evidence": [
+            {
+              "documentId": "visual-target",
+              "sheet": "시험 결과",
+              "cell": "A6:D6",
+              "quote": "외관 사진 판독 불명확 육안 확인"
+            }
+          ]
+        },
+        "runStatus": "running"
+      },
+      {
+        "type": "run.completed",
+        "runId": "visual-run",
+        "sequence": 11,
+        "timestamp": "2026-09-21T11:17:17.818Z",
+        "mode": "criteria_first",
+        "status": "completed",
+        "stage": "complete",
+        "criterionVersion": 1,
+        "summary": {
+          "total": 3,
+          "pass": 1,
+          "fail": 1,
+          "review": 1,
+          "pending": 0
+        },
+        "runStatus": "completed"
+      }
+    ],
+    "criteriaDocumentAssessments": [
+      {
+        "documentId": "visual-criteria",
+        "name": "합성_품질기준.xlsx",
+        "status": "criteria",
+        "reason": "항목별 판정 조건이 명시된 합성 기준서입니다.",
+        "evidence": [
+          {
+            "documentId": "visual-criteria",
+            "sheet": "검토 기준",
+            "cell": "B2:E2",
+            "quote": "압축강도 25 이상 MPa 28일"
+          }
+        ]
+      }
+    ],
+    "approvedCriteria": {
+      "criteria": [
+        {
+          "id": "visual-c1",
+          "label": "압축강도",
+          "rule": "28일 압축강도 25 MPa 이상",
+          "required": true,
+          "sourceDocumentId": "visual-criteria",
+          "sourceName": "합성_품질기준.xlsx",
+          "sampleName": "표준 시료",
+          "classificationStatus": "not_applicable",
+          "categoryPath": [],
+          "conditions": [
+            "28일"
+          ],
+          "comparison": {
+            "operator": "gte",
+            "value": 25,
+            "unit": "MPa"
+          },
+          "comparatorConfirmed": true,
+          "sourceEvidence": [
+            {
+              "documentId": "visual-criteria",
+              "sheet": "검토 기준",
+              "cell": "B2:E2",
+              "quote": "압축강도 25 이상 MPa 28일"
+            }
+          ]
+        },
+        {
+          "id": "visual-c2",
+          "label": "흡수율",
+          "rule": "흡수율 5% 이하",
+          "required": true,
+          "sourceDocumentId": "visual-criteria",
+          "sourceName": "합성_품질기준.xlsx",
+          "sampleName": "표준 시료",
+          "classificationStatus": "not_applicable",
+          "categoryPath": [],
+          "conditions": [
+            "상온"
+          ],
+          "comparison": {
+            "operator": "lte",
+            "value": 5,
+            "unit": "%"
+          },
+          "comparatorConfirmed": true,
+          "sourceEvidence": [
+            {
+              "documentId": "visual-criteria",
+              "sheet": "검토 기준",
+              "cell": "B3:E3",
+              "quote": "흡수율 5 이하 % 상온"
+            }
+          ]
+        },
+        {
+          "id": "visual-c3",
+          "label": "외관",
+          "rule": "육안 확인 시 균열 없음",
+          "required": true,
+          "sourceDocumentId": "visual-criteria",
+          "sourceName": "합성_품질기준.xlsx",
+          "sampleName": "표준 시료",
+          "classificationStatus": "not_applicable",
+          "categoryPath": [],
+          "conditions": [
+            "육안 확인"
+          ],
+          "sourceEvidence": [
+            {
+              "documentId": "visual-criteria",
+              "sheet": "검토 기준",
+              "cell": "B4:E4",
+              "quote": "외관 균열 없음 육안 확인"
+            }
+          ]
+        }
+      ],
+      "criterionVersion": 1,
+      "approvedAt": "2026-09-21T11:17:16.425Z"
+    },
+    "summary": {
+      "total": 3,
+      "pass": 1,
+      "fail": 1,
+      "review": 1,
+      "pending": 0
+    }
+  },
+  "activity": {
+    "tasks": [
+      {
+        "id": "visual-e2b",
+        "kind": "document-analysis",
+        "runtime": "e2b",
+        "title": "문서 탐색 · 합성_시험성적서_A.xlsx",
+        "status": "completed",
+        "phase": "review",
+        "runId": "visual-run",
+        "contextId": "visual-run",
+        "documentId": "visual-target",
+        "documentName": "합성_시험성적서_A.xlsx",
+        "startedAt": "2026-09-21T11:17:17.810Z",
+        "updatedAt": "2026-09-21T11:17:17.810Z",
+        "currentOperation": {
+          "title": "원본 측정값과 기준 대조",
+          "step": "review",
+          "startedAt": "2026-09-21T11:17:17.810Z"
+        },
+        "events": [
+          {
+            "id": "visual-event-1",
+            "time": "2026-09-21T11:17:17.810Z",
+            "title": "원본 전체 범위 읽기",
+            "step": "read",
+            "status": "completed"
+          },
+          {
+            "id": "visual-event-2",
+            "time": "2026-09-21T11:17:17.810Z",
+            "title": "구조와 적용 맥락 확인",
+            "step": "review",
+            "status": "running"
+          }
+        ]
+      }
+    ]
+  },
+  "dashboard": null,
+  "subscribers": {
+    "run": 0,
+    "activity": 0
+  },
+  "requests": [
+    {
+      "path": "/__visual/provenance",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:13:41.814Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:13:42.586Z"
+    },
+    {
+      "path": "/__visual/control/reset",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:13:42.607Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:13:47.962Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:13:47.978Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:00.533Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:06.169Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:09.041Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:12.399Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:14.364Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:14.776Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:16.621Z"
+    },
+    {
+      "path": "/api/runs",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:16.760Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:16.832Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:16.862Z"
+    },
+    {
+      "path": "/api/runs/visual-run/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:16.905Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:16.996Z"
+    },
+    {
+      "path": "/__visual/control/startReading",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:17.009Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:18.798Z"
+    },
+    {
+      "path": "/api/activity/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:18.832Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:23.481Z"
+    },
+    {
+      "path": "/__visual/control/context",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:23.626Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:28.969Z"
+    },
+    {
+      "path": "/__visual/control/confirmReady",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:29.224Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:29.336Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:34.021Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:37.626Z"
+    },
+    {
+      "path": "/api/runs/visual-run/criteria/confirm",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:38.645Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:41.087Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:41.483Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:44.672Z"
+    },
+    {
+      "path": "/api/runs/visual-run/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:45.476Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:45.776Z"
+    },
+    {
+      "path": "/__visual/control/reviewActive",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:14:45.785Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:47.121Z"
+    },
+    {
+      "path": "/api/activity/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:14:47.473Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:07.469Z"
+    },
+    {
+      "path": "/api/activity/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:08.200Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:10.589Z"
+    },
+    {
+      "path": "/__visual/control/complete",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:15:13.601Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:13.754Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:22.366Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:27.507Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:31.679Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:34.829Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:37.969Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:43.509Z"
+    },
+    {
+      "path": "/api/dashboards",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:15:44.068Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:44.070Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:44.366Z"
+    },
+    {
+      "path": "/api/activity/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:44.375Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:47.843Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:49.176Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:49.204Z"
+    },
+    {
+      "path": "/__visual/control/dashboardReady",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:15:49.290Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:50.437Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:54.452Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:57.678Z"
+    },
+    {
+      "path": "/api/dashboards",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:15:57.899Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:58.060Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:58.068Z"
+    },
+    {
+      "path": "/api/activity/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:58.156Z"
+    },
+    {
+      "path": "/__visual/control/dashboardReady",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:15:58.510Z"
+    },
+    {
+      "path": "/api/dashboards/visual-dashboard",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:15:59.375Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:03.889Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:06.948Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:19.595Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:24.931Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:16:25.599Z"
+    },
+    {
+      "path": "/api/ledgers/analyze",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:16:26.506Z"
+    },
+    {
+      "path": "/api/activity",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:26.742Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:30.053Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:49.196Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:49.205Z"
+    },
+    {
+      "path": "/__visual/control/reset",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:16:49.217Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:50.702Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:50.740Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:16:59.296Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:04.499Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:06.124Z"
+    },
+    {
+      "path": "/api/runs",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:06.972Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:07.201Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:07.317Z"
+    },
+    {
+      "path": "/api/runs/visual-run/events",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:07.416Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:07.421Z"
+    },
+    {
+      "path": "/__visual/control/startReading",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:07.429Z"
+    },
+    {
+      "path": "/__visual/control/confirmReady",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:07.437Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:07.453Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:11.648Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:15.669Z"
+    },
+    {
+      "path": "/api/runs/visual-run/criteria/confirm",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:16.425Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:17.311Z"
+    },
+    {
+      "path": "/api/runs/visual-run/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:17.786Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:17.796Z"
+    },
+    {
+      "path": "/__visual/control/reviewActive",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:17.808Z"
+    },
+    {
+      "path": "/__visual/control/complete",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:17:17.817Z"
+    },
+    {
+      "path": "/api/runs/visual-run",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:17.912Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:22.091Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:25.830Z"
+    },
+    {
+      "path": "/__visual/provenance",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:34.598Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:17:35.977Z"
+    }
+  ],
+  "controls": [
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:13:00.402Z"
+    },
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:13:42.641Z"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:13:42.641Z",
+      "name": "reset"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:14:14.797Z",
+      "role": "criteria",
+      "documentId": "visual-criteria",
+      "bytesParsed": false
+    },
+    {
+      "kind": "start",
+      "timestamp": "2026-09-21T11:14:16.762Z",
+      "body": {
+        "mode": "criteria_first",
+        "documentIds": [],
+        "criteriaDocumentIds": [
+          "visual-criteria"
+        ],
+        "criteriaText": ""
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:14:17.011Z",
+      "name": "startReading"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:14:23.627Z",
+      "name": "context"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:14:29.225Z",
+      "name": "confirmReady"
+    },
+    {
+      "kind": "confirm",
+      "timestamp": "2026-09-21T11:14:38.647Z",
+      "body": {
+        "criteria": [
+          {
+            "id": "visual-c1",
+            "label": "압축강도",
+            "rule": "28일 압축강도 25 MPa 이상",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "28일"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B2:E2",
+                "quote": "압축강도 25 이상 MPa 28일"
+              }
+            ],
+            "needsConfirmation": false,
+            "comparison": {
+              "operator": "gte",
+              "value": 25,
+              "unit": "MPa"
+            },
+            "comparatorConfirmed": true
+          },
+          {
+            "id": "visual-c2",
+            "label": "흡수율",
+            "rule": "흡수율 5% 이하",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "상온"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B3:E3",
+                "quote": "흡수율 5 이하 % 상온"
+              }
+            ],
+            "needsConfirmation": false,
+            "comparison": {
+              "operator": "lte",
+              "value": 5,
+              "unit": "%"
+            },
+            "comparatorConfirmed": true
+          },
+          {
+            "id": "visual-c3",
+            "label": "외관",
+            "rule": "육안 확인 시 균열 없음",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "육안 확인"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B4:E4",
+                "quote": "외관 균열 없음 육안 확인"
+              }
+            ],
+            "needsConfirmation": false
+          }
+        ],
+        "expectedCriterionVersion": 1
+      }
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:14:41.486Z",
+      "role": "target",
+      "documentId": "visual-target",
+      "bytesParsed": false
+    },
+    {
+      "kind": "attach",
+      "timestamp": "2026-09-21T11:14:45.478Z",
+      "body": {
+        "documentIds": [
+          "visual-target"
+        ],
+        "expectedCriterionVersion": 1
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:14:45.788Z",
+      "name": "reviewActive"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:15:13.603Z",
+      "name": "complete"
+    },
+    {
+      "kind": "dashboard.create",
+      "timestamp": "2026-09-21T11:15:44.069Z",
+      "body": {
+        "runId": "visual-run",
+        "instruction": "라이트 테마에 도넛 차트를 크게 배치하고 차트를 강조해 주세요. 파일별 결과를 비교하고, 파일을 선택하면 항목·측정값·기준·판정과 확인이 필요한 이유를 볼 수 있게 해 주세요."
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:15:49.291Z",
+      "name": "dashboardReady"
+    },
+    {
+      "kind": "dashboard.create",
+      "timestamp": "2026-09-21T11:15:57.900Z",
+      "body": {
+        "runId": "visual-run",
+        "instruction": "다크 테마에 파란색을 포인트로 쓰고, 차트를 맨 위에 크게 배치해 강조해 주세요. 전체 판정은 막대 차트로 보여 주고 범례는 아래에 놓아 주세요. 파일을 선택하면 판정 근거를 확인할 수 있게 해 주세요.",
+        "baseDesign": {
+          "theme": "light",
+          "distribution": "doughnut",
+          "accent": "cobalt",
+          "emphasis": "charts",
+          "chartSize": "large",
+          "layout": "charts-first",
+          "legend": "bottom",
+          "motion": "none",
+          "corners": "rounded",
+          "fileVisualization": "cards"
+        }
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:15:58.510Z",
+      "name": "dashboardReady"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:16:25.604Z",
+      "role": "ledger",
+      "documentId": "visual-ledger",
+      "bytesParsed": false
+    },
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:16:49.218Z"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:16:49.218Z",
+      "name": "reset"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:17:06.193Z",
+      "role": "criteria",
+      "documentId": "visual-criteria",
+      "bytesParsed": false
+    },
+    {
+      "kind": "start",
+      "timestamp": "2026-09-21T11:17:06.972Z",
+      "body": {
+        "mode": "criteria_first",
+        "documentIds": [],
+        "criteriaDocumentIds": [
+          "visual-criteria"
+        ],
+        "criteriaText": ""
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:17:07.431Z",
+      "name": "startReading"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:17:07.438Z",
+      "name": "confirmReady"
+    },
+    {
+      "kind": "confirm",
+      "timestamp": "2026-09-21T11:17:16.426Z",
+      "body": {
+        "criteria": [
+          {
+            "id": "visual-c1",
+            "label": "압축강도",
+            "rule": "28일 압축강도 25 MPa 이상",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "28일"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B2:E2",
+                "quote": "압축강도 25 이상 MPa 28일"
+              }
+            ],
+            "needsConfirmation": false,
+            "comparison": {
+              "operator": "gte",
+              "value": 25,
+              "unit": "MPa"
+            },
+            "comparatorConfirmed": true
+          },
+          {
+            "id": "visual-c2",
+            "label": "흡수율",
+            "rule": "흡수율 5% 이하",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "상온"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B3:E3",
+                "quote": "흡수율 5 이하 % 상온"
+              }
+            ],
+            "needsConfirmation": false,
+            "comparison": {
+              "operator": "lte",
+              "value": 5,
+              "unit": "%"
+            },
+            "comparatorConfirmed": true
+          },
+          {
+            "id": "visual-c3",
+            "label": "외관",
+            "rule": "육안 확인 시 균열 없음",
+            "required": true,
+            "sourceDocumentId": "visual-criteria",
+            "sourceName": "합성_품질기준.xlsx",
+            "sampleName": "표준 시료",
+            "classificationStatus": "not_applicable",
+            "categoryPath": [],
+            "conditions": [
+              "육안 확인"
+            ],
+            "sourceEvidence": [
+              {
+                "documentId": "visual-criteria",
+                "sheet": "검토 기준",
+                "cell": "B4:E4",
+                "quote": "외관 균열 없음 육안 확인"
+              }
+            ],
+            "needsConfirmation": false
+          }
+        ],
+        "expectedCriterionVersion": 1
+      }
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:17:17.313Z",
+      "role": "target",
+      "documentId": "visual-target",
+      "bytesParsed": false
+    },
+    {
+      "kind": "attach",
+      "timestamp": "2026-09-21T11:17:17.787Z",
+      "body": {
+        "documentIds": [
+          "visual-target"
+        ],
+        "expectedCriterionVersion": 1
+      }
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:17:17.810Z",
+      "name": "reviewActive"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:17:17.818Z",
+      "name": "complete"
+    }
+  ],
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "browserExecuted": false
+}

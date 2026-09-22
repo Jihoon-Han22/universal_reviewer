@@ -1,0 +1,72 @@
+{
+  "id": "19-dashboard-controls",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "19-dashboard-controls",
+    "screenshot": {
+      "path": "19-dashboard-controls.png",
+      "bytes": 270631,
+      "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/19-dashboard-controls.json",
+      "bytes": 1015625,
+      "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T12:24:41.024Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/diagnostics/19-dashboard-controls-font-readiness.json",
+    "bytes": 2301076,
+    "sha256": "808edb45ad7dbc8bcd345c64b3c6ba06a876ce46a2a8261c8a49702dc1400f1b"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/19-dashboard-controls.png",
+    "bytes": 271065,
+    "sha256": "314e1dcb855ae8733c3e83cdd72e9ab269004dfe5e7e305d46b4a1bc80e691f8",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T12:24:44.186Z",
+    "capturedAt": "2026-09-21T12:24:44.639Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/dom/19-dashboard-controls.json",
+    "bytes": 1509056,
+    "sha256": "4bf16e0414fc35e78f56b389f95105d4eaf6cb4517f191979f89e09f4bf518bf"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/19-dashboard-controls-measurement.json",
+    "bytes": 206707,
+    "sha256": "6258e23bd49848615239601ee051054ca1b86977d533b0a17eeeb85c37c2f4b5"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T12:24:46.360Z"
+}

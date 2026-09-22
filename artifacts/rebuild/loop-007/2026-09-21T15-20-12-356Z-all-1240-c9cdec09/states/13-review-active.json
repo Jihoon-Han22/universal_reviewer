@@ -1,0 +1,72 @@
+{
+  "id": "13-review-active",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "13-review-active",
+    "screenshot": {
+      "path": "13-review-active.png",
+      "bytes": 422812,
+      "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/13-review-active.json",
+      "bytes": 2021983,
+      "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:22:08.884Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/13-review-active-font-readiness.json",
+    "bytes": 2301136,
+    "sha256": "acbba7649501b909a03b6609d8868c869bcd2bf73def0b918e43629a81d78ccf"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/13-review-active.png",
+    "bytes": 411632,
+    "sha256": "1d47bf94d9ae7ff2d8393db2d6f031402f1a63d931bef121841afefe8bb81c28",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:22:20.372Z",
+    "capturedAt": "2026-09-21T15:22:23.054Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/13-review-active.json",
+    "bytes": 3097612,
+    "sha256": "9f2e327053cf4a168d69bc7efa913fe718688faa0eb67701934faa1c10a8dd05"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/13-review-active-measurement.json",
+    "bytes": 192691,
+    "sha256": "236a53bbf476ec073b5e68c46bbecb1bf08815b284a2444743efdd5a3f364f44"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": true,
+    "finiteAnimationsSettled": null,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "review",
+  "endedAt": "2026-09-21T15:22:43.201Z"
+}

@@ -1,0 +1,1549 @@
+{
+  "schemaVersion": 1,
+  "title": "GSPEC source-grounded efficiency contract",
+  "spec": "specs/07-data-algorithms-concurrency.md",
+  "status": "authored_not_independently_accepted",
+  "sourceBaseline": "baseline/source-snapshot.json",
+  "scope": {
+    "productionModified": false,
+    "benchmarksExecuted": false,
+    "sourceTestsExecutedDuringAuthoring": false
+  },
+  "notation": {
+    "expectedMapLookup": "amortized/expected O(1) assumption; key construction and string work excluded",
+    "N": "actual stored meaningful cells",
+    "M": "proposed structure regions",
+    "C": "criteria",
+    "I": "findings",
+    "E": "evidence per finding",
+    "R": "source records",
+    "L": "text/source length",
+    "B": "original bytes",
+    "Q": "waiting tasks",
+    "H": "source-header citations checked against stored cells",
+    "D": "reviewed documents",
+    "U": "items added in one UI reducer batch",
+    "K": "model source/context segments",
+    "e": "new unique citations added by each same-key criterion in the stated worst-case construction",
+    "l": "citation JSON string length in that construction; written ℓ in the Markdown spec",
+    "q": "selected detail ranges per read, <=18",
+    "V": "temporary handoff queue size during sort, <=9; retained after overflow <=8"
+  },
+  "structures": [
+    {
+      "id": "ES-01",
+      "moduleId": "CORE-03",
+      "name": "DocumentStore",
+      "status": "implemented",
+      "dataStructure": "Map<UUID,Document> + totalBytes/pending counters",
+      "key": "UUID",
+      "sourceRefs": [
+        {
+          "path": "server/documents.mjs",
+          "symbol": "DocumentStore"
+        }
+      ],
+      "lifetime": "process",
+      "invalidation": "delete or failed add reservation rollback",
+      "complexity": "O(1) expected ID lookup; add costs include O(B) copy and format parser; total-byte quota excludes parsed/base64 memory",
+      "verificationIds": [
+        "EF-01",
+        "EF-05"
+      ]
+    },
+    {
+      "id": "ES-02",
+      "moduleId": "CORE-13",
+      "name": "Run store",
+      "status": "implemented",
+      "dataStructure": "Map<runId,Run>",
+      "key": "runId",
+      "sourceRefs": [
+        {
+          "path": "server/review.mjs",
+          "symbol": "ReviewEngine.start"
+        }
+      ],
+      "lifetime": "process",
+      "invalidation": "Before insertion reject if already3open. Insert new run first, then iterate insertion-order entries and remove non-open entries while total size >40; emit run.started and start perform only after pruning. Example40old +1new briefly41 then remove1settled =>40; never evict open.",
+      "complexity": "start pruning O(number of retained runs); run event/audit arrays are not separately bounded",
+      "verificationIds": [
+        "EF-11"
+      ]
+    },
+    {
+      "id": "ES-03",
+      "moduleId": "CORE-04",
+      "name": "Document analysis in-flight/cache",
+      "status": "implemented",
+      "dataStructure": "document.analysisPromise + analyzedDocument",
+      "key": "document object",
+      "sourceRefs": [
+        {
+          "path": "server/review.mjs",
+          "symbol": "ensureAnalyzed / analyzeOne"
+        }
+      ],
+      "lifetime": "document",
+      "invalidation": "first caller owns work abort; later waiter abort affects only its wait; completed promise cleared",
+      "complexity": "deduplicates concurrent reads; cache stores profile/model fields, not immutable content-addressed versioned cache",
+      "verificationIds": [
+        "EF-03",
+        "EF-04"
+      ]
+    },
+    {
+      "id": "ES-04",
+      "moduleId": "CORE-04",
+      "name": "Physical sandbox resources",
+      "status": "implemented",
+      "dataStructure": "WeakMap<sandbox,{id,kind,digest,source,parsers,query}>",
+      "key": "physical sandbox object + verified id/kind/SHA256",
+      "sourceRefs": [
+        {
+          "path": "server/document-sandbox-resources.mjs",
+          "symbol": "stateFor / prepareDocumentSandboxSource / prepareDocumentSandboxParsers / prepareDocumentSandboxQuery"
+        }
+      ],
+      "lifetime": "physical sandbox",
+      "invalidation": "GC when sandbox unreachable; mismatch rejects; failed promises retained",
+      "complexity": "each helper rehashes O(B); upload/install single-flight within physical document session",
+      "verificationIds": [
+        "EF-03",
+        "EF-04"
+      ]
+    },
+    {
+      "id": "ES-05",
+      "moduleId": "CORE-08",
+      "name": "Actual criterion cells",
+      "status": "implemented",
+      "dataStructure": "Map<string,CellRecord>",
+      "key": "sheet + U+0000 + A1 cell",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs",
+          "symbol": "discoverWorkbookCriteria"
+        }
+      ],
+      "lifetime": "one discovery",
+      "invalidation": "reread replaces same cell; disposed on return",
+      "complexity": "expected O(1) coordinate lookup plus string work; independent per document",
+      "verificationIds": [
+        "EF-05",
+        "EF-06"
+      ]
+    },
+    {
+      "id": "ES-06",
+      "moduleId": "CORE-08",
+      "name": "Exploration state",
+      "status": "implemented",
+      "dataStructure": "Set used + Array examinedRanges + Map regionAssessments",
+      "key": "sheet!normalizedRange / inventory region id",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs",
+          "symbol": "selectRanges / discoverWorkbookCriteria"
+        }
+      ],
+      "lifetime": "two-round discovery",
+      "invalidation": "exact rectangle dedup; explicit repeat spends area budget again",
+      "complexity": "range overlaps do not share coordinate budget; selection scans bounded per-round arrays",
+      "verificationIds": [
+        "EF-06"
+      ]
+    },
+    {
+      "id": "ES-07",
+      "moduleId": "CORE-09",
+      "name": "Semantic criteria dedup",
+      "status": "implemented",
+      "dataStructure": "Map<JSON semantic key,Criterion>",
+      "key": "source document IDs,label,comparison/rule,unit,scope,categoryPath,sampleName,sorted unique conditions,required",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-context.mjs",
+          "symbol": "semanticDeduplicateCriteria"
+        }
+      ],
+      "lifetime": "normalization call",
+      "invalidation": "new pass rebuilds; common criterionCitations union becomes evidenceCells/sourceEvidence, plus explicit merged fields hierarchyEvidence,hierarchyCitations,unitCitations,conditionCitations,scopeCitations,sampleCitations,ignoredSourceNotes; sampleEvidence is NOT merged and first criterion field survives; confirmation OR and contextIssues have explicit separate branches",
+      "complexity": "Semantic key construction includes strings and condition sorting. Duplicate-group merges repeatedly serialize/deduplicate the growing accumulated evidence. With C same-key criteria each adding e unique fixed-length citations of length l, evidence processing alone can be Theta(C^2*e*l); final retained evidence space O(C*e*l). Expected O(1) Map lookup does not make the full merge linear; intermediate allocations/GC and other provenance/source string merges add cost.",
+      "verificationIds": [
+        "EF-09"
+      ]
+    },
+    {
+      "id": "ES-08",
+      "moduleId": "CORE-08",
+      "name": "Candidate replacement",
+      "status": "implemented",
+      "dataStructure": "Array proposals + Array dispositions",
+      "key": "proposalKey or guarded replacesIndex; kind + sorted target citation keys",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs",
+          "symbol": "discoverWorkbookCriteria"
+        }
+      ],
+      "lifetime": "discovery call",
+      "invalidation": "source-identity validated replacement; previous proposals preserved otherwise",
+      "complexity": "findIndex introduces O(C²) accumulation possibility; final criteria acceptance cap does not cap all intermediate append",
+      "verificationIds": [
+        "EF-06",
+        "EF-09"
+      ]
+    },
+    {
+      "id": "ES-09",
+      "moduleId": "CORE-11",
+      "name": "Source records",
+      "status": "implemented",
+      "dataStructure": "Array recordRows + covered Set",
+      "key": "sheet!row",
+      "sourceRefs": [
+        {
+          "path": "server/table-records.mjs",
+          "symbol": "spreadsheetRecords / spreadsheetCoverage"
+        }
+      ],
+      "lifetime": "reviewed document",
+      "invalidation": "derived from actual sourceSheets, preserve explicit blank values",
+      "complexity": "coverage O(I*E*R) plus exclusion scans; no spatial interval tree",
+      "verificationIds": [
+        "EF-10"
+      ]
+    },
+    {
+      "id": "ES-10",
+      "moduleId": "CORE-15",
+      "name": "Activity history",
+      "status": "implemented",
+      "dataStructure": "Map tasks + Set listeners",
+      "key": "taskId / listener identity",
+      "sourceRefs": [
+        {
+          "path": "integrations/src/activity.mjs",
+          "symbol": "createActivityStore"
+        }
+      ],
+      "lifetime": "process",
+      "invalidation": "evict terminal history above target20; task major30/log12 FIFO separately",
+      "complexity": "snapshot cloning O(retained task/event payload); unfinished tasks can exceed20",
+      "verificationIds": [
+        "EF-12",
+        "EF-13"
+      ]
+    },
+    {
+      "id": "ES-11",
+      "moduleId": "CORE-15",
+      "name": "Command progress buffers",
+      "status": "implemented",
+      "dataStructure": "Map pending + Set seen + stdout/stderr strings",
+      "key": "channel|title|detail",
+      "sourceRefs": [
+        {
+          "path": "integrations/src/command-progress.mjs",
+          "symbol": "runObservedCommand"
+        }
+      ],
+      "lifetime": "one command",
+      "invalidation": "FIFO pending8/seen100; finish flush at most3 then clear",
+      "complexity": "callback bounded: last16k chunk buffer,last8k partial,last40lines; logs24",
+      "verificationIds": [
+        "EF-12"
+      ]
+    },
+    {
+      "id": "ES-12",
+      "moduleId": "CORE-17",
+      "name": "Dashboard jobs",
+      "status": "implemented",
+      "dataStructure": "Map jobs + active pointer",
+      "key": "jobId",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard.mjs",
+          "symbol": "createDashboardRouter"
+        }
+      ],
+      "lifetime": "router",
+      "invalidation": "evict one oldest terminal at >=10; delete aborts; finally releases matching active",
+      "complexity": "snapshot deep copy/freeze O(payload); logs80; one active",
+      "verificationIds": [
+        "EF-14"
+      ]
+    },
+    {
+      "id": "ES-13",
+      "moduleId": "CORE-18",
+      "name": "Offline chart bundle cache",
+      "status": "implemented",
+      "dataStructure": "module variable string",
+      "key": "one fixed runtime asset",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard-chart-runtime.mjs",
+          "symbol": "readChartRuntimeSource"
+        }
+      ],
+      "lifetime": "process module",
+      "invalidation": "no file-change invalidation; restart/reload needed",
+      "complexity": "single sync read and script escaping; payload-specific data never cached here",
+      "verificationIds": [
+        "EF-14"
+      ]
+    },
+    {
+      "id": "ES-14",
+      "moduleId": "CORE-16",
+      "name": "Ledger proposal fingerprint",
+      "status": "implemented",
+      "dataStructure": "SHA256 over serialized proposal",
+      "key": "result,note,counts,sourceDocumentId,sourceDocumentName,incomplete",
+      "sourceRefs": [
+        {
+          "path": "server/ledger.mjs",
+          "symbol": "ledgerProposal"
+        }
+      ],
+      "lifetime": "one preview/export comparison",
+      "invalidation": "export recomputes; changed proposal =>409",
+      "complexity": "not full review audit hash; changes outside rendered proposal may retain hash",
+      "verificationIds": [
+        "EF-15"
+      ]
+    },
+    {
+      "id": "ES-15",
+      "moduleId": "UI-01",
+      "name": "Request ordering gate",
+      "status": "implemented",
+      "dataStructure": "generation/runId/sequence/revision/localRevision plus Symbol locks",
+      "key": "current run; per-item Symbol map for mutations",
+      "sourceRefs": [
+        {
+          "path": "src/review-state.ts",
+          "symbol": "ReviewRequestGate"
+        }
+      ],
+      "lifetime": "hook lifecycle",
+      "invalidation": "start/reset/cancel changes generation; reject old requests/duplicate SSE",
+      "complexity": "does not provide exactly-once server execution; no SSE rAF publication batch",
+      "verificationIds": [
+        "EF-11"
+      ]
+    },
+    {
+      "id": "ES-16",
+      "moduleId": "UI-01",
+      "name": "UI histories and item updates",
+      "status": "implemented",
+      "dataStructure": "Array event history + Map-position activity dedup",
+      "key": "event/analysis activity id",
+      "sourceRefs": [
+        {
+          "path": "src/review-state.ts",
+          "symbol": "mergeAnalysisActivity / replaceReviewItem"
+        }
+      ],
+      "lifetime": "current run UI",
+      "invalidation": "events80; analysis events120; terminal authority stays in run",
+      "complexity": "merge O(old+new); item replace O(I), U added-item reduce updates O(U*I+U²)",
+      "verificationIds": [
+        "EF-11"
+      ]
+    },
+    {
+      "id": "ES-17",
+      "moduleId": "UI-09",
+      "name": "Presentation memory",
+      "status": "implemented",
+      "dataStructure": "Map session memories",
+      "key": "presentation session identity",
+      "sourceRefs": [
+        {
+          "path": "src/components/SandboxActivityDock.tsx",
+          "symbol": "presentationSessions"
+        }
+      ],
+      "lifetime": "module",
+      "invalidation": "first-insertion FIFO >30; read not recency refresh",
+      "complexity": "not LRU; memory independent of authoritative events",
+      "dockInputSelection": {
+        "tasks": "filter valid tasks, then take supplied-array tail100 using slice(-100); no time sorting",
+        "events": "take each supplied event-array tail200 first, then filter valid events",
+        "knownOrderLimitation": "Central activity snapshot is newest-first. Above100 tasks, tail selection keeps the older100, not the newest100. Unfinished tasks can exceed central retention20."
+      },
+      "verificationIds": [
+        "EF-13"
+      ]
+    },
+    {
+      "id": "ES-18",
+      "moduleId": "UI-10",
+      "name": "Causal light queue",
+      "status": "implemented",
+      "dataStructure": "sorted Array + Set seen/pending",
+      "key": "event/transfer ID; time then sequence",
+      "sourceRefs": [
+        {
+          "path": "src/handoff-queue.mjs",
+          "symbol": "createHandoffQueue"
+        }
+      ],
+      "lifetime": "selected live group",
+      "invalidation": "pending8,seen256; oldest overflow omitted; reset/group rules",
+      "complexity": "insert O(V log V), temporary V<=9 then overflow removal retains<=8; external memory seen512/groups100",
+      "verificationIds": [
+        "EF-13"
+      ]
+    },
+    {
+      "id": "ES-19",
+      "moduleId": "UI-08",
+      "name": "Theater packets",
+      "status": "implemented",
+      "dataStructure": "bounded packet Array",
+      "key": "real incoming item/field transition",
+      "sourceRefs": [
+        {
+          "path": "src/components/ReviewTheater.tsx",
+          "symbol": "ReviewTheater"
+        }
+      ],
+      "lifetime": "mounted theater",
+      "invalidation": "cap6; expiry1800+stagger75+120ms; cleanup350ms only while nonempty",
+      "complexity": "visual samples never delete authoritative items",
+      "verificationIds": [
+        "EF-13"
+      ]
+    },
+    {
+      "id": "ES-20",
+      "moduleId": "UI-15",
+      "name": "Dashboard preview cache",
+      "status": "implemented",
+      "dataStructure": "Map<runId,Preview>",
+      "key": "runId",
+      "sourceRefs": [
+        {
+          "path": "src/components/DashboardModal.tsx",
+          "symbol": "previewsByRun"
+        }
+      ],
+      "lifetime": "module/HMR",
+      "invalidation": "max5; delete/set on writes; read does not refresh",
+      "complexity": "write-recency FIFO, not read-LRU; no disk persistence",
+      "verificationIds": [
+        "EF-14",
+        "EF-16"
+      ]
+    },
+    {
+      "id": "ES-21",
+      "moduleId": "UI-11",
+      "name": "Highlight index",
+      "status": "implemented",
+      "dataStructure": "Map<cellCoordinate,highlight[]> + Set located",
+      "key": "sheet-aware cell coordinate",
+      "sourceRefs": [
+        {
+          "path": "src/components/DocumentPreview.tsx",
+          "symbol": "tableHighlightIndex"
+        }
+      ],
+      "lifetime": "memo dependencies source/evidence",
+      "invalidation": "source changes rebuild; selected item alone need not rebuild",
+      "complexity": "coordinate range100x100; quote fallback may scan all cells; no table virtualization",
+      "verificationIds": [
+        "EF-10",
+        "EF-16"
+      ]
+    },
+    {
+      "id": "ES-22",
+      "moduleId": "UI-12",
+      "name": "File review grouping",
+      "status": "implemented",
+      "dataStructure": "Maps by document/criterion/page + Sets",
+      "key": "documentId,criterionId,page",
+      "sourceRefs": [
+        {
+          "path": "src/components/file-review-model.mjs",
+          "symbol": "buildFileReviewModels"
+        }
+      ],
+      "lifetime": "memoized immutable inputs",
+      "invalidation": "items/documents/criteria change rebuild",
+      "complexity": "O(I+evidence+D*C+page sorts); not merely O(I)",
+      "verificationIds": [
+        "EF-16"
+      ]
+    }
+  ],
+  "algorithms": [
+    {
+      "id": "EA-01",
+      "moduleIds": [
+        "CORE-04",
+        "CORE-08"
+      ],
+      "name": "Sparse workbook inventory",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        },
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ],
+      "steps": [
+        "Load original and cached-value workbooks without executing formulas/macros/links.",
+        "Visit stored meaningful cells, not max_row times max_column.",
+        "Sort row/column coordinates; group adjacent populated rows then columns.",
+        "Criteria profiler emits all sheet metadata. Only first100 sheets have cells profiled; later empty sheets can be complete, later populated/comment sheets cannot. Generic document reader separately stops at100 sheets. Other caps expose omissions."
+      ],
+      "time": "O(N log N) own sorting; actual parser and two-workbook loading costs additional.",
+      "space": "O(N + parsed workbook/library memory); not a streaming memory guarantee.",
+      "verificationIds": [
+        "EF-05"
+      ]
+    },
+    {
+      "id": "EA-02",
+      "moduleIds": [
+        "CORE-08",
+        "CORE-09"
+      ],
+      "name": "Two-axis role and numeric criterion discovery",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-layout.mjs"
+        }
+      ],
+      "steps": [
+        "Group cells by sheet and row/column orientation.",
+        "Find item-first header groups and bounds/unit/condition roles.",
+        "Stop at next item header or merged section; excluded result/note roles win.",
+        "Support split min/max and source units; deduplicate coordinate/operator/value keys; return up to1000 candidates."
+      ],
+      "time": "O(N log N) grouping/sorts plus conservative O(N²) downstream header scans.",
+      "space": "O(N+candidate output), excluding strings.",
+      "verificationIds": [
+        "EF-05",
+        "EF-06",
+        "EF-09"
+      ]
+    },
+    {
+      "id": "EA-03",
+      "moduleIds": [
+        "CORE-05"
+      ],
+      "name": "Structure coverage and bounded repair",
+      "sourceRefs": [
+        {
+          "path": "server/document-quality.mjs"
+        }
+      ],
+      "steps": [
+        "Compare proposed structure to actual cells/blocks/lines.",
+        "For text, sort valid ranges and sweep nonempty lines without expanding ranges.",
+        "Run independent LLM on every retained150000-character segment.",
+        "Deduplicate80issues; fingerprint stable structure+sorted issue code/selectors.",
+        "Stop on verified,source limit,no progress or3rounds; otherwise validate/dedup8selectors and reread.",
+        "On ordinary non-abort reread/repair failure return retained context and issues as needs_review/limited. If caller/session signal aborted, rethrow without returning retained analysis; session deadline is mapped to timeout by the document-session owner.",
+        "Replace complete context with source-grounded repair, then verify again."
+      ],
+      "time": "Text O(M log M+L); sheet roughly O(H*N+N*M); Word O(sum claimed block range lengths). Network inference not classified.",
+      "space": "O(M+L) text including line array; Word coverage Set can expand ranges.",
+      "verificationIds": [
+        "EF-07"
+      ]
+    },
+    {
+      "id": "EA-04",
+      "moduleIds": [
+        "CORE-06"
+      ],
+      "name": "Page-local visual transcription replacement",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        },
+        {
+          "path": "server/visual-quality-judge.mjs"
+        }
+      ],
+      "steps": [
+        "Process up to30actual pages in batches3.",
+        "Validate page/table/block IDs, structure, source alignment.",
+        "Independent judge checks original page and transcription.",
+        "Retain Map page identity; repair replaces complete requested pages.",
+        "Stop within3rounds/180seconds/output budget; explicit partial or needs_review."
+      ],
+      "time": "Depends on page content and model calls; <=10batches per full round, judge calls separate.",
+      "space": "250000characters accumulated transcription JSON plus original images/parts.",
+      "verificationIds": [
+        "EF-08"
+      ]
+    },
+    {
+      "id": "EA-05",
+      "moduleIds": [
+        "CORE-08"
+      ],
+      "name": "Workbook criteria repair accountability",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        },
+        {
+          "path": "server/criteria-context.mjs"
+        }
+      ],
+      "steps": [
+        "LLM plan plus deterministic inventory ranges.",
+        "Read selected cells in same discovery sandbox.",
+        "Ground every criterion/citation and disposition.",
+        "Detect omitted thresholds,unresolved regions/source directives.",
+        "Force repair even when model followUpRanges empty; stop after2rounds/area limits.",
+        "Return all unresolved/drop/limit fields for HITL."
+      ],
+      "time": "Selection bounded18 per round; proposal replacement findIndex may be O(C²); detail scan q*NlogN.",
+      "space": "actual cell Map + proposals/coverage; selected coordinate budget24000, detail return6000 cells/read.",
+      "verificationIds": [
+        "EF-06",
+        "EF-09"
+      ]
+    },
+    {
+      "id": "EA-06",
+      "moduleIds": [
+        "CORE-11",
+        "CORE-12",
+        "CORE-14"
+      ],
+      "name": "Facts then matching then deterministic verdict",
+      "sourceRefs": [
+        {
+          "path": "server/field-extraction.mjs"
+        },
+        {
+          "path": "server/review.mjs"
+        },
+        {
+          "path": "server/criterion-applicability.mjs"
+        },
+        {
+          "path": "server/missing-result.mjs"
+        },
+        {
+          "path": "server/table-records.mjs"
+        }
+      ],
+      "steps": [
+        "For PDF/image targets only, independently extract up to 300 source fields before the review request; nonvisual targets do not run this facts-extraction stage.",
+        "Ask model to match only approved criterion IDs to actual subjects.",
+        "Validate criterion IDs and raw item/evidence shape, current document ID and coordinate syntax. General quote existence and physical location bounds are not proved by this admission.",
+        "Compute the numeric candidate and assess missing results. Omit optional missing items; confirmed required missing becomes fail unless the criterion still needs confirmation; uncertainty/absent/unreadable/no-evidence guards become review; otherwise apply the numeric verdict or uncomparable-unit review.",
+        "After numeric/missing handling, apply the conditions guard, then the category/sample applicability guard; either can override the prior result to review.",
+        "When independent extraction exists and the raw value is not absent, cross-check matching field value/unit/certainty; an extraction mismatch overrides the result to review.",
+        "Then apply CSV/XLSX display-label correction from one actual source row when its exact conditions hold; earlier matching and guards used the raw label.",
+        "Assign the final normalized status to machineStatus and a new UUID; later human overrides change status/audit while preserving this first machineStatus, not the raw model proposal.",
+        "Separately compute row coverage from the raw review response, append normalized items and assign document/run completion with the exact predicates in specs/01 section 3 and specs/02 section 2.9."
+      ],
+      "time": "criteria.find O(I*C), field/source scans additional; XLSX coverage O(I*E*R).",
+      "space": "bounded field/findings arrays plus source/profile; no indexed search engine.",
+      "verificationIds": [
+        "EF-09",
+        "EF-10",
+        "EF-11"
+      ]
+    },
+    {
+      "id": "EA-07",
+      "moduleIds": [
+        "CORE-17",
+        "CORE-18",
+        "UI-15",
+        "UI-16"
+      ],
+      "name": "Immutable dashboard plan/render/validate loop",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard.mjs"
+        },
+        {
+          "path": "server/dashboard-plan.mjs"
+        },
+        {
+          "path": "server/dashboard-plan-validation.mjs"
+        }
+      ],
+      "steps": [
+        "Freeze review snapshot; validate up to2000items.",
+        "Model produces14-field design JSON with user request/baseDesign.",
+        "Trusted renderer emits self-contained HTML with fixed React chart runtime.",
+        "One sandbox installs validator once,checks DOM data/file/filter/evidence behavior.",
+        "Diagnostics feed next plan,at most3attempts; failed custom path may return marked standard fallback."
+      ],
+      "time": "Rendering/snapshot O(payload + chart/file grouping work); network/inference/DOM validator costs additional.",
+      "space": "snapshot copies + HTML1000..8000000string characters; no arbitrary model JS execution.",
+      "verificationIds": [
+        "EF-14",
+        "EF-16"
+      ]
+    }
+  ],
+  "asyncPolicies": [
+    {
+      "id": "EC-01",
+      "moduleIds": [
+        "CORE-01",
+        "CORE-15"
+      ],
+      "resource": "global LLM requests",
+      "structure": "TaskPool Map FIFO",
+      "activeLimit": 2,
+      "pendingLimit": 100,
+      "defaultTimeoutMs": 30000,
+      "cancel": "queued removes token; running reserves until SDK settles; stream until finally",
+      "sourceRefs": [
+        {
+          "path": "integrations/src/task-pool.mjs"
+        },
+        {
+          "path": "integrations/src/gemini.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-01",
+        "EF-02"
+      ]
+    },
+    {
+      "id": "EC-02",
+      "moduleIds": [
+        "CORE-01",
+        "CORE-04",
+        "CORE-08",
+        "CORE-18"
+      ],
+      "resource": "global physical sandboxes",
+      "structure": "TaskPool Map FIFO",
+      "activeLimit": 2,
+      "pendingLimit": 100,
+      "lifetimeMs": {
+        "default": 60000,
+        "min": 10000,
+        "max": 300000
+      },
+      "createRequestTimeoutMs": 30000,
+      "killRequestTimeoutMs": 15000,
+      "cancel": "abort and normal completion share idempotent kill promise; release after work and cleanup settle",
+      "sourceRefs": [
+        {
+          "path": "integrations/src/sandbox.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-02",
+        "EF-03"
+      ]
+    },
+    {
+      "id": "EC-03",
+      "moduleIds": [
+        "CORE-04",
+        "CORE-05"
+      ],
+      "resource": "one document analysis",
+      "structure": "retainedRunner local TaskPool(1)",
+      "activeLimit": 1,
+      "pendingLimit": 100,
+      "wallDeadlineMs": 300000,
+      "deadlineStarts": "before acquiring global sandbox",
+      "cancel": "composed caller/deadline signal; no nested global slot acquisition",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-documents.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-03",
+        "EF-04"
+      ]
+    },
+    {
+      "id": "EC-04",
+      "moduleIds": [
+        "CORE-13"
+      ],
+      "resource": "per-engine review model outer queue",
+      "structure": "Array FIFO",
+      "activeLimit": 2,
+      "pendingLimit": null,
+      "cancel": "queued filter removes waiter; work finally hands slot to next; shift/filter O(Q)",
+      "sourceRefs": [
+        {
+          "path": "server/review.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-01",
+        "EF-11"
+      ]
+    },
+    {
+      "id": "EC-05",
+      "moduleIds": [
+        "CORE-07",
+        "CORE-11",
+        "CORE-13"
+      ],
+      "resource": "each batch of analysis/eligibility/review documents",
+      "structure": "two worker loops + shared next index",
+      "activeLimit": 2,
+      "cancel": "check before next/await results; document-specific errors retained; no Promise.all per every file",
+      "sourceRefs": [
+        {
+          "path": "server/review.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-03",
+        "EF-10"
+      ]
+    },
+    {
+      "id": "EC-06",
+      "moduleIds": [
+        "CORE-15"
+      ],
+      "resource": "command progress publication",
+      "throttleMs": 600,
+      "heartbeatMs": 8000,
+      "maxLogs": 24,
+      "pendingLimit": 8,
+      "seenLimit": 100,
+      "finishFlushLimit": 3,
+      "sourceRefs": [
+        {
+          "path": "integrations/src/command-progress.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-12"
+      ]
+    },
+    {
+      "id": "EC-07",
+      "moduleIds": [
+        "UI-09"
+      ],
+      "resource": "activity observer connection",
+      "concurrentHttpLimit": 1,
+      "requestTimeoutMs": 10000,
+      "retryBaseMs": 4000,
+      "retryMaxMs": 60000,
+      "silenceCheckMs": 15000,
+      "cancel": "generation+dispose+AbortController reject late results; no perpetual HTTP poll after completion",
+      "sourceRefs": [
+        {
+          "path": "src/activity-observer.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-11",
+        "EF-13"
+      ]
+    },
+    {
+      "id": "EC-08",
+      "moduleIds": [
+        "UI-10"
+      ],
+      "resource": "handoff visual playback",
+      "activeLimit": 1,
+      "pendingLimit": 8,
+      "transferMs": 1400,
+      "eligibleAgeMs": {
+        "min": -5000,
+        "max": 15000
+      },
+      "cancel": "connection pauses remaining; APP motion OFF (useAppReducedMotion=true) clears active/pending. OS prefers-reduced-motion alone affects applicable CSS but does not clear this JS queue; scope changes clear queue",
+      "sourceRefs": [
+        {
+          "path": "src/components/SandboxWorkroomScene.tsx"
+        },
+        {
+          "path": "src/handoff-queue.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-13"
+      ]
+    },
+    {
+      "id": "EC-09",
+      "moduleIds": [
+        "UI-15"
+      ],
+      "resource": "dashboard poll",
+      "concurrentHttpLimit": 1,
+      "delayAfterResponseMs": 1200,
+      "consecutiveErrorRetries": 2,
+      "requestTimeoutMs": null,
+      "cancel": "AbortController+sequence+alive; close/new request suppress late response",
+      "sourceRefs": [
+        {
+          "path": "src/components/DashboardModal.tsx"
+        }
+      ],
+      "verificationIds": [
+        "EF-14",
+        "EF-16"
+      ]
+    },
+    {
+      "id": "EC-10",
+      "moduleIds": [
+        "CORE-15"
+      ],
+      "resource": "SSE transport",
+      "activity": {
+        "heartbeatMs": 15000,
+        "disconnectAboveBufferedBytes": 524288,
+        "payload": "full activity snapshot"
+      },
+      "run": {
+        "heartbeatMs": 15000,
+        "slowClientBackpressure": false,
+        "eventRetentionCap": null
+      },
+      "sourceRefs": [
+        {
+          "path": "server/activity.mjs"
+        },
+        {
+          "path": "server/app.mjs"
+        },
+        {
+          "path": "server/review.mjs"
+        }
+      ],
+      "verificationIds": [
+        "EF-11",
+        "EF-12"
+      ]
+    }
+  ],
+  "limits": [
+    {
+      "id": "EL-01",
+      "scope": "upload",
+      "name": "fileBytes",
+      "value": 20971520,
+      "unit": "bytes",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/documents.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-02",
+      "scope": "upload",
+      "name": "storedOriginalBytes",
+      "value": 262144000,
+      "unit": "bytes",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/documents.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-03",
+      "scope": "upload",
+      "name": "documents",
+      "value": 100,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/documents.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-04",
+      "scope": "reader",
+      "name": "maxStoredCellsRead",
+      "value": 100000,
+      "unit": "cells",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-05",
+      "scope": "reader",
+      "name": "maxTextCharacters",
+      "value": 1500000,
+      "unit": "Python characters",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-06",
+      "scope": "reader",
+      "name": "maxPopulatedRowsRead",
+      "value": 100000,
+      "unit": "rows",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-07",
+      "scope": "reader",
+      "name": "maxSheetsRead",
+      "value": 100,
+      "unit": "sheets",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-08",
+      "scope": "reader",
+      "name": "maxPdfPagesInventoried",
+      "value": 300,
+      "unit": "pages",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-09",
+      "scope": "reader",
+      "name": "maxSeconds",
+      "value": 150,
+      "unit": "seconds checked by reader",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-document-reader.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-10",
+      "scope": "context",
+      "name": "retainedCharacters",
+      "value": 1200000,
+      "unit": "JS string length",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-documents.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-11",
+      "scope": "context",
+      "name": "chunkCharacters",
+      "value": 150000,
+      "unit": "JS string length",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-documents.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-12",
+      "scope": "context",
+      "name": "qualityRounds",
+      "value": 3,
+      "unit": "rounds",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/document-quality.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-13",
+      "scope": "requery",
+      "name": "selectors",
+      "value": 8,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/document-requery.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-14",
+      "scope": "requery",
+      "name": "sourceCharacters",
+      "value": 120000,
+      "unit": "characters",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/document-requery.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-15",
+      "scope": "requery",
+      "name": "cells",
+      "value": 10000,
+      "unit": "cells",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/document-requery.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-16",
+      "scope": "criteriaInventory",
+      "name": "cells",
+      "value": 200000,
+      "unit": "stored cells",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-17",
+      "scope": "criteriaInventory",
+      "name": "regions",
+      "value": 300,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-18",
+      "scope": "criteriaDetail",
+      "name": "rounds",
+      "value": 2,
+      "unit": "rounds",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-19",
+      "scope": "criteriaDetail",
+      "name": "rangesPerRound",
+      "value": 18,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-20",
+      "scope": "criteriaDetail",
+      "name": "rectangleArea",
+      "value": 12000,
+      "unit": "coordinate cells",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-21",
+      "scope": "criteriaDetail",
+      "name": "totalArea",
+      "value": 24000,
+      "unit": "coordinate cells including repeat/overlap charges",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-22",
+      "scope": "criteriaDetail",
+      "name": "returnedDistinctCellsPerRead",
+      "value": 6000,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-23",
+      "scope": "criteriaDetail",
+      "name": "uniqueCellRecordJsonCharacterSumPerRead",
+      "value": 220000,
+      "unit": "sum of len(json.dumps(record, ensure_ascii=False)) charged once per unique(sheet,cell); not whole response JSON length",
+      "boundarySemantics": "Overlapping selected ranges can repeat already-budgeted cells in output without additional unique-cell character charges. Wrapper characters are outside this budget. Separate JS raw result length cap is1500000 characters.",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ]
+    },
+    {
+      "id": "EL-24",
+      "scope": "criteria",
+      "name": "approvedCount",
+      "value": 250,
+      "unit": "count",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-25",
+      "scope": "criteria",
+      "name": "hierarchyDepth",
+      "value": 8,
+      "unit": "levels",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-26",
+      "scope": "visual",
+      "name": "pages",
+      "value": 30,
+      "unit": "pages",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-27",
+      "scope": "visual",
+      "name": "pagesPerRequest",
+      "value": 3,
+      "unit": "pages",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-28",
+      "scope": "visual",
+      "name": "rounds",
+      "value": 3,
+      "unit": "rounds",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-29",
+      "scope": "visual",
+      "name": "wallDuration",
+      "value": 180000,
+      "unit": "milliseconds",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-30",
+      "scope": "visual",
+      "name": "serializedTranscription",
+      "value": 250000,
+      "unit": "JS string length",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/visual-transcription.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-31",
+      "scope": "review",
+      "name": "fields",
+      "value": 300,
+      "unit": "fields/document",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/field-extraction.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-32",
+      "scope": "review",
+      "name": "findings",
+      "value": 250,
+      "unit": "items/document",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/review.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-33",
+      "scope": "dashboard",
+      "name": "snapshotItems",
+      "value": 2000,
+      "unit": "items",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-34",
+      "scope": "dashboard",
+      "name": "planAttempts",
+      "value": 3,
+      "unit": "attempts",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-35",
+      "scope": "dashboard",
+      "name": "htmlMaxLength",
+      "value": 8000000,
+      "unit": "JS string length",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/dashboard.mjs"
+        }
+      ]
+    },
+    {
+      "id": "EL-36",
+      "scope": "context",
+      "name": "structureEntriesPerModelResponse",
+      "value": 160,
+      "unit": "entries; >160 rejects the whole response, including complete repair responses",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-documents.mjs",
+          "symbol": "validateDocumentContext"
+        }
+      ]
+    },
+    {
+      "id": "EL-37",
+      "scope": "context",
+      "name": "publicAggregatedStructureEntries",
+      "value": 1000,
+      "unit": "entries via final slice(0,1000); no dedicated warning branch for this slice",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/sandbox-documents.mjs",
+          "symbol": "analyzeDocumentInSession"
+        }
+      ]
+    },
+    {
+      "id": "EL-38",
+      "scope": "criteriaDetail",
+      "name": "rawResultJsonMaxLength",
+      "value": 1500000,
+      "unit": "JS raw result string.length; independent of Python unique-record character budget",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-sandbox.mjs",
+          "symbol": "discoverWorkbookCriteria operation"
+        }
+      ]
+    },
+    {
+      "id": "EL-CRITERIA-SHEET-INDEX",
+      "scope": "criteriaInventory",
+      "name": "maxProfiledSheetIndexExclusive",
+      "value": 100,
+      "unit": "first100 sheets receive cell profiles; not an output metadata array limit",
+      "status": "implemented",
+      "sourceRefs": [
+        {
+          "path": "server/criteria-workbook-profile.py"
+        }
+      ]
+    }
+  ],
+  "knownLimitations": [
+    {
+      "id": "EG-01",
+      "title": "No measured latency/FPS claim",
+      "description": "No performance trace has been executed as part of authoring this supplement.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-02",
+      "title": "No universal backpressure",
+      "description": "Run SSE has no drain/byte-pressure disconnect and run event arrays are uncapped; activity SSE has its separate512KiB disconnect.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-03",
+      "title": "No global UI batch/visibility policy",
+      "description": "SSE publishes per event; document.hidden motion suspension and list/table virtualization are absent. Activity dock keeps supplied-array tail100 after validity filtering; on central newest-first snapshots above100 this keeps older tasks, not newest tasks.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-04",
+      "title": "No all-linear algorithms",
+      "description": "Criteria replacement, header-region scans, applicability/source checks and row coverage contain repeated scans.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-05",
+      "title": "No perpetual shared sandbox",
+      "description": "Reuse is document context repair, criterion discovery repair, or dashboard job repair; separate phases may allocate new sandboxes.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-06",
+      "title": "No unconditional complete source support",
+      "description": "Every reader/model has finite page/range/cell/character/time budgets; unread scope remains partial/HITL.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-07",
+      "title": "No parser memory ceiling guarantee",
+      "description": "Raw bytequota excludes XML/openpyxl/PDF objects, profiles, structuredClone, base64 and HTML.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-08",
+      "title": "No network-level exactly once",
+      "description": "Run revisions/token gates protect state acceptance, not generic idempotent POST execution.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-09",
+      "title": "No read-LRU claim",
+      "description": "UI presentation and preview caches are insertion/write-recency bounded maps; reads do not refresh.",
+      "status": "known_baseline_limit"
+    },
+    {
+      "id": "EG-10",
+      "title": "No hidden iframe pause",
+      "description": "Once viewed dashboard stays hidden across source tab switch; explicit animation suspension message is absent.",
+      "status": "known_baseline_limit"
+    }
+  ],
+  "verification": {
+    "ids": [
+      "EF-01",
+      "EF-02",
+      "EF-03",
+      "EF-04",
+      "EF-05",
+      "EF-06",
+      "EF-07",
+      "EF-08",
+      "EF-09",
+      "EF-10",
+      "EF-11",
+      "EF-12",
+      "EF-13",
+      "EF-14",
+      "EF-15",
+      "EF-16"
+    ],
+    "source": "specs/07-data-algorithms-concurrency.md",
+    "section": "7.9 재현 시험·음성 시나리오·성능 계측",
+    "executionStatus": "not_run_by_this_supplement",
+    "requirements": [
+      "Record source/build/input hashes and environment for every performance measurement.",
+      "Test active/pending/cleanup boundaries using deterministic fake SDK dependencies.",
+      "No performance pass based only on source presence or this inventory.",
+      "Keep baseline equivalence separate from future optimizations."
+    ]
+  }
+}

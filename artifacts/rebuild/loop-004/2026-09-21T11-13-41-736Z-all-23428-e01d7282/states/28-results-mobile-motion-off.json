@@ -1,0 +1,52 @@
+{
+  "id": "28-results-mobile-motion-off",
+  "selected": true,
+  "captureStatus": "ERROR",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Actual state setup/capture failed; any diagnostic is not a successful state screenshot.",
+  "reference": {
+    "id": "28-results-mobile-motion-off",
+    "screenshot": {
+      "path": "28-results-mobile-motion-off.png",
+      "bytes": 95954,
+      "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+      "width": 390,
+      "height": 844,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/28-results-mobile-motion-off.json",
+      "bytes": 709181,
+      "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "reduced",
+      "osReduce": true,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:16:30.205Z",
+  "error": {
+    "name": "TimeoutError",
+    "message": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '검토 대상으로', exact: true })\u001b[22m\n",
+    "stack": "locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '검토 대상으로', exact: true })\u001b[22m\n\n    at click (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:95:181)\n    at C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:265:38\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:206:9)\n    at async flow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:264:5)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:304:39)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:343:22"
+  },
+  "failureScreenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/diagnostics/28-results-mobile-motion-off-failure.png",
+    "bytes": 179775,
+    "sha256": "54459479f31285eb17a9a4a4cf8947ac6f2f1bcf3af2c64ab7b5d5a007224bef"
+  },
+  "failureDom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/diagnostics/28-results-mobile-motion-off-failure-dom.json",
+    "bytes": 1038818,
+    "sha256": "1b981715e02356a31ab72e48b8f379f5b6de51750502de85262c57fdc9828b5a"
+  },
+  "endedAt": "2026-09-21T11:16:43.507Z"
+}

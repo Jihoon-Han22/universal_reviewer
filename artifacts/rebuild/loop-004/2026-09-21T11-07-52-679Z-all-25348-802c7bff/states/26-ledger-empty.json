@@ -1,0 +1,35 @@
+{
+  "id": "26-ledger-empty",
+  "selected": true,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "An earlier required transition/capture failed (06-criteria-input-file); state was not synthesized.",
+  "reference": {
+    "id": "26-ledger-empty",
+    "screenshot": {
+      "path": "26-ledger-empty.png",
+      "bytes": 269941,
+      "sha256": "90507070de870a430d2b5b36095d130a061edb23fbbebf0b47abd0327ddbf576",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/26-ledger-empty.json",
+      "bytes": 954297,
+      "sha256": "b9885415d889df0717af1fb27e7a972874289c3e962ffefd54b365ef2718ddc7"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

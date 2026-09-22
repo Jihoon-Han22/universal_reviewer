@@ -1,0 +1,35 @@
+{
+  "id": "32-criteria-confirmation-1280",
+  "selected": true,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "An earlier required transition/capture failed (06-criteria-input-file); state was not synthesized.",
+  "reference": {
+    "id": "32-criteria-confirmation-1280",
+    "screenshot": {
+      "path": "32-criteria-confirmation-1280.png",
+      "bytes": 101873,
+      "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/32-criteria-confirmation-1280.json",
+      "bytes": 1022523,
+      "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

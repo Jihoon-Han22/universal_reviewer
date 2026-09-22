@@ -1,0 +1,72 @@
+{
+  "id": "17-result-applied-criteria",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "17-result-applied-criteria",
+    "screenshot": {
+      "path": "17-result-applied-criteria.png",
+      "bytes": 176272,
+      "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/17-result-applied-criteria.json",
+      "bytes": 766801,
+      "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T12:24:31.832Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/diagnostics/17-result-applied-criteria-font-readiness.json",
+    "bytes": 2301116,
+    "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/17-result-applied-criteria.png",
+    "bytes": 171389,
+    "sha256": "067588e18e90120bd0f1c6e6c078cfd7e7cedfb517b646784e7344fc2664c74f",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T12:24:34.018Z",
+    "capturedAt": "2026-09-21T12:24:34.251Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/dom/17-result-applied-criteria.json",
+    "bytes": 1190277,
+    "sha256": "543e1a4343427059ccaab4d690041514488e11ead9a3a29621eef74068f3171a"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/17-result-applied-criteria-measurement.json",
+    "bytes": 205849,
+    "sha256": "0be3835915f3ef1195206dfda32a5ca0e6b89c8ec8fe947c0d89b2a567875db9"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T12:24:36.140Z"
+}

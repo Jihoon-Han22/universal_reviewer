@@ -1,0 +1,35 @@
+{
+  "id": "30-landing-1280",
+  "selected": false,
+  "captureStatus": "NOT_RUN",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Outside the three-state smoke subset.",
+  "reference": {
+    "id": "30-landing-1280",
+    "screenshot": {
+      "path": "30-landing-1280.png",
+      "bytes": 451355,
+      "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/30-landing-1280.json",
+      "bytes": 941856,
+      "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  }
+}

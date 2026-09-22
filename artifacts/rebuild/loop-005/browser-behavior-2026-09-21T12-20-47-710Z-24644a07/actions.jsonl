@@ -1,0 +1,91 @@
+{"time":"2026-09-21T12:30:19.079Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}
+{"time":"2026-09-21T12:30:24.687Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:30:24.701Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200}
+{"time":"2026-09-21T12:30:48.812Z","kind":"click","name":"모션 ON"}
+{"time":"2026-09-21T12:30:59.534Z","kind":"facet-complete","id":"landing-off","state":"passed"}
+{"time":"2026-09-21T12:30:59.837Z","kind":"click","name":"모션 OFF"}
+{"time":"2026-09-21T12:31:07.924Z","kind":"facet-complete","id":"landing-os","state":"passed"}
+{"time":"2026-09-21T12:31:11.002Z","kind":"facet-complete","id":"mobile-landing","state":"passed"}
+{"time":"2026-09-21T12:31:19.574Z","kind":"facet-complete","id":"native-zoom","state":"not_run"}
+{"time":"2026-09-21T12:31:25.773Z","kind":"facet-complete","id":"landing-keyboard","state":"passed"}
+{"time":"2026-09-21T12:31:25.794Z","kind":"click","name":"모션 OFF"}
+{"time":"2026-09-21T12:31:31.539Z","kind":"click","name":"기준 정리하기"}
+{"time":"2026-09-21T12:31:34.557Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:31:34.572Z","kind":"controller","method":"POST","path":"/__visual/control/startReading","status":200}
+{"time":"2026-09-21T12:31:34.874Z","kind":"controller","method":"POST","path":"/__visual/control/confirmReady","status":200}
+{"time":"2026-09-21T12:31:35.653Z","kind":"click","name":"기준 확정 · 검토 파일 넣기"}
+{"time":"2026-09-21T12:31:37.545Z","kind":"click","name":"이 기준으로 검토하기"}
+{"time":"2026-09-21T12:31:39.117Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:31:39.130Z","kind":"controller","method":"POST","path":"/__visual/control/reviewActive","status":200}
+{"time":"2026-09-21T12:32:18.165Z","kind":"facet-complete","id":"live-aria","state":"passed"}
+{"time":"2026-09-21T12:32:18.265Z","kind":"click","name":"모션 ON"}
+{"time":"2026-09-21T12:32:23.995Z","kind":"facet-complete","id":"live-off","state":"passed"}
+{"time":"2026-09-21T12:32:30.460Z","kind":"facet-complete","id":"mobile-live","state":"passed"}
+{"time":"2026-09-21T12:32:31.375Z","kind":"controller","method":"POST","path":"/__visual/control/complete","status":200}
+{"time":"2026-09-21T12:32:38.005Z","kind":"facet-complete","id":"results-off","state":"passed"}
+{"time":"2026-09-21T12:32:41.713Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:32:46.695Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:32:50.166Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:32:52.628Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:32:56.205Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:33:00.703Z","kind":"facet-complete","id":"detail-focus","state":"passed"}
+{"time":"2026-09-21T12:33:08.660Z","kind":"facet-complete","id":"mobile-results","state":"passed"}
+{"time":"2026-09-21T12:33:09.140Z","kind":"click","name":"항목 목록"}
+{"time":"2026-09-21T12:33:09.905Z","kind":"click","name":"전체 요약"}
+{"time":"2026-09-21T12:33:20.104Z","kind":"facet-complete","id":"summary-tooltip","state":"passed"}
+{"time":"2026-09-21T12:33:20.120Z","kind":"click","name":"모션 OFF"}
+{"time":"2026-09-21T12:33:20.992Z","kind":"click","name":"파일별 결과"}
+{"time":"2026-09-21T12:33:22.416Z","kind":"click","name":"전체 요약"}
+{"time":"2026-09-21T12:33:32.685Z","kind":"facet-complete","id":"summary-os","state":"passed"}
+{"time":"2026-09-21T12:33:33.098Z","kind":"click","name":"모션 ON"}
+{"time":"2026-09-21T12:33:35.590Z","kind":"click","name":"파일별 결과"}
+{"time":"2026-09-21T12:33:45.326Z","kind":"facet-complete","id":"dashboard-escape","state":"passed"}
+{"time":"2026-09-21T12:33:45.327Z","kind":"click","name":"내보내기"}
+{"time":"2026-09-21T12:33:46.606Z","kind":"click","name":"검토대장에 기록"}
+{"time":"2026-09-21T12:33:51.044Z","kind":"facet-complete","id":"ledger-escape","state":"passed"}
+{"time":"2026-09-21T12:33:53.081Z","kind":"click","name":"나만의 대시보드"}
+{"time":"2026-09-21T12:33:54.147Z","kind":"click","name":"대시보드 만들기"}
+{"time":"2026-09-21T12:33:55.253Z","kind":"controller","method":"POST","path":"/__visual/control/dashboardReady","status":200}
+{"time":"2026-09-21T12:34:01.632Z","kind":"click","name":"원본과 판정"}
+{"time":"2026-09-21T12:34:03.517Z","kind":"click","name":"대시보드"}
+{"time":"2026-09-21T12:34:04.270Z","kind":"click","name":"대시보드 닫기"}
+{"time":"2026-09-21T12:34:16.819Z","kind":"click","name":"나만의 대시보드"}
+{"time":"2026-09-21T12:34:22.250Z","kind":"click","name":"원본과 판정"}
+{"time":"2026-09-21T12:34:23.107Z","kind":"click","name":"대시보드"}
+{"time":"2026-09-21T12:34:23.349Z","kind":"click","name":"대시보드 닫기"}
+{"time":"2026-09-21T12:34:32.121Z","kind":"click","name":"나만의 대시보드"}
+{"time":"2026-09-21T12:34:39.237Z","kind":"click","name":"원본과 판정"}
+{"time":"2026-09-21T12:34:41.817Z","kind":"click","name":"대시보드"}
+{"time":"2026-09-21T12:34:42.560Z","kind":"click","name":"대시보드 닫기"}
+{"time":"2026-09-21T12:34:53.055Z","kind":"click","name":"나만의 대시보드"}
+{"time":"2026-09-21T12:35:04.435Z","kind":"click","name":"원본과 판정"}
+{"time":"2026-09-21T12:35:10.306Z","kind":"click","name":"대시보드"}
+{"time":"2026-09-21T12:35:11.981Z","kind":"click","name":"대시보드 닫기"}
+{"time":"2026-09-21T12:35:20.592Z","kind":"click","name":"나만의 대시보드"}
+{"time":"2026-09-21T12:35:25.333Z","kind":"click","name":"원본과 판정"}
+{"time":"2026-09-21T12:35:26.446Z","kind":"click","name":"대시보드"}
+{"time":"2026-09-21T12:35:26.628Z","kind":"click","name":"대시보드 닫기"}
+{"time":"2026-09-21T12:35:33.394Z","kind":"facet-complete","id":"dashboard-resources","state":"passed"}
+{"time":"2026-09-21T12:35:39.424Z","kind":"facet-complete","id":"performance-recording","state":"passed"}
+{"time":"2026-09-21T12:36:40.017Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:36:40.025Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:36:40.036Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200}
+{"time":"2026-09-21T12:36:59.460Z","kind":"click","name":"모션 ON"}
+{"time":"2026-09-21T12:37:02.007Z","kind":"click","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T12:37:04.698Z","kind":"click","name":"기준 정리하기"}
+{"time":"2026-09-21T12:37:07.518Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:07.640Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:07.649Z","kind":"controller","method":"POST","path":"/__visual/control/startReading","status":200}
+{"time":"2026-09-21T12:37:07.658Z","kind":"controller","method":"POST","path":"/__visual/control/confirmReady","status":200}
+{"time":"2026-09-21T12:37:09.063Z","kind":"click","name":"기준 확정 · 검토 파일 넣기"}
+{"time":"2026-09-21T12:37:10.316Z","kind":"click","name":"이 기준으로 검토하기"}
+{"time":"2026-09-21T12:37:11.093Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:11.107Z","kind":"controller","method":"POST","path":"/__visual/control/reviewActive","status":200}
+{"time":"2026-09-21T12:37:12.849Z","kind":"click","name":"작업 중지"}
+{"time":"2026-09-21T12:37:14.710Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:15.831Z","kind":"facet-complete","id":"cancel-aria","state":"passed"}
+{"time":"2026-09-21T12:37:27.367Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:27.476Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:27.484Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T12:37:27.502Z","kind":"facet-complete","id":"context-cleanup","state":"passed"}
+{"time":"2026-09-21T12:37:54.165Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}

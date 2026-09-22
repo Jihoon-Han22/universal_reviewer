@@ -1,0 +1,34 @@
+{
+  "case_id": "P302",
+  "report": "inputs/reports/P302.pdf",
+  "criteria": "inputs/criteria/P302_criteria.pdf",
+  "output_template": "inputs/templates/P302_form.xlsx",
+  "target_identity": "TAG XV-618 / SERIAL S-902 / REV 4",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "wall",
+      "name": "Wall thickness"
+    },
+    {
+      "field_id": "weld",
+      "name": "Visual weld examination"
+    },
+    {
+      "field_id": "leak",
+      "name": "Helium leak rate"
+    },
+    {
+      "field_id": "coating",
+      "name": "Dry film thickness"
+    },
+    {
+      "field_id": "ferrite",
+      "name": "Ferrite content"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

@@ -1,0 +1,585 @@
+[
+  {
+    "atlas_page": 1,
+    "key": "baseline",
+    "name": "원본 대조 페이지",
+    "source": "v2 B101 PDF page 4",
+    "effects": [],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 2,
+    "key": "salt_pepper",
+    "name": "Salt & pepper 점잡음",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "salt_pepper",
+        "effect_id": "E01",
+        "parameters": {
+          "density": 0.012
+        },
+        "page_seed": 2145898937,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 3,
+    "key": "grain",
+    "name": "거친 센서 노이즈",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "grain",
+        "effect_id": "E02",
+        "parameters": {
+          "sigma": 29
+        },
+        "page_seed": 1326725542,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 4,
+    "key": "low_dpi",
+    "name": "저해상도 팩스",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "low_dpi",
+        "effect_id": "E03",
+        "parameters": {
+          "effective_dpi": 58
+        },
+        "page_seed": 2011720624,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 5,
+    "key": "jpeg",
+    "name": "메신저 재압축",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "jpeg",
+        "effect_id": "E04",
+        "parameters": {
+          "effective_dpi": 68
+        },
+        "page_seed": 3063636059,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 6,
+    "key": "blur",
+    "name": "초점 이탈",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "blur",
+        "effect_id": "E05",
+        "parameters": {
+          "radius": 2.1
+        },
+        "page_seed": 1091363866,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 7,
+    "key": "motion",
+    "name": "흔들린 촬영",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "motion",
+        "effect_id": "E06",
+        "parameters": {
+          "smear_pixels": 10
+        },
+        "page_seed": 12933007,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 8,
+    "key": "faded",
+    "name": "토너 부족",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "faded",
+        "effect_id": "E07",
+        "parameters": {},
+        "page_seed": 2054392990,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 9,
+    "key": "dark",
+    "name": "노출 부족",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "dark",
+        "effect_id": "E08",
+        "parameters": {},
+        "page_seed": 1200952978,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 10,
+    "key": "bands",
+    "name": "조명 밴딩",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "bands",
+        "effect_id": "E09",
+        "parameters": {},
+        "page_seed": 413932302,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 11,
+    "key": "blueprint",
+    "name": "푸른색 복사본",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "blueprint",
+        "effect_id": "E10",
+        "parameters": {},
+        "page_seed": 2553319465,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 12,
+    "key": "bleed",
+    "name": "뒷면 비침",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "bleed",
+        "effect_id": "E11",
+        "parameters": {},
+        "page_seed": 2086377652,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 13,
+    "key": "streaks",
+    "name": "복사기 세로 줄",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "streaks",
+        "effect_id": "E12",
+        "parameters": {},
+        "page_seed": 2324042353,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 14,
+    "key": "dropout",
+    "name": "스캔 라인 누락",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "dropout",
+        "effect_id": "E13",
+        "parameters": {},
+        "page_seed": 1101668548,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 15,
+    "key": "ghost",
+    "name": "이중 인쇄",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "ghost",
+        "effect_id": "E14",
+        "parameters": {},
+        "page_seed": 929145078,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 16,
+    "key": "stamp",
+    "name": "기울어진 접수 도장",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "stamp",
+        "effect_id": "E15",
+        "parameters": {},
+        "page_seed": 1635561311,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 17,
+    "key": "watermark",
+    "name": "대각선 워터마크",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "watermark",
+        "effect_id": "E16",
+        "parameters": {},
+        "page_seed": 1422105803,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 18,
+    "key": "handwriting",
+    "name": "손글씨 검토 메모",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "handwriting",
+        "effect_id": "E17",
+        "parameters": {},
+        "page_seed": 3333128930,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 19,
+    "key": "highlight",
+    "name": "형광펜 표시",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "highlight",
+        "effect_id": "E18",
+        "parameters": {},
+        "page_seed": 2012064379,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 20,
+    "key": "coffee",
+    "name": "커피·물 얼룩",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "coffee",
+        "effect_id": "E19",
+        "parameters": {},
+        "page_seed": 2797526996,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 21,
+    "key": "holes",
+    "name": "펀치·스테이플",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "holes",
+        "effect_id": "E20",
+        "parameters": {},
+        "page_seed": 2824638899,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 22,
+    "key": "fold",
+    "name": "접힌 종이",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "fold",
+        "effect_id": "E21",
+        "parameters": {},
+        "page_seed": 2751254877,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 23,
+    "key": "torn",
+    "name": "찢긴 모서리",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "torn",
+        "effect_id": "E22",
+        "parameters": {},
+        "page_seed": 1836619912,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 24,
+    "key": "photo",
+    "name": "휴대폰 비스듬한 촬영",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "photo",
+        "effect_id": "E23",
+        "parameters": {
+          "source_quad_px": [
+            [
+              0,
+              0
+            ],
+            [
+              1323,
+              0
+            ],
+            [
+              1323,
+              1871
+            ],
+            [
+              0,
+              1871
+            ]
+          ],
+          "dest_quad_px": [
+            [
+              238.61,
+              131
+            ],
+            [
+              1469,
+              233.905
+            ],
+            [
+              1389.62,
+              2002
+            ],
+            [
+              146,
+              1852.3200000000002
+            ]
+          ]
+        },
+        "page_seed": 545633359,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 25,
+    "key": "screen",
+    "name": "화면을 다시 촬영",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "screen",
+        "effect_id": "E24",
+        "parameters": {},
+        "page_seed": 712480599,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 26,
+    "key": "mirror",
+    "name": "좌우 반전 스캔",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "mirror",
+        "effect_id": "E25",
+        "parameters": {},
+        "page_seed": 2929519917,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 27,
+    "key": "negative",
+    "name": "흑백 반전",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "negative",
+        "effect_id": "E26",
+        "parameters": {},
+        "page_seed": 1374338060,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 28,
+    "key": "rotate90",
+    "name": "중간 페이지 90도",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "rotate90",
+        "effect_id": "E27",
+        "parameters": {},
+        "page_seed": 1043773638,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 29,
+    "key": "rotate180",
+    "name": "거꾸로 끼운 페이지",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "rotate180",
+        "effect_id": "E28",
+        "parameters": {},
+        "page_seed": 1076385196,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 30,
+    "key": "skew",
+    "name": "삐뚤게 급지",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "skew",
+        "effect_id": "E29",
+        "parameters": {
+          "angle_degrees": 3.8
+        },
+        "page_seed": 2521703611,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 31,
+    "key": "half_turn",
+    "name": "절반만 뒤집힌 합성본",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "half_turn",
+        "effect_id": "E30",
+        "parameters": {
+          "piecewise_geometry": "upper half rotated 180; no scored evidence is assigned this transform"
+        },
+        "page_seed": 2317008367,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 32,
+    "key": "sticky",
+    "name": "결과칸을 가린 메모지",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "sticky",
+        "effect_id": "E31",
+        "parameters": {
+          "occluded_source_bbox_px": [
+            614.2722248353715,
+            857.838910071387,
+            921.263875823142,
+            946.7341339129815
+          ]
+        },
+        "page_seed": 1718802592,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  },
+  {
+    "atlas_page": 33,
+    "key": "correction",
+    "name": "확정되지 않은 수기 수정",
+    "source": "v2 B101 PDF page 4",
+    "effects": [
+      {
+        "key": "correction",
+        "effect_id": "E32",
+        "parameters": {
+          "annotation": "89 ?",
+          "authority": "unconfirmed handwritten annotation"
+        },
+        "page_seed": 1145080011,
+        "sequence_index": 0
+      }
+    ],
+    "scoring": "visual comparison only; not a held-out evaluation case"
+  }
+]

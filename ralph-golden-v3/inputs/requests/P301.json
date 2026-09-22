@@ -1,0 +1,38 @@
+{
+  "case_id": "P301",
+  "report": "inputs/reports/P301.pdf",
+  "criteria": "inputs/criteria/P301_criteria.xlsx",
+  "output_template": "inputs/criteria/P301_criteria.xlsx",
+  "target_identity": "TAG V-204 / HEAT HX-72 / REV C",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "yield",
+      "name": "Yield strength"
+    },
+    {
+      "field_id": "tensile",
+      "name": "Tensile strength"
+    },
+    {
+      "field_id": "carbon",
+      "name": "Carbon C"
+    },
+    {
+      "field_id": "impact",
+      "name": "Impact energy"
+    },
+    {
+      "field_id": "pressure",
+      "name": "Hydrostatic pressure"
+    },
+    {
+      "field_id": "hold",
+      "name": "Holding duration"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

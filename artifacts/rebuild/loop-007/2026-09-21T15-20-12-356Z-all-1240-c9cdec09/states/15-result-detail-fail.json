@@ -1,0 +1,72 @@
+{
+  "id": "15-result-detail-fail",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "15-result-detail-fail",
+    "screenshot": {
+      "path": "15-result-detail-fail.png",
+      "bytes": 181083,
+      "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/15-result-detail-fail.json",
+      "bytes": 710697,
+      "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:22:51.859Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/15-result-detail-fail-font-readiness.json",
+    "bytes": 2301120,
+    "sha256": "84cac36aec4f25587f4fbc49b07bedd9ea22d9504a82020b45ca1a54fc0e95f7"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/15-result-detail-fail.png",
+    "bytes": 176678,
+    "sha256": "d1d3c90e35c36f3ac1575ed210649bd40f75ba47524f0884e095cdbaf3f2b639",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:22:54.454Z",
+    "capturedAt": "2026-09-21T15:22:54.856Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/15-result-detail-fail.json",
+    "bytes": 1103187,
+    "sha256": "9abca693d57d5560441ba0ab90496fc8eedce4517cdfd267f680e639263d6251"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/15-result-detail-fail-measurement.json",
+    "bytes": 213243,
+    "sha256": "eb6c76327b9eadd54fc5719fe182f48b97998bd07f1ad403148de858d7b729cc"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T15:22:57.489Z"
+}

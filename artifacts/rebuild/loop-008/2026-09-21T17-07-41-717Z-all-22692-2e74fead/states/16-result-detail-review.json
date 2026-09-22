@@ -1,0 +1,72 @@
+{
+  "id": "16-result-detail-review",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "16-result-detail-review",
+    "screenshot": {
+      "path": "16-result-detail-review.png",
+      "bytes": 184302,
+      "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/16-result-detail-review.json",
+      "bytes": 713312,
+      "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:10:01.696Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/16-result-detail-review-font-readiness.json",
+    "bytes": 2301116,
+    "sha256": "5644a8279cf3eb8c154553dd80767392f5f07df239e89ea476d75f1b965e64e2"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/16-result-detail-review.png",
+    "bytes": 179037,
+    "sha256": "03dae2d0b230c20518c767221fa130c02bc8b2661ae2523afc93a6878bc0ee78",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:10:05.128Z",
+    "capturedAt": "2026-09-21T17:10:05.425Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/16-result-detail-review.json",
+    "bytes": 1107393,
+    "sha256": "33ad40ff0a3ed81afd6c49403c6433c6db18b868f32a9c41712e490aa8b3f148"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/16-result-detail-review-measurement.json",
+    "bytes": 205789,
+    "sha256": "66f9b4e994b01e029db0bea64c097173cf483ff2359e7d2d38bae6b3f519017c"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T17:10:07.132Z"
+}

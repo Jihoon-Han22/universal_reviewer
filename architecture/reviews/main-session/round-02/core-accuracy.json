@@ -1,0 +1,3965 @@
+{
+  "schemaVersion": 1,
+  "round": 2,
+  "role": "accuracy",
+  "reviewerId": "architecture_accuracy_core",
+  "reviewState": "complete",
+  "summary": {
+    "scope": "Declared CORE module design accuracy only",
+    "moduleCount": 19,
+    "requiredQuestions": 95,
+    "pass": 95,
+    "fail": 0,
+    "unverified": 0,
+    "openIssues": 0,
+    "resolvedPriorIssues": 23,
+    "resolvedRound2Issues": 12,
+    "provisionalUntilSealed": false,
+    "completeProductAcceptance": false,
+    "universalCorrectnessClaim": false,
+    "accuracyPercent": 100
+  },
+  "methodology": {
+    "independence": "Independent source-grounded reviewer with four read-only bounded helpers; authors did not assign pass statuses.",
+    "reread": "All95 registry questions were reassessed; existing source files were reread as relevant and99 previously sealed source hashes remain unchanged. Architecture changes were reviewed afresh; a prior pass was not blindly reused. Final01/02/03/04/05/05a/07, types, prompts and UI target contracts were reread after author freeze. Final NoticeCode/ready-job/standalone metadata follow-through matches05 D05a/b and is explicitly REQUIRED_REBUILD, not current-source parity.",
+    "passMeaning": "The described baseline matches current source, or a stronger target is explicitly additional and concretely specified. A fixture contract pass is not executed acceptance.",
+    "nonexecuted": "DN01–04, required real-model semantic cases, mandatory DB-H01/02/03 and table-highlight targets,18dashboard browser cases and rebuilt-product/performance gates remain NOT_RUN. Concrete design acceptance is not execution proof. A missing future adapter/provider/fixture must produce NOT_RUN/blocked.",
+    "constraints": "No production/specification edits, no external API calls, no server execution, no environment secret values read.",
+    "offlineChecks": "Read-only checks:52offline highlight/bridge tests;10observed preference cases,5legacy parser cases and6ledger fingerprint cases against unchanged source; plan/schema/palette comparisons and deterministic context-limit/overlap-budget/dedup-growth probes. No product/provider/performance result is inferred.",
+    "helpers": [
+      "audit_documents (CORE03–06)",
+      "audit_algorithms (CORE07–12,14)",
+      "audit_dashboard (CORE16–18)",
+      "audit_efficiency_r2 (CORE19)"
+    ]
+  },
+  "modules": [
+    {
+      "moduleId": "CORE-01",
+      "checks": [
+        {
+          "id": "CORE-01-C01",
+          "status": "pass",
+          "reason": "R2 재대조: 환경 우선순위·빈 값 처리·두 역할의 기본 모델·publicConfig allowlist가 원본과 일치한다.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": ".env와 비밀 경계"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1 GET /api/health"
+            },
+            {
+              "path": "source:integrations/src/config.mjs",
+              "section": "loadConfig / publicConfig"
+            },
+            {
+              "path": "source:integrations/test/integrations.test.mjs",
+              "section": "root env format; missing credentials"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.5–7.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C02",
+          "status": "pass",
+          "reason": "R2 §2.8.1과 internal port를 실제 request/generateText/generateJson/safeError로 재대조했다. prompt/contents precedence, 역할, schema/provider 대 local validate, text/data/model/usage와 오류 분류를 정확히 구분한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "호출 조립 표"
+            },
+            {
+              "path": "source:integrations/src/gemini.mjs",
+              "section": "request / generateText / generateJson"
+            },
+            {
+              "path": "source:integrations/src/errors.mjs",
+              "section": "safeError"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8.1 공통 adapter의 정확한 port"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "GeminiAdapter / GeminiSdkRequest / IntegrationFailure"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C03",
+          "status": "pass",
+          "reason": "R2 재대조: Gemini HTTP 30초와 E2B create/lifetime/kill 제한을 구분하며 finally cleanup까지 슬롯을 보존하는 취소 순서가 원본과 일치한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "source:integrations/src/sandbox.mjs",
+              "section": "withSandbox"
+            },
+            {
+              "path": "source:integrations/src/task-pool.mjs",
+              "section": "#drain"
+            },
+            {
+              "path": "source:integrations/test/concurrency.test.mjs",
+              "section": "abort during creation; active sandbox abort; lifecycle slots"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C04",
+          "status": "pass",
+          "reason": "R2 adapter default2048/정수1..32768, blank text·JSON/validate failure, generic bytes/part cap 부재와 단계별 cap, kill CLEANUP_FAILED 및 POOL_FULL→QUOTA를 실제 코드와 대조했다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "source:integrations/src/gemini.mjs",
+              "section": "MAX_OUTPUT_TOKENS / request / generateJson"
+            },
+            {
+              "path": "source:integrations/src/errors.mjs",
+              "section": "IntegrationError / safeError"
+            },
+            {
+              "path": "source:integrations/test/gemini-limits.test.mjs",
+              "section": "token boundary cases"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8.1 port / error mapping"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "Gemini port / SandboxRunner"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C05",
+          "status": "pass",
+          "reason": "R2 재대조: npm test에 integration fake-client 테스트가 포함되며 check와 실제 provider smoke의 경계가 명시돼 있다. 테스트 실행을 실제 서비스 실행 증거로 표현하지 않는다.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": "앱 구현 이후 실행 명령"
+            },
+            {
+              "path": "source:package.json",
+              "section": "scripts.test"
+            },
+            {
+              "path": "source:integrations/package.json",
+              "section": "test/check/smoke"
+            },
+            {
+              "path": "source:integrations/test/integrations.test.mjs",
+              "section": "fake client / sandboxFactory fixtures"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-02",
+      "checks": [
+        {
+          "id": "CORE-02-C01",
+          "status": "pass",
+          "reason": "R2 재대조: HTTP method·payload·상태·안전 오류와 공개 metadata/비공개 원본 경계가 router 및 publicDocument와 일치한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4, §4.1, §4.2, §9"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "HTTP request/response DTO"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "createApp routes / requireRun / error middleware"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "publicDocument"
+            },
+            {
+              "path": "source:server/app.test.mjs",
+              "section": "public upload response has no buffer/modelParts"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.5–7.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C02",
+          "status": "pass",
+          "reason": "R2 재대조: 문서/run/activity/dashboard 메모리 수명 및 restart 후 ID 소실과 404는 Map 저장소와 라우트 구현에 부합한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1, §4.2"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "createApp / requireRun"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "ReviewEngine.runs"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "DocumentStore"
+            },
+            {
+              "path": "source:server/dashboard.mjs",
+              "section": "createDashboardRouter jobs Map"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C03",
+          "status": "pass",
+          "reason": "R2 재대조: 업로드 배치의 added rollback과 보존 run의 target/criteria/analysis 참조 DELETE 409가 실제 구현과 같다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "POST /api/documents lines59-68; DELETE lines76-79"
+            },
+            {
+              "path": "source:server/app.test.mjs",
+              "section": "upload, review, evidence fetch: retained delete409"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C04",
+          "status": "pass",
+          "reason": "R2 재대조: Origin 존재 시 로컬 hostname 검사, JSON 2mb 및 multipart 파일/필드/parts 제한과 오류코드가 원본 순서와 일치한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4, §4.1"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "upload limits; createApp middleware; Multer error mapping"
+            },
+            {
+              "path": "source:server/app.test.mjs",
+              "section": "reject unsupported uploads and outside origins"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C05",
+          "status": "pass",
+          "reason": "R2 §11은 SIGINT/SIGTERM→run cancel→server.close→exit0를 정확히 기술하며 전체 sandbox cleanup await/stream shutdown supervisor가 아님을 명시한다. 포트/dist 실행 명령과 process-level 추가 gate를 실제 코드와 구분한다.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": "앱 구현 이후 실행 명령"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §10"
+            },
+            {
+              "path": "source:server/index.mjs",
+              "section": "lines3-9"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "dist static fallback lines157-158"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§11 서버 프로세스 종료의 현재 경계"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G01/G02 및 실행 명령"
+            },
+            {
+              "path": "source:server/index.mjs",
+              "section": "full signal handler"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-03",
+      "checks": [
+        {
+          "id": "CORE-03-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Extensions, roles, filename sanitation, signatures, original-byte retention and public/private projection match source.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "PublicDocument"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "lines20,43,131,475"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "content route line69"
+            },
+            {
+              "path": "source:server/documents.test.mjs",
+              "section": "lines62,75,253"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Namespace/comment changes affect the preview copy; original bytes and hidden/merged/formula-cache semantics remain distinct.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 XLSX"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "compatibleSpreadsheetBytes line192; metadata281-304; original485,496"
+            },
+            {
+              "path": "source:server/documents.test.mjs",
+              "section": "lines98,154,174,207"
+            },
+            {
+              "path": "source:server/spreadsheet-xml-compatibility.test.mjs",
+              "section": "lines8,14,28"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Sheet/cell/source capacity exceptions become deferred private results/public text preview while original bytes remain available.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 limits table"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "lines168,255-269,271,292"
+            },
+            {
+              "path": "source:server/documents.test.mjs",
+              "section": "lines253,270"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "DeferredSpreadsheetParse / ReaderProfile / SandboxAnalysisResult / DocumentRequerySelector/Response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Reservation timing,100document/250MiB caps and rollback match. Revised ZIP contract separates local name/method from central-size/inflate checks and discloses unchecked local sizes.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 ZIP"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "ZIP lines108-126; reservation475-505"
+            },
+            {
+              "path": "source:server/documents.test.mjs",
+              "section": "lines288,296,317"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Unconditional drawing removal and incomplete truncated signaling are accurate. Full displayed cells use aggregate source budget;3000 is not a per-cell source cap. Formula sentinel/PDF auxiliary failure match.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 XLSX/PDF"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "drawing214-218; cell315; public453-456; PDF349-414"
+            },
+            {
+              "path": "source:server/documents.test.mjs",
+              "section": "lines75,98,241"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-04",
+      "checks": [
+        {
+          "id": "CORE-04-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Profile identity/private DTO/source-public projections match. Early-failure profile may omit SHA256, while Node rejects missing identity.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.4"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines100-119,183-229,363-371"
+            },
+            {
+              "path": "source:server/sandbox-documents.test.mjs",
+              "section": "digest mismatch line136"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "DeferredSpreadsheetParse / ReaderProfile / SandboxAnalysisResult / DocumentRequerySelector/Response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: One analysis phase retains physical sandbox/TaskPool1 and identity-bound upload/install promises. Discovery/revision remain separate sessions.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines144-164"
+            },
+            {
+              "path": "source:server/document-sandbox-resources.mjs",
+              "section": "lines14-70"
+            },
+            {
+              "path": "source:server/document-sandbox-session.test.mjs",
+              "section": "lines54,75,138"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Session, command, install and cooperative reader limits are distinct. Success/failure/abort cleanup and CLEANUP_FAILED match.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines130-175,223"
+            },
+            {
+              "path": "source:server/document-sandbox-resources.mjs",
+              "section": "pip line49"
+            },
+            {
+              "path": "source:server/sandbox-document-reader.py",
+              "section": "elapsed line115"
+            },
+            {
+              "path": "source:server/document-sandbox-session.test.mjs",
+              "section": "lines86,99,113,124,132"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Table distinguishes unsupported hard limits, partial truncation and embedded-image incomplete coverage. Thumbnail applies to save_image supplements; standalone originals remain original.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3 하드/부분 한도"
+            },
+            {
+              "path": "source:server/sandbox-document-reader.py",
+              "section": "limits23-33; hard158-159,212-213; embedded176-207; standalone749-755; unsupported789-796"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Fixed-reader boundary is source-backed. DN01/02 now specify concrete archive/genuine VBA+external-link fixtures,operations,process/network oracles and G12 command. They remain NOT_RUN; historical execution is not claimed.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.5"
+            },
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-04-C05"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "static commands222-223"
+            },
+            {
+              "path": "source:server/document-sandbox-resources.mjs",
+              "section": "lines27-58"
+            },
+            {
+              "path": "source:server/sandbox-document-reader.py",
+              "section": "macro/link153-172; cached formulas254-264"
+            },
+            {
+              "path": "source:server/document-reader.test.py",
+              "section": "formula160; selector175"
+            },
+            {
+              "path": "contracts/document-negative-cases.json",
+              "section": "DN01/DN02; G12 adapter; NOT_RUN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-05",
+      "checks": [
+        {
+          "id": "CORE-05-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Selectors are bounded data with identity/ordered-selector checks. Existing-sheet ranges use Excel bounds rather than populated dimensions, explicitly disclosed.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5 허용 selector"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "lines29-64"
+            },
+            {
+              "path": "source:server/document-requery.mjs",
+              "section": "lines15-54"
+            },
+            {
+              "path": "source:server/document-requery.py",
+              "section": "lines29-89"
+            },
+            {
+              "path": "source:server/document-quality.test.mjs",
+              "section": "lines236,253"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "DeferredSpreadsheetParse / ReaderProfile / SandboxAnalysisResult / DocumentRequerySelector/Response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Retained150000char segments within1200000cap are interpreted and independently checked. Physical reads and semantic context completeness remain distinct.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines280-327"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "lines100-172,203-228"
+            },
+            {
+              "path": "source:server/sandbox-documents.test.mjs",
+              "section": "lines155,187"
+            },
+            {
+              "path": "source:server/document-quality.test.mjs",
+              "section": "lines96,172"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Three verification rounds/two replacements/no-progress/source-limit/same-session reread/whole replacement match. Initial historical chunk count and recovered completeness,160response/1000public caps are separate.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5 pseudocode / quality"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "lines197-281"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines330-336"
+            },
+            {
+              "path": "source:server/document-quality.test.mjs",
+              "section": "lines106,120,130"
+            },
+            {
+              "path": "source:server/document-sandbox-session.test.mjs",
+              "section": "line54"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "whole replacement and recovered chunks;160 per response /1000 public"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Only source-backed qualitative unit blanks suppress narrow missing_unit issues. Limits/failed checks/reread/ambiguity preserve limited or needs_review,partial and confirmation.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5 qualitative unit"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "lines72-95,226-281"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines359-369"
+            },
+            {
+              "path": "source:server/document-quality.test.mjs",
+              "section": "lines46,59,80,142,150,244"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Existing sparse/hidden/multisheet/header/text tests retain their scope. DN03 supplies genuine nested DOCX/transposed pair/CSV/live workflow and precise reader/comparison/evidence/verdict oracles. Additional NOT_RUN contract does not claim flat blocks prove nested semantics.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5, acceptance examples"
+            },
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-05-C05"
+            },
+            {
+              "path": "source:server/document-reader.test.py",
+              "section": "lines53-102,123,160"
+            },
+            {
+              "path": "source:server/document-quality.test.mjs",
+              "section": "lines96,166,172,190"
+            },
+            {
+              "path": "source:server/sandbox-document-reader.py",
+              "section": "nested DOCX implementation569-608"
+            },
+            {
+              "path": "contracts/document-negative-cases.json",
+              "section": "DN03; G03 adapter; NOT_RUN"
+            },
+            {
+              "path": "source:server/sandbox-document-reader.py",
+              "section": "nested table traversal lines569–608"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-06",
+      "checks": [
+        {
+          "id": "CORE-06-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Visual schemas match source exports; page position/rotation/blocks/nested links/uncertainty/inventory coverage are separate from sheets.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "visualTranscriptionSchema"
+            },
+            {
+              "path": "source:server/visual-transcription.mjs",
+              "section": "lines17,59,137,220"
+            },
+            {
+              "path": "source:server/visual-transcription.test.mjs",
+              "section": "lines41,83,162"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Original-visual judging and structural checks prevent model complete=true from approving blank/missing/overlapping pages/cells.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6 validation"
+            },
+            {
+              "path": "source:server/visual-transcription.mjs",
+              "section": "judge line313"
+            },
+            {
+              "path": "source:server/visual-quality-judge.mjs",
+              "section": "lines94,143"
+            },
+            {
+              "path": "source:server/visual-quality-judge.test.mjs",
+              "section": "lines13,55,64"
+            },
+            {
+              "path": "source:server/visual-transcription-alignment.test.mjs",
+              "section": "lines17,34,50"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Bounds,partial-page replacement/retry match. Final stopReason membership determines status;31pages may produce no_progress/round_limit needs_review before page_limit limited.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6 status; 31-page acceptance"
+            },
+            {
+              "path": "source:server/visual-transcription.mjs",
+              "section": "stopReason precedence lines344-350,366"
+            },
+            {
+              "path": "source:server/visual-transcription.test.mjs",
+              "section": "partial/no-progress tests"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Original visuals/judge inputs/structural limits preserve warnings and uncertainty; failures are not replaced with guessed transcription.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3 PDF images; §2.6"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "lines233-259"
+            },
+            {
+              "path": "source:server/visual-quality-judge.mjs",
+              "section": "lines1-5,44,143-166"
+            },
+            {
+              "path": "source:server/visual-transcription.mjs",
+              "section": "lines59,235,294-305,321-369"
+            },
+            {
+              "path": "source:server/visual-quality-judge.test.mjs",
+              "section": "lines86,144,162,169"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Existing invented/blank/nested tests retain their scope. DN04 defines distinct scanned PDFs,hash/value mapping,concurrent live calls and separate contamination injection with per-document oracles. NOT_RUN additional acceptance is not historical isolation proof.",
+          "evidence": [
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-06-C05"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "source binding"
+            },
+            {
+              "path": "source:server/visual-quality-judge.test.mjs",
+              "section": "line119"
+            },
+            {
+              "path": "source:server/visual-transcription-alignment.test.mjs",
+              "section": "line61"
+            },
+            {
+              "path": "source:server/visual-transcription.mjs",
+              "section": "caller source245-249"
+            },
+            {
+              "path": "source:server/visual-quality-judge.mjs",
+              "section": "source parts44-74"
+            },
+            {
+              "path": "contracts/document-negative-cases.json",
+              "section": "DN04; oracleBoundary; G03 adapter; NOT_RUN"
+            },
+            {
+              "path": "source:server/visual-quality-judge.mjs",
+              "section": "page/source attachment boundary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-07",
+      "checks": [
+        {
+          "id": "CORE-07-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Raw eligibility and public assessment/exclusion contracts are distinct.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6"
+            },
+            {
+              "path": "source:server/criteria-eligibility.mjs",
+              "section": "assessCriteriaDocument"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "assessCriteriaInputs / prepareCriteria"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Mandatory-true, optional-flag and both-finite completeness predicates now match source.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1 line340"
+            },
+            {
+              "path": "source:server/criteria-eligibility.mjs",
+              "section": "completeAnalysis lines131-142"
+            },
+            {
+              "path": "source:server/criteria-eligibility.test.mjs",
+              "section": "lines8-15,35"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Repair, retained uncertainty and excluded-source reentry guards match.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            },
+            {
+              "path": "source:server/criteria-eligibility.mjs",
+              "section": "repair / inspectAssessment"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "source guards lines407,595,619"
+            },
+            {
+              "path": "source:server/review.eligibility.test.mjs",
+              "section": "uncertain/excluded source cases"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Prompt preference is separate from actual normalized substring, numeric-boundary and selected-cell comment admission.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1 line338"
+            },
+            {
+              "path": "source:server/criteria-eligibility.mjs",
+              "section": "matching lines34-39,86-128"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Existing guards and new qualitative/legal/business cases are honestly separate. Concrete new raw/public-capture fixtures are unexecuted additional acceptance.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1, §14"
+            },
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-07-C05"
+            },
+            {
+              "path": "source:server/criteria-eligibility.test.mjs",
+              "section": "classification fixtures"
+            },
+            {
+              "path": "source:server/review.eligibility.test.mjs",
+              "section": "eligibility integration fixtures"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "semantics.eligibilityCapture; ALG-X-ELIGIBILITY-*; explicit additional unexecuted acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-08",
+      "checks": [
+        {
+          "id": "CORE-08-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Plan, extract, region accountability and coverage structures match.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.3"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "discovery plan/extract schemas"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "discoverWorkbookCriteria"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Inventory supplementation and structural layout discovery match source and transformation tests.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.1, §11.2"
+            },
+            {
+              "path": "source:server/criteria-layout.mjs",
+              "section": "layout parsing"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "discoverWorkbookCriteria"
+            },
+            {
+              "path": "source:server/criteria-matrix-regression.test.mjs",
+              "section": "layout variations"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Separate discovery sandbox lifetime, internal round reuse and inventory-only cross-phase reuse are explicit.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8 line269"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "discoverWorkbookCriteria sandboxRunner / inventory reuse"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Limits match;220000 is summed serialized unique-cell record characters, separate from whole-response and coordinate budgets.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.2 limits / coverage"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "discoverWorkbookCriteria"
+            },
+            {
+              "path": "source:server/criteria-sandbox.test.mjs",
+              "section": "limit / remaining-range cases"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1 unique record JSON budget versus raw response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Fixture-independent layout, vocabulary, hidden-sheet and omission transformations have source test evidence.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9, §11"
+            },
+            {
+              "path": "source:server/criteria-generalization.test.mjs",
+              "section": "structural transformations"
+            },
+            {
+              "path": "source:server/criteria-matrix-regression.test.mjs",
+              "section": "matrix regressions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-09",
+      "checks": [
+        {
+          "id": "CORE-09-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Classification/provenance distinctions match; IgnoredSourceNote correctly uses text/native coordinates instead of required quote.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §11.3"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "baseline DTO caveat / Criterion"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "validateCriteria lines89-120"
+            },
+            {
+              "path": "source:server/review.classification.test.mjs",
+              "section": "lines8,18"
+            },
+            {
+              "path": "source:server/criteria-notes.mjs",
+              "section": "native note construction"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: EvidenceCells-only row restriction and conditional sourceEvidence cleanup are exact; stronger recovery is separately labeled.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.3 line96"
+            },
+            {
+              "path": "source:server/conditions.mjs",
+              "section": "candidate filter line48"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "citation normalization lines112-113"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "ALG-B-CONDITION / ALG-X-CONDITION"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Hierarchy/disposition precedence matches; dedup lists actual merge fields and first-only sampleEvidence retention.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.3, §12"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "groundHierarchy line397"
+            },
+            {
+              "path": "source:server/criteria-context.mjs",
+              "section": "lines50,79,92,205"
+            },
+            {
+              "path": "source:server/criteria-context.test.mjs",
+              "section": "context dispositions"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§12 merge allowlist and sampleEvidence limitation"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Generic shape validation, grounded discovery and approval guarantees are distinct; stronger admission is additional acceptance.",
+          "evidence": [
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-09-C04"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2 generic validation"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "validateCriteria lines106-120"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "ALG-X-GROUND-01/02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Arbitrary vocabulary, qualitative rules, variable hierarchy and condition-sensitive dedup have source test coverage.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.2, §9, §11.3"
+            },
+            {
+              "path": "source:server/criteria-generalization.test.mjs",
+              "section": "lines9,41,54,62,93,178"
+            },
+            {
+              "path": "source:server/criteria-sandbox.test.mjs",
+              "section": "lines241,283,416,474"
+            },
+            {
+              "path": "source:server/criteria-context.test.mjs",
+              "section": "lines112,127"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-10",
+      "checks": [
+        {
+          "id": "CORE-10-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Confirm/revise inputs and approval snapshot contracts match.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "ConfirmCriteriaRequest / ReviseCriteriaRequest / AttachDocumentsRequest"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "revise614; attachDocuments649; confirm671"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "wizard checkpoint"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Editable semantic fields, trusted provenance and userOverride behavior match; required-patch improvement is additional acceptance.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§8, §13.2"
+            },
+            {
+              "path": "source:server/criteria-approval.mjs",
+              "section": "normalizeCriteria line96"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "normalizedDraft line596"
+            },
+            {
+              "path": "source:server/criteria-approval.test.mjs",
+              "section": "lines17,28,41,101"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "REQUIRED_PATCH_V2"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Revision success/failure and confirmation retain exact version rules.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §5"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "lines614-645,671-686"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "lines73,170"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Required/stale versions, feedback bounds and late-response guards match.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2 line112"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.2"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "lines592-594,617-645"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "lines119,145"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Pre-approval attachment rejection, deep freezing and approval/audit preservation match.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§5 line130"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "freezeValue61; attach/confirm649-677"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "lines73,119"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-11",
+      "checks": [
+        {
+          "id": "CORE-11-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Separate field/proposal schemas and300-field versus250-result bounds match.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "fields / review schema"
+            },
+            {
+              "path": "source:server/field-extraction.mjs",
+              "section": "lines9,61"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "lines38,137"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Independent extraction instructions, verbatim notation and conservative text verification match.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§4, §10"
+            },
+            {
+              "path": "source:server/field-extraction.mjs",
+              "section": "verifyField103; extractDocumentFields159"
+            },
+            {
+              "path": "source:server/field-extraction.test.mjs",
+              "section": "lines15,24,35,82"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Visual facts precede proposal/normalization/events; nonvisual extraction behavior is separately specified.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§1, §5"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "reviewDocuments lines506-547"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Invalid IDs, uncertainty, applicability and extraction mismatch guards match their disclosed scope.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5, §5.3, §10"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "normalizeItems lines142-184"
+            },
+            {
+              "path": "source:server/criterion-applicability.mjs",
+              "section": "lines157,189"
+            },
+            {
+              "path": "source:server/field-extraction.test.mjs",
+              "section": "negative token/evidence cases"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Blank records, exclusions and missingRows match; row coverage is not claimed complete criterion-combination coverage.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§7, §10"
+            },
+            {
+              "path": "source:server/table-records.mjs",
+              "section": "spreadsheetRecords6; spreadsheetCoverage30"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "csvCoverage206; lines538-560"
+            },
+            {
+              "path": "source:server/table-records.test.mjs",
+              "section": "lines22,50,74"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-12",
+      "checks": [
+        {
+          "id": "CORE-12-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Numeric operators/units and final fields match; Finding replaces raw applicability with VerifiedApplicability.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5, §5.1, §6"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "numericVerdict125-134; final202"
+            },
+            {
+              "path": "source:server/review.test.mjs",
+              "section": "lines10,22"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2 Finding / VerifiedApplicability"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Missing completeness states actual optional predicates, visual limitations and caller-owned result cap.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§6 line174"
+            },
+            {
+              "path": "source:server/missing-result.mjs",
+              "section": "inspectedCompletely lines24-26"
+            },
+            {
+              "path": "source:server/missing-result.test.mjs",
+              "section": "complete fixture line12"
+            },
+            {
+              "path": "source:server/review.test.mjs",
+              "section": "missing fixture line38"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C03",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Context/missing, numeric, condition, applicability and independent-extraction precedence match.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5 lines114-125"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "normalizeItems lines150-202"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C04",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Source-grounded hierarchy/sample and known-record linkage guards match their documented scope.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5.3, §10"
+            },
+            {
+              "path": "source:server/criterion-applicability.mjs",
+              "section": "recordLinkageIssue157; verifyCriterionApplicability189"
+            },
+            {
+              "path": "source:server/criterion-applicability.test.mjs",
+              "section": "lines64,72,108,120,147,163"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Zero, blank, formula/merge, confirmed/uncertain absence and extraction conflicts are distinct.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§6, §9"
+            },
+            {
+              "path": "source:server/missing-result.test.mjs",
+              "section": "lines18,29,42,79,86,97,105,122"
+            },
+            {
+              "path": "source:server/conditions.test.mjs",
+              "section": "condition guards"
+            },
+            {
+              "path": "source:server/review.test.mjs",
+              "section": "numeric and extraction conflicts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-13",
+      "checks": [
+        {
+          "id": "CORE-13-C01",
+          "status": "pass",
+          "reason": "R2 closed RunStage/RunDocumentStatus 및 public/internal 타입을 source emit/snapshot/reducer와 다시 대조했다. client cancel의 idle을 서버 enum과 구분하고 summary 문서 카운트·runStatus 권위를 정확히 유지한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §6, §7, §10"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "RunStatus / RunSnapshot / RunEnvelope / Summary"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "summaryOf / snapshot / emit"
+            },
+            {
+              "path": "source:src/review-state.ts",
+              "section": "ReviewRequestGate / reduceReviewEvent"
+            },
+            {
+              "path": "source:server/review-state.test.mjs",
+              "section": "document/status/version and stale response cases"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.5–7.8"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3 추가 enum, §10 문서 summary"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RunStage / RunDocumentStatus"
+            },
+            {
+              "path": "source:src/useReview.ts",
+              "section": "optimistic cancel"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C02",
+          "status": "pass",
+          "reason": "R2 재대조: 분석과 review 각각 2 worker이며 분석 결과 Map의 document.id 결합과 문서별 catch로 sibling 실패 격리가 구현돼 있다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8, §2.9"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "analyzeInputs / reviewDocuments"
+            },
+            {
+              "path": "source:server/review.test.mjs",
+              "section": "one document failure remains visible as a partial run"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "target-analysis failure preserves approved version"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C03",
+          "status": "pass",
+          "reason": "R2 열린 run 취소와 terminal 집계/waiter isolation을 재대조했다. 새 설명은 optimistic local cancelled/idle과 cancel POST 실패, 원격 cleanup 미보장, 늦은 response gate를 정확히 구분한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §7"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1 ensureAnalyzed; §2.9"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "ensureAnalyzed / cancel / emit / reviewDocuments"
+            },
+            {
+              "path": "source:server/review.wizard.test.mjs",
+              "section": "pending revision cancellation; awaiting documents cancellation"
+            },
+            {
+              "path": "source:server/use-review-commands.test.mjs",
+              "section": "late acknowledgement after reset"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3 optimistic stop; §8 global E2B cleanup"
+            },
+            {
+              "path": "source:src/useReview.ts",
+              "section": "cancel / cancelRemote"
+            },
+            {
+              "path": "source:integrations/src/sandbox.mjs",
+              "section": "cleanup failed activity transition"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C04",
+          "status": "pass",
+          "reason": "R2 재대조: open3, 전체 Map 기준 pruning40, 결과>=250 또는 reviewCoverage false의 partial을 정확히 구분하며 모델 완료 문구로 미완료 범위를 지우지 않는다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §3"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "start lines269-280; reviewDocuments outputLimited/incompleteCriteria"
+            },
+            {
+              "path": "source:server/review.pipeline.test.mjs",
+              "section": "partly read files remain partial"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C05",
+          "status": "pass",
+          "reason": "R2 재대조: 종료 후 사유 필수 resolve는 최초 machineStatus, before/after audit, 최종 summary와 item.resolved를 유지한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §6, §10"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "resolve lines693-704"
+            },
+            {
+              "path": "source:server/review.test.mjs",
+              "section": "overrides retain original verdict and audit"
+            },
+            {
+              "path": "source:server/app.test.mjs",
+              "section": "override and export assertions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-14",
+      "checks": [
+        {
+          "id": "CORE-14-C01",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Evidence, criterion/item highlight ownership and PDF anchors are distinct in the authoritative appendix.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D0, D1.3"
+            },
+            {
+              "path": "source:src/components/DocumentPreview.tsx",
+              "section": "lines24-40"
+            },
+            {
+              "path": "source:src/components/item-source-highlights.mjs",
+              "section": "interfaces"
+            },
+            {
+              "path": "source:src/components/source-highlights.mjs",
+              "section": "PDF anchoring"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C02",
+          "status": "pass",
+          "reason": "R2 fresh recheck: All-item highlights are independent of list filters and document scopes remain isolated.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7.1–7.3"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10"
+            },
+            {
+              "path": "source:src/components/file-review-model.mjs",
+              "section": "line35"
+            },
+            {
+              "path": "source:src/components/dashboard-file-scope.mjs",
+              "section": "lines4,21"
+            },
+            {
+              "path": "source:src/components/FileReviewResults.tsx",
+              "section": "line49"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C03",
+          "status": "pass",
+          "reason": "R2 final reread: missing contextual evidence and criterion label/rule/unit evidence match. Source dashboard projection loss is explicit; REQUIRED_REBUILD DB-H01 preserves presence/missingVerified without claiming baseline implementation.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§6 line182"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            },
+            {
+              "path": "source:src/components/item-source-highlights.mjs",
+              "section": "lines4,12"
+            },
+            {
+              "path": "source:src/components/criterion-preview-evidence.mjs",
+              "section": "line19"
+            },
+            {
+              "path": "source:src/components/item-source-highlights.test.mjs",
+              "section": "missing evidence cases"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02; DB-H01 additional acceptance"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C04",
+          "status": "pass",
+          "reason": "R2 final reread: PDF safeguards and spreadsheet/text coordinate-first limitations are accurate. I9.1 and20 TABLE-HIGHLIGHT-REBUILD variants specify mandatory stronger source/quote/record/anchor admission as NOT_RUN additional acceptance, not baseline success.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7.4"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3 coordinate-first table behavior"
+            },
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-14-C04"
+            },
+            {
+              "path": "source:src/components/DocumentPreview.tsx",
+              "section": "tableHighlightIndex lines404-432"
+            },
+            {
+              "path": "source:src/components/source-highlights.mjs",
+              "section": "PDF witness protections"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9 baseline limitations and supplemental acceptance"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "PREVIEW-WRONG-CELL baseline; TABLE-HIGHLIGHT-REBUILD required additional acceptance"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C05",
+          "status": "pass",
+          "reason": "R2 fresh recheck: Registry correction preserves actual source/origin/channel/type/token/item isolation; exported HTML excludes original files and host bridge.",
+          "evidence": [
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-14-C05"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D07"
+            },
+            {
+              "path": "source:src/components/dashboard-bridge.mjs",
+              "section": "readEvidenceSelection line47"
+            },
+            {
+              "path": "source:server/dashboard-bridge.test.mjs",
+              "section": "bridge security cases"
+            },
+            {
+              "path": "reviews/main-session/CHANGES.md",
+              "section": "CORE14C05 population correction rationale"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-15",
+      "checks": [
+        {
+          "id": "CORE-15-C01",
+          "status": "pass",
+          "reason": "R2 재대조: activity task/event identity와 parent/handoff 검증, run SSE sequence 대 activity snapshot revision 차이, 비밀/명령 정제 길이가 실제 표현과 맞는다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6, §8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "ActivityTask / ActivityEvent / ActivitySnapshot"
+            },
+            {
+              "path": "source:integrations/src/activity.mjs",
+              "section": "sanitizeActivity / createActivityStore"
+            },
+            {
+              "path": "source:integrations/src/command-progress.mjs",
+              "section": "commandProgressLine"
+            },
+            {
+              "path": "source:server/activity.mjs",
+              "section": "SSE store.revision"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–7.7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C02",
+          "status": "pass",
+          "reason": "R2 재대조: Gemini/E2B 별도 process-wide2 pending100, engine별 ModelQueue2, retained sandbox command1은 각 자원 수명과 구현에 맞게 분리된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "source:integrations/src/gemini.mjs",
+              "section": "requests TaskPool(2)"
+            },
+            {
+              "path": "source:integrations/src/sandbox.mjs",
+              "section": "sandboxes TaskPool(2)"
+            },
+            {
+              "path": "source:integrations/src/task-pool.mjs",
+              "section": "maxPending100 / FIFO"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "ModelQueue"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "retained document command queue"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C03",
+          "status": "pass",
+          "reason": "R2 재대조: queued/running/terminal 보존, 대기 취소와 늦은 event 차단, bounded GET 후 snapshot SSE 및 backoff 재연결 순서가 실제 observer와 일치한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.1 observer"
+            },
+            {
+              "path": "source:integrations/src/activity.mjs",
+              "section": "terminal guard"
+            },
+            {
+              "path": "source:integrations/src/task-pool.mjs",
+              "section": "waiting abort removal"
+            },
+            {
+              "path": "source:src/activity-observer.mjs",
+              "section": "connect / accept / onerror / dispose"
+            },
+            {
+              "path": "source:server/activity-observer.test.mjs",
+              "section": "reconnect/quiet/deadline/disposal cases"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C04",
+          "status": "pass",
+          "reason": "R2 재대조: heartbeat는 다음 실제 프로세스 응답 대기로 표시되고 stdout allowlist·중복 제한·scope 필터·취소 후 callback 무시는 실제 구현과 일치한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4 activity/handoff"
+            },
+            {
+              "path": "source:integrations/src/command-progress.mjs",
+              "section": "runObservedCommand heartbeat / dedup / finish"
+            },
+            {
+              "path": "source:src/activity-scope.mjs",
+              "section": "matchesActivityRun / matchesActivityContext"
+            },
+            {
+              "path": "source:server/command-progress.test.mjs",
+              "section": "quiet heartbeat; duplicate; cancellation cases"
+            },
+            {
+              "path": "source:server/activity-scope.test.mjs",
+              "section": "run/context isolation"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C05",
+          "status": "pass",
+          "reason": "R2 재대조: 시간순 실제 handoff 큐와 8개 cap·1400ms hold, 800ms 자동접힘 조건 및 reduced-motion 큐 정리는 데이터 상태 변경과 분리되어 있다.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2, §4.3, §9"
+            },
+            {
+              "path": "source:src/handoff-queue.mjs",
+              "section": "createHandoffQueue"
+            },
+            {
+              "path": "source:src/components/SandboxWorkroomScene.tsx",
+              "section": "queue / playback timers / reduced motion effects"
+            },
+            {
+              "path": "source:src/components/SandboxActivityDock.tsx",
+              "section": "autoCollapse effect lines312-315"
+            },
+            {
+              "path": "source:server/handoff-queue.test.mjs",
+              "section": "chronological order / duplicate / omission / reset cases"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-16",
+      "checks": [
+        {
+          "id": "CORE-16-C01",
+          "status": "pass",
+          "reason": "R2 recheck:11-column exports, four XLSX sheets, human/machine judgment fields and completed/partial/failed nonempty-run eligibility match source.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§7.1–7.4"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§10"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "lines30-39,120-150"
+            },
+            {
+              "path": "source:server/app.test.mjs",
+              "section": "lines34-68"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C02",
+          "status": "pass",
+          "reason": "R2 actual header/key/row discovery and two approved cell-node writes preserve original bytes and other ZIP-entry contents.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3, §5"
+            },
+            {
+              "path": "source:server/ledger.mjs",
+              "section": "lines99-193"
+            },
+            {
+              "path": "source:server/ledger.test.mjs",
+              "section": "lines36-66,96-126"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C03",
+          "status": "pass",
+          "reason": "R2 final frozen01/types reread:05a §2.3/§4.1 and01 §9/§10 consistently restrict409 to changed serialized proposal fields; six pure source cases agree. Human note/audit alone do not guarantee invalidation.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§9 line213, §10 line232"
+            },
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§2.3, §4"
+            },
+            {
+              "path": "source:server/ledger.mjs",
+              "section": "ledgerProposal lines196-207"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "resolve lines693-702"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§9/§10 serialized payload-only fingerprint"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "LedgerProposal / LedgerAnalyze / LedgerExport"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C04",
+          "status": "pass",
+          "reason": "R2 CSV injection defense, formula/protected/merged-cell rejection, incomplete outcomes, allowlisted sample paths and rollback agree with source.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3.1–3.2, §4–5, §7.3"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "source:server/app.mjs",
+              "section": "csvCell lines30-33; samples81-92"
+            },
+            {
+              "path": "source:server/ledger.mjs",
+              "section": "lines24-59,135-142,196-207"
+            },
+            {
+              "path": "source:server/golden-catalog.mjs",
+              "section": "lines37-52,59-71"
+            },
+            {
+              "path": "source:server/golden-catalog.test.mjs",
+              "section": "negative path cases"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C05",
+          "status": "pass",
+          "reason": "R2 golden UI selection is separate from v3 direct upload/evaluation. Original inputs and evaluator oracles remain distinct; generalization/holdout is future acceptance.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D14"
+            },
+            {
+              "path": "PLAN.md",
+              "section": "M8"
+            },
+            {
+              "path": "source:server/golden-catalog.mjs",
+              "section": "lines5-6,37-52,63-66"
+            },
+            {
+              "path": "source:server/golden-catalog.test.mjs",
+              "section": "lines8-23"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "SYSTEM line24; target applicability prompt537"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-17",
+      "checks": [
+        {
+          "id": "CORE-17-C01",
+          "status": "pass",
+          "reason": "R2 corrected14-field count agrees with schema/default/source. Immutable snapshot/sourceItems, request limits and legacy defaults match.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D01 line21"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "properties / required"
+            },
+            {
+              "path": "contracts/dashboard-design.default.json",
+              "section": "14 fields"
+            },
+            {
+              "path": "source:server/dashboard-plan.mjs",
+              "section": "lines3-21,43-58"
+            },
+            {
+              "path": "source:server/dashboard.mjs",
+              "section": "snapshotRun lines62-110; ready265-272,297-301"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RequiredRebuildDashboardNoticeCode / ready-job and standalone metadata extensions; prospective only"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C02",
+          "status": "pass",
+          "reason": "R2 final reread: baseline regex failures/prompt-only retention match10 observed cases;5legacy parser cases also match. REQUIRED_REBUILD DB-H02/H03 use separate semantic judge/approved-mask merge and concrete corrected targets. Structural checks are not misrepresented as semantic proof.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05, D11"
+            },
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "independent dimensions / chart-only brightness"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "preference override contract"
+            },
+            {
+              "path": "reference/dashboard/design-functions.reference.mjs",
+              "section": "applyDashboardPreferences"
+            },
+            {
+              "path": "source:server/dashboard-plan.mjs",
+              "section": "applyDashboardPreferences lines71-73,81-82,90"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a/D05b REQUIRED_REBUILD planner/judge/mask/notices"
+            },
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "baseline prompt versus required rebuild addendum"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C03",
+          "status": "pass",
+          "reason": "R2 final reread: baseline three-plan-call loop, one sandbox/install, diagnostics, cleanup/generated/standard/failed/DELETE match source. Mandatory new planner+judge target is separately specified as normal2/total3aggregate calls, with guarded constrained repair; it is unexecuted.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03–D04"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "loop and fallback"
+            },
+            {
+              "path": "source:server/dashboard.mjs",
+              "section": "lines174-261,318-349"
+            },
+            {
+              "path": "source:server/dashboard.test.mjs",
+              "section": "lines91-199,257-310"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05b total3 model call budget versus source baseline"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C04",
+          "status": "pass",
+          "reason": "R2 allowlisted frozen data, design-only parsing, route validation and honest standard fallback match; models provide no executable renderer or counts.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02–D05"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "strict plan and fallback"
+            },
+            {
+              "path": "source:server/dashboard.mjs",
+              "section": "lines62-110,279-291,322-335"
+            },
+            {
+              "path": "source:server/dashboard-plan.mjs",
+              "section": "parse lines43-58"
+            },
+            {
+              "path": "source:server/dashboard-plan.test.mjs",
+              "section": "lines8-17,65-72"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C05",
+          "status": "pass",
+          "reason": "R2 final reread: observed plans are negative controls where semantics differ; required14-field outputs and render oracles govern the rebuild. Fixed host notices preserve subtitle; judge-error boundaries and1600/1280/390browser scenarios are concrete and NOT_RUN.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D06, D08, D11"
+            },
+            {
+              "path": "contracts/dashboard-examples.json",
+              "section": "composed/refinement examples"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "model preservation versus deterministic fallback"
+            },
+            {
+              "path": "source:server/dashboard-plan.test.mjs",
+              "section": "lines31-43,54-63"
+            },
+            {
+              "path": "source:server/dashboard.test.mjs",
+              "section": "lines297-310"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-18",
+      "checks": [
+        {
+          "id": "CORE-18-C01",
+          "status": "pass",
+          "reason": "R2 normalization, root attributes, CSS tokens, standalone HTML and chart mount/update/destroy agree with the trusted renderer and wrapper.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "design fields"
+            },
+            {
+              "path": "source:server/dashboard-fallback.mjs",
+              "section": "lines38-56,129-137,203-244"
+            },
+            {
+              "path": "source:scripts/dashboard-chart-entry.jsx",
+              "section": "lines12-68"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D11 revised state and validation contracts"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C02",
+          "status": "pass",
+          "reason": "R2 distinct chart/palette/axis/tooltip/file/filter/detail behavior preserves snapshot counts/item IDs. All18 plans/palettes match source; browser matrix remains NOT_RUN.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02, D05–D08"
+            },
+            {
+              "path": "source:server/dashboard-fallback.mjs",
+              "section": "lines61-87,159-211"
+            },
+            {
+              "path": "source:server/dashboard-fallback.test.mjs",
+              "section": "lines81-115,137-152,205-229"
+            },
+            {
+              "path": "source:server/dashboard-plan-validation.mjs",
+              "section": "lines217-375"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D11 revised state and validation contracts"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C03",
+          "status": "pass",
+          "reason": "R2 initial file/filter/status ordering, detail space, reduced motion and chart cleanup match. App-only modal motion and original-tab/standalone OS scope are explicit.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07, D09"
+            },
+            {
+              "path": "source:server/dashboard-fallback.mjs",
+              "section": "lines113-126,159-225"
+            },
+            {
+              "path": "source:scripts/dashboard-chart-entry.jsx",
+              "section": "lines12-59"
+            },
+            {
+              "path": "source:server/dashboard-fallback.test.mjs",
+              "section": "lines117-211"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D11 revised state and validation contracts"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C04",
+          "status": "pass",
+          "reason": "R2 nonce CSP, escaping, network restrictions, opaque iframe/token bridge and exact report/HTML comparisons match source; exit0 alone cannot approve output.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D04, D07–D08"
+            },
+            {
+              "path": "source:server/dashboard-fallback.mjs",
+              "section": "lines10-11,221-236"
+            },
+            {
+              "path": "source:server/dashboard-chart-runtime.mjs",
+              "section": "lines4-6"
+            },
+            {
+              "path": "source:server/dashboard.mjs",
+              "section": "lines236-240"
+            },
+            {
+              "path": "source:server/dashboard-plan-validation.mjs",
+              "section": "lines127-214"
+            },
+            {
+              "path": "source:src/components/dashboard-bridge.mjs",
+              "section": "lines22-50"
+            },
+            {
+              "path": "source:src/components/DashboardModal.tsx",
+              "section": "iframe lines215-216"
+            },
+            {
+              "path": "source:server/dashboard.test.mjs",
+              "section": "tamper lines168-179"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D11 revised state and validation contracts"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C05",
+          "status": "pass",
+          "reason": "R2 11DOM/data checks are explicitly separate from browser canvas/offline/geometry/visibility evidence. Packaged validator matches source; all18 new browser cases remain NOT_RUN/evidence:null.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D08, D11"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "11-check report"
+            },
+            {
+              "path": "source:server/dashboard-plan-validation.mjs",
+              "section": "lines1-49,127-214"
+            },
+            {
+              "path": "source:server/dashboard-plan-validation.test.mjs",
+              "section": "lines49-99"
+            },
+            {
+              "path": "source:scripts/dashboard-chart-entry.jsx",
+              "section": "inspect lines37-45"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "preferenceCases/PREF-RETENTION/browserMatrix; explicit unexecuted acceptance"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D11 revised state and validation contracts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-19",
+      "checks": [
+        {
+          "id": "CORE-19-C01",
+          "status": "pass",
+          "reason": "ES01–22 match source keys, ownership, retention, promise/sandbox reuse and invalidation. Presentation reads do not refresh insertion order; preview eviction is write recency, not LRU.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2;§7.7"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "ES01–22"
+            },
+            {
+              "path": "source:server/documents.mjs",
+              "section": "DocumentStore"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "start/analyzeOne/ensureAnalyzed"
+            },
+            {
+              "path": "source:server/document-sandbox-resources.mjs",
+              "section": "stateFor/prepareDocumentSandbox*"
+            },
+            {
+              "path": "source:src/components/SandboxActivityDock.tsx",
+              "section": "presentationSessions"
+            },
+            {
+              "path": "source:src/components/DashboardModal.tsx",
+              "section": "previewCache"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C02",
+          "status": "pass",
+          "reason": "Sparse inventory, dual-axis role scans, coverage sweep, exact semantic identity/merge allowlist and review/missing order match source. Corrected accumulated-evidence merge complexity allows Theta(C² e ℓ); parser/LLM costs and unindexed scans remain separate.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3;§7.4 semantic dedup"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "ES07;EA01–07"
+            },
+            {
+              "path": "source:server/criteria-context.mjs",
+              "section": "unique/criterionCitations/semanticDeduplicateCriteria"
+            },
+            {
+              "path": "source:server/criteria-workbook-profile.py",
+              "section": "profile/details"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "checkDocumentContext"
+            },
+            {
+              "path": "source:server/criteria-layout.mjs",
+              "section": "tableLines/discoverLayoutCriteria"
+            },
+            {
+              "path": "source:server/review.mjs",
+              "section": "normalizeItems"
+            },
+            {
+              "path": "source:server/table-records.mjs",
+              "section": "spreadsheetCoverage"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C03",
+          "status": "pass",
+          "reason": "Global2/100 pools, engine ModelQueue2, two-worker batches and retained local TaskPool1 match. Deadline before acquisition, physical sandbox boundary, memoized cleanup and slot release ordering are source-grounded.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–§7.6"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC01–05"
+            },
+            {
+              "path": "source:integrations/src/task-pool.mjs",
+              "section": "TaskPool.run/#drain"
+            },
+            {
+              "path": "source:integrations/src/sandbox.mjs",
+              "section": "withSandbox"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "analyzeDocumentInSandbox/retainedRunner"
+            },
+            {
+              "path": "source:server/document-sandbox-session.test.mjs",
+              "section": "parallel sessions/cancellation/deadline/cleanup"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C04",
+          "status": "pass",
+          "reason": "Log queues, SSE replay/gates, observer retry, handoff caps and PDF/iframe cleanup match. Run backpressure, global rAF batching and visibility pause are correctly absent; UI omission does not alter authoritative results. Dashboard finish(true)1600ms one-shot/early completion is distinct from App dependency-reset transition timers.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7;§7.10"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC06–10;knownLimitations"
+            },
+            {
+              "path": "source:integrations/src/command-progress.mjs",
+              "section": "runObservedCommand"
+            },
+            {
+              "path": "source:server/activity.mjs",
+              "section": "createActivityRouter"
+            },
+            {
+              "path": "source:src/activity-observer.mjs",
+              "section": "observer lifecycle"
+            },
+            {
+              "path": "source:src/handoff-queue.mjs",
+              "section": "queue insertion/eviction"
+            },
+            {
+              "path": "source:src/components/DashboardModal.tsx",
+              "section": "poll/request lifecycle/iframe"
+            },
+            {
+              "path": "source:src/components/DocumentPreview.tsx",
+              "section": "PdfPreview cleanup"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C05",
+          "status": "pass",
+          "reason": "Unique cell-record220000 Python-character budget is separate from whole payload/JS1500000 cap. Context160 per response versus1000 final slice and cancellation rejection match source. EF01–16/performance traces remain future acceptance; no fabricated latency/FPS proof.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3B;§7.8–§7.10"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EL01–35;verification;knownLimitations"
+            },
+            {
+              "path": "source:server/criteria-workbook-profile.py",
+              "section": "details"
+            },
+            {
+              "path": "source:server/criteria-sandbox.mjs",
+              "section": "operation raw length guard"
+            },
+            {
+              "path": "source:server/sandbox-documents.mjs",
+              "section": "validateDocumentContext/final structure"
+            },
+            {
+              "path": "source:server/document-quality.mjs",
+              "section": "verifyAndRepairDocumentContext abort/catch"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R1-CORE-001",
+      "moduleId": "CORE-01",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-01-C02",
+        "CORE-01-C04"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.1, §2.8",
+      "problem": "공통 Gemini adapter의 요청/응답·에러·token 계약이 없다. source gemini.mjs는 prompt/contents, role, schema, systemInstruction, optional validate, text/data/model/usage, default2048 및 1..32768을 갖고 errors.mjs는 safeError 매핑을 갖는다.",
+      "alternativeInterpretations": [
+        "단계별 prompt 표만 보고 서로 다른 공통 adapter API를 구현한다.",
+        "원본 wrapper의 interface/limits/errors를 별도 계약으로 구현한다."
+      ],
+      "requiredDecision": "generateText/generateJson(+사용 시 streamText) interface와 오류 code/status 매핑을 추가하고 blank/JSON/validate/token 실패를 정의한다. adapter 자체에는 generic response bytes/file-part cap이 없으며 각 단계 cap과 구별한다.",
+      "resolution": "02 §2.8.1 및 internal-pipeline.ts에 공통 generateText/generateJson/stream 입력·출력, token/오류/취소 포트와 단계별 용량 경계를 추가했다. 원본 gemini/errors/task-pool/sandbox를 다시 대조했다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-002",
+      "moduleId": "CORE-02",
+      "severity": "low",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-02-C05"
+      ],
+      "document": "environment/README.md",
+      "section": "앱 구현 이후 실행 명령",
+      "problem": "포트와 dist는 정확하지만 server/index.mjs의 SIGINT/SIGTERM→모든 retained run cancel→server.close→exit0 경로 및 재현 기대값이 빠졌다.",
+      "alternativeInterpretations": [
+        "개발 child 종료만 구현한다.",
+        "API 프로세스 signal handler와 in-flight run cancellation도 구현한다."
+      ],
+      "requiredDecision": "현재 signal별 종료 책임과 검증 절차/기대 응답을 명시한다. 실제 프로세스 cleanup 완료를 입증하지 않은 항목을 이미 실행한 테스트로 표시하지 않는다.",
+      "resolution": "01 §11과 환경 명령은 실제 run cancel→server.close→exit0를 기술하고 cleanup supervisor/전체 sandbox settle 보장은 추가 미실행 gate로 분리한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-003",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-03-C04"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2 ZIP",
+      "problem": "local/central ZIP 크기 일치라는 주장이 documents.mjs:108-126보다 강하다. local name/method와 central bounds 및 actual inflate length를 검사하지만 local size fields는 비교하지 않는다. local uncompressed size=1 변조 ZIP은 메모리 실험에서 수용됐다.",
+      "alternativeInterpretations": [
+        "현재 parser의 실제 검사만 재현한다.",
+        "local size field까지 비교하는 강화 검사를 baseline으로 구현한다."
+      ],
+      "requiredDecision": "실제 local 이름/method·central bounds·inflate versus central size 검사로 고치거나 local size 비교를 추가 acceptance로 명시한다. 예약 전 <100, 성공 후 <=100 문서 경계를 명확히 한다.",
+      "resolution": "02 §2.2가 local name/method·central bounds·inflate 대 central length 검사로 수정됐고 예약 전/후 문서 수를 구분한다. local size-field 비교는 baseline으로 주장하지 않는다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-004",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-03-C05"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2 XLSX/PDF",
+      "problem": "drawing 생략은 미지원 XML 조건부가 아니라 모든 /drawing 관계에 적용된다. 또 3000자 단일 셀은 원본 preview에서 2000자로 줄고 public preview.truncated=false이므로 잘림 표시가 완전하지 않다.",
+      "alternativeInterpretations": [
+        "지원 drawing은 local preview에 보존하고 모든 clipping에 truncated=true를 낸다.",
+        "현재 모든 drawing 관계 제거와 per-cell clipping flag 한계를 재현한다."
+      ],
+      "requiredDecision": "두 baseline 제한을 명시한다. 모든 clipping에 truncated=true를 요구하려면 추가 구현 목표로 구분한다.",
+      "resolution": "01 §4.1 및02 §2.2가 모든 drawing 관계 제거, public cell2000자 clipping의 truncated 한계, 내부 full displayedValue/aggregate1.5M을 정확히 설명한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-005",
+      "moduleId": "CORE-04",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-04-C04"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.3 하드/부분 한도",
+      "problem": "숫자는 맞지만 cap→partial/truncated 일괄 설명이 hard/unsupported와 embedded incomplete를 혼동한다. standalone >40MP는 unsupported이며 source/archive hard cap은 예외다.",
+      "alternativeInterpretations": [
+        "모든 cap은 partial+truncated를 돌려준다.",
+        "cap 종류별 hard error/unsupported/partial/incomplete 결과가 다르다."
+      ],
+      "requiredDecision": "한도별 실제 outcome 표를 작성하고 standalone 원본 이미지와 embedded thumbnail을 구분한다. complete=false와 truncated=true가 동치가 아님을 명시한다.",
+      "resolution": "02 §2.3 cap별 hard error/unsupported/partial/incomplete 표와 original image 대 embedded thumbnail 경계가 reader/source와 일치한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-006",
+      "moduleId": "CORE-04",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-04-C05"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-04-C05 / specs02 §2.3",
+      "problem": "고정 reader 코드 경계는 확인했지만 요구된 malicious archive/macro/external-link 실행 음성 fixture가 지정 Python suite에서 확인되지 않는다. sparse/formula/selector 테스트는 그 범위를 모두 증명하지 않는다.",
+      "alternativeInterpretations": [
+        "기존 named suite가 모든 위협 fixture를 검증했다고 간주한다.",
+        "코드 경계 확인과 아직 수행할 fixture acceptance를 분리한다."
+      ],
+      "requiredDecision": "해당 기존 fixture를 정확히 식별하거나 미검증 사례를 추가 acceptance로 명시하고 향후 실행 gate에 남긴다. 이미 통과한 원본 test로 주장하지 않는다.",
+      "resolution": "02 §2.9 및 document-negative-cases.json DN01/02가 genuine VBA/external link/duplicate/expansion의 제작·작업·oracle·G12 명령을 구체화한다. 설계 fixture 계약만 통과이며 실행은 NOT_RUN으로 남는다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-007",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-05-C05"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-05-C05 / specs02 §2.5",
+      "problem": "실제 nested DOCX reader와 행/열 semantic orientation fixture 증거가 지정 suite에 없다. synthetic flat block은 중첩 Word reader 검증이 아니다.",
+      "alternativeInterpretations": [
+        "flat block case가 nested Word 전체 reader를 증명한다.",
+        "nested reader와 semantic orientation은 별도 검증이다."
+      ],
+      "requiredDecision": "구체적 fixture/expectation을 식별하거나 추가 acceptance로 구분하고 미실행 상태를 유지한다.",
+      "resolution": "document-negative-cases.json DN03에 실제 중첩 DOCX/전치 짝/target CSV 제작, 두 live workflow, 기준·원문·최종값 oracle과 G03 명령을 명시했다. 실행은 NOT_RUN이다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-008",
+      "moduleId": "CORE-06",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-06-C03"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.6 status / 31페이지 예시",
+      "problem": "page cap이면 무조건 limited라는 설명과 달리 no_progress/round_limit가 page_limit보다 우선한다. expected31+지속 page1 issue는 needs_review/no_progress, attempts2, missingPages31이다.",
+      "alternativeInterpretations": [
+        "31페이지면 항상 limited/page_limit다.",
+        "더 먼저 성립한 미해결 교정 중지 사유가 상태를 정한다."
+      ],
+      "requiredDecision": "실제 stopReason 우선순위를 문서화하고 31페이지 예시를 다른 미해결 issue가 없는 경우로 한정한다. 다른 정책이면 추가 목표로 표시한다.",
+      "resolution": "02 §2.6은 실제 stopReason 분기 우선순위와 최종 reason membership으로 limited를 결정한다.31페이지라도 no_progress/round_limit이면 needs_review임을 보존한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-009",
+      "moduleId": "CORE-06",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-06-C05"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-06-C05 / prompts source binding",
+      "problem": "invented/blank/nested tests는 있으나 두 문서 혼합 negative fixture는 확인되지 않는다. within-document page isolation만으로 문서간 source isolation 검증을 주장할 수 없다.",
+      "alternativeInterpretations": [
+        "한 문서 페이지 필터링이 문서간 분리도 입증한다.",
+        "두 문서 원본을 이용한 별도 negative test가 필요하다."
+      ],
+      "requiredDecision": "기존 두 문서 fixture를 식별하거나 추가 acceptance로 남긴다. 실제 production leak으로 단정하지 않는다.",
+      "resolution": "document-negative-cases.json DN04는 별개 raster PDFs, 상반 값/기대판정, 요청별 원본 hash, concurrent natural run과 별도 혼합 injection oracle/G03를 명시한다. 제품의 현재 교차문서 안전성 실행 증거로 주장하지 않는다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-010",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-07-C02"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§13.1 line340",
+      "problem": "자동 not_criteria 제외 요건이 source의 optional metadata 처리보다 엄격하다. sourceTruncated/truncated/visualPending가 생략돼도 허용, 숫자 둘 다 finite일 때만 count 비교, missingContextSheets 생략도 허용한다.",
+      "alternativeInterpretations": [
+        "false/count/list를 모두 명시하지 않으면 제외 불가다.",
+        "필수 complete true와 optional-safe 부정 검사를 구분한다."
+      ],
+      "requiredDecision": "criteria-eligibility.completeAnalysis의 정확한 ===true/!==true/finite-guard/optional-length predicates를 적는다. 강화 요건은 추가 acceptance로 구분한다.",
+      "resolution": "03 §13.1은 completeAnalysis의 mandatory true, optional !==true, finite pair/count, optional missing sheet list를 정확히 기록한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-011",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-07-C04"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§13.1 line338",
+      "problem": "same-row quote full-string equality 주장은 실제 normalized substring(+comment) citation 검사보다 엄격하다.",
+      "alternativeInterpretations": [
+        "선택한 모든 셀 텍스트와 정확히 같아야 한다.",
+        "정규화된 실제 셀/comment 문자열의 부분 인용을 허용한다."
+      ],
+      "requiredDecision": "현재 substring/숫자 경계/comment 정책을 정확히 기술하거나 full equality를 신규 목표로 표시한다.",
+      "resolution": "03 §13.1은 normalized substring, 숫자 경계, comment와 단일행 range 허용을 실제 source와 일치시킨다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-012",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-07-C05"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-07-C05 / specs03 §13.1, §14",
+      "problem": "명시 정성 legal/business 분류 fixture→기대값 매핑이 검증되지 않았다. 표준/혼합/기록/injection 시험만으로 요구된 domain 사례를 모두 충족했다고 할 수 없다.",
+      "alternativeInterpretations": [
+        "기존 유사 fixture로 모든 정성 domain 사례를 대체한다.",
+        "구체적 사례의 기대값을 독립 검증한다."
+      ],
+      "requiredDecision": "기존 fixture를 매핑하거나 추가 acceptance로 정의하고 실행 전 통과로 기록하지 않는다.",
+      "resolution": "algorithm-edge-cases.json의 qualitative legal/business 등 실제 입력과 rawModel/publicAssessment oracle을 추가했다. 추가 acceptance/미실행이며 과거 테스트 성공으로 주장하지 않는다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-013",
+      "moduleId": "CORE-08",
+      "severity": "high",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-08-C03"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§11.1",
+      "problem": "기존 문서 분석 sandbox가 있으면 재사용한다는 주장이 별도 sandboxRunner lifetime인 discovery와 다르며 02 §2.8의 올바른 설명과 충돌한다.",
+      "alternativeInterpretations": [
+        "분석→discovery 동안 하나의 물리 sandbox를 계속 유지한다.",
+        "discovery는 별도 세션, discovery rounds만 재사용하고 criteriaInventory만 이전 분석에서 가져온다."
+      ],
+      "requiredDecision": "기존 분석 sandbox 재사용 문장을 제거하고 inventory reuse와 별도 discovery lifetime을 명시한다.",
+      "resolution": "03 §11.1/02 §2.8/07 §7.6은 discovery 별도 lifetime과 그 내부 round reuse, 이전 분석 inventory-data reuse를 분리한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-014",
+      "moduleId": "CORE-09",
+      "severity": "high",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-09-C02"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§3.3 line96",
+      "problem": "same-evidence-row 조건 복구는 evidenceCells가 있는 경우에만 적용된다. generic validateCriteria가 sourceEvidence만 남기면 같은 label인 여러 행의 조건이 합쳐질 수 있다.",
+      "alternativeInterpretations": [
+        "sourceEvidence만으로도 정확히 같은 row 조건만 복구한다.",
+        "evidenceCells가 없으면 label/document 기반으로 여러 row를 후보로 삼는다."
+      ],
+      "requiredDecision": "baseline의 evidenceCells 의존과 sourceEvidence-only 한계를 명시하고 엄격 row-source 보장은 추가 acceptance로 분리한다.",
+      "resolution": "03 §3.3은 evidenceCells가 있는 경우에만 적용되는 same-row 필터와 sourceEvidence-only 한계를 설명한다. ALG-X-CONDITION의 강화 목표는 별도다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-015",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-09-C04"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-09-C04 / specs03 §2",
+      "problem": "질문은 모든 ungrounded hierarchy와 invalid comparison이 confirmation으로 남는다고 요구하나 generic validateCriteria는 nonempty path를 resolved로 지정하고 invalid comparison을 버리면서 needsConfirmation=false 유지가 가능하다.",
+      "alternativeInterpretations": [
+        "generic shape validator도 grounded discovery 수준의 의미 보증을 한다.",
+        "generic validation/discovery grounding/approval guards가 서로 다른 보증을 한다."
+      ],
+      "requiredDecision": "세 경로의 실제 보증을 명시하고 강한 동작은 추가 acceptance로 구분한다. 모집단의 baseline/추가 목표 해석을 기록한다.",
+      "resolution": "03 §2와 ALG-B/ALG-X-GROUND는 generic shape validator, grounded discovery, approval guard를 구분하고 더 강한 grounded admission은 추가 acceptance로 명시한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-016",
+      "moduleId": "CORE-12",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-12-C02"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§6 line174",
+      "problem": "확인된 누락 fail에 optional sourceTruncated/needsConfirmation의 explicit false를 요구한다는 설명이 source truthiness 검사와 다르다. omitted flags 입력에서도 실제 source evidence와 complete:true면 fail 가능하다.",
+      "alternativeInterpretations": [
+        "optional flags가 없으면 항상 review다.",
+        "필수 complete:true 및 각 optional flag의 실제 부정 검사로 판단한다."
+      ],
+      "requiredDecision": "missing-result.inspectedCompletely의 정확한 optional flag predicates와 시각문서의 더 강한 별도 조건을 적는다.",
+      "resolution": "03 §6은 missing-result.inspectedCompletely의 optional flag truthiness와 별도 visual gate를 정확히 설명한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-017",
+      "moduleId": "CORE-14",
+      "severity": "high",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-14-C04"
+      ],
+      "document": "specs/04-ui-motion.md",
+      "section": "§7.4 / ui/detail-controls.md D1.3",
+      "problem": "범용 quote/location/wrong-row rejection은 실제 spreadsheet/text highlight보다 강하다. tableHighlightIndex는 valid coordinate를 quote 대조 없이 우선하며 quote-only도 item-row witness를 검사하지 않는다.",
+      "alternativeInterpretations": [
+        "PDF witness protection이 모든 포맷에 동일하게 적용된다.",
+        "PDF와 spreadsheet/text의 실제 highlight 검증 범위가 다르다."
+      ],
+      "requiredDecision": "PDF 보호와 표/텍스트 coordinate-first 한계를 분리한다. 강한 표/텍스트 보호는 신규 acceptance로 명시한다.",
+      "resolution": "04 §7.4/03 §7 및 highlight acceptance는 PDF witness와 표/텍스트 coordinate-first 한계를 분리하고 더 강한 보호를 추가 목표로 표시한다. I9.1/TABLE-HIGHLIGHT-REBUILD now make the stronger table target mandatory for the rebuild, still NOT_RUN.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-018",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-14-C05"
+      ],
+      "document": "decomposition/core-modules.json",
+      "section": "CORE-14-C05 / specs05 D07",
+      "problem": "모집단은 runId 검사를 요구하지만 실제 bridge는 source/origin/channel/type/random preview token/item allowlist를 검증하며 runId 필드가 없다. 문서 D07 자체는 실제와 맞다.",
+      "alternativeInterpretations": [
+        "runId를 반드시 protocol에 추가해야 한다.",
+        "현재 preview-token isolation을 명시적으로 평가한다."
+      ],
+      "requiredDecision": "질문을 실제 token 기반 보안 계약으로 교정할 경우 모집단 변경 이유/보호 범위 동등성을 기록한다. 단순 삭제나 취약점 단정은 피한다.",
+      "resolution": "registry CORE14C05를 실제 preview-token/frame/origin/channel/type/item allowlist로 교정하고 reviews/main-session/CHANGES.md에 이유와 보호 범위를 기록했다. 질문 삭제는 없다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-019",
+      "moduleId": "CORE-16",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-16-C03"
+      ],
+      "document": "specs/01-state-api.md",
+      "section": "§9 line213 / §10 line232",
+      "problem": "모든 human override가 ledger fingerprint를 무효화한다는 설명은 틀리다. fingerprint는 result/note/counts/source ID/name/incomplete만 포함하고 humanNote/reviewedByHuman/audit는 제외하므로 같은 판정 확인은 유지된다.",
+      "alternativeInterpretations": [
+        "모든 사람 수정은 재확인을 요구한다.",
+        "제안 직렬화 내용이 바뀐 경우만 fingerprint mismatch409다."
+      ],
+      "requiredDecision": "대장 proposal 내용이 달라질 때만409라고 좁히고 동일 status/사유 변경의 한계를 적는다. 강한 규칙은 추가 구현 목표다.",
+      "resolution": "01 §9/§10 및05a §2.3/§4.1은 실제 serialized proposal 내용 변경일 때만 hash가 달라짐을 명시하며 humanNote/audit/reviewedByHuman만 바뀌는 no-change 반례를 설명한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-020",
+      "moduleId": "CORE-17",
+      "severity": "low",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-17-C01"
+      ],
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D01 line21",
+      "problem": "15개 필드라는 설명이 실제 schema/default/DASHBOARD_PLAN_SCHEMA의 14개와 충돌한다.",
+      "alternativeInterpretations": [
+        "15번째 필드가 누락됐다.",
+        "설명의 필드 수가 오기다."
+      ],
+      "requiredDecision": "15개를14개로 고친다. schema 자체는 $schema 제외 source와 일치한다.",
+      "resolution": "05 D01/D12, schema/default/examples 및06 G11이14필드로 일치한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-021",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-17-C02"
+      ],
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D05,D11 / prompts/dashboard-system.md / prompts/dashboard-loop.md",
+      "problem": "명시 preference override가 semantic scope를 오해한다. dark page+light blue charts는 theme=light; 전체 파이+파일별 막대는 distribution=bar,fileVisualization=bars. 정확한 모델 결과도 이 override로 바뀔 수 있다.",
+      "alternativeInterpretations": [
+        "원본의 단순 last-positive matcher를 그대로 재현한다.",
+        "독립 semantic dimensions를 항상 보장하도록 개선한다."
+      ],
+      "requiredDecision": "현재 두 반례를 baseline 한계로 공개하고 더 넓은 의미 분리를 추가 acceptance로 분리하거나 참조 계약을 수정한다. baseDesign 보존이 모델 instruction이라는 기존 구분은 유지한다.",
+      "resolution": "05 D05/D11과 dashboard-customization-cases가 두 semantic-scope 실패의 observedExpected와 desired plan을 별도 기록한다. DB-H02/03는 미구현 추가 gate이며 baseline success로 위장하지 않는다. Final D05a/b make DB-H02/03 mandatory via a separate semantic judge; its fallibility and future validation remain explicit.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-022",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [],
+      "document": "prompts/pipeline-prompts.md",
+      "section": "XLSX 기준에 추가 지시 적용 row",
+      "problem": "overlay 호출 token 표는32768이지만 source server/review.mjs:440 criterionCall의 실제 maxOutputTokens는8000이다.",
+      "alternativeInterpretations": [
+        "overlay도 일반 criteria extraction처럼32768을 쓴다.",
+        "overlay는8000이고 비-XLSX/자연어 criteria extraction은32768이다."
+      ],
+      "requiredDecision": "overlay token을8000으로 수정하고 두 호출을 구분한다.",
+      "resolution": "pipeline-prompts 조립표가 workbook overlay8000과 일반/자연어 criteria32768을 구분한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R1-CORE-023",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [],
+      "document": "specs/03-algorithms.md",
+      "section": "§1 line18",
+      "problem": "모든 정규화 반환이 안전한 복사라는 전역 주장이 source와 다르다. preserveSourceConditions는 입력 criterion들을 mutate하며 normalizeHandlingCriteria는 substantive candidate의 rule/handlingNotes를 변경한다.",
+      "alternativeInterpretations": [
+        "모든 normalization port는 immutable pure copy다.",
+        "일부 port는 mutable draft를 갱신하고 승인 시점에만 deep freeze한다."
+      ],
+      "requiredDecision": "함수별 mutation/clone 책임을 적고 전역 safe-copy 보장을 제거하거나 신규 구현 목표라고 표시한다.",
+      "resolution": "03 §1/§3.3/§12는 일부 normalizer의 mutation과 clone/freeze 소유 경계를 함수별로 기술하며 전역 pure-copy 보장을 제거한다.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-001",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-03-C05"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2 /01 §4.1",
+      "problem": "A3000-character reproduction was temporarily mislabeled a3000-character internal source-cell cap; source preserves full displayedValue under aggregate1.5M.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Describe3000 as example, public2000 clipping, full internal displayedValue.",
+      "resolution": "Corrected in01/02; fresh source comparison confirms no internal3000 cap.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-002",
+      "moduleId": "CORE-04",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-04-C04"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.3",
+      "problem": "Thumbnail3000x3000 wording temporarily covered standalone originals, but save_image applies it only to supplements.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Separate standalone original-image path from save_image supplements.",
+      "resolution": "02 §2.3 now distinguishes paths; reader source reviewed.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-003",
+      "moduleId": "CORE-12",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-12-C01"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§2",
+      "problem": "Finding inherited RawFinding.applicability although normalizeItems emits verified/reason/targetCategoryPath/evidence.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Replace raw applicability in normalized type with VerifiedApplicability.",
+      "resolution": "03 uses Omit<RawFinding,'applicability'> and explicit normalized applicability; source return rechecked.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-004",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-09-C01"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§2/§3.3",
+      "problem": "ignoredSourceNotes was typed Evidence[] requiring quote; source produces text with native citation coordinates.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Give notes their actual text/native coordinate DTO.",
+      "resolution": "03 and shared internal DTO define IgnoredSourceNote accurately.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-005",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-09-C02"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§3.3",
+      "problem": "Ignored-note cleanup was described as universally removing sourceEvidence; source requires hadIgnoredCitations and remaining evidenceCells.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Specify the exact conditional and residual sourceEvidence-only/all-filtered limitations.",
+      "resolution": "03 now mirrors conditions.mjs32–34 and discloses both limits.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-006",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-09-C03"
+      ],
+      "document": "specs/03-algorithms.md",
+      "section": "§12 and07 §7.4",
+      "problem": "Semantic dedup was said to merge all evidence/provenance, but sampleEvidence is outside the merge allowlist and remains from first candidate.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "List exact common union and seven separate merged fields; document unmerged sampleEvidence.",
+      "resolution": "03/07/inventory now enumerate allowlist and first-only sampleEvidence behavior.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-007",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-07-C05"
+      ],
+      "document": "contracts/algorithm-edge-cases.json",
+      "section": "ALG-X-ELIGIBILITY / semantics.eligibilityCapture",
+      "problem": "Qualitative semantic fixture oracle included hasNormativeContent on public DTO even though inspectAssessment omits it.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Separate captured validated rawModel and publicAssessment expectations.",
+      "resolution": "Fixture now has exact raw/public capture boundary and forbids error-induced uncertain from counting as semantic success.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-008",
+      "moduleId": "CORE-19",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-19-C02"
+      ],
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.4 / ES07",
+      "problem": "Dedup complexity omitted repeated serialization of growing accumulated citations, allowing quadratic work for same-semantic candidates.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Describe key/string/condition costs and accumulated evidence worst case separately.",
+      "resolution": "07/ES07 now document Theta(C² e ℓ) evidence processing; read-only source probes substantiate growth.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-009",
+      "moduleId": "CORE-19",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-19-C05",
+        "CORE-08-C04"
+      ],
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.8 / EL23 and03 §11.1",
+      "problem": "220000 Python characters was called a whole response cap; details accounts only unseen cell-record JSON, while overlapping ranges duplicate returned records.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Separate unique-record budget, whole payload, wrapper/duplicate cost and Node raw1.5M cap.",
+      "resolution": "03/07/EL23 now state exact budgets; overlapping50cell probe returned100records/408769chars with complete:true.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-010",
+      "moduleId": "CORE-19",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-19-C05"
+      ],
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.3B/§7.8",
+      "problem": "Context aggregate1000 omitted per-response validator160 and implicit final slice behavior.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "State response160 rejection and public aggregate first1000 without invented truncation warning.",
+      "resolution": "07 now matches validateDocumentContext and final analysis structure projection.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-011",
+      "moduleId": "CORE-19",
+      "severity": "medium",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-19-C05"
+      ],
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.3B step6/§7.8 pseudocode",
+      "problem": "Abort/session timeout was described as returning retained context; source catch first rethrows aborted signal and owner maps deadline error.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Separate aborted signal rejection from ordinary non-abort repair/reread failure retention.",
+      "resolution": "07 now propagates owner/session abort and retains context only on described ordinary failure paths.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    },
+    {
+      "id": "R2-CORE-012",
+      "moduleId": "CORE-15",
+      "severity": "low",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-15-C01"
+      ],
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.8.1 activity callback",
+      "problem": "Reporter identity was shown as report(event).taskId though callback returns void and reporter owns taskId.",
+      "alternativeInterpretations": [
+        "Implement the inaccurate or broader wording as baseline.",
+        "Reproduce the actual source boundary and label stronger acceptance separately."
+      ],
+      "requiredDecision": "Use report.taskId, with report(event) returning void.",
+      "resolution": "02/internal adapter text now matches activity reporter function property.",
+      "recheckedBy": "architecture_accuracy_core (round02 independent reread, with bounded read-only helpers)"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "DECISIONS.md",
+      "sha256": "29b743be0d89e94fd4fc8ea9b3b176e73f4616bbbee342d9324f8a68b7c82049"
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "e3b5fbd180bc521caddd8177c43067e0e8ecd68e2207b8b8b98c3cce110ae1e9"
+    },
+    {
+      "path": "contracts/algorithm-edge-cases.json",
+      "sha256": "9eeefb895810cd4e7fb30c2c7850a5115d293019af968805b1465b4391c396db"
+    },
+    {
+      "path": "contracts/dashboard-customization-cases.json",
+      "sha256": "e96442f6086dbac69ec88248888645d14834ac5d237ccdf34fd8ea8aeb3fcdba"
+    },
+    {
+      "path": "contracts/dashboard-design.default.json",
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "contracts/dashboard-design.schema.json",
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892"
+    },
+    {
+      "path": "contracts/dashboard-examples.json",
+      "sha256": "ca1ccc560c51c5a2c1620893ad50e1b94eddd60d9df94ccc949de3f38a7ee4b4"
+    },
+    {
+      "path": "contracts/document-negative-cases.json",
+      "sha256": "215376d5f4af62e4d7d6a4aa476f841e8c013ee09d54fe34c3fe8397ef1c6f4b"
+    },
+    {
+      "path": "contracts/efficiency-inventory.json",
+      "sha256": "f459041735071276a208e4cf18be29711b251239c4514fa9b844dd248d2c1e60"
+    },
+    {
+      "path": "contracts/examples/01-criteria-first-commands.json",
+      "sha256": "ba592b746c1b56721f3e19e938216868b619d59c1f3e10eb5e2f4cc0a7aaf5cd"
+    },
+    {
+      "path": "contracts/examples/02-errors.json",
+      "sha256": "aa60a88b88a97d6d1b6b57c8a96b5dcb0a66e5cfb4dfe6ca8b659fe8572432e2"
+    },
+    {
+      "path": "contracts/examples/03-run-sse.json",
+      "sha256": "5acca7e52c87ae8ab4430d130f345736c80e680539e66980cf5c1c32549d3a87"
+    },
+    {
+      "path": "contracts/examples/04-activity-snapshot.json",
+      "sha256": "967bac1a4e0dd1e5277ac2ad746fae6e34cc137c7fd80e6ebe304befb1a4f388"
+    },
+    {
+      "path": "contracts/examples/05-ledger-analyze.json",
+      "sha256": "998a4a6cb8bbacac82e0b1e2c9c0b95692da1d355c5a131cf527045cb272ed66"
+    },
+    {
+      "path": "contracts/internal-pipeline.ts",
+      "sha256": "75785d4c71661d35235b321ad9794290cc67da67d57392a117c269dc33e7c70b"
+    },
+    {
+      "path": "contracts/pipeline-model-schemas.json",
+      "sha256": "476e013b88764213945aa5d6b6ad8eecd3b125f3ee7b820628a1f3b9b635cfa6"
+    },
+    {
+      "path": "contracts/types.ts",
+      "sha256": "124e8b34fa38f2b191d9ca03a3e58f9b3b3819740f5c22ded64a022e77c1f32c"
+    },
+    {
+      "path": "decomposition/core-modules.json",
+      "sha256": "cf51606f635ef5acb090c59f46fcbae350d9b12697e2bbad8e9c372f6969162e"
+    },
+    {
+      "path": "decomposition/ui-modules.json",
+      "sha256": "9a0306aeaf8cc3c8d272e0ab69db893a06d8c9ef42e460be6e6b13e3ac8dffab"
+    },
+    {
+      "path": "environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb"
+    },
+    {
+      "path": "environment/integrations/package-lock.json",
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441"
+    },
+    {
+      "path": "environment/versions.json",
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf"
+    },
+    {
+      "path": "prompts/criteria-algorithms.catalog.json",
+      "sha256": "c1b5354f702b02106d2ddbc1d192668f55d041f7980cbb7b7a46cd5cccebfc01"
+    },
+    {
+      "path": "prompts/dashboard-loop.md",
+      "sha256": "056426a15df4ee452661a2be9681b50268afc8c1276c25747390162a3a26c97e"
+    },
+    {
+      "path": "prompts/dashboard-system.md",
+      "sha256": "9688c6e90d3923c3260a2f889d6934322e372e7fddc9f4312e4e8a927f21f091"
+    },
+    {
+      "path": "prompts/pipeline-prompts.md",
+      "sha256": "3dfae0bb6d4c0369814bd22ff9121ed5bfe45ea2be73f70c232d71921d5f03b1"
+    },
+    {
+      "path": "reference/dashboard/chart-entry.reference.jsx",
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "reference/dashboard/design-functions.reference.mjs",
+      "sha256": "2d9446c37f0a64f002f69b83e282dbdb9483e9bda3173e576a5ad64a91cb1877"
+    },
+    {
+      "path": "reference/dashboard/standalone-reference.css",
+      "sha256": "3c663b94047f6e7a4d5e02e95b8de124a3ab100b7c046efb22971493aca10e80"
+    },
+    {
+      "path": "reviews/main-session/CHANGES.md",
+      "sha256": "1e1f0b5f8b4a510c256f039f234bb023a4f293a2485ccacbdb83e85c76633d0a"
+    },
+    {
+      "path": "reviews/main-session/README.md",
+      "sha256": "4f1b82314c4eb34e733876b894e1265bd6d489c0f2767bf81aa793a19d8ab265"
+    },
+    {
+      "path": "reviews/main-session/fixes-algorithms.md",
+      "sha256": "f610920f667f5637ed043f986ad13d14bc957e874bd1b2fe0824f682de9c565f"
+    },
+    {
+      "path": "reviews/main-session/fixes-core-api.md",
+      "sha256": "a9919689517cefb69971bd8f3f1c481f9b97c8c15742aee4a9bf2e48ae189c52"
+    },
+    {
+      "path": "reviews/main-session/fixes-dashboard.md",
+      "sha256": "5b2db4bf3ed263ade0facce0c02a46faa8f9acc62eed6044463fdd482bfb0886"
+    },
+    {
+      "path": "reviews/main-session/fixes-ledger.md",
+      "sha256": "702fe1f45cf722bb859736834564a06f1b134fca9eef2f9cf3a9cd71e58224db"
+    },
+    {
+      "path": "reviews/main-session/fixes-ui.md",
+      "sha256": "410fefca1df297aee8b444addf838c2831e96f17201b38220259cd0d9a9f97f5"
+    },
+    {
+      "path": "source:integrations/package.json",
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1"
+    },
+    {
+      "path": "source:integrations/src/activity.mjs",
+      "sha256": "cfe58234765c3d68406a6bf63d6992a3aaa8ca3d6111cf4ece9ee88321e65b00"
+    },
+    {
+      "path": "source:integrations/src/command-progress.mjs",
+      "sha256": "6054bb023a58aa6ecafee58ccba7f21e708fb4a78e04b4d2c4c1473b94ca0da1"
+    },
+    {
+      "path": "source:integrations/src/config.mjs",
+      "sha256": "f658c20eb1280c5c335571bf4893f5e25a1a708db57680e19ab1fc31239a60b6"
+    },
+    {
+      "path": "source:integrations/src/errors.mjs",
+      "sha256": "bff01f8874ec1bd34a6d2e9ea1fa5fcff379a006d7a3f8e8ba1ef61ac3ad3c10"
+    },
+    {
+      "path": "source:integrations/src/gemini.mjs",
+      "sha256": "90a267c4371bc01aa20c1e51a68eb9f642fae72109a6b507022e8cf64576cc18"
+    },
+    {
+      "path": "source:integrations/src/sandbox.mjs",
+      "sha256": "e6186c4708f01fc00cea3023ffe3ec6d50320daeeb149f484eae6a23b1b5b2bf"
+    },
+    {
+      "path": "source:integrations/src/task-pool.mjs",
+      "sha256": "7ea0c9b199bdc5107c7e8ec5e952a57080441c5e4961006ef916c8f86974ebea"
+    },
+    {
+      "path": "source:integrations/test/concurrency.test.mjs",
+      "sha256": "fec6df52d5305e8940054b86b3eaf5a6ea7b077faf43d1856edace604178ac9f"
+    },
+    {
+      "path": "source:integrations/test/gemini-limits.test.mjs",
+      "sha256": "919324021efc9f3144028b59eb11d58178df236dae562edad6f3cc949ef75f1b"
+    },
+    {
+      "path": "source:integrations/test/integrations.test.mjs",
+      "sha256": "18cacf081a9b611763891505357de2cdc1864d870f3de13b41b311b879b98240"
+    },
+    {
+      "path": "source:package.json",
+      "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc"
+    },
+    {
+      "path": "source:scripts/dashboard-chart-entry.jsx",
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "source:server/activity-observer.test.mjs",
+      "sha256": "4cde5c287156ff74e4dd786d6e98b6ebbc3df2cd9055244beb79e6eb2ecaf803"
+    },
+    {
+      "path": "source:server/activity-scope.test.mjs",
+      "sha256": "d7c71418304ee26a164b39e6078ad8f1625ef160f695bf9e756c76c448d50dd1"
+    },
+    {
+      "path": "source:server/activity.mjs",
+      "sha256": "f3049e62dc8660fa1f7dada649fa0cfe137dd65a6cfb7b9cadad0dc7c1487bc6"
+    },
+    {
+      "path": "source:server/app.mjs",
+      "sha256": "2637178b138d811d4db854e4bb8fda78431a759755b29fabf97a9614451f31c7"
+    },
+    {
+      "path": "source:server/app.test.mjs",
+      "sha256": "6cb3599a27a0fc7aa7c59e2377a8f02db25ba33e81166f3e8092c66edce5bbb6"
+    },
+    {
+      "path": "source:server/command-progress.test.mjs",
+      "sha256": "cb9118e269279001a51385e355ffdc910e14ecf51eef68e29382e2795ba0ebcb"
+    },
+    {
+      "path": "source:server/conditions.mjs",
+      "sha256": "4c2ed4769dbccf6ab03eb5c57227ba527fec343f27fb327a5ca2e90f0a443246"
+    },
+    {
+      "path": "source:server/conditions.test.mjs",
+      "sha256": "0cc5bfeb133dbbd8ec25f37525ab2ec04e91ac00b0dc60f7ae1c060596ed8aa6"
+    },
+    {
+      "path": "source:server/criteria-approval.mjs",
+      "sha256": "148eed7d317ecc80b0b878de652bc5f81389fa9807dc7adf518f189ef909f014"
+    },
+    {
+      "path": "source:server/criteria-approval.test.mjs",
+      "sha256": "247c0efb3be909ec13b86579b5d8c61755995de3710aef9283394161e5528f9f"
+    },
+    {
+      "path": "source:server/criteria-context.mjs",
+      "sha256": "0c3ca9c9c34e0e6bacaf9b405f08d44f14577d67b333e02358cace2eeaa3e624"
+    },
+    {
+      "path": "source:server/criteria-context.test.mjs",
+      "sha256": "4c329045c635842dcf2cd86d766b9459f9a994422402fc4aebf33ad66a30df50"
+    },
+    {
+      "path": "source:server/criteria-eligibility.mjs",
+      "sha256": "167bdf1475baf053de0a70f311d9df8007138e685721f5e30b8bd3292c995475"
+    },
+    {
+      "path": "source:server/criteria-eligibility.test.mjs",
+      "sha256": "724e215ef9958726f78658ff98e1ca96022c4f91190b2ecb9b1f63f29405ddba"
+    },
+    {
+      "path": "source:server/criteria-generalization.test.mjs",
+      "sha256": "7a5c2585639a0078245a20612c4945a04cddfeae4d19718da58bef7f50f6ad5d"
+    },
+    {
+      "path": "source:server/criteria-layout.mjs",
+      "sha256": "1c155d827d3e830b00ea57e584d4bed7a50b62553be30e8fa3129539a706798c"
+    },
+    {
+      "path": "source:server/criteria-matrix-regression.test.mjs",
+      "sha256": "e0dfa5c1d83c735d9f1f8bfd8f7661b409b486448f3f24f7a6668f56539bb908"
+    },
+    {
+      "path": "source:server/criteria-normalization.mjs",
+      "sha256": "83cdd7a880b0a97320331f8cf13d70f996c999a106c4a82e178be858f2821a16"
+    },
+    {
+      "path": "source:server/criteria-notes.mjs",
+      "sha256": "77f8a3530c84320fff740489241c02922d2808257d1fe93b2c31580d97dd72c1"
+    },
+    {
+      "path": "source:server/criteria-sandbox.mjs",
+      "sha256": "929b02ad1e7ec59e33df4dba1e59e66a5de15525c5e8b9dc2b00fb94aa3b8865"
+    },
+    {
+      "path": "source:server/criteria-sandbox.test.mjs",
+      "sha256": "ffd7572999c0cabe4d420ffb3ba51b144c5a352e8c656893e2991b7507a23655"
+    },
+    {
+      "path": "source:server/criteria-workbook-profile.py",
+      "sha256": "48ba501da57bb8b52ae4cef5831c8508391cdd2649402472c908fe655e87008b"
+    },
+    {
+      "path": "source:server/criterion-applicability.mjs",
+      "sha256": "fe2cee9904a0606540bcab4ed403a33cb2a2f3861e8f8ebd5a7a2117cf4446a1"
+    },
+    {
+      "path": "source:server/criterion-applicability.test.mjs",
+      "sha256": "0a5c835c990bb8d24a0cd2523ffbfe5bea17e1f751d5fd0db3109dd0553242a0"
+    },
+    {
+      "path": "source:server/dashboard-bridge.test.mjs",
+      "sha256": "1e940e88655bcf5333b5e29eb480090ab223a3598fcee8ffe97be87453136bad"
+    },
+    {
+      "path": "source:server/dashboard-chart-runtime.mjs",
+      "sha256": "2a6c08426d1ced7fccdbf925724b24307bb4f44f58fa7275a5a3180b1844b987"
+    },
+    {
+      "path": "source:server/dashboard-fallback.mjs",
+      "sha256": "2227d62a50b914ccf63b026b503f1e7e7f4a6daccb64c6e64655c7ea48092a74"
+    },
+    {
+      "path": "source:server/dashboard-fallback.test.mjs",
+      "sha256": "35db9bd8b1504dfa22d50f49e27d66342aeb7a196e87c1b7301fbdd52b393034"
+    },
+    {
+      "path": "source:server/dashboard-plan-validation.mjs",
+      "sha256": "057962ccee467d9bbe5dc149ef66c2cd3df6c7db6f58ef63709d3f224f510765"
+    },
+    {
+      "path": "source:server/dashboard-plan-validation.test.mjs",
+      "sha256": "0ccac5e9d86570058ab9dbaa8b1ab454a913c383aea08926e6582a82bfae38e1"
+    },
+    {
+      "path": "source:server/dashboard-plan.mjs",
+      "sha256": "442ace1fbdb82705ef851f2d39f0cd92e0b66d3efcdb95b2ea614e7ba51485e4"
+    },
+    {
+      "path": "source:server/dashboard-plan.test.mjs",
+      "sha256": "84526f83fa1c6ffbd6d94aca0fe2a018bd79a8a382cc0b4ec2a8777cfe3b9023"
+    },
+    {
+      "path": "source:server/dashboard.mjs",
+      "sha256": "8a556f46253e5de0cc35ba52f8f78ddb1c034212cd56123c08c73408ab782f71"
+    },
+    {
+      "path": "source:server/dashboard.test.mjs",
+      "sha256": "f4aa418aaf425d81e1f3075eea9d0244e9cf2e6c59bd4bd03314b5d7bee0c68e"
+    },
+    {
+      "path": "source:server/document-quality.mjs",
+      "sha256": "ba750d2c50f4cb2e4e22bd0e34e6ac9824cd74e2c9e97ef3d08e18a1322fbb9a"
+    },
+    {
+      "path": "source:server/document-quality.test.mjs",
+      "sha256": "922807aeddb107b2d5f5f8674c2b59fde1172cc2a3ce097279971a77b4eb534c"
+    },
+    {
+      "path": "source:server/document-reader.test.py",
+      "sha256": "adf9b96b586b7d420f1ba17d7db44a393979769c9750f7c98083c6337465b758"
+    },
+    {
+      "path": "source:server/document-requery.mjs",
+      "sha256": "98722f89aec9a4bf705b6c94fff39cb0cede088c37d044f1e4a7a08a07a19c3e"
+    },
+    {
+      "path": "source:server/document-requery.py",
+      "sha256": "5f58461ad459674df6020c6c2d7446c703c45a554ca1992f5c78309fe448a858"
+    },
+    {
+      "path": "source:server/document-sandbox-resources.mjs",
+      "sha256": "afcaab6e136bf566cd6dd693e0e624a22a29cad64029e5cd9408b8e911e650de"
+    },
+    {
+      "path": "source:server/document-sandbox-session.test.mjs",
+      "sha256": "0e244465fe64694c7eb3bdbda790ff3f9f7075bf4e3fc8af02c678b2d6793e65"
+    },
+    {
+      "path": "source:server/documents.mjs",
+      "sha256": "3c9d0bb1e513f010564f05be189fbf2a640b44ce198c004a8b5a4c834ef926b3"
+    },
+    {
+      "path": "source:server/documents.test.mjs",
+      "sha256": "c024f622995505a68e3741e04a439711f7ae71e569d8393a87689575bf1ad608"
+    },
+    {
+      "path": "source:server/field-extraction.mjs",
+      "sha256": "2c57d20ac2056d5948e0327d2f985a656fb216b32cebc7a1019efd2f25fc0cd1"
+    },
+    {
+      "path": "source:server/field-extraction.test.mjs",
+      "sha256": "7a56c0a1c893cf8fbad453a65aac8ad201694284838fc47af9d918d223b4f277"
+    },
+    {
+      "path": "source:server/golden-catalog.mjs",
+      "sha256": "d6964dd32397e5a5863df140d6d5492dfa2599a5fd6042b6faa9d1d36feaf323"
+    },
+    {
+      "path": "source:server/golden-catalog.test.mjs",
+      "sha256": "097b5d18178da4c361e27daffe7d4456643cc52edf62f65286641066e97493cb"
+    },
+    {
+      "path": "source:server/handoff-queue.test.mjs",
+      "sha256": "3464fb15e09679d2ab90a47e50f4e3ee71d990bbbc5582160246a7146f4fc585"
+    },
+    {
+      "path": "source:server/index.mjs",
+      "sha256": "a60463b2381a9ce3776579aa7efa401196530d90edfc0767a35bffa1dbb5e28a"
+    },
+    {
+      "path": "source:server/ledger.mjs",
+      "sha256": "a0e3e5183cbe281bbee70c1a33cae53e92ebde43a9897c24d3fce80d211f8eab"
+    },
+    {
+      "path": "source:server/ledger.test.mjs",
+      "sha256": "db2048b81137872ef0a572246641d80ea25ef0d342d32e81fdab8d37d44ac69e"
+    },
+    {
+      "path": "source:server/missing-result.mjs",
+      "sha256": "c95403093f7d1a51f8f847b0e8904b6012ec5d71522457cac28efdf116414423"
+    },
+    {
+      "path": "source:server/missing-result.test.mjs",
+      "sha256": "64a90f7e6c4284dbdf8c730d53caebd8368e7fb385be37aaa3e1beaebd388e4a"
+    },
+    {
+      "path": "source:server/review-state.test.mjs",
+      "sha256": "4e2313d936f5c089652116bc175e32ad91d7fb265466366d14d3bfb52fda5ecb"
+    },
+    {
+      "path": "source:server/review.classification.test.mjs",
+      "sha256": "22b09e96c28603b7536b19b0fb543133d095d0cdc801707ad901010401c55c11"
+    },
+    {
+      "path": "source:server/review.eligibility.test.mjs",
+      "sha256": "948eac062a269594916be30d509f9c80de8bb8161cd27d53a89e65df283c15a7"
+    },
+    {
+      "path": "source:server/review.mjs",
+      "sha256": "51715eabc9345480e9499400d714da5ce2bd2d4b7ce11eb0e1fcb05ba28bd8e5"
+    },
+    {
+      "path": "source:server/review.pipeline.test.mjs",
+      "sha256": "ef33e61668c74dbe61905d4328e98b8659053bc46e9b3d389f0455a2e65ef1b0"
+    },
+    {
+      "path": "source:server/review.test.mjs",
+      "sha256": "8bf0ffa38ebd3cb2338f854ddb512fa9c3785f7642baa2907f3900160591075f"
+    },
+    {
+      "path": "source:server/review.wizard.test.mjs",
+      "sha256": "cd64ccb74d9a3116709bcc9055dee8a88698ceb2fd20ba541f01f7f493086d8f"
+    },
+    {
+      "path": "source:server/sandbox-document-reader.py",
+      "sha256": "35a30c51117b391b6fe8817b6eaba6033a6255a2abbb720c1327a61b1dfc29c7"
+    },
+    {
+      "path": "source:server/sandbox-documents.mjs",
+      "sha256": "00466f1edd8ac897529920d5333588d684271580dcaa5a1f2a284976c7d43038"
+    },
+    {
+      "path": "source:server/sandbox-documents.test.mjs",
+      "sha256": "4c6561533e4fc326fbedd2a4aca7aa4b3dc2a0a35a9140e56182260591602ba0"
+    },
+    {
+      "path": "source:server/spreadsheet-xml-compatibility.test.mjs",
+      "sha256": "ee28fa5867c4c821e775db8d9a934c18138591e69cce59229b9f825b1d6d8bff"
+    },
+    {
+      "path": "source:server/table-records.mjs",
+      "sha256": "daaf7b66209cb582f6b2d64baca50ad948be5bba9899f4b218663ab25529555a"
+    },
+    {
+      "path": "source:server/table-records.test.mjs",
+      "sha256": "38dd7c1bcccecd592523e7bedb8e30634b0ee2fdca8bda1fa243ebbbb799d53b"
+    },
+    {
+      "path": "source:server/use-review-commands.test.mjs",
+      "sha256": "f5c2138b1729ce26615f9f33dcea38296cb469ce8af0273748245364a034a5da"
+    },
+    {
+      "path": "source:server/visual-quality-judge.mjs",
+      "sha256": "382c6838b542b6fd946a6008e312f794c140a5cf78e4186a50c9cf39f79fb69f"
+    },
+    {
+      "path": "source:server/visual-quality-judge.test.mjs",
+      "sha256": "a33a09f9bd5ab7e12bd12d8f670db0922a77ef272b72a48f94df1dbfb3a862da"
+    },
+    {
+      "path": "source:server/visual-transcription-alignment.test.mjs",
+      "sha256": "dd49c253bd4492795702d5b378d377e812471f47726e7b9e7a6a759d23839654"
+    },
+    {
+      "path": "source:server/visual-transcription.mjs",
+      "sha256": "954d5fb87589f7a99304b7c648370a96893911cada2841cf4ffc9101e3ad8d61"
+    },
+    {
+      "path": "source:server/visual-transcription.test.mjs",
+      "sha256": "3532c1c429b9c0954dda917633936f8a84838fbeadff6be98b878dbd38ca1695"
+    },
+    {
+      "path": "source:src/activity-observer.mjs",
+      "sha256": "176f53701067d015efe9e651b0a1778be29fcd93e7f2c043adf2a5824a67154b"
+    },
+    {
+      "path": "source:src/activity-scope.mjs",
+      "sha256": "e555aff13915231df34e257f98c727c5b0709704d1076317a9240cfdbdf8a6a8"
+    },
+    {
+      "path": "source:src/components/DashboardModal.tsx",
+      "sha256": "6eae57135c798d1d131a897c12929ad19740c50fe7fe9e8538126e1d7a580089"
+    },
+    {
+      "path": "source:src/components/DocumentPreview.tsx",
+      "sha256": "ff8dfa2d86c3074c08b1857d0aa042a056d8971099543828e7b1646c41f82a70"
+    },
+    {
+      "path": "source:src/components/FileReviewResults.tsx",
+      "sha256": "adfd0c1b4cc4ff2685e9f8dee8b13331049667147936d978cc26ff11c6b4310a"
+    },
+    {
+      "path": "source:src/components/SandboxActivityDock.tsx",
+      "sha256": "ff83b20939c49ddbd3078809bd8435938a4103bff89aff31e7f756076f211945"
+    },
+    {
+      "path": "source:src/components/SandboxWorkroomScene.tsx",
+      "sha256": "30299d19b5b0bf1f02d4b8801e6c20ca13e36c1dfe0ae6f11fe0e2d416f2c5d2"
+    },
+    {
+      "path": "source:src/components/criterion-preview-evidence.mjs",
+      "sha256": "594ca95fcdc391223a424ac87ab1032fbece0ee02fa7112b67dc65c37864dbc0"
+    },
+    {
+      "path": "source:src/components/dashboard-bridge.mjs",
+      "sha256": "b3c01d4552b7c78b7fc9c63af3b0321aac40016ba33aaf919cb0380629a129f9"
+    },
+    {
+      "path": "source:src/components/dashboard-file-scope.mjs",
+      "sha256": "458fd6ebc635c5e211e06ee523d25db19bd9c4ddc08733ed31ad6d68a9faab2c"
+    },
+    {
+      "path": "source:src/components/file-review-model.mjs",
+      "sha256": "2caa91c4ff649c5d5139245297bbaf82b201d72913c342b65ff4e97ab691b271"
+    },
+    {
+      "path": "source:src/components/item-source-highlights.mjs",
+      "sha256": "339afe338f4d2277b2e266b0d938e1c67f07e1829e386d5f683fef80264fd63a"
+    },
+    {
+      "path": "source:src/components/item-source-highlights.test.mjs",
+      "sha256": "111e1db5462f758f69061dca4cba82cf9f21ca8afa941ef09b85d53356b417bc"
+    },
+    {
+      "path": "source:src/components/source-highlights.mjs",
+      "sha256": "767b13c8d40e618e2dd703f602ddc3963f75776ba367323ac34165bb3bd57859"
+    },
+    {
+      "path": "source:src/handoff-queue.mjs",
+      "sha256": "c34e812cf26d168128bf99f33aba0ef6b90bf9673cd490e8f03d3f72396ffeb6"
+    },
+    {
+      "path": "source:src/review-state.ts",
+      "sha256": "003b7d8b623d9fa0b2b75cf45ebb4467f473b390c08e983e21f04eab9cf36c33"
+    },
+    {
+      "path": "source:src/useReview.ts",
+      "sha256": "ccd5bde56816b45d667a12351be854162702159781da18929075995fd831a518"
+    },
+    {
+      "path": "specs/01-state-api.md",
+      "sha256": "e17e736dc6725b61bdaa397564fe2a848add2438d097262c1edfdb4b18b54024"
+    },
+    {
+      "path": "specs/02-backend-pipeline.md",
+      "sha256": "6d718ab72e0b435cd417eb5e779ee97579f2472bb75bc87d0cc46d7a78fa11f5"
+    },
+    {
+      "path": "specs/03-algorithms.md",
+      "sha256": "30ff7f4c4b396182e2757ed2972067e6a1e4a5d07d2dc49c904da2b7c1c9d389"
+    },
+    {
+      "path": "specs/04-ui-motion.md",
+      "sha256": "739e58c015ade3318558b23d5cb4df23a3f0770fabc74e9b38e3e0466c2131d8"
+    },
+    {
+      "path": "specs/05-dashboard-exports.md",
+      "sha256": "167b8fc7110de3a87bc8af7513fcdc980b60542fe329d52b3091e90226c45743"
+    },
+    {
+      "path": "specs/05a-ledger-export.md",
+      "sha256": "7297f0024bc878c89422636202fa59f870363622926388372b800078990a4f80"
+    },
+    {
+      "path": "specs/06-verification.md",
+      "sha256": "c139c30d7cec0c23af1b0592af05e61fea842a7b8bcbf1c2208595e9164f2889"
+    },
+    {
+      "path": "specs/07-data-algorithms-concurrency.md",
+      "sha256": "c53218ec4b1d57bfa179442805762e8dd2dda300bd0df4623e39b61f74731678"
+    },
+    {
+      "path": "ui/dashboard-interaction-cases.json",
+      "sha256": "3e0c645495dfbc3bbabf5e7da4f417a28fce9e1c0003709cc3b8f958ad8c6ac4"
+    },
+    {
+      "path": "ui/detail-controls.md",
+      "sha256": "e1214fcdd2eacf3bf2b60e42192159befe9574f72f634a6b3dd162199a3e53b4"
+    },
+    {
+      "path": "ui/interaction-contract.md",
+      "sha256": "d228621fadc5fb785387d31226bac07ef50583710325dab5664aaa330db4f9db"
+    },
+    {
+      "path": "ui/interaction-fixtures.json",
+      "sha256": "175dcf310c7e60da833fdcc7c4fdf2fa84b0fcbb2945a969c5d840f98d8de358"
+    },
+    {
+      "path": "ui/library-effects.csv",
+      "sha256": "25326c447363c184d174cc3d9c48e0aaf79cff3b7d7677d17f0cf821b5edb784"
+    },
+    {
+      "path": "validation/README.md",
+      "sha256": "afd95b5c217121cf0b1913f879fb1a1a00637db7ad8b97d864f1ded8181b8578"
+    },
+    {
+      "path": "validation/dashboard-dom-validator.cjs",
+      "sha256": "710a07958a8ef34fb527b07dc786d292fd8a4d332ba6c065ff2a9a4f35830c60"
+    },
+    {
+      "path": "validation/run-gate.mjs",
+      "sha256": "5f352f94c4542eed3438360773f37978576f31cefcb4e9ee819795aae3dc97db"
+    }
+  ]
+}

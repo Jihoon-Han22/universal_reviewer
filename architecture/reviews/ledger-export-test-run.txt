@@ -1,0 +1,38 @@
+검토대장/일반 내보내기 기준 구현 검증 기록
+실행일: 2026-09-21 Asia/Seoul
+기록 시각: 2026-09-21T01:49:29.3515918+09:00
+Node: v24.13.1
+작업 디렉터리: C:/Users/User/Desktop/hackathon3
+명령: node --test server/ledger.test.mjs server/app.test.mjs
+exit code: 0
+도구 보고 wall time: 0.9530504 seconds
+
+실제 출력 (경과시간은 실행마다 달라질 수 있음):
+✔ upload, review, evidence fetch and real CSV/XLSX exports work over HTTP (119.7388ms)
+✔ SSE replay respects after sequence and health returns no secret keys (20.485ms)
+✔ reject unsupported uploads and outside origins without starting work (6.1119ms)
+✔ all six golden ledgers locate columns and refuse ambiguous or protected writes (49.2952ms)
+✔ normal copies change only selected values; all other cell models and ZIP entries remain intact (85.026ms)
+✔ mapping tampering and a stale source digest cannot redirect a write (19.1797ms)
+✔ formula and merged target cells, and aggregate rows are blocked (10.3672ms)
+✔ exact key matching never substitutes a nearby certificate number (3.5657ms)
+✔ forged ZIP entry counts and inflated-size declarations are rejected before workbook parsing (0.5533ms)
+✔ a later table uses its own column mapping and cannot overwrite adjacent numeric data (21.8623ms)
+✔ non-anchor cells inside an array formula range are never writable or usable as keys (5.3234ms)
+✔ existing target styles and escaped formula-like note text survive copying (10.2969ms)
+✔ proposal aggregates only the selected document and keeps incomplete results visible (0.5889ms)
+✔ router requires explicit confirmation and derives export verdict from server results (60.2581ms)
+✔ router awaits sandbox analysis before mapping and export, and analysis failure never writes (22.107ms)
+✔ ledger analysis forwards its own activity context and HTTP cancellation without leaking other work (13.4887ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 707.4116
+
+범위: 원래 기준 구현의 독립 Node 테스트 16개. 모델/샌드박스 주입은 테스트 double을 사용하며 실제 API 키가 필요하지 않음. golden ledger 6개와 테스트 내 변형 검증 포함.
+미실행: 새 빈 프로젝트 앱 재구현, 실제 Gemini/E2B 통합, 운영 서버 변경, 브라우저 스크린샷/키보드 QA, OS 다운로드 파일 저장 확인, 전체 golden/ralph-golden-v3 판정 재실행.
+이 기록은 새로 재구현한 앱에 대해 검증 통과를 주장하지 않으며 UI 시각 검증 증거도 아니다.

@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "original": 235,
+  "current": 243,
+  "removed": [],
+  "modified": [
+    {
+      "id": "CORE-04-C04",
+      "before": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한과 잘림을 partial로 기록하고 원본 전체 완료로 보고하지 않는가?",
+      "after": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한을 명시하고 형식·실패 단계별 partial/unsupported/hard error 및 coverage 표시를 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-06-C06",
+      "before": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?",
+      "after": "현재 VLM 30쪽·180초 제한과 reader의 별도 한도, 초과 시 coverage/partial·fallback을 재현하고 OPTIONAL_FUTURE의 575쪽 전수·geometry 확장과 구분하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-09-C04",
+      "before": "250기준·8단계·ID/문구 길이 제한, 잘못된 비교식, 충돌 source 및 미검증 계층은 추정하지 않고 확인 대상으로 유지하는가?",
+      "after": "250기준·8단계·ID/문구 길이 한도를 명시하고 잘못된 비교식·충돌 source·미검증 계층의 generic validator/discovery/approval 경로별 처리와 확인 상태가 강제되지 않는 현재 한계를 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-11-C05",
+      "before": "CSV/XLSX의 빈값 있는 record도 보존하고 모든 적용 기준을 검토하며 명시적 out-of-scope 제외와 미검토행을 구별하는가?",
+      "after": "CSV/XLSX의 빈값 record 보존, 모든 적용 기준을 요청하는 model 지시, out-of-scope 제외·missingRows·reviewCoverage를 구별하며 현재 행 coverage가 모든 행×기준의 검토를 증명하지 않는 한계를 명시하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-12-C02",
+      "before": "전체 명확한 읽기+필수 적용 항목+실제 누락 증거만 fail, 판독불가·ND·잘림·formula cache 없음은 review, 선택 항목 누락은 결과에서 제외하는가?",
+      "after": "필수 항목의 검증된 누락 fail predicate·선택 항목 누락 제외를 명시하고 판독불가/ND/잘림/formula cache 없음의 raw uncertainty와 비교식 유무에 따른 현재 판정·누락 증거 여부를 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-12-X01",
+      "before": "일반finding evidence의 permissive regex/미검증원문과 조건·분류·필수누락의 실제검증을 구별하고 invalid좌표·가짜quote numericpass baseline 및 강화REQUIRED_REBUILD를 명시하는가?",
+      "after": "일반 finding evidence의 permissive regex/미검증 원문과 조건·분류·필수누락의 실제 검증을 구별하고 invalid좌표·가짜quote numeric pass baseline 및 OPTIONAL_FUTURE 강화를 명시하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-13-C04",
+      "before": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 coverage 미완료를 완료로 숨기지 않는가?",
+      "after": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 run/target 집계의 정확한 coverage 검사 필드·누락값 처리와 직접 검사하지 않는 현재 한계를 구분하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-14-C03",
+      "before": "누락 판정에는 대상 원문상 항목 좌표를 발명하지 않고 contextual evidence를 설명에만 유지하며 기준 클릭은 실제 label/rule/unit cell을 포함하는가?",
+      "after": "현재 missing 전처리의 적용 조건과 contextual evidence 보호 범위를 명시하고 dashboard projection 필드 손실 예외 및 기준 클릭의 실제 label/rule/unit cell 보충 경계를 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-14-C04",
+      "before": "표 헤더·시료명·다른 행의 값만 일치하거나 quote/location이 불일치하면 엉뚱한 하이라이트 대신 위치 미확인을 표시하는가?",
+      "after": "표 좌표·quote와 PDF witness의 현재 검증/미검증 경계, clip·fallback 및 누락 필드 보호의 한계를 명시하고 OPTIONAL_FUTURE 차단 규칙과 구분하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-14-C06",
+      "before": "scan/image/회전/2-up geometry가 text-layer-only viewer와 G07 전필드overlay 사이에서 어떤 DTO·좌표·tolerance·fallback/필수확장으로 구현되는가?",
+      "after": "scan/image/회전/2-up의 현재 text-layer-only viewer와 bbox 없는 DTO·페이지/근거 chip fallback을 재현하고 OPTIONAL_FUTURE geometry 확장과 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-17-C02",
+      "before": "색상·light/dark·doughnut/pie/bar/polarArea·emphasis·크기·범례·motion·corners·fileVisualization·layout을 조합하며 부분 수정 시 나머지 취향을 유지하는가?",
+      "after": "14개 디자인 필드의 정규식 선호 후처리와 baseDesign 기본값/전달을 재현하며 미요청 필드 보존과 자연어 scope 해석의 현재 한계를 명시하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-17-C03",
+      "before": "관찰 기준선 최대3회 plan 호출·같은 sandbox/설치1회와 REQUIRED_REBUILD planner/judge/repair 합계3회 예산·fallback·취소·정리를 분리하여 결정하는가?",
+      "after": "현재 최대 3회 plan 호출·같은 sandbox/설치 1회·fallback·취소·정리를 재현하고 OPTIONAL_FUTURE planner/judge/repair와 구별하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "CORE-17-C05",
+      "before": "초록+라이트+큰 도넛, 유지하며 파이로 수정, 직접 light 단어 없는 밝은 보고서 요청의 계획값/렌더 결과를 독립 검증할 수 있는가?",
+      "after": "복합/부분 수정/비문자적 표현에 대한 현재 observed 계획값과 렌더 결과를 OPTIONAL_FUTURE desired 값과 구분해 독립 검증할 수 있는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "UI-02-C09",
+      "before": "I9의 모든 추가 acceptance 후보가 baseline/필수개선/선택으로 개별 결정되고 gate와 목표 fixture에 연결되는가?",
+      "after": "I9의 모든 추가 acceptance 후보가 CURRENT_REPRODUCTION 기준선과 OPTIONAL_FUTURE 개선으로 개별 결정되고, 서로 다른 기대값·gate 추적·목표 fixture를 혼합하지 않는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "UI-07-C07",
+      "before": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 검토 진행 중으로 남는 observed baseline과 개선 요구를 명확히 구분하는가?",
+      "after": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 진행 중으로 남는 observed baseline과 OPTIONAL_FUTURE ARIA-TERMINAL의 다른 문구를 정확히 구분하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "UI-13-C05",
+      "before": "저장 전 취소의 서버 변경 없음과 저장 중 취소의 폼 닫힘·이미 전송된 resolve 지속, 실패·연속 클릭·race 상태를 관찰 기준선과 필수 정책으로 구분하는가?",
+      "after": "저장 전 취소의 서버 변경 없음과 저장 중 취소의 폼 닫힘·이미 전송된 resolve 지속, 실패·연속 클릭·race 상태를 관찰 기준선과 선택 개선으로 구분하는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    },
+    {
+      "id": "UI-14-C05",
+      "before": "항목명/파일명 말줄임은 전체 tooltip/접근성 이름을 보존하고 tooltip가 viewport에서 잘리지 않으며 zero-data를 가짜1건으로 집계하지 않는가?",
+      "after": "항목명/파일명 말줄임의 tooltip·접근성 이름, 현재 tooltip의 280px/12px 위치·세로 넘침·Escape 미지원과 OPTIONAL_FUTURE 개선 경계, zero-data의 중립 ring과 실제 0건 집계가 모두 정확히 규정되는가?",
+      "reason": "사용자의 현재 프로젝트 그대로 목표를 반영; 기존 기능 검토는 보존하고 미래 강화 요구와 분리"
+    }
+  ],
+  "added": [
+    {
+      "id": "CORE-04-C06",
+      "category": "current-reproduction",
+      "question": "현재 text reader의 1,500,000자 제한에서 정확히 도달/초과의 ready·partial 분기와 Python 문자 수 단위를 구별하고 경계 입력으로 확인할 수 있는가?",
+      "requiredEvidence": "specs/02-backend-pipeline.md §2.3 및 source-serialization-cases.json readerTextBoundaryCases: ASCII 1,499,999/1,500,000/1,500,001자 결과",
+      "moduleId": "CORE-04"
+    },
+    {
+      "id": "CORE-05-C06",
+      "category": "current-reproduction",
+      "question": "profileSource의 형식별 출력·metadata key 순서·JSON stringify·빈값 생략·개행을 정확히 재현하고 직렬화 후 150,000/1,200,000 UTF-16 code unit 경계를 계산할 수 있는가?",
+      "requiredEvidence": "specs/02-backend-pipeline.md §2.4.1–2.4.2 및 source-serialization-cases.json: exact 문자열과 경계 recipe/길이/hash",
+      "moduleId": "CORE-05"
+    },
+    {
+      "id": "CORE-21-C12",
+      "category": "current-reproduction",
+      "question": "현재 프로젝트 재현 profile이 모든 진입점·fixture·gate에서 일치하며 과거 강화 기능을 임의로 추가하지 않는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21"
+    },
+    {
+      "id": "CORE-21-C13",
+      "category": "current-reproduction",
+      "question": "동일성 대상·허용 차이·고정 provider 응답과 실제 provider의 비결정성·현재 처리 한계를 원본 없이 결정할 수 있는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21"
+    },
+    {
+      "id": "CORE-21-C14",
+      "category": "current-reproduction",
+      "question": "이번 점수의 고정 입력·전체 질문·독립 의견·보고서 해시를 재계산하며 제품 완료와 설계 완료를 혼동하지 않는가?",
+      "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견",
+      "moduleId": "CORE-21"
+    },
+    {
+      "id": "UI-01-C08",
+      "category": "current-reproduction-audit",
+      "question": "App 탭·상단 원문 preview가 pane을 unmount하는 조건, 기준 확인 재수정의 hidden 보존, local filter/scroll 초기화와 App 선택 유지, 내보내기 메뉴의 외부 클릭·Escape 미지원이 명확한가?",
+      "requiredEvidence": "interaction-contract I1.1, APP-PANE-LIFECYCLE의 mount/상태/메뉴 이벤트 기대값; 같은 mount의 목록복귀와 다른 탭 복귀를 구분.",
+      "moduleId": "UI-01"
+    },
+    {
+      "id": "UI-04-C08",
+      "category": "current-reproduction-audit",
+      "question": "문서 삭제의 요청 중 잠금·epoch·AbortSignal·dedupe 부재, 시작 시 preview closure로 인한 늦은 응답 동작과 파일 input value 초기화·같은 파일 재업로드의 중복 정책을 정확히 명시하는가?",
+      "requiredEvidence": "interaction-contract I1, INPUT-DELETE-RACE의 A 삭제 중 B 원문 열기/늦은 성공·실패 및 파일 재선택 입력·기대값.",
+      "moduleId": "UI-04"
+    },
+    {
+      "id": "UI-06-C07",
+      "category": "current-reproduction",
+      "question": "inventory alias 선택·표시값 변환·중복 key 덮어쓰기·Map 순서·신규 구조 append·page wrapper 병합을 원본 없이 정확한 그룹 출력으로 결정할 수 있는가?",
+      "requiredEvidence": "ui/detail-controls.md D3.2.1 및 document-analysis-structure-cases.json: 전체 입력/출력 8사례",
+      "moduleId": "UI-06"
+    }
+  ]
+}

@@ -1,0 +1,4109 @@
+{
+  "schemaVersion": 1,
+  "round": "round-01",
+  "reviewerId": "/root/clarity",
+  "reviewerRole": "independent source-blind document clarity auditor",
+  "generatedAt": "2026-09-20T17:53:11.803Z",
+  "inputDigestSha256": "c445a06fb641720caf13e63e2b996fc47c933e13df0fc58a0802f1a5269d8eb1",
+  "status": "INITIAL_REVIEW_COMPLETE",
+  "sourceAccuracy": {
+    "status": "NOT_ASSESSED",
+    "reason": "source-blind 역할. 원본 소스/제품/외부서비스 정확성을 PASS로 계산하지 않음."
+  },
+  "methodology": {
+    "scope": "architecture 규범 문서·계약·분해. 기존203질문 전부와 추가5질문.",
+    "sourceBlind": true,
+    "sourceDirectoriesRead": [],
+    "peerIndependentReportsRead": false,
+    "historicalSearchDisclosure": "architecture 전체 rg의 exclusion glob 실패로 과거 main-session health 요약 일부가 검색 출력에 노출되었다. 부모에게 즉시 알렸으며 현재 independent-audit 다른 평가자 결과는 읽지 않았다. 과거 점수/판정은 재사용하지 않고 규범 문장으로 독립 산출했다.",
+    "baselinePolicy": "관찰 동작과 명시 REQUIRED_REBUILD를 구분하며 실제 제품시험 성공과 문서 clarity를 혼동하지 않는다.",
+    "runtimeValidation": "NOT_RUN",
+    "providerValidation": "NOT_RUN",
+    "browserVisualValidation": "NOT_RUN",
+    "machineArtifacts": "큰 카탈로그는 구조/관련항목과 소유명세를 대조. 모든 JSX/style node/PNG의 시각 또는 실행검증은 주장하지 않음.",
+    "formula": "clarity=PASS/전체*100; ambiguity=100-clarity. FAIL/UNVERIFIED/누락/제외를 PASS로 치환하지 않음.",
+    "stepDenominators": "해당 stepIds 모듈의 모든 질문. 다중단계 질문은 각 단계에 포함하지만 전체분모에서는1회만 계산."
+  },
+  "readFiles": [
+    {
+      "path": "architecture/README.md",
+      "sha256": "e9963016a29f8e4f3edfe33a55a5ca89bbf941687eef98441cc7b77c5a3ee837",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/DECISIONS.md",
+      "sha256": "29b743be0d89e94fd4fc8ea9b3b176e73f4616bbbee342d9324f8a68b7c82049",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/PLAN.md",
+      "sha256": "e3b5fbd180bc521caddd8177c43067e0e8ecd68e2207b8b8b98c3cce110ae1e9",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/GOAL.md",
+      "sha256": "42362e97f293f215b658bfe4d7c57545aaa4325236044d83e41e4322685ece58",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/environment/versions.json",
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/decomposition/README.md",
+      "sha256": "bedf9bf5a15f7c7740a150f92f7c490bd7b68835ea2da009c493deb29337a710",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/decomposition/core-modules.json",
+      "sha256": "cf51606f635ef5acb090c59f46fcbae350d9b12697e2bbad8e9c372f6969162e",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/decomposition/ui-modules.json",
+      "sha256": "9a0306aeaf8cc3c8d272e0ab69db893a06d8c9ef42e460be6e6b13e3ac8dffab",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/decomposition/core-tree.md",
+      "sha256": "ae868a56e6c5e830fa6a3502f9032d65a206502250c3add433a0c786af7258d2",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/decomposition/ui-tree.md",
+      "sha256": "23d751c07ace892a3ff09c0cf37b20ae2b83497db04eb38a07d0dfa63fa83261",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/01-state-api.md",
+      "sha256": "e17e736dc6725b61bdaa397564fe2a848add2438d097262c1edfdb4b18b54024",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/02-backend-pipeline.md",
+      "sha256": "6d718ab72e0b435cd417eb5e779ee97579f2472bb75bc87d0cc46d7a78fa11f5",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/03-algorithms.md",
+      "sha256": "30ff7f4c4b396182e2757ed2972067e6a1e4a5d07d2dc49c904da2b7c1c9d389",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/04-ui-motion.md",
+      "sha256": "739e58c015ade3318558b23d5cb4df23a3f0770fabc74e9b38e3e0466c2131d8",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/05-dashboard-exports.md",
+      "sha256": "167b8fc7110de3a87bc8af7513fcdc980b60542fe329d52b3091e90226c45743",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/05a-ledger-export.md",
+      "sha256": "7297f0024bc878c89422636202fa59f870363622926388372b800078990a4f80",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/06-verification.md",
+      "sha256": "c139c30d7cec0c23af1b0592af05e61fea842a7b8bcbf1c2208595e9164f2889",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/specs/07-data-algorithms-concurrency.md",
+      "sha256": "c53218ec4b1d57bfa179442805762e8dd2dda300bd0df4623e39b61f74731678",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/ui/VISUAL-CONTRACT.md",
+      "sha256": "24df36ea02ed3728f7b06b24d7c3f9cf6ce1d4ec6f03f2672d0fa4eb26841f6e",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/ui/interaction-contract.md",
+      "sha256": "d228621fadc5fb785387d31226bac07ef50583710325dab5664aaa330db4f9db",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/ui/detail-controls.md",
+      "sha256": "e1214fcdd2eacf3bf2b60e42192159befe9574f72f634a6b3dd162199a3e53b4",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/ui/reference/README.md",
+      "sha256": "bed158bb1bdeb74e8674ffc0564d0eaf3522f314f9a6c4b75f04f3f50d8bb8a5",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/validation/README.md",
+      "sha256": "afd95b5c217121cf0b1913f879fb1a1a00637db7ad8b97d864f1ded8181b8578",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/prompts/pipeline-prompts.md",
+      "sha256": "3dfae0bb6d4c0369814bd22ff9121ed5bfe45ea2be73f70c232d71921d5f03b1",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/prompts/dashboard-system.md",
+      "sha256": "9688c6e90d3923c3260a2f889d6934322e372e7fddc9f4312e4e8a927f21f091",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/prompts/dashboard-loop.md",
+      "sha256": "056426a15df4ee452661a2be9681b50268afc8c1276c25747390162a3a26c97e",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/contracts/types.ts",
+      "sha256": "124e8b34fa38f2b191d9ca03a3e58f9b3b3819740f5c22ded64a022e77c1f32c",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/contracts/internal-pipeline.ts",
+      "sha256": "75785d4c71661d35235b321ad9794290cc67da67d57392a117c269dc33e7c70b",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/contracts/dashboard-design.schema.json",
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/contracts/dashboard-design.default.json",
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997",
+      "mode": "NORMATIVE_TEXT_OR_FULL_CONTRACT"
+    },
+    {
+      "path": "architecture/ui/component-style-map.json",
+      "sha256": "22049ab566dd9d3fa9c340fd190d2662915be91184fb46632fca725980a25ce8",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/ui/style-catalog.json",
+      "sha256": "47e76196ad50d2a2f9e42b09e7842b98f77f46850af917ad2869bb76ad1a3527",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/ui/tokens.json",
+      "sha256": "c55ff8220c494c81c553de4dddca55b628e34e51d1c7c12dbc78c65aef35cf37",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/ui/motion-catalog.json",
+      "sha256": "81f45c1ae0ef402d7944ca4acc2699da1216c333d7f06a2c856ca504489475e6",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/ui/interaction-fixtures.json",
+      "sha256": "175dcf310c7e60da833fdcc7c4fdf2fa84b0fcbb2945a969c5d840f98d8de358",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/ui/dashboard-interaction-cases.json",
+      "sha256": "3e0c645495dfbc3bbabf5e7da4f417a28fce9e1c0003709cc3b8f958ad8c6ac4",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/contracts/dashboard-customization-cases.json",
+      "sha256": "e96442f6086dbac69ec88248888645d14834ac5d237ccdf34fd8ea8aeb3fcdba",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/contracts/algorithm-edge-cases.json",
+      "sha256": "9eeefb895810cd4e7fb30c2c7850a5115d293019af968805b1465b4391c396db",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/contracts/document-negative-cases.json",
+      "sha256": "215376d5f4af62e4d7d6a4aa476f841e8c013ee09d54fe34c3fe8397ef1c6f4b",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/contracts/efficiency-inventory.json",
+      "sha256": "f459041735071276a208e4cf18be29711b251239c4514fa9b844dd248d2c1e60",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/contracts/pipeline-model-schemas.json",
+      "sha256": "476e013b88764213945aa5d6b6ad8eecd3b125f3ee7b820628a1f3b9b635cfa6",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/prompts/pipeline-prompt-catalog.json",
+      "sha256": "811353999c732fd68706ea1ae051f0c41a68ae838322e298e58f03c4d4763898",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    },
+    {
+      "path": "architecture/prompts/criteria-algorithms.catalog.json",
+      "sha256": "c1b5354f702b02106d2ddbc1d192668f55d041f7980cbb7b7a46cd5cccebfc01",
+      "mode": "STRUCTURE_AND_RELEVANT_ENTRIES"
+    }
+  ],
+  "originalPopulationScore": {
+    "denominator": 203,
+    "pass": 201,
+    "fail": 2,
+    "unverified": 0,
+    "clarityPercent": 99.014778,
+    "ambiguityPercent": 0.985222,
+    "unresolvedQuestions": [
+      "CORE-17-C03",
+      "UI-13-C05"
+    ]
+  },
+  "expandedPopulationScore": {
+    "denominator": 208,
+    "pass": 201,
+    "fail": 7,
+    "unverified": 0,
+    "clarityPercent": 96.634615,
+    "ambiguityPercent": 3.365385,
+    "unresolvedQuestions": [
+      "CORE-17-C03",
+      "UI-13-C05",
+      "UI-01-C07",
+      "CORE-16-C06",
+      "UI-02-C07",
+      "CORE-06-C06",
+      "CORE-14-C06"
+    ]
+  },
+  "moduleScores": [
+    {
+      "moduleId": "CORE-01",
+      "name": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-02",
+      "name": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-03",
+      "name": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-04",
+      "name": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-05",
+      "name": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-06",
+      "name": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "denominator": 6,
+      "pass": 5,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 83.333333,
+      "ambiguityPercent": 16.666667,
+      "unresolvedQuestions": [
+        "CORE-06-C06"
+      ]
+    },
+    {
+      "moduleId": "CORE-07",
+      "name": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-08",
+      "name": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-09",
+      "name": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-10",
+      "name": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-11",
+      "name": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-12",
+      "name": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-13",
+      "name": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-14",
+      "name": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 5,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 83.333333,
+      "ambiguityPercent": 16.666667,
+      "unresolvedQuestions": [
+        "CORE-14-C06"
+      ]
+    },
+    {
+      "moduleId": "CORE-15",
+      "name": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-16",
+      "name": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 5,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 83.333333,
+      "ambiguityPercent": 16.666667,
+      "unresolvedQuestions": [
+        "CORE-16-C06"
+      ]
+    },
+    {
+      "moduleId": "CORE-17",
+      "name": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 4,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 80,
+      "ambiguityPercent": 20,
+      "unresolvedQuestions": [
+        "CORE-17-C03"
+      ]
+    },
+    {
+      "moduleId": "CORE-18",
+      "name": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "CORE-19",
+      "name": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 5,
+      "pass": 5,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-01",
+      "name": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 7,
+      "pass": 6,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 85.714286,
+      "ambiguityPercent": 14.285714,
+      "unresolvedQuestions": [
+        "UI-01-C07"
+      ]
+    },
+    {
+      "moduleId": "UI-02",
+      "name": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 7,
+      "pass": 6,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 85.714286,
+      "ambiguityPercent": 14.285714,
+      "unresolvedQuestions": [
+        "UI-02-C07"
+      ]
+    },
+    {
+      "moduleId": "UI-03",
+      "name": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-04",
+      "name": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-05",
+      "name": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-06",
+      "name": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-07",
+      "name": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-08",
+      "name": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-09",
+      "name": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-10",
+      "name": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-11",
+      "name": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-12",
+      "name": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-13",
+      "name": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 5,
+      "fail": 1,
+      "unverified": 0,
+      "clarityPercent": 83.333333,
+      "ambiguityPercent": 16.666667,
+      "unresolvedQuestions": [
+        "UI-13-C05"
+      ]
+    },
+    {
+      "moduleId": "UI-14",
+      "name": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-15",
+      "name": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-16",
+      "name": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-17",
+      "name": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    },
+    {
+      "moduleId": "UI-18",
+      "name": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "denominator": 6,
+      "pass": 6,
+      "fail": 0,
+      "unverified": 0,
+      "clarityPercent": 100,
+      "ambiguityPercent": 0,
+      "unresolvedQuestions": []
+    }
+  ],
+  "stepScores": [
+    {
+      "stepId": "STEP-00",
+      "denominator": 31,
+      "pass": 29,
+      "fail": 2,
+      "unverified": 0,
+      "clarityPercent": 93.548387,
+      "ambiguityPercent": 6.451613,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "UI-02-C07"
+      ]
+    },
+    {
+      "stepId": "STEP-01",
+      "denominator": 47,
+      "pass": 44,
+      "fail": 3,
+      "unverified": 0,
+      "clarityPercent": 93.617021,
+      "ambiguityPercent": 6.382979,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "CORE-16-C06",
+        "UI-02-C07"
+      ]
+    },
+    {
+      "stepId": "STEP-02",
+      "denominator": 88,
+      "pass": 85,
+      "fail": 3,
+      "unverified": 0,
+      "clarityPercent": 96.590909,
+      "ambiguityPercent": 3.409091,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "UI-02-C07",
+        "CORE-06-C06"
+      ]
+    },
+    {
+      "stepId": "STEP-03",
+      "denominator": 67,
+      "pass": 64,
+      "fail": 3,
+      "unverified": 0,
+      "clarityPercent": 95.522388,
+      "ambiguityPercent": 4.477612,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "UI-02-C07",
+        "CORE-14-C06"
+      ]
+    },
+    {
+      "stepId": "STEP-04",
+      "denominator": 57,
+      "pass": 54,
+      "fail": 3,
+      "unverified": 0,
+      "clarityPercent": 94.736842,
+      "ambiguityPercent": 5.263158,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "CORE-16-C06",
+        "UI-02-C07"
+      ]
+    },
+    {
+      "stepId": "STEP-05",
+      "denominator": 106,
+      "pass": 103,
+      "fail": 3,
+      "unverified": 0,
+      "clarityPercent": 97.169811,
+      "ambiguityPercent": 2.830189,
+      "unresolvedQuestions": [
+        "UI-01-C07",
+        "UI-02-C07",
+        "CORE-06-C06"
+      ]
+    },
+    {
+      "stepId": "STEP-06",
+      "denominator": 147,
+      "pass": 141,
+      "fail": 6,
+      "unverified": 0,
+      "clarityPercent": 95.918367,
+      "ambiguityPercent": 4.081633,
+      "unresolvedQuestions": [
+        "CORE-17-C03",
+        "UI-13-C05",
+        "UI-01-C07",
+        "CORE-16-C06",
+        "UI-02-C07",
+        "CORE-14-C06"
+      ]
+    }
+  ],
+  "questionResults": [
+    {
+      "id": "CORE-01-C01",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/environment/versions.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "환경파일 우선순위·역할별 model 기본값·공개health 비밀제외의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-01-C02",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/environment/versions.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "adapter contents/system/schema/role 입출력과 오류분류의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-01-C03",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/environment/versions.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "전역슬롯·abort/timeout·callback/finally/kill 책임의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-01-C04",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/environment/versions.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "단계별 수치cap·adapter 일반byte cap부재·parse/kill실패의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-01-C05",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/environment/versions.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "fake client 설정/응답/정리의 재현명령의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-02-C01",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "route method/body/status/error·private/public문서의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-02-C02",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "RAM수명·restart유실·404의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-02-C03",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "업로드rollback·사용중문서DELETE409의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-02-C04",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "local-origin·JSON2MiB·multipart/400/413의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-02-C05",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "포트·dist·signal종료책임/관측범위의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-03-C01",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "allowlist·role·파일명·원본bytes/digest의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-03-C02",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "복제본만XLSX보정·hidden/merged/cache의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-03-C03",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "deferred preview shape·각cap의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-03-C04",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "20MiB/100문서/250MiB예약반환·ZIP20000/100MiB의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-03-C05",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "drawing/cache/PDF보조실패경고·전체분석구분의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-04-C01",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "ReaderProfile/반환·sha256/kind의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-04-C02",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "retainedsandbox·TaskPool1·source/parser1회의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-04-C03",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "300초/reader150초·명령/kill소유자의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-04-C04",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "시트/셀/문자/PDF/image/pixel cap·partial/unsupported의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-04-C05",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "고정reader경계·DN음성사례의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-05-C01",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "typed selector문법·범위·digest의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-05-C02",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "chunk/context cap·retained영역검증의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-05-C03",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "3round·전체교체·재검증·같은세션의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-05-C04",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "no-progress/limited/실패·정성단위공백예외의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-05-C05",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "셀/시트/Word/text변형·누락사례의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-06-C01",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "page/block/table/parent/coverage·물리page의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-06-C02",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "실제원본독립judge·blank/inventory의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-06-C03",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "30/3/3/180초/60초·Map병합교체의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-06-C04",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "sticky uncertainty·미확인coverage의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-06-C05",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "cross-document/invented/blank/nested 음성fixture의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-07-C01",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "eligibility/assessment/제외source의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-07-C02",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "완전읽기/sourcequote 만족한not_criteria만제외의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-07-C03",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "invalid1repair·uncertain·재진입거부의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-07-C04",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "filename/role/summary금지·quote boundary의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-07-C05",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "정성/법무/업무/혼합/비규범/injection의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-08-C01",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "inventory/discovery/region/disposition/citation의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-08-C02",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "static보완·sparse/전치/분리/병합의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-08-C03",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "구조와discovery별도세션·내부2round의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-08-C04",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "inventory/상세/추가범위/criteria cap·미확인의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-08-C05",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "명칭/배치/hidden/유형/비규범변형의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-09-C01",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "의미필드provenance·빈categoryPath의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-09-C02",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "notes열제외·조건열보존의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-09-C03",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "공통/세부/시료/목차·dedup/대체/폐기의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-09-C04",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "250/8단계/길이·구조/grounding구분의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-09-C05",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/prompts/criteria-algorithms.catalog.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "자재명비의존계층/무단위/다른조건의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-10-C01",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "confirm/revise DTO·version·approved의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-10-C02",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "editable/provenance/userOverride의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-10-C03",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "revision상태/버전/실패복귀/confirm의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-10-C04",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "400/409·20회/12000자·late gate의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-10-C05",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "target승인gate·deepfreeze·이력의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-11-C01",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "visualfacts300/review250별도schema의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-11-C02",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "기준값복사금지·실제facts/식별번호/표기의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-11-C03",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "분석→facts→매칭→정규화→decided의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-11-C04",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "ID/행/시료/누락/판독불가guard의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-11-C05",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/prompts/pipeline-prompts.md",
+        "architecture/contracts/pipeline-model-schemas.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "빈record·기준순회·제외/미검토의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-12-C01",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "비교경계·단위·status/presence/missing의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-12-C02",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "필수누락fail/불확실review/선택제외의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-12-C03",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "불확실/적용성/독립facts우선의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-12-C04",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "대상원문유형/시료/record의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-12-C05",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "0/blank/merge/cache/누락/충돌fixture의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-13-C01",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "mode/enum/snapshot/event/summary의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-13-C02",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "각2worker·실패격리·ID결합의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-13-C03",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "취소/late/집계/waiter소유의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-13-C04",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "open3/정리40/문서250·partial의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-13-C05",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/contracts/types.ts",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "사람수정사유·machineStatus/audit/summary/event의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-14-C01",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "Evidence/SourceHighlight/PDFanchor의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-14-C02",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "파일전체highlight·filter/선택분리의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-14-C03",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "missing가짜좌표금지·기준label/rule/unit의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-14-C04",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "baseline과TABLE-HIGHLIGHT-REBUILD분리의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-14-C05",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "window/null-origin/channel/type/token/knownIDs의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-15-C01",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "task identities/sequence/handoff·정제의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-15-C02",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "전역2+100/engine2/retained1의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-15-C03",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "queuedabort/cleanup/late/replay의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-15-C04",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "heartbeat비진행률·timeout/logdedup/scope의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-15-C05",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "handoff큐/seen/timing·상태불변의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-16-C01",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "11열/4시트/JSON/CSV·export상태의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-16-C02",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "key/header/row·사본2셀의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-16-C03",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "analyze→확인→export·fingerprint409의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-16-C04",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "CSVescape/ZIP/경로/부분실패의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-16-C05",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "golden UI/v3업로드·oracle격리의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-17-C01",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/contracts/dashboard-design.default.json",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "snapshot·14필드/legacy7기본의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-17-C02",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/contracts/dashboard-design.default.json",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "부분수정범위·judge/approvedchanges의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-17-C03",
+      "moduleId": "CORE-17",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md:133",
+        "architecture/specs/05-dashboard-exports.md:143",
+        "architecture/specs/07-data-algorithms-concurrency.md:280",
+        "architecture/specs/06-verification.md:64"
+      ],
+      "rationale": "필수EF-14와전체모델3회예산충돌. issue의 서로 충돌하는 문장을 함께 참조.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-17-C04",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/contracts/dashboard-design.default.json",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "enum·길이/HTML금지·fallbackmode의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-17-C05",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/contracts/dashboard-design.default.json",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "복합/암묵light/부분수정/negative의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-18-C01",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "rootattrs/CSS/chartconfig/runtime수명의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-18-C02",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "type/size/theme/legend/selection/detail·불변의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-18-C03",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "focus/배분/appOS/remount의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-18-C04",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "CSP/nonce/escape/offline/bridge·bytes/report의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-18-C05",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/contracts/dashboard-design.schema.json",
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "11구조검사와실제browser구분의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-19-C01",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "key/owner/수명/cap/FIFO의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-19-C02",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "중첩/정렬/파싱비용의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-19-C03",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "전역/engine/worker/local cap·교착회피의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-19-C04",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "SSE/log/queue/render cap·없는batching의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "CORE-19-C05",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md",
+        "architecture/contracts/efficiency-inventory.json"
+      ],
+      "rationale": "단위cap/partial/계측·미측정PASS금지의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C01",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "7page/4step·전이의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C02",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "generation/run/sequence/version의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C03",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "locked·stop/reset·자동재개없음의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C04",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "마지막변경부터1800/1600/120ms의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C05",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "SSE회복/terminal/실패안내/복귀의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-01-C06",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "page/DOM·cancel/reset/partial의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C01",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "최종색·상태색차이의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C02",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "eager5/main10/lazy·font/lock의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C03",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "storage onoff/실패기본/root/MotionConfig의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C04",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "280ms/easing/override·appOS범위의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C05",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "viewport stack/scroll/control·sky제외의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-02-C06",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/environment/README.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "light원문/dark셸·focus/OFF/OS의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C01",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "CTA/목적지/샘플의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C02",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "EXAMPLE/live분리의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C03",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "sampleLoading/lock/spinner/error/targets의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C04",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "hero/CTA/badge/theater수치·OFF의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C05",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "page분리·실패retry의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-03-C06",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "GSPEC/format/natural-language/예제의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C01",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "filetext배타·승인target·요약의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C02",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "accept/크기/12000자/role/preview의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C03",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "입력/drag/upload/delete/view/mode/sample의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C04",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "UploadVisual·row/stage/mobile의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C05",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "golden오류/선택/닫기/P10/target0의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-04-C06",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "분리dialog·배타payload의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C01",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "문서/category8/sample/행·무유형의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C02",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "rule/comparison/unit/scope/source/revision의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C03",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "선택/제외/uncertain/revise/hidden/feedback의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C04",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "compact/펼침/전체근거/선택의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C05",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "invalid행focus·실패보존의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-05-C06",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "다중sheet/동명/무유형/제외/재피드백의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C01",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "목록/지도/맥락/확인/전사/원문/로그의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C02",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "reader/context/coverage/preview의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C03",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "status/quality/attempts/no-data의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C04",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "550/520+75/400ms·active-only의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C05",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "28pxfollow/접기/잘림의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-06-C06",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/02-backend-pipeline.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "hidden/rotation/header/region/partial의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C01",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "milestone/theater/workroom/context의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C02",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "operation→event→processing→analysis→first의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C03",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "실제operation/lastfacts·접기·2개탐색의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C04",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "240/160ms·busyobserving2.2/2.6초의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C05",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "lastknown·theaterprop한계의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-07-C06",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "interleave/burst/quiettrace의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C01",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "1120×300 SVG/3lane의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C02",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "preview/live·identity·nonpending의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C03",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "baseline/max6/counts의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C04",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "1800/1300/75ms·chip·120/350ms의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C05",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "ambient/OFF/cleanup/mobile의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-08-C06",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "수신packet·색/수량/클릭의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C01",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "observer·scopefilter의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C02",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "running/waiting·100/200·tail한계의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C03",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "펼침/선택/800/disconnect의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C04",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "phase/detail·1sec/3sec의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C05",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "15/10초·4..60retry/frozenAt/28px의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-09-C06",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "scope/wait/cancel/fail/quiet/manual의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C01",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "chamber/방향/제목/최근3/phase의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C02",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "parentfirst/explicit·runtime/scope의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C03",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "seen/history/group/disconnect/OFF의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C04",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "1400/1300/70ms·1회의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C05",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "logdedup/pending8/결과보존의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-10-C06",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "read/reread/transcribe/structure/context/quality/repair/dashboard의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C01",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "PDF/image/table/text/fallback의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C02",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "Evidence/anchor/missing/selected/status의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C03",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "docreset/page/zoom/sheet/chip/fractional의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C04",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "DPR2/min140/scroll/instant의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C05",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "load/render/text/image/truncated/stale의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-11-C06",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/03-algorithms.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "PDFwitness/중복/sheet/quote/label/admission의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C01",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "filetab/count/source/results/criteria/detail의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C02",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "IDscope/filter독립highlight의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C03",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "reset/focus/prevnext/all복귀의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C04",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "200x12/350bar/780px/scroll의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C05",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "error/empty/filter0/no-criterion/orphan의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-12-C06",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "file/filter/detail/source/criteria/back의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C01",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "title/status→value/rule→reason→quote→resolve의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C02",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "resolve/status/source/human의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C03",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "item초기화/focus/pending/saving의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C04",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "220y14/compact/2열/scroll의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C05",
+      "moduleId": "UI-13",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/decomposition/ui-modules.json",
+        "architecture/specs/04-ui-motion.md:216",
+        "architecture/ui/interaction-contract.md I8",
+        "architecture/ui/interaction-fixtures.json INSPECTOR-SAVE"
+      ],
+      "rationale": "취소무변경질문과saving중abort없는spec충돌. issue의 서로 충돌하는 문장을 함께 참조.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-13-C06",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/specs/01-state-api.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "live집계/색상·frozendashboard의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C01",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "KPI/distribution/files/map·이동의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C02",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "total/completed/attention/pending/집계의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C03",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "filter/keyboardtooltip/exitfocus의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C04",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "650/850/800/300+22/8cap/reduced의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C05",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "G13clamp/scroll/name/zero의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-14-C06",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "Recharts/react-chartjs-2의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C01",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "sidebar/suggestions/workroom/preview/edit/source/download의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C02",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "POST/frozen/token/knownIDs/cache5의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C03",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "states/cancel/close/retry/standard의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C04",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "240/260/lazy/memo/state/motion의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C05",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "1200/3번째실패/abortsequence/DELETE/HTML/1600의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-15-C06",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/04-ui-motion.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "open/reopen/tab/rebuild관측의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C01",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "14enum축/조합의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C02",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "envelope/scope/negative/judge/부분수정의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C03",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "focus/layout/file/filter/detail/0/long의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C04",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "theme/axis/tooltip/geometry/size/legend/motion/corner의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C05",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "trend금지/fallback/snapshot의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-16-C06",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/prompts/dashboard-system.md",
+        "architecture/prompts/dashboard-loop.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "복합/18viewport/design metric의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C01",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "file/count/source/highlight/detail/bridge의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C02",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "frozen/document/pending의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C03",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "reset/source우선의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C04",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "320y6/appOS/scroll/compact/colors의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C05",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "legacydisabled/unknown거부의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-17-C06",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "2doc/samename/cross/filter/reselect의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C01",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "standard/ledger upload→key→mapping→copy의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C02",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "readyblocked/2cells/basisfingerprint의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C03",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "busy/invalidation/key/note의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C04",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "230/.985/y14/dock/beforeafter/mobile의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C05",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "xlsx/size/drop/blocked/abort/empty/error의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    },
+    {
+      "id": "UI-18-C06",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md",
+        "architecture/specs/05a-ledger-export.md",
+        "architecture/ui/detail-controls.md",
+        "architecture/ui/VISUAL-CONTRACT.md",
+        "architecture/ui/style-catalog.json",
+        "architecture/ui/component-style-map.json",
+        "architecture/specs/07-data-algorithms-concurrency.md"
+      ],
+      "rationale": "key/basis/stale/사본15trace의 정책·관측/검증기준이 문서에 지정되어 구현 결정을 내릴 수 있다.",
+      "assessmentBoundary": "문서명확성만 평가. 실제 제품/provider/browser 시험성공을 뜻하지 않음"
+    }
+  ],
+  "additions": [
+    {
+      "id": "UI-01-C07",
+      "moduleId": "UI-01",
+      "question": "health 조회의 최초 시점·기본값·실패·재시도/폴링·unmount/늦은응답 처리와 의존 UI gating을 동일하게 구현할 수 있는가?",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/specs/01-state-api.md §4.1",
+        "architecture/specs/04-ui-motion.md:84",
+        "architecture/contracts/types.ts HealthResponse"
+      ],
+      "rationale": "health DTO와 configured header 문구·E2B 의존 control은 있지만 초기 요청시점·기본값·실패·retry/poll·unmount/stale 수명이 없다. activity observer의 수명으로 대신 추론할 수 없다."
+    },
+    {
+      "id": "CORE-16-C06",
+      "moduleId": "CORE-16",
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/specs/01-state-api.md /api/samples",
+        "architecture/ui/interaction-contract.md I1",
+        "architecture/ui/interaction-fixtures.json SAMPLE-01"
+      ],
+      "rationale": "expenses/materials route 입력·201 documents/criteriaText 출력·UI 전이는 있지만 실제 샘플 파일명/개수/role/MIME/내용/criteriaText 생성계약이 없다. SAMPLE-01의 CA/CB/A.pdf는 상태전이 합성fixture이며 실제 샘플 recipe가 아니다."
+    },
+    {
+      "id": "UI-02-C07",
+      "moduleId": "UI-02",
+      "question": "I9의 모든 추가 acceptance 후보가 baseline/필수개선/선택으로 개별 결정되고 gate와 목표 fixture에 연결되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/DECISIONS.md D16/D18",
+        "architecture/ui/interaction-contract.md:201",
+        "architecture/specs/04-ui-motion.md:125",
+        "architecture/ui/detail-controls.md D1/D2"
+      ],
+      "rationale": "I9의 PDF chip 정수검사·빈 출처 추가상한·activity 최신100·OS motion 일관성·저장중 취소정책은 gate 연결 여부로 필수/선택을 판정하라지만 개별 target policy와 gate/expected fixture가 없다. baseline은 현재한계 재현 또는 별도 deviation으로 기술되어 개선범위를 결정하기 어렵다."
+    },
+    {
+      "id": "CORE-06-C06",
+      "moduleId": "CORE-06",
+      "question": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md:253",
+        "architecture/specs/02-backend-pipeline.md:280",
+        "architecture/specs/07-data-algorithms-concurrency.md:71",
+        "architecture/specs/06-verification.md:25",
+        "architecture/specs/06-verification.md:53"
+      ],
+      "rationale": "문서당 VLM30쪽/180초와 >30쪽 unread/partial이 규범이고 G07은8보고서575물리쪽 실제처리 및35필드/105셀 exactPass를 요구한다. 전체원본의 후속모델 첨부는 가능하나 30쪽 이후를 어떤 경로로 판독/검증해 G07 완료를 인정하는지, cap이 baseline인지 target제한인지 결정이 없다. inventory575만으로 전체 시각검증을 주장할 수 없다."
+    },
+    {
+      "id": "CORE-14-C06",
+      "moduleId": "CORE-14",
+      "question": "scan/image/회전/2-up geometry가 text-layer-only viewer와 G07 전필드overlay 사이에서 어떤 DTO·좌표·tolerance·fallback/필수확장으로 구현되는가?",
+      "status": "FAIL",
+      "evidence": [
+        "architecture/ui/detail-controls.md:58",
+        "architecture/ui/detail-controls.md:114",
+        "architecture/ui/detail-controls.md:319",
+        "architecture/specs/06-verification.md:38",
+        "architecture/specs/06-verification.md:53",
+        "architecture/contracts/types.ts Evidence"
+      ],
+      "rationale": "UI는 image bbox 없음, text-layer 없는 scanned PDF는 fallback chip만이며 OCR bbox 추정엔진을 추가하지 말라고 한다. G07은35필드 actual value/qualifier overlay와 회전/2-up polygon/bbox 검사다. Evidence DTO는 page/sheet/cell/quote이며 raster geometry 전달·좌표변환/tolerance가 없다. fallback이 gate를 만족하는지 별도 필수개선인지 정의되지 않는다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "CLARITY-001",
+      "severity": "medium",
+      "questionIds": [
+        "UI-13-C05"
+      ],
+      "files": [
+        "decomposition/ui-modules.json",
+        "specs/04-ui-motion.md:216",
+        "ui/interaction-contract.md I8",
+        "ui/interaction-fixtures.json INSPECTOR-SAVE"
+      ],
+      "problem": "질문은 취소 시 서버 변경 없음이라고 하지만 saving 중 취소는 editing=false만 수행하며 in-flight resolve를 abort하지 않는다. INSPECTOR-SAVE도 cancelDisabled=false/abortRequest=false/뒤늦은 성공을 요구한다.",
+      "proposedFix": "질문 ID를 보존하고 저장 전 취소는 변경 없음, 저장 중 취소는 폼만 닫고 이미 전송된 resolve가 저장될 수 있음을 구분한다. baseline과 필수 개선 여부를 결정하고 변경이력과 두 race fixture를 둔다."
+    },
+    {
+      "id": "CLARITY-002",
+      "severity": "high",
+      "questionIds": [
+        "CORE-17-C03"
+      ],
+      "files": [
+        "specs/05-dashboard-exports.md:133",
+        "specs/05-dashboard-exports.md:143",
+        "specs/07-data-algorithms-concurrency.md:280",
+        "specs/06-verification.md:64"
+      ],
+      "problem": "EF-14는 invalid dashboard plan→validation 실패→세번째 성공을 G11 필수로 연결한다. D05b는 planner#1 오류→planner#2→judge#3 뒤 모델호출 없음이므로 DOM 실패까지 발생한 경로를 세번째 수정 성공으로 요구할 수 없다.",
+      "proposedFix": "구 EF-14를 관찰용 baseline으로 분리한다. REQUIRED_REBUILD에는 정상 planner+judge 뒤 constrained repair#3 성공, invalid planner 뒤 planner#2+judge#3 및 DOM 실패 fallback, #3에서 최초 유효plan인 경우 judge예산 부재 fallback을 각각 지정한다. 질문의 최대3회 계획도 전체 모델호출3회로 정합화한다."
+    },
+    {
+      "id": "CLARITY-003",
+      "severity": "medium",
+      "questionIds": [
+        "UI-01-C07"
+      ],
+      "files": [
+        "specs/01-state-api.md §4.1",
+        "specs/04-ui-motion.md:84",
+        "contracts/types.ts HealthResponse"
+      ],
+      "problem": "health DTO와 configured header 문구·E2B 의존 control은 있지만 초기 요청시점·기본값·실패·retry/poll·unmount/stale 수명이 없다. activity observer의 수명으로 대신 추론할 수 없다.",
+      "proposedFix": "health 단독 lifecycle을 명시한다. mount/요청·초기값·success/error UI·retry 유무·cleanup/late guard와 dashboard gate를 하나의 trace로 고정한다."
+    },
+    {
+      "id": "CLARITY-004",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-16-C06"
+      ],
+      "files": [
+        "specs/01-state-api.md /api/samples",
+        "ui/interaction-contract.md I1",
+        "ui/interaction-fixtures.json SAMPLE-01"
+      ],
+      "problem": "expenses/materials route 입력·201 documents/criteriaText 출력·UI 전이는 있지만 실제 샘플 파일명/개수/role/MIME/내용/criteriaText 생성계약이 없다. SAMPLE-01의 CA/CB/A.pdf는 상태전이 합성fixture이며 실제 샘플 recipe가 아니다.",
+      "proposedFix": "expenses/materials 각각 정확한 바이트 또는 결정론적 생성recipe와 기대 documents/criteriaText manifest를 architecture 안에 제공한다. 가변 ID/timestamp와 고정내용, intro 장식예제와 API 샘플을 구분한다."
+    },
+    {
+      "id": "CLARITY-005",
+      "severity": "medium",
+      "questionIds": [
+        "UI-02-C07"
+      ],
+      "files": [
+        "DECISIONS.md D16/D18",
+        "ui/interaction-contract.md:201",
+        "specs/04-ui-motion.md:125",
+        "ui/detail-controls.md D1/D2"
+      ],
+      "problem": "I9의 PDF chip 정수검사·빈 출처 추가상한·activity 최신100·OS motion 일관성·저장중 취소정책은 gate 연결 여부로 필수/선택을 판정하라지만 개별 target policy와 gate/expected fixture가 없다. baseline은 현재한계 재현 또는 별도 deviation으로 기술되어 개선범위를 결정하기 어렵다.",
+      "proposedFix": "후보별 OBSERVED_ONLY/REQUIRED_REBUILD/OPTIONAL 결정표와 owner·gate·baseline/target fixture·정확한 기대행동을 지정한다. OPTIONAL만 선택 가능이라는 상위규칙과 후보 문구를 정합화한다."
+    },
+    {
+      "id": "CLARITY-006",
+      "severity": "high",
+      "questionIds": [
+        "CORE-06-C06"
+      ],
+      "files": [
+        "specs/02-backend-pipeline.md:253",
+        "specs/02-backend-pipeline.md:280",
+        "specs/07-data-algorithms-concurrency.md:71",
+        "specs/06-verification.md:25",
+        "specs/06-verification.md:53"
+      ],
+      "problem": "문서당 VLM30쪽/180초와 >30쪽 unread/partial이 규범이고 G07은8보고서575물리쪽 실제처리 및35필드/105셀 exactPass를 요구한다. 전체원본의 후속모델 첨부는 가능하나 30쪽 이후를 어떤 경로로 판독/검증해 G07 완료를 인정하는지, cap이 baseline인지 target제한인지 결정이 없다. inventory575만으로 전체 시각검증을 주장할 수 없다.",
+      "proposedFix": "baseline cap과 G07 target의 관계를 명시한다. 전체페이지 전사/검증이 필요하면 chunk/session·물리페이지 mapping·전체budget/partial semantics를 규정한다. 미지원이면 G07 BLOCKED/NOT_RUN 조건과 필요한 확장을 기록한다. cap 임의상향 또는 partial PASS를 금지한다."
+    },
+    {
+      "id": "CLARITY-007",
+      "severity": "high",
+      "questionIds": [
+        "CORE-14-C06"
+      ],
+      "files": [
+        "ui/detail-controls.md:58",
+        "ui/detail-controls.md:114",
+        "ui/detail-controls.md:319",
+        "specs/06-verification.md:38",
+        "specs/06-verification.md:53",
+        "contracts/types.ts Evidence"
+      ],
+      "problem": "UI는 image bbox 없음, text-layer 없는 scanned PDF는 fallback chip만이며 OCR bbox 추정엔진을 추가하지 말라고 한다. G07은35필드 actual value/qualifier overlay와 회전/2-up polygon/bbox 검사다. Evidence DTO는 page/sheet/cell/quote이며 raster geometry 전달·좌표변환/tolerance가 없다. fallback이 gate를 만족하는지 별도 필수개선인지 정의되지 않는다.",
+      "proposedFix": "source/renderer별 geometry gate 적용조건을 명시하고 scan/image required contract를 추가하거나 미지원 BLOCKED로 기록한다. polygon/bbox 좌표계·rotation/2-up mapping·tolerance·실제근거 provenance를 정의하고 임의bbox는 금지한다."
+    }
+  ]
+}

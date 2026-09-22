@@ -1,0 +1,72 @@
+{
+  "id": "33-result-detail-fail-1600",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "33-result-detail-fail-1600",
+    "screenshot": {
+      "path": "33-result-detail-fail-1600.png",
+      "bytes": 185798,
+      "sha256": "c4828c2e481603ae60a4feb450a0d3debc07df6fc73d0be6e559c884f067659c",
+      "width": 1600,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/33-result-detail-fail-1600.json",
+      "bytes": 710713,
+      "sha256": "4d1ac909da477501857a331da5ac880a90b6896f1d07f025041e68784faa74ed"
+    },
+    "viewport": {
+      "width": 1600,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:12:57.009Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/33-result-detail-fail-1600-font-readiness.json",
+    "bytes": 2301336,
+    "sha256": "c868ecf91813fb82ad952157d8fd4ce17677cfcadf94874f009925d6364ae5b1"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/33-result-detail-fail-1600.png",
+    "bytes": 181020,
+    "sha256": "fcb642f620a1b3c8432316feb86c18b6c711e62fcdba4af679d1ff2d19e1b227",
+    "width": 1600,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:13:01.740Z",
+    "capturedAt": "2026-09-21T17:13:02.171Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/33-result-detail-fail-1600.json",
+    "bytes": 1103447,
+    "sha256": "e4b1cef6d8da7fadf83cbceb7e6249dd0e66fd4be482fd0fc08ac2f1e19d5637"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/33-result-detail-fail-1600-measurement.json",
+    "bytes": 205805,
+    "sha256": "2b94302c7a9278d703125ea473563d00fc18abc99a5546eb2fe29d61a04b56dd"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T17:13:04.249Z"
+}

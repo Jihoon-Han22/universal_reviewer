@@ -1,0 +1,36 @@
+{
+  "id": "C09",
+  "desc": "단위가 3곳(단위열 / 값 안 / 헤더)에 흩어져 있음",
+  "expect": "adapter",
+  "sheet": "품질기준",
+  "table": {
+    "header_row": 1,
+    "data_from": 2
+  },
+  "columns": {
+    "item": "A",
+    "op_value": "B",
+    "unit": "C",
+    "note": "D"
+  },
+  "criteria": [
+    {
+      "item": "산화마그네슘",
+      "op": ">=",
+      "value": 2.0,
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "op": "<=",
+      "value": 5.0,
+      "unit": "%"
+    }
+  ]
+}

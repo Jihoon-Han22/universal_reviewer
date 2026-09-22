@@ -1,0 +1,573 @@
+{
+  "role": "clarity",
+  "reviewerId": "/root/clarity_verification",
+  "evaluatedInputsSha256": "f3f78e1ffa4e28cc684e6ce2752c4492392a9fc806e357f53a14a4c9551c72fa",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "scope": "Source-blind delta clarity review of CORE-20/21 and global reproduction entry points. Compared the permitted prior accepted input manifest with the current frozen manifest; reread changed normative sections affecting this assignment. Twelve unaffected question opinions are retained and six affected questions are reassessed as listed in deltaReview. No product source, private environment, prior scores or other reviewers/author reports were used. Fixture execution annotations are provenance, not independent product/provider/browser evidence.",
+  "questionResults": [
+    {
+      "id": "CORE-20-C01",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/environment/README.md",
+          "section": "정확한 실행 환경과 설치; 최소 구조 / asset 생성"
+        },
+        {
+          "path": "architecture/environment/versions.json",
+          "section": "nodeObserved/nodeRequired/npmObserved and packages declared/locked/installed"
+        },
+        {
+          "path": "architecture/tools/bootstrap.mjs",
+          "section": "mapping and scaffold-only result"
+        }
+      ],
+      "rationale": "기준 Node 24.13.1/npm 11.8.0과 실제 감사 shell 관측값을 구별하고, 두 lockfile을 npm ci로 설치한다는 기준이 정해져 있다. 제공되는 package/lock/tsconfig/Vite/index와 생성되는 디렉터리를 알 수 있으며 bootstrap 직후에는 제품 소스와 build 성공이 제공되지 않는다는 한계도 명시되어 있다. 원본과의 일치 여부가 아니라 원본 없이 설치 기준을 결정할 수 있는지를 판정했다."
+    },
+    {
+      "id": "CORE-20-C02",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/environment/README.md",
+          "section": "최소 구조 / asset 생성"
+        },
+        {
+          "path": "architecture/environment/templates/scripts/copy-pdfjs-assets.mjs",
+          "section": "source/destination and copied folders"
+        },
+        {
+          "path": "architecture/environment/templates/scripts/build-dashboard-chart-runtime.mjs",
+          "section": "esbuild entryPoints/outfile/build options"
+        },
+        {
+          "path": "architecture/environment/root/package.json",
+          "section": "scripts predev/prebuild/build:dashboard-charts"
+        }
+      ],
+      "rationale": "PDF worker의 Vite URL import와 cmaps/standard_fonts/wasm/iccs/LICENSE의 version 경로가 지정되어 있다. 차트 entry와 server/assets 출력, IIFE/browser/es2020/minify/production 설정 및 prebuild 실행 순서를 템플릿에서 그대로 결정할 수 있다."
+    },
+    {
+      "id": "CORE-20-C03",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/environment/README.md",
+          "section": ".env와 비밀 경계; 앱 구현 이후 실행 명령"
+        },
+        {
+          "path": "architecture/environment/templates/scripts/dev.mjs",
+          "section": "children; close; signal/exit handlers"
+        },
+        {
+          "path": "architecture/environment/templates/vite.config.ts",
+          "section": "server"
+        }
+      ],
+      "rationale": "API loopback 8787, Vite 5180 strictPort와 고정 /api proxy, process.env에서만 읽는 PORT, 서버 시작 전에 필요한 dist를 구별할 수 있다. dev가 소유한 두 child의 생성 및 종료 조건은 동봉 템플릿에 있으며 다른 서버를 전역 종료하라는 해석이 필요하지 않다."
+    },
+    {
+      "id": "CORE-20-C04",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/environment/README.md",
+          "section": "Node 회귀와 별도 Python 회귀"
+        },
+        {
+          "path": "architecture/environment/integrations/package.json",
+          "section": "scripts check/smoke/test"
+        },
+        {
+          "path": "architecture/environment/root/package.json",
+          "section": "scripts test"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "section": "CURRENT_REPRODUCTION: 유일한 필수 인수 profile; 현재 재현의 필수 G00..G14"
+        }
+      ],
+      "rationale": "config-only는 키 미설정이어도 configured=false/exit 0일 수 있고 실제 provider 사용 때 CONFIG_MISSING이 발생한다고 명시한다. npm test의 Node glob, 별도 python server/document-reader.test.py와 Python 패키지 전제, PDF 검사 skip/EPERM의 비통과 처리를 결정할 수 있다. 로컬 회귀, 실제 Gemini/E2B smoke, 전체 제품 gate의 증거 범위가 분리되어 있다."
+    },
+    {
+      "id": "CORE-21-C01",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/decomposition/source-trace.json",
+          "section": "scope/denominator/entries"
+        },
+        {
+          "path": "architecture/baseline/source-snapshot.json",
+          "section": "files"
+        },
+        {
+          "path": "architecture/decomposition/README.md",
+          "section": "작성과 검증"
+        },
+        {
+          "path": "architecture/reviews/current-reproduction/audit.mjs",
+          "section": "registry/questions; source; freeze/check"
+        },
+        {
+          "path": "architecture/traceability.csv",
+          "section": "243 distinct question rows including CORE-04-C06, CORE-05-C06, UI-06-C07"
+        }
+      ],
+      "rationale": "이전/현재 입력 manifest와 registry를 대조하면 기존 240질문의 내용·소유 모듈은 유지되고 CORE-04-C06/CORE-05-C06/UI-06-C07이 추가되어 243개다. 현재 traceability는 243개 고유 ID를 모두 한 번씩 포함하며 새 질문에도 실행 gate가 있다. source-trace 211개에는 기존 baseline 210파일의 경로·SHA가 모두 남고 unknown question 참조는 0이다. 따라서 새 누락이 분모에서 사라지지 않고 파일 추적률과 실행 경로 검증률도 구별된다."
+    },
+    {
+      "id": "CORE-21-C02",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "실제 파일 변형과 adapter"
+        },
+        {
+          "path": "architecture/validation/harness.mjs",
+          "section": "invoke deadline/expired and runSuite"
+        },
+        {
+          "path": "architecture/validation/run-gate.mjs",
+          "section": "runGate deadline/expired"
+        },
+        {
+          "path": "architecture/validation/adapter-worker.mjs",
+          "section": "abort checks before/after adapter invocation"
+        }
+      ],
+      "rationale": "deadline은 child 생성부터 계산되고 부모의 실제 deadline 확인과 worker의 abort 후 검사 때문에 정상 모양의 늦은 반환도 실패다. 추가 10초는 정리 후 강제 종료까지의 시간이며 성공 허용 시간이 아니라는 기대값이 문서와 도구에 같이 있다."
+    },
+    {
+      "id": "CORE-21-C03",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "gate 실행과 최종 증거 검사"
+        },
+        {
+          "path": "architecture/validation/acceptance.mjs",
+          "section": "currentPackageManifestSha256; checkAcceptance package checks"
+        },
+        {
+          "path": "architecture/validation/acceptance-selftest.mjs",
+          "section": "package manifest must be current, nonempty, and at the architecture path; changed package contents and refreshed packages invalidate old gate evidence"
+        }
+      ],
+      "rationale": "index의 package 경로는 architecture/package-manifest.json으로 고정되고 실제 verify-package 및 bytes hash를 검사한다. 빈/대체 manifest, 패키지 변경, 새 manifest와 이전 gate digest의 불일치를 실패로 판단할 입력과 조건이 구체적이다."
+    },
+    {
+      "id": "CORE-21-C04",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "gate 실행과 최종 증거 검사"
+        },
+        {
+          "path": "architecture/validation/acceptance.mjs",
+          "section": "positiveCount; live_provider_calls; holdout_protocol"
+        },
+        {
+          "path": "architecture/validation/acceptance-selftest.mjs",
+          "section": "provider call and holdout counts reject strings, fractions, booleans and unsafe integers"
+        }
+      ],
+      "rationale": "live 호출 수는 Number.isSafeInteger와 >0, 선택 개선의 holdout seed는 안전정수와 >=3으로 판단한다. 문자열·소수·boolean·비유한 수의 실패를 결정할 수 있고, 현재 G06/G07/G08의 offline replay에는 미래 holdout 요구를 적용하지 않는다."
+    },
+    {
+      "id": "CORE-21-C05",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "지금 실행 가능한 검사; 실제 파일 변형과 adapter; v3 및 dashboard 전용 도구"
+        },
+        {
+          "path": "architecture/validation/harness.mjs",
+          "section": "validateFixture; validateResult; report flags"
+        },
+        {
+          "path": "architecture/validation/selftest.mjs",
+          "section": "empty/duplicate/source/coverage negative controls"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "section": "실행 증거의 profile 경계"
+        }
+      ],
+      "rationale": "oracle 복사 adapter도 synthetic 비교를 통과할 수 있으며 implementationExecuted/completeProductAcceptance는 false라는 한계가 명시된다. 빈 fixture, 중복 item/coverage, 잘못된 quote/좌표/hash를 실패로 판정하는 조건을 읽을 수 있다. 이러한 비교기와 v3 exactPass는 현재 제품/provider 실행의 증거로 전환되지 않는다."
+    },
+    {
+      "id": "CORE-21-C06",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/specs/06-verification.md",
+          "section": "현재 재현의 필수 G00..G14 뒤 CURRENT_REPRODUCTION G06 입력범위와 oracle 충돌 경계"
+        }
+      ],
+      "rationale": "현재 진단에서도 P10 PDF는 8field, PNG는 실제 첫 쪽 4field만 비교하며 26개 경로 분모를 유지한다고 명시한다. P13 원문 0.025와 JSON 0.015 충돌은 평가자 기록으로 분리하고 원문 없는 값을 주입하거나 제품에 ID 전용 분기를 추가하지 않는다. 미래 정확도 요구와 데이터 해석 경계를 구별할 수 있다."
+    },
+    {
+      "id": "CORE-21-C07",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/tools/bootstrap.mjs",
+          "section": "mapping; pending preflight; write flag wx; scaffold-only"
+        },
+        {
+          "path": "architecture/tools/test-bootstrap.mjs",
+          "section": "preservation/idempotence/conflict preflight cases"
+        },
+        {
+          "path": "architecture/environment/README.md",
+          "section": "최소 구조 / asset 생성"
+        },
+        {
+          "path": "architecture/README.md",
+          "section": "빈 디렉터리에서 시작"
+        }
+      ],
+      "rationale": "bootstrap은 지정된 패키지 자산만 읽으며 .env와 데이터셋은 입력 대상으로 삼지 않는다. 모든 대상의 동일 bytes/충돌을 먼저 대조한 뒤 없는 파일만 wx로 생성하므로 동일 파일 재실행과 충돌 거부 결과가 결정된다. 결과가 scaffold-only이고 앱 구현이 별도로 필요하다는 경계가 있다."
+    },
+    {
+      "id": "CORE-21-C08",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/specs/06-verification.md",
+          "section": "CURRENT_REPRODUCTION; 현재 재현의 필수 G00..G14; 실행 증거의 profile 경계"
+        },
+        {
+          "path": "architecture/validation/acceptance.mjs",
+          "section": "not_passed; zero_failed_or_skipped_tests; digest checks; result flags"
+        },
+        {
+          "path": "architecture/PLAN.md",
+          "section": "checkpoint 포맷; 반복 수정과 중단 기준"
+        },
+        {
+          "path": "architecture/reviews/current-reproduction/PROTOCOL.md",
+          "section": "역할과 독립성: 이전 승인본 archive와 후속 delta 평가"
+        },
+        {
+          "path": "architecture/ui/document-analysis-structure-cases.json",
+          "section": "executionStatus and conventions.execution"
+        }
+      ],
+      "rationale": "gate의 양의 selected/전수 passed/failed=skipped=0, 현재 코드·패키지 해시 요구는 변경되지 않았다. 새 fixture는 현재 계약의 기대값을 제공하지만 source-serialization의 원본 helper 실행 annotation과 UI fixture의 NOT_RUN을 새 제품/provider/browser 통과로 합산할 수 없다. 새 PROTOCOL은 이전 승인본을 archive로 보존하고 해시 차이에 따른 실제 재검토와 유지 의견의 공개를 요구하므로 과거 pass를 243질문의 최신 실행 결과로 표시할 수 없다."
+    },
+    {
+      "id": "CORE-21-C09",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "실제 파일 변형과 adapter; gate 실행과 최종 증거 검사"
+        },
+        {
+          "path": "architecture/validation/harness.mjs",
+          "section": "runSuite timeout validation"
+        },
+        {
+          "path": "architecture/validation/run-gate.mjs",
+          "section": "runGate initial timeout validation"
+        },
+        {
+          "path": "architecture/validation/selftest.mjs",
+          "section": "harness rejects unsupported timeout values before reading files or starting a child"
+        }
+      ],
+      "rationale": "harness 기본 900000ms와 gate 기본 3600000ms, 프로그램 API의 1..21600000 안전정수 범위가 결정된다. 두 진입 함수가 timer 생성 전에 잘못된 값을 거부하며 harness 음성대조에는 21600001/2147483648/Infinity/문자열/소수가 포함된다. 따라서 Node timer clamp 값을 timeout 연장 또는 성공으로 해석할 여지가 없다. 이 명확성 판단은 시험을 실제 실행했다는 주장이 아니다."
+    },
+    {
+      "id": "CORE-21-C10",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/reviews/current-reproduction/PROTOCOL.md",
+          "section": "역할과 독립성; 질문별 판정과 산식"
+        },
+        {
+          "path": "architecture/reviews/independent-audit/score.mjs",
+          "section": "scorePopulation reviewer/evidence/snapshot/duplicate validation"
+        },
+        {
+          "path": "architecture/reviews/independent-audit/score.test.mjs",
+          "section": "missing/stale input seal and same person across roles reject; duplicate/missing evidence cases"
+        },
+        {
+          "path": "architecture/reviews/current-reproduction/audit.mjs",
+          "section": "assignedReviewer and role assignment validation"
+        }
+      ],
+      "rationale": "새 PROTOCOL은 마지막 교정자와 반례 보조 검토자를 구분하며 이들이 지정된 최종 평가자를 대체하지 않는다고 명시한다. 담당 clarity reviewer는 계속 /root/clarity_verification이고 정확성 담당과 다르다. 변경되지 않은 scorePopulation의 nonblank 근거/현재 hash/모듈/중복/역할 독립성 검사와 현재 audit의 지정 reviewer 규칙을 적용하므로 미검토나 보조 검토를 최종 PASS로 치환할 수 없다."
+    },
+    {
+      "id": "CORE-21-C11",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/validation/README.md",
+          "section": "gate 실행과 최종 증거 검사"
+        },
+        {
+          "path": "architecture/validation/acceptance.mjs",
+          "section": "local; regularArtifactPath; currentPackageManifestSha256"
+        },
+        {
+          "path": "architecture/validation/acceptance-selftest.mjs",
+          "section": "evidence cannot escape the project through an ancestor directory junction"
+        }
+      ],
+      "rationale": "evidence는 프로젝트 내부 상대경로의 실제 일반파일이어야 하고 .., 절대경로, 환경파일 경로를 거부한다. 프로젝트 내부 모든 중간 경로를 lstat하여 symlink/junction/비디렉터리를 검사하고 마지막 일반파일과 SHA를 확인한다. 외부 파일을 ancestor junction으로 연결하는 음성 사례도 있어 허용/거부 경계가 결정된다."
+    },
+    {
+      "id": "CORE-21-C12",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/DECISIONS.md",
+          "section": "현재 목표; 계약의 우선순위; 원본 관찰과 재구현 요구가 다른 경우"
+        },
+        {
+          "path": "architecture/REPRODUCTION.md",
+          "section": "기준선과 정답 선택"
+        },
+        {
+          "path": "architecture/GOAL.md",
+          "section": "goal objective; 운영"
+        },
+        {
+          "path": "architecture/PLAN.md",
+          "section": "milestones; 반복 수정과 중단 기준"
+        },
+        {
+          "path": "architecture/validation/README.md",
+          "section": "acceptanceProfile boundaries"
+        },
+        {
+          "path": "architecture/decomposition/README.md",
+          "section": "읽을 계약; 작성과 검증"
+        },
+        {
+          "path": "architecture/validation/run-gate.mjs",
+          "section": "Object.hasOwn(ACCEPTANCE_PROFILES, acceptanceProfile) and profile echo rejection"
+        },
+        {
+          "path": "architecture/specs/02-backend-pipeline.md",
+          "section": "2.3 reader text boundary; 2.4.1–2.4.2 exact source serialization and limits"
+        },
+        {
+          "path": "architecture/ui/detail-controls.md",
+          "section": "D3.2.1 inventory 표시값과 구조 그룹의 정확한 병합"
+        }
+      ],
+      "rationale": "DECISIONS/REPRODUCTION/GOAL/PLAN과 현재 gate의 profile 경계는 이전 승인 입력과 같은 bytes이며, 분해 진입점은 Core123/UI120/전체243으로 함께 갱신되었다. 추가 source fixture는 CURRENT_REPRODUCTION, UI fixture는 BASELINE_OBSERVATION과 CURRENT_REPRODUCTION 목적을 명시한다. 02의 reader equality/정확한 문자열 직렬화와 UI D3.2.1의 삽입 순서·alias 규칙은 기존 한계의 구체화이며 OPTIONAL_FUTURE 전수·geometry·정렬 개선을 요구하지 않는다."
+    },
+    {
+      "id": "CORE-21-C13",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/REPRODUCTION.md",
+          "section": "무엇을 같게 만드는가; 기준선과 정답 선택"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "section": "현재 재현의 대조 방법; 현재 재현의 필수 G00..G14"
+        },
+        {
+          "path": "architecture/DECISIONS.md",
+          "section": "현재 원본 한계와 재현 정책"
+        },
+        {
+          "path": "architecture/PLAN.md",
+          "section": "checkpoint 포맷; 반복 수정과 중단 기준"
+        },
+        {
+          "path": "architecture/specs/01-state-api.md",
+          "section": "PublicDocument preview budget and original bytes boundary"
+        },
+        {
+          "path": "architecture/contracts/source-serialization-cases.json",
+          "section": "units, serialization, cases/boundaryCases/readerTextBoundaryCases"
+        }
+      ],
+      "rationale": "고정 응답의 결정 결과는 exact 비교하고 live 비결정성/ID/시각을 허용된 범위에서만 정규화하는 상위 재현 규칙은 유지된다. 새 01/02는 공개 preview clipping, Python code-point reader 계수, JS UTF-16 source 계수 및 직렬화 후 150000/1200000 경계를 분리하므로 실제 입력 bytes·응답·문자열을 어떤 기준으로 비교할지 더 구체적으로 결정할 수 있다. UI 병합 fixture 역시 전체 순서 있는 기대값과 NOT_RUN 범위를 분리한다. 새 세 질문의 기능별 최종 평가를 이 18질문 보고서로 대체하지 않는다."
+    },
+    {
+      "id": "CORE-21-C14",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        {
+          "path": "architecture/reviews/current-reproduction/PROTOCOL.md",
+          "section": "재현 가능한 계산; 질문별 판정과 산식"
+        },
+        {
+          "path": "architecture/reviews/current-reproduction/audit.mjs",
+          "section": "design/source/registry inventory; freeze; score; check"
+        },
+        {
+          "path": "architecture/reviews/independent-audit/score.mjs",
+          "section": "scorePopulation return and accepted predicate"
+        },
+        {
+          "path": "architecture/REPRODUCTION.md",
+          "section": "구현 순서와 완료 경계"
+        },
+        {
+          "path": "architecture/reviews/current-reproduction/round-01-accepted/current-inputs.json",
+          "section": "previous frozen designFiles/sourceFiles/questions; input SHA a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178"
+        }
+      ],
+      "rationale": "이전 a62da86c 입력과 최종 f3f78e1f 입력의 규범 목록 전체를 비교해 변경12/추가2/삭제0을 확인했고, 최종319파일의 bytes hash와 243개 population 일치를 다시 검사했다. audit/score 도구의 현재 입력·질문·보고서 seal 대조는 변경되지 않았으므로 이전 해시 의견과 점수를 최신 결과로 재사용할 수 없다. 새 PROTOCOL은 archive가 과거 전체 규범 배포본이 아님을 밝히고 delta 재판정·유지 의견을 공개하게 하며, 설계 인수와 제품 완료도 계속 분리한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "CLARITY-VER-01",
+      "severity": "medium",
+      "description": "분해 진입점의 과거 질문 수와 현재평가 링크가 현 재현 감사와 충돌했다.",
+      "questionIds": [
+        "CORE-21-C12",
+        "CORE-21-C14"
+      ],
+      "requiredFix": "현재 registry의 질문 수와 current-reproduction 링크를 사용하고 과거 수치는 역사로 구분.",
+      "status": "resolved",
+      "resolution": "decomposition/README의 Core121/UI119/전체240 및 current-reproduction 연결과 core-tree의 현재 모집단 구분을 재독했다. 후속 delta 검토에서는 Core123/UI120/전체243으로 함께 갱신된 진입점·registry·traceability를 확인했다."
+    },
+    {
+      "id": "CLARITY-VER-02",
+      "severity": "medium",
+      "description": "환경 진입점에서 Node 회귀와 별도 로컬 Python 회귀의 실행 전제 및 skip 의미가 빠져 있었다.",
+      "questionIds": [
+        "CORE-20-C04"
+      ],
+      "requiredFix": "Python 회귀 명령·패키지 전제·Node test와의 분리·skip/실행실패 비통과 경계를 명시.",
+      "status": "resolved",
+      "resolution": "environment/README의 Node 회귀와 별도 Python 회귀 절에서 명령/의존성/12초 제한/skip/EPERM을 확인했다."
+    },
+    {
+      "id": "CLARITY-VER-03",
+      "severity": "medium",
+      "description": "P10/P13의 평가자 데이터 해석이 OPTIONAL_FUTURE 절에만 있어 현재 G06 적용 범위가 불명확했다.",
+      "questionIds": [
+        "CORE-21-C06",
+        "CORE-21-C12"
+      ],
+      "requiredFix": "현재 G06의 입력 범위·진단 분모·oracle 충돌 기록을 명시하고 제품 ID 분기 또는 신규 기능 요구와 구분.",
+      "status": "resolved",
+      "resolution": "06의 CURRENT_REPRODUCTION G06 경계 문단에서 PDF8/PNG4/26경로와 P13 충돌을 명확히 연결했다."
+    }
+  ],
+  "completeProductAcceptance": false,
+  "inputVerification": {
+    "designFilesCheckedAgainstFrozenSha256": 319,
+    "mismatchedDesignFiles": [],
+    "assignedQuestionCount": 18,
+    "assignedQuestionsUnchangedSincePriorAcceptedInput": true,
+    "frozenPopulationQuestionCount": 243,
+    "populationMatchesFrozenInputs": true,
+    "traceabilityRows": 243,
+    "traceabilityUniqueQuestionIds": 243,
+    "missingTraceabilityQuestions": [],
+    "sourceTraceEntries": 211,
+    "missingBaselineSourceTraceEntries": [],
+    "unknownSourceTraceQuestionReferences": [],
+    "sourceFilesOpened": false,
+    "sourceHashMetadataUnchangedBetweenManifests": true
+  },
+  "reevaluationNotes": "이 보고서는 이전 의견의 입력 SHA만 교체한 전체 재승인이 아니다. 전체 입력 목록의 해시 delta를 확인한 후 CORE-21-C01/C08/C10/C12/C13/C14를 현재 규범으로 재판정했다. 나머지 12질문은 문구·소유 모듈과 그 의견의 규범/도구 근거가 변경되지 않았음을 대조하여 기존 판정을 유지했다. 새 3질문 자체의 기능 명확성 평가를 대신하지 않는다.",
+  "initialReviewNotes": "최종 고정 입력에서 담당 18개 질문과 근거 31파일을 재대조했다. 사전 검토 후 환경/현재 G06/분해 진입점의 교정을 재독했고, 마지막 acceptance-selftest 변경 전체 및 run-gate의 profile own-property guard를 재독했다. 담당 범위 밖 질문 정정이 포함된 최종 모집단도 240개로 유지됨을 확인했다. 제품 코드/비밀/과거 점수/작성자 보고서와 실제 제품 실행은 평가 근거로 사용하지 않았다.",
+  "deltaReview": {
+    "previousEvaluatedInputsSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+    "evaluatedInputsSha256": "f3f78e1ffa4e28cc684e6ce2752c4492392a9fc806e357f53a14a4c9551c72fa",
+    "previousInputsPath": "architecture/reviews/current-reproduction/round-01-accepted/current-inputs.json",
+    "method": "Compared all old/current normative manifest entries by path and SHA-256, verified every current normative file against the frozen manifest, compared the complete prior/current question population, then reread affected normative sections and recomputed trace/accounting checks. No old score or other reviewer report was read.",
+    "changedNormativePaths": [
+      "decomposition/core-modules.json",
+      "decomposition/core-tree.md",
+      "decomposition/README.md",
+      "decomposition/source-trace.json",
+      "decomposition/ui-modules.json",
+      "decomposition/ui-tree.md",
+      "reviews/current-reproduction/population-changes.json",
+      "reviews/current-reproduction/PROTOCOL.md",
+      "specs/01-state-api.md",
+      "specs/02-backend-pipeline.md",
+      "traceability.csv",
+      "ui/detail-controls.md"
+    ],
+    "addedNormativePaths": [
+      "contracts/source-serialization-cases.json",
+      "ui/document-analysis-structure-cases.json"
+    ],
+    "deletedNormativePaths": [],
+    "previousPopulationCount": 240,
+    "currentPopulationCount": 243,
+    "addedQuestionIds": [
+      "CORE-04-C06",
+      "CORE-05-C06",
+      "UI-06-C07"
+    ],
+    "changedPriorQuestionIds": [],
+    "removedQuestionIds": [],
+    "directlyReevaluatedQuestionIds": [
+      "CORE-21-C01",
+      "CORE-21-C08",
+      "CORE-21-C10",
+      "CORE-21-C12",
+      "CORE-21-C13",
+      "CORE-21-C14"
+    ],
+    "retainedQuestionIds": [
+      "CORE-20-C01",
+      "CORE-20-C02",
+      "CORE-20-C03",
+      "CORE-20-C04",
+      "CORE-21-C02",
+      "CORE-21-C03",
+      "CORE-21-C04",
+      "CORE-21-C05",
+      "CORE-21-C06",
+      "CORE-21-C07",
+      "CORE-21-C09",
+      "CORE-21-C11"
+    ],
+    "retainedOpinionBasis": "All 12 retained questions have unchanged wording/module assignment and unchanged cited normative documents/tools. Their prior opinions remain valid within the declared source-blind clarity scope; no fresh product execution is asserted.",
+    "rereadChangedSections": [
+      "reviews/current-reproduction/PROTOCOL.md: authors/reviewers, archived inputs and actual delta reassessment",
+      "decomposition/README.md, core-tree.md, ui-tree.md: 123/120/243 population counts and current evaluation entry point",
+      "decomposition/core-modules.json, ui-modules.json, source-trace.json and traceability.csv: population and ownership accounting",
+      "specs/01-state-api.md: PublicDocument preview clipping and source budget distinction",
+      "specs/02-backend-pipeline.md: 2.3 reader equality; 2.4.1 exact source serialization; 2.4.2 UTF-16 limits",
+      "ui/detail-controls.md: D3.2.1 inventory aliases, Map insertion/overwrite order and page-wrapper merge",
+      "new fixture metadata and self-contained expected-input/output contract shape: provenance/NOT_RUN are not product execution evidence"
+    ],
+    "productExecutionPerformed": false,
+    "fixtureAuthorExecutionClaimsUsedAsIndependentEvidence": false
+  }
+}

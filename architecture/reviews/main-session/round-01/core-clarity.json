@@ -1,0 +1,1904 @@
+{
+  "schemaVersion": 1,
+  "round": 1,
+  "role": "clarity",
+  "reviewerId": "/root/architecture_clarity_core",
+  "modules": [
+    {
+      "moduleId": "CORE-01",
+      "checks": [
+        {
+          "id": "CORE-01-C01",
+          "status": "pass",
+          "reason": "environment 명세가 process.env 우선·빈문자열 override·필수키·역할 model 기본값·모델명 검증·health 비밀 제외를 명시한다.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": ".env와 비밀 경계"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "HealthResponse"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C02",
+          "status": "fail",
+          "reason": "06/G01도 adapter 자체 메서드·반환·provider 오류 taxonomy를 보충하지 않아 독립 구현 port가 없다. R1-CORE-021.",
+          "evidence": [
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "공통 조립"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "environment/README.md",
+              "section": ".env와 비밀 경계"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C03",
+          "status": "fail",
+          "reason": "slot 유지와 finally kill은 명확하나 취소 후 cleanup 오류의 공개 경로가 결정되지 않는다. R1-CORE-007.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8–2.9"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C04",
+          "status": "fail",
+          "reason": "어댑터 response/parts/parse cap·typed code가 없고 취소 cleanup 실패 공개 규칙도 충돌한다. R1-CORE-021/007.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8–2.9"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "공통 조립/호출별 토큰"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C05",
+          "status": "fail",
+          "reason": "offline test/check와 실제 smoke 구분은 있으나 fake-client 주입 입력·기대 반환/오류를 구현할 adapter 계약이 없다. R1-CORE-021.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": "앱 구현 이후 실행 명령"
+            },
+            {
+              "path": "environment/integrations/package.json",
+              "section": "scripts"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G01/G09, §6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-02",
+      "checks": [
+        {
+          "id": "CORE-02-C01",
+          "status": "pass",
+          "reason": "HTTP method/body/query/status/error 표, publicDocument allowlist와 private buffer/modelParts 비공개 경계가 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1–4.2, §8–9"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "transport request/response types"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C02",
+          "status": "pass",
+          "reason": "메모리 저장 수명과 재시작 소실, document/run/dashboard 각각의 404 응답이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1–4.2"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C03",
+          "status": "pass",
+          "reason": "한 배치 실패는 앞서 추가한 파일까지 rollback하고 retained run 참조 문서 삭제는409다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1"
+            },
+            {
+              "path": "contracts/examples/02-errors.json",
+              "section": "document referenced by retained run"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C04",
+          "status": "pass",
+          "reason": "Origin 유무 및 loopback hostname 규칙, 2MiB JSON, multipart files/fields/parts/fileSize와400/413가 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4, §4.1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C05",
+          "status": "fail",
+          "reason": "포트/env override와 dist 서빙은 있으나 server signal shutdown/cleanup 대기·exit 검증이 미지정이다. R1-CORE-022.",
+          "evidence": [
+            {
+              "path": "environment/README.md",
+              "section": "PORT 및 앱 구현 이후 실행 명령"
+            },
+            {
+              "path": "environment/templates/scripts/dev.mjs",
+              "section": "close and SIGINT/SIGTERM handlers"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-03",
+      "checks": [
+        {
+          "id": "CORE-03-C01",
+          "status": "pass",
+          "reason": "지원 확장자와 role, basename/control 문자/길이, 서명·UTF8 검사와 original bytes 보존을 독립 구현할 수 있다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C02",
+          "status": "pass",
+          "reason": "namespace/comment 보정은 메모리 복제본 전용이며 formula cached result와 merged continuation을 명시하여 원본 변조를 금지한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C03",
+          "status": "fail",
+          "reason": "source/시트/셀 한도는 구체적이나 deferred preview의 wire shape와 retained 내용이 없다. R1-CORE-008.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "DocumentPreview"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C04",
+          "status": "pass",
+          "reason": "파일·예약 문서/bytes·ZIP entries/expanded bytes와 실패 예약 반환 및 배치 rollback이 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C05",
+          "status": "pass",
+          "reason": "preview≠분석완료, uncached formula sentinel, drawing warning, PDF 보조 추출 실패 허용 및 각 주입의 기대가 명시된다. 실행 결과를 주장하지 않는다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2, §2.9 acceptance"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D03"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-04",
+      "checks": [
+        {
+          "id": "CORE-04-C01",
+          "status": "fail",
+          "reason": "DocumentProfile은 있으나 private analyzed Document의 modelParts/sourceSheets/sourceRows 컨테이너와 변환이 미정이다. R1-CORE-006.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.3–2.4"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "템플릿 데이터 binding"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C02",
+          "status": "pass",
+          "reason": "동일 document id/kind/digest를 WeakMap에 묶고 upload/install/query promise를1회 저장하며 nested command는 TaskPool1을 사용한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5, §2.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C03",
+          "status": "fail",
+          "reason": "개별 deadline과 정상/오류 정리 소유권은 명확하나 취소와 kill 실패 동시 발생의 사용자 관측 경로가 없다. R1-CORE-007.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8–2.9"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C04",
+          "status": "pass",
+          "reason": "reader 시트·셀·문자·PDF/이미지 cap 및 truncated/coverage partial 처리가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C05",
+          "status": "pass",
+          "reason": "trusted reader/고정 requery만 실행하고 수식·매크로·링크·문서 지시를 실행하지 않는 검증 경계와 입력 실패 기대가 있다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1–2.3, §2.5, §2.9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-05",
+      "checks": [
+        {
+          "id": "CORE-05-C01",
+          "status": "pass",
+          "reason": "format별 selector grammar/bounds, extra key 금지, ordered response·digest 대조로 데이터 재조회 계약이 고정된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5 허용 selector와 재조회 응답"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C02",
+          "status": "pass",
+          "reason": "150k chunk/1.2m source cap, 전 retained 구간 검증, populated cells·모든 시트·Word BLOCK/text L coverage가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C03",
+          "status": "fail",
+          "reason": "3회/동일 session/전체 context 대체는 있으나 초기 실패 회복 gate와 repair160/1000 상한이 충돌한다. R1-CORE-009/010.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C04",
+          "status": "fail",
+          "reason": "partial/limited와 정성 단위 예외는 구체적이나 최초 chunk 실패를 repair로 해제하는지 미정이다. R1-CORE-009.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C05",
+          "status": "pass",
+          "reason": "임의 위치/이름/숨김 sheet·모든 cell/BLOCK/line coverage 검증과 metamorphic 입력·기대가 지정되어 독립 테스트를 설계할 수 있다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5, §2.9 acceptance"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9 mandatory metamorphic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-06",
+      "checks": [
+        {
+          "id": "CORE-06-C01",
+          "status": "pass",
+          "reason": "실제1-based page, rotation, block/table/cell/nesting/uncertain/coverage 구조와 형식별 page 금지가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4, §2.6"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "visualTranscriptionSchema"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C02",
+          "status": "pass",
+          "reason": "전사와 별도 original visual judge, blank reason·page set·overlap·source omission 검증이 모델 complete보다 우선한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C03",
+          "status": "pass",
+          "reason": "30page/3page batch/3round/180s/60s와 개선 교체·sticky uncertainty·no progress·최종 병합 조건이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "시각 전사/검증 binding"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C04",
+          "status": "pass",
+          "reason": "렌더/전사 공급 cap은 warning·limited/partial에 남고 원문 없는 page/불확실 값을 창작하지 않는다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C05",
+          "status": "pass",
+          "reason": "문서 identity·requested page·unique page·empty judge reason·nested table 양방향/cycle 검증의 거절 조건이 offline stub으로 검사 가능한 형태다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.6, §2.9 acceptance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-07",
+      "checks": [
+        {
+          "id": "CORE-07-C01",
+          "status": "fail",
+          "reason": "Eligibility 상태·normative/sourceKind 조합은 명확하나 native Word/PDF citation과 모델/공개 Evidence 경계가 충돌한다. R1-CORE-005.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-eligibility.SCHEMA"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.10"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C02",
+          "status": "pass",
+          "reason": "not_criteria만 full read/quality/source coverage를 추가 증명해야 제외하며 mixed 문서의 독립 실질 기준은 남긴다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C03",
+          "status": "pass",
+          "reason": "invalid schema/citation만1회 repair, transient failure uncertain/abort 전파, 제외 출처의 승인·revision 재진입 거절이 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1–13.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C04",
+          "status": "pass",
+          "reason": "파일명/role/summary 제외, exact numeric quote·same-row range·input cap 및 부분 읽기 자동제외 금지가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-eligibility.SYSTEM"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C05",
+          "status": "pass",
+          "reason": "normative 일반 정의와 법무/업무/정성·mixed·retrospective ledger·injection 분류 기대가 데이터셋 이름 없이 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-eligibility.SYSTEM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-08",
+      "checks": [
+        {
+          "id": "CORE-08-C01",
+          "status": "fail",
+          "reason": "plan/extract response schema와 region accountability는 구체적이나 입력 inventory sheet/region의 정확한 DTO가 없어 연동 계약이 미완성이다. R1-CORE-006.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.2"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-sandbox.planSchema, extractSchema, inventory bindings"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C02",
+          "status": "pass",
+          "reason": "모델 계획에 미포함 region을 추가하고 전치/반복블록/merged/역할 헤더·aligned min/max 탐색 규칙을 명시한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.1, §11.1–11.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C03",
+          "status": "fail",
+          "reason": "별도 discovery 세션이라는02/DECISIONS와 기존 분석 세션 재사용이라는03 표현이 충돌한다. R1-CORE-001.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "현재 원본 한계와 재현 정책"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C04",
+          "status": "pass",
+          "reason": "inventory/detail/range/좌표/후보 cap과 누적 재조회 예산, unresolved·limit flag·partial 처리식이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.2"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C05",
+          "status": "pass",
+          "reason": "임의 이름/시트/행열 이동·transpose·인접행·조건/비고 교환 및 source-linked coverage 동등성/변화 기대를 명시한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9 mandatory metamorphic, §11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-09",
+      "checks": [
+        {
+          "id": "CORE-09-C01",
+          "status": "pass",
+          "reason": "rule/comparison/scope/conditions/path/sample와 provenance를 분리하고 없는 계층을 빈 path/not_applicable로 표현한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §3.3, §11.3"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "Criterion"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C02",
+          "status": "pass",
+          "reason": "실제 note 역할 셀을 주소로 제외하고 실제 조건-role 셀/본문 조건은 복구하며 userOverride 예외도 지정한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.1, §3.3, §11.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C03",
+          "status": "fail",
+          "reason": "shared/child/sample와 대체·폐기 우선순위는 명확하나 non-XLSX hierarchy prompt가 section headings 보존과 section titles 금지를 동시에 지시한다. R1-CORE-002.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.3, §12"
+            },
+            {
+              "path": "prompts/pipeline-prompt-catalog.json",
+              "section": "review:text-part:469"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C04",
+          "status": "pass",
+          "reason": "최대 개수·깊이·길이, invalid comparison 삭제, source 충돌과 hierarchy rejected/uncertain prefix 처리로 추정 확정을 막는다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §11.3"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C05",
+          "status": "pass",
+          "reason": "한글 특정 자재 사전을 요구하지 않고 정성 무단위·임의 hierarchy/동일 label 다른 조건을 보존하는 fixture/변형 요구가 있다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3, §5.3, §9, §12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-10",
+      "checks": [
+        {
+          "id": "CORE-10-C01",
+          "status": "pass",
+          "reason": "confirm/revise body·version·feedback/group/scope와 frozen approvedCriteria 응답이 타입·HTTP·예시에서 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "ConfirmCriteriaRequest, ReviseCriteriaRequest, RunSnapshot"
+            },
+            {
+              "path": "contracts/examples/01-criteria-first-commands.json",
+              "section": "confirm step"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C02",
+          "status": "fail",
+          "reason": "직접 편집 provenance 보호는 명확하나 required의 natural-language patch 허용 목록과 prompt가 일치하지 않는다. R1-CORE-003.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§8, §13.2"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-revision.editableProperties, criteria-revision.revise"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C03",
+          "status": "pass",
+          "reason": "revise 접수/완료/실패와 confirmation 복귀, version/revision 증가 및 confirm 배열 제공 여부의 version 규칙이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §5–6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C04",
+          "status": "pass",
+          "reason": "criteria_first missing/stale version400/409, 접수 feedback20회/12k 한도, token·cancel late-response 차단이 구체적이다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5, §7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.2"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C05",
+          "status": "pass",
+          "reason": "승인 전 attach409, 승인본 deep clone/freeze·version 강제 재지정과 confirm/revise audit 보존이 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3–5, §10"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "AuditEntry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-11",
+      "checks": [
+        {
+          "id": "CORE-11-C01",
+          "status": "pass",
+          "reason": "독립 PDF/image facts의 fields300과 semantic review items250, 서로 다른 schema와 호출 구간이 분리된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §4"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "documentFieldsSchema, itemSchema"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C02",
+          "status": "pass",
+          "reason": "기준 독립 사실 추출·모든 측정행/시료·실제 certificate number 우선순위와 원문 zero/단위/ND 표기 보존이 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§4"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C03",
+          "status": "pass",
+          "reason": "analyze→visual-only facts→semantic proposal→server guards→pending extraction/item.decided 순서가 명확하다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.7"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C04",
+          "status": "pass",
+          "reason": "잘못된 ID/shape는 문서 오류, raw uncertainty/absence/분류·조건/독립추출 mismatch는 review이며 known-record 다른 행 근거를 차단한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C05",
+          "status": "pass",
+          "reason": "CSV 실제 행과 XLSX ID-header record의 빈 value 보존, 검증 제외행·missingRows·행×기준 coverage 한계가 구별된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§7"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "대상 판정; records binding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-12",
+      "checks": [
+        {
+          "id": "CORE-12-C01",
+          "status": "pass",
+          "reason": "numericVerdict 코드가 경계·inclusive range·exact units/no conversion을 정의하고 status/machineStatus 및 missing/condition 필드를 구별한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "Item"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C02",
+          "status": "pass",
+          "reason": "complete/source/required/verified blank·real quote 조건이 모두 있어야 fail이고 ND/불확실/잘림/cache 미존재는 review, optional missing은 생략한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6, §9 ALG-M vectors"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C03",
+          "status": "pass",
+          "reason": "정규화10단계와 D07 우선순위가 source/criterion uncertainty·conditions·applicability·independent extraction guard를 숫자 결정보다 우선시한다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D07"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C04",
+          "status": "pass",
+          "reason": "hierarchy/sample 실제 literal source, 숫자 경계, order subsequence, known-record 정확한 same-sheet/single-row guard가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C05",
+          "status": "pass",
+          "reason": "zero/numeric·blank·merged·formula no cache·verified/unverified missing·독립값 mismatch의 결과가 결정론적 벡터로 구분된다.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§6, §9 ALG-N/ALG-M/ALG-E"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-13",
+      "checks": [
+        {
+          "id": "CORE-13-C01",
+          "status": "fail",
+          "reason": "run/snapshot/event/legacy 구분은 있으나 문서 status/stage와 문서 summary4개 필드 predicate가 완결되지 않는다. R1-CORE-004.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §6, §10"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "RunStatus, Summary, RunSnapshot"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C02",
+          "status": "pass",
+          "reason": "analyze와 target review는 각각2worker, ID dedupe, sibling 실패 격리·파일 ID별 event/result 결합이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8–2.9"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C03",
+          "status": "fail",
+          "reason": "취소 및 waiter 격리·terminal 집계는 명확하지만 취소 후 cleanup 실패를 보여줄 전달 상태가 없다. R1-CORE-007.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8–2.9"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C04",
+          "status": "pass",
+          "reason": "open3/전체Map40 pruning/문서250결과와 incomplete coverage에 따른 partial를 정확히 구별한다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §3, §10"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C05",
+          "status": "pass",
+          "reason": "terminal resolve+사유, 최초 machineStatus·before/after audit·summary·item.resolved 및 같은 상태 확인 이력까지 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5–6, §10"
+            },
+            {
+              "path": "contracts/examples/01-criteria-first-commands.json",
+              "section": "resolve step"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-14",
+      "checks": [
+        {
+          "id": "CORE-14-C01",
+          "status": "pass",
+          "reason": "Evidence document/page/sheet/cell/quote와 review-item highlight metadata·ID/callback·criterion 보충 근거·PDF text witness가 분리된다.",
+          "evidence": [
+            {
+              "path": "contracts/types.ts",
+              "section": "Evidence, Item"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D0, D1.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C02",
+          "status": "pass",
+          "reason": "필터는 목록만 변경하고 active-file 모든 항목을 highlight하며 documentId별 제한과 dashboard 소유 문서 집계를 지정한다.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C03",
+          "status": "fail",
+          "reason": "main-view missing 전처리·기준 label 보충은 구체적이나 dashboard sourceItems가 필요한 missing 필드를 삭제한다. R1-CORE-011.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02, D10"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C04",
+          "status": "fail",
+          "reason": "spreadsheet 좌표 우선/quote 탐색에 실제 위치·record/item anchor 불일치 거절 predicate가 없다. R1-CORE-012.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3 spreadsheet/PDF matching"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C05",
+          "status": "fail",
+          "reason": "원본 미포함 HTML 안내는 명확하지만 acceptance의 runId 검사는 실제 bridge wire shape에 없다. R1-CORE-013.",
+          "evidence": [
+            {
+              "path": "decomposition/core-modules.json",
+              "section": "CORE-14-C05"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-15",
+      "checks": [
+        {
+          "id": "CORE-15-C01",
+          "status": "pass",
+          "reason": "task/event identity·runtime/step/status·handoff·revision SSE와 sanitizer/retention 길이 규칙이 정의된다. activity revision과 run sequence는 구별된다.",
+          "evidence": [
+            {
+              "path": "contracts/types.ts",
+              "section": "ActivityEvent, ActivityTask, ActivitySnapshot"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C02",
+          "status": "pass",
+          "reason": "process-wide Gemini/E2B2와 pending100 FIFO, engine ModelQueue2, retained document TaskPool1을 구별한다.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C03",
+          "status": "fail",
+          "reason": "queued abort/late suppression/observer 복구는 있으나 activity terminal화와 이후 cleanup 오류 관측이 충돌한다. R1-CORE-007.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8–2.9"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2–4.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C04",
+          "status": "fail",
+          "reason": "quiet heartbeat/timeout/scope 격리는 있으나 command stream framing과 duplicate/final output 소유권이 없다. R1-CORE-014.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D04"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C05",
+          "status": "fail",
+          "reason": "handoff 큐/시간/reduced motion은 구체적이나 criteria-analysis autoCollapse 기본값은 원본 구현 조회를 요구한다. R1-CORE-015.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2–4.3, §8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-16",
+      "checks": [
+        {
+          "id": "CORE-16-C01",
+          "status": "pass",
+          "reason": "JSON 필드·CSV11열·XLSX4시트와 최종/AI/사람 사유/근거/허용 run 상태를 명시한다.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C02",
+          "status": "pass",
+          "reason": "실제 header/key exact 탐색, 두 target cells, sourceDigest 재분석과 XML/ZIP byte 보존·재open 검증이 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3, §5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C03",
+          "status": "fail",
+          "reason": "분석→확인→export 흐름은 명확하지만 fingerprint의 payload-only scope와 모든 human override409 약속이 충돌한다. R1-CORE-016.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§2.2–2.3, §4"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§9"
+            },
+            {
+              "path": "contracts/examples/05-ledger-analyze.json",
+              "section": "analyze/export examples"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C04",
+          "status": "pass",
+          "reason": "CSV formula escaping·ledger formula/merged/protected/OOXML 제약·sample allowlist path·부분/불완전 판정 보존이 구체적이다.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3.1–3.2, §4–5, §7.3–7.4"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C05",
+          "status": "pass",
+          "reason": "golden ID는 선택 allowlist일 뿐 알고리즘 조건 금지, 정답 runtime 비노출 및 공개 회귀/분리 holdout 구분과 이름 변경 검증이 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D14"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9 mandatory metamorphic"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "§2 public/v3 boundaries, §5 oracle isolation and metamorphic relations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-17",
+      "checks": [
+        {
+          "id": "CORE-17-C01",
+          "status": "fail",
+          "reason": "immutable snapshot/API/design 구분은 명확하나 sourceItems missing semantics 유실과14/15 필드 수 충돌이 있다. R1-CORE-011/020.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D01–D03"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "properties/required"
+            },
+            {
+              "path": "contracts/dashboard-design.default.json",
+              "section": "entire default object"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C02",
+          "status": "fail",
+          "reason": "독립 취향 의미 계약과 authoritative theme/chart matcher, 비요청 baseDesign 보존 성공 조건이 충돌한다. R1-CORE-017/018/019.",
+          "evidence": [
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "independent dimensions"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "CURRENT DESIGN and semantic examples"
+            },
+            {
+              "path": "reference/dashboard/design-functions.reference.mjs",
+              "section": "applyDashboardPreferences"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05, D11"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C03",
+          "status": "pass",
+          "reason": "총3 plan calls·한 E2B/설치1회·diagnostic repair·ready/generated vs standard fallback·failed/DELETE cancel이 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03–D04"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "shared call budget and fallback"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C04",
+          "status": "pass",
+          "reason": "JSON-only allowlist·invalid enum/baseDesign/길이 거절, immutable 결과와 fallback honest message가 지정된다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02–D05"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "additionalProperties/required/enums"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "parse output and fallback"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C05",
+          "status": "pass",
+          "reason": "green/#198b58·light surfaces·large hollow doughnut·preserved pie 변경·bright airy/print-like theme 의미와 render inspect/브라우저 검증을 조합해 독립 기대를 만들 수 있다. 별도 실행 성공을 주장하지 않는다.",
+          "evidence": [
+            {
+              "path": "prompts/dashboard-system.md",
+              "section": "theme/accent/distribution/size; semantic paraphrases"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "semantic examples"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D06, D08, D11"
+            },
+            {
+              "path": "contracts/dashboard-examples.json",
+              "section": "post/readyShape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-18",
+      "checks": [
+        {
+          "id": "CORE-18-C01",
+          "status": "pass",
+          "reason": "14개 design→root attrs/CSS/layout/chart mapping 및 offline HTML의 mount/update/destroy가 명시된다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07"
+            },
+            {
+              "path": "reference/dashboard/chart-entry.reference.jsx",
+              "section": "TraceCharts controller lifecycle"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C02",
+          "status": "pass",
+          "reason": "distribution 형태·크기·theme/legend·실제counts/IDs·파일/필터/상세 동작 및 validator checks가 정의된다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D06–D08, D11"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "charts/files/findings/filters/details assertions"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C03",
+          "status": "pass",
+          "reason": "초기 file/filter/focus, detail 공간 할당, motion/reduced 우선순위와 재mount 정리가 구별된다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07, D09"
+            },
+            {
+              "path": "reference/dashboard/chart-entry.reference.jsx",
+              "section": "render/destroy"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C04",
+          "status": "pass",
+          "reason": "nonce/CSP/escaping/no network/iframe sandbox·token bridge 및 exit0+report+host bytes 비교를 요구한다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D04, D07–D08"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C05",
+          "status": "pass",
+          "reason": "11종 DOM/data report와 실제 Canvas·geometry·offline browser·motion QA를 명시적으로 분리하고 viewport/inspect/SHA 증거를 지정한다.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D08, D11"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "report checks"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R1-CORE-001",
+      "moduleId": "CORE-08",
+      "severity": "high",
+      "status": "open",
+      "document": "specs/03-algorithms.md",
+      "section": "11.1 환경·한도; specs/02-backend-pipeline.md §2.1, §2.8",
+      "problem": "XLSX 기준 탐색의 세션 소유권이 충돌한다. 02는 구조 분석 E2B를 항상 종료한 뒤 탐색 전용 세션을 시작하지만 03은 기존 분석 세션을 재사용한다고 한다.",
+      "alternativeInterpretations": [
+        "항상 구조 분석과 탐색에 별도 E2B 세션을 만든다.",
+        "분석 세션을 유지하여 기준 탐색에도 재사용한다."
+      ],
+      "requiredDecision": "기준 파이프라인의 세션 생성·종료 책임을 하나로 고정하고 선택적 어댑터 재사용 기능과 구분한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-002",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "open",
+      "document": "prompts/pipeline-prompt-catalog.json",
+      "section": "review:text-part:469; specs/03-algorithms.md §11.3",
+      "problem": "같은 hierarchy prompt가 categoryPath를 shared section headings에서 보존하라고 하면서 section titles에서 category를 도출하지 말라고 한다. 적용 가능한 section heading과 금지된 title의 구분이 없다.",
+      "alternativeInterpretations": [
+        "실제 상위 섹션 제목을 유형 계층 근거로 수용한다.",
+        "섹션 제목에서 나온 유형을 모두 제외하고 표 머리글/열만 수용한다."
+      ],
+      "requiredDecision": "업무상 유형·적용 범위를 가진 섹션 헤더와 일반 목차/문서 제목을 구별하는 조건 및 예시를 지정하고 프롬프트 충돌의 우선순위를 정한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-003",
+      "moduleId": "CORE-10",
+      "severity": "medium",
+      "status": "open",
+      "document": "prompts/criteria-algorithms.catalog.json",
+      "section": "criteria-revision.editableProperties; criteria-revision.revise; specs/03-algorithms.md §8, §13.2, §6",
+      "problem": "required는 편집 가능한 필드와 PATCH schema에 있지만 revision prompt의 허용 변경 목록과 모호성 해소 목록에는 없다. required=true 기준을 '선택 항목'으로 바꿔 달라는 요청에서 rule만 수정하면 §6의 명시 required 우선 정책 때문에 필수로 남는다.",
+      "alternativeInterpretations": [
+        "자연어 수정은 required:false를 직접 patch하여 선택 항목으로 바꾼다.",
+        "prompt 목록만 지켜 rule을 선택 사항으로 바꾸고 기존 required:true는 보존한다."
+      ],
+      "requiredDecision": "required의 자연어 수정 가능 여부를 명시하고 가능하면 prompt의 editable·semantic edit 목록에 포함하거나, 불가하면 사용자 메시지와 direct-edit 경로를 지정한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-004",
+      "moduleId": "CORE-13",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/01-state-api.md",
+      "section": "§3 상태 기계; §10 요약; contracts/types.ts Summary",
+      "problem": "summary의 문서 관련 네 필드는 이름만 있고 계산식이 없다. 특히 incompleteDocuments가 partial 문서만인지 failed/cancelled/queued/processing까지 포함한 비완료 문서인지 결정할 수 없다. 문서 status와 stage도 wire enum보다 느슨한 string으로 남아 있다.",
+      "alternativeInterpretations": [
+        "incompleteDocuments는 status='partial'만 센다.",
+        "incompleteDocuments는 status!='completed'인 모든 문서를 센다."
+      ],
+      "requiredDecision": "허용 문서 status/stage와 documents/completedDocuments/failedDocuments/incompleteDocuments의 정확한 predicate, 진행/취소 snapshot 예시를 명시한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-005",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/03-algorithms.md",
+      "section": "§13.1 native citation paragraph; contracts/types.ts Evidence; prompts/criteria-algorithms.catalog.json criteria-eligibility.SCHEMA",
+      "problem": "Word native citation은 documentId/block/table, visual은 documentId/page/table이라고 하나 공개 Evidence와 eligibility schema에는 block/table이 없다. 내부 structured-table provenance와 공개 citation 중 어느 경계의 형식인지 명시되지 않는다.",
+      "alternativeInterpretations": [
+        "공개 evidence에 block/table 필드를 추가해 native 위치를 보존한다.",
+        "기존 Evidence 계약을 따라 Word는 quote만, PDF는 page+quote만 노출하고 block/table은 내부에만 둔다."
+      ],
+      "requiredDecision": "내부 table indexing, 모델 eligibility evidence, normalized public evidence 각각의 타입과 변환을 지정하고 공개 가능한 Word/PDF native 위치 예시를 제공한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-006",
+      "moduleId": "CORE-04",
+      "severity": "high",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.1, §2.3–2.4; prompts/pipeline-prompts.md binding; specs/03-algorithms.md §3.1, §11",
+      "problem": "분석 완료 Document의 modelParts/sourceSheets/sourceRows/private analysis 반환 컨테이너와 profile→DTO 변환이 없다. criteria inventory sheet/region 입력 타입도 필수 키·주소·region ID 형태가 없는 설명으로 남아 있다.",
+      "alternativeInterpretations": [
+        "profile-native sparse rows와 typed value를 그대로 전달한다.",
+        "normalized cell/text 배열이나 Map으로 변환하고 blank/sentinel을 새로 만든다."
+      ],
+      "requiredDecision": "AnalyzedDocument, model parts, sheet/row/cell, criteria inventory/region DTO와 변환 예제를 명시한다. 원래 행·셀 주소, 빈 셀, 수식/cache/sentinel 및 읽기 한도 보존 규칙도 포함한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-007",
+      "moduleId": "CORE-15",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.8–2.9; specs/01-state-api.md §3, §8",
+      "problem": "취소 뒤 run event와 terminal activity report는 차단되지만 늦은 E2B kill 실패는 CLEANUP_FAILED로 사용자에게 보여야 한다. 취소 응답 시점·활동 terminal 시점·오류 공개 경로가 없다.",
+      "alternativeInterpretations": [
+        "취소 즉시 모두 terminal로 만들고 뒤 cleanup 실패는 서버 로그만 보관한다.",
+        "cleanup까지 activity를 비종료로 두거나 cancelled snapshot에 별도 오류 필드를 붙인다."
+      ],
+      "requiredDecision": "run은 cancelled를 유지하면서 cleanup 대기·실패를 어느 activity 상태/공개 필드/연결로 언제 전달하는지 명시한다. slot은 cleanup settle까지 보존한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-008",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2; contracts/types.ts DocumentPreview",
+      "problem": "로컬 XLSX 한도 초과는 deferred preview라고 하지만 DocumentPreview에 해당 상태나 retained-content 정책이 없다.",
+      "alternativeInterpretations": [
+        "빈 table sheets와 truncated=true/warning을 반환한다.",
+        "이미 읽은 부분 시트 또는 text fallback을 반환한다."
+      ],
+      "requiredDecision": "각 source cap에서 정확한 public preview JSON과 partial retained content/경고 정책을 지정한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-009",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.4–2.5",
+      "problem": "매 attempt의 deterministic 검사에 최초 context chunk 누락이 포함되나 repair 검증 성공 시 contextSegmentsRead를 전체로 바꾸고 initial count만 유지한다고 한다. 최초 실패가 해소 가능한지 불분명하다.",
+      "alternativeInterpretations": [
+        "최초 실패는 sticky여서 repair해도 verified가 불가능하다.",
+        "전체 replacement 검증 성공 시 최초 실패는 이력만 남고 현재 issue는 해제한다."
+      ],
+      "requiredDecision": "최초 누락 진단이 현재 완료 gate에서 해제되는 정확한 조건을 지정하고 초기 1구간 실패→repair 복구 예시를 추가한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-010",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.4 structure limits; §2.5 completeReplacement; prompts/pipeline-prompts.md repair",
+      "problem": "단일 응답 structure 상한160, 결합 context 상한1000, repair는 전체 context 대체라는 세 규칙에서 repair 응답의 상한이 결정되지 않는다.",
+      "alternativeInterpretations": [
+        "repair도 단일 응답이므로160개만 허용한다.",
+        "repair는 combined context replacement여서1000개까지 허용한다."
+      ],
+      "requiredDecision": "repair 전용 상한과 160개 이상 기존 context를 안전하게 보존하거나 partial로 남기는 정책을 명시한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-011",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D02 sourceItems; D10; ui/detail-controls.md D1.3",
+      "problem": "dashboard immutable sourceItems가 presence/missingVerified를 버린다. missing 원문 색칠 방지는 이 필드가 필요하고 null→빈 문자열 변환은 legacy missing 인식에도 걸리지 않는다.",
+      "alternativeInterpretations": [
+        "정확한 snapshot allowlist를 지켜 contextual target evidence가 일반 highlight가 된다.",
+        "명세에 없는 missing 메타데이터/안전 highlight projection을 추가한다."
+      ],
+      "requiredDecision": "snapshot/sourceItems에 missing 필드를 보존하거나 별도의 검증된 highlight projection을 지정한다. value=null 또는 빈 문자열+presence=missing+문맥 target 근거의 왕복 예제를 추가한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-012",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "open",
+      "document": "ui/detail-controls.md",
+      "section": "D1.3 spreadsheet coordinate rules; specs/04-ui-motion.md §7",
+      "problem": "좌표 우선과 quote-only 전체 셀 탐색은 있지만 좌표의 실제 값과 quote 일치 및 record/item anchor 검증이 없다. 요구사항 CORE14 C04의 wrong-location/header/other-row 거절을 독립 구현할 수 없다.",
+      "alternativeInterpretations": [
+        "B3=10인데 cell=B3,quote=99이면 좌표대로 B3를 칠한다. quote-only 99는 여러 행을 모두 칠한다.",
+        "실제 quote/항목 record를 검증하고 불일치면 위치 확인만 표시한다."
+      ],
+      "requiredDecision": "형식별 highlight admission predicate를 지정한다. multi-cell quote, repeated value, header-only, 서로 다른 record, PDF 지정 page와 rendered page의 일치 조건을 포함한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-013",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D07 bridge; decomposition/core-modules.json CORE-14-C05",
+      "problem": "bridge wire payload는 channel/type/token/itemId만인데 acceptance는 runId 검증을 요구한다.",
+      "alternativeInterpretations": [
+        "토큰과 iframe source 및 item membership만 검증한다.",
+        "runId를 새 필수 필드로 추가하고 없는 메시지를 거절한다."
+      ],
+      "requiredDecision": "runId를 transport/receiver 모두에 명시하거나 token의 immutable run/dashboard binding과 preview 교체 정리로 동등성을 검증하도록 acceptance를 명시적으로 정정한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-014",
+      "moduleId": "CORE-15",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.9 TRACE_PROGRESS; specs/05-dashboard-exports.md D04 command observer",
+      "problem": "command stdout의 partial-line framing, final stdout replay 소유권, 중복 키, 허용 설치 진단 규칙이 없다. 같은 설치가 두 번처럼 보이는 것과 실제 반복 command를 구별하지 못한다.",
+      "alternativeInterpretations": [
+        "callback와 final output의 모든 발생을 별도 log로 기록한다.",
+        "정규화 text 또는 stage/current로 dedup하여 실제 반복 작업도 지울 수 있다."
+      ],
+      "requiredDecision": "command별 line buffering·parse·dedup key·stream/final ownership·malformed line 정책과 허용 진단을 정하고 중복/정당한 반복 trace 예제를 제공한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-015",
+      "moduleId": "CORE-15",
+      "severity": "low",
+      "status": "open",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.2 criteria-analysis autoCollapse",
+      "problem": "criteria-analysis dock의 autoCollapse 기본값을 기존 구현에서 확인하라고 남겨 패키지만으로 종료 후 상태를 결정할 수 없다.",
+      "alternativeInterpretations": [
+        "criteria-analysis도 기본 true여서800ms 후 접힌다.",
+        "기본 false여서 완료 후에도 열린다."
+      ],
+      "requiredDecision": "각 host의 autoCollapse 값을 패키지에 직접 명시한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-016",
+      "moduleId": "CORE-16",
+      "severity": "medium",
+      "status": "open",
+      "document": "specs/05a-ledger-export.md",
+      "section": "§4 proposal fingerprint; specs/01-state-api.md §9",
+      "problem": "fingerprint는 출력 proposal만 해시하지만 01은 UI human override 뒤 기존 proposal이409라고 한다. 동일 판정의 note/audit만 바꾸거나 첫5개/6500자 밖 변경은 해시가 같을 수 있다.",
+      "alternativeInterpretations": [
+        "실제로 대장에 쓸 결과/비고가 달라질 때만 재확인한다.",
+        "모든 HITL/result revision은 다시 확인해야 한다."
+      ],
+      "requiredDecision": "payload-only invalidation으로 문구를 좁히거나 result revision/item digest를 hash에 포함한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-017",
+      "moduleId": "CORE-17",
+      "severity": "high",
+      "status": "open",
+      "document": "reference/dashboard/design-functions.reference.mjs",
+      "section": "applyDashboardPreferences theme; prompts/dashboard-system.md independent theme",
+      "problem": "'Keep the dark page; make the charts light blue.'에서 semantic prompt는 dark 페이지를 유지하지만 authoritative matcher는 뒤 light를 페이지 theme=light로 덮어쓴다.",
+      "alternativeInterpretations": [
+        "사용자 의미대로 theme=dark, accent=blue를 유지한다.",
+        "명시 override 코드대로 theme=light가 된다."
+      ],
+      "requiredDecision": "theme matcher의 적용 문맥을 차트 색 표현과 분리하거나 현재 한계를 명시하여 semantic acceptance와 코드 우선순위를 일치시킨다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-018",
+      "moduleId": "CORE-17",
+      "severity": "high",
+      "status": "open",
+      "document": "reference/dashboard/design-functions.reference.mjs",
+      "section": "applyDashboardPreferences distribution/fileVisualization; prompts/dashboard-loop.md examples",
+      "problem": "'전체는 파이, 파일별 결과는 비교 막대로'는 독립 distribution=pie/fileVisualization=bars 의미지만 matcher의 좁은 파일 전용 접두식에 맞지 않아 둘 다 bar가 된다.",
+      "alternativeInterpretations": [
+        "전체 pie와 파일별 bars를 독립 선택한다.",
+        "마지막 막대 token으로 전체도 bar로 바꾼다."
+      ],
+      "requiredDecision": "파일 비교 차트 문맥 인식 범위를 정하고 그 범위의 복합·순서변형 fixture를 추가하거나 semantic 보장을 좁힌다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-019",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "open",
+      "document": "prompts/dashboard-loop.md",
+      "section": "CURRENT DESIGN block; specs/05-dashboard-exports.md D11; DECISIONS.md D11",
+      "problem": "baseDesign 비요청 필드 보존은 필수 semantic acceptance이나 성공 경로는 prompt만 의존하고 parser/명시 override는 비요청 필드를 되돌리는 유효 모델 plan도 허용한다.",
+      "alternativeInterpretations": [
+        "규격상 valid model plan이면 light/red/pie가 바뀌어도 성공으로 수용한다.",
+        "비요청 변경을 탐지하여 repair 또는 거절한다."
+      ],
+      "requiredDecision": "모델 준수에 의존하는 현행 한계인지 검증된 보존 보장인지 명시한다. 보장이면 preservation 검증 및 shared3-call budget 처리를 정의한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-020",
+      "moduleId": "CORE-17",
+      "severity": "low",
+      "status": "open",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D01 implementation assets; contracts/dashboard-design.schema.json; specs/06-verification.md §4 G11",
+      "problem": "generation schema 필드가15개라고 적혔지만 schema/default/CORE17은14개다. 새06 G11도15design choices를 반복한다.",
+      "alternativeInterpretations": [
+        "15는 오기이며14개가 전체다.",
+        "명세에서 누락된15번째 독립 설정이 있다."
+      ],
+      "requiredDecision": "정확한 필드 수를14로 고치거나 누락 필드를 schema/default/renderer 전체에 정의한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-021",
+      "moduleId": "CORE-01",
+      "severity": "high",
+      "status": "open",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.8; prompts/pipeline-prompts.md 공통 조립; environment/README.md; specs/06-verification.md G01/G09",
+      "problem": "generateJson/generateText의 구조화 contents/systemInstruction/schema/role 입력, text/data/usage 반환, provider 오류 분류와 response/token/inline file-part/JSON parse 한도·코드가 없다. 호출부의 토큰값과 SDK 버전만으로 어댑터·fake client 계약을 결정할 수 없다.",
+      "alternativeInterpretations": [
+        "SDK raw response/text를 그대로 반환하고 SDK 오류를 각 호출부에서 해석한다.",
+        "adapter가 표준 data/text/usage와 typed errors로 정규화하고 response/parts cap을 선검사한다."
+      ],
+      "requiredDecision": "두 adapter 메서드의 정확한 TypeScript/JSON 계약, 기본/override 범위, usage 매핑, provider error taxonomy·retry/abort·limit/parse 정책과 offline fake-client 기대 예제를 추가한다.",
+      "resolution": null,
+      "recheckedBy": null
+    },
+    {
+      "id": "R1-CORE-022",
+      "moduleId": "CORE-02",
+      "severity": "medium",
+      "status": "open",
+      "document": "environment/README.md",
+      "section": "앱 구현 이후 실행 명령; environment/templates/scripts/dev.mjs; specs/01-state-api.md §1/§3; specs/06-verification.md G02",
+      "problem": "포트/정적 dist와 개발 child kill은 설명되지만 API server의 SIGINT/SIGTERM shutdown 순서·진행run cancellation/cleanup 대기·종료 코드 및 검증 기대가 없다.",
+      "alternativeInterpretations": [
+        "signal 수신 즉시 listen을 닫고 run abort 후 바로 process를 종료한다.",
+        "새 요청을 막고 모든 run abort·E2B cleanup을 제한시간까지 기다린 뒤 종료한다."
+      ],
+      "requiredDecision": "production server signal handler의 순서, deadline/exit code, 열린 SSE 및 cleanup 실패 처리, PORT override/dist 있는·없는 상태의 확인 명령과 기대를 명시한다.",
+      "resolution": null,
+      "recheckedBy": null
+    }
+  ],
+  "inputs": [
+    {
+      "path": "DECISIONS.md",
+      "sha256": "83707b6c95fc1748c8b558780c6a416f63a4c2094a97c3619fc2167250024e8c"
+    },
+    {
+      "path": "contracts/dashboard-design.default.json",
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "contracts/dashboard-design.schema.json",
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892"
+    },
+    {
+      "path": "contracts/dashboard-examples.json",
+      "sha256": "a77b87d15fe0fefeafa3f7714d0cdec3ea6cb8cdcea305a870b94ef81bdb247d"
+    },
+    {
+      "path": "contracts/examples/01-criteria-first-commands.json",
+      "sha256": "f1bf4bebf90d799d427b97ea46223f70c2fd0d449a449dc42311633c546d238d"
+    },
+    {
+      "path": "contracts/examples/02-errors.json",
+      "sha256": "7f47d4a033ce27e9fd229e394593e2f0edbcb9554ac3e2ca366342482a8f1877"
+    },
+    {
+      "path": "contracts/examples/03-run-sse.json",
+      "sha256": "28eb8bb711058c107898063e133d42419b2702d20ae216461fcbe073162470cc"
+    },
+    {
+      "path": "contracts/examples/04-activity-snapshot.json",
+      "sha256": "0505601cab2bd33ef2dd4d96579d5341f9cf566777161bd2ac20efd353cce019"
+    },
+    {
+      "path": "contracts/examples/05-ledger-analyze.json",
+      "sha256": "998a4a6cb8bbacac82e0b1e2c9c0b95692da1d355c5a131cf527045cb272ed66"
+    },
+    {
+      "path": "contracts/pipeline-model-schemas.json",
+      "sha256": "476e013b88764213945aa5d6b6ad8eecd3b125f3ee7b820628a1f3b9b635cfa6"
+    },
+    {
+      "path": "contracts/types.ts",
+      "sha256": "53eba698e9915d3f16b21250f1255dea45e54dde7322c015ef7577f51b525054"
+    },
+    {
+      "path": "decomposition/core-modules.json",
+      "sha256": "a5d35538b7913603159b3e81ed1225a6945561dd492cd9cf501552779ff29b45"
+    },
+    {
+      "path": "decomposition/ui-modules.json",
+      "sha256": "10c20184f05390b1f80dde103c407031d6606e25bc54bcbbecdca44ad89a4ff8"
+    },
+    {
+      "path": "environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb"
+    },
+    {
+      "path": "environment/integrations/package-lock.json",
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441"
+    },
+    {
+      "path": "environment/integrations/package.json",
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1"
+    },
+    {
+      "path": "environment/templates/scripts/dev.mjs",
+      "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34"
+    },
+    {
+      "path": "environment/versions.json",
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf"
+    },
+    {
+      "path": "prompts/criteria-algorithms.catalog.json",
+      "sha256": "c1b5354f702b02106d2ddbc1d192668f55d041f7980cbb7b7a46cd5cccebfc01"
+    },
+    {
+      "path": "prompts/dashboard-loop.md",
+      "sha256": "087c2c0470dd948bf8b8a8fc9f469dd328e103436a3c3bd87beedebe4aac140c"
+    },
+    {
+      "path": "prompts/dashboard-system.md",
+      "sha256": "70ef4190e4963a91382c35665d1098081b3145e561b4faa5abd8cc7adda0d2ee"
+    },
+    {
+      "path": "prompts/pipeline-prompt-catalog.json",
+      "sha256": "811353999c732fd68706ea1ae051f0c41a68ae838322e298e58f03c4d4763898"
+    },
+    {
+      "path": "prompts/pipeline-prompts.md",
+      "sha256": "e5b568dee61e7f27de0dd73f59e3ed5455f80537a3b5e047ede3c8d206bdf325"
+    },
+    {
+      "path": "reference/dashboard/chart-entry.reference.jsx",
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "reference/dashboard/design-functions.reference.mjs",
+      "sha256": "2d9446c37f0a64f002f69b83e282dbdb9483e9bda3173e576a5ad64a91cb1877"
+    },
+    {
+      "path": "specs/01-state-api.md",
+      "sha256": "277a34e344b8ea0ae9926b0c9273e24e461abeef341edca56d0b6b6763c2c13b"
+    },
+    {
+      "path": "specs/02-backend-pipeline.md",
+      "sha256": "fe059a0a6487479043c31fdf66d2a9f405fa1bf723ebabb2da6fb4af5ec2c0dd"
+    },
+    {
+      "path": "specs/03-algorithms.md",
+      "sha256": "a37e6d0f053431cbab8d37f6917fcc2fde775028233f4e8a64730321bb47e616"
+    },
+    {
+      "path": "specs/04-ui-motion.md",
+      "sha256": "a4d67adef0f65c96cb2fb85cb6bff9e89adc7a07a69ace994e979275f355e866"
+    },
+    {
+      "path": "specs/05-dashboard-exports.md",
+      "sha256": "f5a4e2d65cc3b513c8282aefc922478d32e8841f24a6eb6e0226f48031d62ee2"
+    },
+    {
+      "path": "specs/05a-ledger-export.md",
+      "sha256": "9c3138db4f8088edc157da91d6170f4786681b46c5e8c1b4a342cb99bf8fb627"
+    },
+    {
+      "path": "specs/06-verification.md",
+      "sha256": "e5416a357a0b1a6297cdfb11c31f65a9424ff394cd1607272bb05bafbe6e16eb"
+    },
+    {
+      "path": "ui/detail-controls.md",
+      "sha256": "a29c6cb8efef04c45d6bd003e233c33f4b94f7446608021d222b5ee79fef3440"
+    },
+    {
+      "path": "ui/library-effects.csv",
+      "sha256": "25326c447363c184d174cc3d9c48e0aaf79cff3b7d7677d17f0cf821b5edb784"
+    },
+    {
+      "path": "validation/dashboard-dom-validator.cjs",
+      "sha256": "710a07958a8ef34fb527b07dc786d292fd8a4d332ba6c065ff2a9a4f35830c60"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "10-criteria-hitl-editor",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "10-criteria-hitl-editor",
+    "screenshot": {
+      "path": "10-criteria-hitl-editor.png",
+      "bytes": 114513,
+      "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/10-criteria-hitl-editor.json",
+      "bytes": 1025043,
+      "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T18:49:29.904Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/10-criteria-hitl-editor-font-readiness.json",
+    "bytes": 2301160,
+    "sha256": "5448b6f26275862719f0c02dd4800a0fd8f50b27ec20dc657d7ac1c900daead7"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/10-criteria-hitl-editor.png",
+    "bytes": 113572,
+    "sha256": "d0cc8436114ba96a6e90c72d2fb9c7c04b6c19b350343a285973e33acde8d691",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T18:49:33.999Z",
+    "capturedAt": "2026-09-21T18:49:34.452Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/10-criteria-hitl-editor.json",
+    "bytes": 1594923,
+    "sha256": "95fef07981ab74270909411ed5d6b66fa334a178c73e2c1509a0d7c2b084e77d"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/10-criteria-hitl-editor-measurement.json",
+    "bytes": 203369,
+    "sha256": "485b3954196d41bddfd76694c583227d41ea9018fb190867660e7ec733f515c0"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T18:49:38.955Z"
+}

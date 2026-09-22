@@ -1,0 +1,1703 @@
+{
+  "schema_version": "3.0",
+  "fields": [
+    {
+      "case_id": "B101",
+      "field_id": "thermal",
+      "name": "열전도율",
+      "raw_value": null,
+      "value": null,
+      "unit": "W/(m K)",
+      "qualifier": "unreadable",
+      "operator": "lte",
+      "limit": 0.034,
+      "criterion_unit": "W/(m K)",
+      "verdict": "review",
+      "report_pages": [
+        3
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B101_criteria.xlsx",
+        "sheet": "단열 성능",
+        "cells": [
+          "E10",
+          "C10"
+        ]
+      }
+    },
+    {
+      "case_id": "B101",
+      "field_id": "stress",
+      "name": "압축응력",
+      "raw_value": "142",
+      "value": 142,
+      "unit": "kPa",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 140,
+      "criterion_unit": "kPa",
+      "verdict": "pass",
+      "report_pages": [
+        3
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B101_criteria.xlsx",
+        "sheet": "단열 성능",
+        "cells": [
+          "D11",
+          "C11"
+        ]
+      }
+    },
+    {
+      "case_id": "B101",
+      "field_id": "absorption",
+      "name": "흡수율",
+      "raw_value": "0.41",
+      "value": 0.41,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "lte",
+      "limit": 0.5,
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        11
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B101_criteria.xlsx",
+        "sheet": "마감재 기준",
+        "cells": [
+          "C7",
+          "D7"
+        ]
+      }
+    },
+    {
+      "case_id": "B101",
+      "field_id": "bond",
+      "name": "접착강도",
+      "raw_value": "1.12",
+      "value": 1.12,
+      "unit": "MPa",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 1,
+      "criterion_unit": "MPa",
+      "verdict": "pass",
+      "report_pages": [
+        13
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B101_criteria.xlsx",
+        "sheet": "마감재 기준",
+        "cells": [
+          "C8",
+          "D8"
+        ]
+      }
+    },
+    {
+      "case_id": "B102",
+      "field_id": "strength",
+      "name": "28일 압축강도",
+      "raw_value": "31.2",
+      "value": 31.2,
+      "unit": "MPa",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 30,
+      "criterion_unit": "MPa",
+      "verdict": "pass",
+      "report_pages": [
+        15,
+        16
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B102_criteria.xlsx",
+        "sheet": "현장 종합기준",
+        "cells": [
+          "D7",
+          "E7"
+        ]
+      }
+    },
+    {
+      "case_id": "B102",
+      "field_id": "chloride",
+      "name": "염화물량",
+      "raw_value": "0.047",
+      "value": 0.047,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "lte",
+      "limit": 0.05,
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        16,
+        18
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B102_criteria.xlsx",
+        "sheet": "현장 종합기준",
+        "cells": [
+          "D23",
+          "E23"
+        ]
+      }
+    },
+    {
+      "case_id": "B102",
+      "field_id": "elongation",
+      "name": "연신율",
+      "raw_value": "14",
+      "value": 14,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 16,
+      "criterion_unit": "%",
+      "verdict": "fail",
+      "report_pages": [
+        45
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B102_criteria.xlsx",
+        "sheet": "현장 종합기준",
+        "cells": [
+          "D42",
+          "E42"
+        ]
+      }
+    },
+    {
+      "case_id": "B102",
+      "field_id": "fire",
+      "name": "내화시간",
+      "raw_value": "60",
+      "value": 60,
+      "unit": "min",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 60,
+      "criterion_unit": "min",
+      "verdict": "pass",
+      "report_pages": [
+        45
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/B102_criteria.xlsx",
+        "sheet": "현장 종합기준",
+        "cells": [
+          "D46",
+          "B52"
+        ]
+      }
+    },
+    {
+      "case_id": "I201",
+      "field_id": "density",
+      "name": "다짐도",
+      "raw_value": "96.3",
+      "value": 96.3,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 95,
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        4
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I201_criteria.xlsx",
+        "sheet": "노체 기준 행렬",
+        "cells": [
+          "D7",
+          "D6",
+          "D9"
+        ]
+      }
+    },
+    {
+      "case_id": "I201",
+      "field_id": "cbr",
+      "name": "수정 CBR",
+      "raw_value": "79; handwritten 89 ?",
+      "value": null,
+      "unit": "%",
+      "qualifier": "ambiguous",
+      "operator": "gte",
+      "limit": 80,
+      "criterion_unit": "%",
+      "verdict": "review",
+      "report_pages": [
+        21
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I201_criteria.xlsx",
+        "sheet": "노체 기준 행렬",
+        "cells": [
+          "D8",
+          "D6",
+          "D9"
+        ]
+      }
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve075",
+      "name": "0.075 mm 통과량",
+      "raw_value": "4.8",
+      "value": 4.8,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        2,
+        7
+      ],
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        33
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I201_criteria.xlsx",
+        "sheet": "입도 범위",
+        "cells": [
+          "C22",
+          "D22",
+          "C20"
+        ]
+      }
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve475",
+      "name": "4.75 mm 통과량",
+      "raw_value": "99.1",
+      "value": 99.1,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        90,
+        100
+      ],
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        33
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I201_criteria.xlsx",
+        "sheet": "입도 범위",
+        "cells": [
+          "C23",
+          "D23",
+          "C20"
+        ]
+      }
+    },
+    {
+      "case_id": "I202",
+      "field_id": "voids",
+      "name": "Air voids",
+      "raw_value": "3,8",
+      "value": 3.8,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        3,
+        5
+      ],
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        29
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I202_criteria.pdf",
+        "page": 5,
+        "clause": "5.2"
+      }
+    },
+    {
+      "case_id": "I202",
+      "field_id": "stability",
+      "name": "Stability",
+      "raw_value": "9,2",
+      "value": 9.2,
+      "unit": "kN",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 8,
+      "criterion_unit": "kN",
+      "verdict": "pass",
+      "report_pages": [
+        29
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I202_criteria.pdf",
+        "page": 5,
+        "clause": "5.2"
+      }
+    },
+    {
+      "case_id": "I202",
+      "field_id": "thickness",
+      "name": "Core thickness",
+      "raw_value": "47",
+      "value": 47,
+      "unit": "mm",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 50,
+      "criterion_unit": "mm",
+      "verdict": "fail",
+      "report_pages": [
+        66
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I202_criteria.pdf",
+        "page": 9,
+        "clause": "9.1"
+      }
+    },
+    {
+      "case_id": "I202",
+      "field_id": "permeability",
+      "name": "Permeability",
+      "raw_value": "NOT TESTED",
+      "value": null,
+      "unit": "m/s",
+      "qualifier": "not_tested",
+      "operator": "lte",
+      "limit": 1e-05,
+      "criterion_unit": "m/s",
+      "verdict": "review",
+      "report_pages": [
+        66
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/I202_criteria.pdf",
+        "page": 11,
+        "clause": "A.3"
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "yield",
+      "name": "Yield strength",
+      "raw_value": "345",
+      "value": 345,
+      "unit": "MPa",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 335,
+      "criterion_unit": "MPa",
+      "verdict": "pass",
+      "report_pages": [
+        37
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Mechanical R3",
+        "cells": [
+          "D15",
+          "F15",
+          "C15"
+        ]
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "tensile",
+      "name": "Tensile strength",
+      "raw_value": "510",
+      "value": 510,
+      "unit": "MPa",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        490,
+        650
+      ],
+      "criterion_unit": "MPa",
+      "verdict": "pass",
+      "report_pages": [
+        37
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Mechanical R3",
+        "cells": [
+          "D16",
+          "E16",
+          "F16",
+          "C16"
+        ]
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "carbon",
+      "name": "Carbon C",
+      "raw_value": "0.21",
+      "value": 0.21,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": "lte",
+      "limit": 0.23,
+      "criterion_unit": "%",
+      "verdict": "pass",
+      "report_pages": [
+        114
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Chemistry R3",
+        "cells": [
+          "C8",
+          "D8"
+        ]
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "impact",
+      "name": "Impact energy",
+      "raw_value": null,
+      "value": 27,
+      "unit": "J",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 30,
+      "criterion_unit": "J",
+      "verdict": "fail",
+      "report_pages": [
+        114,
+        118
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Mechanical R3",
+        "cells": [
+          "D17",
+          "F17",
+          "C17"
+        ]
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "pressure",
+      "name": "Hydrostatic pressure",
+      "raw_value": "150",
+      "value": 15,
+      "unit": "MPa",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 15,
+      "criterion_unit": "MPa",
+      "verdict": "pass",
+      "report_pages": [
+        191
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Hydro R3",
+        "cells": [
+          "C13",
+          "K8",
+          "'Design Basis'!D8",
+          "'Design Basis'!D10"
+        ]
+      }
+    },
+    {
+      "case_id": "P301",
+      "field_id": "hold",
+      "name": "Holding duration",
+      "raw_value": "30",
+      "value": 30,
+      "unit": "min",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 30,
+      "criterion_unit": "min",
+      "verdict": "pass",
+      "report_pages": [
+        224
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P301_criteria.xlsx",
+        "sheet": "Hydro R3",
+        "cells": [
+          "C14",
+          "D14"
+        ]
+      }
+    },
+    {
+      "case_id": "P302",
+      "field_id": "wall",
+      "name": "Wall thickness",
+      "raw_value": "8.2",
+      "value": 8.2,
+      "unit": "mm",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 8,
+      "criterion_unit": "mm",
+      "verdict": "pass",
+      "report_pages": [
+        22
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P302_criteria.pdf",
+        "page": 9,
+        "clause": "M.2"
+      }
+    },
+    {
+      "case_id": "P302",
+      "field_id": "weld",
+      "name": "Visual weld examination",
+      "raw_value": "Acceptable",
+      "value": "Acceptable",
+      "unit": "",
+      "qualifier": "eq",
+      "operator": "eq",
+      "limit": "Acceptable",
+      "criterion_unit": "",
+      "verdict": "pass",
+      "report_pages": [
+        57
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P302_criteria.pdf",
+        "page": 9,
+        "clause": "M.2"
+      }
+    },
+    {
+      "case_id": "P302",
+      "field_id": "leak",
+      "name": "Helium leak rate",
+      "raw_value": "<1.0E-6",
+      "value": 1e-06,
+      "unit": "Pa m3/s",
+      "qualifier": "lt",
+      "operator": "lte",
+      "limit": 1e-05,
+      "criterion_unit": "Pa m3/s",
+      "verdict": "pass",
+      "report_pages": [
+        92
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P302_criteria.pdf",
+        "page": 10,
+        "clause": "L.1"
+      }
+    },
+    {
+      "case_id": "P302",
+      "field_id": "coating",
+      "name": "Dry film thickness",
+      "raw_value": "280",
+      "value": 280,
+      "unit": "um",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        250,
+        350
+      ],
+      "criterion_unit": "um",
+      "verdict": "pass",
+      "report_pages": [
+        92
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P302_criteria.pdf",
+        "page": 16,
+        "clause": "ADD-4"
+      }
+    },
+    {
+      "case_id": "P302",
+      "field_id": "ferrite",
+      "name": "Ferrite content",
+      "raw_value": "6.2",
+      "value": 6.2,
+      "unit": "%",
+      "qualifier": "eq",
+      "operator": null,
+      "limit": null,
+      "criterion_unit": "%",
+      "verdict": "review",
+      "report_pages": [
+        57
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/P302_criteria.pdf",
+        "page": 17,
+        "clause": "APP-SCOPE"
+      }
+    },
+    {
+      "case_id": "N401",
+      "field_id": "lead",
+      "name": "납 Pb",
+      "raw_value": "<0.004",
+      "value": 0.004,
+      "unit": "mg/L",
+      "qualifier": "lt",
+      "operator": "lte",
+      "limit": 0.01,
+      "criterion_unit": "mg/L",
+      "verdict": "pass",
+      "report_pages": [
+        6
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N401_criteria.xlsx",
+        "sheet": "분석 허용치",
+        "cells": [
+          "B19",
+          "D19",
+          "E19",
+          "B26"
+        ]
+      }
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cadmium",
+      "name": "카드뮴 Cd",
+      "raw_value": "ND",
+      "value": null,
+      "unit": "mg/L",
+      "qualifier": "nd",
+      "operator": "lte",
+      "limit": 0.003,
+      "criterion_unit": "mg/L",
+      "verdict": "review",
+      "report_pages": [
+        6
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N401_criteria.xlsx",
+        "sheet": "분석 허용치",
+        "cells": [
+          "B20",
+          "D20",
+          "E20",
+          "B26"
+        ]
+      }
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cod",
+      "name": "COD",
+      "raw_value": "18",
+      "value": 18,
+      "unit": "mg/L",
+      "qualifier": "eq",
+      "operator": "lte",
+      "limit": 20,
+      "criterion_unit": "mg/L",
+      "verdict": "pass",
+      "report_pages": [
+        15
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N401_criteria.xlsx",
+        "sheet": "분석 허용치",
+        "cells": [
+          "B21",
+          "D21",
+          "E21",
+          "B26"
+        ]
+      }
+    },
+    {
+      "case_id": "N401",
+      "field_id": "ph",
+      "name": "pH",
+      "raw_value": "9.1",
+      "value": 9.1,
+      "unit": "",
+      "qualifier": "eq",
+      "operator": "between",
+      "limit": [
+        6.5,
+        8.5
+      ],
+      "criterion_unit": "",
+      "verdict": "fail",
+      "report_pages": [
+        23
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N401_criteria.xlsx",
+        "sheet": "현장 측정",
+        "cells": [
+          "C12",
+          "D12"
+        ]
+      }
+    },
+    {
+      "case_id": "N402",
+      "field_id": "power",
+      "name": "Maximum power Pmax",
+      "raw_value": "449",
+      "value": 449,
+      "unit": "W",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 450,
+      "criterion_unit": "W",
+      "verdict": "fail",
+      "report_pages": [
+        4
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N402_criteria.xlsx",
+        "sheet": "성능 매트릭스",
+        "cells": [
+          "E9",
+          "E8",
+          "C9",
+          "'환경 조건'!C7"
+        ]
+      }
+    },
+    {
+      "case_id": "N402",
+      "field_id": "insulation",
+      "name": "Insulation resistance",
+      "raw_value": "240000",
+      "value": 240,
+      "unit": "MOhm",
+      "qualifier": "eq",
+      "operator": "gte",
+      "limit": 100,
+      "criterion_unit": "MOhm",
+      "verdict": "pass",
+      "report_pages": [
+        28
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N402_criteria.xlsx",
+        "sheet": "성능 매트릭스",
+        "cells": [
+          "E10",
+          "E8",
+          "C10",
+          "'환경 조건'!C7"
+        ]
+      }
+    },
+    {
+      "case_id": "N402",
+      "field_id": "wetleak",
+      "name": "Wet leakage resistance",
+      "raw_value": null,
+      "value": null,
+      "unit": "MOhm",
+      "qualifier": "unreadable",
+      "operator": "gte",
+      "limit": 40,
+      "criterion_unit": "MOhm",
+      "verdict": "review",
+      "report_pages": [
+        40
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N402_criteria.xlsx",
+        "sheet": "성능 매트릭스",
+        "cells": [
+          "E11",
+          "E8",
+          "C11",
+          "'환경 조건'!C7"
+        ]
+      }
+    },
+    {
+      "case_id": "N402",
+      "field_id": "model",
+      "name": "Model designation",
+      "raw_value": "PVX-72",
+      "value": "PVX-72",
+      "unit": "",
+      "qualifier": "eq",
+      "operator": "eq",
+      "limit": "PVX-72",
+      "criterion_unit": "",
+      "verdict": "pass",
+      "report_pages": [
+        4
+      ],
+      "criterion_source": {
+        "file": "inputs/criteria/N402_criteria.xlsx",
+        "sheet": "환경 조건",
+        "cells": [
+          "'적용 모델'!D8",
+          "C10"
+        ]
+      }
+    }
+  ],
+  "writer_cells": [
+    {
+      "case_id": "B101",
+      "field_id": "thermal",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "G10",
+      "value": "판독 불가"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "thermal",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "H10",
+      "value": "review"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "thermal",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "I10",
+      "value": "PDF 3쪽 | 불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "stress",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "G11",
+      "value": "142 kPa"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "stress",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "H11",
+      "value": "pass"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "stress",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "단열 성능",
+      "cell": "I11",
+      "value": "PDF 3쪽 | 최소 140 kPa 이상"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "absorption",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "E7",
+      "value": "0.41 %"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "absorption",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "F7",
+      "value": "pass"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "absorption",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "G7",
+      "value": "PDF 11쪽 | 상한 0.5% 이하"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "bond",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "E8",
+      "value": "1.12 MPa"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "bond",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "F8",
+      "value": "pass"
+    },
+    {
+      "case_id": "B101",
+      "field_id": "bond",
+      "file": "golden/native/B101_completed.xlsx",
+      "sheet": "마감재 기준",
+      "cell": "G8",
+      "value": "PDF 13쪽 | 최소 1.0 MPa 이상"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "strength",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "F7",
+      "value": "31.2 MPa"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "strength",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "G7",
+      "value": "pass"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "strength",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "H7",
+      "value": "PDF 16 + 15쪽 | 28일 양생 조건을 앞쪽 시험계획에서 연결"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "chloride",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "F23",
+      "value": "0.047 %"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "chloride",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "G23",
+      "value": "pass"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "chloride",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "H23",
+      "value": "PDF 18 + 16쪽 | 전 페이지 헤더 및 LOT를 연결해야 하는 연속 표"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "elongation",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "F42",
+      "value": "14 %"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "elongation",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "G42",
+      "value": "fail"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "elongation",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "H42",
+      "value": "PDF 45쪽 | 구개정 기준 12%가 아닌 현행 최소 16% 적용"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "fire",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "F46",
+      "value": "60 min"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "fire",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "G46",
+      "value": "pass"
+    },
+    {
+      "case_id": "B102",
+      "field_id": "fire",
+      "file": "golden/native/B102_completed.xlsx",
+      "sheet": "현장 종합기준",
+      "cell": "H46",
+      "value": "PDF 45쪽 | 주석의 H-03 특별기준 60분 적용"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "density",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "C16",
+      "value": "96.3 %"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "density",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "D16",
+      "value": "pass"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "density",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "E16",
+      "value": "PDF 4쪽 | 중앙 시료 C열 해당 구간 선택"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "cbr",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "C17",
+      "value": "79; handwritten 89 ?"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "cbr",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "D17",
+      "value": "review"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "cbr",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cell": "E17",
+      "value": "PDF 21쪽 | 인쇄값 79와 확인되지 않은 수기 89 ?가 충돌하므로 원본 확인 필요"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve075",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "E22",
+      "value": "4.8 %"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve075",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "F22",
+      "value": "pass"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve075",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "G22",
+      "value": "PDF 33쪽 | 입도곡선 대신 수치표에서 정확한 값 추출"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve475",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "E23",
+      "value": "99.1 %"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve475",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "F23",
+      "value": "pass"
+    },
+    {
+      "case_id": "I201",
+      "field_id": "sieve475",
+      "file": "golden/native/I201_completed.xlsx",
+      "sheet": "입도 범위",
+      "cell": "G23",
+      "value": "PDF 33쪽 | 포함 경계의 범위 기준"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "voids",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C9",
+      "value": "3.8 %"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "voids",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "E9",
+      "value": "pass"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "voids",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C10",
+      "value": "PDF 29쪽 | 쉼표는 소수 구분자"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "stability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C16",
+      "value": "9.2 kN"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "stability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "E16",
+      "value": "pass"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "stability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C17",
+      "value": "PDF 29쪽 | 영문 문장 속 시험값 추출"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "thickness",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C23",
+      "value": "47 mm"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "thickness",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "E23",
+      "value": "fail"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "thickness",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C24",
+      "value": "PDF 66쪽 | 특기시방의 최소 두께 50 mm 미달"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "permeability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C30",
+      "value": "NOT TESTED"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "permeability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "E30",
+      "value": "review"
+    },
+    {
+      "case_id": "I202",
+      "field_id": "permeability",
+      "file": "golden/native/I202_completed.xlsx",
+      "sheet": "현장 검토서",
+      "cell": "C31",
+      "value": "PDF 66쪽 | 미시험 표기를 0으로 바꾸지 않음"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "yield",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "G15",
+      "value": "345 MPa"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "yield",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "H15",
+      "value": "pass"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "yield",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "I15",
+      "value": "PDF 37쪽 | 같은 Heat의 현행 기계적 성질 표 선택"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "tensile",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "G16",
+      "value": "510 MPa"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "tensile",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "H16",
+      "value": "pass"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "tensile",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "I16",
+      "value": "PDF 37쪽 | 하한 및 상한 포함"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "impact",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "G17",
+      "value": "판독 불가"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "impact",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "H17",
+      "value": "review"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "impact",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Mechanical R3",
+      "cell": "I17",
+      "value": "PDF 118 + 114쪽 | 불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "carbon",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Chemistry R3",
+      "cell": "E8",
+      "value": "0.21 %"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "carbon",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Chemistry R3",
+      "cell": "F8",
+      "value": "pass"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "carbon",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Chemistry R3",
+      "cell": "G8",
+      "value": "PDF 114쪽 | 전체 Heat 표 중 HX-72만 선택"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "pressure",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "E13",
+      "value": "15 MPa"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "pressure",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "F13",
+      "value": "pass"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "pressure",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "G13",
+      "value": "PDF 191쪽 | 150 bar = 15 MPa; 현행 설계압력의 1.5배"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "hold",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "E14",
+      "value": "30 min"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "hold",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "F14",
+      "value": "pass"
+    },
+    {
+      "case_id": "P301",
+      "field_id": "hold",
+      "file": "golden/native/P301_completed.xlsx",
+      "sheet": "Hydro R3",
+      "cell": "G14",
+      "value": "PDF 224쪽 | 유지시간은 압력 차트가 아닌 최종 입회 기록에 있음"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "wall",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "E19",
+      "value": "8.2 mm"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "wall",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "F19",
+      "value": "pass"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "wall",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "G19",
+      "value": "PDF 22쪽 | 최소 측정값 8.2 mm를 사용"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "weld",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "E20",
+      "value": "Acceptable"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "weld",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "F20",
+      "value": "pass"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "weld",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "G20",
+      "value": "PDF 57쪽 | 문구 기준과 일치"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "leak",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "E21",
+      "value": "<0.000001 Pa m3/s"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "leak",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "F21",
+      "value": "pass"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "leak",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "G21",
+      "value": "PDF 92쪽 | 검출 상한이 허용 상한보다 작음"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "coating",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "E22",
+      "value": "280 um"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "coating",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "F22",
+      "value": "pass"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "coating",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "G22",
+      "value": "PDF 92쪽 | 부록 개정값 250..350 적용; 본문 구기준 300..400 제외"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "ferrite",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "E23",
+      "value": "6.2 %"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "ferrite",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "F23",
+      "value": "review"
+    },
+    {
+      "case_id": "P302",
+      "field_id": "ferrite",
+      "file": "golden/native/P302_completed.xlsx",
+      "sheet": "Release Form",
+      "cell": "G23",
+      "value": "PDF 57쪽 | 현행 기준서에 합격 한계가 제공되지 않음"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "lead",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "F19",
+      "value": "<0.004 mg/L"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "lead",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "G19",
+      "value": "pass"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "lead",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "H19",
+      "value": "PDF 6쪽 | 검출상한 0.004가 한계 0.01보다 작음"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cadmium",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "F20",
+      "value": "ND"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cadmium",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "G20",
+      "value": "review"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cadmium",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "H20",
+      "value": "PDF 6쪽 | ND이나 LOD/LOQ 미기재"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cod",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "F21",
+      "value": "18 mg/L"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cod",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "G21",
+      "value": "pass"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "cod",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "분석 허용치",
+      "cell": "H21",
+      "value": "PDF 15쪽 | 지정 채수일과 OUTLET B의 결과"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "ph",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "현장 측정",
+      "cell": "F12",
+      "value": "9.1"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "ph",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "현장 측정",
+      "cell": "G12",
+      "value": "fail"
+    },
+    {
+      "case_id": "N401",
+      "field_id": "ph",
+      "file": "golden/native/N401_completed.xlsx",
+      "sheet": "현장 측정",
+      "cell": "H12",
+      "value": "PDF 23쪽 | 허용 상한 8.5 초과"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "power",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "C8",
+      "value": "449 W"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "power",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "C10",
+      "value": "fail"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "power",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "C12",
+      "value": "PDF 4쪽 | STC 조건 결과가 최소 450 W 미달"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "insulation",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "D8",
+      "value": "240 MOhm"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "insulation",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "D10",
+      "value": "pass"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "insulation",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "D12",
+      "value": "PDF 28쪽 | kOhm을 MOhm으로 환산"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "wetleak",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "E8",
+      "value": "판독 불가"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "wetleak",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "E10",
+      "value": "review"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "wetleak",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "E12",
+      "value": "PDF 40쪽 | 결과 숫자 인쇄 손상으로 판독 불가"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "model",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "F8",
+      "value": "PVX-72"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "model",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "F10",
+      "value": "pass"
+    },
+    {
+      "case_id": "N402",
+      "field_id": "model",
+      "file": "golden/native/N402_completed.xlsx",
+      "sheet": "완성 검토",
+      "cell": "F12",
+      "value": "PDF 4쪽 | 요청 모델과 일치"
+    }
+  ]
+}

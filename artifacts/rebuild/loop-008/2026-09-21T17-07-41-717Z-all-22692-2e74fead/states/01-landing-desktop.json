@@ -1,0 +1,72 @@
+{
+  "id": "01-landing-desktop",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "01-landing-desktop",
+    "screenshot": {
+      "path": "01-landing-desktop.png",
+      "bytes": 556576,
+      "sha256": "1ee4967e8ba0f70aecbf71e206fbb7fb259536812a69cf7eaa399433a4a3e8dc",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/01-landing-desktop.json",
+      "bytes": 941783,
+      "sha256": "e7f9d8919135181d92eaa758b1525e2797f2d6115f4e6add35456790e0f96c65"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:07:59.264Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/01-landing-desktop-font-readiness.json",
+    "bytes": 2301315,
+    "sha256": "d8d6ee414a9c6235903718b8e788c6c8d510fc7024de5d726f2e2b48ec4361a2"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/01-landing-desktop.png",
+    "bytes": 532288,
+    "sha256": "6273758974f8d8f914bd8cb7b228b31880168f53045eaa70d6ce27d532221434",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:08:03.457Z",
+    "capturedAt": "2026-09-21T17:08:04.287Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/01-landing-desktop.json",
+    "bytes": 1469676,
+    "sha256": "d0c0c8411879c092f688b52af26b33aa4ba7e550ae2dbd84231a2266a66d7550"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/01-landing-desktop-measurement.json",
+    "bytes": 189136,
+    "sha256": "c8b4278c9a296ed25ae247b271982a46fd02d33f4ada1751c18a5a132eba464a"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T17:08:09.734Z"
+}

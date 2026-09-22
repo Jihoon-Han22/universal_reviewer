@@ -1,0 +1,252 @@
+[
+  {
+    "id": "F01_use_v2_page_numbers",
+    "description": "쪽 이동과 2-up을 무시하고 v2 쪽번호를 그대로 사용",
+    "expected_errors": [
+      "B101:thermal:retrieval",
+      "B101:stress:retrieval",
+      "B101:absorption:retrieval",
+      "B101:bond:retrieval",
+      "B102:chloride:retrieval",
+      "B102:elongation:retrieval",
+      "B102:fire:retrieval",
+      "I201:density:retrieval",
+      "I201:cbr:retrieval",
+      "I201:sieve075:retrieval",
+      "I201:sieve475:retrieval",
+      "I202:voids:retrieval",
+      "I202:thickness:retrieval",
+      "I202:permeability:retrieval",
+      "P301:carbon:retrieval",
+      "P301:impact:retrieval",
+      "P301:pressure:retrieval",
+      "P301:hold:retrieval",
+      "P302:weld:retrieval",
+      "P302:leak:retrieval",
+      "P302:coating:retrieval",
+      "P302:ferrite:retrieval",
+      "N401:lead:retrieval",
+      "N401:cadmium:retrieval",
+      "N401:cod:retrieval",
+      "N401:ph:retrieval",
+      "N402:power:retrieval",
+      "N402:insulation:retrieval",
+      "N402:wetleak:retrieval",
+      "N402:model:retrieval"
+    ],
+    "metrics": {
+      "value_accuracy": 1.0,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 1.0,
+      "source_accuracy": 1.0,
+      "page_precision": 0.18421052631578946,
+      "page_recall": 0.18421052631578946,
+      "page_f1": 0.18421052631578946,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F02_guess_hidden_thermal",
+    "description": "메모지 아래 보이지 않는 0.033을 정답처럼 복원",
+    "expected_errors": [
+      "B101:thermal:value",
+      "B101:thermal:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F03_guess_hidden_impact",
+    "description": "가려진 충격값 27을 원본에서 가져와 불합격 처리",
+    "expected_errors": [
+      "P301:impact:value",
+      "P301:impact:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F04_trust_handwritten_89",
+    "description": "확정되지 않은 손글씨 89 ?를 승인된 수정으로 취급",
+    "expected_errors": [
+      "I201:cbr:value",
+      "I201:cbr:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F05_ignore_handwriting",
+    "description": "수기 충돌을 무시하고 인쇄값 79만 확정",
+    "expected_errors": [
+      "I201:cbr:value",
+      "I201:cbr:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F06_missing_two_up",
+    "description": "I202 한 장의 두 성적서 중 우측 결과 누락",
+    "expected_errors": [
+      "I202:stability:value",
+      "I202:stability:verdict",
+      "I202:stability:retrieval"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 0.9736842105263158,
+      "page_f1": 0.9866666666666667,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F07_stop_after_50",
+    "description": "50쪽 이후의 결과 누락",
+    "expected_errors": [
+      "I202:thickness:value",
+      "I202:thickness:verdict",
+      "I202:thickness:retrieval",
+      "I202:permeability:retrieval",
+      "P301:carbon:value",
+      "P301:carbon:verdict",
+      "P301:carbon:retrieval",
+      "P301:impact:retrieval",
+      "P301:pressure:value",
+      "P301:pressure:verdict",
+      "P301:pressure:retrieval",
+      "P301:hold:value",
+      "P301:hold:verdict",
+      "P301:hold:retrieval",
+      "P302:weld:value",
+      "P302:weld:verdict",
+      "P302:weld:retrieval",
+      "P302:leak:value",
+      "P302:leak:verdict",
+      "P302:leak:retrieval",
+      "P302:coating:value",
+      "P302:coating:verdict",
+      "P302:coating:retrieval",
+      "P302:ferrite:value",
+      "P302:ferrite:retrieval"
+    ],
+    "metrics": {
+      "value_accuracy": 0.7714285714285715,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.8,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 0.7105263157894737,
+      "page_f1": 0.8307692307692308,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F08_nd_as_zero",
+    "description": "ND를 0으로 치환",
+    "expected_errors": [
+      "N401:cadmium:value",
+      "N401:cadmium:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 0.9714285714285714,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.9714285714285714,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F09_stamp_is_approval",
+    "description": "접수 도장을 합격 판정으로 오인",
+    "expected_errors": [
+      "B101:thermal:verdict",
+      "B102:elongation:verdict",
+      "I201:cbr:verdict",
+      "I202:thickness:verdict",
+      "I202:permeability:verdict",
+      "P301:impact:verdict",
+      "P302:ferrite:verdict",
+      "N401:cadmium:verdict",
+      "N401:ph:verdict",
+      "N402:power:verdict",
+      "N402:wetleak:verdict"
+    ],
+    "metrics": {
+      "value_accuracy": 1.0,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 0.6857142857142857,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 1.0,
+      "unexpected_written_cells": 0
+    }
+  },
+  {
+    "id": "F10_write_fixed_column",
+    "description": "원래 부서 양식의 출력 위치를 무시",
+    "expected_errors": [
+      "writer_cells_mismatch"
+    ],
+    "metrics": {
+      "value_accuracy": 1.0,
+      "criterion_accuracy": 1.0,
+      "verdict_accuracy": 1.0,
+      "source_accuracy": 1.0,
+      "page_precision": 1.0,
+      "page_recall": 1.0,
+      "page_f1": 1.0,
+      "writer_cell_accuracy": 0.0,
+      "unexpected_written_cells": 105
+    }
+  }
+]

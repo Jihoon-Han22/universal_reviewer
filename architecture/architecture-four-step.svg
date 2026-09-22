@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="slide" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">GSPEC: 문서 입력에서 맞춤 대시보드까지 네 단계</title>
+<desc id="desc">1단계 기준서와 검토 대상 문서를 준비합니다. 2단계 LLM과 샌드박스가 읽을 위치와 원문·위치를 주고받으며 기준을 정리하고 사람이 승인합니다. 3단계 승인 후 대상 문서를 읽고 승인 기준과 비교하여 적합·부적합·확인 필요와 이유·근거를 출력합니다. 4단계 요청 시 검토 결과와 화면 요청을 받아 LLM의 디자인 설정을 HTML로 만들고 샌드박스에서 검사하며, 실패 이유를 돌려보내 설정을 고칩니다. 최종 출력은 맞춤형 HTML 대시보드입니다. 네 단계가 한 장에 모두 표시됩니다.</desc>
+<defs>
+<pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#537093" opacity=".17"/></pattern>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f3f6fc"/></linearGradient>
+<marker id="arrow" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L14 8 L2 14Z" fill="#879db9"/></marker>
+<marker id="arrow-blue" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12Z" fill="#4768c4"/></marker>
+<marker id="arrow-gold" markerWidth="16" markerHeight="16" refX="13" refY="8" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L14 8 L2 14Z" fill="#996a17"/></marker>
+<marker id="arrow-teal" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12Z" fill="#369a86"/></marker>
+<style>
+text{font-family:"Malgun Gothic","맑은 고딕",sans-serif;fill:#233b58}.title{font-size:51px;font-weight:800;letter-spacing:-1.5px}.heading{font-size:33px;font-weight:800;letter-spacing:-.9px}.name{font-size:30px;font-weight:800;letter-spacing:-.6px}.label{font-size:26px;font-weight:700;letter-spacing:-.5px}.body{font-size:24px;letter-spacing:-.3px}.small{font-size:22px;letter-spacing:-.3px}.tiny{font-size:20px}.center{text-anchor:middle}.right{text-anchor:end}.muted{fill:#667b94}.blue{fill:#4768c4}.gold{fill:#996a17}.teal{fill:#187f6a}.red{fill:#bd4c61}.ink{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.flow{fill:none;stroke:#879db9;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.pass{fill:none;stroke:#996a17;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-gold)}.ask{fill:none;stroke:#4768c4;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-blue)}.return{fill:none;stroke:#369a86;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-teal)}.model{fill:#edf2ff;stroke:#aebfe1;stroke-width:1.5}.sandbox{fill:#eaf7f1;stroke:#8fbeb2;stroke-width:1.5}
+</style>
+<symbol id="file" viewBox="0 0 100 120"><path d="M13 7 H66 L89 30 V109 H13Z" fill="#f4f8ff" stroke="#829bbc" stroke-width="3" stroke-linejoin="round"/><path d="M66 7 V30 H89M29 49 H72M29 64 H72M29 79 H64" stroke="#829bbc" stroke-width="3.5" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="person" viewBox="0 0 60 60"><circle cx="30" cy="17" r="10" class="ink"/><path d="M10 53 Q10 35 30 35 Q50 35 50 53" class="ink"/></symbol>
+<symbol id="check" viewBox="0 0 30 30"><path d="M6 15 L12 21 L25 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs>
+<rect width="1920" height="1080" fill="#ffffff"/><rect width="1920" height="1080" fill="url(#dots)"/>
+<text x="60" y="89" class="title">GSPEC 검토부터 맞춤 대시보드까지</text>
+<text x="62" y="140" class="body muted">문서 입력 → 기준 승인 → 판정 → 맞춤 화면</text>
+<text x="1860" y="86" class="small muted right">범용 문서 검토</text>
+
+<!-- 전체 진행은 오직 1 → 2 → 3 → 4 한 줄입니다. -->
+<circle cx="86" cy="229" r="28" fill="#e8efff"/><text x="86" y="240" class="name blue center">1</text><text x="132" y="241" class="heading">문서 입력</text>
+<path d="M318 229 H497" class="flow"/><text x="418" y="271" class="small blue center">기준서</text>
+<circle cx="555" cy="229" r="28" fill="#fff0d2"/><text x="555" y="240" class="name gold center">2</text><text x="601" y="241" class="heading">기준 정리·승인</text>
+<path d="M856 229 H967" class="pass"/><text x="918" y="271" class="small gold center">승인 기준</text>
+<circle cx="1025" cy="229" r="28" fill="#e3f4ed"/><text x="1025" y="240" class="name teal center">3</text><text x="1071" y="241" class="heading">검토·판정</text>
+<path d="M1278 229 H1437" class="flow"/><text x="1363" y="271" class="small teal center">검토 결과</text>
+<circle cx="1495" cy="229" r="28" fill="#e8efff"/><text x="1495" y="240" class="name blue center">4</text><text x="1541" y="241" class="heading">맞춤 대시보드</text>
+<text x="1857" y="276" class="tiny muted right">요청 시</text>
+
+<!-- 1: 기준과 대상을 구분하되 모두 입력 자료로 보여줍니다. -->
+<rect x="60" y="336" width="360" height="211" rx="16" fill="#f1f5fc" stroke="#cad6e7" stroke-width="1.5"/>
+<use href="#file" x="78" y="371" width="87" height="109"/>
+<text x="183" y="414" class="name">기준서</text><text x="183" y="457" class="body muted">평가 기준</text>
+<rect x="181" y="481" width="162" height="35" rx="17.5" fill="#e8efff"/><text x="262" y="506" class="small blue center">먼저 읽기</text>
+<text x="240" y="590" class="name muted center">+</text>
+<rect x="60" y="622" width="360" height="211" rx="16" fill="#f0f8f5" stroke="#c3ddd4" stroke-width="1.5"/>
+<use href="#file" x="92" y="651" width="82" height="101" opacity=".45"/><use href="#file" x="82" y="662" width="82" height="101" opacity=".7"/><use href="#file" x="72" y="673" width="82" height="101"/>
+<text x="175" y="694" class="label">검토 대상 문서</text><text x="175" y="739" class="body muted">문서 내용·값</text>
+<rect x="174" y="763" width="198" height="35" rx="17.5" fill="#dff1e9"/><text x="273" y="788" class="small teal center">승인 후 검토</text>
+
+<!-- 2: 일반 문서 이해의 재조회. 샌드박스가 먼저 원문을 읽습니다. -->
+<text x="722" y="328" class="label center">기준서 전체 구조·맥락</text>
+<path d="M607 391 V376 H838 V391" class="ask"/><text x="722" y="362" class="small blue center">모호한 구간 재조회</text>
+<rect x="533" y="399" width="148" height="82" rx="10" class="model"/><text x="607" y="430" class="label blue center">LLM</text><text x="607" y="461" class="tiny blue center">맥락 해석·검증</text>
+<rect x="764" y="393" width="148" height="94" rx="11" fill="none" stroke="#8fbeb2" stroke-dasharray="5 4"/>
+<rect x="770" y="399" width="136" height="82" rx="8" class="sandbox"/><text x="838" y="430" class="label teal center">샌드박스</text><text x="838" y="461" class="tiny teal center">전체 구조 읽기</text>
+<path d="M838 494 V526 H607 V494" class="return"/><text x="724" y="512" class="small teal center">구조·원문·위치</text>
+<text x="722" y="555" class="small muted center">전체 해석을 보완·검증</text>
+<path d="M722 566 V585" class="flow"/>
+<rect x="555" y="594" width="334" height="137" rx="12" fill="url(#paper)" stroke="#bacce1" stroke-width="1.5"/>
+<text x="722" y="633" class="label center">검토 기준 초안</text>
+<use href="#check" x="576" y="650" width="25" height="25" style="color:#4768c4"/><text x="616" y="673" class="body">평가 항목</text>
+<use href="#check" x="576" y="690" width="25" height="25" style="color:#4768c4"/><text x="616" y="713" class="body">조건·허용값</text>
+<path d="M722 740 V766" class="pass"/>
+<rect x="533" y="776" width="380" height="66" rx="12" fill="#fff4db" stroke="#d9bc79" stroke-width="1.6"/>
+<use href="#person" x="548" y="786" width="44" height="44" style="color:#996a17"/><text x="748" y="818" class="label gold center">사람 확인·수정·승인</text>
+<text x="722" y="889" class="label gold center">승인된 검토 기준</text>
+
+<!-- 3: 대상 읽기에서만 재조회하며, 그 다음 승인 기준으로 판정합니다. -->
+<text x="1192" y="328" class="label center">대상 문서 구조·맥락</text>
+<path d="M1077 391 V376 H1308 V391" class="ask"/><text x="1192" y="362" class="small blue center">모호한 구간 재조회</text>
+<rect x="1003" y="399" width="148" height="82" rx="10" class="model"/><text x="1077" y="430" class="label blue center">LLM</text><text x="1077" y="461" class="tiny blue center">맥락 해석·검증</text>
+<rect x="1234" y="393" width="148" height="94" rx="11" fill="none" stroke="#8fbeb2" stroke-dasharray="5 4"/>
+<rect x="1240" y="399" width="136" height="82" rx="8" class="sandbox"/><text x="1308" y="430" class="label teal center">샌드박스</text><text x="1308" y="461" class="tiny teal center">전체 구조 읽기</text>
+<path d="M1308 494 V526 H1077 V494" class="return"/><text x="1194" y="512" class="small teal center">구조·원문·위치</text>
+<rect x="1004" y="543" width="378" height="51" rx="12" fill="#eef5f6"/><text x="1193" y="577" class="body center">승인 기준과 내용·값 비교</text>
+<path d="M1192 602 V616" class="flow"/>
+<path d="M1016 625 H1334 L1369 660 V826 H1016Z" fill="#f2f9f5" stroke="#b1d3c6" stroke-width="1.5"/>
+<path d="M1334 625 V660 H1369" fill="#dff1e8" stroke="#b1d3c6" stroke-width="1.5"/>
+<circle cx="1055" cy="672" r="15" fill="#d8eee4"/><use href="#check" x="1042" y="659" width="26" height="26" style="color:#187f6a"/><text x="1090" y="682" class="label teal">적합</text>
+<circle cx="1055" cy="732" r="15" fill="#f8e3e9"/><path d="M1048 725 L1062 739 M1062 725 L1048 739" stroke="#bd4c61" stroke-width="3" stroke-linecap="round"/><text x="1090" y="742" class="label red">부적합</text>
+<circle cx="1055" cy="792" r="15" fill="#fff0cf"/><text x="1055" y="800" class="small gold center">?</text><text x="1090" y="802" class="label gold">확인 필요</text>
+<text x="1192" y="873" class="label teal center">판정 + 이유 + 원문 위치</text>
+<text x="1192" y="908" class="tiny muted center">결과표: XLSX · CSV · JSON</text>
+
+<!-- 4: LLM의 설정은 고정 렌더러가 HTML로 만들고 E2B가 검사합니다. -->
+<text x="1662" y="328" class="label center">검토 결과 + 화면 요청</text>
+<path d="M1547 391 V376 H1778 V391" class="ask"/><text x="1662" y="362" class="small blue center">화면 설정 → HTML</text>
+<rect x="1473" y="399" width="148" height="82" rx="10" class="model"/><text x="1547" y="430" class="label blue center">LLM</text><text x="1547" y="461" class="tiny blue center">디자인 설정</text>
+<rect x="1704" y="393" width="148" height="94" rx="11" fill="none" stroke="#8fbeb2" stroke-dasharray="5 4"/>
+<rect x="1710" y="399" width="136" height="82" rx="8" class="sandbox"/><text x="1778" y="430" class="label teal center">샌드박스</text><text x="1778" y="461" class="tiny teal center">HTML 검사</text>
+<path d="M1778 494 V526 H1547 V494" class="return"/><text x="1662" y="512" class="small teal center">검사 실패 이유</text>
+<text x="1662" y="555" class="small muted center">실패하면 수정 · 통과하면 완성</text>
+<path d="M1662 566 V592" class="return"/>
+<rect x="1481" y="603" width="367" height="214" rx="12" fill="#ffffff" stroke="#accdc2" stroke-width="1.7"/>
+<path d="M1482 642 H1847" stroke="#d3e1e6"/><circle cx="1498" cy="624" r="4" fill="#bd4c61"/><circle cx="1512" cy="624" r="4" fill="#996a17"/><circle cx="1526" cy="624" r="4" fill="#187f6a"/>
+<text x="1680" y="630" class="tiny center">검토 결과 요약</text>
+<rect x="1499" y="662" width="97" height="28" rx="6" fill="#e3f2ea"/><text x="1547" y="683" class="tiny teal center">적합</text>
+<rect x="1616" y="662" width="97" height="28" rx="6" fill="#fae9ed"/><text x="1664" y="683" class="tiny red center">부적합</text>
+<rect x="1732" y="662" width="97" height="28" rx="6" fill="#fff3da"/><text x="1780" y="683" class="tiny gold center">확인</text>
+<path d="M1507 788 H1639" stroke="#cad8e5"/><rect x="1521" y="737" width="23" height="51" rx="3" fill="#708fd2"/><rect x="1560" y="714" width="23" height="74" rx="3" fill="#708fd2"/><rect x="1599" y="751" width="23" height="37" rx="3" fill="#708fd2"/>
+<circle cx="1714" cy="753" r="34" fill="none" stroke="#187f6a" stroke-width="13"/><path d="M1714 719 A34 34 0 0 1 1748 753" stroke="#996a17" stroke-width="13" fill="none"/>
+<path d="M1778 725 H1824M1778 747 H1816M1778 769 H1820" stroke="#a0b4c9" stroke-width="4" stroke-linecap="round"/>
+<text x="1662" y="851" class="small muted center">요약 · 파일별 비교 · 상세 근거</text>
+<text x="1662" y="894" class="label teal center">맞춤형 HTML 대시보드</text>
+
+<!-- 대상 자료는 승인 뒤 3단계로 들어옵니다. -->
+<path d="M240 842 V950 H1410 V438 H1388" class="return"/>
+<rect x="365" y="927" width="496" height="42" rx="13" fill="#ffffff"/><text x="613" y="957" class="body teal center">검토 대상 문서 → 승인 후 검토</text>
+<path d="M60 996 H1860" stroke="#d8e1ed"/>
+<text x="62" y="1038" class="small muted">②·③ 문서 이해: 전체 구조 읽기 → 맥락 해석 → 모호한 구간 재조회</text>
+<text x="1860" y="1038" class="small muted right">PDF·사진: 샌드박스 종료 후 AI끼리 원본 대조</text>
+</svg>

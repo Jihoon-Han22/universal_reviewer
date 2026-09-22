@@ -1,0 +1,679 @@
+[
+  {
+    "case_id": "B101",
+    "relevant_pages": [
+      3,
+      11,
+      13
+    ],
+    "fields": [
+      {
+        "field_id": "thermal",
+        "required_pages": [
+          3
+        ]
+      },
+      {
+        "field_id": "stress",
+        "required_pages": [
+          3
+        ]
+      },
+      {
+        "field_id": "absorption",
+        "required_pages": [
+          11
+        ]
+      },
+      {
+        "field_id": "bond",
+        "required_pages": [
+          13
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 2,
+        "reason": "다른 LOT HX-823",
+        "identity": "LOT HX-823 / PANEL T4",
+        "source_v2_page": 3
+      },
+      {
+        "page": 9,
+        "reason": "다른 시험조건 10 C",
+        "identity": "LOT HX-824 / 10 C",
+        "source_v2_page": 8
+      }
+    ]
+  },
+  {
+    "case_id": "B102",
+    "relevant_pages": [
+      15,
+      16,
+      18,
+      45
+    ],
+    "fields": [
+      {
+        "field_id": "strength",
+        "required_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "field_id": "chloride",
+        "required_pages": [
+          16,
+          18
+        ]
+      },
+      {
+        "field_id": "elongation",
+        "required_pages": [
+          45
+        ]
+      },
+      {
+        "field_id": "fire",
+        "required_pages": [
+          45
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 5,
+        "reason": "구개정 시험 기록 R0",
+        "identity": "LOT CT-619 / REV R0",
+        "source_v2_page": 6
+      },
+      {
+        "page": 37,
+        "reason": "같은 품목의 다른 LOT CT-618",
+        "identity": "LOT CT-618 / ZONE H-03",
+        "source_v2_page": 35
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 23,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 47,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      }
+    ]
+  },
+  {
+    "case_id": "I201",
+    "relevant_pages": [
+      4,
+      21,
+      33
+    ],
+    "fields": [
+      {
+        "field_id": "density",
+        "required_pages": [
+          4
+        ]
+      },
+      {
+        "field_id": "cbr",
+        "required_pages": [
+          21
+        ]
+      },
+      {
+        "field_id": "sieve075",
+        "required_pages": [
+          33
+        ]
+      },
+      {
+        "field_id": "sieve475",
+        "required_pages": [
+          33
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 5,
+        "reason": "인접 측점 STA 2+460",
+        "identity": "STA 2+460 / LIFT 03",
+        "source_v2_page": 6
+      },
+      {
+        "page": 22,
+        "reason": "다른 층 LIFT 02",
+        "identity": "STA 2+480 / LIFT 02",
+        "source_v2_page": 20
+      },
+      {
+        "page": 11,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 24,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      }
+    ]
+  },
+  {
+    "case_id": "I202",
+    "relevant_pages": [
+      29,
+      66
+    ],
+    "fields": [
+      {
+        "field_id": "voids",
+        "required_pages": [
+          29
+        ]
+      },
+      {
+        "field_id": "stability",
+        "required_pages": [
+          29
+        ]
+      },
+      {
+        "field_id": "thickness",
+        "required_pages": [
+          66
+        ]
+      },
+      {
+        "field_id": "permeability",
+        "required_pages": [
+          66
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 28,
+        "reason": "다른 코어 K-08",
+        "identity": "SECTION R-17 / CORE K-08",
+        "source_v2_page": 27
+      },
+      {
+        "page": 65,
+        "reason": "견적 단계의 예상 두께",
+        "identity": "DESIGN ESTIMATE / NOT MEASURED",
+        "source_v2_page": 62
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 22,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 34,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 46,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 57,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-055 / separate lot / REV C",
+        "source_v2_page": 55
+      },
+      {
+        "page": 69,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      }
+    ]
+  },
+  {
+    "case_id": "P301",
+    "relevant_pages": [
+      37,
+      114,
+      118,
+      191,
+      224
+    ],
+    "fields": [
+      {
+        "field_id": "yield",
+        "required_pages": [
+          37
+        ]
+      },
+      {
+        "field_id": "tensile",
+        "required_pages": [
+          37
+        ]
+      },
+      {
+        "field_id": "carbon",
+        "required_pages": [
+          114
+        ]
+      },
+      {
+        "field_id": "impact",
+        "required_pages": [
+          114,
+          118
+        ]
+      },
+      {
+        "field_id": "pressure",
+        "required_pages": [
+          191
+        ]
+      },
+      {
+        "field_id": "hold",
+        "required_pages": [
+          224
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 38,
+        "reason": "같은 Grade 다른 Heat HX-71",
+        "identity": "TAG V-204 / HEAT HX-71 / REV C",
+        "source_v2_page": 38
+      },
+      {
+        "page": 48,
+        "reason": "폐기된 개정 B 결과",
+        "identity": "TAG V-204 / HEAT HX-72 / REV B",
+        "source_v2_page": 48
+      },
+      {
+        "page": 190,
+        "reason": "교정기기의 정격압력 250 bar",
+        "identity": "CALIBRATION RANGE / NOT TEST PRESSURE",
+        "source_v2_page": 186
+      },
+      {
+        "page": 223,
+        "reason": "다른 태그 V-203 유지시간",
+        "identity": "TAG V-203 / HEAT HX-72 / REV C",
+        "source_v2_page": 218
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 21,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 33,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 44,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 55,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-055 / separate lot / REV C",
+        "source_v2_page": 55
+      },
+      {
+        "page": 67,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      },
+      {
+        "page": 79,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-077 / separate lot / REV C",
+        "source_v2_page": 77
+      },
+      {
+        "page": 90,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-088 / separate lot / REV C",
+        "source_v2_page": 88
+      },
+      {
+        "page": 102,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-099 / separate lot / REV C",
+        "source_v2_page": 99
+      },
+      {
+        "page": 113,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-110 / separate lot / REV C",
+        "source_v2_page": 110
+      },
+      {
+        "page": 123,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-121 / separate lot / REV C",
+        "source_v2_page": 121
+      },
+      {
+        "page": 135,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-132 / separate lot / REV C",
+        "source_v2_page": 132
+      },
+      {
+        "page": 146,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-143 / separate lot / REV C",
+        "source_v2_page": 143
+      },
+      {
+        "page": 156,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-154 / separate lot / REV C",
+        "source_v2_page": 154
+      },
+      {
+        "page": 168,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-165 / separate lot / REV C",
+        "source_v2_page": 165
+      },
+      {
+        "page": 179,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-176 / separate lot / REV C",
+        "source_v2_page": 176
+      },
+      {
+        "page": 203,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-198 / separate lot / REV C",
+        "source_v2_page": 198
+      },
+      {
+        "page": 214,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-209 / separate lot / REV C",
+        "source_v2_page": 209
+      },
+      {
+        "page": 225,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-220 / separate lot / REV C",
+        "source_v2_page": 220
+      }
+    ]
+  },
+  {
+    "case_id": "P302",
+    "relevant_pages": [
+      22,
+      57,
+      92
+    ],
+    "fields": [
+      {
+        "field_id": "wall",
+        "required_pages": [
+          22
+        ]
+      },
+      {
+        "field_id": "weld",
+        "required_pages": [
+          57
+        ]
+      },
+      {
+        "field_id": "leak",
+        "required_pages": [
+          92
+        ]
+      },
+      {
+        "field_id": "coating",
+        "required_pages": [
+          92
+        ]
+      },
+      {
+        "field_id": "ferrite",
+        "required_pages": [
+          57
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 21,
+        "reason": "다른 일련번호 S-901",
+        "identity": "TAG XV-618 / SERIAL S-901 / REV 4",
+        "source_v2_page": 21
+      },
+      {
+        "page": 56,
+        "reason": "개정 3의 결과",
+        "identity": "TAG XV-618 / SERIAL S-902 / REV 3",
+        "source_v2_page": 54
+      },
+      {
+        "page": 91,
+        "reason": "계측기 교정 값",
+        "identity": "CALIBRATION CERTIFICATE",
+        "source_v2_page": 87
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 33,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 46,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 69,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      },
+      {
+        "page": 81,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-077 / separate lot / REV C",
+        "source_v2_page": 77
+      }
+    ]
+  },
+  {
+    "case_id": "N401",
+    "relevant_pages": [
+      6,
+      15,
+      23
+    ],
+    "fields": [
+      {
+        "field_id": "lead",
+        "required_pages": [
+          6
+        ]
+      },
+      {
+        "field_id": "cadmium",
+        "required_pages": [
+          6
+        ]
+      },
+      {
+        "field_id": "cod",
+        "required_pages": [
+          15
+        ]
+      },
+      {
+        "field_id": "ph",
+        "required_pages": [
+          23
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 3,
+        "reason": "전일 시료",
+        "identity": "SAMPLE W-239 / 2026-08-13 / OUTLET B",
+        "source_v2_page": 4
+      },
+      {
+        "page": 14,
+        "reason": "다른 지점 OUTLET A",
+        "identity": "SAMPLE W-240 / 2026-08-14 / OUTLET A",
+        "source_v2_page": 13
+      },
+      {
+        "page": 12,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 24,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      }
+    ]
+  },
+  {
+    "case_id": "N402",
+    "relevant_pages": [
+      4,
+      28,
+      40
+    ],
+    "fields": [
+      {
+        "field_id": "power",
+        "required_pages": [
+          4
+        ]
+      },
+      {
+        "field_id": "insulation",
+        "required_pages": [
+          28
+        ]
+      },
+      {
+        "field_id": "wetleak",
+        "required_pages": [
+          40
+        ]
+      },
+      {
+        "field_id": "model",
+        "required_pages": [
+          4
+        ]
+      }
+    ],
+    "distractors": [
+      {
+        "page": 4,
+        "reason": "다른 모델 PVX-60",
+        "identity": "MODEL PVX-60 / BATCH Q-51",
+        "source_v2_page": 7
+      },
+      {
+        "page": 27,
+        "reason": "기기 교정 확인 값",
+        "identity": "METER CALIBRATION / NOT SAMPLE RESULT",
+        "source_v2_page": 26
+      },
+      {
+        "page": 9,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 23,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      }
+    ]
+  }
+]

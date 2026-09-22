@@ -1,0 +1,46 @@
+{
+  "id": "dashboard-escape",
+  "startedAt": "2026-09-21T12:33:37.184Z",
+  "state": "passed",
+  "expected": {
+    "nativeModal": true,
+    "closed": true,
+    "focusReturned": true
+  },
+  "observations": {
+    "nativeModal": true,
+    "closed": true,
+    "focusReturned": true
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.dom.json",
+      "sha256": "049f98a19e5595607251c6ab8e5b8d1d5043953987e51c89b4868cf1ed593248"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.png",
+      "sha256": "0621901d3fd449178ebe1bc5efbe3efc442f89d003a69fc5f58c61a7ee645376"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "nativeModal",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "closed",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "focusReturned",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:33:45.310Z"
+}

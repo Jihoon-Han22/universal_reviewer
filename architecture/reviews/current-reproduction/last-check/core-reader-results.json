@@ -1,0 +1,54 @@
+[
+  {
+    "inputChars": 1499999,
+    "retainedChars": 1499999,
+    "status": "ready",
+    "coverage": {
+      "complete": true,
+      "unitsTotal": 1,
+      "unitsRead": 1,
+      "cellsTotal": 0,
+      "cellsRead": 0,
+      "textChars": 1499999,
+      "truncated": false,
+      "truncatedReasons": []
+    },
+    "warnings": []
+  },
+  {
+    "inputChars": 1500000,
+    "retainedChars": 1500000,
+    "status": "ready",
+    "coverage": {
+      "complete": true,
+      "unitsTotal": 1,
+      "unitsRead": 1,
+      "cellsTotal": 0,
+      "cellsRead": 0,
+      "textChars": 1500000,
+      "truncated": false,
+      "truncatedReasons": []
+    },
+    "warnings": []
+  },
+  {
+    "inputChars": 1500001,
+    "retainedChars": 1500000,
+    "status": "partial",
+    "coverage": {
+      "complete": false,
+      "unitsTotal": 1,
+      "unitsRead": 1,
+      "cellsTotal": 0,
+      "cellsRead": 0,
+      "textChars": 1500000,
+      "truncated": true,
+      "truncatedReasons": [
+        "Text extraction limit (1500000 characters) reached."
+      ]
+    },
+    "warnings": [
+      "Text extraction limit (1500000 characters) reached."
+    ]
+  }
+]

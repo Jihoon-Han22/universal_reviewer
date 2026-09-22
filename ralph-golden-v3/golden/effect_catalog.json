@@ -1,0 +1,194 @@
+[
+  {
+    "effect_id": "E01",
+    "key": "salt_pepper",
+    "name": "Salt & pepper 점잡음",
+    "description": "검정·흰색 점잡음 / 텍스트 안에도 분포"
+  },
+  {
+    "effect_id": "E02",
+    "key": "grain",
+    "name": "거친 센서 노이즈",
+    "description": "회색 가우시안 입자"
+  },
+  {
+    "effect_id": "E03",
+    "key": "low_dpi",
+    "name": "저해상도 팩스",
+    "description": "58 dpi로 축소 후 재확대"
+  },
+  {
+    "effect_id": "E04",
+    "key": "jpeg",
+    "name": "메신저 재압축",
+    "description": "68 dpi + JPEG quality 9"
+  },
+  {
+    "effect_id": "E05",
+    "key": "blur",
+    "name": "초점 이탈",
+    "description": "가우시안 흐림"
+  },
+  {
+    "effect_id": "E06",
+    "key": "motion",
+    "name": "흔들린 촬영",
+    "description": "한 방향으로 번지는 모션 블러"
+  },
+  {
+    "effect_id": "E07",
+    "key": "faded",
+    "name": "토너 부족",
+    "description": "대비 저하와 부분 탈색"
+  },
+  {
+    "effect_id": "E08",
+    "key": "dark",
+    "name": "노출 부족",
+    "description": "좌우 명암 차이와 어두운 모서리"
+  },
+  {
+    "effect_id": "E09",
+    "key": "bands",
+    "name": "조명 밴딩",
+    "description": "촬영 시 밝고 어두운 가로 띠"
+  },
+  {
+    "effect_id": "E10",
+    "key": "blueprint",
+    "name": "푸른색 복사본",
+    "description": "청색 용지와 인쇄 색상"
+  },
+  {
+    "effect_id": "E11",
+    "key": "bleed",
+    "name": "뒷면 비침",
+    "description": "좌우 반전된 약한 뒷면 문자"
+  },
+  {
+    "effect_id": "E12",
+    "key": "streaks",
+    "name": "복사기 세로 줄",
+    "description": "길게 이어지는 검정·회색 줄무늬"
+  },
+  {
+    "effect_id": "E13",
+    "key": "dropout",
+    "name": "스캔 라인 누락",
+    "description": "얇은 가로 줄이 사라짐"
+  },
+  {
+    "effect_id": "E14",
+    "key": "ghost",
+    "name": "이중 인쇄",
+    "description": "어긋난 두 번째 인쇄 흔적"
+  },
+  {
+    "effect_id": "E15",
+    "key": "stamp",
+    "name": "기울어진 접수 도장",
+    "description": "가상 SIM 도장 여러 개 / 붉은 잉크"
+  },
+  {
+    "effect_id": "E16",
+    "key": "watermark",
+    "name": "대각선 워터마크",
+    "description": "CONTROLLED COPY 반복"
+  },
+  {
+    "effect_id": "E17",
+    "key": "handwriting",
+    "name": "손글씨 검토 메모",
+    "description": "필기체·동그라미·화살표 / 실제 서명 아님"
+  },
+  {
+    "effect_id": "E18",
+    "key": "highlight",
+    "name": "형광펜 표시",
+    "description": "반투명 색과 삐뚤어진 밑줄"
+  },
+  {
+    "effect_id": "E19",
+    "key": "coffee",
+    "name": "커피·물 얼룩",
+    "description": "갈색 고리·흐린 물방울"
+  },
+  {
+    "effect_id": "E20",
+    "key": "holes",
+    "name": "펀치·스테이플",
+    "description": "구멍·철심·가장자리 그림자"
+  },
+  {
+    "effect_id": "E21",
+    "key": "fold",
+    "name": "접힌 종이",
+    "description": "대각선 접힘 그림자와 밝은 접힘선"
+  },
+  {
+    "effect_id": "E22",
+    "key": "torn",
+    "name": "찢긴 모서리",
+    "description": "울퉁불퉁한 가장자리 손실"
+  },
+  {
+    "effect_id": "E23",
+    "key": "photo",
+    "name": "휴대폰 비스듬한 촬영",
+    "description": "원근 변형·탁자 배경·문서 그림자"
+  },
+  {
+    "effect_id": "E24",
+    "key": "screen",
+    "name": "화면을 다시 촬영",
+    "description": "뷰어 테두리·픽셀 격자·화면 반사"
+  },
+  {
+    "effect_id": "E25",
+    "key": "mirror",
+    "name": "좌우 반전 스캔",
+    "description": "문서 전체가 거울상"
+  },
+  {
+    "effect_id": "E26",
+    "key": "negative",
+    "name": "흑백 반전",
+    "description": "검은 배경에 흰 글자"
+  },
+  {
+    "effect_id": "E27",
+    "key": "rotate90",
+    "name": "중간 페이지 90도",
+    "description": "해당 페이지만 시계 방향 회전"
+  },
+  {
+    "effect_id": "E28",
+    "key": "rotate180",
+    "name": "거꾸로 끼운 페이지",
+    "description": "해당 페이지만 180도 회전"
+  },
+  {
+    "effect_id": "E29",
+    "key": "skew",
+    "name": "삐뚤게 급지",
+    "description": "3.8도 기울어진 종이"
+  },
+  {
+    "effect_id": "E30",
+    "key": "half_turn",
+    "name": "절반만 뒤집힌 합성본",
+    "description": "페이지 윗부분만 180도 뒤집힌 합본"
+  },
+  {
+    "effect_id": "E31",
+    "key": "sticky",
+    "name": "결과칸을 가린 메모지",
+    "description": "불투명 메모지로 실제 숫자가 사라짐"
+  },
+  {
+    "effect_id": "E32",
+    "key": "correction",
+    "name": "확정되지 않은 수기 수정",
+    "description": "기존 값과 물음표가 붙은 수정값 충돌"
+  }
+]

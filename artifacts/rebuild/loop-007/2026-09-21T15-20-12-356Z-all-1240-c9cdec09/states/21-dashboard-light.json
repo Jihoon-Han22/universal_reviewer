@@ -1,0 +1,72 @@
+{
+  "id": "21-dashboard-light",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "21-dashboard-light",
+    "screenshot": {
+      "path": "21-dashboard-light.png",
+      "bytes": 148135,
+      "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/21-dashboard-light.json",
+      "bytes": 1360988,
+      "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:23:23.336Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/21-dashboard-light-font-readiness.json",
+    "bytes": 2301064,
+    "sha256": "d13359dd80de480c766877cc46ad07f0032a01ea74110d4d6f54671d725ef94d"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/21-dashboard-light.png",
+    "bytes": 140526,
+    "sha256": "87875e04a1378329eb2d2ea757a6751885cde8fafeb9784b4701dd7769988d7a",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:23:27.946Z",
+    "capturedAt": "2026-09-21T15:23:28.221Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/21-dashboard-light.json",
+    "bytes": 1999144,
+    "sha256": "cacf7691f33b83876222988bab9f809ec25a5eb1265275dac26fb05ae7635562"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/21-dashboard-light-measurement.json",
+    "bytes": 208536,
+    "sha256": "471ab44030ff69c4e6e983f3051174774a257cf2d2948e8c0821453caae5a504"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T15:23:31.271Z"
+}

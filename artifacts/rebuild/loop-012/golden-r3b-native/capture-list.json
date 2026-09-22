@@ -1,0 +1,56 @@
+{
+  "loop": "LOOP-012",
+  "captures": [
+    {
+      "name": "all-initial",
+      "artifact": {
+        "path": "artifacts/rebuild/loop-012/golden-r3b-native/all-initial.png",
+        "sha256": "3e3b4b3c01d31502532806171c895bc7e9398b4749783b7bc7634430d405b0f8",
+        "bytes": 107859
+      },
+      "nativeSource": {
+        "path": ".cache/rebuild/golden-current-native-loop012-r3b-prep/diagnostic-2026-09-21T23-47-42-868Z-072f354e/golden-current-component-all-initial.png",
+        "sha256": "3e3b4b3c01d31502532806171c895bc7e9398b4749783b7bc7634430d405b0f8",
+        "bytes": 107859
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      },
+      "deviceScaleFactor": 1,
+      "mode": "Actual native Chrome, actual GoldenPicker component, synthetic catalog, provider-disabled replay",
+      "review": "Root visually inspected both actual images; no reference pixel comparison or formal gate claim."
+    },
+    {
+      "name": "ledger-p10-png",
+      "artifact": {
+        "path": "artifacts/rebuild/loop-012/golden-r3b-native/ledger-p10-png.png",
+        "sha256": "bd89bbab0d3288a2243e7825fd3fd4ba7bd5650633ed57e6381c605ff44997b3",
+        "bytes": 122334
+      },
+      "nativeSource": {
+        "path": ".cache/rebuild/golden-current-native-loop012-r3b-prep/diagnostic-2026-09-21T23-47-42-868Z-072f354e/golden-current-component-ledger-p10-png.png",
+        "sha256": "bd89bbab0d3288a2243e7825fd3fd4ba7bd5650633ed57e6381c605ff44997b3",
+        "bytes": 122334
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1080
+      },
+      "deviceScaleFactor": 1,
+      "mode": "Actual native Chrome, actual GoldenPicker component, synthetic catalog, provider-disabled replay",
+      "review": "Root visually inspected both actual images; no reference pixel comparison or formal gate claim."
+    }
+  ],
+  "sourceAtAdmission": "1ed2d5ad9feb7d9f148f403440cc1b1a09af0d785be59ca8b346ea44e747b2a4",
+  "sourceAfter": "1ed2d5ad9feb7d9f148f403440cc1b1a09af0d785be59ca8b346ea44e747b2a4",
+  "sourceParity": true,
+  "runState": "observed",
+  "summary": {
+    "PASS": 117,
+    "FAIL": 0,
+    "NOT_RUN": 0
+  },
+  "protocolOkay": true,
+  "formalEligibility": false
+}

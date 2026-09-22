@@ -1,0 +1,72 @@
+{
+  "id": "27-ledger-mapping",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "27-ledger-mapping",
+    "screenshot": {
+      "path": "27-ledger-mapping.png",
+      "bytes": 220911,
+      "sha256": "b275d25b2e328801c375226c240d2cb4c65e452937ee7fcbb5533c06ef01563b",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/27-ledger-mapping.json",
+      "bytes": 1107615,
+      "sha256": "87005825eeac30c4c72f4e3d65ed7e1bb91b0b5bd1c92f77f398d9176b07441c"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T18:53:13.748Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/27-ledger-mapping-font-readiness.json",
+    "bytes": 2301052,
+    "sha256": "a3059f61144320d657bee42b6b7636d5de858a3ab409383f103b8c4f4cd212c1"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/27-ledger-mapping.png",
+    "bytes": 217164,
+    "sha256": "51ef8549b396facc1b68ceeafc57b9be10f7daa0425b963e920d94e14b3658fe",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T18:53:17.540Z",
+    "capturedAt": "2026-09-21T18:53:17.905Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/27-ledger-mapping.json",
+    "bytes": 1584239,
+    "sha256": "951f981db0e290661b081295b7df24ba2d02a63a808d8c2952c18f3d11208d44"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/27-ledger-mapping-measurement.json",
+    "bytes": 207765,
+    "sha256": "68e1be2be294d6d62a168060d91d0ade340b0f0465142b265d173844d3e339f0"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T18:53:20.817Z"
+}

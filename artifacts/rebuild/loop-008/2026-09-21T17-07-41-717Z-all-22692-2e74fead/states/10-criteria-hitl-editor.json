@@ -1,0 +1,72 @@
+{
+  "id": "10-criteria-hitl-editor",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "10-criteria-hitl-editor",
+    "screenshot": {
+      "path": "10-criteria-hitl-editor.png",
+      "bytes": 114513,
+      "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/10-criteria-hitl-editor.json",
+      "bytes": 1025043,
+      "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T17:08:55.534Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/diagnostics/10-criteria-hitl-editor-font-readiness.json",
+    "bytes": 2301160,
+    "sha256": "5448b6f26275862719f0c02dd4800a0fd8f50b27ec20dc657d7ac1c900daead7"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/10-criteria-hitl-editor.png",
+    "bytes": 113572,
+    "sha256": "d0cc8436114ba96a6e90c72d2fb9c7c04b6c19b350343a285973e33acde8d691",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T17:08:57.376Z",
+    "capturedAt": "2026-09-21T17:08:57.540Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/dom/10-criteria-hitl-editor.json",
+    "bytes": 1594922,
+    "sha256": "1680abb82ab492b7837f034fcc5e6dd4fbdf30bd8b1a7385d53037d8617c3f47"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-008/2026-09-21T17-07-41-717Z-all-22692-2e74fead/10-criteria-hitl-editor-measurement.json",
+    "bytes": 203370,
+    "sha256": "d72ac02a8c2b6f0b4fd65a5f69d5e2b6d1827f7a71e047d1ad493770af5be12a"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T17:08:59.865Z"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "11-target-input-empty",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "11-target-input-empty",
+    "screenshot": {
+      "path": "11-target-input-empty.png",
+      "bytes": 287371,
+      "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/11-target-input-empty.json",
+      "bytes": 399799,
+      "sha256": "1a288902baeb491a0d187d847640475d05802a68f0f049354dab966a1f7ac78b"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T18:49:38.969Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/diagnostics/11-target-input-empty-font-readiness.json",
+    "bytes": 2301148,
+    "sha256": "87386ff93aeea31d7d667a5a6ae7e52516329e010e6f7d7e983381ee5adf539c"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/11-target-input-empty.png",
+    "bytes": 285900,
+    "sha256": "c2920856edc20d3b8d772a3619b9eeba9bb933cb0d904c897bfee27a1c217dde",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T18:49:42.133Z",
+    "capturedAt": "2026-09-21T18:49:42.490Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/dom/11-target-input-empty.json",
+    "bytes": 621139,
+    "sha256": "01bf1626d0a7336ebe8a9a52242bdcb58be7796e3267d8f9589acccee6037ac4"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-009/2026-09-21T18-47-33-174Z-all-1568-27051e7c/11-target-input-empty-measurement.json",
+    "bytes": 190326,
+    "sha256": "9a83cfd87354d6b86f99da19f46eb49fcb656992b88ae97870eab2df2b582a76"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T18:49:43.558Z"
+}

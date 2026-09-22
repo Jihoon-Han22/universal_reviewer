@@ -1,0 +1,138 @@
+{
+  "mode": "OFFLINE_ORIGINAL_CODE",
+  "providerCalls": 0,
+  "envFilesRead": 0,
+  "httpBodyShapes": [
+    {
+      "input": "missing body and Content-Type",
+      "status": 500,
+      "body": {
+        "error": "문서 처리 중 오류가 발생했습니다. 파일 형식과 내용을 확인한 뒤 다시 시도해 주세요."
+      }
+    },
+    {
+      "input": "text/plain JSON object",
+      "status": 500,
+      "body": {
+        "error": "문서 처리 중 오류가 발생했습니다. 파일 형식과 내용을 확인한 뒤 다시 시도해 주세요."
+      }
+    },
+    {
+      "input": "application/json empty body",
+      "status": 400,
+      "body": {
+        "error": "문서와 기준 입력을 확인해 주세요. 문서는 각각 최대 10개입니다."
+      }
+    },
+    {
+      "input": "application/json {}",
+      "status": 400,
+      "body": {
+        "error": "문서와 기준 입력을 확인해 주세요. 문서는 각각 최대 10개입니다."
+      }
+    },
+    {
+      "input": "application/json []",
+      "status": 400,
+      "body": {
+        "error": "문서와 기준 입력을 확인해 주세요. 문서는 각각 최대 10개입니다."
+      }
+    },
+    {
+      "input": "application/json null",
+      "status": 400,
+      "body": {
+        "error": "요청 JSON 형식이 올바르지 않습니다."
+      }
+    }
+  ],
+  "sourceSerializationBoundaries": [
+    {
+      "limit": 150000,
+      "originalLength": 150000,
+      "originalChunks": 1,
+      "originalTruncated": false,
+      "alternateInventoryOnlyPrettyLength": 150009,
+      "alternateChunks": 2,
+      "alternateTruncated": false
+    },
+    {
+      "limit": 1200000,
+      "originalLength": 1200000,
+      "originalChunks": 8,
+      "originalTruncated": false,
+      "alternateInventoryOnlyPrettyLength": 1200009,
+      "alternateChunks": 8,
+      "alternateTruncated": true
+    }
+  ],
+  "contextShapeCoercion": {
+    "summary": "s",
+    "documentType": "d",
+    "structure": [
+      {
+        "name": "n",
+        "kind": "other",
+        "range": "not-a-source-range",
+        "headers": [
+          "",
+          "5",
+          "[object Object]"
+        ],
+        "description": "d",
+        "orientation": "unknown",
+        "uncertain": false
+      }
+    ],
+    "warnings": [
+      "",
+      "5",
+      "[object Object]"
+    ],
+    "questions": []
+  },
+  "missingProfileRequiredFields": {
+    "profile": {
+      "kind": "pdf",
+      "sha256": "e988b2753f0819d60660032779aa2fc1b047380636a217b37e894d7d6e2fa2c7",
+      "inventory": {},
+      "coverage": {},
+      "warnings": []
+    },
+    "returnedAnalysis": {
+      "status": "partial",
+      "summary": "샌드박스에서 원본을 열어 전체 범위와 구조를 확인했습니다. 맥락 해석을 이어서 확인해야 합니다.",
+      "documentType": "PDF",
+      "structure": [
+        {
+          "name": "문서 본문",
+          "kind": "image",
+          "headers": [],
+          "description": "격리 환경에서 파일 전체를 열어 구조를 읽었습니다.",
+          "orientation": "unknown",
+          "uncertain": true
+        }
+      ],
+      "inventory": {},
+      "warnings": [
+        "페이지·이미지의 시각 구조 분석 대기: 전체 시각 전사 결과와 함께 확인해야 합니다."
+      ],
+      "questions": [],
+      "needsConfirmation": true,
+      "coverage": {
+        "complete": false,
+        "readerComplete": false,
+        "contextComplete": false,
+        "contextSegmentsTotal": 1,
+        "contextSegmentsRead": 0,
+        "initialContextSegmentsRead": 0,
+        "sourceChars": 87,
+        "contextChars": 87,
+        "sourceTruncated": false,
+        "missingContextSheets": [],
+        "visualAnalysisPending": true
+      }
+    },
+    "requiredDTORejection": false
+  }
+}

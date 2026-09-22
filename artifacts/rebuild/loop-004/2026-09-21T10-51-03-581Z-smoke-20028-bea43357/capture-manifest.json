@@ -1,0 +1,1404 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "loop": "LOOP-004",
+  "mode": "smoke",
+  "origin": "actual-browser-current-react-synthetic-http",
+  "synthetic": true,
+  "fixtureId": "architecture-visual-v1",
+  "startedAt": "2026-09-21T10:51:03.587Z",
+  "endedAt": "2026-09-21T10:51:43.263Z",
+  "command": [
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\.cache\\runtime\\node-v24.13.1-win-x64\\node.exe",
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs",
+    "--smoke"
+  ],
+  "referenceManifest": {
+    "path": "architecture/ui/reference/manifest.json",
+    "bytes": 78163,
+    "sha256": "9f066974df90c7af348b2be59853d21377469cb02c4961057d831a358e3f7d72"
+  },
+  "inputRefs": [
+    {
+      "path": "architecture/ui/reference/synthetic-fixture.json",
+      "bytes": 4535,
+      "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+    },
+    {
+      "path": "architecture/ui/reference/mock-api.mjs",
+      "bytes": 8824,
+      "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+    },
+    {
+      "path": "architecture/ui/reference/capture-flow.js",
+      "bytes": 18830,
+      "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+    },
+    {
+      "path": "architecture/ui/reference/capture-required-viewports.js",
+      "bytes": 11653,
+      "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+    },
+    {
+      "path": "architecture/ui/reference/synthetic-dashboard.html",
+      "bytes": 441713,
+      "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+    },
+    {
+      "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+      "bytes": 441706,
+      "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+    }
+  ],
+  "output": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357",
+  "browser": {
+    "playwrightVersion": "1.62.1",
+    "bundledExecutable": "C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+    "bundledExists": false,
+    "executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "selection": "explicit-installed-edge-fallback",
+    "userProfile": "none; Playwright isolated temporary profile",
+    "headless": true,
+    "node": "v24.13.1",
+    "browserVersion": "153.0.4234.48",
+    "browserName": "chromium",
+    "referenceBrowser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "environmentMatchNotAssumed": true
+  },
+  "contexts": [
+    {
+      "name": "states-01-28",
+      "createdAt": "2026-09-21T10:51:13.440Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+      "platform": "Win32",
+      "language": "ko-KR",
+      "languages": [
+        "ko-KR"
+      ],
+      "timeZone": "Asia/Seoul",
+      "devicePixelRatio": 1,
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "visualViewport": {
+        "width": 1440,
+        "height": 960,
+        "scale": 1
+      },
+      "prefersColorScheme": "light",
+      "reducedMotion": false
+    }
+  ],
+  "traceRefs": [
+    {
+      "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/states-01-28-trace.zip",
+      "bytes": 10114795,
+      "sha256": "3d27657720e5cb77786cdc892ff5c5eb923149f5684d4cbb0781de42eec57322"
+    }
+  ],
+  "captureCounts": {
+    "captured": 3,
+    "error": 0,
+    "notRun": 31
+  },
+  "selectedCount": 3,
+  "allSelectedCaptured": true,
+  "visualAcceptance": "NOT_RUN",
+  "parityCompared": false,
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "providerCountsScope": "Replay configuration disables providers; captures do not prove provider execution.",
+  "locatorMappings": [],
+  "blockedExternal": [],
+  "browserErrors": [],
+  "cleanupErrors": [],
+  "runError": null,
+  "cases": [
+    {
+      "id": "01-landing-desktop",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "01-landing-desktop",
+        "screenshot": {
+          "path": "01-landing-desktop.png",
+          "bytes": 556576,
+          "sha256": "1ee4967e8ba0f70aecbf71e206fbb7fb259536812a69cf7eaa399433a4a3e8dc",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/01-landing-desktop.json",
+          "bytes": 941783,
+          "sha256": "e7f9d8919135181d92eaa758b1525e2797f2d6115f4e6add35456790e0f96c65"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T10:51:14.622Z",
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/01-landing-desktop.png",
+        "bytes": 538818,
+        "sha256": "4329adf43531d0eb357c7eb8cafa082660ec450e9928ebe1e0b63f2e6f6bc91a",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T10:51:17.887Z",
+        "capturedAt": "2026-09-21T10:51:23.696Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/dom/01-landing-desktop.json",
+        "bytes": 1469019,
+        "sha256": "44d78702c8d5298e549dea35fb7f958434a350c9e6e0305f84a02a9d445359d1"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/01-landing-desktop-measurement.json",
+        "bytes": 188889,
+        "sha256": "504782ae3d0080fd50dbb9f23d1b2b909e79ba34017b5488085b5aeea93d5a98"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T10:51:28.591Z"
+    },
+    {
+      "id": "02-landing-mobile",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "02-landing-mobile",
+        "screenshot": {
+          "path": "02-landing-mobile.png",
+          "bytes": 201448,
+          "sha256": "10cab1b24e702fabe1ead162376d07b92fa3bb264a0abfa26b67aa3f94b9e2bf",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/02-landing-mobile.json",
+          "bytes": 923798,
+          "sha256": "20b804064b493d13449f7707c55b89ad9a08ccc69c334f03620b781d612b95f2"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T10:51:28.616Z",
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/02-landing-mobile.png",
+        "bytes": 198332,
+        "sha256": "7abb68ec73428683541ebdadce866d48cc8628e206ef5a20ae08d94297ef4db5",
+        "width": 390,
+        "height": 844,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T10:51:29.865Z",
+        "capturedAt": "2026-09-21T10:51:30.337Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/dom/02-landing-mobile.json",
+        "bytes": 1439572,
+        "sha256": "ac0a3f20f85189f4cdd1ae32a98d1342828057dd8d9119f8284a9f070d046b83"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/02-landing-mobile-measurement.json",
+        "bytes": 188560,
+        "sha256": "a0c18723a78180eb6c5c33468586ea9f52a5f520d1e208fb473dd6a1eb796c72"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T10:51:33.212Z"
+    },
+    {
+      "id": "03-landing-mobile-motion-off",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "03-landing-mobile-motion-off",
+        "screenshot": {
+          "path": "03-landing-mobile-motion-off.png",
+          "bytes": 201732,
+          "sha256": "19ec769de804243c49b189eff25b0726212891ebb3c0dc7a3f8971efdaa166c2",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/03-landing-mobile-motion-off.json",
+          "bytes": 816188,
+          "sha256": "659eb6409822428ceb48c9a3b44b139a5e14c7b2d3fbf239c03ff8d72690cc43"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "reduced",
+          "osReduce": true,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "04-criteria-input-empty",
+      "selected": true,
+      "captureStatus": "CAPTURED",
+      "visualAcceptance": "NOT_RUN",
+      "reference": {
+        "id": "04-criteria-input-empty",
+        "screenshot": {
+          "path": "04-criteria-input-empty.png",
+          "bytes": 314566,
+          "sha256": "a55e9b8b0dca2def309571788e93bc38aee45cc98d7b5c8e00120a740ed2ad08",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/04-criteria-input-empty.json",
+          "bytes": 328754,
+          "sha256": "1a6201a11ac5a3a036f32ac39f57828234dd3cc3c5102f4b27ec90771adb8bd1"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      },
+      "startedAt": "2026-09-21T10:51:33.326Z",
+      "screenshot": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/04-criteria-input-empty.png",
+        "bytes": 307720,
+        "sha256": "f93bbedf777e8b015282fa8d14f5bb1755116b55553121ab7acd05a8ef607b66",
+        "width": 1440,
+        "height": 960,
+        "mode": "viewport",
+        "scale": "device",
+        "startedAt": "2026-09-21T10:51:35.738Z",
+        "capturedAt": "2026-09-21T10:51:36.080Z"
+      },
+      "dom": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/dom/04-criteria-input-empty.json",
+        "bytes": 510553,
+        "sha256": "68acfb819c788edbf7ef36107268c2ed7558e53ff009947795580e77ac212a76"
+      },
+      "measurement": {
+        "path": "artifacts/rebuild/loop-004/2026-09-21T10-51-03-581Z-smoke-20028-bea43357/04-criteria-input-empty-measurement.json",
+        "bytes": 189471,
+        "sha256": "7c969fc6a7418baf79a5e8c86c316db91c703c4d5e7b1f6ad9afed7ba11370ed"
+      },
+      "dimensionsVerified": true,
+      "motionConditionsVerified": true,
+      "settling": {
+        "livePhase": false,
+        "finiteAnimationsSettled": true,
+        "minimumSettleMs": 650,
+        "animationFreeze": "none"
+      },
+      "serverPhase": "idle",
+      "endedAt": "2026-09-21T10:51:37.043Z"
+    },
+    {
+      "id": "05-criteria-natural-language",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "05-criteria-natural-language",
+        "screenshot": {
+          "path": "05-criteria-natural-language.png",
+          "bytes": 183906,
+          "sha256": "496f9aee60702896da1cf37d807cd40778e3834cb6f91407ce05303a2ec28229",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/05-criteria-natural-language.json",
+          "bytes": 195586,
+          "sha256": "f25f45e4cbcae24ea7f8602e3957dc4947e965ea9962e6b9e323bf4cd1265142"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "06-criteria-input-file",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "06-criteria-input-file",
+        "screenshot": {
+          "path": "06-criteria-input-file.png",
+          "bytes": 277119,
+          "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/06-criteria-input-file.json",
+          "bytes": 376314,
+          "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "07-criteria-reading",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "07-criteria-reading",
+        "screenshot": {
+          "path": "07-criteria-reading.png",
+          "bytes": 324650,
+          "sha256": "536e6595f9bf1c7d10ae081b899fe749e68a1787e92256800882cc20552c95d1",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/07-criteria-reading.json",
+          "bytes": 1075157,
+          "sha256": "c17b16aadd35c92c0754bb40c6ce4de3fcf9981a54cd26f3dd8fc2d520e37ecb"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "08-criteria-context",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "08-criteria-context",
+        "screenshot": {
+          "path": "08-criteria-context.png",
+          "bytes": 326785,
+          "sha256": "aa08d865864d35005041fe8480d42fcb7861b7af6617dd3f6fca6f476be11a9c",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/08-criteria-context.json",
+          "bytes": 1127761,
+          "sha256": "6472a1550a59e47f8db1e4e29b77ccf4528c360951abe67c346031a52c616c51"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "09-criteria-confirmation",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "09-criteria-confirmation",
+        "screenshot": {
+          "path": "09-criteria-confirmation.png",
+          "bytes": 106138,
+          "sha256": "2af44d66ac0c90c71b2f9807fa9c36b91725a73680e9a8278b67f64f059fde4d",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/09-criteria-confirmation.json",
+          "bytes": 1022826,
+          "sha256": "6102b431732ddc21f8a561e2e09f207d791e8aaa385e6ed0daf545b5aa878dc9"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "10-criteria-hitl-editor",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "10-criteria-hitl-editor",
+        "screenshot": {
+          "path": "10-criteria-hitl-editor.png",
+          "bytes": 114513,
+          "sha256": "9acbb40219ef85e1c2e12cf9bb7b1311953fd0c71812ab13f33ce6ea27cb7230",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/10-criteria-hitl-editor.json",
+          "bytes": 1025043,
+          "sha256": "1cc40b85f07b2f9784f1f038efca458102f52b73a7f8ddc4465c985b9cc50cc6"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "11-target-input-empty",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "11-target-input-empty",
+        "screenshot": {
+          "path": "11-target-input-empty.png",
+          "bytes": 287371,
+          "sha256": "31ef3ba4c7dd4e8909c2d3ffa596159acd5d154b99b73d9d669aa3116cba4dea",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/11-target-input-empty.json",
+          "bytes": 399799,
+          "sha256": "1a288902baeb491a0d187d847640475d05802a68f0f049354dab966a1f7ac78b"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "12-target-input-file",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "12-target-input-file",
+        "screenshot": {
+          "path": "12-target-input-file.png",
+          "bytes": 268349,
+          "sha256": "c7e9783a859541d1be04d72b12c45e9ca17744d8dbd2042203e79522d74e4df1",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/12-target-input-file.json",
+          "bytes": 447427,
+          "sha256": "ff939bf2b30412ac084e75356d23a3d048c191685cae33be74c0d22bcbebf595"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "13-review-active",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "13-review-active",
+        "screenshot": {
+          "path": "13-review-active.png",
+          "bytes": 422812,
+          "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/13-review-active.json",
+          "bytes": 2021983,
+          "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "14-results",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "14-results",
+        "screenshot": {
+          "path": "14-results.png",
+          "bytes": 167390,
+          "sha256": "4ced148dc6a926f9079cc2fae75743b35ff18b3b8ffa763f59fac6e5cd0cb183",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/14-results.json",
+          "bytes": 667893,
+          "sha256": "c1997bc687362e8cd26edd395a4dace87c78159c2c38e791ab8f3075e6b90059"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "15-result-detail-fail",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "15-result-detail-fail",
+        "screenshot": {
+          "path": "15-result-detail-fail.png",
+          "bytes": 181083,
+          "sha256": "80397646cc72ef734637abbc54cb48a9966ce43fda3b011e15ddedee441259a6",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/15-result-detail-fail.json",
+          "bytes": 710697,
+          "sha256": "7a76dbb1f7f5b8250fb62e7259dbbf06afd8edae1ca02a63896063f7802466c4"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "16-result-detail-review",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "16-result-detail-review",
+        "screenshot": {
+          "path": "16-result-detail-review.png",
+          "bytes": 184302,
+          "sha256": "f86cb27ed6f4c33f390dc2a879a5a3b3814b3090afb89c4911011e2a8b0d9b3e",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/16-result-detail-review.json",
+          "bytes": 713312,
+          "sha256": "a84bde13a618f25f59a643db8e0295fd953f2d639a89c012fcf955ffec8c7d07"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "17-result-applied-criteria",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "17-result-applied-criteria",
+        "screenshot": {
+          "path": "17-result-applied-criteria.png",
+          "bytes": 176272,
+          "sha256": "ddfcdf22b047d050d60d731de030784f0d2eb8f3873766ca6aded7a41fbb72b4",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/17-result-applied-criteria.json",
+          "bytes": 766801,
+          "sha256": "423feb2d25ff4ea45f226bcdd276fd5765559b7ed81c330bf41566c6a30da302"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "18-result-criterion-source",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "18-result-criterion-source",
+        "screenshot": {
+          "path": "18-result-criterion-source.png",
+          "bytes": 173692,
+          "sha256": "117b53ab122df2d0b12ba8937744d0d57fb3740ced3b72b6bb74527b64475380",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/18-result-criterion-source.json",
+          "bytes": 743105,
+          "sha256": "ca6a425267caf467c5fa396f386c206d24e00ab2e82e5eb7f880b4b3b7eca788"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "19-dashboard-controls",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "19-dashboard-controls",
+        "screenshot": {
+          "path": "19-dashboard-controls.png",
+          "bytes": 270631,
+          "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/19-dashboard-controls.json",
+          "bytes": 1015625,
+          "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "20-dashboard-generating",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "20-dashboard-generating",
+        "screenshot": {
+          "path": "20-dashboard-generating.png",
+          "bytes": 134605,
+          "sha256": "eff1dc8def82bdf0321b3d8886e9fb41d74e7e971a93734cebbfab0a6db5b19c",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/20-dashboard-generating.json",
+          "bytes": 1605885,
+          "sha256": "bc63deb27ee5dc087e973a4c4f5e230a7fe033fdbcf417aa415713d44f899870"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "21-dashboard-light",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "21-dashboard-light",
+        "screenshot": {
+          "path": "21-dashboard-light.png",
+          "bytes": 148135,
+          "sha256": "b352a37f58c5bb204e4b917c76c62023abb939b5e132aec4296c65672090ee71",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/21-dashboard-light.json",
+          "bytes": 1360988,
+          "sha256": "8eed14afcf0d568865c9706e84c20e86b1e8f03508635d0aabbdc8aaf3447232"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "22-dashboard-customize",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "22-dashboard-customize",
+        "screenshot": {
+          "path": "22-dashboard-customize.png",
+          "bytes": 188858,
+          "sha256": "10d6bbaab24c0b82f48631a2a85e075965b651f29c281cf4f4bf67bb174fac86",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/22-dashboard-customize.json",
+          "bytes": 1347144,
+          "sha256": "6e7298a9e41632d55c9da1d13731d1875ead4263aa4da680704edba7149ddea5"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "23-dashboard-dark",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "23-dashboard-dark",
+        "screenshot": {
+          "path": "23-dashboard-dark.png",
+          "bytes": 155331,
+          "sha256": "75a092c166532753e89139f209c263277217b55d87405fe0d8104b5f9973fcfb",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/23-dashboard-dark.json",
+          "bytes": 1362836,
+          "sha256": "ef78a3268ea9feb4c24cb6b165b2208e87485dcb8d830dbb081c98c5fa4b2e11"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "24-dashboard-activity",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "24-dashboard-activity",
+        "screenshot": {
+          "path": "24-dashboard-activity.png",
+          "bytes": 153594,
+          "sha256": "ce2ed6f4a743eda17ccc2cfd5148b440ba76133a67764c4b9b96ed70f33cae95",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/24-dashboard-activity.json",
+          "bytes": 1436035,
+          "sha256": "638fbc5abf2af3ea6d82d4fde7968973fcac37004c14637df5adacdd3fb9343e"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "25-dashboard-source",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "25-dashboard-source",
+        "screenshot": {
+          "path": "25-dashboard-source.png",
+          "bytes": 106106,
+          "sha256": "69f01be24cf3816001467ba5bde23ee0ae32e0042672e1aec322537cc2037c6f",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/25-dashboard-source.json",
+          "bytes": 1907545,
+          "sha256": "f1510ed6ae3dd8e8f3edb6d3d2cbb5c3b27f5ec702872a9c4d783dc0f2d43451"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "26-ledger-empty",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "26-ledger-empty",
+        "screenshot": {
+          "path": "26-ledger-empty.png",
+          "bytes": 269941,
+          "sha256": "90507070de870a430d2b5b36095d130a061edb23fbbebf0b47abd0327ddbf576",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/26-ledger-empty.json",
+          "bytes": 954297,
+          "sha256": "b9885415d889df0717af1fb27e7a972874289c3e962ffefd54b365ef2718ddc7"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "27-ledger-mapping",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "27-ledger-mapping",
+        "screenshot": {
+          "path": "27-ledger-mapping.png",
+          "bytes": 220911,
+          "sha256": "b275d25b2e328801c375226c240d2cb4c65e452937ee7fcbb5533c06ef01563b",
+          "width": 1440,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/27-ledger-mapping.json",
+          "bytes": 1107615,
+          "sha256": "87005825eeac30c4c72f4e3d65ed7e1bb91b0b5bd1c92f77f398d9176b07441c"
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "28-results-mobile-motion-off",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "28-results-mobile-motion-off",
+        "screenshot": {
+          "path": "28-results-mobile-motion-off.png",
+          "bytes": 95954,
+          "sha256": "faa7a87cbd823fab2f091da6a03d5a0e5af71819aba37101c9eb03575dad06e4",
+          "width": 390,
+          "height": 844,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/28-results-mobile-motion-off.json",
+          "bytes": 709181,
+          "sha256": "a749fd36012e6144dcfa2c99e7e3b7611a731e79b984445b75d92b1017ec0fc2"
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "reduced",
+          "osReduce": true,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "29-landing-1600",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "29-landing-1600",
+        "screenshot": {
+          "path": "29-landing-1600.png",
+          "bytes": 591657,
+          "sha256": "62079a27059cd17c79722842cd2110ea7db48793a1c1bd30633020d2f64dd9ee",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/29-landing-1600.json",
+          "bytes": 942017,
+          "sha256": "485148875a175394a2fcc20466e07ef0e78cb40eeefd63f5ccc98e3812c65a81"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "30-landing-1280",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "30-landing-1280",
+        "screenshot": {
+          "path": "30-landing-1280.png",
+          "bytes": 451355,
+          "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/30-landing-1280.json",
+          "bytes": 941856,
+          "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "31-criteria-confirmation-1600",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "31-criteria-confirmation-1600",
+        "screenshot": {
+          "path": "31-criteria-confirmation-1600.png",
+          "bytes": 107579,
+          "sha256": "7d438854ed1c8450af649218c0617ef0a05e720e30d86d8e044d2f12d3462e36",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/31-criteria-confirmation-1600.json",
+          "bytes": 1022718,
+          "sha256": "33ce86cc08eff65de3b32a3f839ea82622c05917c2b75f238b167d5af054ea39"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "32-criteria-confirmation-1280",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "32-criteria-confirmation-1280",
+        "screenshot": {
+          "path": "32-criteria-confirmation-1280.png",
+          "bytes": 101873,
+          "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/32-criteria-confirmation-1280.json",
+          "bytes": 1022523,
+          "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "33-result-detail-fail-1600",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "33-result-detail-fail-1600",
+        "screenshot": {
+          "path": "33-result-detail-fail-1600.png",
+          "bytes": 185798,
+          "sha256": "c4828c2e481603ae60a4feb450a0d3debc07df6fc73d0be6e559c884f067659c",
+          "width": 1600,
+          "height": 960,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/33-result-detail-fail-1600.json",
+          "bytes": 710713,
+          "sha256": "4d1ac909da477501857a331da5ac880a90b6896f1d07f025041e68784faa74ed"
+        },
+        "viewport": {
+          "width": 1600,
+          "height": 960,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    },
+    {
+      "id": "34-result-detail-fail-1280",
+      "selected": false,
+      "captureStatus": "NOT_RUN",
+      "visualAcceptance": "NOT_RUN",
+      "reason": "Outside the three-state smoke subset.",
+      "reference": {
+        "id": "34-result-detail-fail-1280",
+        "screenshot": {
+          "path": "34-result-detail-fail-1280.png",
+          "bytes": 157045,
+          "sha256": "a2624e86766ab3e8aef63ea90462fedd7aeb026756eab939c41133bf4e7ef9c0",
+          "width": 1280,
+          "height": 800,
+          "mode": "viewport",
+          "scale": "device; DPR 1 required by dimension validation"
+        },
+        "dom": {
+          "path": "dom/34-result-detail-fail-1280.json",
+          "bytes": 710554,
+          "sha256": "962b5996d271694f3a7c2d1c4ac9951a257b70c3f9c7f239453579694708b492"
+        },
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1
+        },
+        "motion": {
+          "app": "full",
+          "osReduce": false,
+          "animationFreeze": "none",
+          "finiteTransitionSettleMs": 650
+        }
+      }
+    }
+  ]
+}

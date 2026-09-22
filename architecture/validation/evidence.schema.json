@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gspec:reproduction:gate-evidence:1",
+  "title": "One quantitative acceptance gate record",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "gateId",
+    "state",
+    "executionKind",
+    "command",
+    "startedAt",
+    "endedAt",
+    "exitCode",
+    "implementationDigest",
+    "inputs",
+    "observations",
+    "artifacts",
+    "limitations",
+    "packageManifestSha256",
+    "acceptanceProfile"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "gateId": {
+      "type": "string",
+      "pattern": "^G(?:0[0-9]|1[0-4])$"
+    },
+    "state": {
+      "enum": [
+        "passed",
+        "failed",
+        "not_run",
+        "blocked"
+      ]
+    },
+    "executionKind": {
+      "enum": [
+        "specification",
+        "evaluator_selftest",
+        "offline_implementation",
+        "live_implementation",
+        "browser_implementation",
+        "independent_review"
+      ]
+    },
+    "command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "startedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "endedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "implementationDigest": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "exitCode": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "object",
+      "description": "Measured counts and thresholds, not a subjective score",
+      "properties": {
+        "providerCalls": {
+          "type": "object",
+          "properties": {
+            "gemini": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "e2b": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          }
+        },
+        "heldoutSeedCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "packageManifestSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "acceptanceProfile": {
+      "enum": [
+        "CURRENT_REPRODUCTION",
+        "OPTIONAL_FUTURE"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "state": { "const": "passed" }, "acceptanceProfile": { "const": "CURRENT_REPRODUCTION" }, "gateId": { "const": "G14" } } },
+      "then": { "properties": { "observations": { "required": ["openReproductionIssues"], "properties": { "openReproductionIssues": { "const": 0 } } } } }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "startedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "exitCode": {
+            "const": 0
+          },
+          "implementationDigest": {
+            "type": "string"
+          },
+          "command": {
+            "minItems": 1
+          },
+          "inputs": {
+            "minItems": 1
+          },
+          "artifacts": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          },
+          "gateId": {
+            "enum": [
+              "G03",
+              "G06",
+              "G07",
+              "G08",
+              "G09"
+            ]
+          },
+          "acceptanceProfile": {
+            "const": "OPTIONAL_FUTURE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "required": [
+              "providerCalls"
+            ],
+            "properties": {
+              "providerCalls": {
+                "required": [
+                  "gemini",
+                  "e2b"
+                ],
+                "properties": {
+                  "gemini": {
+                    "minimum": 1
+                  },
+                  "e2b": {
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          },
+          "gateId": {
+            "const": "G08"
+          },
+          "acceptanceProfile": {
+            "const": "OPTIONAL_FUTURE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "required": [
+              "heldoutSeedCount"
+            ],
+            "properties": {
+              "heldoutSeedCount": {
+                "minimum": 3
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          },
+          "executionKind": {
+            "const": "live_implementation"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "required": [
+              "providerCalls"
+            ],
+            "properties": {
+              "providerCalls": {
+                "required": [
+                  "gemini",
+                  "e2b"
+                ],
+                "properties": {
+                  "gemini": {
+                    "minimum": 1
+                  },
+                  "e2b": {
+                    "minimum": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state": {
+            "const": "passed"
+          },
+          "acceptanceProfile": {
+            "const": "CURRENT_REPRODUCTION"
+          },
+          "gateId": {
+            "not": {
+              "enum": [
+                "G00",
+                "G14"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observations": {
+            "required": [
+              "reproduction"
+            ],
+            "properties": {
+              "reproduction": {
+                "type": "object",
+                "required": [
+                  "comparedCases",
+                  "matchedCases",
+                  "unexpectedDifferences",
+                  "baselineLimitationsPreserved",
+                  "baselineReferences"
+                ],
+                "properties": {
+                  "comparedCases": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "matchedCases": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "unexpectedDifferences": {
+                    "const": 0
+                  },
+                  "baselineLimitationsPreserved": {
+                    "const": true
+                  },
+                  "baselineReferences": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "sha256"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string"
+                        },
+                        "sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

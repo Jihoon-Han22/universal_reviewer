@@ -1,0 +1,72 @@
+{
+  "id": "30-landing-1280",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "30-landing-1280",
+    "screenshot": {
+      "path": "30-landing-1280.png",
+      "bytes": 451355,
+      "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/30-landing-1280.json",
+      "bytes": 941856,
+      "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:26:16.161Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/30-landing-1280-font-readiness.json",
+    "bytes": 2301192,
+    "sha256": "fbaa0d71ccde77cf3c981c6a9279497ef14b92dd3434ddca1203cd8c1606ff94"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/30-landing-1280.png",
+    "bytes": 439645,
+    "sha256": "74630f5d5d960e258be56f156110f958e1d33844d7a5ace0c188501e21055d3f",
+    "width": 1280,
+    "height": 800,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:26:23.152Z",
+    "capturedAt": "2026-09-21T15:26:25.163Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/30-landing-1280.json",
+    "bytes": 1469706,
+    "sha256": "310e911d415b7c41c4144547d1079831c8d4e030d17e43e8ca82254c0adf1ebc"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/30-landing-1280-measurement.json",
+    "bytes": 189119,
+    "sha256": "91472acde2b805f5adc4bc973333186640b24f53af5337ea9e288da412dee350"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T15:26:33.272Z"
+}

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "round": "round-02",
+  "author": {
+    "actualId": "/root/verification_audit",
+    "role": "validation-tool implementation author; formerly initial source evaluator",
+    "newAgents": 0,
+    "reusedAgents": 1,
+    "childAgents": 0
+  },
+  "appliedAt": "2026-09-20T17:56:15.952Z",
+  "recordedAt": "2026-09-20T17:57:04.361Z",
+  "authorOwnFinalApproval": false,
+  "independentReviewer": "/root/final_cross_review",
+  "appliedFiles": [
+    {
+      "path": "architecture/validation/adapter-worker.mjs",
+      "beforeSha256": "3380dd008b1a727c2a2ca736163efc58b5abf02efafd5f5a684edd81a102d068",
+      "afterSha256": "5d1647e76f6dd59d390341d54b8e1f22717e04cc39e26edb28fce5de834662a7"
+    },
+    {
+      "path": "architecture/validation/run-gate.mjs",
+      "beforeSha256": "5f352f94c4542eed3438360773f37978576f31cefcb4e9ee819795aae3dc97db",
+      "afterSha256": "14850f4e22d8d8a4838c41bf82eeab3efa1c8062ae13e036b0ffbc2e9e65f41c"
+    },
+    {
+      "path": "architecture/validation/harness.mjs",
+      "beforeSha256": "a0cb2c940001f66424843c6af9b43dd089f1591ead4fdfe62415b49c54aa016f",
+      "afterSha256": "8914e8ad419bef9e22b849b7e1c0355762d52fa0a3e6c42569043a374d68612f"
+    },
+    {
+      "path": "architecture/validation/acceptance.mjs",
+      "beforeSha256": "60e3ec78e9143ad75c3d59913fdd86c98e6cdbafdd811a4b5feb83ebf117f866",
+      "afterSha256": "2de029f96e294ecd1000d60af721400e660c79fd47fd47513d649f429a7f3c9b"
+    },
+    {
+      "path": "architecture/validation/evidence.schema.json",
+      "beforeSha256": "0d0bf6798ec771c6bbded7e755467f89c397a1dc396069e398e4144b4e8b19d2",
+      "afterSha256": "26ac73fc44ea391af4c0cfbf1b8adde433f3d2e967c31bec230c3d6146991f70"
+    },
+    {
+      "path": "architecture/validation/acceptance-selftest.mjs",
+      "beforeSha256": "59ae22484ebaf4459146ce96b8c32b3e006c6b4369aa6e294996ae84a8b92ca3",
+      "afterSha256": "b2f047f91968921e61b962e2736430e70ee456d9b12180ec280ec6bb46a47138"
+    },
+    {
+      "path": "architecture/validation/package-validator-selftest.mjs",
+      "beforeSha256": "392e8a54a27f12428239d009a30a371f4dc97f0762ab14201812e44a4ced8812",
+      "afterSha256": "bc217cf9a64e1e7230986842c861cb7a56c7bbf5b6e35a92d9f5c61377785c0f"
+    },
+    {
+      "path": "architecture/validation/selftest.mjs",
+      "beforeSha256": "e1dc5f0fbf4a78f84bfb15669e29c9a637de9db28b80be4da9d0113936666ba0",
+      "afterSha256": "552bb18007c4d0e5a61cd9674ca31b0ee5eb4544fd66f2eae5c588d3a003cb23"
+    },
+    {
+      "path": "architecture/validation/test-package-fixture.mjs",
+      "beforeSha256": null,
+      "afterSha256": "27b4473072f1db8efbe7b8c8e9b677200f6aa86ffd7ee0dfd8dbe96ecb604f4e"
+    },
+    {
+      "path": "architecture/validation/README.md",
+      "beforeSha256": "afd95b5c217121cf0b1913f879fb1a1a00637db7ad8b97d864f1ded8181b8578",
+      "afterSha256": "2f80a4327ec666266dbde5d75da004c74380d27eee2b482d1d2a175caac9c7a5"
+    }
+  ],
+  "resolutions": [
+    {
+      "issueId": "VER-02",
+      "questionIds": [
+        "CORE-21-C02"
+      ],
+      "status": "implemented-awaiting-independent-review",
+      "files": [
+        "validation/adapter-worker.mjs",
+        "validation/run-gate.mjs",
+        "validation/harness.mjs",
+        "validation/acceptance-selftest.mjs",
+        "validation/selftest.mjs"
+      ],
+      "change": "Worker checks abort before and after adapter execution. Parent measures a monotonic deadline from child creation and rejects late exits; additional 10 seconds is cleanup grace only.",
+      "regression": "timeout followed by a late normal adapter return cannot pass; harness rejects a valid-shaped result returned after adapter timeout"
+    },
+    {
+      "issueId": "VER-03",
+      "questionIds": [
+        "CORE-21-C03"
+      ],
+      "status": "implemented-awaiting-independent-review",
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/run-gate.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "change": "Require architecture/package-manifest.json and rerun verifyPackage without refresh. Bind each gate to packageManifestSha256; reject invalid, changed or refreshed packages when gate identity is stale.",
+      "regression": "current/nonempty/canonical manifest, changed package, refreshed package invalidates old gates, mutation during gate, positive gate identity"
+    },
+    {
+      "issueId": "VER-04",
+      "questionIds": [
+        "CORE-21-C04"
+      ],
+      "status": "implemented-awaiting-independent-review",
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "change": "Provider call counts must be positive safe integers; heldoutSeedCount must be a safe integer >=3. Schema permits nonnegative measured counts for nonpassed/nonlive reports and adds positive/min3 conditions for passed live/holdout gates.",
+      "regression": "string, fraction, boolean, null, zero, negative and unsafe integer counts"
+    },
+    {
+      "issueId": "CROSS-VER-TIMEOUT-LIMIT",
+      "discoveredBy": "/root/final_cross_review",
+      "questionIds": [
+        "CORE-21-C09"
+      ],
+      "status": "implemented-awaiting-independent-review",
+      "files": [
+        "validation/harness.mjs",
+        "validation/selftest.mjs",
+        "validation/README.md"
+      ],
+      "change": "harness accepts only safe integer timeoutMs in1..21600000 with default900000; run-gate already enforced the same upper bound. Document child-scope timing and no CLI override.",
+      "regression": "unsupported timeout rejects before file reads or child creation, including2^31 and MAX_SAFE_INTEGER"
+    },
+    {
+      "issueId": "CROSS-VER-ANCESTOR-JUNCTION",
+      "discoveredBy": "/root/final_cross_review",
+      "questionIds": [
+        "CORE-21-C11"
+      ],
+      "status": "implemented-awaiting-independent-review",
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/acceptance-selftest.mjs",
+        "validation/README.md"
+      ],
+      "change": "Evidence references lstat every relative path component, require intermediate directories/final regular files, and reject symbolic links/junctions rather than only testing the final leaf.",
+      "regression": "external synthetic proof through parent directory junction rejected"
+    }
+  ],
+  "extraRefactor": "Extracted small synthetic valid-package fixture into validation/test-package-fixture.mjs; both acceptance and package-validator selftests use it. It dynamically imports REQUIRED_FILES from verify-package.",
+  "selfRegression": {
+    "executed": true,
+    "command": [
+      "node",
+      "--test",
+      "C:/Users/User/Desktop/hackathon3/architecture/validation/selftest.mjs",
+      "C:/Users/User/Desktop/hackathon3/architecture/validation/acceptance-selftest.mjs",
+      "C:/Users/User/Desktop/hackathon3/architecture/validation/package-validator-selftest.mjs"
+    ],
+    "cwd": "C:/Users/User/Desktop/hackathon3/.cache/architecture-independent-audit/verification",
+    "toolChunkId": "bc11a2",
+    "exitCode": 0,
+    "selected": 38,
+    "passed": 38,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "durationMs": 7429.2706,
+    "inputHashCapture": "Captured immediately after execution; applied file hashes independently match the guarded draft at application time.",
+    "inputs": [
+      {
+        "path": "architecture/validation/adapter-worker.mjs",
+        "sha256": "5d1647e76f6dd59d390341d54b8e1f22717e04cc39e26edb28fce5de834662a7"
+      },
+      {
+        "path": "architecture/validation/run-gate.mjs",
+        "sha256": "14850f4e22d8d8a4838c41bf82eeab3efa1c8062ae13e036b0ffbc2e9e65f41c"
+      },
+      {
+        "path": "architecture/validation/harness.mjs",
+        "sha256": "8914e8ad419bef9e22b849b7e1c0355762d52fa0a3e6c42569043a374d68612f"
+      },
+      {
+        "path": "architecture/validation/acceptance.mjs",
+        "sha256": "2de029f96e294ecd1000d60af721400e660c79fd47fd47513d649f429a7f3c9b"
+      },
+      {
+        "path": "architecture/validation/evidence.schema.json",
+        "sha256": "26ac73fc44ea391af4c0cfbf1b8adde433f3d2e967c31bec230c3d6146991f70"
+      },
+      {
+        "path": "architecture/validation/acceptance-selftest.mjs",
+        "sha256": "b2f047f91968921e61b962e2736430e70ee456d9b12180ec280ec6bb46a47138"
+      },
+      {
+        "path": "architecture/validation/package-validator-selftest.mjs",
+        "sha256": "bc217cf9a64e1e7230986842c861cb7a56c7bbf5b6e35a92d9f5c61377785c0f"
+      },
+      {
+        "path": "architecture/validation/selftest.mjs",
+        "sha256": "552bb18007c4d0e5a61cd9674ca31b0ee5eb4544fd66f2eae5c588d3a003cb23"
+      },
+      {
+        "path": "architecture/validation/test-package-fixture.mjs",
+        "sha256": "27b4473072f1db8efbe7b8c8e9b677200f6aa86ffd7ee0dfd8dbe96ecb604f4e"
+      },
+      {
+        "path": "architecture/validation/README.md",
+        "sha256": "2f80a4327ec666266dbde5d75da004c74380d27eee2b482d1d2a175caac9c7a5"
+      },
+      {
+        "path": "architecture/tools/verify-package.mjs",
+        "sha256": "6b1b947bea6eb3fa662c750d1d1e7bbc8c798436b9182708a1677ea14a9bd19f"
+      },
+      {
+        "path": "architecture/validation/fixture-generator.mjs",
+        "sha256": "76ebb6eef8a2198cd0ca3e0724fb2a8f9f916b647e1f3661190bbe969e0e11bd"
+      },
+      {
+        "path": "architecture/validation/evaluate-v3.mjs",
+        "sha256": "b443c86b0b443e8ac4132bea1f4110cc05fb2521ecae23ec4a63e9256ebb62e4"
+      }
+    ],
+    "scope": "Synthetic verification-tool controls only, not app/provider/browser acceptance",
+    "implementationExecuted": false,
+    "providerExecuted": false,
+    "browserExecuted": false,
+    "completeProductAcceptance": false
+  },
+  "notOwned": [
+    "CORE-20/CORE-21 registries and source reverse inventory",
+    "P10 projection documentation",
+    "independent score checker CORE-21-C10",
+    "verify-package REQUIRED_FILES changes",
+    "final package freeze/hash manifest/ZIP"
+  ],
+  "historicalEvidenceModified": false,
+  "productSourceModified": false,
+  "realEnvironmentRead": false,
+  "limitations": [
+    "No product acceptance gate executed.",
+    "These selftests are author regressions and do not constitute independent final approval.",
+    "After further validator/fixture changes, final owner must run current checks again and bind evidence to final inputs."
+  ]
+}

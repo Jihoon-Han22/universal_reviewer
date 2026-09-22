@@ -1,0 +1,72 @@
+{
+  "id": "32-criteria-confirmation-1280",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "32-criteria-confirmation-1280",
+    "screenshot": {
+      "path": "32-criteria-confirmation-1280.png",
+      "bytes": 101873,
+      "sha256": "abd431cb5e22bbc5bbbae206498094e34b734232fada242a944323e871d0671f",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/32-criteria-confirmation-1280.json",
+      "bytes": 1022523,
+      "sha256": "5ee63bbe52112d1447525975a5e0c8253d13f3bef011ed22d578a0fa719dd2e9"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T15:26:42.592Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/diagnostics/32-criteria-confirmation-1280-font-readiness.json",
+    "bytes": 2301336,
+    "sha256": "5ab5cfb5e5ea34a8b6c3a356196e09b867156bcbcac95999faa8db8f13e7400c"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/32-criteria-confirmation-1280.png",
+    "bytes": 100372,
+    "sha256": "e797d19c5c9bc698c5b78197fc9964f20bcdc07b5b463feb1eb82b2c3ca39678",
+    "width": 1280,
+    "height": 800,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T15:26:44.708Z",
+    "capturedAt": "2026-09-21T15:26:44.911Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/dom/32-criteria-confirmation-1280.json",
+    "bytes": 1592226,
+    "sha256": "65688e136b67ccbe62a7300901f8cc7324b261d572fab5294094ceef7e4a0cc2"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-007/2026-09-21T15-20-12-356Z-all-1240-c9cdec09/32-criteria-confirmation-1280-measurement.json",
+    "bytes": 202931,
+    "sha256": "021a7f0b11a1bcaedb054d991f08c672dba630920d084f1121b5f540d7407d93"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T15:26:46.969Z"
+}

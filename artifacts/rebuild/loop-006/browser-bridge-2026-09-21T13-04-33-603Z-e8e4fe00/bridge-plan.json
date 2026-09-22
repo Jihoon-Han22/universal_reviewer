@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "caseId": "G12:CORE-14-C05",
+  "loop": "LOOP-006",
+  "preparedAt": "2026-09-21T13:04:35.055Z",
+  "codeDigest": "78e64718b2c257a4339f367aae067bce972e6b4e0be040c45325a5b323f11e7c",
+  "registrySha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7",
+  "registryRef": {
+    "path": "scripts/acceptance/case-registry.json",
+    "sha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7"
+  },
+  "sourceRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/source-prepared.json",
+    "sha256": "112f768458279116d169f2f23a905f20244f28e56ffd0c1a2a0f759d3b503f9c"
+  },
+  "fixtureRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/fixture.json",
+    "sha256": "075526ef945d16ce2ae67da3ea09a7bf74448ac295bdc53f63504f19bdc19472"
+  },
+  "snapshotRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/snapshot.json",
+    "sha256": "32fc33ca1833132602cc1e7d110621234d35706a2e8a121a534c2dd9c7d3a33a"
+  },
+  "responseRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/dashboard-response-template.json",
+    "sha256": "31310f119fd3ad4555d8b71f8d18d26b0d25f3b18288c1987c609dba9093a3d0"
+  },
+  "sourceFileRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/synthetic-source.txt",
+    "sha256": "1c80431903c4337151bb9aa50b7ed07cd9847f1f0a4f6d1353246dfe42b0dca1"
+  },
+  "renderedHtmlRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/renderer-output.html",
+    "sha256": "9547c9e32c21f692c1d368e03fa88c98af61d5398b8d604ff8417cc1d01a54f3"
+  },
+  "baselines": [
+    {
+      "path": "architecture/specs/05-dashboard-exports.md",
+      "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+    },
+    {
+      "path": "architecture/specs/04-ui-motion.md",
+      "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+    },
+    {
+      "path": "architecture/DECISIONS.md",
+      "sha256": "181bb841d718888d9422b86e6456df67575c53a77a990bfaf5500d9b086ab097"
+    }
+  ],
+  "output": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00",
+  "origin": "http://127.0.0.1:5210",
+  "entry": "/scripts/acceptance/browser-bridge-fixture.html",
+  "g12Binding": null,
+  "developmentOnly": true,
+  "providerBoundary": "Predeclared synthetic POST/GET dashboard responses. Actual DashboardModal, dashboardBridge, parent listener, SourceEvidence, download function and fixed renderer.",
+  "actions": [
+    "Mount actual DashboardModal through isolated Vite fixture entry",
+    "Generate fresh preview for native click, Enter and Space; observe trusted source events and opaque-origin messages",
+    "Each independent negative starts at item B; invalid message tries item A; valid trusted counterpart then must select A",
+    "Replace preview to obtain distinct actual token and frame; isolate old frame/current token and current frame/old token",
+    "Unmount modal and observe actual production message-listener removal",
+    "Download with actual host button; read actual bytes; inspect objectURL lifecycle",
+    "Open captured bytes on an isolated local offline route; operate filters/details and count every attempted external request"
+  ],
+  "expected": {
+    "positiveItem": "g12-item-a",
+    "negativeBaselineItem": "g12-item-b",
+    "sandbox": "allow-scripts",
+    "referrerPolicy": "no-referrer",
+    "messageOrigin": "null",
+    "scriptCount": 2,
+    "mime": "text/html;charset=utf-8",
+    "sourceSentinel": "GSPEC_G12_ORIGINAL_ONLY_SENTINEL",
+    "expectedQuote": "Synthetic review quote"
+  },
+  "browserExecuted": false
+}

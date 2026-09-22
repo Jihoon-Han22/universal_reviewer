@@ -1,0 +1,22 @@
+[
+  { "raw": "2.0 이상", "op": ">=", "value": 2.0, "unit": null },
+  { "raw": "0.02 이하", "op": "<=", "value": 0.02, "unit": null },
+  { "raw": "1.0 초과", "op": ">", "value": 1.0, "unit": null },
+  { "raw": "5.0 미만", "op": "<", "value": 5.0, "unit": null },
+  { "raw": "2~5", "op": "between", "value": [2, 5], "unit": null },
+  { "raw": "0.5 이상 1.5 이하", "op": "between", "value": [0.5, 1.5], "unit": null },
+  { "raw": "≤0.02", "op": "<=", "value": 0.02, "unit": null },
+  { "raw": "≥2.20", "op": ">=", "value": 2.2, "unit": null },
+  { "raw": "<0.10", "op": "<", "value": 0.1, "unit": null },
+  { "raw": ">80", "op": ">", "value": 80, "unit": null },
+  { "raw": "min 4000", "op": ">=", "value": 4000, "unit": null },
+  { "raw": "max 300", "op": "<=", "value": 300, "unit": null },
+  { "raw": "3.0% 이상", "op": ">=", "value": 3.0, "unit": "%" },
+  { "raw": "24.0 이상(3회 평균)", "op": ">=", "value": 24.0, "unit": null },
+  { "raw": "N.D.", "op": "qualitative", "value": null, "unit": null },
+  { "raw": "불검출", "op": "qualitative", "value": null, "unit": null },
+  { "raw": "이상 없을 것", "op": "qualitative", "value": null, "unit": null },
+  { "raw": "적합할 것", "op": "qualitative", "value": null, "unit": null },
+  { "raw": "-", "op": "qualitative", "value": null, "unit": null },
+  { "raw": "KS F 2563 만족", "op": "qualitative", "value": null, "unit": null }
+]

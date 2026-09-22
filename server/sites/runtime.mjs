@@ -86,9 +86,10 @@ export async function createRuntime(env,sessionId,options={}) {
     for(const record of records){const stored=await storage.getState('run',record.id);if(stored){const run=hydrateRun(stored.state);if(documentIds(null,run).includes(req.params.id))throw new ReviewError('검토 기록의 근거로 사용 중인 문서는 삭제할 수 없습니다.',409);}}
     await runtime.ensureMutationLease?.();const doc=(await storage.listDocuments()).find(item=>item.id===req.params.id);if(!doc||!await storage.deleteDocument(req.params.id,{expectedRevision:doc.revision}))throw notFound();res.json({deleted:true});
   });
-  router.post('/api/samples',async(req,res)=>{const result=await loadSample(documents,req.body?.kind,options.sampleOptions);await persistNewDocuments();res.status(201).json(result);});
+  const deployedGolden=env.ASSETS?{root:'/golden',read:async location=>{const response=await env.ASSETS.fetch(new Request(`https://datasets.invalid${String(location).replaceAll('\\','/')}`));if(!response.ok||response.headers.get('content-type')?.startsWith('text/html'))throw new HttpError('예제 파일을 불러오지 못했습니다.',503);return Buffer.from(await response.arrayBuffer());}}:undefined;
+  router.post('/api/samples',async(req,res)=>{const result=await loadSample(documents,req.body?.kind,options.sampleOptions??deployedGolden);await persistNewDocuments();res.status(201).json(result);});
   router.get('/api/golden',(req,res)=>res.json(goldenCatalog()));
-  router.post('/api/golden/load',async(req,res)=>{const result=await loadGolden(documents,req.body,options.goldenOptions);await persistNewDocuments();res.status(201).json(result);});
+  router.post('/api/golden/load',async(req,res)=>{const result=await loadGolden(documents,req.body,options.goldenOptions??deployedGolden);await persistNewDocuments();res.status(201).json(result);});
   router.post('/api/runs',async(req,res)=>{const records=await storage.listStates('run');if(records.filter(record=>OPEN_STATUSES.has(record.status)).length>=3)throw new ReviewError('동시 검토 한도에 도달했습니다. 진행 중인 검토가 끝난 뒤 다시 시도해 주세요.',429);const run=engine.start(req.body??{});await persistRun(run);res.status(202).json({runId:run.id});});
   router.get('/api/runs/:id',(req,res)=>res.json(engine.snapshot(req.params.id)));
   router.post('/api/runs/:id/criteria/revise',(req,res)=>res.status(202).json(engine.revise(req.params.id,req.body)));
@@ -124,7 +125,7 @@ async function jobEvents(runtime,req,res,kind,id) {
   let stored=await storage.getState(kind,id);if(!stored||kind==='dashboard'&&stored.cancelRequested)throw notFound();
   eventHeaders(res);
   const sendRun=run=>{for(const event of run.events??[])if(event.sequence>sent){sent=event.sequence;res.write(`id: ${event.sequence}\ndata: ${JSON.stringify(event)}\n\n`);}};
-  const show=state=>{if(kind==='run')sendRun(hydrateRun(state));else res.write(`event: progress\ndata: ${JSON.stringify({status:state.status})}\n\n`);};
+  const show=state=>{const status=kind==='run'?state.run.status:state.status;if(stored.lease?.expiresAt>Date.now()&&(kind==='run'?status!=='running':['ready','failed'].includes(status)))return;if(kind==='run')sendRun(hydrateRun(state));else res.write(`event: progress\ndata: ${JSON.stringify({status:state.status})}\n\n`);};
   show(stored.state);
   const pending=state=>kind==='run'?state.run.pendingJob:state.pending;
   const finished=state=>kind==='run'?TERMINAL.has(state.run.status):['ready','failed'].includes(state.status);
@@ -134,19 +135,19 @@ async function jobEvents(runtime,req,res,kind,id) {
     await delay(1500);const next=await storage.getState(kind,id);if(!next)break;stored=next;show(stored.state);
   }
   if(res.writableEnded||!pending(stored.state)||finished(stored.state)){
-    if(kind==='dashboard'&&finished(stored.state))res.write('event: complete\ndata: {}\n\n');res.end();return;
+    if(kind==='dashboard'&&finished(stored.state)&&!(stored.lease?.expiresAt>Date.now()))res.write('event: complete\ndata: {}\n\n');res.end();return;
   }
   let lease=await storage.acquireLease(kind,id);
   if(!lease){
     // Another connection owns execution. Observe its durable checkpoints.
     let terminal=false;
-    for(let i=0;i<15&&!res.writableEnded;i++){await delay(1500);stored=await storage.getState(kind,id);if(!stored){terminal=true;break;}show(stored.state);const status=kind==='run'?stored.state.run.status:stored.state.status;if(TERMINAL.has(status)||['ready','awaiting_confirmation','awaiting_documents'].includes(status)){terminal=true;break;}res.write(': heartbeat\n\n');}
+    for(let i=0;i<15&&!res.writableEnded;i++){await delay(1500);stored=await storage.getState(kind,id);if(!stored){terminal=true;break;}show(stored.state);const status=kind==='run'?stored.state.run.status:stored.state.status;if(TERMINAL.has(status)||['ready','awaiting_confirmation','awaiting_documents'].includes(status)){terminal=!(stored.lease?.expiresAt>Date.now());break;}res.write(': heartbeat\n\n');}
     if(kind==='dashboard'&&terminal)res.write('event: complete\ndata: {}\n\n');res.end();return;
   }
   stored=await storage.getState(kind,id);runtime.revisions.set(`${kind}:${id}`,stored.revision);
-  let job,unsubscribe=()=>{},dirty=false,failed=false,renewAt=Date.now()+20000;
+  let job,unsubscribe=()=>{},dirty=false,failed=false,leaseReleased=false,renewAt=Date.now()+20000;
   try {
-    if(kind==='run'){job=hydrateRun(stored.state);engine.runs.set(id,job);if(job.pendingJob?.state==='queued'){await runtime.loadDocuments(documentIds(null,job));restoreRunOriginals(job,runtime.documents);}unsubscribe=engine.subscribe(job,event=>{dirty=true;sendRun({events:[event]});});}
+    if(kind==='run'){job=hydrateRun(stored.state);engine.runs.set(id,job);if(job.pendingJob?.state==='queued'){await runtime.loadDocuments(documentIds(null,job));restoreRunOriginals(job,runtime.documents);}unsubscribe=engine.subscribe(job,event=>{dirty=true;if((event.runStatus??event.status)==='running')sendRun({events:[event]});});}
     else job=runtime.exports.dashboard.hydrateJob(stored.state,{recoverInterrupted:stored.state.pending?.state==='executing'});
   }catch(error){await storage.releaseLease(kind,id,lease).catch(()=>{});throw error;}
   const save=()=>kind==='run'?runtime.persistRun(job,lease):runtime.persistDashboard(job,lease);
@@ -166,13 +167,19 @@ async function jobEvents(runtime,req,res,kind,id) {
     if(stored.cancelRequested)abort();
     const beforeExecute=()=>queue(save);
     if(kind==='run')await engine.executePendingJob(job,{beforeExecute});else await runtime.exports.dashboard.executePendingJob(job,{beforeExecute});
+    clearInterval(tick);
     await queue(save);await runtime.persistAnalyzedDocuments();await activity.save();
+    // A client may close immediately or submit the next command on this event.
+    // Publish phase boundaries only after durable state and lease release.
+    res.off('close',abort);
+    if(!await storage.releaseLease(kind,id,lease))throw new HttpError('작업 저장 상태를 확인할 수 없습니다. 다시 연결해 주세요.',409);
+    leaseReleased=true;
     if(kind==='run')sendRun(job);else res.write('event: complete\ndata: {}\n\n');
   }finally{
     clearInterval(tick);unsubscribe();activity.unsubscribe();res.off('close',abort);
     await chain.catch(()=>{});
-    if(kind==='dashboard'&&await storage.isCancelRequested(kind,id).catch(()=>false))await storage.deleteState(kind,id,{expectedRevision:runtime.revisions.get(`${kind}:${id}`),lease}).catch(()=>{});
-    await storage.releaseLease(kind,id,lease).catch(()=>{});
+    if(kind==='dashboard'&&await storage.isCancelRequested(kind,id).catch(()=>false))await storage.deleteState(kind,id,{expectedRevision:runtime.revisions.get(`${kind}:${id}`),...(leaseReleased?{}:{lease})}).catch(()=>{});
+    if(!leaseReleased)await storage.releaseLease(kind,id,lease).catch(()=>{});
     if(!res.writableEnded)res.end();
   }
   if(failed)throw new HttpError('작업 연결이 중단되었습니다. 저장된 진행 내용을 확인해 주세요.',409);

@@ -1,0 +1,76 @@
+{
+  "id": "summary-tooltip",
+  "startedAt": "2026-09-21T12:33:12.593Z",
+  "state": "passed",
+  "expected": {
+    "role": "tooltip",
+    "width": 280,
+    "described": true,
+    "escapeKeepsOpen": true,
+    "blurCloses": true
+  },
+  "observations": {
+    "role": "tooltip",
+    "width": 280,
+    "rect": {
+      "x": 106.78125,
+      "y": 509.28125,
+      "width": 280,
+      "height": 202.28125,
+      "top": 509.28125,
+      "right": 386.78125,
+      "bottom": 711.5625,
+      "left": 106.78125
+    },
+    "style": {
+      "maxHeight": "none",
+      "pointerEvents": "none"
+    },
+    "described": true,
+    "escapeKeepsOpen": true,
+    "blurCloses": true
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.dom.json",
+      "sha256": "53a111349785172aca15404ff86f1f48a79ba5cc567f73a3681b99ce75df22b6"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.png",
+      "sha256": "b014a0badc128d2e3957c9a833f2e2daed61b9580738596949fa90ec15f31f45"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "role",
+      "expected": "tooltip",
+      "actual": "tooltip",
+      "passed": true
+    },
+    {
+      "key": "width",
+      "expected": 280,
+      "actual": 280,
+      "passed": true
+    },
+    {
+      "key": "described",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "escapeKeepsOpen",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "blurCloses",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:33:20.090Z"
+}

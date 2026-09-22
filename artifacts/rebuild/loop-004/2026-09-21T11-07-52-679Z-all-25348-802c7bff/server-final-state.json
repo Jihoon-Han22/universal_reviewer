@@ -1,0 +1,167 @@
+{
+  "synthetic": true,
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "origin": "actual-react-with-reference-synthetic-http",
+  "fixtureId": "architecture-visual-v1",
+  "started": false,
+  "phase": "idle",
+  "run": null,
+  "activity": {
+    "tasks": []
+  },
+  "dashboard": null,
+  "subscribers": {
+    "run": 0,
+    "activity": 0
+  },
+  "requests": [
+    {
+      "path": "/__visual/provenance",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:07:52.735Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:07:53.940Z"
+    },
+    {
+      "path": "/__visual/control/reset",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:07:53.956Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:07:59.482Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:07:59.485Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:12.757Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:21.251Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:30.249Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:34.224Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:36.544Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:08:37.329Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:44.990Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:44.996Z"
+    },
+    {
+      "path": "/__visual/control/reset",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:08:45.006Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:48.913Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:08:48.916Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:09:05.666Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:09:15.644Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T11:09:16.821Z"
+    },
+    {
+      "path": "/__visual/provenance",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:10:21.872Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T11:10:31.186Z"
+    }
+  ],
+  "controls": [
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:06:48.594Z"
+    },
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:07:53.984Z"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:07:53.984Z",
+      "name": "reset"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:08:37.352Z",
+      "role": "criteria",
+      "documentId": "visual-criteria",
+      "bytesParsed": false
+    },
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T11:08:45.010Z"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T11:08:45.010Z",
+      "name": "reset"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T11:09:16.825Z",
+      "role": "criteria",
+      "documentId": "visual-criteria",
+      "bytesParsed": false
+    }
+  ],
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "browserExecuted": false
+}

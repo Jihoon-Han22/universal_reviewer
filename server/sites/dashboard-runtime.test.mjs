@@ -114,3 +114,32 @@ test('disconnecting a Worker dashboard stream aborts generation without renderin
  const saved=await h.storage.getState('dashboard',queued.id);
  assert.deepEqual(h.calls,{model:1,sandbox:0});assert.equal(saved.state.status,'failed');assert.match(saved.state.error,/취소/);assert.equal(saved.state.html,undefined);assert.equal(saved.lease,null);
 });
+
+test('dashboard complete is sent only after durable completion and immediate reader close preserves it',async()=>{
+ const h=await harness(),queued=await h.create();
+ let enter,release;
+ const saving=new Promise(resolve=>{enter=resolve;}),gate=new Promise(resolve=>{release=resolve;});
+ const putState=h.storage.putState.bind(h.storage);
+ h.storage.putState=async(kind,id,state,options)=>{
+  if(kind==='dashboard'&&state.status==='ready'){enter();await gate;}
+  return putState(kind,id,state,options);
+ };
+ const response=await h.request(`/api/dashboards/${queued.id}/events`),reader=response.body.getReader(),decoder=new TextDecoder();
+ let terminalDelivered=false,received='';
+ const consume=(async()=>{
+  for(;;){
+   const {done,value}=await reader.read();if(done)break;
+   received+=decoder.decode(value,{stream:true});
+   if(received.includes('event: complete')){terminalDelivered=true;await reader.cancel();break;}
+  }
+ })();
+ try{
+  await saving;
+  assert.equal(terminalDelivered,false);
+  const uncommitted=await h.storage.getState('dashboard',queued.id);
+  assert.equal(uncommitted.state.pending.state,'executing');assert.notEqual(uncommitted.state.status,'ready');
+ }finally{release();}
+ await consume;await Promise.all(h.pending);
+ const saved=await h.storage.getState('dashboard',queued.id);
+ assert.equal(terminalDelivered,true);assert.equal(saved.state.status,'ready');assert.equal(saved.state.pending,undefined);assert.equal(saved.lease,null);assert.ok(saved.state.html.length>1000);assert.deepEqual(h.calls,{model:1,sandbox:1});
+});

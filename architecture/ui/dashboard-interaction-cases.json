@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_RUN",
+  "defaultInstruction": "라이트 테마에 도넛 차트를 크게 배치하고 차트를 강조해 주세요. 파일별 결과를 비교하고, 파일을 선택하면 항목·측정값·기준·판정과 확인이 필요한 이유를 볼 수 있게 해 주세요.",
+  "suggestions": [
+    {
+      "label": "라이트 · 큰 도넛",
+      "instruction": "라이트 테마에 도넛 차트를 크게 배치하고 차트를 강조해 주세요. 파일별 결과를 비교하고, 파일을 선택하면 항목·측정값·기준·판정과 확인이 필요한 이유를 볼 수 있게 해 주세요."
+    },
+    {
+      "label": "다크 · 차트 중심",
+      "instruction": "다크 테마에 파란색을 포인트로 쓰고, 차트를 맨 위에 크게 배치해 강조해 주세요. 전체 판정은 막대 차트로 보여 주고 범례는 아래에 놓아 주세요. 파일을 선택하면 판정 근거를 확인할 수 있게 해 주세요."
+    },
+    {
+      "label": "촘촘한 파일 비교",
+      "instruction": "라이트 테마에 촘촘한 구성으로 파일별 비교를 맨 위에 보여 주세요. 파일별 결과는 막대로 비교하고, 전체 판정은 파이 차트로 정리해 주세요. 모서리는 각지게 하고 애니메이션은 없애 주세요."
+    },
+    {
+      "label": "확인할 항목 먼저",
+      "instruction": "부적합과 확인이 필요한 검토 항목을 가장 먼저 배치하고 강조해 주세요. 따뜻한 주황색을 포인트로 쓰고, 전체 판정은 도넛 차트로 정리해 주세요. 어떤 항목을 왜 확인해야 하는지 쉽게 펼쳐볼 수 있게 해 주세요."
+    }
+  ],
+  "suggestionBehavior": "replace entire textarea; no generation until button; use latest preview.job.design as baseDesign only when generate is pressed",
+  "sourceFixture": {
+    "documents": [
+      {
+        "id": "doc-a",
+        "name": "합성 A.pdf",
+        "role": "target"
+      },
+      {
+        "id": "doc-b",
+        "name": "합성 B.xlsx",
+        "role": "target"
+      },
+      {
+        "id": "criteria-c",
+        "name": "합성 기준.xlsx",
+        "role": "criteria"
+      }
+    ],
+    "items": [
+      {
+        "id": "a-pass",
+        "documentId": "doc-a",
+        "label": "밀도",
+        "value": "1.10",
+        "unit": "g/cm3",
+        "status": "pass",
+        "evidence": [
+          {
+            "documentId": "criteria-c",
+            "quote": "밀도 1.00 이상",
+            "page": 1
+          },
+          {
+            "documentId": "doc-a",
+            "quote": "밀도 1.10",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "id": "a-missing",
+        "documentId": "doc-a",
+        "label": "압축강도",
+        "value": "누락",
+        "status": "fail",
+        "evidence": [
+          {
+            "documentId": "doc-a",
+            "quote": "표 제목",
+            "page": 1
+          },
+          {
+            "documentId": "criteria-c",
+            "quote": "압축강도 24 이상",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "id": "b-fail",
+        "documentId": "doc-b",
+        "label": "밀도",
+        "value": "0.90",
+        "unit": "g/cm3",
+        "status": "fail",
+        "evidence": [
+          {
+            "documentId": "criteria-c",
+            "quote": "밀도 1.00 이상",
+            "page": 1
+          },
+          {
+            "documentId": "doc-b",
+            "quote": "밀도 0.90",
+            "page": 1
+          }
+        ]
+      },
+      {
+        "id": "b-review",
+        "documentId": "doc-b",
+        "label": "외관",
+        "value": "판독불가",
+        "status": "review",
+        "evidence": []
+      }
+    ]
+  },
+  "sourceTrace": [
+    {
+      "action": "mount source component with selectedItemId=null",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "doc-a",
+        "data-selected-item-id": null,
+        "data-status-filter": "all",
+        "data-selected-evidence-index": null
+      }
+    },
+    {
+      "action": "parent selects a-pass, increments selectionVersion",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "doc-a",
+        "data-selected-item-id": "a-pass",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": 1
+      }
+    },
+    {
+      "action": "click fail filter",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "doc-a",
+        "data-selected-item-id": "a-pass",
+        "data-status-filter": "fail",
+        "data-selected-evidence-index": 1
+      },
+      "visibleMap": [
+        "a-missing"
+      ],
+      "note": "Filter does not clear inspector selection; highlights remain all source-linked items."
+    },
+    {
+      "action": "click criteria-c evidence index0",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "criteria-c",
+        "data-selected-item-id": "a-pass",
+        "data-status-filter": "fail",
+        "data-selected-evidence-index": 0
+      }
+    },
+    {
+      "action": "parent selects same a-pass again and increments selectionVersion",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "doc-a",
+        "data-selected-item-id": "a-pass",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": 1
+      }
+    },
+    {
+      "action": "click file tab doc-b",
+      "expected": {
+        "data-review-document-id": "doc-b",
+        "data-source-document-id": "doc-b",
+        "data-selected-item-id": null,
+        "data-status-filter": "all",
+        "data-selected-evidence-index": null
+      }
+    },
+    {
+      "action": "parent selects b-fail",
+      "expected": {
+        "data-review-document-id": "doc-b",
+        "data-source-document-id": "doc-b",
+        "data-selected-item-id": "b-fail",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": 1
+      }
+    },
+    {
+      "action": "source document dropdown selects criteria-c",
+      "expected": {
+        "data-review-document-id": "doc-b",
+        "data-source-document-id": "criteria-c",
+        "data-selected-item-id": "b-fail",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": 0
+      }
+    },
+    {
+      "action": "source dropdown selects doc-a (different reviewed target)",
+      "expected": {
+        "data-review-document-id": "doc-a",
+        "data-source-document-id": "doc-a",
+        "data-selected-item-id": null,
+        "data-status-filter": "all",
+        "data-selected-evidence-index": null
+      }
+    },
+    {
+      "action": "parent selects b-review",
+      "expected": {
+        "data-review-document-id": "doc-b",
+        "data-source-document-id": "doc-b",
+        "data-selected-item-id": "b-review",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": null
+      }
+    },
+    {
+      "action": "click file tab doc-b again",
+      "expected": {
+        "data-review-document-id": "doc-b",
+        "data-source-document-id": "doc-b",
+        "data-selected-item-id": "b-review",
+        "data-status-filter": "all",
+        "data-selected-evidence-index": null
+      },
+      "note": "Selecting same file does not clear parent selection. Only different-file scoping makes selectedItem null."
+    }
+  ],
+  "attributeNullMeaning": "attribute absent, not the text null",
+  "projectionCases": [
+    {
+      "id": "PROJ-PENDING",
+      "input": {
+        "id": "p",
+        "status": "pending",
+        "value": null
+      },
+      "ready": {
+        "id": "p",
+        "status": "review",
+        "value": ""
+      },
+      "pendingCount": 0,
+      "observedBaseline": {
+        "ready": {
+          "id": "p",
+          "status": "review",
+          "value": ""
+        }
+      }
+    },
+    {
+      "id": "PROJ-MISSING-TEXT",
+      "input": {
+        "value": "누락",
+        "presence": "missing",
+        "missingVerified": true
+      },
+      "ready": {
+        "value": "누락"
+      },
+      "isMissingInHost": true,
+      "targetEvidenceEligible": false,
+      "observedBaseline": {
+        "ready": {
+          "value": "누락"
+        },
+        "isMissingInHost": true,
+        "targetEvidenceEligible": false
+      },
+      "requirement": "REQUIRED_REBUILD",
+      "requiredReady": {
+        "value": "누락",
+        "presence": "missing",
+        "missingVerified": true
+      }
+    },
+    {
+      "id": "PROJ-MISSING-NULL",
+      "input": {
+        "value": null,
+        "presence": "missing",
+        "missingVerified": true,
+        "evidence": [
+          {
+            "documentId": "doc-a",
+            "quote": "시험항목 결과 단위",
+            "page": 1
+          }
+        ]
+      },
+      "ready": {
+        "value": "",
+        "evidence": [
+          {
+            "documentId": "doc-a",
+            "quote": "시험항목 결과 단위",
+            "page": 1
+          }
+        ]
+      },
+      "isMissingInHost": false,
+      "targetEvidenceEligible": true,
+      "knownLimitation": "Missing flags are omitted from baseline ready projection. Actual drawing still depends on document anchor admission.",
+      "observedBaseline": {
+        "ready": {
+          "value": "",
+          "evidence": [
+            {
+              "documentId": "doc-a",
+              "quote": "시험항목 결과 단위",
+              "page": 1
+            }
+          ]
+        },
+        "isMissingInHost": false,
+        "targetEvidenceEligible": true
+      },
+      "requirement": "REQUIRED_REBUILD",
+      "requiredReady": {
+        "value": "",
+        "evidence": [
+          {
+            "documentId": "doc-a",
+            "quote": "시험항목 결과 단위",
+            "page": 1
+          }
+        ],
+        "presence": "missing",
+        "missingVerified": true
+      },
+      "requiredIsMissingInHost": true,
+      "requiredTargetEvidenceEligible": false,
+      "rebuildStatus": "NOT_RUN",
+      "requiredGate": "DB-H01",
+      "requiredBehavior": "presence/missingVerified preserved; contextual doc-a evidence cannot highlight a nonexistent item."
+    },
+    {
+      "id": "PROJ-FALSE",
+      "input": {
+        "value": "1",
+        "presence": "present",
+        "missingVerified": false
+      },
+      "requiredReady": {
+        "value": "1",
+        "presence": "present",
+        "missingVerified": false
+      },
+      "requiredGate": "DB-H01",
+      "requirement": "REQUIRED_REBUILD",
+      "rebuildStatus": "NOT_RUN",
+      "note": "Preserve valid input presence/boolean including false; absent flags stay absent. No inference from live items."
+    },
+    {
+      "id": "PROJ-UNKNOWN",
+      "input": {
+        "value": "",
+        "presence": "unknown"
+      },
+      "requiredReady": {
+        "value": "",
+        "presence": "unknown"
+      },
+      "requiredGate": "DB-H01",
+      "requirement": "REQUIRED_REBUILD",
+      "rebuildStatus": "NOT_RUN",
+      "note": "Preserve valid input presence/boolean including false; absent flags stay absent. No inference from live items."
+    },
+    {
+      "id": "PROJ-ABSENT",
+      "input": {
+        "value": "1"
+      },
+      "requiredReady": {
+        "value": "1"
+      },
+      "requiredGate": "DB-H01",
+      "requirement": "REQUIRED_REBUILD",
+      "rebuildStatus": "NOT_RUN",
+      "note": "Preserve valid input presence/boolean including false; absent flags stay absent. No inference from live items."
+    }
+  ],
+  "modalCases": [
+    {
+      "id": "MODAL-01",
+      "action": "first open without cache",
+      "expected": "showModal immediately; builder visible; no iframe/no PDF; placeholder/empty state; contentReady at260ms; no API until generate",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-02",
+      "action": "open cached preview",
+      "expected": "builder hidden; charts selected; iframe0 before260ms, iframe1 afterward; source viewer0; iframe starts default file/filter because cache stores HTML not browsing context",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-03",
+      "action": "charts -> source -> charts",
+      "expected": "same iframe instance/load count1; iframe file/filter/detail retained; source component mounts only while source view selected and unmounts on charts; host selectedSourceItemId persists",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-04",
+      "action": "reconfigure -> ready new preview",
+      "expected": "old iframe unmount during workroom; new preview id iframe remount; selectedSourceItemId null; charts selected; new default file/filter; logs collapsed",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-05",
+      "action": "ready response html missing/whitespace",
+      "expected": "error 생성된 화면이 비어 있어요. 다시 구성해 주세요.; old preview retained; no DELETE; busy false; logs open; job remains ready but no new cache entry",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-06",
+      "action": "close then reopen same cached preview",
+      "expected": "previous iframe destroyed; new iframe starts default file/filter; cached frozen data/HTML/token retained; no API; stale old frame message rejected by event.source",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-07",
+      "action": "cancel before POST returns",
+      "expected": "sequence increments; local busy false; late created.id receives DELETE; no fallback preview; existing preview retained",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "MODAL-08",
+      "action": "generated -> source export",
+      "expected": "download motionHtml before bridge injection; two scripts; no document bytes/URL/source viewer/token; short evidence quotes retained; source tab selection does not change exported default interactive state",
+      "status": "NOT_RUN"
+    }
+  ]
+}

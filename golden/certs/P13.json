@@ -1,0 +1,33 @@
+{
+  "id": "P13",
+  "desc": "P01과 동일하나 정답 json 의 염화물 값이 인쇄값과 다름 (인쇄 0.025 / json 0.015) - grounding 검증용",
+  "cert_no": "2026-0903",
+  "fields": [
+    {
+      "item": "산화마그네슘",
+      "value": "2.8",
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "value": "0.015",
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "value": "1.2",
+      "unit": "%"
+    },
+    {
+      "item": "비표면적",
+      "value": "4320",
+      "unit": "cm2/g"
+    },
+    {
+      "item": "활성도지수",
+      "value": "92",
+      "unit": "%"
+    }
+  ],
+  "corrupt_fixture": true
+}

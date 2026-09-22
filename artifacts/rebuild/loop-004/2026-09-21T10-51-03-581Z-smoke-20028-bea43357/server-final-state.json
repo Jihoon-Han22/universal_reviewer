@@ -1,0 +1,106 @@
+{
+  "synthetic": true,
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "origin": "actual-react-with-reference-synthetic-http",
+  "fixtureId": "architecture-visual-v1",
+  "started": false,
+  "phase": "idle",
+  "run": null,
+  "activity": {
+    "tasks": []
+  },
+  "dashboard": null,
+  "subscribers": {
+    "run": 0,
+    "activity": 0
+  },
+  "requests": [
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:34:29.712Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:35:40.657Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:35:40.662Z"
+    },
+    {
+      "path": "/api/documents",
+      "method": "POST",
+      "timestamp": "2026-09-21T10:38:37.066Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:03.754Z"
+    },
+    {
+      "path": "/__visual/control/reset",
+      "method": "POST",
+      "timestamp": "2026-09-21T10:51:03.790Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:09.706Z"
+    },
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:09.707Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:28.471Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:32.983Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:36.916Z"
+    },
+    {
+      "path": "/__visual/state",
+      "method": "GET",
+      "timestamp": "2026-09-21T10:51:43.922Z"
+    }
+  ],
+  "controls": [
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T10:33:09.069Z"
+    },
+    {
+      "kind": "upload",
+      "timestamp": "2026-09-21T10:38:37.088Z",
+      "role": "criteria",
+      "documentId": "visual-criteria",
+      "bytesParsed": false
+    },
+    {
+      "kind": "reset",
+      "timestamp": "2026-09-21T10:51:03.823Z"
+    },
+    {
+      "kind": "control",
+      "timestamp": "2026-09-21T10:51:03.823Z",
+      "name": "reset"
+    }
+  ],
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "browserExecuted": false
+}

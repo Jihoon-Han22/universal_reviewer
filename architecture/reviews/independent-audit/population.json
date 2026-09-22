@@ -1,0 +1,3669 @@
+{
+  "schemaVersion": 1,
+  "originalModules": 37,
+  "originalQuestions": 203,
+  "currentModules": 39,
+  "currentQuestions": 235,
+  "removedQuestions": 0,
+  "aliases": [
+    {
+      "report": "round-01/clarity",
+      "from": "UI-02-C07",
+      "to": "UI-02-C09",
+      "reason": "Independent proposal ID collision with UI formatter; both questions retained"
+    },
+    {
+      "reports": [
+        "clarity",
+        "ui-accuracy"
+      ],
+      "id": "UI-01-C07",
+      "reason": "Same health lifecycle question proposed twice; one canonical question with two independent role opinions"
+    }
+  ],
+  "additions": [
+    {
+      "id": "UI-01-C07",
+      "moduleId": "UI-01",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "UI-01-C07"
+        },
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-01-C07"
+        }
+      ],
+      "question": "health 조회의 최초 시점·기본값·실패·재시도/폴링·unmount/늦은응답 처리와 의존 UI gating을 동일하게 구현할 수 있는가?"
+    },
+    {
+      "id": "CORE-16-C06",
+      "moduleId": "CORE-16",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-16-C06"
+        }
+      ],
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?"
+    },
+    {
+      "id": "UI-02-C09",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "UI-02-C07"
+        }
+      ],
+      "question": "I9의 모든 추가 acceptance 후보가 baseline/필수개선/선택으로 개별 결정되고 gate와 목표 fixture에 연결되는가?"
+    },
+    {
+      "id": "CORE-06-C06",
+      "moduleId": "CORE-06",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-06-C06"
+        }
+      ],
+      "question": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?"
+    },
+    {
+      "id": "CORE-14-C06",
+      "moduleId": "CORE-14",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-14-C06"
+        }
+      ],
+      "question": "scan/image/회전/2-up geometry가 text-layer-only viewer와 G07 전필드overlay 사이에서 어떤 DTO·좌표·tolerance·fallback/필수확장으로 구현되는가?"
+    },
+    {
+      "id": "CORE-15-X01",
+      "moduleId": "CORE-15",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-15-X01"
+        }
+      ],
+      "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?"
+    },
+    {
+      "id": "CORE-12-X01",
+      "moduleId": "CORE-12",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-12-X01"
+        }
+      ],
+      "question": "일반finding evidence의 permissive regex/미검증원문과 조건·분류·필수누락의 실제검증을 구별하고 invalid좌표·가짜quote numericpass baseline 및 강화REQUIRED_REBUILD를 명시하는가?"
+    },
+    {
+      "id": "CORE-12-X02",
+      "moduleId": "CORE-12",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-12-X02"
+        }
+      ],
+      "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?"
+    },
+    {
+      "id": "CORE-08-X01",
+      "moduleId": "CORE-08",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-08-X01"
+        }
+      ],
+      "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?"
+    },
+    {
+      "id": "CORE-19-X01",
+      "moduleId": "CORE-19",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-19-X01"
+        }
+      ],
+      "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?"
+    },
+    {
+      "id": "UI-02-C07",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-02-C07"
+        }
+      ],
+      "question": "공통 formatValue와 기준 편집 numberLabel의 서로 다른 정규식·trim·null·15자리·12소수·선행0·부호·과학표기 표시 규칙이 자족적으로 정의되는가?"
+    },
+    {
+      "id": "UI-02-C08",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-02-C08"
+        }
+      ],
+      "question": "짧은 활동 title/phase의 Gemini→LLM·E2B→샌드박스 변환과 코드/URL/path/filename/config token 보호, 원문·로그·오류body 무변환 경계가 명시되는가?"
+    },
+    {
+      "id": "UI-04-C07",
+      "moduleId": "UI-04",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-04-C07"
+        }
+      ],
+      "question": "업로드와 대장 파일 크기의 KB 반올림·최소1KB·MB1소수 및 정확히1MiB에서 서로 다른 > / >= 분기를 정의하는가?"
+    },
+    {
+      "id": "UI-07-C07",
+      "moduleId": "UI-07",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-07-C07"
+        }
+      ],
+      "question": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 검토 진행 중으로 남는 observed baseline과 개선 요구를 명확히 구분하는가?"
+    },
+    {
+      "id": "UI-11-C07",
+      "moduleId": "UI-11",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-11-C07"
+        }
+      ],
+      "question": "판정색 highlight와 별개 raw <mark> fallback의 호출 조건·case/whitespace·숫자경계 부재·quote당30개 비중첩 검색·범위병합이 정의되는가?"
+    },
+    {
+      "id": "UI-09-C07",
+      "moduleId": "UI-09",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-09-C07"
+        }
+      ],
+      "question": "작업실의 container≤1050px group select 및 ≤680px 처리흐름/실행내역 탭, flow초기값·scope reset·aria-selected·data-pane에 따른 내용 가시성이 정의되는가?"
+    },
+    {
+      "id": "UI-09-C08",
+      "moduleId": "UI-09",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-09-C08"
+        }
+      ],
+      "question": "groupTasks parent identity 상속은 별도 document/run/context 호환 guard 없이 순환만 막고, actualTransfers의 양측 scope guard와 다르다는 현재 동작을 정의하는가?"
+    },
+    {
+      "id": "CORE-20-C01",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C01"
+        }
+      ],
+      "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?"
+    },
+    {
+      "id": "CORE-20-C02",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C02"
+        }
+      ],
+      "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?"
+    },
+    {
+      "id": "CORE-20-C03",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C03"
+        }
+      ],
+      "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?"
+    },
+    {
+      "id": "CORE-20-C04",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C04"
+        }
+      ],
+      "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?"
+    },
+    {
+      "id": "CORE-21-C01",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C01"
+        }
+      ],
+      "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?"
+    },
+    {
+      "id": "CORE-21-C02",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C02"
+        }
+      ],
+      "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?"
+    },
+    {
+      "id": "CORE-21-C03",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C03"
+        }
+      ],
+      "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?"
+    },
+    {
+      "id": "CORE-21-C04",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C04"
+        }
+      ],
+      "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?"
+    },
+    {
+      "id": "CORE-21-C05",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C05"
+        }
+      ],
+      "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?"
+    },
+    {
+      "id": "CORE-21-C06",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C06"
+        }
+      ],
+      "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?"
+    },
+    {
+      "id": "CORE-21-C07",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C07"
+        }
+      ],
+      "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?"
+    },
+    {
+      "id": "CORE-21-C08",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C08"
+        }
+      ],
+      "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?"
+    },
+    {
+      "id": "CORE-21-C09",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C09"
+        }
+      ],
+      "question": "harness와 run-gate timeout의 1..21600000ms 안전정수 상한 및 Node timer clamp 거부를 명시하고 실패 시험으로 검증하는가?"
+    },
+    {
+      "id": "CORE-21-C10",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C10"
+        }
+      ],
+      "question": "채점기가 독립 명확성/정확성 reviewer, nonblank 근거, 현재 평가입력 hash를 강제하고 미검토·중복·stale 의견을 통과시키지 않는가?"
+    },
+    {
+      "id": "CORE-21-C11",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C11"
+        }
+      ],
+      "question": "evidence 경로의 모든 ancestor symlink/junction·프로젝트 밖 파일을 거부하고 현재 패키지의 정규 경로만 승인하는가?"
+    }
+  ],
+  "questions": [
+    {
+      "id": "CORE-01-C01",
+      "category": "contract",
+      "question": "설계가 .env 우선순위, 필수/선택 키, 역할별 model ID와 기본값을 모두 지정하고 공개 health 응답에 비밀키를 포함하지 않는가?",
+      "requiredEvidence": "환경 변수 표와 publicConfig 예시; integrations/test/integrations.test.mjs의 설정/키 비공개 사례",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-01-C02",
+      "category": "behavior",
+      "question": "generateJson/generateText의 contents·systemInstruction·schema·role 입력과 text/data/usage 출력, provider 오류 분류를 독립 구현할 수 있는가?",
+      "requiredEvidence": "두 메서드의 요청/응답 예시와 integrations/src/gemini.mjs 대응표",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-01-C03",
+      "category": "states",
+      "question": "LLM 요청과 E2B callback의 timeout·abort·finally 정리 순서를 명시하고 작업 취소 후에도 실제 종료까지 자원을 점유하는가?",
+      "requiredEvidence": "호출 상태도와 integrations/test/concurrency.test.mjs의 cancel/cleanup 사례",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-01-C04",
+      "category": "failure",
+      "question": "응답 용량·토큰·파일 부분·JSON 파싱 오류와 E2B kill 실패를 성공으로 처리하지 않는 정책이 수치와 오류 코드로 지정되어 있는가?",
+      "requiredEvidence": "integrations/test/gemini-limits.test.mjs와 integrations/test/integrations.test.mjs의 실패 입력/기대 결과",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-01-C05",
+      "category": "verification",
+      "question": "키를 노출하거나 실제 외부 호출을 필수로 하지 않고 fake client로 설정·응답·정리를 검사하는 재현 명령이 있는가?",
+      "requiredEvidence": "integrations/package.json test/check 명령 및 실제 API smoke와 오프라인 테스트의 구분",
+      "moduleId": "CORE-01",
+      "moduleName": "설정과 외부 서비스 어댑터",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-02-C01",
+      "category": "contract",
+      "question": "각 /api route의 method, body/query, 성공 상태 코드, 오류 응답이 정의되고 문서 private buffer/modelParts/profile과 publicDocument가 분리되어 있는가?",
+      "requiredEvidence": "01-state-api route 표, contracts/types.ts, server/app.test.mjs의 공개 응답 검사",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-02-C02",
+      "category": "behavior",
+      "question": "문서·run·dashboard job이 기본 구현에서는 메모리 저장이고 서버 재시작 시 사라짐을 명시하며 존재하지 않는 ID의 404 동작을 정의하는가?",
+      "requiredEvidence": "저장소 수명 표와 서버 재시작/404 수용 사례; 임시 보존 스크립트와 제품 기본 기능 구분",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-02-C03",
+      "category": "states",
+      "question": "업로드 다중 파일 중 한 개 실패 시 이미 추가한 문서가 rollback되고 run 근거로 쓰이는 문서는 DELETE 409로 보호되는가?",
+      "requiredEvidence": "server/app.test.mjs의 업로드 rollback/근거 삭제 방지 사례",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-02-C04",
+      "category": "failure",
+      "question": "local-origin write guard, 2 MB JSON 한도, multipart 파일/필드 한도, 파일 크기 오류 413와 형식 오류 400이 명시되어 있는가?",
+      "requiredEvidence": "middleware 실행 순서와 공격·경계 요청 예시",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-02-C05",
+      "category": "verification",
+      "question": "실제 포트 기본값/환경 override, dist 정적 서빙, SIGINT/SIGTERM의 run 취소와 종료를 검증할 명령과 기대 응답이 있는가?",
+      "requiredEvidence": "server/index.mjs, app.test.mjs, 환경 실행 명령에 연결된 체크리스트",
+      "moduleId": "CORE-02",
+      "moduleName": "로컬 HTTP API와 메모리 저장소 경계",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-03-C01",
+      "category": "contract",
+      "question": "허용 확장자 pdf/docx/xlsx/csv/txt/md/json/png/jpg/jpeg/webp, role, 파일명 정제와 원본 bytes 보존 계약이 지정되어 있는가?",
+      "requiredEvidence": "지원 형식 표, original-content 응답 및 잘못된 확장자/내용 조합 사례",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-03-C02",
+      "category": "behavior",
+      "question": "XLSX 미리보기의 namespace/comment 호환 보정이 복제본에만 적용되고 hidden/merged/formula cache 정보를 원본과 혼동하지 않는가?",
+      "requiredEvidence": "server/spreadsheet-xml-compatibility.test.mjs와 documents.test.mjs의 원본 digest 비교",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-03-C03",
+      "category": "states",
+      "question": "시트 30개·셀 100,000개·source 1,500,000자 등 로컬 미리보기 한도 초과를 파일 손상으로 거절하지 않고 deferred preview로 넘기는 조건이 명시되어 있는가?",
+      "requiredEvidence": "한도별 ready/deferred/rejected 표와 해당 documents.test.mjs 사례",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-03-C04",
+      "category": "failure",
+      "question": "20 MiB 파일, 100문서, 250 MiB 예약 용량 및 ZIP 20,000 entries/100 MiB 팽창 한도가 동시 add·실패 반환까지 정의되는가?",
+      "requiredEvidence": "예약/반환 의사코드와 ZIP/동시 업로드 경계 테스트 매핑",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-03-C05",
+      "category": "verification",
+      "question": "미리보기 성공이 전체 분석 완료를 의미하지 않으며 formula cache 없음·embedded drawing 생략·PDF 보조 읽기 실패가 어떻게 표시되는지 검증 가능한가?",
+      "requiredEvidence": "경고와 preview.truncated 예시; documents.test.mjs 및 spreadsheet-xml-compatibility.test.mjs",
+      "moduleId": "CORE-03",
+      "moduleName": "업로드 검증과 원본 보존·로컬 미리보기",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-04-C01",
+      "category": "contract",
+      "question": "Document.buffer/kind/id → profile/modelParts/sourceSheets/sourceRows/analysis의 반환 형태와 SHA-256·kind 대조가 명시되어 있는가?",
+      "requiredEvidence": "reader profile schema, 공개/내부 필드 구분 및 sandbox-documents.test.mjs digest mismatch 사례",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-04-C02",
+      "category": "behavior",
+      "question": "한 문서의 원본 재조회가 retained sandbox와 TaskPool(1)을 공유하고 source 업로드·parser 설치를 세션당 한 번 수행하는가?",
+      "requiredEvidence": "document-sandbox-session.test.mjs의 동일 sandbox ID·설치 1회·명령 직렬화 증거",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-04-C03",
+      "category": "states",
+      "question": "문서 세션 300,000 ms, Python reader 150초 등 서로 다른 제한과 정상/실패/취소의 세션 종료 책임이 구분되어 있는가?",
+      "requiredEvidence": "세션 상태도와 cleanup 실패 전파 사례",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-04-C04",
+      "category": "failure",
+      "question": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한과 잘림을 partial로 기록하고 원본 전체 완료로 보고하지 않는가?",
+      "requiredEvidence": "reader limits 표 및 server/document-reader.test.py의 한도·악성 archive 검사",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-04-C05",
+      "category": "verification",
+      "question": "업로드 문서의 수식·매크로·링크·문구를 실행하지 않고 고정 reader/명령만 수행함을 재현 테스트로 확인하는가?",
+      "requiredEvidence": "신뢰 경계와 고정 명령 목록, document-reader.test.py 및 sandbox-documents.test.mjs",
+      "moduleId": "CORE-04",
+      "moduleName": "같은 샌드박스의 신뢰 문서 리더",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-05-C01",
+      "category": "contract",
+      "question": "xlsx/csv의 sheet+A1, Word BLOCK, text L 범위 selector가 코드/경로가 아닌 데이터이며 유효 범위와 응답 digest를 검사하는가?",
+      "requiredEvidence": "validateRequeryRequest 계약과 document-quality.test.mjs의 범위·주입 거절 사례",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-05-C02",
+      "category": "behavior",
+      "question": "150,000자 source chunk, 최대 1,200,000자 맥락 입력에서 모든 retained 구간을 해석/독립 검증하고 미기술 셀·헤더·시트를 찾는가?",
+      "requiredEvidence": "coverage 계산식, initial/verify/requery/replace 흐름 및 sandbox-documents.test.mjs",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-05-C03",
+      "category": "states",
+      "question": "최대 3회 교정의 계속/종료 조건, 교정 후 전체 context 대체·재검증, 같은 E2B 재사용을 명시하는가?",
+      "requiredEvidence": "verifyAndRepairDocumentContext 단계 표와 document-quality.test.mjs·document-sandbox-session.test.mjs",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-05-C04",
+      "category": "failure",
+      "question": "미해결·truncated·검증기 실패를 needsConfirmation/partial로 남기며 정성 기준의 정당한 단위 공백만으로 재시도를 만들지 않는가?",
+      "requiredEvidence": "qualitative unit 예외의 source evidence 조건과 미해결 issues 응답 예시",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-05-C05",
+      "category": "verification",
+      "question": "셀 이동·멀티시트·숨김·행/열 방향·헤더 누락·Word 중첩 표·text line 누락을 특정 파일명 없이 검사하는가?",
+      "requiredEvidence": "document-quality.test.mjs와 document-reader.test.py의 변형 입력별 예상 coverage",
+      "moduleId": "CORE-05",
+      "moduleName": "문서 맥락 검증과 범위 재조회 루프",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C01",
+      "category": "contract",
+      "question": "page/rotation/block/table/cell/parentTableId/uncertain/coverage 필드를 정의하고 시트 번호를 PDF 페이지로 취급하지 않는가?",
+      "requiredEvidence": "visualTranscriptionSchema와 페이지/중첩 표 JSON 예시",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C02",
+      "category": "behavior",
+      "question": "전사 모델과 독립 visual judge가 실제 원본을 비교하고 빈 페이지·겹친 셀·누락 페이지를 모델 complete=true만으로 승인하지 않는가?",
+      "requiredEvidence": "visual-quality-judge.test.mjs 및 visual-transcription-alignment.test.mjs",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C03",
+      "category": "states",
+      "question": "최대 30페이지·요청당 3페이지·3회 교정·전체 180초·요청 60초 제한과 미완료 배치의 병합/재검증 규칙이 있는가?",
+      "requiredEvidence": "배치/교정 상태도와 visual-transcription.test.mjs의 timeout·partial 사례",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C04",
+      "category": "failure",
+      "question": "원본 이미지/전사 공급 제한이나 회전/표 구조 오류가 있으면 판독불가를 추정 텍스트로 채우지 않고 coverage·경고를 보존하는가?",
+      "requiredEvidence": "PDF page image 8개/16 MiB 제한, judge 요청 3페이지/250,000자 제한 및 기대 경고",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C05",
+      "category": "verification",
+      "question": "서로 다른 문서의 페이지 혼합, invented page, blank-page 거짓 승인, nested table 참조 오류가 오프라인 모델 stub 테스트에서 거절되는가?",
+      "requiredEvidence": "visual-transcription.test.mjs·visual-quality-judge.test.mjs·visual-transcription-alignment.test.mjs",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-06-C06",
+      "category": "independent-audit",
+      "question": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-06",
+      "moduleName": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-07-C01",
+      "category": "contract",
+      "question": "criteria/not_criteria/uncertain, hasNormativeContent, sourceKind, reason, evidence의 조합과 제외 파일 공개 응답 형태를 정의하는가?",
+      "requiredEvidence": "자격 schema, criteria.document.assessed 이벤트 예시",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-07-C02",
+      "category": "behavior",
+      "question": "완전 읽기·원문 인용 검증이 충족된 not_criteria만 제외하고 혼합 문서의 실제 재사용 기준은 남기는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs의 순수 결과표/혼합표/역사적 판정 근거 사례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-07-C03",
+      "category": "states",
+      "question": "잘못된 자격 응답에만 추가 1회 교정을 허용하고 일시 실패는 uncertain으로 유지하며 제외한 source가 후보·편집·인용에 재진입하면 거절하는가?",
+      "requiredEvidence": "review.eligibility.test.mjs의 source guard와 수정 요청 사례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-07-C04",
+      "category": "failure",
+      "question": "파일명·upload role·생성 요약을 자격 증거로 쓰지 않고 잘못된 인용·단축 소수·부분 source 전달은 자동 제외를 막는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs의 source-kind별 quote/location 반례",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-07-C05",
+      "category": "verification",
+      "question": "정성 규칙·법무/업무 규칙·측정치와 제한이 같은 표·규범 없는 기록·prompt injection을 특정 데이터셋 이름 없이 분류 검증하는가?",
+      "requiredEvidence": "criteria-eligibility.test.mjs와 review.eligibility.test.mjs 입력/기대 상태 매핑",
+      "moduleId": "CORE-07",
+      "moduleName": "기준 문서 자격 판별과 제외",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-C01",
+      "category": "contract",
+      "question": "inventory의 sheet/region, ranges, regionAssessments, dispositions, criteria와 citations가 별도 구조로 정의되고 모든 region의 처리 상태가 반환되는가?",
+      "requiredEvidence": "plan/extract schema와 coverage 전체 필드 예시",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-C02",
+      "category": "behavior",
+      "question": "모델이 한 표만 선택해도 다른 시트의 작은 sparse 영역을 보완하고 최소/최대 분리·전치·병합·떨어진 표를 위치/헤더로 탐색하는가?",
+      "requiredEvidence": "criteria-layout.test.mjs·criteria-matrix-regression.test.mjs·criteria-generalization.test.mjs",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-C03",
+      "category": "states",
+      "question": "기준 발견 자체는 별도 E2B 세션이고 내부 최대 2회 상세 추출/추가범위 루프는 같은 세션임을 구조 분석 세션과 구별하는가?",
+      "requiredEvidence": "discoverWorkbookCriteria 수명도 및 criteria-sandbox.test.mjs의 설치/세션 카운트",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-C04",
+      "category": "failure",
+      "question": "첫100시트 cell-profile 대상과 모든 시트 metadata/후속 빈 시트 예외, 200,000 inventory셀/300영역·상세6,000셀/220,000자·18범위·범위12,000·총24,000셀·250기준의 실제 생략과 미확인 coverage를 구별하는가?",
+      "requiredEvidence": "제한별 remainingRanges/unresolvedRanges/criteriaLimitReached 표와 경계 테스트",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-C05",
+      "category": "verification",
+      "question": "시트·항목명 변경, 열/행 이동, 숨김, 옆 표, 신규 유형과 규범 없는 열을 변형해도 기준/근거/coverage가 동치인지 검사하는가?",
+      "requiredEvidence": "criteria-generalization.test.mjs·criteria-matrix-regression.test.mjs의 fixture-independent 변형 목록",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-08-X01",
+      "category": "independent-audit",
+      "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-08",
+      "moduleName": "전 시트 기준 탐색·영역 coverage",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-09-C01",
+      "category": "contract",
+      "question": "Criterion의 rule/comparison/unit/scope/categoryPath/sampleName/conditions와 각각의 증거를 구별하고 없는 유형은 빈 경로로 표현하는가?",
+      "requiredEvidence": "contracts/types.ts와 not_applicable/resolved/ambiguous 진리표",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-09-C02",
+      "category": "behavior",
+      "question": "비고/참고/notes 열은 나이·온도를 포함해 판정 조건에서 제외하되 실제 조건 열의 재령·기간·온도는 보존하는가?",
+      "requiredEvidence": "criteria-notes.test.mjs·conditions.test.mjs·criteria-table-sources.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-09-C03",
+      "category": "states",
+      "question": "상위 공통 기준, 세부 유형, 명시적 시료, 문서 목차 제목과 규칙 중복/대체/폐기의 우선순위를 source 근거와 함께 지정하는가?",
+      "requiredEvidence": "criteria-context.test.mjs·review.classification.test.mjs의 hierarchy/disposition 사례",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-09-C04",
+      "category": "failure",
+      "question": "250기준·8단계·ID/문구 길이 제한, 잘못된 비교식, 충돌 source 및 미검증 계층은 추정하지 않고 확인 대상으로 유지하는가?",
+      "requiredEvidence": "validateCriteria 입력 경계 표와 review.test.mjs·review.classification.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-09-C05",
+      "category": "verification",
+      "question": "1종/2종 또는 특정 자재명을 규칙에 하드코딩하지 않고 정성 무단위·가변 계층·동일 항목 다른 조건을 구별하는 테스트가 있는가?",
+      "requiredEvidence": "criteria-generalization.test.mjs·criteria-adapter.test.mjs·criteria-notes.test.mjs",
+      "moduleId": "CORE-09",
+      "moduleName": "기준 정규화·분류 계층·비고 정책",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-10-C01",
+      "category": "contract",
+      "question": "confirm/revise의 criteria, feedback, documentId, scope, expectedCriterionVersion 요청과 승인본 approvedCriteria 응답이 정의되는가?",
+      "requiredEvidence": "명령 JSON 예시와 criteria-approval.test.mjs·criteria-revision.test.mjs",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-10-C02",
+      "category": "behavior",
+      "question": "사용자 직접 편집 가능 필드와 서버 보존 provenance가 분리되고 의미 수정에 userOverride를 기록하는가?",
+      "requiredEvidence": "approveCriteria/normalizeCriterionDraft field allowlist와 provenance 위조 반례",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-10-C03",
+      "category": "states",
+      "question": "awaiting_confirmation → criteria_revising → 재확인 또는 실패 복귀, confirm → awaiting_documents 전이가 버전 증가 규칙과 함께 정의되는가?",
+      "requiredEvidence": "상태/이벤트 표, review.wizard.test.mjs·criteria-revision.test.mjs",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-10-C04",
+      "category": "failure",
+      "question": "stale version 409·누락 version 400·피드백20회/12,000자 한도·취소 후 늦은 응답 차단이 지정되는가?",
+      "requiredEvidence": "version/token 가드 의사코드와 실패 경로 테스트",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-10-C05",
+      "category": "verification",
+      "question": "승인 전 대상 첨부가 거절되고 승인 뒤 기준 배열 deep freeze 및 승인본/수정 이력이 유지되는가?",
+      "requiredEvidence": "review.wizard.test.mjs와 criteria-approval.test.mjs의 불변성/단계 거절 검증",
+      "moduleId": "CORE-10",
+      "moduleName": "기준 HITL 편집·피드백·버전 승인",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-11-C01",
+      "category": "contract",
+      "question": "PDF/image facts extraction과 review proposal의 서로 다른 schema를 정의하고 extraction 최대300개·review 문서당250개를 구별하는가?",
+      "requiredEvidence": "documentFieldsSchema/itemSchema 및 field-extraction.test.mjs·review.test.mjs 경계 사례",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-11-C02",
+      "category": "behavior",
+      "question": "추출은 승인 기준값을 측정값으로 복사하지 않고 실제 대상의 모든 관측 항목·식별번호·원문 표기를 보존하는가?",
+      "requiredEvidence": "field-extraction.test.mjs의 판정과 독립 추출/불일치 검증",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-11-C03",
+      "category": "states",
+      "question": "원문 분석 → 시각 자료 독립 facts → 승인 기준 매칭 → 결정론적 정규화 → item.decided 이벤트 순서가 정의되는가?",
+      "requiredEvidence": "review.pipeline.test.mjs와 review.integration.test.mjs의 순서/중간 이벤트",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-11-C04",
+      "category": "failure",
+      "question": "틀린 criterionId/documentId·다른 시료/행·누락/ND/판독불가를 잘못 매칭한 제안의 거절 또는 review 하향 조건이 명시되는가?",
+      "requiredEvidence": "review.test.mjs·criterion-applicability.test.mjs·field-extraction.test.mjs",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-11-C05",
+      "category": "verification",
+      "question": "CSV/XLSX의 빈값 있는 record도 보존하고 모든 적용 기준을 검토하며 명시적 out-of-scope 제외와 미검토행을 구별하는가?",
+      "requiredEvidence": "table-records.test.mjs·review.integration.test.mjs의 missingRows/excludedRows 사례",
+      "moduleId": "CORE-11",
+      "moduleName": "독립 항목 추출과 의미 기반 기준 매칭",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-C01",
+      "category": "contract",
+      "question": "lt/lte/gt/gte/eq/range의 경계와 단위 정규화, 최종 status/machineStatus/presence/missingVerified/missingConditions가 지정되는가?",
+      "requiredEvidence": "numericVerdict 비교표와 review.test.mjs의 등호·range·단위 반례",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-C02",
+      "category": "behavior",
+      "question": "전체 명확한 읽기+필수 적용 항목+실제 누락 증거만 fail, 판독불가·ND·잘림·formula cache 없음은 review, 선택 항목 누락은 결과에서 제외하는가?",
+      "requiredEvidence": "missing-result.test.mjs 진리표와 source evidence/completeAnalysis 조건",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-C03",
+      "category": "states",
+      "question": "확인되지 않은 기준/조건/분류/독립 추출 불일치가 숫자 pass/fail보다 우선하는 순서를 결정론적으로 명시하는가?",
+      "requiredEvidence": "normalizeItems guard 순서와 조건/계층/추출 충돌 복합 테스트",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-C04",
+      "category": "failure",
+      "question": "자재/하위유형/시료 근거가 대상 원문에 없거나 record의 다른 행이면 rule label이 같아도 pass로 확정하지 않는가?",
+      "requiredEvidence": "criterion-applicability.test.mjs의 순서·ancestor·same-record 부정 사례",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-C05",
+      "category": "verification",
+      "question": "0·빈 셀·merged continuation·수식 미캐시·정상 누락·불확실 누락·상충 독립 추출을 서로 다른 결과로 검사하는가?",
+      "requiredEvidence": "missing-result.test.mjs·conditions.test.mjs·review.test.mjs 테스트 매핑",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-12-X01",
+      "category": "independent-audit",
+      "question": "일반finding evidence의 permissive regex/미검증원문과 조건·분류·필수누락의 실제검증을 구별하고 invalid좌표·가짜quote numericpass baseline 및 강화REQUIRED_REBUILD를 명시하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-12-X02",
+      "category": "independent-audit",
+      "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-12",
+      "moduleName": "결정론적 판정·필수 누락·불확실성",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-13-C01",
+      "category": "contract",
+      "question": "run/document/stage enum, snapshot, sequence/timestamp event 필드, summary 계산식을 정의하고 legacy와 criteria_first 모드를 구별하는가?",
+      "requiredEvidence": "01-state-api 상태표, contracts/types.ts, review-state.test.mjs",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-13-C02",
+      "category": "behavior",
+      "question": "문서 분석과 대상 review의 각각 2-worker 실행에서 한 문서 실패가 다른 문서를 중단하지 않으며 결과가 파일 ID별로 결합되는가?",
+      "requiredEvidence": "review.pipeline.test.mjs·review.integration.test.mjs의 순서 변형/부분 실패",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-13-C03",
+      "category": "states",
+      "question": "running/awaiting_confirmation/awaiting_documents 취소, late event 차단, completed/partial/failed 집계 및 ensureAnalyzed waiter 취소를 정의하는가?",
+      "requiredEvidence": "review.wizard.test.mjs·review.test.mjs·use-review-commands.test.mjs",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-13-C04",
+      "category": "failure",
+      "question": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 coverage 미완료를 완료로 숨기지 않는가?",
+      "requiredEvidence": "start/reviewDocuments 경계표와 review.integration.test.mjs의 outputLimited 사례",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-13-C05",
+      "category": "verification",
+      "question": "사람 판정 변경은 종료 후 사유와 함께만 허용하고 machineStatus·before/after audit·summary·item.resolved를 유지하는가?",
+      "requiredEvidence": "review.test.mjs·app.test.mjs의 resolve와 export 감사 검증",
+      "moduleId": "CORE-13",
+      "moduleName": "검토 실행 상태·작업 조정·취소·감사",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C01",
+      "category": "contract",
+      "question": "원본 document/page/sheet/cell/quote, criterion evidence와 review-item evidence, PDF text anchor와 결과 ID의 연결을 구별하는가?",
+      "requiredEvidence": "source-highlights 인터페이스 및 contracts/types.ts의 Evidence/Highlight 구조",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C02",
+      "category": "behavior",
+      "question": "선택 파일의 모든 항목을 한 번에 표시하며 필터 변경이 다른 항목 근거를 삭제하지 않고 파일 전환이 다른 문서의 근거를 섞지 않는가?",
+      "requiredEvidence": "file-review-model.test.mjs·dashboard-file-scope.test.mjs·source-highlights.test.mjs",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C03",
+      "category": "states",
+      "question": "누락 판정에는 대상 원문상 항목 좌표를 발명하지 않고 contextual evidence를 설명에만 유지하며 기준 클릭은 실제 label/rule/unit cell을 포함하는가?",
+      "requiredEvidence": "item-source-highlights.test.mjs·criterion-preview-evidence.test.mjs의 누락/항목명 표시 사례",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C04",
+      "category": "failure",
+      "question": "표 헤더·시료명·다른 행의 값만 일치하거나 quote/location이 불일치하면 엉뚱한 하이라이트 대신 위치 미확인을 표시하는가?",
+      "requiredEvidence": "source-highlights.test.mjs의 header-only·duplicate text·wrong-page 음성 사례",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C05",
+      "category": "verification",
+      "question": "iframe 근거 메시지를 source window·opaque origin·channel·type·preview token·itemId 허용 목록으로 검사하고, 원본 파일을 다운로드 HTML에 포함하지 않는가?",
+      "requiredEvidence": "dashboard-bridge.test.mjs·dashboard-file-scope.test.mjs와 export 안내 수용 기준",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-14-C06",
+      "category": "independent-audit",
+      "question": "scan/image/회전/2-up geometry가 text-layer-only viewer와 G07 전필드overlay 사이에서 어떤 DTO·좌표·tolerance·fallback/필수확장으로 구현되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-14",
+      "moduleName": "원문 근거 연결과 하이라이트 무결성",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-15-C01",
+      "category": "contract",
+      "question": "taskId/runId/contextId/documentId/parentTaskId/runtime/step/status/sequence와 handoff from/to를 정의하고 비밀키·명령 출력 길이를 정제하는가?",
+      "requiredEvidence": "activity schema, command-progress.test.mjs와 activity.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-15-C02",
+      "category": "behavior",
+      "question": "Gemini와 E2B 각각 process-wide 동시2·대기100 FIFO 제한, ReviewEngine ModelQueue2, 문서 retained 명령1의 서로 다른 역할을 명시하는가?",
+      "requiredEvidence": "TaskPool 구성표와 integrations/test/concurrency.test.mjs·server/task-pool.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-15-C03",
+      "category": "states",
+      "question": "queued/running/completed/failed/cancelled·대기 중 abort·늦은 완료·observer 재연결과 snapshot replay 순서가 명시되는가?",
+      "requiredEvidence": "activity-observer.test.mjs·activity.test.mjs·task-pool.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-15-C04",
+      "category": "failure",
+      "question": "설치가 조용한 동안 heartbeat를 실제 진행률/가짜 내부 추론으로 표현하지 않으며 command timeout·로그 중복·다른 run 작업 섞임을 방지하는가?",
+      "requiredEvidence": "command-progress.test.mjs·activity-scope.test.mjs·review-activity.test.mjs",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-15-C05",
+      "category": "verification",
+      "question": "빠른 실제 handoff를 UI 재생 큐에서 읽기 가능한 순서로 보이되 작업 완료 후 접힘과 reduced-motion이 상태를 바꾸지 않는가?",
+      "requiredEvidence": "handoff-queue.test.mjs·activity-observer.test.mjs와 UI 모션 수용 기준",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-15-X01",
+      "category": "independent-audit",
+      "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-15",
+      "moduleName": "실제 작업 이벤트·인과 handoff·동시성",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-16-C01",
+      "category": "contract",
+      "question": "JSON/CSV/XLSX 결과 필드, XLSX 4시트, 최종/원판정/사람 사유/근거와 export 허용 run 상태를 지정하는가?",
+      "requiredEvidence": "app.mjs exportRows/headings 대응 및 app.test.mjs export 검증",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-16-C02",
+      "category": "behavior",
+      "question": "대장 매핑은 사용자가 지정한 성적서번호와 실제 header/row를 확인하고 원본 대신 복사본의 허용된 결과·비고 셀만 쓰는가?",
+      "requiredEvidence": "05a-ledger-export 셀 매핑/보존 계약 및 ledger.test.mjs ZIP-entry 비교",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-16-C03",
+      "category": "states",
+      "question": "대장 analyze → 제안/대상 셀 확인 → confirmed export이며 결과 변경 시 proposalFingerprint mismatch 409로 재확인을 요구하는가?",
+      "requiredEvidence": "contracts/examples/05-ledger-analyze.json 및 ledger.test.mjs 상태 사례",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-16-C04",
+      "category": "failure",
+      "question": "CSV formula injection, 대장 수식/기존 셀 구조 훼손, 경로 traversal/부적절한 sample 경로를 거절하고 파일 부분 실패를 성공으로 쓰지 않는가?",
+      "requiredEvidence": "app.test.mjs·ledger.test.mjs·golden-catalog.test.mjs의 공격·불완전 검토 사례",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-16-C05",
+      "category": "verification",
+      "question": "golden은 UI 예제 원본 선택, ralph-golden-v3는 직접 업로드/검증용이라는 현재 범위를 구별하고 정답·파일명 패턴을 판정 알고리즘에 주입하지 않는가?",
+      "requiredEvidence": "golden-catalog source allowlist, fixture provenance 표와 generalization 검증 계획",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-16-C06",
+      "category": "independent-audit",
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-16",
+      "moduleName": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-17-C01",
+      "category": "contract",
+      "question": "snapshotRun의 immutable 검토 데이터와 14-field design, instruction/baseDesign/ready job 계약을 분리하고 기존 7-field 입력의 기본값을 정의하는가?",
+      "requiredEvidence": "dashboard-design.schema/default/examples와 dashboard-plan.test.mjs",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-17-C02",
+      "category": "behavior",
+      "question": "색상·light/dark·doughnut/pie/bar/polarArea·emphasis·크기·범례·motion·corners·fileVisualization·layout을 조합하며 부분 수정 시 나머지 취향을 유지하는가?",
+      "requiredEvidence": "dashboard-plan.test.mjs의 복합/부정문/비문자적 표현/baseDesign 사례",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-17-C03",
+      "category": "states",
+      "question": "관찰 기준선 최대3회 plan 호출·같은 sandbox/설치1회와 REQUIRED_REBUILD planner/judge/repair 합계3회 예산·fallback·취소·정리를 분리하여 결정하는가?",
+      "requiredEvidence": "dashboard.test.mjs의 generate loop와 job 상태 전이 표",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-17-C04",
+      "category": "failure",
+      "question": "모델이 수치·판정을 바꾸거나 HTML/JS/CSS를 공급하지 못하며 잘못된 enum/baseDesign/지나친 입력을 거절하고 fallback을 맞춤 성공으로 표기하지 않는가?",
+      "requiredEvidence": "parseDashboardPlan allowlist·route validation·fallback 표시 예시",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-17-C05",
+      "category": "verification",
+      "question": "초록+라이트+큰 도넛, 유지하며 파이로 수정, 직접 light 단어 없는 밝은 보고서 요청의 계획값/렌더 결과를 독립 검증할 수 있는가?",
+      "requiredEvidence": "contracts/dashboard-examples.json과 dashboard-plan.test.mjs·dashboard.test.mjs; 실제 서비스 검증은 별도 evidence",
+      "moduleId": "CORE-17",
+      "moduleName": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-18-C01",
+      "category": "contract",
+      "question": "design → data-* root attrs/CSS variables/chart config/standalone HTML 출력과 chart runtime mount/update/destroy 계약을 지정하는가?",
+      "requiredEvidence": "dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs와 design-to-render 표",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-18-C02",
+      "category": "behavior",
+      "question": "차트의 실제 모양·크기·theme 축/tooltip·범례·선택 파일·필터·항목 상세가 변경되며 전체 수치와 item ID는 snapshot과 동일한가?",
+      "requiredEvidence": "11 validation checks 및 dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-18-C03",
+      "category": "states",
+      "question": "initial file/filter/focus, 차트 강조 중 상세 열기/닫기 배분, prefers-reduced-motion과 design.motion, 재mount 정리를 구분하는가?",
+      "requiredEvidence": "렌더 상태 표와 차트/상세 수용 화면·검증 사례",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-18-C04",
+      "category": "failure",
+      "question": "CSP nonce·escaping·외부 네트워크 차단·iframe sandbox/bridge를 명시하고 샌드박스 exit 0만으로 승인하지 않고 bytes/report를 대조하는가?",
+      "requiredEvidence": "dashboard-plan-validation.test.mjs·dashboard.test.mjs의 악성 문구·오프라인·tamper 사례",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-18-C05",
+      "category": "verification",
+      "question": "검증 11종 input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping과 실제 브라우저 geometry/visibility 검증이 별개임을 명시하는가?",
+      "requiredEvidence": "validation report schema 및 1600/1280/390px 화면에서 overflow·detail visibility·canvas 종류 수용 기준",
+      "moduleId": "CORE-18",
+      "moduleName": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-C01",
+      "category": "contract",
+      "question": "원문/run/분석 Promise/물리 sandbox/기준 셀/활동/dashboard/UI 캐시의 key·owner·수명·상한·무효화를 명시하고 FIFO를 LRU로 오표기하지 않는가?",
+      "requiredEvidence": "07 §§7.2,7.7; efficiency-inventory ES01..22",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-C02",
+      "category": "algorithm",
+      "question": "sparse inventory, 두 방향 역할 탐색, coverage sweep, 기준 dedup·매칭·누락 판정의 단계와 시간/공간 가정을 명시하고 중첩 스캔·파서 비용을 선형으로 과장하지 않는가?",
+      "requiredEvidence": "07 §§7.1,7.3,7.4; EA01..07; 합성 EF05..10",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-C03",
+      "category": "concurrency",
+      "question": "전역 LLM/E2B 풀·엔진 큐·문서 worker·로컬 재조회 큐의 정확한 cap과 실행/취소/cleanup 순서, 같은 sandbox 재사용 경계 및 중첩 슬롯 교착 방지를 지정하는가?",
+      "requiredEvidence": "07 §§7.5–7.6; EC01..05; EF01..04",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-C04",
+      "category": "events",
+      "question": "로그 폭주·SSE 순서·재접속·늦은 응답·핑퐁 큐·PDF/iframe 수명과 화면용 생략의 상한을 명시하며 없는 batching/backpressure/visibility pause를 구현됐다고 주장하지 않는가?",
+      "requiredEvidence": "07 §7.7; EC06..10; EF11..14/16",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-C05",
+      "category": "verification",
+      "question": "byte/문자/cell/page/시간/token 상한 및 stop/partial 의미가 재현 가능하고 성능 계측과 음성 시험 조건을 정해 실제 측정 없는 FPS/처리시간·완료 증거를 주장하지 않는가?",
+      "requiredEvidence": "07 §§7.8–7.10; EL01..35; EF01..16; knownLimitations",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "CORE-19-X01",
+      "category": "independent-audit",
+      "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-19",
+      "moduleName": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-20-C01",
+      "category": "independent-audit",
+      "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-20-C02",
+      "category": "independent-audit",
+      "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-20-C03",
+      "category": "independent-audit",
+      "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-20-C04",
+      "category": "independent-audit",
+      "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-20",
+      "moduleName": "설치·실행·lock·자산 환경",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C01",
+      "category": "independent-audit",
+      "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C02",
+      "category": "independent-audit",
+      "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C03",
+      "category": "independent-audit",
+      "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C04",
+      "category": "independent-audit",
+      "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C05",
+      "category": "independent-audit",
+      "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C06",
+      "category": "independent-audit",
+      "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C07",
+      "category": "independent-audit",
+      "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C08",
+      "category": "independent-audit",
+      "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "CORE-21-C09",
+      "category": "independent-audit",
+      "question": "harness와 run-gate timeout의 1..21600000ms 안전정수 상한 및 Node timer clamp 거부를 명시하고 실패 시험으로 검증하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-02-cross-discovery"
+    },
+    {
+      "id": "CORE-21-C10",
+      "category": "independent-audit",
+      "question": "채점기가 독립 명확성/정확성 reviewer, nonblank 근거, 현재 평가입력 hash를 강제하고 미검토·중복·stale 의견을 통과시키지 않는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-02-cross-discovery"
+    },
+    {
+      "id": "CORE-21-C11",
+      "category": "independent-audit",
+      "question": "evidence 경로의 모든 ancestor symlink/junction·프로젝트 밖 파일을 거부하고 현재 패키지의 정규 경로만 승인하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "CORE-21",
+      "moduleName": "검증기·평가 무결성·전수 역방향 추적",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-02-cross-discovery"
+    },
+    {
+      "id": "UI-01-C01",
+      "category": "behavior",
+      "question": "설계가 7개 page와 4개 표시 단계의 매핑, awaiting_confirmation→확정 화면, awaiting_documents→대상 입력, completed/partial→결과의 전이를 모두 명시하는가?",
+      "requiredEvidence": "page×run.status 전이표와 사용자 진입/복귀 버튼의 목적지.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C02",
+      "category": "contract",
+      "question": "run ID·요청 epoch·SSE sequence·expectedCriterionVersion을 사용하여 오래된 응답이 현재 화면을 덮어쓰지 못하는 계약이 명시되어 있는가?",
+      "requiredEvidence": "시작 A 후 시작 B, 취소 후 늦은 POST, SSE보다 늦은 snapshot, 수정 충돌의 입력/기대 상태 표.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C03",
+      "category": "states",
+      "question": "pending·uploading·sampleLoading 중 입력/삭제/새 검토 잠금, 작업 중지와 reset의 차이, 취소 뒤 자동 재개가 없다는 현재 동작이 구분되어 있는가?",
+      "requiredEvidence": "UI 잠금 행렬과 cancel/reset/backToCriteria 후 보존·삭제되는 상태 목록.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C04",
+      "category": "visual-motion",
+      "question": "최종 상태를 실제 완료로 유지하면서 마지막 패킷 1800ms/핸드오프 1600ms/일반120ms만 보여주는 화면 전이 조건을 수치로 명시하는가?",
+      "requiredEvidence": "motion ON/live view 여부, reviewFlowBusy/presentationBusy 별 타이밍 표; backend status를 연출 중 running으로 바꾸지 않는 규칙.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C05",
+      "category": "failure",
+      "question": "SSE 연결 오류 시 snapshot 회복, terminal에서 종료, 회복 실패 안내와 시작 실패 시 원래 입력 페이지로 복귀가 각각 정의되어 있는가?",
+      "requiredEvidence": "연결 오류와 요청 실패별 메시지·목적지·재시도 방식, stale 오류 무시 규칙.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C06",
+      "category": "verification",
+      "question": "전체 7개 page와 새 검토/취소/부분 완료를 빠짐없이 방문하는 검증 시나리오와 관측 가능한 DOM/상태 기대값이 있는가?",
+      "requiredEvidence": "STEP-00…06별 최소 1개 시나리오, stale response와 cancelled run 분리 테스트 케이스 ID.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-01-C07",
+      "category": "independent-audit",
+      "question": "health 조회의 최초 시점·기본값·실패·재시도/폴링·unmount/늦은응답 처리와 의존 UI gating을 동일하게 구현할 수 있는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-01",
+      "moduleName": "앱 셸·단계 전이·검토 상태 연결",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-02-C01",
+      "category": "behavior",
+      "question": "설계가 현재 기본 배경 #111318, 카드 #1b2029, 코발트 #3d6dff, 민트 #70f3c4와 실제 상태별 색상 차이를 명시하는가?",
+      "requiredEvidence": "전역 토큰 표와 화면별 override; 원문 종이가 흰색을 유지하는 예외.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C02",
+      "category": "contract",
+      "question": "main의 CSS 10개 import 순서와 동적 컴포넌트 CSS, DM Sans/Noto Sans KR 및 고정 라이브러리 버전이 재현 가능한가?",
+      "requiredEvidence": "순서 있는 stylesheet 목록, package-lock 실제 버전, 폰트 파일 또는 원격/오프라인 대체 계약.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C03",
+      "category": "states",
+      "question": "localStorage trace-demo-motion의 on/off, 기본 ON, 저장 실패 fallback, html data-motion과 MotionConfig 설정이 정의되어 있는가?",
+      "requiredEvidence": "모션 설정 초기화/토글/재방문 상태 표; disabled effects/cleanup 목록.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C04",
+      "category": "visual-motion",
+      "question": "전역 tween 280ms 및 [.22,1,.36,1], 개별 override, hover/focus/disabled와 앱/OS reduced-motion 차이가 명시되어 있는가?",
+      "requiredEvidence": "모션 토큰 표와 OS 설정을 JS가 전역 합성하지 않는 현재 한계 또는 이를 바꾼 별도 승인된 acceptance.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C05",
+      "category": "failure",
+      "question": "짧은 화면·모바일에서 내부 스크롤/세로 스택과 주요 조작 접근이 정의되고, 미사용 sky CSS를 로드해 테마를 되돌리지 않도록 되어 있는가?",
+      "requiredEvidence": "desktop/short-height/mobile 분기와 활성/미사용 CSS 목록, 가로 넘침 방지 기대값.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C06",
+      "category": "verification",
+      "question": "라이트인 원문과 다크 셸의 대비, 키보드 focus, 모션 OFF, 현재 OS 모션 제한 범위를 검증할 화면/기준이 있는가?",
+      "requiredEvidence": "최소 1600×960,1280×800,390px 폭 참조 및 색상·배치·모션별 pass/fail 판정 기준.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-02-C09",
+      "category": "independent-audit",
+      "question": "I9의 모든 추가 acceptance 후보가 baseline/필수개선/선택으로 개별 결정되고 gate와 목표 fixture에 연결되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-02-C07",
+      "category": "independent-audit",
+      "question": "공통 formatValue와 기준 편집 numberLabel의 서로 다른 정규식·trim·null·15자리·12소수·선행0·부호·과학표기 표시 규칙이 자족적으로 정의되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-02-C08",
+      "category": "independent-audit",
+      "question": "짧은 활동 title/phase의 Gemini→LLM·E2B→샌드박스 변환과 코드/URL/path/filename/config token 보호, 원문·로그·오류body 무변환 경계가 명시되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-02",
+      "moduleName": "공통 시각 토큰·반응형·모션 환경",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-03-C01",
+      "category": "behavior",
+      "question": "소개 페이지의 제목·설명·검토 기준부터 시작하기·경비 예제로 체험과 두 CTA의 서로 다른 목적지가 명시되는가?",
+      "requiredEvidence": "현재 한국어 문구와 CTA→STEP-01/file 또는 STEP-01/text+sample 기준 연결표.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-03-C02",
+      "category": "contract",
+      "question": "소개 애니메이션은 EXAMPLE이고 실제 검토 run/document/item에 섞이지 않는다는 데이터 경계가 정의되는가?",
+      "requiredEvidence": "ReviewTheater preview=true, documents/items 빈 배열, demo POST /api/samples 계약.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-03-C03",
+      "category": "states",
+      "question": "체험 준비 중 CTA 잠금·스피너·오류 banner와 성공 시 예제 대상 파일을 아직 검토하지 않고 임시 보관하는 상태가 정의되는가?",
+      "requiredEvidence": "busy 및 sampleTargets 생명주기 표.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-03-C04",
+      "category": "visual-motion",
+      "question": "hero 700ms, CTA120ms 지연, 형식 badge 220ms+45ms stagger, theater200ms 지연 및 모션 OFF 동작이 수치로 적혀 있는가?",
+      "requiredEvidence": "각 요소의 opacity/y16→0/easing 타임라인, reduced initial=false 규칙.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-03-C05",
+      "category": "failure",
+      "question": "소개 페이지에는 파일 입력/확정 화면이 동시에 뜨지 않고, 샘플 로드 실패 시 다시 진입 가능한 현재 동작이 정의되는가?",
+      "requiredEvidence": "실패 전후 page/criteria/documents의 기대 상태.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-03-C06",
+      "category": "verification",
+      "question": "소개 화면의 GSPEC 표기, PDF/Word/XLSX/CSV/이미지와 자연어 기준 안내, 예시 일관성을 확인하는 체크가 있는가?",
+      "requiredEvidence": "참조 screenshot/문구 snapshot과 CTA 시나리오.",
+      "moduleId": "UI-03",
+      "moduleName": "소개 페이지·일관된 체험 진입",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C01",
+      "category": "behavior",
+      "question": "기준 입력은 file/text 두 방식이며 target 업로드는 awaiting_documents 이후만 허용되고, 승인된 기준 요약이 오른쪽에 보이도록 설계되어 있는가?",
+      "requiredEvidence": "STEP-01/04 별 화면 구조·CTA·gate; 선택 모드에 따른 실제 전송 documentIds/criteriaText.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C02",
+      "category": "contract",
+      "question": "accept 확장자(pdf,docx,xlsx,csv,txt,md,json,png,jpg,jpeg,webp), 파일당20MB 안내, 자연어12000자, role별 POST/DELETE와 filename/size preview가 명시되는가?",
+      "requiredEvidence": "UI 허용 목록과 서버 별도 검증의 경계, 입력/응답 계약.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C03",
+      "category": "states",
+      "question": "빈 입력·drag-over·uploading·여러 파일·삭제·원문 열기/닫기·모드 전환·예제 파일 불러오기 상태를 모두 정의하는가?",
+      "requiredEvidence": "상태별 버튼 disabled, 파일 리스트 변경 및 preview clearing 표.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C04",
+      "category": "visual-motion",
+      "question": "UploadVisual의 파일/스캔 아이콘, 업로드 file-row 진입 opacity/y6, input-stage 진입 opacity/y12와 좁은 화면의 세로 스택이 명시되는가?",
+      "requiredEvidence": "입력 화면 실제 참조와 모션/레이아웃 규칙.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C05",
+      "category": "failure",
+      "question": "golden catalog 실패/선택 로드 실패/로딩 중 닫기 금지, P10 PNG 첫 페이지만 있다는 notice 및 target 0개 선택 금지가 정의되는가?",
+      "requiredEvidence": "catalog/selection 오류/notice 사례와 재시도 가능한 UI; all 모드는 현재 App에서 미호출임을 명시.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C06",
+      "category": "verification",
+      "question": "criteria와 target golden dialog를 별도로 검증하고 파일/자연어가 혼합 전송되지 않음을 확인하는 시나리오가 있는가?",
+      "requiredEvidence": "2개 mode의 요청 body·성공 결과·빈 상태·파일 삭제 시나리오.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-04-C07",
+      "category": "independent-audit",
+      "question": "업로드와 대장 파일 크기의 KB 반올림·최소1KB·MB1소수 및 정확히1MiB에서 서로 다른 > / >= 분기를 정의하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-04",
+      "moduleName": "기준·대상 입력·샘플 선택",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-05-C01",
+      "category": "behavior",
+      "question": "문서 탭→실제 categoryPath(최대8단계)→sampleName→기준 행 구조와 유형이 없을 때 일반 기준으로 두는 규칙이 명시되어 있는가?",
+      "requiredEvidence": "파일 2개·같은 항목명·유형 없음·여러 계층 fixture에 대한 예상 그룹 tree; 출처 불명 그룹도 포함.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-05-C02",
+      "category": "contract",
+      "question": "수치/정성/유형 선택, lt/lte/gt/gte/eq/range, 단위·범위·조건·source ID·revision 직렬화 규칙이 모두 문서화되어 있는가?",
+      "requiredEvidence": "Draft→Criterion 계약, 1…250개/조건12개×500자/계층8×200자 및 range 양끝 포함 제약.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-05-C03",
+      "category": "states",
+      "question": "원문/기준 선택, 전체 파일 제외, 일부 제외, uncertain assessment, 수정 재분석, hidden confirmation 보존, feedback 이력이 상태별로 정의되는가?",
+      "requiredEvidence": "선택 파일별 피드백 scope, 제외 badge/이유/원본 확인, 모든 파일 제외 시 재선택 CTA 행렬.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-05-C04",
+      "category": "visual-motion",
+      "question": "처음에는 조밀한 표 행이며 편집 내용은 펼치고, 오른쪽 원문은 모든 연결 항목을 동시에 표시하며 한 항목 선택과 동기화되는가?",
+      "requiredEvidence": "기본 행/확장 편집/원문 양쪽 참조, 7개 기준이 비교 가능한 높이·글자·스크롤 규칙.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-05-C05",
+      "category": "failure",
+      "question": "불완전 수치·상하한 역전·조건 초과·빈 항목 등은 확정 전에 해당 행을 드러내고, revision 실패가 사용자 입력을 성공으로 오인하지 않도록 명시되는가?",
+      "requiredEvidence": "각 invalid draft의 오류 문구/제출 금지/입력 보존 기대값; feedback sent/applied/failed 구분.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-05-C06",
+      "category": "verification",
+      "question": "다중 sheet·동명 출처·유형 없음·제외 파일·재피드백 사례의 기준 개수/계층/원문 위치를 문서만으로 판정할 수 있는가?",
+      "requiredEvidence": "fixture별 expected tree, sourceEvidence 좌표, preview-only 보강이 원본 Criterion을 변조하지 않는 검증.",
+      "moduleId": "UI-05",
+      "moduleName": "기준 확인·계층 편집·사람 피드백",
+      "stepIds": [
+        "STEP-03"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C01",
+      "category": "behavior",
+      "question": "파일 리스트·구조 지도·맥락/구조·확인 사항·전사 상세·원문 링크·접힌 작업 기록의 표시 계층이 명시되는가?",
+      "requiredEvidence": "DocumentAnalysis 내부 hierarchy와 context/checks/transcription drawer 전환표.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C02",
+      "category": "contract",
+      "question": "readerComplete/contextComplete/coverage.complete를 구별하고, preview 잘림과 전체 읽기 coverage를 혼동하지 않는 데이터 매핑이 있는가?",
+      "requiredEvidence": "원본 unitsRead/unitsTotal, 전사 page수, contextSegments, hidden/merged/rotation/headers/uncertain 지역 field 표.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C03",
+      "category": "states",
+      "question": "running/ready/partial/failed/limited/needs_review, 실제 quality rounds/maxAttempts와 no-data 상태를 별도로 정의하는가?",
+      "requiredEvidence": "status→label/icon/seal 표와 검증·재조회·재해석 round 출력 예시.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C04",
+      "category": "visual-motion",
+      "question": "phase rail550ms, region 진입520ms+최대5개75ms 지연, drawer400ms 및 실제 active일 때만 map 모션이라는 조건이 명시되는가?",
+      "requiredEvidence": "read/structure/transcribe/extract와 quality 재시도별 활성 node·arrow 조건.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C05",
+      "category": "failure",
+      "question": "사용자 스크롤이 로그 하단에서28px 이상 벗어나면 자동 따라가기 중단, 완료 시 로그 접기, 잘린 전사/원문 부분 미확인 안내가 정의되는가?",
+      "requiredEvidence": "activity append, busy→false, warnings/truncated에 대한 스크롤/문구 기대값.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-06-C06",
+      "category": "verification",
+      "question": "단일표뿐 아니라 숨김 sheet·회전 PDF·다중 header/region·일부 coverage에 대한 구조 지도와 원문 이동 사례가 있는가?",
+      "requiredEvidence": "각 fixture의 파일 선택·좌표 이동·coverage 문구/분수 기대값.",
+      "moduleId": "UI-06",
+      "moduleName": "문서 이해·구조 지도·분석 범위",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C01",
+      "category": "behavior",
+      "question": "문서 읽기→항목 추출→기준 대조·분류 milestone과 theater/옆 작업실/현재 파일 context의 배치가 명시되는가?",
+      "requiredEvidence": "LiveReviewFlow layout와 실제 analyzed/fields/decided counts 산식.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C02",
+      "category": "contract",
+      "question": "활성 파일은 관측 operation→최신 처리 이벤트→처리 파일→최신 analysis→첫 파일 순서로 고르고, criteria는 승인본 우선이라는 규칙이 있는가?",
+      "requiredEvidence": "우선순위와 operation phase→stage 매핑; 확정 기준 후보가 모두 실제 적용 기준이라는 주장을 금지.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C03",
+      "category": "states",
+      "question": "긴 LLM 대기 중 실제 operation과 마지막 수신 fields/structure를 보여주고, 완료 뒤 context가 접히며 수동 두 항목씩 탐색하는가?",
+      "requiredEvidence": "busy/observing/no-data/completed context 행렬, 2개/page prev-next 경계.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C04",
+      "category": "visual-motion",
+      "question": "context 전개240ms/페이지 전환160ms, busy&&observing일 때만 bridge2.2s/status2.6s 모션을 명시하는가?",
+      "requiredEvidence": "조건별 애니메이션 on/off와 모션 OFF 정적 화면.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C05",
+      "category": "failure",
+      "question": "작업실 연결 끊김 때 마지막 수신 데이터임을 표시하고 theater가 연결 상태 prop을 받지 않는 현재 한계를 구분하는가?",
+      "requiredEvidence": "연결 끊김/취소/부분 결과 시 각 패널의 label/animation 상태와 known gap.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C06",
+      "category": "verification",
+      "question": "추출 먼저/판정 나중, 여러 파일 interleave, 판정 burst, 긴 무출력 대기를 재현하는 검증 시나리오가 있는가?",
+      "requiredEvidence": "수신 이벤트 순서와 expected counts·activefile·현재 context를 비교하는 trace.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-07-C07",
+      "category": "independent-audit",
+      "question": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 검토 진행 중으로 남는 observed baseline과 개선 요구를 명확히 구분하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-07",
+      "moduleName": "실시간 검토 무대·현재 비교 맥락",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-08-C01",
+      "category": "behavior",
+      "question": "문서 스택·가운데 문서 자동 검토 엔진·적합/부적합/확인 필요 세 레인과 모든 연결선(가운데 fail 포함)이 명시되는가?",
+      "requiredEvidence": "1120×300 route 좌표와 fail M556 150 L782 150, desktop/mobile 도식.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-08-C02",
+      "category": "contract",
+      "question": "preview 예시와 live 데이터, 변경 identity(id/status/value/unit/label), nonpending 수신만 새 판정 패킷이 되는 규칙이 정의되는가?",
+      "requiredEvidence": "EXAMPLE fixture 및 초기 mount/동일 데이터/revision/burst에 대한 packet 생성 기대값.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-08-C03",
+      "category": "states",
+      "question": "초기 스냅샷/파일 집합 변경/빈 결과는 replay하지 않고, 도착 패킷은 최대6개로 제한하며 counts는 전체실제 결과를 유지하는가?",
+      "requiredEvidence": "baseline establish·burst sampling·selected lane·empty/pending/complete 상태 표.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-08-C04",
+      "category": "visual-motion",
+      "question": "판정1800ms/추출1300ms/75ms stagger, chip높이30px·max126px·font10px, 만료 여유120ms 및 cleanup350ms가 명시되는가?",
+      "requiredEvidence": "수신→전달→착지 타임라인, 긴 라벨 title/말줄임, preview 반복과 live 반복 금지 차이.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-08-C05",
+      "category": "failure",
+      "question": "작업 중 스캔은 상징적 ambience임을 구분하고, 빠른 작업 누락/중단·motion OFF·mobile에서 숨는 packet layer를 정의하는가?",
+      "requiredEvidence": "ambience vs event-driven 목록 및 <=760px fallback; 기존 수신 패킷 정리 조건.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-08-C06",
+      "category": "verification",
+      "question": "완료 카드만 보여주는 정적 결과와 별도로 수신 시점의 분류 이동을 검증하고 세 레인 수량/색상/클릭이 실제값과 일치하는가?",
+      "requiredEvidence": "time-stamped trace와 0/1/다량 항목 시나리오, 3개 선·수치·패킷 상한 assertion.",
+      "moduleId": "UI-08",
+      "moduleName": "문서 자동 검토 theater·판정 패킷",
+      "stepIds": [
+        "STEP-00",
+        "STEP-05"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C01",
+      "category": "behavior",
+      "question": "활동 도크가 실제 실행을 시작하지 않는 observer이고, 기준/검토/대시보드/대장 context에 맞는 작업만 표시한다는 규칙이 있는가?",
+      "requiredEvidence": "GET /api/activity + SSE 경계, run/context/start cutoff/kind/document 필터 매핑.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C02",
+      "category": "contract",
+      "question": "실행은 running&&!waitingForTaskId이며 parent 대기를 별도 표시하고, task100/event200 제한과 생략 개수를 보존하는가?",
+      "requiredEvidence": "server task/event→UI task/group contract와 history truncation 문구.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C03",
+      "category": "states",
+      "question": "실행 시작 펼치기·manual selection 유지·작업완료 자동접기800ms 조건·연결끊김 freeze·재연결 상태가 정의되는가?",
+      "requiredEvidence": "autoCollapse&&!busy&&activeCount=0&&!presentationBusy&&live&&tasks>0 조건을 포함한 상태표.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C04",
+      "category": "visual-motion",
+      "question": "현재 backend title/phase/detail와1초 단위 경과시간,3초 새 비heartbeat 출력이 없을 때 대기 안내를 명시하는가?",
+      "requiredEvidence": "실제 대기 표현·상태 heartbeat와 stdout/stderr 분리·가짜 진행률/토큰 생성 금지.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C05",
+      "category": "failure",
+      "question": "연결 quiet15초/request10초/retry4초→최대60초, frozenAt, 로그28px autoscroll cutoff/최신 내용 복귀가 정의되는가?",
+      "requiredEvidence": "관측 오류와 사용자 스크롤 시나리오; settled history에서 불필요한 polling이 없는 조건.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C06",
+      "category": "verification",
+      "question": "다중run/context 누출, waiting parent 중복실행, 중단/실패, 긴 무출력, 완료접기와 수동로그탐색을 검증하는 trace가 있는가?",
+      "requiredEvidence": "각 trace expected activeCount/group/tasks/elapsed/connection label 및 관측-only assertion.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-09-C07",
+      "category": "independent-audit",
+      "question": "작업실의 container≤1050px group select 및 ≤680px 처리흐름/실행내역 탭, flow초기값·scope reset·aria-selected·data-pane에 따른 내용 가시성이 정의되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-09-C08",
+      "category": "independent-audit",
+      "question": "groupTasks parent identity 상속은 별도 document/run/context 호환 guard 없이 순환만 막고, actualTransfers의 양측 scope guard와 다르다는 현재 동작을 정의하는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-09",
+      "moduleName": "샌드박스 활동 관측·현재 작업·실행 로그",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-10-C01",
+      "category": "behavior",
+      "question": "양쪽 LLM/샌드박스 chamber, 실제 전달 제목·방향·최근 기록3개와 실행중/대기/작업없음 장면이 명시되는가?",
+      "requiredEvidence": "문서 작업 및 대시보드 단계별 SVG scene 표와 두 런타임 표시.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-10-C02",
+      "category": "contract",
+      "question": "parentTaskId+첫 nonlog runningevent 또는 explicit event.handoff만 전달로 인정하고, 같은runtime/다른run·context·document는 거부하는가?",
+      "requiredEvidence": "허용/거부 event fixture와 canonical dedupe key; 시간상 연속만으로 전달 생성 금지.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-10-C03",
+      "category": "states",
+      "question": "처음 live/history 재방문·group 전환·disconnect pause/resume·failed/cancelled·motion OFF 시 queue/seen 동작이 정의되는가?",
+      "requiredEvidence": "event age[-5s,15s],liveSince, pending≤8/queue seen256/component seen512/groups100/session30 및 취소 한계.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-10-C04",
+      "category": "visual-motion",
+      "question": "실제 한 전달 pulse1400ms, 빛1.3s cubic-bezier(.28,.18,.44,1), 보조trail70ms 지연이며 반복핑퐁이 아니라1회 재생인가?",
+      "requiredEvidence": "양방향 x축 route와 잔여 시간 pause/resume, +N은 연출 대기 수라는 정의.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-10-C05",
+      "category": "failure",
+      "question": "로그/동일상태 갱신이 전달을 재생하지 않고, queue overflow는 오래된 연출만 버리며 실제 실행 결과를 누락시키지 않는가?",
+      "requiredEvidence": "20건 burst·중복 event·재연결·오래된 history 기대 trace; 전달 없는 actor는 호출되었다고 표시하지 않음.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-10-C06",
+      "category": "verification",
+      "question": "문서 read/reread/transcribe/structure/context/quality/repair와 dashboard install/build/validate/complete를 별도로 검증하는가?",
+      "requiredEvidence": "phase→scene/icon/caption/loop mapping과 모션 OFF, 연결끊김의 시각 검증.",
+      "moduleId": "UI-10",
+      "moduleName": "LLM↔샌드박스 핸드오프·단계별 작업 장면",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C01",
+      "category": "behavior",
+      "question": "렌더 우선순위 PDF→image→sheet table→text→원본 링크, PDF page/zoom 및 sheet tab/숨김 상태와 원본 열기를 모두 명시하는가?",
+      "requiredEvidence": "각 파일형식의 viewer 입력/제어/빈 상태·지원하지 않는 preview 동작.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C02",
+      "category": "contract",
+      "question": "Evidence의 documentId/page/sheet/cell/quote와 SourceHighlight의 missing/anchor 규칙, selected→fail→review→pending→pass 우선순위가 정의되는가?",
+      "requiredEvidence": "동일숫자·header·다른sheet·missing 항목에서 false highlight를 막는 좌표/문자일치 규칙.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C03",
+      "category": "states",
+      "question": "document 변경 초기화, 유효 page만 이동, PDF zoom1…2/0.25step, sheet 선택, 중첩근거 선택 및 못 찾은 위치 chip 상태가 명시되는가?",
+      "requiredEvidence": "소스 선택별 state/output mapping와 다른 페이지/시트/근거 없음/항목 누락 문구.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C04",
+      "category": "visual-motion",
+      "question": "canvas DPR≤2, ResizeObserver min140px, 페이지 진입·선택 근거 내부 scroll과 reduced 즉시이동을 재현할 값이 있는가?",
+      "requiredEvidence": "PDF scale/좌표변환/스크롤 여백·텍스트 overlay 설정과 table sticky row/column 규칙.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C05",
+      "category": "failure",
+      "question": "로드 실패·render취소·text 추출 실패·image 실패·preview.truncated를 서로 구분하고 stale render가 새 문서 위에 나타나지 않도록 정리하는가?",
+      "requiredEvidence": "loadingTask.destroy/renderTask.cancel/observer disconnect와 각 오류메시지·원본 링크 보존.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C06",
+      "category": "verification",
+      "question": "PDF 헤더를 missing 항목으로 색칠하지 않는 사례, 중복값·다중sheet·모호한 quote·표 item label 보강을 검증하는가?",
+      "requiredEvidence": "정확한 예상 highlight 좌표/건수와 부정 사례; preview 일부만 표시됨이 전체분석 누락을 뜻하지 않는 경계.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-11-C07",
+      "category": "independent-audit",
+      "question": "판정색 highlight와 별개 raw <mark> fallback의 호출 조건·case/whitespace·숫자경계 부재·quote당30개 비중첩 검색·범위병합이 정의되는가?",
+      "requiredEvidence": "현재 계약과 원본/명시적 REQUIRED_REBUILD 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음.",
+      "moduleId": "UI-11",
+      "moduleName": "공통 원문 viewer·근거 하이라이트",
+      "stepIds": [
+        "STEP-01",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "origin": "round-01-new"
+    },
+    {
+      "id": "UI-12-C01",
+      "category": "behavior",
+      "question": "파일 탭→현재 파일집계→왼쪽 원문 전체판정/오른쪽 항목·적용기준 탭의 정보 순서와 상세가 목록을 대체하는 현재 UI가 명시되는가?",
+      "requiredEvidence": "상세 미선택/선택/기준탭/다른 기준원문 화면 hierarchy 및 항목을 눌러 페이지 아래 패널을 찾게 하지 않는 계약.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-12-C02",
+      "category": "contract",
+      "question": "문서별 결과가 실제 documentId/criterionId로 scope되고, 원문 highlights는 목록 filter와 무관하게 해당파일 전체 결과를 유지하는가?",
+      "requiredEvidence": "다중파일·미연결criterion·동일label·외부selectedItemId 모델 fixture와 expected counts.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-12-C03",
+      "category": "states",
+      "question": "파일선택은 필터/상세/페이지 reset, 목록↔상세는 scroll·focus 복원, 이전/다음은 현재 필터 내 이동이며 판정수정이 필터를 벗어나면 all로 복귀하는가?",
+      "requiredEvidence": "chooseFile/chooseItem/clearItem/chooseFilter/resolve 후 상태표.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-12-C04",
+      "category": "visual-motion",
+      "question": "선택상세 진입200ms/x12, 판정bar350ms, <=780px 상세를 원문보다 앞에 두고 workspace scrollTop0으로 이동하는가?",
+      "requiredEvidence": "데스크톱 및 모바일 상세참조와 height/overflow/focus 기대값.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-12-C05",
+      "category": "failure",
+      "question": "문서error·결과없음·필터결과0·적용기준없음·criterion ID 미연결이 서로 구분되고 원본은 계속 확인 가능한가?",
+      "requiredEvidence": "실패/빈 상태 문구 및 링크 가능 여부.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-12-C06",
+      "category": "verification",
+      "question": "파일 A 선택·fail필터·항목상세·원문근거·적용기준·목록복귀 시 헤더와 사유가 즉시 보이는지를 측정할 검증이 있는가?",
+      "requiredEvidence": "viewport별 상세 bounding rect/scroll/focus assertion, 원문 색상은 전체유지 assertion.",
+      "moduleId": "UI-12",
+      "moduleName": "파일별 결과·즉시 상세 workspace",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C01",
+      "category": "behavior",
+      "question": "compact 상세에서 항목제목/판정→문서값·기준 나란히→판정이유→source quote→수정 CTA의 순서가 명시되어 있는가?",
+      "requiredEvidence": "compact 기본 화면과 edit 상태 와이어프레임; 판정 근거는 목록 하단에 누적되지 않음.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C02",
+      "category": "contract",
+      "question": "onResolve(itemId,status,note), status pass/fail/review, source document/page/sheet/cell와 reviewedByHuman/humanNote의 매핑이 정의되는가?",
+      "requiredEvidence": "수정 요청·응답·보이는 사람확인 stamp와 source 버튼 계약.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C03",
+      "category": "states",
+      "question": "선택 item 변경 시 편집/오류/note 초기화, compact 제목 focus preventScroll, pending 항목 수정불가 및 저장 중 중복 금지가 정의되는가?",
+      "requiredEvidence": "item swap/save/cancel/pending/disabled 상태별 controls.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C04",
+      "category": "visual-motion",
+      "question": "full inspector220ms/y14와 compact 내부 초기 모션 없음, 비교 두 칸의 폭·글자 크기와 긴설명 스크롤이 명시되는가?",
+      "requiredEvidence": "원문·상세 동시시야 참조 및 typography/compact layout.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C05",
+      "category": "failure",
+      "question": "저장 전 취소의 서버 변경 없음과 저장 중 취소의 폼 닫힘·이미 전송된 resolve 지속, 실패·연속 클릭·race 상태를 관찰 기준선과 필수 정책으로 구분하는가?",
+      "requiredEvidence": "유효/무효 note·실패/재시도 expected mutation 및 UI상태.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-13-C06",
+      "category": "verification",
+      "question": "판정수정 뒤 파일집계·요약·원문색상은 갱신되되 기존 생성대시보드는 스냅샷으로 유지됨을 검증하는가?",
+      "requiredEvidence": "하나의 수정에 대한 각 consumer 예상 변화 및 대시보드 재구성 필요 안내.",
+      "moduleId": "UI-13",
+      "moduleName": "판정 근거 inspector·사람의 판정 수정",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C01",
+      "category": "behavior",
+      "question": "3개 KPI/판정분포/문서별판정/이름있는 항목 맵을 배치하고 tile 클릭이 파일별 결과의 해당 item으로 이동하는가?",
+      "requiredEvidence": "summary hierarchy와 onSelect→resultTab files·selectedItemId 연결.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C02",
+      "category": "contract",
+      "question": "총항목·완료(pass+fail+review)·주의(fail+review)·pending을 구분하고 문서순서/빈문서/동명문서 집계가 명시되는가?",
+      "requiredEvidence": "집계 산식과 데이터 fixture별 KPI/도넛/stackedbar 기대수.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C03",
+      "category": "states",
+      "question": "도넛/legend 필터 토글, hover와 keyboard focus tooltip, 필터로 나가는 tile의 pointer/focus 제거 및 빈 결과가 정의되는가?",
+      "requiredEvidence": "all/pass/fail/review/pending 및 tooltip/exit 상태표.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C04",
+      "category": "visual-motion",
+      "question": "숫자650ms, 도넛850ms, 막대800ms, tile300ms/22ms stagger상한8, hover y-2/tap.98와 reduced 비활성화가 명시되는가?",
+      "requiredEvidence": "차트·panel·tile timing table, graph가 정적 즉시등장만 하지 않는 검증.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C05",
+      "category": "failure",
+      "question": "항목명/파일명 말줄임은 전체 tooltip/접근성 이름을 보존하고 tooltip가 viewport에서 잘리지 않으며 zero-data를 가짜1건으로 집계하지 않는가?",
+      "requiredEvidence": "긴한국어·빈데이터·scroll tooltip dismiss 사례.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-14-C06",
+      "category": "verification",
+      "question": "기본요약은 Recharts이고 나만의대시보드는 react-chartjs-2인 기술경계를 명확히 검증하는가?",
+      "requiredEvidence": "컴포넌트별 chart library 표, 실제 type/수치/클릭/모션 조건 assertion.",
+      "moduleId": "UI-14",
+      "moduleName": "전체 요약 차트·항목 탐색",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C01",
+      "category": "behavior",
+      "question": "구성 sidebar·4개 예시요청·생성중 full workroom·완료preview·구성수정·원본과판정/대시보드 switch·HTML다운로드 흐름이 명시되는가?",
+      "requiredEvidence": "빈상태→생성→완료→부분 수정→재생성 transition와 기본instruction/1500자 제한.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C02",
+      "category": "contract",
+      "question": "POST {runId,instruction,baseDesign?}, 생성 당시 immutable snapshot, ready sourceItems, 검증된 bridgeToken/knownItemIds와 cache≤5가 정의되는가?",
+      "requiredEvidence": "요청/ready Preview 계약 및 임의 message/다른iframe/알수없는item 무시 사례.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C03",
+      "category": "states",
+      "question": "queued/generating/building/repairing/ready/failed, cancel/close, retry시 이전preview, 실제 적용tag와 standard fallback 안내를 구분하는가?",
+      "requiredEvidence": "job×builderOpen×showingWorkroom×resultView 상태행렬; appliedTag는 실제job.design만 사용.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C04",
+      "category": "visual-motion",
+      "question": "dialog240ms 뒤 content260ms 지연, lazy source viewer, memo iframe, 이미열었던 chart state 보존, 모션설정 존중을 명시하는가?",
+      "requiredEvidence": "mount/unmount 시간선과 hidden chart 신규mount 금지·lazy preload·reduced stylesheet 계약.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C05",
+      "category": "failure",
+      "question": "poll1200ms/연속실패2회재시도/AbortController·sequence stale guard·DELETE취소·빈HTML오류·최종handoff≤1600ms를 명시하는가?",
+      "requiredEvidence": "close-before-POST-return/오류/취소/재시도 expected job/API/view 상태.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-15-C06",
+      "category": "verification",
+      "question": "첫열기/재열기/원문전환/재구성의 프레임·mount수·선택유지와 HTML 다운로드를 검증하는 시나리오가 있는가?",
+      "requiredEvidence": "modal shell이 먼저보이는 timing, iframe remount count, exportedHTML은 host원문/bridge 미포함이라는 확인.",
+      "moduleId": "UI-15",
+      "moduleName": "나만의 대시보드 생성 dialog·수정·성능",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C01",
+      "category": "behavior",
+      "question": "title/subtitle/accent/focus/density/layout/distribution/theme/emphasis/chartSize/legend/motion/corners/fileVisualization의14개 축과 조합효과가 모두 명시되는가?",
+      "requiredEvidence": "각 enum/default/DOM data-attr/CSS/chart option 대응표; 색상 변경만으로 테마 요청을 충족했다고 하지 않음.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C02",
+      "category": "contract",
+      "question": "LLM이 HTML/JS/판정값을 만들지 않고 디자인계획만 반환하며 기존baseDesign을 유지한 부분수정·부정표현 해석이 정의되는가?",
+      "requiredEvidence": "라이트 큰도넛→색상유지 밤테마 파이, 막대말고도넛, 파일만막대 사례의 exact expected plan.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C03",
+      "category": "states",
+      "question": "overview/exceptions/documents focus,4개layout,파일선택·statusfilter·상세전개,0건/한파일/다중파일/긴내용 상태를 정의하는가?",
+      "requiredEvidence": "layout reading order와 filtering/selection 상태표; detail-open에서 chartfocus와 가독성 재배분.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C04",
+      "category": "visual-motion",
+      "question": "라이트는 page/card/text/axis/tooltip까지, 도넛은hole/파이는filled, 차트강조는실제크기, 범례 위치·모션·모서리를 바꾸도록 수치화되는가?",
+      "requiredEvidence": "chart types/options/CSS 계산식·full/subtle/none·OS reduced 처리와 색상대비 명세.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C05",
+      "category": "failure",
+      "question": "지원데이터없는추세를 발명하지 않고, plan/렌더검증 실패 때 한계있는standard fallback을 정직하게 표시하며 snapshot값을 보존하는가?",
+      "requiredEvidence": "실패 진단→동일sandbox 수정loop→fallback 계약, unknown enum/변조 count/theme 무시 검증.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-16-C06",
+      "category": "verification",
+      "question": "독립적인 최소3개 복합요청과18개 viewport/디자인 조합에서 실제chart type·count·surface·legend·size·detail 가시성을 검증하는가?",
+      "requiredEvidence": "문서에 선언한 expected plans와 browser assertion specification; 실행되지 않은 케이스는 증거로 계산하지 않음.",
+      "moduleId": "UI-16",
+      "moduleName": "생성 대시보드 React 차트·디자인 조합",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C01",
+      "category": "behavior",
+      "question": "파일탭·파일별판정수·원본선택·전체하이라이트·선택항목 사유/값/기준/인용의 위치와 차트→원문 전환이 명시되는가?",
+      "requiredEvidence": "source view hierarchy와 selectedItemId/selectionVersion 외부선택 흐름.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C02",
+      "category": "contract",
+      "question": "sourceSnapshot의 files/items만 사용하고, sourceHighlights는 선택원본 documentId로 제한하며 pending 집계 표시를 구분하는가?",
+      "requiredEvidence": "freeze 당시 snapshot·문서 scope·pending→review 그룹 변환 및 pendingCount 안내.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C03",
+      "category": "states",
+      "question": "다른파일 선택은 filter/source reset, item선택은 해당target근거→다른target근거→존재문서 순서로 원본을 고르는가?",
+      "requiredEvidence": "파일/원본문서/근거index/filter/외부selectionVersion 변화 표.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C04",
+      "category": "visual-motion",
+      "question": "entry320ms/y6 및 system/app reduced를 함께 적용하고, source page의 독립 스크롤·compact원문·전체색상 유지가 정의되는가?",
+      "requiredEvidence": "source view 가시성/레이아웃/animation 조건과 chartview 숨김 시 선택상태 유지.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C05",
+      "category": "failure",
+      "question": "원본연결정보 없는 구형preview에서는 switch를 disabled하고 다시구성 안내, 누락원본·근거없음·알수없는item은 추측하지 않는가?",
+      "requiredEvidence": "legacy ready HTML/no sourceSnapshot/잘못된 bridge message의 UI상태.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-17-C06",
+      "category": "verification",
+      "question": "파일2개 같은항목명·다른source근거·filter변경·같은item 재선택에서 원본과사유가 일치하는 테스트가 있는가?",
+      "requiredEvidence": "data-review-document-id/data-source-document-id/data-selected-evidence-index/filter 기대값.",
+      "moduleId": "UI-17",
+      "moduleName": "대시보드 원본·판정 연결 view",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C01",
+      "category": "behavior",
+      "question": "결과 내보내기 메뉴의xlsx/csv/json과검토대장 기능, 대장업로드→대상성적서/번호→기입위치확인→사본다운로드 흐름이 명시되는가?",
+      "requiredEvidence": "표준export URL과 ledger dialog hierarchy/CTA 흐름.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C02",
+      "category": "contract",
+      "question": "mapping.ready/blocked,정확히targetCells2개,proposal fingerprint와basis(documentId,key,runId,sourceDocumentId)일치가 다운로드gate라는 계약이 있는가?",
+      "requiredEvidence": "analyze/export 요청·기존값/기입값 table·confirmed:true·proposalFingerprint 계약.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C03",
+      "category": "states",
+      "question": "upload/analyze/export 직렬화·바쁜중 입력금지·파일/성적서/번호 변경시 analysis무효화·key자동추출·추가메모 상태가 정의되는가?",
+      "requiredEvidence": "beginOperation sequence/AbortController와 canAnalyze/canExport 행렬.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C04",
+      "category": "visual-motion",
+      "question": "dialog230ms/scale.985/y14, 분석중inlinedock, 완료후 현재값과기입값 비교 및 모바일레이아웃이 명시되는가?",
+      "requiredEvidence": "3개 상태 참조,작업진행은 결과와구분하고표시하는 규칙.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C05",
+      "category": "failure",
+      "question": "xlsx만/빈파일금지/20MB이하/한개drop,중복행·위치불명 blocked·닫기abort·빈export·서버오류에 대한 사용자인지가 정의되는가?",
+      "requiredEvidence": "각실패의메시지/대상후보표시/다운로드disabled/재시도행동;원본보존.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    },
+    {
+      "id": "UI-18-C06",
+      "category": "verification",
+      "question": "틀린key·중복key·다른source/수정된basis·stale proposal과정상사본을 검증하는가?",
+      "requiredEvidence": "예상2개셀만변경,원본bytes동일,새파일명·결과숫자·사용자메모반영검증명세.",
+      "moduleId": "UI-18",
+      "moduleName": "검토대장 사본·표준 결과 내보내기",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "origin": "original-203"
+    }
+  ]
+}

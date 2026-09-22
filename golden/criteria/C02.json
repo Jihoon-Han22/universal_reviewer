@@ -1,0 +1,60 @@
+{
+  "id": "C02",
+  "desc": "로고·병합제목·안내문·빈행 뒤 8행 헤더",
+  "expect": "adapter",
+  "sheet": "품질기준",
+  "table": {
+    "header_row": 8,
+    "data_from": 9
+  },
+  "columns": {
+    "item": "B",
+    "op_value": "E",
+    "unit": "D",
+    "note": "F"
+  },
+  "criteria": [
+    {
+      "item": "산화마그네슘",
+      "op": ">=",
+      "value": 2.0,
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "op": "<=",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "item": "비표면적",
+      "op": ">=",
+      "value": 4000,
+      "unit": "cm2/g"
+    },
+    {
+      "item": "활성도지수",
+      "op": ">=",
+      "value": 80,
+      "unit": "%"
+    },
+    {
+      "item": "밀도",
+      "op": ">=",
+      "value": 2.2,
+      "unit": "g/cm3"
+    },
+    {
+      "item": "압축강도",
+      "op": ">=",
+      "value": 24.0,
+      "unit": "MPa"
+    }
+  ]
+}

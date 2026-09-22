@@ -1,0 +1,330 @@
+{
+  "caseId": "G13:keyboard-focus-dialog-Escape",
+  "facets": {
+    "landing-keyboard": {
+      "id": "landing-keyboard",
+      "startedAt": "2026-09-21T12:31:19.587Z",
+      "state": "passed",
+      "expected": {
+        "tabReachable": true,
+        "shiftTabReverses": true,
+        "spaceToggles": true,
+        "enterStarts": true
+      },
+      "observations": {
+        "tabReachable": true,
+        "shiftTabReverses": true,
+        "spaceToggles": true,
+        "enterStarts": true,
+        "traversal": [
+          {
+            "name": "검토 기준부터 시작하기",
+            "motion": false
+          },
+          {
+            "name": "경비 예제로 체험",
+            "motion": false
+          },
+          {
+            "name": "",
+            "motion": false
+          },
+          {
+            "name": "GSPEC.기준부터, 근거까지.모션 ONLLM + 샌드박스DOCUMENT INTELLIGENCE어떤 문서든,당신의 기준으로.문서를 읽고, 기준에 맞는지 근거와 함께 검토합니다.검토 기준부터 시작하기경비 예제로 체험PDFWordXLSXCSV이미지자연어로 기준 입력문서 자동 검토EXAMPLE문서 → 근거 → 판정01문서 스캔02추출 · 대조03자동 분류점심 식비저녁 식비식비 영수증자연어출장 경비 규정판단 기준 · 예시식비 한도30,000원CSV출장_경비_검토.csv검토 대상 · 예시항목금액점심 식비18,000저녁 식비52,000식비 영수증금액 판독 불가경비 내역 + 판단 기준CSV · 자연어 기준GSPEC / REVIEW문서 자동 검토항목 추출 → 기준 대조식비 3만 원 이하적합VERIFIED01점심 식비식비 30,000원 이하18,000원예시부적합EXCEPTION01저녁 식비식비 30,000원 이하52,000원예시확인 필요HUMAN REVIEW01식비 영수증식비 30,000원 이하금액 판독 불가예시01문서02추출 · 대조03자동 분류식비 3건 미리보기",
+            "motion": false
+          },
+          {
+            "name": "GSPEC.",
+            "motion": false
+          },
+          {
+            "name": "모션 ON",
+            "motion": true
+          }
+        ]
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.dom.json",
+          "sha256": "52309aacfed6aa4c61b76f58241abe35c3c5c4475c45583a6aa7e3b6d7df56d6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.png",
+          "sha256": "cc24af508139f6ef965f01590dd54c724fb6869c5b1a5e9f281a9a08480542cd"
+        }
+      ],
+      "assertions": [
+        {
+          "key": "tabReachable",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "shiftTabReverses",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "spaceToggles",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "enterStarts",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "endedAt": "2026-09-21T12:31:25.752Z"
+    },
+    "detail-focus": {
+      "id": "detail-focus",
+      "startedAt": "2026-09-21T12:32:38.005Z",
+      "state": "passed",
+      "expected": {
+        "headingFocused": true,
+        "restored": true,
+        "iterations": 5
+      },
+      "observations": {
+        "headingFocused": true,
+        "restored": true,
+        "iterations": 5,
+        "trials": [
+          {
+            "headingFocused": true,
+            "restored": true,
+            "milliseconds": 1764.5999999977648
+          },
+          {
+            "headingFocused": true,
+            "restored": true,
+            "milliseconds": 860.8999999985099
+          },
+          {
+            "headingFocused": true,
+            "restored": true,
+            "milliseconds": 748.7000000029802
+          },
+          {
+            "headingFocused": true,
+            "restored": true,
+            "milliseconds": 518.3000000007451
+          },
+          {
+            "headingFocused": true,
+            "restored": true,
+            "milliseconds": 927.0999999977648
+          }
+        ]
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.dom.json",
+          "sha256": "302b9a0575be9b69cc12f2fe480c834aa5b6ea86eb3dc6a2f0c74f5438916a8d"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.png",
+          "sha256": "f4602a3a1d51d97b54d018877140cd0893b1349b1e49daa93829d519961a19e1"
+        }
+      ],
+      "assertions": [
+        {
+          "key": "headingFocused",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "restored",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "iterations",
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        }
+      ],
+      "endedAt": "2026-09-21T12:33:00.688Z"
+    },
+    "summary-tooltip": {
+      "id": "summary-tooltip",
+      "startedAt": "2026-09-21T12:33:12.593Z",
+      "state": "passed",
+      "expected": {
+        "role": "tooltip",
+        "width": 280,
+        "described": true,
+        "escapeKeepsOpen": true,
+        "blurCloses": true
+      },
+      "observations": {
+        "role": "tooltip",
+        "width": 280,
+        "rect": {
+          "x": 106.78125,
+          "y": 509.28125,
+          "width": 280,
+          "height": 202.28125,
+          "top": 509.28125,
+          "right": 386.78125,
+          "bottom": 711.5625,
+          "left": 106.78125
+        },
+        "style": {
+          "maxHeight": "none",
+          "pointerEvents": "none"
+        },
+        "described": true,
+        "escapeKeepsOpen": true,
+        "blurCloses": true
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.dom.json",
+          "sha256": "53a111349785172aca15404ff86f1f48a79ba5cc567f73a3681b99ce75df22b6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.png",
+          "sha256": "b014a0badc128d2e3957c9a833f2e2daed61b9580738596949fa90ec15f31f45"
+        }
+      ],
+      "assertions": [
+        {
+          "key": "role",
+          "expected": "tooltip",
+          "actual": "tooltip",
+          "passed": true
+        },
+        {
+          "key": "width",
+          "expected": 280,
+          "actual": 280,
+          "passed": true
+        },
+        {
+          "key": "described",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "escapeKeepsOpen",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "blurCloses",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "endedAt": "2026-09-21T12:33:20.090Z"
+    },
+    "dashboard-escape": {
+      "id": "dashboard-escape",
+      "startedAt": "2026-09-21T12:33:37.184Z",
+      "state": "passed",
+      "expected": {
+        "nativeModal": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "observations": {
+        "nativeModal": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.dom.json",
+          "sha256": "049f98a19e5595607251c6ab8e5b8d1d5043953987e51c89b4868cf1ed593248"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.png",
+          "sha256": "0621901d3fd449178ebe1bc5efbe3efc442f89d003a69fc5f58c61a7ee645376"
+        }
+      ],
+      "assertions": [
+        {
+          "key": "nativeModal",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "closed",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "focusReturned",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "endedAt": "2026-09-21T12:33:45.310Z"
+    },
+    "ledger-escape": {
+      "id": "ledger-escape",
+      "startedAt": "2026-09-21T12:33:45.326Z",
+      "state": "passed",
+      "expected": {
+        "nativeModal": true,
+        "closed": true
+      },
+      "observations": {
+        "nativeModal": true,
+        "closed": true
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.dom.json",
+          "sha256": "078538161541a88d852d200fd2237b5f2892d9b37bb9c1a81c23547dbe467a97"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "assertions": [
+        {
+          "key": "nativeModal",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "key": "closed",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "endedAt": "2026-09-21T12:33:51.030Z"
+    },
+    "analysis-drawer-and-golden-keyboard": {
+      "id": "analysis-drawer-and-golden-keyboard",
+      "state": "not_run",
+      "reason": "This slice covers result, tooltip, dashboard and ledger keyboard paths. Analysis drawer trigger focus limitation and golden loading/Escape states remain to execute."
+    }
+  },
+  "coverage": {
+    "complete": false,
+    "passed": 5,
+    "failed": 0,
+    "notRun": 1
+  },
+  "sourceParity": true
+}

@@ -1,0 +1,66 @@
+{
+  "id": "19-dashboard-controls",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "19-dashboard-controls",
+    "screenshot": {
+      "path": "19-dashboard-controls.png",
+      "bytes": 270631,
+      "sha256": "3b65d64d1f13a302f80feb96eabcb2424b766d091b796e3554eeaf8db796ecaf",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/19-dashboard-controls.json",
+      "bytes": 1015625,
+      "sha256": "ad532374cd42851322a8b400c5fdb37c8a5e9954d5746668c7bb4bfe6defe610"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:15:38.178Z",
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/19-dashboard-controls.png",
+    "bytes": 269941,
+    "sha256": "16870a34044ccd7d80affa40d7ffdbc544710dec00836adf9f7e3f2607ff3afc",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T11:15:41.110Z",
+    "capturedAt": "2026-09-21T11:15:41.458Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/dom/19-dashboard-controls.json",
+    "bytes": 1460411,
+    "sha256": "538be7421d49d7ef5bbd63c05909b247bd561f9a7ab2ed59ef5c0707cd59f695"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/19-dashboard-controls-measurement.json",
+    "bytes": 193803,
+    "sha256": "6ed8279549218a0a8e84e6c7be96aed86162f1b4c4d4fd4618109b3267e7de37"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "complete",
+  "endedAt": "2026-09-21T11:15:43.693Z"
+}

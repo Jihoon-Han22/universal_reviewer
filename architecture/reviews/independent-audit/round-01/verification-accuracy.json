@@ -1,0 +1,2155 @@
+{
+  "schemaVersion": 1,
+  "round": "round-01",
+  "phase": "initial-before-normative-edits",
+  "reviewer": {
+    "actualId": "/root/verification_audit",
+    "role": "source-comparison evaluator for environment, validation tools, source inventory; not blind clarity evaluator",
+    "newAgents": 1,
+    "reusedAgents": 0,
+    "childAgents": 0
+  },
+  "reviewedAt": "2026-09-20T17:44:34.957Z",
+  "readFiles": [
+    {
+      "path": "architecture/README.md",
+      "sha256": "e9963016a29f8e4f3edfe33a55a5ca89bbf941687eef98441cc7b77c5a3ee837",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/DECISIONS.md",
+      "sha256": "29b743be0d89e94fd4fc8ea9b3b176e73f4616bbbee342d9324f8a68b7c82049",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/versions.json",
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/root/package.json",
+      "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/root/package-lock.json",
+      "sha256": "ff0beaeb71a44aea24646852abab25475bf1cfbe8d50260066cdab8253c701c9",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/integrations/package.json",
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/integrations/package-lock.json",
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/tsconfig.json",
+      "sha256": "69113c403e8dc40970b465a3f3cbd72b87107bd8392327b12c9c7a0fa8a293de",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/vite.config.ts",
+      "sha256": "a62ae575b8979ee75047080dfaaedd8e606cef4fc409e3d4882c8ee4c507f75a",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/index.html",
+      "sha256": "91ed8ae874790d21611b4f07d807aa7902c7a02b9dd2c062ac5ad3209c874c61",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/scripts/dev.mjs",
+      "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/scripts/copy-pdfjs-assets.mjs",
+      "sha256": "2e8ad9b52b8f31ab642d4077b79d3727b98c2387b321cc7360fc479b147f7fc3",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/environment/templates/scripts/build-dashboard-chart-runtime.mjs",
+      "sha256": "0da4c486231b9b72f73dbe291b75dcdef8a1dbaff766d80d2e754585a854c6bf",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/decomposition/core-modules.json",
+      "sha256": "cf51606f635ef5acb090c59f46fcbae350d9b12697e2bbad8e9c372f6969162e",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/decomposition/ui-modules.json",
+      "sha256": "9a0306aeaf8cc3c8d272e0ab69db893a06d8c9ef42e460be6e6b13e3ac8dffab",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/decomposition/core-tree.md",
+      "sha256": "ae868a56e6c5e830fa6a3502f9032d65a206502250c3add433a0c786af7258d2",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/specs/06-verification.md",
+      "sha256": "c139c30d7cec0c23af1b0592af05e61fea842a7b8bcbf1c2208595e9164f2889",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/README.md",
+      "sha256": "afd95b5c217121cf0b1913f879fb1a1a00637db7ad8b97d864f1ded8181b8578",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/acceptance.mjs",
+      "sha256": "60e3ec78e9143ad75c3d59913fdd86c98e6cdbafdd811a4b5feb83ebf117f866",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/evidence.schema.json",
+      "sha256": "0d0bf6798ec771c6bbded7e755467f89c397a1dc396069e398e4144b4e8b19d2",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/acceptance-selftest.mjs",
+      "sha256": "59ae22484ebaf4459146ce96b8c32b3e006c6b4369aa6e294996ae84a8b92ca3",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/adapter-worker.mjs",
+      "sha256": "3380dd008b1a727c2a2ca736163efc58b5abf02efafd5f5a684edd81a102d068",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/run-gate.mjs",
+      "sha256": "5f352f94c4542eed3438360773f37978576f31cefcb4e9ee819795aae3dc97db",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/harness.mjs",
+      "sha256": "a0cb2c940001f66424843c6af9b43dd089f1591ead4fdfe62415b49c54aa016f",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/evaluate-v3.mjs",
+      "sha256": "b443c86b0b443e8ac4132bea1f4110cc05fb2521ecae23ec4a63e9256ebb62e4",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/validation/package-validator-selftest.mjs",
+      "sha256": "392e8a54a27f12428239d009a30a371f4dc97f0762ab14201812e44a4ced8812",
+      "scope": "targeted sections and imports"
+    },
+    {
+      "path": "architecture/validation/fixture-generator.mjs",
+      "sha256": "76ebb6eef8a2198cd0ca3e0724fb2a8f9f916b647e1f3661190bbe969e0e11bd",
+      "scope": "targeted sections and imports"
+    },
+    {
+      "path": "architecture/tools/verify-package.mjs",
+      "sha256": "6b1b947bea6eb3fa662c750d1d1e7bbc8c798436b9182708a1677ea14a9bd19f",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/tools/bootstrap.mjs",
+      "sha256": "6417ec9918f3854cff077ed540a9b5c3145c79a260e7867aa532f7b58830aa45",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/tools/test-bootstrap.mjs",
+      "sha256": "4dd1194a7648ace4dd6b023f31ccd0cc197f23cb15220e385558e652d0f5c3f9",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/tools/snapshot-source.mjs",
+      "sha256": "3ba73144d96f42b53ee4ca82ce01a9615013a25a98539c8044f24f6b993b66c0",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "architecture/tools/build-traceability.mjs",
+      "sha256": "29ebe1d019572c411b829966ca291b98c4ea4228e48f82599166eadf07228ebf",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "package.json",
+      "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "ff0beaeb71a44aea24646852abab25475bf1cfbe8d50260066cdab8253c701c9",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "integrations/package.json",
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "integrations/package-lock.json",
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "69113c403e8dc40970b465a3f3cbd72b87107bd8392327b12c9c7a0fa8a293de",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "a62ae575b8979ee75047080dfaaedd8e606cef4fc409e3d4882c8ee4c507f75a",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "index.html",
+      "sha256": "91ed8ae874790d21611b4f07d807aa7902c7a02b9dd2c062ac5ad3209c874c61",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "scripts/dev.mjs",
+      "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "scripts/copy-pdfjs-assets.mjs",
+      "sha256": "2e8ad9b52b8f31ab642d4077b79d3727b98c2387b321cc7360fc479b147f7fc3",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "scripts/build-dashboard-chart-runtime.mjs",
+      "sha256": "0da4c486231b9b72f73dbe291b75dcdef8a1dbaff766d80d2e754585a854c6bf",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "scripts/verify-golden.mjs",
+      "sha256": "f1b106c3084e715358af86dcbcad2890d19ed476fa7800985c6f9654c28de551",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "scripts/verify-criteria-first.mjs",
+      "sha256": "675fea5890ec5660436acef42f088d68fe425a25c3653b2bf4e6b5e2786ff7a4",
+      "scope": "targeted sections and imports"
+    },
+    {
+      "path": "scripts/verify-hierarchy-guards.mjs",
+      "sha256": "26c5defea4ee86d38038038b411dbd9b13300bd214bb7fa1b5d323442cfc30c5",
+      "scope": "targeted sections and imports"
+    },
+    {
+      "path": "scripts/verify-xlsx-target.mjs",
+      "sha256": "0e3388ec1df98b6f7fde1ab119f2345d60460494d8eabffc1e15b80f872ce627",
+      "scope": "targeted sections and imports"
+    },
+    {
+      "path": "integrations/scripts/smoke.mjs",
+      "sha256": "ffad404ec2016ec9913d57b44fd85de15e370022359e050a8df4577d6b5fa968",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "server/index.mjs",
+      "sha256": "a60463b2381a9ce3776579aa7efa401196530d90edfc0767a35bffa1dbb5e28a",
+      "scope": "full content or exact-byte comparison"
+    },
+    {
+      "path": "server/document-reader.test.py",
+      "sha256": "adf9b96b586b7d420f1ba17d7db44a393979769c9750f7c98083c6337465b758",
+      "scope": "targeted sections and imports"
+    }
+  ],
+  "sourceInventory": {
+    "denominator": 211,
+    "mapped": 114,
+    "unmapped": 97,
+    "entries": [
+      {
+        "path": "index.html",
+        "sha256": "91ed8ae874790d21611b4f07d807aa7902c7a02b9dd2c062ac5ad3209c874c61",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/package-lock.json",
+        "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/package.json",
+        "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/scripts/smoke.mjs",
+        "sha256": "ffad404ec2016ec9913d57b44fd85de15e370022359e050a8df4577d6b5fa968",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/activity.mjs",
+        "sha256": "cfe58234765c3d68406a6bf63d6992a3aaa8ca3d6111cf4ece9ee88321e65b00",
+        "moduleIds": [
+          "CORE-15",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/command-progress.mjs",
+        "sha256": "6054bb023a58aa6ecafee58ccba7f21e708fb4a78e04b4d2c4c1473b94ca0da1",
+        "moduleIds": [
+          "CORE-15",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/config.mjs",
+        "sha256": "f658c20eb1280c5c335571bf4893f5e25a1a708db57680e19ab1fc31239a60b6",
+        "moduleIds": [
+          "CORE-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/errors.mjs",
+        "sha256": "bff01f8874ec1bd34a6d2e9ea1fa5fcff379a006d7a3f8e8ba1ef61ac3ad3c10",
+        "moduleIds": [
+          "CORE-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/gemini.mjs",
+        "sha256": "90a267c4371bc01aa20c1e51a68eb9f642fae72109a6b507022e8cf64576cc18",
+        "moduleIds": [
+          "CORE-01",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/index.mjs",
+        "sha256": "b0ce1ef692e375263e4251400c821622c30f9022ed20ff6cac2b4584462482e5",
+        "moduleIds": [
+          "CORE-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/sandbox.mjs",
+        "sha256": "e6186c4708f01fc00cea3023ffe3ec6d50320daeeb149f484eae6a23b1b5b2bf",
+        "moduleIds": [
+          "CORE-01",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/src/task-pool.mjs",
+        "sha256": "7ea0c9b199bdc5107c7e8ec5e952a57080441c5e4961006ef916c8f86974ebea",
+        "moduleIds": [
+          "CORE-15",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "integrations/test/concurrency.test.mjs",
+        "sha256": "fec6df52d5305e8940054b86b3eaf5a6ea7b077faf43d1856edace604178ac9f",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "integrations/test/gemini-limits.test.mjs",
+        "sha256": "919324021efc9f3144028b59eb11d58178df236dae562edad6f3cc949ef75f1b",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "integrations/test/integrations.test.mjs",
+        "sha256": "18cacf081a9b611763891505357de2cdc1864d870f3de13b41b311b879b98240",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "ff0beaeb71a44aea24646852abab25475bf1cfbe8d50260066cdab8253c701c9",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "package.json",
+        "sha256": "df1b332174bf17b86f867ea45548c437c2b3681c5d27bb4046ddf65c3b47b7bc",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "public/gspec.svg",
+        "sha256": "6f4f4bf8dcf4a1bb1ab35269eecfea6855d04b9d45875e500809ea874347fc1e",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/build-dashboard-chart-runtime.mjs",
+        "sha256": "0da4c486231b9b72f73dbe291b75dcdef8a1dbaff766d80d2e754585a854c6bf",
+        "moduleIds": [
+          "CORE-18",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/copy-pdfjs-assets.mjs",
+        "sha256": "2e8ad9b52b8f31ab642d4077b79d3727b98c2387b321cc7360fc479b147f7fc3",
+        "moduleIds": [
+          "UI-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/dashboard-chart-entry.jsx",
+        "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0",
+        "moduleIds": [
+          "CORE-18",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/dev.mjs",
+        "sha256": "eaf12aef9fb47c17a64d114d43e754c8e3ac4bb90c05e5b4cc025c192695de34",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/ui-qa-dashboard-observe.js",
+        "sha256": "f98c09933872d69af5d16eece4cd86ca0eb241614a2a94943ff37713edd8349c",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/ui-qa-observe.js",
+        "sha256": "ecae7b60fab0de12344bc911114031d5712829faf4f134f4e7d1b0c168df0485",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/verify-criteria-first.mjs",
+        "sha256": "675fea5890ec5660436acef42f088d68fe425a25c3653b2bf4e6b5e2786ff7a4",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/verify-golden.mjs",
+        "sha256": "f1b106c3084e715358af86dcbcad2890d19ed476fa7800985c6f9654c28de551",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/verify-hierarchy-guards.mjs",
+        "sha256": "26c5defea4ee86d38038038b411dbd9b13300bd214bb7fa1b5d323442cfc30c5",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "scripts/verify-xlsx-target.mjs",
+        "sha256": "0e3388ec1df98b6f7fde1ab119f2345d60460494d8eabffc1e15b80f872ce627",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/README.md",
+        "sha256": "4073972b958cb5c0964afd7c986b9e663c5dd6a5d70f325d11f7a94a89181c37",
+        "moduleIds": [],
+        "kind": "source-readme"
+      },
+      {
+        "path": "server/activity-observer.test.mjs",
+        "sha256": "4cde5c287156ff74e4dd786d6e98b6ebbc3df2cd9055244beb79e6eb2ecaf803",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/activity-scope.test.mjs",
+        "sha256": "d7c71418304ee26a164b39e6078ad8f1625ef160f695bf9e756c76c448d50dd1",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/activity.mjs",
+        "sha256": "f3049e62dc8660fa1f7dada649fa0cfe137dd65a6cfb7b9cadad0dc7c1487bc6",
+        "moduleIds": [
+          "CORE-15"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/activity.test.mjs",
+        "sha256": "e5c25ae9bd063388037662cfcc05cbd3fb4c232779c91f276e2c271190bb9bda",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/app.mjs",
+        "sha256": "2637178b138d811d4db854e4bb8fda78431a759755b29fabf97a9614451f31c7",
+        "moduleIds": [
+          "CORE-02",
+          "CORE-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/app.test.mjs",
+        "sha256": "6cb3599a27a0fc7aa7c59e2377a8f02db25ba33e81166f3e8092c66edce5bbb6",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/assets/dashboard-chart-runtime.js",
+        "sha256": "d1b5ad04f2f0ac7716249e8c7e8d6ff0cfe2944a0324cf417db7823bd5d3ea5d",
+        "moduleIds": [],
+        "kind": "generated-runtime"
+      },
+      {
+        "path": "server/command-progress.test.mjs",
+        "sha256": "cb9118e269279001a51385e355ffdc910e14ecf51eef68e29382e2795ba0ebcb",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/conditions.mjs",
+        "sha256": "4c2ed4769dbccf6ab03eb5c57227ba527fec343f27fb327a5ca2e90f0a443246",
+        "moduleIds": [
+          "CORE-09",
+          "CORE-12"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/conditions.test.mjs",
+        "sha256": "0cc5bfeb133dbbd8ec25f37525ab2ec04e91ac00b0dc60f7ae1c060596ed8aa6",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-adapter.mjs",
+        "sha256": "ce36313a33a5dfc3744716ade693667c2b46aa08f1c9148a8bc98e5a7334d0cb",
+        "moduleIds": [
+          "CORE-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-adapter.test.mjs",
+        "sha256": "9c31c5409adc9738b2289df2c3c988af0fa4690aa43a3f9d615e1fde0f20b442",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-approval.mjs",
+        "sha256": "148eed7d317ecc80b0b878de652bc5f81389fa9807dc7adf518f189ef909f014",
+        "moduleIds": [
+          "CORE-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-approval.test.mjs",
+        "sha256": "247c0efb3be909ec13b86579b5d8c61755995de3710aef9283394161e5528f9f",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-context.mjs",
+        "sha256": "0c3ca9c9c34e0e6bacaf9b405f08d44f14577d67b333e02358cace2eeaa3e624",
+        "moduleIds": [
+          "CORE-08",
+          "CORE-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-context.test.mjs",
+        "sha256": "4c329045c635842dcf2cd86d766b9459f9a994422402fc4aebf33ad66a30df50",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-eligibility.mjs",
+        "sha256": "167bdf1475baf053de0a70f311d9df8007138e685721f5e30b8bd3292c995475",
+        "moduleIds": [
+          "CORE-07"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-eligibility.test.mjs",
+        "sha256": "724e215ef9958726f78658ff98e1ca96022c4f91190b2ecb9b1f63f29405ddba",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-generalization.test.mjs",
+        "sha256": "7a5c2585639a0078245a20612c4945a04cddfeae4d19718da58bef7f50f6ad5d",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-layout.mjs",
+        "sha256": "1c155d827d3e830b00ea57e584d4bed7a50b62553be30e8fa3129539a706798c",
+        "moduleIds": [
+          "CORE-08",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-layout.test.mjs",
+        "sha256": "689eebd942a00b6ad9332bef6ca06eff86af41683aa67468ddcd60555e26fe77",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-matrix-regression.test.mjs",
+        "sha256": "e0dfa5c1d83c735d9f1f8bfd8f7661b409b486448f3f24f7a6668f56539bb908",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-normalization.mjs",
+        "sha256": "83cdd7a880b0a97320331f8cf13d70f996c999a106c4a82e178be858f2821a16",
+        "moduleIds": [
+          "CORE-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-notes.mjs",
+        "sha256": "77f8a3530c84320fff740489241c02922d2808257d1fe93b2c31580d97dd72c1",
+        "moduleIds": [
+          "CORE-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-notes.test.mjs",
+        "sha256": "50cb86bff9548c03a74d076d4fc602ae7dee864fd5cacb77d271fdc163970e36",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-revision.mjs",
+        "sha256": "906d61ab0f20de493c24df8170098d5fa5522130c743b418ddf22b96a0a5809f",
+        "moduleIds": [
+          "CORE-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-revision.test.mjs",
+        "sha256": "da96d6479bddde04e704d0e86473f78407becc2dafe57a2e6ef6d404ac210337",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-sandbox.mjs",
+        "sha256": "929b02ad1e7ec59e33df4dba1e59e66a5de15525c5e8b9dc2b00fb94aa3b8865",
+        "moduleIds": [
+          "CORE-08",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-sandbox.test.mjs",
+        "sha256": "ffd7572999c0cabe4d420ffb3ba51b144c5a352e8c656893e2991b7507a23655",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-table-sources.mjs",
+        "sha256": "2969d09363c65338afa816ceefff8099a72471818266ab7aa55fff60b13d81af",
+        "moduleIds": [
+          "CORE-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criteria-table-sources.test.mjs",
+        "sha256": "e5634fb98c7d3d1d2755dd7a7a18fa5183decd32ec4af7ca454981b84ea5daab",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/criteria-workbook-profile.py",
+        "sha256": "48ba501da57bb8b52ae4cef5831c8508391cdd2649402472c908fe655e87008b",
+        "moduleIds": [
+          "CORE-08"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criterion-applicability.mjs",
+        "sha256": "fe2cee9904a0606540bcab4ed403a33cb2a2f3861e8f8ebd5a7a2117cf4446a1",
+        "moduleIds": [
+          "CORE-12",
+          "CORE-14"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/criterion-applicability.test.mjs",
+        "sha256": "0a5c835c990bb8d24a0cd2523ffbfe5bea17e1f751d5fd0db3109dd0553242a0",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/dashboard-bridge.test.mjs",
+        "sha256": "1e940e88655bcf5333b5e29eb480090ab223a3598fcee8ffe97be87453136bad",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/dashboard-chart-runtime.mjs",
+        "sha256": "2a6c08426d1ced7fccdbf925724b24307bb4f44f58fa7275a5a3180b1844b987",
+        "moduleIds": [
+          "CORE-18"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/dashboard-fallback.mjs",
+        "sha256": "2227d62a50b914ccf63b026b503f1e7e7f4a6daccb64c6e64655c7ea48092a74",
+        "moduleIds": [
+          "CORE-18",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/dashboard-fallback.test.mjs",
+        "sha256": "35db9bd8b1504dfa22d50f49e27d66342aeb7a196e87c1b7301fbdd52b393034",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/dashboard-plan-validation.mjs",
+        "sha256": "057962ccee467d9bbe5dc149ef66c2cd3df6c7db6f58ef63709d3f224f510765",
+        "moduleIds": [
+          "CORE-18",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/dashboard-plan-validation.test.mjs",
+        "sha256": "0ccac5e9d86570058ab9dbaa8b1ab454a913c383aea08926e6582a82bfae38e1",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/dashboard-plan.mjs",
+        "sha256": "442ace1fbdb82705ef851f2d39f0cd92e0b66d3efcdb95b2ea614e7ba51485e4",
+        "moduleIds": [
+          "CORE-17",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/dashboard-plan.test.mjs",
+        "sha256": "84526f83fa1c6ffbd6d94aca0fe2a018bd79a8a382cc0b4ec2a8777cfe3b9023",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/dashboard.mjs",
+        "sha256": "8a556f46253e5de0cc35ba52f8f78ddb1c034212cd56123c08c73408ab782f71",
+        "moduleIds": [
+          "CORE-17",
+          "CORE-19",
+          "UI-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/dashboard.test.mjs",
+        "sha256": "f4aa418aaf425d81e1f3075eea9d0244e9cf2e6c59bd4bd03314b5d7bee0c68e",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/document-activity.test.mjs",
+        "sha256": "25bb645eea031e65187c0ac8198dc1162abd983339fbffb6c1dc5cc857d6f72c",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/document-quality.mjs",
+        "sha256": "ba750d2c50f4cb2e4e22bd0e34e6ac9824cd74e2c9e97ef3d08e18a1322fbb9a",
+        "moduleIds": [
+          "CORE-05",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/document-quality.test.mjs",
+        "sha256": "922807aeddb107b2d5f5f8674c2b59fde1172cc2a3ce097279971a77b4eb534c",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/document-reader.test.py",
+        "sha256": "adf9b96b586b7d420f1ba17d7db44a393979769c9750f7c98083c6337465b758",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/document-requery.mjs",
+        "sha256": "98722f89aec9a4bf705b6c94fff39cb0cede088c37d044f1e4a7a08a07a19c3e",
+        "moduleIds": [
+          "CORE-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/document-requery.py",
+        "sha256": "5f58461ad459674df6020c6c2d7446c703c45a554ca1992f5c78309fe448a858",
+        "moduleIds": [
+          "CORE-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/document-sandbox-resources.mjs",
+        "sha256": "afcaab6e136bf566cd6dd693e0e624a22a29cad64029e5cd9408b8e911e650de",
+        "moduleIds": [
+          "CORE-04",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/document-sandbox-session.test.mjs",
+        "sha256": "0e244465fe64694c7eb3bdbda790ff3f9f7075bf4e3fc8af02c678b2d6793e65",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/documents.mjs",
+        "sha256": "3c9d0bb1e513f010564f05be189fbf2a640b44ce198c004a8b5a4c834ef926b3",
+        "moduleIds": [
+          "CORE-02",
+          "CORE-03",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/documents.test.mjs",
+        "sha256": "c024f622995505a68e3741e04a439711f7ae71e569d8393a87689575bf1ad608",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/field-extraction.mjs",
+        "sha256": "2c57d20ac2056d5948e0327d2f985a656fb216b32cebc7a1019efd2f25fc0cd1",
+        "moduleIds": [
+          "CORE-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/field-extraction.test.mjs",
+        "sha256": "7a56c0a1c893cf8fbad453a65aac8ad201694284838fc47af9d918d223b4f277",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/golden-catalog.mjs",
+        "sha256": "d6964dd32397e5a5863df140d6d5492dfa2599a5fd6042b6faa9d1d36feaf323",
+        "moduleIds": [
+          "CORE-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/golden-catalog.test.mjs",
+        "sha256": "097b5d18178da4c361e27daffe7d4456643cc52edf62f65286641066e97493cb",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/handoff-queue.test.mjs",
+        "sha256": "3464fb15e09679d2ab90a47e50f4e3ee71d990bbbc5582160246a7146f4fc585",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/index.mjs",
+        "sha256": "a60463b2381a9ce3776579aa7efa401196530d90edfc0767a35bffa1dbb5e28a",
+        "moduleIds": [
+          "CORE-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/ledger.mjs",
+        "sha256": "a0e3e5183cbe281bbee70c1a33cae53e92ebde43a9897c24d3fce80d211f8eab",
+        "moduleIds": [
+          "CORE-16"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/ledger.test.mjs",
+        "sha256": "db2048b81137872ef0a572246641d80ea25ef0d342d32e81fdab8d37d44ac69e",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/missing-result.mjs",
+        "sha256": "c95403093f7d1a51f8f847b0e8904b6012ec5d71522457cac28efdf116414423",
+        "moduleIds": [
+          "CORE-12"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/missing-result.test.mjs",
+        "sha256": "64a90f7e6c4284dbdf8c730d53caebd8368e7fb385be37aaa3e1beaebd388e4a",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review-activity.test.mjs",
+        "sha256": "54f87cb3e35f5a92615407a59a137bff8a94fd4fbd2b7cee6113cb5d4132bf5a",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review-state.test.mjs",
+        "sha256": "4e2313d936f5c089652116bc175e32ad91d7fb265466366d14d3bfb52fda5ecb",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.classification.test.mjs",
+        "sha256": "22b09e96c28603b7536b19b0fb543133d095d0cdc801707ad901010401c55c11",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.eligibility.test.mjs",
+        "sha256": "948eac062a269594916be30d509f9c80de8bb8161cd27d53a89e65df283c15a7",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.integration.test.mjs",
+        "sha256": "542a0de27af426bd722a168a8442ee6419fb63ecd4645c2883fb5e91889f2bf9",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.mjs",
+        "sha256": "51715eabc9345480e9499400d714da5ce2bd2d4b7ce11eb0e1fcb05ba28bd8e5",
+        "moduleIds": [
+          "CORE-02",
+          "CORE-07",
+          "CORE-09",
+          "CORE-10",
+          "CORE-11",
+          "CORE-12",
+          "CORE-13",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/review.pipeline.test.mjs",
+        "sha256": "ef33e61668c74dbe61905d4328e98b8659053bc46e9b3d389f0455a2e65ef1b0",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.test.mjs",
+        "sha256": "8bf0ffa38ebd3cb2338f854ddb512fa9c3785f7642baa2907f3900160591075f",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/review.wizard.test.mjs",
+        "sha256": "cd64ccb74d9a3116709bcc9055dee8a88698ceb2fd20ba541f01f7f493086d8f",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/sandbox-document-reader.py",
+        "sha256": "35a30c51117b391b6fe8817b6eaba6033a6255a2abbb720c1327a61b1dfc29c7",
+        "moduleIds": [
+          "CORE-04"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/sandbox-documents.mjs",
+        "sha256": "00466f1edd8ac897529920d5333588d684271580dcaa5a1f2a284976c7d43038",
+        "moduleIds": [
+          "CORE-04",
+          "CORE-05",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/sandbox-documents.test.mjs",
+        "sha256": "4c6561533e4fc326fbedd2a4aca7aa4b3dc2a0a35a9140e56182260591602ba0",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/spreadsheet-xml-compatibility.mjs",
+        "sha256": "cadf5fa81f3764c2100a06755d4a75f32f62487b6ad95ad2e6fe1c847e7df1a8",
+        "moduleIds": [
+          "CORE-03"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/spreadsheet-xml-compatibility.test.mjs",
+        "sha256": "ee28fa5867c4c821e775db8d9a934c18138591e69cce59229b9f825b1d6d8bff",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/table-records.mjs",
+        "sha256": "daaf7b66209cb582f6b2d64baca50ad948be5bba9899f4b218663ab25529555a",
+        "moduleIds": [
+          "CORE-11",
+          "CORE-12",
+          "CORE-19"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/table-records.test.mjs",
+        "sha256": "38dd7c1bcccecd592523e7bedb8e30634b0ee2fdca8bda1fa243ebbbb799d53b",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/task-pool.mjs",
+        "sha256": "7335a7856684c66ebd4e796e76b9166c2f107a4b973dddb77a8ce365353ddd4f",
+        "moduleIds": [
+          "CORE-13"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/task-pool.test.mjs",
+        "sha256": "5e4825bfee4bb8fa5ec374cefe88d64bce3fce37b30a7d3fc842cc6c3fe6110a",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/test-support.mjs",
+        "sha256": "9d7903a9cb5e2a07c0e77b0d06ac6a2bdddcd399ac732833729fdfd5d851cad0",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/use-review-commands.test.mjs",
+        "sha256": "f5c2138b1729ce26615f9f33dcea38296cb469ce8af0273748245364a034a5da",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/visual-quality-judge.mjs",
+        "sha256": "382c6838b542b6fd946a6008e312f794c140a5cf78e4186a50c9cf39f79fb69f",
+        "moduleIds": [
+          "CORE-06"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/visual-quality-judge.test.mjs",
+        "sha256": "a33a09f9bd5ab7e12bd12d8f670db0922a77ef272b72a48f94df1dbfb3a862da",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/visual-transcription-alignment.test.mjs",
+        "sha256": "dd49c253bd4492795702d5b378d377e812471f47726e7b9e7a6a759d23839654",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "server/visual-transcription.mjs",
+        "sha256": "954d5fb87589f7a99304b7c648370a96893911cada2841cf4ffc9101e3ad8d61",
+        "moduleIds": [
+          "CORE-06"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "server/visual-transcription.test.mjs",
+        "sha256": "3532c1c429b9c0954dda917633936f8a84838fbeadff6be98b878dbd38ca1695",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/App.tsx",
+        "sha256": "76748d69a5c9b05efac7c006b21e9fc027f9a5b78da155021ecbb6e448fda8b4",
+        "moduleIds": [
+          "UI-01",
+          "UI-04",
+          "UI-18"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/activity-observer.d.mts",
+        "sha256": "fe1b78c5037cb1ef86356fe7f47b38d5e6da572a097733d404eb30372d1bc9aa",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/activity-observer.mjs",
+        "sha256": "176f53701067d015efe9e651b0a1778be29fcd93e7f2c043adf2a5824a67154b",
+        "moduleIds": [
+          "CORE-15",
+          "CORE-19",
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/activity-scope.d.mts",
+        "sha256": "25a44dc4a0e24a0843006b85cfb96f31838cde408352ca72683254f49370f656",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/activity-scope.mjs",
+        "sha256": "e555aff13915231df34e257f98c727c5b0709704d1076317a9240cfdbdf8a6a8",
+        "moduleIds": [
+          "CORE-15",
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/api.ts",
+        "sha256": "f955820f7d311fefa37e8804e536764f83fd4144bfc2447ef9b00b3e98243de3",
+        "moduleIds": [
+          "UI-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/cinematic.css",
+        "sha256": "58578d5fc0c8b92301623ccf210fc10797b08affdd2a28f0334a657e9e9d2a63",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/CriteriaConfirmation.tsx",
+        "sha256": "50b5febf15dd8f2971f9de6366b785906f0df0afb5df556c3b0c0cfcc3f7d3b0",
+        "moduleIds": [
+          "UI-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/DashboardEvidence.tsx",
+        "sha256": "035bab79b8b8b255c95fa9816198702c86ba887dfb9b0bf52593abf31d3edef4",
+        "moduleIds": [
+          "UI-17"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/DashboardModal.tsx",
+        "sha256": "6eae57135c798d1d131a897c12929ad19740c50fe7fe9e8538126e1d7a580089",
+        "moduleIds": [
+          "CORE-19",
+          "UI-15"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/DocumentAnalysis.tsx",
+        "sha256": "2ae679247eef93865e9fe453c33881496caedc36b59470a0bef88d4e3ee5ebf9",
+        "moduleIds": [
+          "UI-06"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/DocumentPreview.tsx",
+        "sha256": "ff8dfa2d86c3074c08b1857d0aa042a056d8971099543828e7b1646c41f82a70",
+        "moduleIds": [
+          "CORE-19",
+          "UI-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ExtractedFields.tsx",
+        "sha256": "e1be20634b43b580adb4957b5eebb7819e92abcadf33874585d6fb9b767599c7",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/FileReviewResults.tsx",
+        "sha256": "adfd0c1b4cc4ff2685e9f8dee8b13331049667147936d978cc26ff11c6b4310a",
+        "moduleIds": [
+          "UI-12"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/GoldenPicker.tsx",
+        "sha256": "cabf656949e98517ccc14934e4dccb0806635346e2295a919266646f664844fc",
+        "moduleIds": [
+          "UI-04"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ItemInspector.tsx",
+        "sha256": "affb2cb6fcd878e58d84487b60b501c5cceebb339154ec59813d5b633a52ae03",
+        "moduleIds": [
+          "UI-13"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/LandingIntro.tsx",
+        "sha256": "c88880740222d93d8ca6fc97df3c5a3e057a263d029bc643feabeae2ad3131df",
+        "moduleIds": [
+          "UI-03"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/LedgerModal.tsx",
+        "sha256": "98e98565a57c1b1c495c9a85db1498598fd267b97e3d628faa1eae318caa571b",
+        "moduleIds": [
+          "UI-18"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/LiveReviewContext.tsx",
+        "sha256": "49ba1c6ef06854817619e895532dc7ee4ecb99ed78f8aaf65f0c48d68c934c16",
+        "moduleIds": [
+          "UI-07"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/LiveReviewFlow.tsx",
+        "sha256": "7dae4912edd2cbc99632e1f220a2fa3c9b2d26a588981fcc2efa825bdd3a59a9",
+        "moduleIds": [
+          "UI-07"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ResultsVisuals.tsx",
+        "sha256": "d1c04661d0209f3032b18c228907b43b23c50fe0d009c3aa86893c16f26680f1",
+        "moduleIds": [
+          "UI-14"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ReviewItems.tsx",
+        "sha256": "583c10523978e01b34bc06d8423f99fd71188665e05ede1206dca7fba1938710",
+        "moduleIds": [
+          "UI-12",
+          "UI-13"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ReviewTheater.tsx",
+        "sha256": "9afd333c72a2abb7d2faad139833ddd2d61d4d22ab88194ca029c6a24008de2c",
+        "moduleIds": [
+          "UI-08"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/SandboxActivityDock.tsx",
+        "sha256": "ff83b20939c49ddbd3078809bd8435938a4103bff89aff31e7f756076f211945",
+        "moduleIds": [
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/SandboxWorkScene.tsx",
+        "sha256": "63df07793c3b66f9e1e9eba02edb56309ade045920c8465636e7d395f39216d5",
+        "moduleIds": [
+          "UI-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/SandboxWorkroomScene.tsx",
+        "sha256": "30299d19b5b0bf1f02d4b8801e6c20ca13e36c1dfe0ae6f11fe0e2d416f2c5d2",
+        "moduleIds": [
+          "UI-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/UploadVisual.tsx",
+        "sha256": "6338bd42e11f73860a293bc7c5ca8f58b1740b5cc3e158eae1a9824a9fb011df",
+        "moduleIds": [
+          "UI-04"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/charcoal-dialogs.css",
+        "sha256": "8ea8f484624a3cb0b8929a77bbdd01ca1790d8d79d44899e43e407eae8970f21",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/charcoal-surfaces.css",
+        "sha256": "799ded7b82495f6e3bba550f503970354effa87e5122adfb68d081984afce95f",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/charcoal-workroom.css",
+        "sha256": "ffae502c5e245199d17023dbca76fd1de1b1eef521531a2fb534e03152f3a906",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/criteria-confirmation.css",
+        "sha256": "5a5ee11724b779476285ef204264b02750da5770f0099cbdf56a704f4f51f7a8",
+        "moduleIds": [
+          "UI-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/criteria-draft.d.mts",
+        "sha256": "42ff9263042ffac8d3268ba326568007819c075ef849f51e92414494b7cf4059",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/criteria-draft.mjs",
+        "sha256": "d1a38daea5f4582ad99b38a013c040499a6ca49e5051a9d995a1e5c61d58202d",
+        "moduleIds": [
+          "UI-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/criteria-draft.test.mjs",
+        "sha256": "87984b58e2b253754f141d2a75a3ac9201d3d734c9c12b637342db6ff64f4bcf",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/criteria-groups.d.mts",
+        "sha256": "19405e9a88a42a02080587a838898506016d49dc214dd4475dee18d38a5d9a5d",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/criteria-groups.mjs",
+        "sha256": "be2e10f45f7c873bf930bb702b6e6aa2fe06100d2b92bcbaccdc0f499c713f45",
+        "moduleIds": [
+          "UI-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/criteria-groups.test.mjs",
+        "sha256": "c1f964a48a6e57e1cf6493eba26e6b53c91d5e805ef268850550ff34191e6d79",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/criterion-preview-evidence.d.mts",
+        "sha256": "231befbd44588e5dae9994a496cd4b55c9aa7fe9b732e0bc63bbe942c004cd62",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/criterion-preview-evidence.mjs",
+        "sha256": "594ca95fcdc391223a424ac87ab1032fbece0ee02fa7112b67dc65c37864dbc0",
+        "moduleIds": [
+          "CORE-14",
+          "UI-05"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/criterion-preview-evidence.test.mjs",
+        "sha256": "2c267f0df4c9b03256c8297ac8d9fd99c49685a34af188250bb29ed01b55b859",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/dashboard-bridge.d.mts",
+        "sha256": "998e1d5fa1a9a9e1d2f1d8fe1dbab5c9e5eca54d5c51df4c55f30c633b91b68b",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/dashboard-bridge.mjs",
+        "sha256": "b3c01d4552b7c78b7fc9c63af3b0321aac40016ba33aaf919cb0380629a129f9",
+        "moduleIds": [
+          "CORE-14",
+          "UI-15"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/dashboard-evidence.css",
+        "sha256": "e5a8ce6a08776aa842529fcae926765f5353e197a9a3fa89b3d50131b4014763",
+        "moduleIds": [
+          "UI-17"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/dashboard-file-scope.d.mts",
+        "sha256": "15b45cc2fb4745c832a66bd101deddbbe319ef0ca27afe3c073f1d082fd17e1b",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/dashboard-file-scope.mjs",
+        "sha256": "458fd6ebc635c5e211e06ee523d25db19bd9c4ddc08733ed31ad6d68a9faab2c",
+        "moduleIds": [
+          "CORE-14",
+          "UI-17"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/dashboard-file-scope.test.mjs",
+        "sha256": "95663210d243b92b50d32fb31f76b00c5fdd96e4f68b16b40b0fe249fd84fc0a",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/dashboard-modal.css",
+        "sha256": "9184ba41f0c05d0c3455d44940e22cb33948a01931795646a218a051ca3f1268",
+        "moduleIds": [
+          "UI-15"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/dashboard-sky.css",
+        "sha256": "6b72e5a9a3899d8c8379f1a642d71d9f2f2112671a582834c6b0e2ded882954b",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/dialogs-sky.css",
+        "sha256": "b711d222dc82a2954ce5f84451f5e1d0838a54f5d5595123b177bf51c6c3d60b",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/document-analysis-sky.css",
+        "sha256": "4cb4ae3dac9531c61d10ec6fb8ecad7ea9d101e178414d55f5bde425058172d2",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/document-analysis.css",
+        "sha256": "0a42a4f3d4e25111c454335f3e1111513f614d2641296e80348a73735e1979c8",
+        "moduleIds": [
+          "UI-06"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/document-preview.css",
+        "sha256": "a7f75fc14a03ee2c8756b4ca9510b672de1a6d69d2425be9cdaba392fe62acf9",
+        "moduleIds": [
+          "UI-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/extracted-fields.css",
+        "sha256": "f99593e1b83ce74c04f31bde900fc05d3f1c34cc2d59fcad4892c5cd4c03b62e",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/file-review-model.d.mts",
+        "sha256": "5ef75f87ce96d3332d2f9b74eaba02ee957c8bfff3c92604673c612b50e24d8a",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/file-review-model.mjs",
+        "sha256": "2caa91c4ff649c5d5139245297bbaf82b201d72913c342b65ff4e97ab691b271",
+        "moduleIds": [
+          "CORE-14",
+          "UI-12"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/file-review-model.test.mjs",
+        "sha256": "5e803e13a5f3b925a67950a2445a137121c45554ae68f30e36cdd8f3fb4dbfdb",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/file-review-results.css",
+        "sha256": "d4a6ecad8dc95bc16b640e1a305d2253571f0f1ec904a3c3229fdbfb29918cc3",
+        "moduleIds": [
+          "UI-12"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/golden-picker.css",
+        "sha256": "e0b2389ecfee636a0556a79da06f92b510f2668e314343781598138a8b9473bd",
+        "moduleIds": [
+          "UI-04"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/item-source-highlights.d.mts",
+        "sha256": "d767813792ac36ab997621cbf772b7ce388364dcb223f6accd03278c604eb563",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/item-source-highlights.mjs",
+        "sha256": "339afe338f4d2277b2e266b0d938e1c67f07e1829e386d5f683fef80264fd63a",
+        "moduleIds": [
+          "CORE-14",
+          "UI-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/item-source-highlights.test.mjs",
+        "sha256": "111e1db5462f758f69061dca4cba82cf9f21ca8afa941ef09b85d53356b417bc",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/landing-intro.css",
+        "sha256": "875bf0ce961089d319a6517c7e04049050675b28c3c249f30cb52160ce9202b0",
+        "moduleIds": [
+          "UI-03"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/ledger-modal.css",
+        "sha256": "a0bd7074d13ba87d72cd7be791209d94fad91133c5acc2cb4b6aa21e01356fba",
+        "moduleIds": [
+          "UI-18"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/live-review-flow.css",
+        "sha256": "6be5dba88366608a8b05de58c9798e790a699805082e843e5767703685ffecb8",
+        "moduleIds": [
+          "UI-07"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/results-visuals.css",
+        "sha256": "d089a37804ba0f2529cff6d01d82c5d901ed54195d38189d9f90f506d025a14b",
+        "moduleIds": [
+          "UI-14"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/review-sky.css",
+        "sha256": "459032aca99ab9e67e68525db24dac0ce971127708c8370e86592a965aac6369",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/review-theater.css",
+        "sha256": "620e3f326fcf042ad516ae32e3f563617320c5740759c69c1cdd4a35ffc6b340",
+        "moduleIds": [
+          "UI-08"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/sandbox-activity-dock.css",
+        "sha256": "c78957bcbac88980bc059c8f66fdd50a84efa77ac9b56ce09103a1232847c81e",
+        "moduleIds": [
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/sandbox-work-scene.css",
+        "sha256": "cfab50561aa2daa426bb181755abc87c1b8a78c650ca146189dbcc22696ecff7",
+        "moduleIds": [
+          "UI-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/sandbox-workroom-scene.css",
+        "sha256": "e618b83bf409d0be539876dbb501c7df28226211e2199baa6db1db612c8eb11f",
+        "moduleIds": [
+          "UI-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/source-highlights.d.mts",
+        "sha256": "ef6fc215465d318b8d5967894a8092d67e2bf0e1c8a62ab1008db91f73c2e579",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/components/source-highlights.mjs",
+        "sha256": "767b13c8d40e618e2dd703f602ddc3963f75776ba367323ac34165bb3bd57859",
+        "moduleIds": [
+          "CORE-14",
+          "UI-11"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/source-highlights.test.mjs",
+        "sha256": "1285caa918a14544cb66078ee738d856cacf5c923a9cd559d5be33e68d1e5dfe",
+        "moduleIds": [],
+        "kind": "test"
+      },
+      {
+        "path": "src/components/theater-sky.css",
+        "sha256": "8b645ea2bae87c83e8ee80033353980256bf7999567fd0fa2f07339ba85f07d5",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/workroom-current-operation.css",
+        "sha256": "a706f84727f0b53c6955996b0369b9b8bb7f69904702bd85beb74527efd28121",
+        "moduleIds": [
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/components/workroom-sky.css",
+        "sha256": "f9b8c39949df8c8da8ddb852b5a322c2549baf5f84a0ce7919f7ffee01485474",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/display-names.ts",
+        "sha256": "ec98433e6fabd701b6e61e9bd8bb961ddf254d178389dfbd5a31f1a8b711cbe6",
+        "moduleIds": [
+          "UI-09"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/format.ts",
+        "sha256": "b36250fa5368ab35033bfa860b112615e90b55fb0805c9824a30d2babf031ec6",
+        "moduleIds": [
+          "UI-13"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/handoff-queue.d.mts",
+        "sha256": "78eeee9cf2eb6fcac1dbe5b665329adf4bd095aab5aaaf361d1299b7bc195dff",
+        "moduleIds": [],
+        "kind": "type-declaration"
+      },
+      {
+        "path": "src/handoff-queue.mjs",
+        "sha256": "c34e812cf26d168128bf99f33aba0ef6b90bf9673cd490e8f03d3f72396ffeb6",
+        "moduleIds": [
+          "CORE-15",
+          "CORE-19",
+          "UI-10"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/main.tsx",
+        "sha256": "e837fd2cfde60806abc3bce390baa76a858a48a9b59a346ea56cbfc275d28abf",
+        "moduleIds": [
+          "UI-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/motion-preference.tsx",
+        "sha256": "df0d0d8a4f34c67e26df3c6165255197dbfe0f48d07eedcc4cf677643cb2ff50",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/motion-system.css",
+        "sha256": "946d7ada5fa65e901f9a5e03b3dcf1ece992aede7b5d0248a42850017ef6130c",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/presentation.css",
+        "sha256": "1342f52acce5694d185cd8bdd29c2d1610f845b24f483368b5bf0349fbfaca41",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/review-state.ts",
+        "sha256": "003b7d8b623d9fa0b2b75cf45ebb4467f473b390c08e983e21f04eab9cf36c33",
+        "moduleIds": [
+          "CORE-13",
+          "CORE-19",
+          "UI-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/styles.css",
+        "sha256": "3400a2eae71efc629379310791908022c2a2a454cf493f21e5ea57ae87665927",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/types.ts",
+        "sha256": "11cd7e2b6b6e6320686ae8478a768bceef93811aa3eeb00ecd00678d8e29ae1c",
+        "moduleIds": [
+          "UI-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/useReview.ts",
+        "sha256": "ccd5bde56816b45d667a12351be854162702159781da18929075995fd831a518",
+        "moduleIds": [
+          "CORE-13",
+          "UI-01"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/workflow-polish.css",
+        "sha256": "a4da9bfaaa204a088155ad9ab125a8665c99487aa1dda5cbf0a81dcba4bc15e9",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/workflow.css",
+        "sha256": "5de6c1bd6ad15d3fb8cfa61143bc3aed529a46e7eb9e5a0c223a6d2040dc66bc",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "src/workspace-colors.css",
+        "sha256": "e9ccf1616cd8f97d5cdb6268bc0a9d5193ce9a6bb0bb954e1f9c792cf76b7378",
+        "moduleIds": [
+          "UI-02"
+        ],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "69113c403e8dc40970b465a3f3cbd72b87107bd8392327b12c9c7a0fa8a293de",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      },
+      {
+        "path": "vite.config.ts",
+        "sha256": "a62ae575b8979ee75047080dfaaedd8e606cef4fc409e3d4882c8ee4c507f75a",
+        "moduleIds": [],
+        "kind": "implementation-or-configuration"
+      }
+    ]
+  },
+  "environmentCopies": [
+    {
+      "source": "package.json",
+      "copy": "architecture/environment/root/package.json",
+      "identical": true
+    },
+    {
+      "source": "package-lock.json",
+      "copy": "architecture/environment/root/package-lock.json",
+      "identical": true
+    },
+    {
+      "source": "integrations/package.json",
+      "copy": "architecture/environment/integrations/package.json",
+      "identical": true
+    },
+    {
+      "source": "integrations/package-lock.json",
+      "copy": "architecture/environment/integrations/package-lock.json",
+      "identical": true
+    },
+    {
+      "source": "tsconfig.json",
+      "copy": "architecture/environment/templates/tsconfig.json",
+      "identical": true
+    },
+    {
+      "source": "vite.config.ts",
+      "copy": "architecture/environment/templates/vite.config.ts",
+      "identical": true
+    },
+    {
+      "source": "index.html",
+      "copy": "architecture/environment/templates/index.html",
+      "identical": true
+    },
+    {
+      "source": "scripts/dev.mjs",
+      "copy": "architecture/environment/templates/scripts/dev.mjs",
+      "identical": true
+    },
+    {
+      "source": "scripts/copy-pdfjs-assets.mjs",
+      "copy": "architecture/environment/templates/scripts/copy-pdfjs-assets.mjs",
+      "identical": true
+    },
+    {
+      "source": "scripts/build-dashboard-chart-runtime.mjs",
+      "copy": "architecture/environment/templates/scripts/build-dashboard-chart-runtime.mjs",
+      "identical": true
+    }
+  ],
+  "probes": {
+    "lateResultProbe": {
+      "timeoutMs": 5,
+      "adapterDelayMs": 75,
+      "state": "passed",
+      "exitCode": 0,
+      "signalWasAborted": true,
+      "errors": []
+    },
+    "acceptanceMetadataProbe": {
+      "emptyPackageManifest": true,
+      "providerCallTypes": "string",
+      "heldoutSeedCountType": "string",
+      "status": "ready_for_independent_verification",
+      "errors": []
+    },
+    "probeSha256": "94a94c2a5e7b772262f1862714fbcc32a5c4c11a020397561674ebb2280eb5cf",
+    "resultSha256": "f70f1c2094002730e2a58e21b61f72c7a5f4df4ecafa3a80af942bc076fceb24"
+  },
+  "population": {
+    "priorModules": 37,
+    "priorQuestions": 203,
+    "proposedNewModules": 2,
+    "proposedNewQuestions": 12,
+    "oldQuestionsRegraded": 0,
+    "scope": "Only owned additions are graded here; no inference that other 203 questions pass."
+  },
+  "metrics": {
+    "clarityPercent": null,
+    "ambiguityPercent": null,
+    "reason": "Independent source-blind evaluator owns clarity; no source-aware substitution.",
+    "accuracyPercent": 58.333333333333336,
+    "numerator": 7,
+    "denominator": 12,
+    "unresolved": 5,
+    "modules": [
+      {
+        "moduleId": "CORE-20",
+        "questions": 4,
+        "passed": 4,
+        "failed": 0,
+        "accuracyPercent": 100,
+        "unresolved": 0
+      },
+      {
+        "moduleId": "CORE-21",
+        "questions": 8,
+        "passed": 3,
+        "failed": 5,
+        "accuracyPercent": 37.5,
+        "unresolved": 5
+      }
+    ]
+  },
+  "additions": [
+    {
+      "id": "CORE-20-C01",
+      "moduleId": "CORE-20",
+      "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?",
+      "status": "pass",
+      "evidence": [
+        "environment/README.md",
+        "environment/versions.json",
+        "environmentCopies:10/10"
+      ],
+      "rationale": "패키지/lock/config/script 복사 10쌍은 byte-identical. runtime·scaffold 한계도 명시되어 있다."
+    },
+    {
+      "id": "CORE-20-C02",
+      "moduleId": "CORE-20",
+      "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?",
+      "status": "pass",
+      "evidence": [
+        "environment/README.md",
+        "environment/templates/scripts/copy-pdfjs-assets.mjs",
+        "environment/templates/scripts/build-dashboard-chart-runtime.mjs"
+      ],
+      "rationale": "자산 스크립트/대상·es2020/IIFE 설정이 원본과 일치한다."
+    },
+    {
+      "id": "CORE-20-C03",
+      "moduleId": "CORE-20",
+      "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?",
+      "status": "pass",
+      "evidence": [
+        "environment/README.md",
+        "environment/templates/scripts/dev.mjs",
+        "environment/templates/vite.config.ts",
+        "server/index.mjs"
+      ],
+      "rationale": "포트 5180/8787과 PORT process.env override, 두 child 종료가 소스와 일치한다."
+    },
+    {
+      "id": "CORE-20-C04",
+      "moduleId": "CORE-20",
+      "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?",
+      "status": "pass",
+      "evidence": [
+        "environment/README.md",
+        "decomposition/core-tree.md#6",
+        "integrations/scripts/smoke.mjs",
+        "package.json"
+      ],
+      "rationale": "smoke는 실제 provider; config-only는 설정; Python은 별도 명령임을 문서가 구분한다."
+    },
+    {
+      "id": "CORE-21-C01",
+      "moduleId": "CORE-21",
+      "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?",
+      "status": "fail",
+      "evidence": [
+        "decomposition/core-modules.json",
+        "decomposition/ui-modules.json",
+        "tools/verify-package.mjs",
+        "sourceInventory"
+      ],
+      "rationale": "211개 중 sourceFiles 직접 매핑114. 25 implementation-or-configuration 파일과 테스트/선언/생성물을 분류한 전수 기계판독 reverse map이 없다. 테스트는 core-tree 별도 표에 있는 경우가 있으므로 97개를 모두 기능누락으로 오인하지 않는다."
+    },
+    {
+      "id": "CORE-21-C02",
+      "moduleId": "CORE-21",
+      "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?",
+      "status": "fail",
+      "evidence": [
+        "validation/adapter-worker.mjs",
+        "validation/run-gate.mjs",
+        "validation/harness.mjs",
+        "lateResultProbe"
+      ],
+      "rationale": "timeout5ms·adapter75ms의 합성 adapter가 signalWasAborted:true인데 state passed/exit0를 반환했다."
+    },
+    {
+      "id": "CORE-21-C03",
+      "moduleId": "CORE-21",
+      "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?",
+      "status": "fail",
+      "evidence": [
+        "validation/acceptance.mjs",
+        "validation/acceptance-selftest.mjs",
+        "acceptanceMetadataProbe"
+      ],
+      "rationale": "checker는 임의 packageManifest 파일의 hash만 확인한다. {files:[]}가 실제 architecture 없이 ready_for_independent_verification를 만든다. signature가 아닌 구조/현재 hash 검사의 누락이다."
+    },
+    {
+      "id": "CORE-21-C04",
+      "moduleId": "CORE-21",
+      "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?",
+      "status": "fail",
+      "evidence": [
+        "validation/acceptance.mjs",
+        "acceptanceMetadataProbe"
+      ],
+      "rationale": "providerCalls.gemini/e2b=\"1\", heldoutSeedCount=\"3\"가 >0/>=3 coercion으로 통과한다."
+    },
+    {
+      "id": "CORE-21-C05",
+      "moduleId": "CORE-21",
+      "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?",
+      "status": "pass",
+      "evidence": [
+        "validation/README.md",
+        "validation/harness.mjs",
+        "validation/evaluate-v3.mjs",
+        "specs/06-verification.md"
+      ],
+      "rationale": "범위 제한과 oracle 격리, 필드/source/coverage/빈 모집단 검사 확인. 실행 진위의 암호학적 인증을 주장하지 않는다."
+    },
+    {
+      "id": "CORE-21-C06",
+      "moduleId": "CORE-21",
+      "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?",
+      "status": "fail",
+      "evidence": [
+        "scripts/verify-golden.mjs:expectedCertificate",
+        "specs/06-verification.md#2",
+        "decomposition/ui-modules.json:UI-04-C05"
+      ],
+      "rationale": "P10 PNG 첫페이지 notice는 UI 질문에 있으나 검증 계약은 PDF8개/PNG4개 projection을 규정하지 않는다. 원본 verification script는 fields.splice(4)를 명시한다. 원본 script 미제공 새 프로젝트에서 oracle JSON 전체8개를 PNG에 대조할 여지가 있다."
+    },
+    {
+      "id": "CORE-21-C07",
+      "moduleId": "CORE-21",
+      "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?",
+      "status": "pass",
+      "evidence": [
+        "tools/bootstrap.mjs",
+        "tools/test-bootstrap.mjs",
+        "environment/README.md"
+      ],
+      "rationale": "실제 code는 destination preflight 후 wx로 쓴다. crash/race transaction 보장을 주장하지 않는 test limitation도 있다."
+    },
+    {
+      "id": "CORE-21-C08",
+      "moduleId": "CORE-21",
+      "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?",
+      "status": "pass",
+      "evidence": [
+        "specs/06-verification.md",
+        "validation/README.md",
+        "validation/acceptance.mjs",
+        "validation/run-gate.mjs"
+      ],
+      "rationale": "명세의 실행한계와 API 출력 completeProductAcceptance:false가 명확하다. 아래 별도 패키지 바인딩 결함과 제품 진위 한계를 구분한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "VER-01",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-21-C01"
+      ],
+      "files": [
+        "decomposition/core-modules.json",
+        "decomposition/ui-modules.json",
+        "tools/verify-package.mjs"
+      ],
+      "problem": "전수 reverse source inventory와 환경/검증 자체의 평가 모듈이 없다.",
+      "proposedFix": "CORE-20 환경 및 CORE-21 검증 모듈/질문 추가. inventory는 runtime/config/test/declaration/generated/unused를 module/question 또는 명시적 제외와 연결. 무조건 sourceFiles에 97개를 채워 점수를 올리지 말고 source coverage와 질문 pass를 분리."
+    },
+    {
+      "id": "VER-02",
+      "severity": "high",
+      "questionIds": [
+        "CORE-21-C02"
+      ],
+      "files": [
+        "validation/adapter-worker.mjs",
+        "validation/run-gate.mjs",
+        "validation/harness.mjs"
+      ],
+      "problem": "취소 signal 이후 늦은 정상 반환을 통과 처리한다.",
+      "proposedFix": "worker는 adapter 반환 직후 signal.aborted면 ADAPTER_ABORTED로 실패. supervisor도 deadline 이후 성공을 허용하지 않도록 elapsed/deadline 체크 또는 확정 timeout flag. grace는 cleanup 전용. runGate와 runSuite 음성 selftest 추가."
+    },
+    {
+      "id": "VER-03",
+      "severity": "high",
+      "questionIds": [
+        "CORE-21-C03"
+      ],
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/run-gate.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "problem": "packageManifest가 실제 architecture/package-manifest.json일 필요도 유효 package manifest일 필요도 없고 gate가 당시 설계 hash에 묶이지 않는다.",
+      "proposedFix": "현재 architecture verifyPackage(default, refresh금지)를 acceptance에서 실행하고 index manifest 경로/실제bytes를 검증. runGate가 packageManifestSha256를 기록하고 checker에서 현재 hash와 비교. 빈 manifest/변경된 architecture/stale gate 음성 selftest. 선언 진위 인증 제한은 유지."
+    },
+    {
+      "id": "VER-04",
+      "severity": "medium",
+      "questionIds": [
+        "CORE-21-C04"
+      ],
+      "files": [
+        "validation/acceptance.mjs",
+        "validation/evidence.schema.json",
+        "validation/acceptance-selftest.mjs"
+      ],
+      "problem": "providerCalls와 heldoutSeedCount가 수치 형식 검증 없이 비교되어 문자열/소수/boolean을 성공 수치로 받는다.",
+      "proposedFix": "Number.isSafeInteger와 양수/min3 검사를 강제하고 schema 조건을 일치시킨다. string, fractional, boolean, null, overflow negative tests 추가."
+    },
+    {
+      "id": "VER-05",
+      "severity": "low",
+      "questionIds": [
+        "CORE-21-C06"
+      ],
+      "files": [
+        "specs/06-verification.md",
+        "validation/README.md"
+      ],
+      "problem": "P10.png 첫쪽4개 vs PDF전체8개의 평가 전용 projection이 모호하다.",
+      "proposedFix": "golden 전수 평가 contract에 P10 PDF8/PNG4와 underlying reason를 명시. P13 원문0.025 충돌정책과 함께 evaluation-only로 두고 앱 하드코딩 금지."
+    }
+  ],
+  "limits": [
+    "No product source modifications.",
+    "No real .env read or hash.",
+    "No provider/browser/server or original golden verification script executed.",
+    "Only synthetic adapter/checker probes and exact environment-copy byte comparison executed.",
+    "Source inventory counts represent mapping completeness, not all file behavior fully audited.",
+    "Parent initial-inputs identifies full original frozen architecture; per-file hashes here identify this reviewer inputs."
+  ]
+}

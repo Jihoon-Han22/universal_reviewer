@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gspec:reproduction:adapter-result:1",
+  "title": "GSPEC evaluation projection; not a production HTTP schema",
+  "type": "object",
+  "required": ["schemaVersion", "runId", "completion", "items", "coverage"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "runId": { "type": "string", "minLength": 1 },
+    "completion": { "enum": ["completed", "partial", "cancelled", "failed"] },
+    "items": {
+      "type": "array", "items": {
+        "type": "object",
+        "required": ["criterionLabel", "sampleName", "sourceValue", "unit", "comparison", "conditions", "categoryPath", "classificationStatus", "presence", "status", "criterionEvidence", "valueEvidence", "highlightEvidence"],
+        "properties": {
+          "criterionLabel": { "type": "string" }, "sampleName": { "type": "string" }, "sourceValue": { "type": "string" }, "unit": { "type": "string" },
+          "comparison": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["operator", "value", "unit"], "properties": { "operator": { "enum": ["lt", "lte", "gt", "gte", "eq", "range"] }, "value": { "type": "number" }, "upper": { "type": "number" }, "unit": { "type": "string" } } }] },
+          "conditions": { "type": "array", "items": { "type": "string" } }, "categoryPath": { "type": "array", "items": { "type": "string" } },
+          "classificationStatus": { "enum": ["classified", "not_applicable", "uncertain"] },
+          "presence": { "enum": ["present", "missing", "unreadable", "unknown"] }, "status": { "enum": ["pass", "fail", "review"] }, "missingVerified": { "type": "boolean" },
+          "criterionEvidence": { "type": "array", "items": { "$ref": "#/$defs/citation" } }, "valueEvidence": { "type": "array", "items": { "$ref": "#/$defs/citation" } }, "highlightEvidence": { "type": "array", "items": { "$ref": "#/$defs/citation" } }
+        }
+      }
+    },
+    "coverage": {
+      "type": "array", "items": {
+        "type": "object", "required": ["file", "inputSha256", "readerComplete", "contextComplete", "coveredCells"],
+        "properties": { "file": { "type": "string" }, "inputSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "readerComplete": { "type": "boolean" }, "contextComplete": { "type": "boolean" }, "criteriaComplete": { "type": "boolean" }, "coveredCells": { "type": "array", "items": { "type": "object", "required": ["sheet", "cell"], "properties": { "sheet": { "type": "string" }, "cell": { "type": "string", "pattern": "^[A-Z]+[1-9][0-9]*$" } } } } }
+      }
+    }
+  },
+  "$defs": { "citation": { "type": "object", "required": ["file", "sheet", "cell", "quote"], "properties": { "file": { "type": "string" }, "sheet": { "type": "string" }, "cell": { "type": "string", "pattern": "^[A-Z]+[1-9][0-9]*$" }, "quote": { "type": "string" } } } }
+}

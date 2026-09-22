@@ -1,0 +1,1962 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "gateId": "G13",
+  "loop": "LOOP-005",
+  "preparedAt": "2026-09-21T12:20:47.743Z",
+  "codeDigest": "3e027d345f13173d0fe51c5f62cf8886d7346f38f7be3bc398e7f7f30d2f6b2a",
+  "registrySha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7",
+  "registryRef": {
+    "path": "scripts/acceptance/case-registry.json",
+    "sha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7"
+  },
+  "sourceRef": {
+    "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/source-prepared.json",
+    "sha256": "e9cd4107a3aba9ae1767c3e68e376e31715b0595b89242f4697f6e277c99f628"
+  },
+  "supplementalBaselines": [
+    {
+      "path": "architecture/ui/interaction-contract.md",
+      "sha256": "36f5e09a3fe438312fb8f3632871ba2c62c62b62f5dbec943e5ba5e4521ce1c9"
+    },
+    {
+      "path": "architecture/ui/auxiliary-contract.md",
+      "sha256": "f78f106b03f167a052065158c8dc33516037a5b9a9d2675501c5c63de821a94d"
+    },
+    {
+      "path": "architecture/specs/07-data-algorithms-concurrency.md",
+      "sha256": "931e9136f7904e65cc32bbc0d78eaa09657fdb8c8060cfd7b90f18a11ade0d87"
+    }
+  ],
+  "origin": "http://127.0.0.1:5210",
+  "output": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07",
+  "cases": [
+    {
+      "caseId": "G13:app-motion-OFF",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Turn app motion OFF",
+        "Wait two animation frames",
+        "Reload with saved preference",
+        "Upload and approve reference criteria through actual UI",
+        "Start target review",
+        "Turn OFF during actual synthetic SSE activity",
+        "Observe animations and packet DOM",
+        "Complete replay through synthetic controller",
+        "Capture actual results while OFF"
+      ],
+      "facets": [
+        "landing-off",
+        "live-off",
+        "results-off"
+      ],
+      "missingFacets": [
+        "disconnect-reconnect-handoff"
+      ],
+      "assertions": [
+        {
+          "name": "landing-off: app",
+          "pointer": "/facets/landing-off/observations/app",
+          "operator": "deepEqual",
+          "expected": "reduced",
+          "source": "04 §8"
+        },
+        {
+          "name": "landing-off: stored",
+          "pointer": "/facets/landing-off/observations/stored",
+          "operator": "deepEqual",
+          "expected": "off",
+          "source": "04 §8"
+        },
+        {
+          "name": "landing-off: pressed",
+          "pointer": "/facets/landing-off/observations/pressed",
+          "operator": "deepEqual",
+          "expected": "false",
+          "source": "04 §8"
+        },
+        {
+          "name": "landing-off: running",
+          "pointer": "/facets/landing-off/observations/running",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8"
+        },
+        {
+          "name": "landing-off: reloadApp",
+          "pointer": "/facets/landing-off/observations/reloadApp",
+          "operator": "deepEqual",
+          "expected": "reduced",
+          "source": "04 §8"
+        },
+        {
+          "name": "live-off: app",
+          "pointer": "/facets/live-off/observations/app",
+          "operator": "deepEqual",
+          "expected": "reduced",
+          "source": "04 §8; I2; I5"
+        },
+        {
+          "name": "live-off: running",
+          "pointer": "/facets/live-off/observations/running",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; I2; I5"
+        },
+        {
+          "name": "live-off: packets",
+          "pointer": "/facets/live-off/observations/packets",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; I2; I5"
+        },
+        {
+          "name": "results-off: app",
+          "pointer": "/facets/results-off/observations/app",
+          "operator": "deepEqual",
+          "expected": "reduced",
+          "source": "04 §8"
+        },
+        {
+          "name": "results-off: running",
+          "pointer": "/facets/results-off/observations/running",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8"
+        },
+        {
+          "name": "results-off: itemCount",
+          "pointer": "/facets/results-off/observations/itemCount",
+          "operator": "deepEqual",
+          "expected": 3,
+          "source": "04 §8"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:ARIA-current-limitations",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Observe live review role=status and aria-live",
+        "Open summary",
+        "Focus item tile",
+        "Observe tooltip role, width and describedby",
+        "Press Escape and verify baseline tooltip persists",
+        "Blur and verify close",
+        "Start a separate real UI replay context",
+        "Enter live review and click Stop",
+        "Observe immediate cancelled status and baseline progress announcement",
+        "Observe run SSE closure"
+      ],
+      "facets": [
+        "live-aria",
+        "summary-tooltip",
+        "cancel-aria"
+      ],
+      "missingFacets": [
+        "aria-failed-null-matrix"
+      ],
+      "assertions": [
+        {
+          "name": "live-aria: announcement",
+          "pointer": "/facets/live-aria/observations/announcement",
+          "operator": "deepEqual",
+          "expected": "검토 진행 중. 추출 3개, 판정 3개.",
+          "source": "auxiliary A5; 04 §8"
+        },
+        {
+          "name": "live-aria: polite",
+          "pointer": "/facets/live-aria/observations/polite",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "auxiliary A5; 04 §8"
+        },
+        {
+          "name": "summary-tooltip: role",
+          "pointer": "/facets/summary-tooltip/observations/role",
+          "operator": "deepEqual",
+          "expected": "tooltip",
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: width",
+          "pointer": "/facets/summary-tooltip/observations/width",
+          "operator": "deepEqual",
+          "expected": 280,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: described",
+          "pointer": "/facets/summary-tooltip/observations/described",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: escapeKeepsOpen",
+          "pointer": "/facets/summary-tooltip/observations/escapeKeepsOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: blurCloses",
+          "pointer": "/facets/summary-tooltip/observations/blurCloses",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "cancel-aria: cancelRequested",
+          "pointer": "/facets/cancel-aria/observations/cancelRequested",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: cancelled",
+          "pointer": "/facets/cancel-aria/observations/cancelled",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: runSubscribers",
+          "pointer": "/facets/cancel-aria/observations/runSubscribers",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: announcement",
+          "pointer": "/facets/cancel-aria/observations/announcement",
+          "operator": "deepEqual",
+          "expected": "검토 진행 중. 추출 3개, 판정 3개.",
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:CORE-19-C01",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/DECISIONS.md",
+          "sha256": "181bb841d718888d9422b86e6456df67575c53a77a990bfaf5500d9b086ab097"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        },
+        {
+          "path": "architecture/specs/07-data-algorithms-concurrency.md",
+          "sha256": "931e9136f7904e65cc32bbc0d78eaa09657fdb8c8060cfd7b90f18a11ade0d87"
+        },
+        {
+          "path": "architecture/contracts/efficiency-inventory.json",
+          "sha256": "a769aabb9c5029a3baac21c906fdf1dce1df2b7e08c5729c8f13bdbd4f859b56"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Generate synthetic dashboard through actual UI",
+        "Open/source/charts/close five times",
+        "Measure iframe/canvas/ResizeObserver/EventSource/objectURL before/after",
+        "Record RAF, long tasks and browser heap metrics"
+      ],
+      "facets": [
+        "dashboard-resources"
+      ],
+      "missingFacets": [
+        "cache-lifetime-all-owners"
+      ],
+      "assertions": [
+        {
+          "name": "dashboard-resources: cycles",
+          "pointer": "/facets/dashboard-resources/observations/cycles",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: oneIframeWhileOpen",
+          "pointer": "/facets/dashboard-resources/observations/oneIframeWhileOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: iframeGoneAfterClose",
+          "pointer": "/facets/dashboard-resources/observations/iframeGoneAfterClose",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: observersReturned",
+          "pointer": "/facets/dashboard-resources/observations/observersReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sseReturned",
+          "pointer": "/facets/dashboard-resources/observations/sseReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: objectURLsReturned",
+          "pointer": "/facets/dashboard-resources/observations/objectURLsReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sourceTabRetainsIframe",
+          "pointer": "/facets/dashboard-resources/observations/sourceTabRetainsIframe",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:CORE-19-C04",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/DECISIONS.md",
+          "sha256": "181bb841d718888d9422b86e6456df67575c53a77a990bfaf5500d9b086ab097"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        },
+        {
+          "path": "architecture/specs/07-data-algorithms-concurrency.md",
+          "sha256": "931e9136f7904e65cc32bbc0d78eaa09657fdb8c8060cfd7b90f18a11ade0d87"
+        },
+        {
+          "path": "architecture/contracts/efficiency-inventory.json",
+          "sha256": "a769aabb9c5029a3baac21c906fdf1dce1df2b7e08c5729c8f13bdbd4f859b56"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Generate synthetic dashboard through actual UI",
+        "Open/source/charts/close five times",
+        "Measure iframe/canvas/ResizeObserver/EventSource/objectURL before/after",
+        "Record RAF, long tasks and browser heap metrics",
+        "Close each owned browser context",
+        "Observe actual server SSE subscriber counts"
+      ],
+      "facets": [
+        "dashboard-resources",
+        "context-cleanup"
+      ],
+      "missingFacets": [
+        "pdf-render-cancel-destroy",
+        "disconnect-reconnect-handoff",
+        "rapid-events-caps"
+      ],
+      "assertions": [
+        {
+          "name": "dashboard-resources: cycles",
+          "pointer": "/facets/dashboard-resources/observations/cycles",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: oneIframeWhileOpen",
+          "pointer": "/facets/dashboard-resources/observations/oneIframeWhileOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: iframeGoneAfterClose",
+          "pointer": "/facets/dashboard-resources/observations/iframeGoneAfterClose",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: observersReturned",
+          "pointer": "/facets/dashboard-resources/observations/observersReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sseReturned",
+          "pointer": "/facets/dashboard-resources/observations/sseReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: objectURLsReturned",
+          "pointer": "/facets/dashboard-resources/observations/objectURLsReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sourceTabRetainsIframe",
+          "pointer": "/facets/dashboard-resources/observations/sourceTabRetainsIframe",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "context-cleanup: run",
+          "pointer": "/facets/context-cleanup/observations/run",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; 07 §7.7"
+        },
+        {
+          "name": "context-cleanup: activity",
+          "pointer": "/facets/context-cleanup/observations/activity",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; 07 §7.7"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:CORE-19-C05",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/DECISIONS.md",
+          "sha256": "181bb841d718888d9422b86e6456df67575c53a77a990bfaf5500d9b086ab097"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        },
+        {
+          "path": "architecture/specs/07-data-algorithms-concurrency.md",
+          "sha256": "931e9136f7904e65cc32bbc0d78eaa09657fdb8c8060cfd7b90f18a11ade0d87"
+        },
+        {
+          "path": "architecture/contracts/efficiency-inventory.json",
+          "sha256": "a769aabb9c5029a3baac21c906fdf1dce1df2b7e08c5729c8f13bdbd4f859b56"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Record 30 seconds of actual app ON motion",
+        "Store RAF intervals, long-task entries, environment, five detail and modal samples",
+        "Report median/p95 without an invented absolute pass threshold"
+      ],
+      "facets": [
+        "performance-recording"
+      ],
+      "missingFacets": [
+        "all-size-time-token-limits",
+        "large-performance-inputs"
+      ],
+      "assertions": [
+        {
+          "name": "performance-recording: sampleWindowAtLeast30Seconds",
+          "pointer": "/facets/performance-recording/observations/sampleWindowAtLeast30Seconds",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "performance-recording: detailSamples",
+          "pointer": "/facets/performance-recording/observations/detailSamples",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "performance-recording: modalSamples",
+          "pointer": "/facets/performance-recording/observations/modalSamples",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:keyboard-focus-dialog-Escape",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Tab and Shift+Tab through native controls",
+        "Activate motion toggle with Space",
+        "Activate start CTA with Enter",
+        "Focus result button and press Enter",
+        "Observe focused inspector heading",
+        "Press item-list return",
+        "Observe original item focus restored",
+        "Repeat five times and measure click-to-visible",
+        "Open summary",
+        "Focus item tile",
+        "Observe tooltip role, width and describedby",
+        "Press Escape and verify baseline tooltip persists",
+        "Blur and verify close",
+        "Keyboard activate dashboard",
+        "Observe native dialog",
+        "Press Escape",
+        "Verify unmount and focus return",
+        "Open export menu and ledger",
+        "Observe native dialog",
+        "Press Escape",
+        "Verify unmount"
+      ],
+      "facets": [
+        "landing-keyboard",
+        "detail-focus",
+        "summary-tooltip",
+        "dashboard-escape",
+        "ledger-escape"
+      ],
+      "missingFacets": [
+        "analysis-drawer-and-golden-keyboard"
+      ],
+      "assertions": [
+        {
+          "name": "landing-keyboard: tabReachable",
+          "pointer": "/facets/landing-keyboard/observations/tabReachable",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; UI-09"
+        },
+        {
+          "name": "landing-keyboard: shiftTabReverses",
+          "pointer": "/facets/landing-keyboard/observations/shiftTabReverses",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; UI-09"
+        },
+        {
+          "name": "landing-keyboard: spaceToggles",
+          "pointer": "/facets/landing-keyboard/observations/spaceToggles",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; UI-09"
+        },
+        {
+          "name": "landing-keyboard: enterStarts",
+          "pointer": "/facets/landing-keyboard/observations/enterStarts",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; UI-09"
+        },
+        {
+          "name": "detail-focus: headingFocused",
+          "pointer": "/facets/detail-focus/observations/headingFocused",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "detail-focus: restored",
+          "pointer": "/facets/detail-focus/observations/restored",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "detail-focus: iterations",
+          "pointer": "/facets/detail-focus/observations/iterations",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "summary-tooltip: role",
+          "pointer": "/facets/summary-tooltip/observations/role",
+          "operator": "deepEqual",
+          "expected": "tooltip",
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: width",
+          "pointer": "/facets/summary-tooltip/observations/width",
+          "operator": "deepEqual",
+          "expected": 280,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: described",
+          "pointer": "/facets/summary-tooltip/observations/described",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: escapeKeepsOpen",
+          "pointer": "/facets/summary-tooltip/observations/escapeKeepsOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "summary-tooltip: blurCloses",
+          "pointer": "/facets/summary-tooltip/observations/blurCloses",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7; I8 CURRENT_REPRODUCTION"
+        },
+        {
+          "name": "dashboard-escape: nativeModal",
+          "pointer": "/facets/dashboard-escape/observations/nativeModal",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "05 D09"
+        },
+        {
+          "name": "dashboard-escape: closed",
+          "pointer": "/facets/dashboard-escape/observations/closed",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "05 D09"
+        },
+        {
+          "name": "dashboard-escape: focusReturned",
+          "pointer": "/facets/dashboard-escape/observations/focusReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "05 D09"
+        },
+        {
+          "name": "ledger-escape: nativeModal",
+          "pointer": "/facets/ledger-escape/observations/nativeModal",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "05 ledger interaction; UI-09"
+        },
+        {
+          "name": "ledger-escape: closed",
+          "pointer": "/facets/ledger-escape/observations/closed",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "05 ledger interaction; UI-09"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:measured-performance-no-invented-target",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Generate synthetic dashboard through actual UI",
+        "Open/source/charts/close five times",
+        "Measure iframe/canvas/ResizeObserver/EventSource/objectURL before/after",
+        "Record RAF, long tasks and browser heap metrics",
+        "Record 30 seconds of actual app ON motion",
+        "Store RAF intervals, long-task entries, environment, five detail and modal samples",
+        "Report median/p95 without an invented absolute pass threshold"
+      ],
+      "facets": [
+        "dashboard-resources",
+        "performance-recording"
+      ],
+      "missingFacets": [
+        "large-performance-inputs"
+      ],
+      "assertions": [
+        {
+          "name": "dashboard-resources: cycles",
+          "pointer": "/facets/dashboard-resources/observations/cycles",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: oneIframeWhileOpen",
+          "pointer": "/facets/dashboard-resources/observations/oneIframeWhileOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: iframeGoneAfterClose",
+          "pointer": "/facets/dashboard-resources/observations/iframeGoneAfterClose",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: observersReturned",
+          "pointer": "/facets/dashboard-resources/observations/observersReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sseReturned",
+          "pointer": "/facets/dashboard-resources/observations/sseReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: objectURLsReturned",
+          "pointer": "/facets/dashboard-resources/observations/objectURLsReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sourceTabRetainsIframe",
+          "pointer": "/facets/dashboard-resources/observations/sourceTabRetainsIframe",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "performance-recording: sampleWindowAtLeast30Seconds",
+          "pointer": "/facets/performance-recording/observations/sampleWindowAtLeast30Seconds",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "performance-recording: detailSamples",
+          "pointer": "/facets/performance-recording/observations/detailSamples",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "performance-recording: modalSamples",
+          "pointer": "/facets/performance-recording/observations/modalSamples",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 07 §7.9"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:mobile-overflow",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Set viewport 390 × 844",
+        "Capture page/control bounds",
+        "Set live viewport 390 × 844",
+        "Capture workroom tabs and bounds",
+        "Set results viewport 390 × 844",
+        "Select item",
+        "Capture detail ordering and bounds"
+      ],
+      "facets": [
+        "mobile-landing",
+        "mobile-live",
+        "mobile-results"
+      ],
+      "missingFacets": [],
+      "assertions": [
+        {
+          "name": "mobile-landing: width",
+          "pointer": "/facets/mobile-landing/observations/width",
+          "operator": "deepEqual",
+          "expected": 390,
+          "source": "04 §2 responsive table"
+        },
+        {
+          "name": "mobile-landing: horizontalOverflow",
+          "pointer": "/facets/mobile-landing/observations/horizontalOverflow",
+          "operator": "deepEqual",
+          "expected": false,
+          "source": "04 §2 responsive table"
+        },
+        {
+          "name": "mobile-live: width",
+          "pointer": "/facets/mobile-live/observations/width",
+          "operator": "deepEqual",
+          "expected": 390,
+          "source": "04 §2; auxiliary A4"
+        },
+        {
+          "name": "mobile-live: horizontalOverflow",
+          "pointer": "/facets/mobile-live/observations/horizontalOverflow",
+          "operator": "deepEqual",
+          "expected": false,
+          "source": "04 §2; auxiliary A4"
+        },
+        {
+          "name": "mobile-results: width",
+          "pointer": "/facets/mobile-results/observations/width",
+          "operator": "deepEqual",
+          "expected": 390,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "mobile-results: horizontalOverflow",
+          "pointer": "/facets/mobile-results/observations/horizontalOverflow",
+          "operator": "deepEqual",
+          "expected": false,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "mobile-results: detailBeforeSource",
+          "pointer": "/facets/mobile-results/observations/detailBeforeSource",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §2; I7"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:OS-reduced-motion",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Set OS reduce while app ON",
+        "Observe app preference and animation sample",
+        "App ON and OS reduce",
+        "Open actual summary",
+        "Observe end counts and remaining component animation"
+      ],
+      "facets": [
+        "landing-os",
+        "summary-os"
+      ],
+      "missingFacets": [
+        "disconnect-reconnect-handoff"
+      ],
+      "assertions": [
+        {
+          "name": "landing-os: app",
+          "pointer": "/facets/landing-os/observations/app",
+          "operator": "deepEqual",
+          "expected": "full",
+          "source": "04 §8; DECISIONS D16"
+        },
+        {
+          "name": "landing-os: stored",
+          "pointer": "/facets/landing-os/observations/stored",
+          "operator": "deepEqual",
+          "expected": "on",
+          "source": "04 §8; DECISIONS D16"
+        },
+        {
+          "name": "landing-os: osReduce",
+          "pointer": "/facets/landing-os/observations/osReduce",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; DECISIONS D16"
+        },
+        {
+          "name": "summary-os: app",
+          "pointer": "/facets/summary-os/observations/app",
+          "operator": "deepEqual",
+          "expected": "full",
+          "source": "04 §7–8"
+        },
+        {
+          "name": "summary-os: osReduce",
+          "pointer": "/facets/summary-os/observations/osReduce",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §7–8"
+        },
+        {
+          "name": "summary-os: summaryRunning",
+          "pointer": "/facets/summary-os/observations/summaryRunning",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §7–8"
+        },
+        {
+          "name": "summary-os: tiles",
+          "pointer": "/facets/summary-os/observations/tiles",
+          "operator": "deepEqual",
+          "expected": 3,
+          "source": "04 §7–8"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:PDF-iframe-objectURL-cleanup",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Generate synthetic dashboard through actual UI",
+        "Open/source/charts/close five times",
+        "Measure iframe/canvas/ResizeObserver/EventSource/objectURL before/after",
+        "Record RAF, long tasks and browser heap metrics"
+      ],
+      "facets": [
+        "dashboard-resources"
+      ],
+      "missingFacets": [
+        "pdf-render-cancel-destroy",
+        "objecturl-download"
+      ],
+      "assertions": [
+        {
+          "name": "dashboard-resources: cycles",
+          "pointer": "/facets/dashboard-resources/observations/cycles",
+          "operator": "deepEqual",
+          "expected": 5,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: oneIframeWhileOpen",
+          "pointer": "/facets/dashboard-resources/observations/oneIframeWhileOpen",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: iframeGoneAfterClose",
+          "pointer": "/facets/dashboard-resources/observations/iframeGoneAfterClose",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: observersReturned",
+          "pointer": "/facets/dashboard-resources/observations/observersReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sseReturned",
+          "pointer": "/facets/dashboard-resources/observations/sseReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: objectURLsReturned",
+          "pointer": "/facets/dashboard-resources/observations/objectURLsReturned",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "dashboard-resources: sourceTabRetainsIframe",
+          "pointer": "/facets/dashboard-resources/observations/sourceTabRetainsIframe",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; 05 D09; 07 §7.7, EF16"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:unmount-disconnect-cancel",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Start a separate real UI replay context",
+        "Enter live review and click Stop",
+        "Observe immediate cancelled status and baseline progress announcement",
+        "Observe run SSE closure",
+        "Close each owned browser context",
+        "Observe actual server SSE subscriber counts"
+      ],
+      "facets": [
+        "cancel-aria",
+        "context-cleanup"
+      ],
+      "missingFacets": [
+        "disconnect-reconnect-handoff"
+      ],
+      "assertions": [
+        {
+          "name": "cancel-aria: cancelRequested",
+          "pointer": "/facets/cancel-aria/observations/cancelRequested",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: cancelled",
+          "pointer": "/facets/cancel-aria/observations/cancelled",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: runSubscribers",
+          "pointer": "/facets/cancel-aria/observations/runSubscribers",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "cancel-aria: announcement",
+          "pointer": "/facets/cancel-aria/observations/announcement",
+          "operator": "deepEqual",
+          "expected": "검토 진행 중. 추출 3개, 판정 3개.",
+          "source": "auxiliary A5; I1; 04 §3"
+        },
+        {
+          "name": "context-cleanup: run",
+          "pointer": "/facets/context-cleanup/observations/run",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; 07 §7.7"
+        },
+        {
+          "name": "context-cleanup: activity",
+          "pointer": "/facets/context-cleanup/observations/activity",
+          "operator": "deepEqual",
+          "expected": 0,
+          "source": "04 §8; 07 §7.7"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    },
+    {
+      "caseId": "G13:zoom-200-percent",
+      "inputs": [
+        {
+          "path": "architecture/ui/reference/synthetic-fixture.json",
+          "sha256": "9b4fd81bb90a5029d2e21ade9d35a0ae1b0f680de09373692c67f09ef1c5a9ff"
+        },
+        {
+          "path": "architecture/ui/reference/mock-api.mjs",
+          "sha256": "aee2fb0093b849750ccb45807d69ac5bc7f2942f7ab3bda89bb7429c6af3d3bf"
+        },
+        {
+          "path": "architecture/ui/reference/capture-flow.js",
+          "sha256": "2e4cffd34a860803b95d2d65569ff224e2f2cbf08eadaaebce31cf077937c41f"
+        },
+        {
+          "path": "architecture/ui/reference/capture-required-viewports.js",
+          "sha256": "1cc52ab7f55a58ec0fd12df75df0fe4c2a03bbdfc4d8f2603449f450b2bcd320"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard.html",
+          "sha256": "41edf2786af66b42a00b2a792afc46a2ee0a2074f9612d77238cca3566eb83af"
+        },
+        {
+          "path": "architecture/ui/reference/synthetic-dashboard-dark.html",
+          "sha256": "9a1ff736bc92b964a28ef4e4e24bb7d936f1a30b22b7dfacf90b8c86fcd5aeef"
+        }
+      ],
+      "baselineReferences": [
+        {
+          "path": "architecture/specs/04-ui-motion.md",
+          "sha256": "de30dc362217656659582baef3b5157f0db792c6af0f56b819e0114c65e21da0"
+        },
+        {
+          "path": "architecture/specs/05-dashboard-exports.md",
+          "sha256": "775ccca0dfdf824384afbedc2e224476ba086986ca558ab12eb4e7f052a041d6"
+        },
+        {
+          "path": "architecture/specs/06-verification.md",
+          "sha256": "dd2e6ec843e1ba0ab03f1687387edecc6dc20d8f0b6277a71ee170d8c3dc7759"
+        }
+      ],
+      "initialState": "Fresh isolated Chromium context; localhost actual React/createApp; reference synthetic provider responses; no user profile or live provider.",
+      "actions": [
+        "Send browser zoom keyboard accelerators to 200%",
+        "Verify actual devicePixelRatio and CSS viewport change",
+        "Record bounds and screenshot",
+        "Reset native zoom"
+      ],
+      "facets": [
+        "native-zoom"
+      ],
+      "missingFacets": [],
+      "assertions": [
+        {
+          "name": "native-zoom: verified200Percent",
+          "pointer": "/facets/native-zoom/observations/verified200Percent",
+          "operator": "deepEqual",
+          "expected": true,
+          "source": "04 §8; UI-09"
+        },
+        {
+          "name": "Every required facet was executed",
+          "pointer": "/coverage/complete",
+          "operator": "deepEqual",
+          "expected": true
+        }
+      ]
+    }
+  ],
+  "facets": [
+    {
+      "id": "landing-keyboard",
+      "cases": [
+        "keyboard-focus-dialog-Escape"
+      ],
+      "source": "04 §8; UI-09",
+      "actions": [
+        "Tab and Shift+Tab through native controls",
+        "Activate motion toggle with Space",
+        "Activate start CTA with Enter"
+      ],
+      "expected": {
+        "tabReachable": true,
+        "shiftTabReverses": true,
+        "spaceToggles": true,
+        "enterStarts": true
+      }
+    },
+    {
+      "id": "landing-off",
+      "cases": [
+        "app-motion-OFF"
+      ],
+      "source": "04 §8",
+      "actions": [
+        "Turn app motion OFF",
+        "Wait two animation frames",
+        "Reload with saved preference"
+      ],
+      "expected": {
+        "app": "reduced",
+        "stored": "off",
+        "pressed": "false",
+        "running": 0,
+        "reloadApp": "reduced"
+      }
+    },
+    {
+      "id": "landing-os",
+      "cases": [
+        "OS-reduced-motion"
+      ],
+      "source": "04 §8; DECISIONS D16",
+      "actions": [
+        "Set OS reduce while app ON",
+        "Observe app preference and animation sample"
+      ],
+      "expected": {
+        "app": "full",
+        "stored": "on",
+        "osReduce": true
+      }
+    },
+    {
+      "id": "mobile-landing",
+      "cases": [
+        "mobile-overflow"
+      ],
+      "source": "04 §2 responsive table",
+      "actions": [
+        "Set viewport 390 × 844",
+        "Capture page/control bounds"
+      ],
+      "expected": {
+        "width": 390,
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "id": "native-zoom",
+      "cases": [
+        "zoom-200-percent"
+      ],
+      "source": "04 §8; UI-09",
+      "actions": [
+        "Send browser zoom keyboard accelerators to 200%",
+        "Verify actual devicePixelRatio and CSS viewport change",
+        "Record bounds and screenshot",
+        "Reset native zoom"
+      ],
+      "expected": {
+        "verified200Percent": true
+      }
+    },
+    {
+      "id": "live-off",
+      "cases": [
+        "app-motion-OFF"
+      ],
+      "source": "04 §8; I2; I5",
+      "actions": [
+        "Upload and approve reference criteria through actual UI",
+        "Start target review",
+        "Turn OFF during actual synthetic SSE activity",
+        "Observe animations and packet DOM"
+      ],
+      "expected": {
+        "app": "reduced",
+        "running": 0,
+        "packets": 0
+      }
+    },
+    {
+      "id": "live-aria",
+      "cases": [
+        "ARIA-current-limitations"
+      ],
+      "source": "auxiliary A5; 04 §8",
+      "actions": [
+        "Observe live review role=status and aria-live"
+      ],
+      "expected": {
+        "announcement": "검토 진행 중. 추출 3개, 판정 3개.",
+        "polite": true
+      }
+    },
+    {
+      "id": "mobile-live",
+      "cases": [
+        "mobile-overflow"
+      ],
+      "source": "04 §2; auxiliary A4",
+      "actions": [
+        "Set live viewport 390 × 844",
+        "Capture workroom tabs and bounds"
+      ],
+      "expected": {
+        "width": 390,
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "id": "results-off",
+      "cases": [
+        "app-motion-OFF"
+      ],
+      "source": "04 §8",
+      "actions": [
+        "Complete replay through synthetic controller",
+        "Capture actual results while OFF"
+      ],
+      "expected": {
+        "app": "reduced",
+        "running": 0,
+        "itemCount": 3
+      }
+    },
+    {
+      "id": "detail-focus",
+      "cases": [
+        "keyboard-focus-dialog-Escape"
+      ],
+      "source": "04 §2; I7",
+      "actions": [
+        "Focus result button and press Enter",
+        "Observe focused inspector heading",
+        "Press item-list return",
+        "Observe original item focus restored",
+        "Repeat five times and measure click-to-visible"
+      ],
+      "expected": {
+        "headingFocused": true,
+        "restored": true,
+        "iterations": 5
+      }
+    },
+    {
+      "id": "mobile-results",
+      "cases": [
+        "mobile-overflow"
+      ],
+      "source": "04 §2; I7",
+      "actions": [
+        "Set results viewport 390 × 844",
+        "Select item",
+        "Capture detail ordering and bounds"
+      ],
+      "expected": {
+        "width": 390,
+        "horizontalOverflow": false,
+        "detailBeforeSource": true
+      }
+    },
+    {
+      "id": "summary-tooltip",
+      "cases": [
+        "keyboard-focus-dialog-Escape",
+        "ARIA-current-limitations"
+      ],
+      "source": "04 §7; I8 CURRENT_REPRODUCTION",
+      "actions": [
+        "Open summary",
+        "Focus item tile",
+        "Observe tooltip role, width and describedby",
+        "Press Escape and verify baseline tooltip persists",
+        "Blur and verify close"
+      ],
+      "expected": {
+        "role": "tooltip",
+        "width": 280,
+        "described": true,
+        "escapeKeepsOpen": true,
+        "blurCloses": true
+      }
+    },
+    {
+      "id": "summary-os",
+      "cases": [
+        "OS-reduced-motion"
+      ],
+      "source": "04 §7–8",
+      "actions": [
+        "App ON and OS reduce",
+        "Open actual summary",
+        "Observe end counts and remaining component animation"
+      ],
+      "expected": {
+        "app": "full",
+        "osReduce": true,
+        "summaryRunning": 0,
+        "tiles": 3
+      }
+    },
+    {
+      "id": "dashboard-escape",
+      "cases": [
+        "keyboard-focus-dialog-Escape"
+      ],
+      "source": "05 D09",
+      "actions": [
+        "Keyboard activate dashboard",
+        "Observe native dialog",
+        "Press Escape",
+        "Verify unmount and focus return"
+      ],
+      "expected": {
+        "nativeModal": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    },
+    {
+      "id": "ledger-escape",
+      "cases": [
+        "keyboard-focus-dialog-Escape"
+      ],
+      "source": "05 ledger interaction; UI-09",
+      "actions": [
+        "Open export menu and ledger",
+        "Observe native dialog",
+        "Press Escape",
+        "Verify unmount"
+      ],
+      "expected": {
+        "nativeModal": true,
+        "closed": true
+      }
+    },
+    {
+      "id": "dashboard-resources",
+      "cases": [
+        "PDF-iframe-objectURL-cleanup",
+        "CORE-19-C01",
+        "CORE-19-C04",
+        "measured-performance-no-invented-target"
+      ],
+      "source": "04 §8; 05 D09; 07 §7.7, EF16",
+      "actions": [
+        "Generate synthetic dashboard through actual UI",
+        "Open/source/charts/close five times",
+        "Measure iframe/canvas/ResizeObserver/EventSource/objectURL before/after",
+        "Record RAF, long tasks and browser heap metrics"
+      ],
+      "expected": {
+        "cycles": 5,
+        "oneIframeWhileOpen": true,
+        "iframeGoneAfterClose": true,
+        "observersReturned": true,
+        "sseReturned": true,
+        "objectURLsReturned": true,
+        "sourceTabRetainsIframe": true
+      }
+    },
+    {
+      "id": "cancel-aria",
+      "cases": [
+        "ARIA-current-limitations",
+        "unmount-disconnect-cancel"
+      ],
+      "source": "auxiliary A5; I1; 04 §3",
+      "actions": [
+        "Start a separate real UI replay context",
+        "Enter live review and click Stop",
+        "Observe immediate cancelled status and baseline progress announcement",
+        "Observe run SSE closure"
+      ],
+      "expected": {
+        "cancelRequested": true,
+        "cancelled": true,
+        "runSubscribers": 0,
+        "announcement": "검토 진행 중. 추출 3개, 판정 3개."
+      }
+    },
+    {
+      "id": "context-cleanup",
+      "cases": [
+        "unmount-disconnect-cancel",
+        "CORE-19-C04"
+      ],
+      "source": "04 §8; 07 §7.7",
+      "actions": [
+        "Close each owned browser context",
+        "Observe actual server SSE subscriber counts"
+      ],
+      "expected": {
+        "run": 0,
+        "activity": 0
+      }
+    },
+    {
+      "id": "performance-recording",
+      "cases": [
+        "measured-performance-no-invented-target",
+        "CORE-19-C05"
+      ],
+      "source": "04 §8; 07 §7.9",
+      "actions": [
+        "Record 30 seconds of actual app ON motion",
+        "Store RAF intervals, long-task entries, environment, five detail and modal samples",
+        "Report median/p95 without an invented absolute pass threshold"
+      ],
+      "expected": {
+        "sampleWindowAtLeast30Seconds": true,
+        "detailSamples": 5,
+        "modalSamples": 5
+      }
+    }
+  ],
+  "missingFacets": [
+    {
+      "id": "pdf-render-cancel-destroy",
+      "cases": [
+        "PDF-iframe-objectURL-cleanup",
+        "CORE-19-C04"
+      ],
+      "reason": "Current localhost replay supplies spreadsheet previews only; no real PDF loadingTask.destroy/renderTask.cancel execution."
+    },
+    {
+      "id": "objecturl-download",
+      "cases": [
+        "PDF-iframe-objectURL-cleanup"
+      ],
+      "reason": "Replay blocks download/export endpoints. Zero allocations is recorded but does not prove a real create/revoke download cycle."
+    },
+    {
+      "id": "disconnect-reconnect-handoff",
+      "cases": [
+        "unmount-disconnect-cancel",
+        "CORE-19-C04",
+        "OS-reduced-motion",
+        "app-motion-OFF"
+      ],
+      "reason": "Existing replay has no cross-runtime handoff/disconnect controller. Queue pause/resume, OFF purge and OS-preserved JS queue need their own actual browser scenario."
+    },
+    {
+      "id": "cache-lifetime-all-owners",
+      "cases": [
+        "CORE-19-C01"
+      ],
+      "reason": "Five modal cycles cover host UI cleanup only. ES01–ES22 backend/cache owners, FIFO eviction and capacities require separately bound actual observations."
+    },
+    {
+      "id": "rapid-events-caps",
+      "cases": [
+        "CORE-19-C04"
+      ],
+      "reason": "Three-item fixture does not exercise 100 rapid events, arrival six, pending eight, tasks 100, events 200 and presentation sessions 30."
+    },
+    {
+      "id": "all-size-time-token-limits",
+      "cases": [
+        "CORE-19-C05"
+      ],
+      "reason": "Browser timing measurements do not prove EL01–EL35 or all EF01–EF16 resource and partial semantics."
+    },
+    {
+      "id": "large-performance-inputs",
+      "cases": [
+        "measured-performance-no-invented-target",
+        "CORE-19-C05"
+      ],
+      "reason": "Current synthetic reference has three items. Actual 100-item filter and 2,000-item/maximum-source ten-cycle EF16 probes need a separate fixture."
+    },
+    {
+      "id": "aria-failed-null-matrix",
+      "cases": [
+        "ARIA-current-limitations"
+      ],
+      "reason": "Completed/live/cancelled observations do not execute failed/null × busy combinations or all role/filter name states."
+    },
+    {
+      "id": "analysis-drawer-and-golden-keyboard",
+      "cases": [
+        "keyboard-focus-dialog-Escape"
+      ],
+      "reason": "This slice covers result, tooltip, dashboard and ledger keyboard paths. Analysis drawer trigger focus limitation and golden loading/Escape states remain to execute."
+    }
+  ],
+  "freeze": null,
+  "fixture": {
+    "id": "architecture-visual-v1",
+    "synthetic": true,
+    "N": 2,
+    "I": 3,
+    "providerCalls": {
+      "gemini": 0,
+      "e2b": 0
+    }
+  },
+  "instrumentation": "Transparent EventSource/ResizeObserver/objectURL call-through wrappers; PerformanceObserver and requestAnimationFrame samples. No application state injection or CSS mutation.",
+  "limitations": "This is a partial execution collector. Unsupported PDF/provider/large-input/queue facets remain NOT_RUN. A native zoom shortcut that is ignored is NOT_RUN, never relabelled CSS or pinch zoom.",
+  "browserExecuted": false
+}

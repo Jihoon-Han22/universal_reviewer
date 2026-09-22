@@ -1,0 +1,72 @@
+{
+  "id": "05-criteria-natural-language",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "05-criteria-natural-language",
+    "screenshot": {
+      "path": "05-criteria-natural-language.png",
+      "bytes": 183906,
+      "sha256": "496f9aee60702896da1cf37d807cd40778e3834cb6f91407ce05303a2ec28229",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/05-criteria-natural-language.json",
+      "bytes": 195586,
+      "sha256": "f25f45e4cbcae24ea7f8602e3957dc4947e965ea9962e6b9e323bf4cd1265142"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T13:04:20.107Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/diagnostics/05-criteria-natural-language-font-readiness.json",
+    "bytes": 2301204,
+    "sha256": "1b57966f7748cb71656e6321c11e657bb98cdb923327103c88147cc938501256"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/05-criteria-natural-language.png",
+    "bytes": 175350,
+    "sha256": "41169657691d31bf5ab8d494d996db0549d2ac9fca8cf94a841a95a3538ba7e0",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T13:04:22.119Z",
+    "capturedAt": "2026-09-21T13:04:22.276Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/dom/05-criteria-natural-language.json",
+    "bytes": 305116,
+    "sha256": "cd39b569ed0b7375a306c74cfb0d925a7e897b0a081787831c1e72a7556ae3a3"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/05-criteria-natural-language-measurement.json",
+    "bytes": 189652,
+    "sha256": "41d8fda2947a49b45dc623bd2e44e753538fc71fe49923613d25cf7868373604"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T13:04:22.707Z"
+}

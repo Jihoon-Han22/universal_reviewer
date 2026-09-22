@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "caseId": "G12:CORE-14-C05",
+  "origin": "actual-browser",
+  "oracleAccess": false,
+  "loop": "LOOP-006",
+  "codeDigest": "78e64718b2c257a4339f367aae067bce972e6b4e0be040c45325a5b323f11e7c",
+  "registrySha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7",
+  "planRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/bridge-plan.json",
+    "sha256": "6a9e6bbddd8af1961cc25d0a24e91380eb0181fd3510cc09ac5868ec48e7cf0d"
+  },
+  "collectorPlanRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/bridge-plan.json",
+    "sha256": "6a9e6bbddd8af1961cc25d0a24e91380eb0181fd3510cc09ac5868ec48e7cf0d"
+  },
+  "developmentOnly": true,
+  "startedAt": "2026-09-21T13:08:11.591Z",
+  "endedAt": "2026-09-21T13:10:19.093Z",
+  "browser": {
+    "name": "chromium",
+    "version": "153.0.8010.48",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1440,
+      "height": 960
+    },
+    "deviceScaleFactor": 1,
+    "executable": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "node": "v24.13.1"
+  },
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "downloadRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/actual-download.html",
+    "sha256": "9547c9e32c21f692c1d368e03fa88c98af61d5398b8d604ff8417cc1d01a54f3"
+  },
+  "domRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/host-dom.json",
+    "sha256": "30ed7d5ebb707e98a28073495ac6bd7a325d5db2f9a127e46f3e5719e9219de4"
+  },
+  "pngRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/host.png",
+    "sha256": "3df98bbd4df54ca67d16b9269e05be90ce7cb7fea4444ba9f48cd0f57410b194"
+  },
+  "browserTraceRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/browser-trace.zip",
+    "sha256": "1391076b97b4d168532bf11e0cefa9cadedd6760b5e2d7d658c5afdb68614b5c"
+  },
+  "eventLogRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/event-log.json",
+    "sha256": "5ea85c0e0672f2770412c54ee656ebfbfb7d57578620d82130949692f9501933"
+  },
+  "sourceProvenanceRef": {
+    "path": "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/source-provenance.json",
+    "sha256": "a860fc225f6cd9efe3e69b2577b0d06b2694dc7af3f3ba7a8d1ad7005e3449c6"
+  },
+  "actual": {
+    "bridge": {
+      "positive": {
+        "click": {
+          "isTrusted": true,
+          "accepted": true,
+          "selectedItemId": "g12-item-a"
+        },
+        "enter": {
+          "isTrusted": true,
+          "accepted": true,
+          "selectedItemId": "g12-item-a"
+        },
+        "space": {
+          "isTrusted": true,
+          "accepted": true,
+          "selectedItemId": "g12-item-a"
+        }
+      },
+      "rejected": {
+        "wrongWindow": {
+          "unchanged": true
+        },
+        "wrongOrigin": {
+          "unchanged": true
+        },
+        "wrongChannel": {
+          "unchanged": true
+        },
+        "wrongType": {
+          "unchanged": true
+        },
+        "wrongToken": {
+          "unchanged": true
+        },
+        "unknownItem": {
+          "unchanged": true
+        },
+        "staleFrame": {
+          "unchanged": true
+        },
+        "staleToken": {
+          "unchanged": true
+        }
+      },
+      "unmount": {
+        "unchanged": true
+      },
+      "iframe": {
+        "sandbox": "allow-scripts",
+        "referrerPolicy": "no-referrer",
+        "messageOrigin": "null"
+      }
+    },
+    "download": {
+      "nonempty": true,
+      "mime": "text/html;charset=utf-8",
+      "scriptCount": 2,
+      "containsBridgeToken": false,
+      "containsBridgeScript": false,
+      "containsSourceDocumentSentinel": false,
+      "containsDocumentURL": false,
+      "containsSourceViewer": false,
+      "sourceButtonsHidden": true,
+      "externalRequests": 0,
+      "containsExpectedQuote": true,
+      "urlRevoked": true,
+      "offlineFilterWorks": true,
+      "offlineDetailOpened": true
+    }
+  },
+  "consoleErrors": [],
+  "command": [
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\.cache\\runtime\\node-v24.13.1-win-x64\\node.exe",
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\browser-bridge-runtime.mjs",
+    "--execute",
+    "artifacts/rebuild/loop-006/browser-bridge-2026-09-21T13-04-33-603Z-e8e4fe00/bridge-plan.json"
+  ],
+  "executionBoundary": "Predeclared synthetic POST/GET dashboard responses. Actual DashboardModal, dashboardBridge, parent listener, SourceEvidence, download function and fixed renderer."
+}

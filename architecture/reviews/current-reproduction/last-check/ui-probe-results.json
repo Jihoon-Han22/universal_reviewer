@@ -1,0 +1,584 @@
+{
+  "source": "src/components/DocumentAnalysis.tsx",
+  "method": "TypeScript AST unchanged helper extraction + transpileModule + VM; no React/browser execution",
+  "results": [
+    {
+      "id": "inventory-before-structure",
+      "input": {
+        "inventory": {
+          "sheets": [
+            "B",
+            "A"
+          ]
+        },
+        "structure": [
+          {
+            "sheet": "A",
+            "name": "A1"
+          },
+          {
+            "sheet": "C",
+            "name": "C1"
+          },
+          {
+            "sheet": "B",
+            "name": "B1"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "sheet:B",
+          "name": "B",
+          "regionNames": [
+            "B1"
+          ]
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": [
+            "A1"
+          ]
+        },
+        {
+          "id": "sheet:C",
+          "name": "C",
+          "regionNames": [
+            "C1"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "sheet:B",
+          "name": "B",
+          "regionNames": [
+            "B1"
+          ]
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": [
+            "A1"
+          ]
+        },
+        {
+          "id": "sheet:C",
+          "name": "C",
+          "regionNames": [
+            "C1"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "name": "B",
+          "description": "",
+          "sheet": "B",
+          "id": "sheet:B",
+          "regions": [
+            {
+              "sheet": "B",
+              "name": "B1"
+            }
+          ]
+        },
+        {
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "id": "sheet:A",
+          "regions": [
+            {
+              "sheet": "A",
+              "name": "A1"
+            }
+          ]
+        },
+        {
+          "id": "sheet:C",
+          "name": "C",
+          "description": "",
+          "sheet": "C",
+          "regions": [
+            {
+              "sheet": "C",
+              "name": "C1"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "duplicate-inventory-overwrite-in-place",
+      "input": {
+        "inventory": {
+          "sheets": [
+            {
+              "sheet": "B",
+              "title": "B first"
+            },
+            {
+              "sheet": "A",
+              "title": "A"
+            },
+            {
+              "sheet": "B",
+              "title": "B last"
+            }
+          ]
+        },
+        "structure": []
+      },
+      "expected": [
+        {
+          "id": "sheet:B",
+          "name": "B last",
+          "regionNames": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": []
+        }
+      ],
+      "actual": [
+        {
+          "id": "sheet:B",
+          "name": "B last",
+          "regionNames": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": []
+        }
+      ],
+      "groups": [
+        {
+          "name": "B last",
+          "description": "",
+          "sheet": "B",
+          "id": "sheet:B",
+          "regions": []
+        },
+        {
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "id": "sheet:A",
+          "regions": []
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "direct-array-sheet-is-not-projected",
+      "input": {
+        "inventory": [
+          {
+            "sheet": "A",
+            "name": "A inventory"
+          },
+          {
+            "sheet": "B",
+            "name": "B inventory"
+          }
+        ],
+        "structure": [
+          {
+            "sheet": "A",
+            "name": "A structure"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "document",
+          "name": "B inventory",
+          "regionNames": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": [
+            "A structure"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "document",
+          "name": "B inventory",
+          "regionNames": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "regionNames": [
+            "A structure"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "name": "B inventory",
+          "description": "",
+          "id": "document",
+          "regions": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "regions": [
+            {
+              "sheet": "A",
+              "name": "A structure"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "page-order-and-fallback-name",
+      "input": {
+        "inventory": {
+          "pages": [
+            {
+              "page": 2,
+              "rows": 3,
+              "columns": 4,
+              "range": "R",
+              "regions": [
+                {}
+              ],
+              "mergedRangeCount": 2,
+              "state": "hidden",
+              "rotation": 90
+            },
+            {
+              "page": 1
+            }
+          ]
+        },
+        "structure": [
+          {
+            "page": 3,
+            "name": "tail"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": []
+        },
+        {
+          "id": "page:1",
+          "name": "1페이지",
+          "regionNames": []
+        },
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "regionNames": [
+            "tail"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": []
+        },
+        {
+          "id": "page:1",
+          "name": "1페이지",
+          "regionNames": []
+        },
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "regionNames": [
+            "tail"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "name": "2페이지",
+          "description": "3행 · 4열 · R · 1개 영역 · 병합 2곳 · 숨김 시트 · 회전 90°",
+          "page": 2,
+          "range": "R",
+          "id": "page:2",
+          "regions": []
+        },
+        {
+          "name": "1페이지",
+          "description": "",
+          "page": 1,
+          "id": "page:1",
+          "regions": []
+        },
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "description": "",
+          "page": 3,
+          "regions": [
+            {
+              "page": 3,
+              "name": "tail"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "page-wrapper-description-only-with-transcription",
+      "input": {
+        "transcription": {},
+        "inventory": {
+          "pages": [
+            {
+              "page": 2,
+              "rows": 3
+            }
+          ]
+        },
+        "structure": [
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2쪽",
+            "description": "요약"
+          },
+          {
+            "kind": "table",
+            "page": 2,
+            "name": "표"
+          },
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2페이지",
+            "description": "카드 보존"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": [
+            "표",
+            "2페이지"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": [
+            "표",
+            "2페이지"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "name": "2페이지",
+          "description": "3행 · 요약",
+          "page": 2,
+          "id": "page:2",
+          "regions": [
+            {
+              "kind": "table",
+              "page": 2,
+              "name": "표"
+            },
+            {
+              "kind": "text",
+              "page": 2,
+              "name": "2페이지",
+              "description": "카드 보존"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "page-wrapper-without-transcription-remains-region",
+      "input": {
+        "inventory": {
+          "pages": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        "structure": [
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2쪽",
+            "description": "요약"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": [
+            "2쪽"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "page:2",
+          "name": "2페이지",
+          "regionNames": [
+            "2쪽"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "name": "2페이지",
+          "description": "",
+          "page": 2,
+          "id": "page:2",
+          "regions": [
+            {
+              "kind": "text",
+              "page": 2,
+              "name": "2쪽",
+              "description": "요약"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "empty-first-sheet-array-precedes-pages",
+      "input": {
+        "inventory": {
+          "sheets": [],
+          "worksheets": [
+            "ignored"
+          ],
+          "pages": [
+            {
+              "page": 1
+            }
+          ]
+        },
+        "structure": [
+          {
+            "page": 3,
+            "name": "tail"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "regionNames": [
+            "tail"
+          ]
+        }
+      ],
+      "actual": [
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "regionNames": [
+            "tail"
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "description": "",
+          "page": 3,
+          "regions": [
+            {
+              "page": 3,
+              "name": "tail"
+            }
+          ]
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    },
+    {
+      "id": "nullish-aliases-empty-name-and-description-order",
+      "input": {
+        "inventory": {
+          "sheets": null,
+          "worksheets": [
+            {
+              "sheet": "S",
+              "title": "",
+              "name": "Ignored",
+              "rows": 0,
+              "rowCount": 99,
+              "columnCount": 4,
+              "usedRange": "A1:D4",
+              "regions": [
+                {},
+                {}
+              ],
+              "mergedRangeCount": 2,
+              "state": "veryHidden",
+              "rotation": -90
+            }
+          ]
+        },
+        "structure": []
+      },
+      "expected": [
+        {
+          "id": "sheet:S",
+          "name": "영역 1",
+          "regionNames": []
+        }
+      ],
+      "actual": [
+        {
+          "id": "sheet:S",
+          "name": "영역 1",
+          "regionNames": []
+        }
+      ],
+      "groups": [
+        {
+          "name": "영역 1",
+          "description": "0행 · 4열 · A1:D4 · 2개 영역 · 병합 2곳 · 숨김 시트 · 회전 -90°",
+          "sheet": "S",
+          "range": "A1:D4",
+          "id": "sheet:S",
+          "regions": []
+        }
+      ],
+      "status": "PASS_LOCAL_PURE_HELPER"
+    }
+  ]
+}

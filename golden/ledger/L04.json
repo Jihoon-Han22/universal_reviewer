@@ -1,0 +1,16 @@
+{
+  "id": "L04",
+  "desc": "데이터 아래 =SUM() 합계 행 (건드리면 안 됨)",
+  "expect": "ok",
+  "sheet": "검토대장",
+  "header_row": 1,
+  "key_column": "C",
+  "key_header": "성적서번호",
+  "result_column": "F",
+  "note_column": "G",
+  "key": "2026-0891",
+  "target_cells": [
+    "F12",
+    "G12"
+  ]
+}

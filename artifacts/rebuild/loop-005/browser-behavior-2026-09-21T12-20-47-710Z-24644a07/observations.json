@@ -1,0 +1,496 @@
+{
+  "schemaVersion": "1.0",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "gateId": "G13",
+  "loop": "LOOP-005",
+  "codeDigest": "3e027d345f13173d0fe51c5f62cf8886d7346f38f7be3bc398e7f7f30d2f6b2a",
+  "registrySha256": "7a7160fc0564c4df73fd4842781267f2e184304ebdc087935c0696fe498ac5b7",
+  "planRef": {
+    "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/plan.json",
+    "sha256": "128cf5e2cd3e884e2b62de6154d21d2da5d9adf126d366057ed0702240ac9d5a"
+  },
+  "command": [
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\.cache\\runtime\\node-v24.13.1-win-x64\\node.exe",
+    "C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\browser-behavior-runtime.mjs",
+    "--execute",
+    "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/plan.json"
+  ],
+  "startedAt": "2026-09-21T12:30:19.008Z",
+  "endedAt": "2026-09-21T12:37:54.210Z",
+  "exitCode": 1,
+  "origin": "actual-browser-current-react-synthetic-http",
+  "oracleAccess": false,
+  "browser": {
+    "name": "chromium",
+    "version": "153.0.8010.48",
+    "executable": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "node": "v24.13.1",
+    "headless": true,
+    "profile": "isolated temporary; no user profile",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  "browserTraceRef": {
+    "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/browser-trace-index.json",
+    "sha256": "ec6637d4b29c6b92228ee36f1a5bf2c5fa688f3fcc4b3d83e5af7e91d3d7325e"
+  },
+  "cases": [
+    {
+      "caseId": "G13:app-motion-OFF",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-app-motion-OFF.json",
+        "sha256": "0197d8247afa427d7d441977481c5747dd2052c3c71aec8fe3f87e01384a8ca6"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-off.dom.json",
+          "sha256": "8fafbe2691bc74b035d7b74e65ee5655ad5d7c21b33660532053cff749086cb9"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-off.png",
+          "sha256": "b8d7bdf93f64b5c766f65c9d4f7076bc0a70cee957c294cf1dd14d956d2f2d2a"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-off.dom.json",
+          "sha256": "f3025cd50897726cf483160644b94bc70e880c210209bb580c22dae7dacf763c"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-off.png",
+          "sha256": "2fe68cf4a03dccdea8653a48dccc86144b2e6634b72eb31fd543404ffe080475"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/results-off.dom.json",
+          "sha256": "92b391fc9a9f2c8b37fcff2c3835d83795bd84f1a6cb9af0e948af1e9cb169f1"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/results-off.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 3,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:ARIA-current-limitations",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-ARIA-current-limitations.json",
+        "sha256": "e1b616a8beee2d2d94315e9f5a428f42ed5c7c2554f20c7977b03b32ba8b7244"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-aria.dom.json",
+          "sha256": "c6f81429d37caad4db4ac1d6f7f7686290bcc18da7d9896c135af00f9111ddc5"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-aria.png",
+          "sha256": "ef78deee93000d5669cce0e2b96ef90b98611ac0e84c8217b924c237408a37d2"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.dom.json",
+          "sha256": "53a111349785172aca15404ff86f1f48a79ba5cc567f73a3681b99ce75df22b6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.png",
+          "sha256": "b014a0badc128d2e3957c9a833f2e2daed61b9580738596949fa90ec15f31f45"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/cancel-aria.dom.json",
+          "sha256": "dd2a6eb05d135820ccb54302438eadcdb942205d2db10c950643cab05907f52f"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/cancel-aria.png",
+          "sha256": "42b09049a2c58630f82d11fbe1d3b90ef316d9b0e16f1175d611fd949a36b6be"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 3,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:CORE-19-C01",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-CORE-19-C01.json",
+        "sha256": "ec674a7d2cc8a04f99f5a630658db3b642c9a9656a8ecf9d9f76a77d79200af3"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.dom.json",
+          "sha256": "7a1727266ad05346261ea793d3e45f6bdf96d7927f00ca43fa6840a346e02796"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 1,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:CORE-19-C04",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-CORE-19-C04.json",
+        "sha256": "d48799a435c156d0e031ba66fa9f816d22aff1e2844a77625206e7a916034fe5"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.dom.json",
+          "sha256": "7a1727266ad05346261ea793d3e45f6bdf96d7927f00ca43fa6840a346e02796"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 2,
+        "failed": 0,
+        "notRun": 3
+      }
+    },
+    {
+      "caseId": "G13:CORE-19-C05",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-CORE-19-C05.json",
+        "sha256": "678c4a317963d42263b1fe35e172b02c80ba060e493159314da199b439a2a53f"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/performance-recording.dom.json",
+          "sha256": "60a723b590d133597e1504cb7d18057df56e2b966ec292562d8ba0aacfac26d0"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/performance-recording.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 1,
+        "failed": 0,
+        "notRun": 2
+      }
+    },
+    {
+      "caseId": "G13:keyboard-focus-dialog-Escape",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-keyboard-focus-dialog-Escape.json",
+        "sha256": "83b2dfef4cbe12838bc4db1c5294c3c67d51b9783f08dccb3966ba32d6cd63ec"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.dom.json",
+          "sha256": "52309aacfed6aa4c61b76f58241abe35c3c5c4475c45583a6aa7e3b6d7df56d6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-keyboard.png",
+          "sha256": "cc24af508139f6ef965f01590dd54c724fb6869c5b1a5e9f281a9a08480542cd"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.dom.json",
+          "sha256": "302b9a0575be9b69cc12f2fe480c834aa5b6ea86eb3dc6a2f0c74f5438916a8d"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.png",
+          "sha256": "f4602a3a1d51d97b54d018877140cd0893b1349b1e49daa93829d519961a19e1"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.dom.json",
+          "sha256": "53a111349785172aca15404ff86f1f48a79ba5cc567f73a3681b99ce75df22b6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-tooltip.png",
+          "sha256": "b014a0badc128d2e3957c9a833f2e2daed61b9580738596949fa90ec15f31f45"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.dom.json",
+          "sha256": "049f98a19e5595607251c6ab8e5b8d1d5043953987e51c89b4868cf1ed593248"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-escape.png",
+          "sha256": "0621901d3fd449178ebe1bc5efbe3efc442f89d003a69fc5f58c61a7ee645376"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.dom.json",
+          "sha256": "078538161541a88d852d200fd2237b5f2892d9b37bb9c1a81c23547dbe467a97"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/ledger-escape.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 5,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:measured-performance-no-invented-target",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-measured-performance-no-invented-target.json",
+        "sha256": "e4ee225d52a038ccfc5c85a709532ecc141fd4849692038f8873ecfdf50d9849"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.dom.json",
+          "sha256": "7a1727266ad05346261ea793d3e45f6bdf96d7927f00ca43fa6840a346e02796"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/performance-recording.dom.json",
+          "sha256": "60a723b590d133597e1504cb7d18057df56e2b966ec292562d8ba0aacfac26d0"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/performance-recording.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 2,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:mobile-overflow",
+      "state": "passed",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-mobile-overflow.json",
+        "sha256": "5ba4efbd68e030ddef90dcd6011b73be5a60c86fc27cb31fba1558e22604a1c7"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-landing.dom.json",
+          "sha256": "48b43d41fc099965b1f46081c1b50ea58dd96f7204c02a8e07f8b707c72ed6be"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-landing.png",
+          "sha256": "8ee79281761cf4ef12006319a758640b866f5ee0ab185a5b713c7f4c85c061b6"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-live.dom.json",
+          "sha256": "76ff3e0d43b96116b1fd75b7f19b3fdf0a73c5388913eac40f7b43b817f661ba"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-live.png",
+          "sha256": "00af4dff0e88251281175c1a56dcd47bca1f07698fb27b85912170dcfe10f594"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-results.dom.json",
+          "sha256": "c498f299efaecf848989d30b67e32c8c2c40544592e3bd8f5c8b0e4f8c0de930"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/mobile-results.png",
+          "sha256": "467ee09179eb0bce0276d648baadf9744a5d0085e351a96876a58517d707e46c"
+        }
+      ],
+      "coverage": {
+        "complete": true,
+        "passed": 3,
+        "failed": 0,
+        "notRun": 0
+      }
+    },
+    {
+      "caseId": "G13:OS-reduced-motion",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-OS-reduced-motion.json",
+        "sha256": "90b5e05378e28fbb8848e0334f7f93e7bc69c4908f514b302f526479cfebe7b9"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-os.dom.json",
+          "sha256": "4323c1eb90f68da5dd697b75e5d8d23d139f957c9e12120181af46cb0a23006c"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/landing-os.png",
+          "sha256": "1966ca39325bb0e0de2a64e3b421383ca59bfdbde5a1c7204d5d73e7e920fdce"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-os.dom.json",
+          "sha256": "c8fb9efa0b0c2b533b4ad8e1eb070de81f836a768b3f258793002ebd48dc35c0"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/summary-os.png",
+          "sha256": "06cde0968aafb8ddb745505e9ea1a9198cf0f6a9f3148ec1eb80991f78e7297e"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 2,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:PDF-iframe-objectURL-cleanup",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-PDF-iframe-objectURL-cleanup.json",
+        "sha256": "af7274e8f0ace837c05038ad030adafaa6259d4de4cd392fb87aa2b92e46f060"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.dom.json",
+          "sha256": "7a1727266ad05346261ea793d3e45f6bdf96d7927f00ca43fa6840a346e02796"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/dashboard-resources.png",
+          "sha256": "babe546f8840cecdf0b7a08a1d62c239703c69512e94a8d0e5f2881a44573b57"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 1,
+        "failed": 0,
+        "notRun": 2
+      }
+    },
+    {
+      "caseId": "G13:unmount-disconnect-cancel",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-unmount-disconnect-cancel.json",
+        "sha256": "7bd23f86111ab73287ac3919a38b0aca584f9c503b4d7635b397f2781771e789"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/cancel-aria.dom.json",
+          "sha256": "dd2a6eb05d135820ccb54302438eadcdb942205d2db10c950643cab05907f52f"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/cancel-aria.png",
+          "sha256": "42b09049a2c58630f82d11fbe1d3b90ef316d9b0e16f1175d611fd949a36b6be"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 2,
+        "failed": 0,
+        "notRun": 1
+      }
+    },
+    {
+      "caseId": "G13:zoom-200-percent",
+      "state": "not_run",
+      "startedAt": "2026-09-21T12:30:19.008Z",
+      "endedAt": "2026-09-21T12:37:54.210Z",
+      "actualRef": {
+        "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/cases/G13-zoom-200-percent.json",
+        "sha256": "dd70127dacfdd5688ded305e630b3a7a1ec983b4ebdd26241da1c5649dd3ac9f"
+      },
+      "artifactRefs": [
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/native-zoom.dom.json",
+          "sha256": "c22684f9566faed9322e84cd09db8e33983c132dc1fbc537f243532fde9864dc"
+        },
+        {
+          "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/native-zoom.png",
+          "sha256": "ff609933e01cdea546544aac0232dfed9915994cab252346eaa87cd5363d7a70"
+        }
+      ],
+      "coverage": {
+        "complete": false,
+        "passed": 0,
+        "failed": 0,
+        "notRun": 1
+      }
+    }
+  ],
+  "sourceParity": true,
+  "providerCalls": {
+    "gemini": 0,
+    "e2b": 0
+  },
+  "errors": [
+    {
+      "context": 1,
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    },
+    {
+      "context": 1,
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    },
+    {
+      "context": 1,
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    },
+    {
+      "context": 1,
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    },
+    {
+      "context": 1,
+      "name": "SecurityError",
+      "message": "Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.",
+      "stack": "SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"
+    }
+  ],
+  "environment": {
+    "os": {
+      "platform": "win32",
+      "release": "10.0.19045",
+      "architecture": "x64"
+    },
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "logicalProcessors": 4,
+    "memoryBytes": 8274530304,
+    "node": "v24.13.1"
+  },
+  "gateStatus": "NOT_PASS",
+  "scope": "Real browser observations under explicit synthetic HTTP responses. Missing facets retained; no provider, original parser, PDF or large-input execution inferred."
+}

@@ -1,0 +1,72 @@
+{
+  "id": "09-criteria-confirmation",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "09-criteria-confirmation",
+    "screenshot": {
+      "path": "09-criteria-confirmation.png",
+      "bytes": 106138,
+      "sha256": "2af44d66ac0c90c71b2f9807fa9c36b91725a73680e9a8278b67f64f059fde4d",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/09-criteria-confirmation.json",
+      "bytes": 1022826,
+      "sha256": "6102b431732ddc21f8a561e2e09f207d791e8aaa385e6ed0daf545b5aa878dc9"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T12:23:45.496Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/diagnostics/09-criteria-confirmation-font-readiness.json",
+    "bytes": 2301160,
+    "sha256": "5448b6f26275862719f0c02dd4800a0fd8f50b27ec20dc657d7ac1c900daead7"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/09-criteria-confirmation.png",
+    "bytes": 105064,
+    "sha256": "080d86d7417b8682314cecd789437320cf85ba8a08fb69e16e22540823271f65",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T12:23:48.455Z",
+    "capturedAt": "2026-09-21T12:23:48.737Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/dom/09-criteria-confirmation.json",
+    "bytes": 1569535,
+    "sha256": "bf027b638018205be50b95f68a8047269df1704387cb10b5f1bb53fdedf14c4f"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-005/2026-09-21T12-22-33-340Z-all-21944-ff433417/09-criteria-confirmation-measurement.json",
+    "bytes": 202857,
+    "sha256": "812c777e996914889a9744a27c9e62682312d537e3ff349d14632533e662df74"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "confirmation",
+  "endedAt": "2026-09-21T12:23:50.905Z"
+}

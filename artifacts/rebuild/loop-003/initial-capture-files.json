@@ -1,0 +1,46 @@
+{
+  "captures": [
+    {
+      "name": "01-landing-desktop-initial",
+      "source": "artifacts/rebuild/loop-003/01-landing-desktop-initial.source.jpg",
+      "png": "artifacts/rebuild/loop-003/01-landing-desktop-initial.png",
+      "originalFormat": "JPEG",
+      "width": 1440,
+      "height": 858,
+      "sourceSha256": "1a37266cdccd547aca25ef3542f261211b5ad6c4fb6827ec50af42ef3e6cc01d",
+      "pngSha256": "348232a41506910bc1ef6598cf5afb36a1769d4ec459068661c2eaaf7e38ae57"
+    },
+    {
+      "name": "02-landing-mobile-initial",
+      "source": "artifacts/rebuild/loop-003/02-landing-mobile-initial.source.jpg",
+      "png": "artifacts/rebuild/loop-003/02-landing-mobile-initial.png",
+      "originalFormat": "JPEG",
+      "width": 390,
+      "height": 232,
+      "sourceSha256": "4c9721ba1c83aca34b5d73a866cf6cb6aaeb017ecf0955ba468c2e95e687823a",
+      "pngSha256": "ab245648d1d5cef2b3b2e5baf5dc0922629bf4dd1efebaeb45fc5401002b48d9"
+    },
+    {
+      "name": "03-landing-mobile-settled",
+      "source": "artifacts/rebuild/loop-003/03-landing-mobile-settled.source.jpg",
+      "png": "artifacts/rebuild/loop-003/03-landing-mobile-settled.png",
+      "originalFormat": "JPEG",
+      "width": 390,
+      "height": 844,
+      "sourceSha256": "9045288e80ca77c53bce5be8be593b33c054b5bcbaeafeef738fc314435764fb",
+      "pngSha256": "bf7bcf454c7183e32d6dc849372243ed472c47338eaf1b941f398ea654cee2bf"
+    },
+    {
+      "name": "04-criteria-input-initial",
+      "source": "artifacts/rebuild/loop-003/04-criteria-input-initial.source.jpg",
+      "png": "artifacts/rebuild/loop-003/04-criteria-input-initial.png",
+      "originalFormat": "JPEG",
+      "width": 1440,
+      "height": 858,
+      "sourceSha256": "c8315b68d0d3a2ea211141451659bc8c1c1967b85111e88b60869223aeeeaaba",
+      "pngSha256": "f41b0345ccba5ccd62954555767a3a352e4c896c52a5cbdddb8eb756f824177c"
+    }
+  ],
+  "conversion": "JPEG bytes returned by documented CUA screenshot API retained unchanged; PNG is a format conversion with no resizing, cropping, masking or other pixel edits.",
+  "acceptance": "NOT_RUN; initial observations only; first mobile capture retained as unsettled/stale frame, not a responsive acceptance image."
+}

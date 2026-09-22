@@ -1,0 +1,106 @@
+﻿case_id,field_id,file,sheet,cell,value
+B101,thermal,golden/native/B101_completed.xlsx,단열 성능,G10,판독 불가
+B101,thermal,golden/native/B101_completed.xlsx,단열 성능,H10,review
+B101,thermal,golden/native/B101_completed.xlsx,단열 성능,I10,PDF 3쪽 | 불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가
+B101,stress,golden/native/B101_completed.xlsx,단열 성능,G11,142 kPa
+B101,stress,golden/native/B101_completed.xlsx,단열 성능,H11,pass
+B101,stress,golden/native/B101_completed.xlsx,단열 성능,I11,PDF 3쪽 | 최소 140 kPa 이상
+B101,absorption,golden/native/B101_completed.xlsx,마감재 기준,E7,0.41 %
+B101,absorption,golden/native/B101_completed.xlsx,마감재 기준,F7,pass
+B101,absorption,golden/native/B101_completed.xlsx,마감재 기준,G7,PDF 11쪽 | 상한 0.5% 이하
+B101,bond,golden/native/B101_completed.xlsx,마감재 기준,E8,1.12 MPa
+B101,bond,golden/native/B101_completed.xlsx,마감재 기준,F8,pass
+B101,bond,golden/native/B101_completed.xlsx,마감재 기준,G8,PDF 13쪽 | 최소 1.0 MPa 이상
+B102,strength,golden/native/B102_completed.xlsx,현장 종합기준,F7,31.2 MPa
+B102,strength,golden/native/B102_completed.xlsx,현장 종합기준,G7,pass
+B102,strength,golden/native/B102_completed.xlsx,현장 종합기준,H7,PDF 16 + 15쪽 | 28일 양생 조건을 앞쪽 시험계획에서 연결
+B102,chloride,golden/native/B102_completed.xlsx,현장 종합기준,F23,0.047 %
+B102,chloride,golden/native/B102_completed.xlsx,현장 종합기준,G23,pass
+B102,chloride,golden/native/B102_completed.xlsx,현장 종합기준,H23,PDF 18 + 16쪽 | 전 페이지 헤더 및 LOT를 연결해야 하는 연속 표
+B102,elongation,golden/native/B102_completed.xlsx,현장 종합기준,F42,14 %
+B102,elongation,golden/native/B102_completed.xlsx,현장 종합기준,G42,fail
+B102,elongation,golden/native/B102_completed.xlsx,현장 종합기준,H42,PDF 45쪽 | 구개정 기준 12%가 아닌 현행 최소 16% 적용
+B102,fire,golden/native/B102_completed.xlsx,현장 종합기준,F46,60 min
+B102,fire,golden/native/B102_completed.xlsx,현장 종합기준,G46,pass
+B102,fire,golden/native/B102_completed.xlsx,현장 종합기준,H46,PDF 45쪽 | 주석의 H-03 특별기준 60분 적용
+I201,density,golden/native/I201_completed.xlsx,노체 기준 행렬,C16,96.3 %
+I201,density,golden/native/I201_completed.xlsx,노체 기준 행렬,D16,pass
+I201,density,golden/native/I201_completed.xlsx,노체 기준 행렬,E16,PDF 4쪽 | 중앙 시료 C열 해당 구간 선택
+I201,cbr,golden/native/I201_completed.xlsx,노체 기준 행렬,C17,79; handwritten 89 ?
+I201,cbr,golden/native/I201_completed.xlsx,노체 기준 행렬,D17,review
+I201,cbr,golden/native/I201_completed.xlsx,노체 기준 행렬,E17,PDF 21쪽 | 인쇄값 79와 확인되지 않은 수기 89 ?가 충돌하므로 원본 확인 필요
+I201,sieve075,golden/native/I201_completed.xlsx,입도 범위,E22,4.8 %
+I201,sieve075,golden/native/I201_completed.xlsx,입도 범위,F22,pass
+I201,sieve075,golden/native/I201_completed.xlsx,입도 범위,G22,PDF 33쪽 | 입도곡선 대신 수치표에서 정확한 값 추출
+I201,sieve475,golden/native/I201_completed.xlsx,입도 범위,E23,99.1 %
+I201,sieve475,golden/native/I201_completed.xlsx,입도 범위,F23,pass
+I201,sieve475,golden/native/I201_completed.xlsx,입도 범위,G23,PDF 33쪽 | 포함 경계의 범위 기준
+I202,voids,golden/native/I202_completed.xlsx,현장 검토서,C9,3.8 %
+I202,voids,golden/native/I202_completed.xlsx,현장 검토서,E9,pass
+I202,voids,golden/native/I202_completed.xlsx,현장 검토서,C10,PDF 29쪽 | 쉼표는 소수 구분자
+I202,stability,golden/native/I202_completed.xlsx,현장 검토서,C16,9.2 kN
+I202,stability,golden/native/I202_completed.xlsx,현장 검토서,E16,pass
+I202,stability,golden/native/I202_completed.xlsx,현장 검토서,C17,PDF 29쪽 | 영문 문장 속 시험값 추출
+I202,thickness,golden/native/I202_completed.xlsx,현장 검토서,C23,47 mm
+I202,thickness,golden/native/I202_completed.xlsx,현장 검토서,E23,fail
+I202,thickness,golden/native/I202_completed.xlsx,현장 검토서,C24,PDF 66쪽 | 특기시방의 최소 두께 50 mm 미달
+I202,permeability,golden/native/I202_completed.xlsx,현장 검토서,C30,NOT TESTED
+I202,permeability,golden/native/I202_completed.xlsx,현장 검토서,E30,review
+I202,permeability,golden/native/I202_completed.xlsx,현장 검토서,C31,PDF 66쪽 | 미시험 표기를 0으로 바꾸지 않음
+P301,yield,golden/native/P301_completed.xlsx,Mechanical R3,G15,345 MPa
+P301,yield,golden/native/P301_completed.xlsx,Mechanical R3,H15,pass
+P301,yield,golden/native/P301_completed.xlsx,Mechanical R3,I15,PDF 37쪽 | 같은 Heat의 현행 기계적 성질 표 선택
+P301,tensile,golden/native/P301_completed.xlsx,Mechanical R3,G16,510 MPa
+P301,tensile,golden/native/P301_completed.xlsx,Mechanical R3,H16,pass
+P301,tensile,golden/native/P301_completed.xlsx,Mechanical R3,I16,PDF 37쪽 | 하한 및 상한 포함
+P301,impact,golden/native/P301_completed.xlsx,Mechanical R3,G17,판독 불가
+P301,impact,golden/native/P301_completed.xlsx,Mechanical R3,H17,review
+P301,impact,golden/native/P301_completed.xlsx,Mechanical R3,I17,PDF 118 + 114쪽 | 불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가
+P301,carbon,golden/native/P301_completed.xlsx,Chemistry R3,E8,0.21 %
+P301,carbon,golden/native/P301_completed.xlsx,Chemistry R3,F8,pass
+P301,carbon,golden/native/P301_completed.xlsx,Chemistry R3,G8,PDF 114쪽 | 전체 Heat 표 중 HX-72만 선택
+P301,pressure,golden/native/P301_completed.xlsx,Hydro R3,E13,15 MPa
+P301,pressure,golden/native/P301_completed.xlsx,Hydro R3,F13,pass
+P301,pressure,golden/native/P301_completed.xlsx,Hydro R3,G13,PDF 191쪽 | 150 bar = 15 MPa; 현행 설계압력의 1.5배
+P301,hold,golden/native/P301_completed.xlsx,Hydro R3,E14,30 min
+P301,hold,golden/native/P301_completed.xlsx,Hydro R3,F14,pass
+P301,hold,golden/native/P301_completed.xlsx,Hydro R3,G14,PDF 224쪽 | 유지시간은 압력 차트가 아닌 최종 입회 기록에 있음
+P302,wall,golden/native/P302_completed.xlsx,Release Form,E19,8.2 mm
+P302,wall,golden/native/P302_completed.xlsx,Release Form,F19,pass
+P302,wall,golden/native/P302_completed.xlsx,Release Form,G19,PDF 22쪽 | 최소 측정값 8.2 mm를 사용
+P302,weld,golden/native/P302_completed.xlsx,Release Form,E20,Acceptable
+P302,weld,golden/native/P302_completed.xlsx,Release Form,F20,pass
+P302,weld,golden/native/P302_completed.xlsx,Release Form,G20,PDF 57쪽 | 문구 기준과 일치
+P302,leak,golden/native/P302_completed.xlsx,Release Form,E21,<0.000001 Pa m3/s
+P302,leak,golden/native/P302_completed.xlsx,Release Form,F21,pass
+P302,leak,golden/native/P302_completed.xlsx,Release Form,G21,PDF 92쪽 | 검출 상한이 허용 상한보다 작음
+P302,coating,golden/native/P302_completed.xlsx,Release Form,E22,280 um
+P302,coating,golden/native/P302_completed.xlsx,Release Form,F22,pass
+P302,coating,golden/native/P302_completed.xlsx,Release Form,G22,PDF 92쪽 | 부록 개정값 250..350 적용; 본문 구기준 300..400 제외
+P302,ferrite,golden/native/P302_completed.xlsx,Release Form,E23,6.2 %
+P302,ferrite,golden/native/P302_completed.xlsx,Release Form,F23,review
+P302,ferrite,golden/native/P302_completed.xlsx,Release Form,G23,PDF 57쪽 | 현행 기준서에 합격 한계가 제공되지 않음
+N401,lead,golden/native/N401_completed.xlsx,분석 허용치,F19,<0.004 mg/L
+N401,lead,golden/native/N401_completed.xlsx,분석 허용치,G19,pass
+N401,lead,golden/native/N401_completed.xlsx,분석 허용치,H19,PDF 6쪽 | 검출상한 0.004가 한계 0.01보다 작음
+N401,cadmium,golden/native/N401_completed.xlsx,분석 허용치,F20,ND
+N401,cadmium,golden/native/N401_completed.xlsx,분석 허용치,G20,review
+N401,cadmium,golden/native/N401_completed.xlsx,분석 허용치,H20,PDF 6쪽 | ND이나 LOD/LOQ 미기재
+N401,cod,golden/native/N401_completed.xlsx,분석 허용치,F21,18 mg/L
+N401,cod,golden/native/N401_completed.xlsx,분석 허용치,G21,pass
+N401,cod,golden/native/N401_completed.xlsx,분석 허용치,H21,PDF 15쪽 | 지정 채수일과 OUTLET B의 결과
+N401,ph,golden/native/N401_completed.xlsx,현장 측정,F12,9.1
+N401,ph,golden/native/N401_completed.xlsx,현장 측정,G12,fail
+N401,ph,golden/native/N401_completed.xlsx,현장 측정,H12,PDF 23쪽 | 허용 상한 8.5 초과
+N402,power,golden/native/N402_completed.xlsx,완성 검토,C8,449 W
+N402,power,golden/native/N402_completed.xlsx,완성 검토,C10,fail
+N402,power,golden/native/N402_completed.xlsx,완성 검토,C12,PDF 4쪽 | STC 조건 결과가 최소 450 W 미달
+N402,insulation,golden/native/N402_completed.xlsx,완성 검토,D8,240 MOhm
+N402,insulation,golden/native/N402_completed.xlsx,완성 검토,D10,pass
+N402,insulation,golden/native/N402_completed.xlsx,완성 검토,D12,PDF 28쪽 | kOhm을 MOhm으로 환산
+N402,wetleak,golden/native/N402_completed.xlsx,완성 검토,E8,판독 불가
+N402,wetleak,golden/native/N402_completed.xlsx,완성 검토,E10,review
+N402,wetleak,golden/native/N402_completed.xlsx,완성 검토,E12,PDF 40쪽 | 결과 숫자 인쇄 손상으로 판독 불가
+N402,model,golden/native/N402_completed.xlsx,완성 검토,F8,PVX-72
+N402,model,golden/native/N402_completed.xlsx,완성 검토,F10,pass
+N402,model,golden/native/N402_completed.xlsx,완성 검토,F12,PDF 4쪽 | 요청 모델과 일치

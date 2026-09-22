@@ -1,0 +1,1230 @@
+{
+  "role": "clarity",
+  "reviewerId": "/root/clarity_ui",
+  "profile": "CURRENT_REPRODUCTION",
+  "methodology": {
+    "sourceBlind": true,
+    "readOriginalProductSource": false,
+    "readPriorReviewScoresOrAuthorReports": false,
+    "assessmentScope": "문서/동봉 규범 자산으로 UI 동작을 독립 구현할 수 있는지 평가. 브라우저 실행·재구현·provider 호출의 성공을 주장하지 않음.",
+    "executionStatus": "PRODUCT_EXECUTION_NOT_RUN",
+    "baselinePolicy": "DECISIONS 및 REPRODUCTION 우선. OPTIONAL_FUTURE는 현재 요구로 적용하지 않음.",
+    "freezeVerification": "current-inputs.json SHA-256과 population.evaluatedInputsSha256을 직접 확인했고 현재 UI119 질문 ID/moduleId의 전수 일치를 확인했다. 규범 문서만 읽었고 결과/작성자 보고서는 읽지 않았다."
+  },
+  "questionResults": [
+    {
+      "id": "UI-01-C01",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §3",
+        "architecture/specs/01-state-api.md §2–3"
+      ],
+      "rationale": "7개 page의 목적지와 4개 표시 단계가 분리되어 있고 awaiting_confirmation/awaiting_documents/completed/partial의 이동 조건을 결정할 수 있다."
+    },
+    {
+      "id": "UI-01-C02",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §5–7",
+        "architecture/ui/interaction-contract.md §I1"
+      ],
+      "rationale": "runId/generation/sequence/revision/localRevision 수용 조건과 expectedCriterionVersion 충돌, 취소·늦은 시작 응답 처리가 정해져 있다. 삭제·sample 요청의 별도 guard 부재도 명시된다."
+    },
+    {
+      "id": "UI-01-C03",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/interaction-fixtures.json §CANCEL-01; RESET-EXACT"
+      ],
+      "rationale": "locked 식과 원문 열기 예외, cancel의 즉시 로컬 중단 및 reset의 정확한 대입·보존 목록이 있어 자동 재개를 추가하지 않고 재현 가능하다."
+    },
+    {
+      "id": "UI-01-C04",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/interaction-fixtures.json §TIMER-01"
+      ],
+      "rationale": "1800/1600/120ms 우선순위, ON/live/페이지 조건, effect 의존성 변경 시 재시작 및 epoch 검사까지 수치화되어 있다."
+    },
+    {
+      "id": "UI-01-C05",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §7",
+        "architecture/specs/04-ui-motion.md §3"
+      ],
+      "rationale": "SSE 오류의 단일 GET 회복, terminal 종료, 회복 실패 문구 및 시작·대상 처리 실패의 각각 입력 페이지 복귀가 명시된다."
+    },
+    {
+      "id": "UI-01-C06",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §9 UI-01/UI-02/UI-08",
+        "architecture/ui/interaction-fixtures.json §TIMER-01; CANCEL-01; RESET-EXACT",
+        "architecture/ui/reference/README.md §화면 범위"
+      ],
+      "rationale": "7개 page 순회와 취소·부분완료·reset의 상태/DOM·시간 기대값을 제공한다. 합성 참조와 NOT_RUN acceptance를 실행 증거로 혼동하지 않는다."
+    },
+    {
+      "id": "UI-01-C07",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A3"
+      ],
+      "rationale": "mount 최초 GET·null 초기/실패·StrictMode 두 요청 가능성, 재시도/timeout/abort/stale guard 부재, header 및 dashboard gate가 명시된다."
+    },
+    {
+      "id": "UI-01-C08",
+      "moduleId": "UI-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1.1",
+        "architecture/ui/interaction-fixtures.json §APP-PANE-LIFECYCLE"
+      ],
+      "rationale": "탭/상단 원문에서의 unmount와 같은 run 기준확인 hidden 유지, local 상태 소멸·App 선택 보존, export 메뉴의 Escape/외부클릭 무동작을 사건별로 결정할 수 있다."
+    },
+    {
+      "id": "UI-02-C01",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.1",
+        "architecture/ui/VISUAL-CONTRACT.md §1–3"
+      ],
+      "rationale": "차콜 배경·카드·코발트·민트와 일반 결과/theater의 서로 다른 상태색을 명시하고 최종 cascade 정본을 지정한다."
+    },
+    {
+      "id": "UI-02-C02",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §1–2.1",
+        "architecture/ui/VISUAL-CONTRACT.md §3–5"
+      ],
+      "rationale": "eager CSS5개→main10개→lazy 경계별 누적 순서, 제외 CSS, 고정 버전과 로컬 폰트 바이트의 적용 경로가 자족적이다."
+    },
+    {
+      "id": "UI-02-C03",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §8"
+      ],
+      "rationale": "trace-demo-motion의 off만 false인 초기값, 저장 on/off와 저장 실패 무시, html full/reduced 및 MotionConfig never/always가 정해져 있다."
+    },
+    {
+      "id": "UI-02-C04",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.3; 8",
+        "architecture/ui/VISUAL-CONTRACT.md §6; 8"
+      ],
+      "rationale": "280ms tween/easing과 개별 override, CSS pseudo/disabled, app OFF와 컴포넌트별 OS 반응을 구별하여 구현할 수 있다."
+    },
+    {
+      "id": "UI-02-C05",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.2; 2.5; 10",
+        "architecture/ui/VISUAL-CONTRACT.md §3"
+      ],
+      "rationale": "desktop 내부 스크롤과 낮은 높이·모바일 예외, breakpoint별 세로 배치, 미도달 sky CSS 제외가 명시된다."
+    },
+    {
+      "id": "UI-02-C06",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §7–9",
+        "architecture/ui/detail-controls.md §D1.4",
+        "architecture/ui/VISUAL-CONTRACT.md §7–8"
+      ],
+      "rationale": "밝은 원문/다크 셸 색값, focus·모션 네 조합과 해당 baseline 한계, geometry·PNG·시간 측정 절차가 있다."
+    },
+    {
+      "id": "UI-02-C09",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/DECISIONS.md §D18–D19",
+        "architecture/ui/interaction-contract.md §I9.2",
+        "architecture/ui/interaction-fixtures.json §PDF-PAGE-INTEGER; TOOLTIP-G13-REBUILD; TABLE-HIGHLIGHT-REBUILD"
+      ],
+      "rationale": "표/PDF chip/빈 출처 cap/활동 보존/OS 모션/저장취소를 항목별 baseline 또는 OPTIONAL_FUTURE로 정하고 서로 다른 oracle와 미래 gate를 구분한다."
+    },
+    {
+      "id": "UI-02-C07",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A1"
+      ],
+      "rationale": "두 formatter의 별도 정규식·trim 여부·null·15자리·소수12자리 반올림·선행0/부호/지수 경계를 입력 예와 함께 결정할 수 있다."
+    },
+    {
+      "id": "UI-02-C08",
+      "moduleId": "UI-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A2"
+      ],
+      "rationale": "보호 token과 치환을 하나의 정확한 정규식으로 규정하고 짧은 title/phase 적용 및 원문·로그·오류의 무변환 범위를 정한다."
+    },
+    {
+      "id": "UI-03-C01",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.3; 3",
+        "architecture/ui/interaction-contract.md §I1"
+      ],
+      "rationale": "hero 문구와 두 CTA를 고정하며 직접 시작은 criteria-input, 경비 체험은 sample 요청 뒤 text 입력으로 이동한다."
+    },
+    {
+      "id": "UI-03-C02",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.3; 5",
+        "architecture/ui/interaction-contract.md §I3"
+      ],
+      "rationale": "EXAMPLE/예시 문구와 3개 고정 예제값, preview 비상호작용 및 live run 데이터와의 경계를 명시한다."
+    },
+    {
+      "id": "UI-03-C03",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/interaction-fixtures.json §SAMPLE-01"
+      ],
+      "rationale": "sample 대기 동안 이전 상태·잠금·spinner, 실패 banner, 성공 시 기준만 현재 문서·target 임시보관으로 분리된다."
+    },
+    {
+      "id": "UI-03-C04",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.3"
+      ],
+      "rationale": "hero700ms/actions120ms/badge220+i45ms/theater200ms와 opacity/y16 및 OFF initial=false를 결정할 수 있다."
+    },
+    {
+      "id": "UI-03-C05",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.3; 3",
+        "architecture/ui/interaction-contract.md §I1"
+      ],
+      "rationale": "소개 page의 독립 렌더와 sample 실패시 이전 page 보존, finally 잠금 해제로 재시도 가능한 흐름이 명시된다."
+    },
+    {
+      "id": "UI-03-C06",
+      "moduleId": "UI-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.3; 9",
+        "architecture/ui/reference/README.md §화면 범위 01–03; 29–30"
+      ],
+      "rationale": "GSPEC 표기·형식 badges·자연어 안내·고정 예시를 기준 화면과 DOM/시각 비교 대상으로 지정한다."
+    },
+    {
+      "id": "UI-04-C01",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §3",
+        "architecture/ui/interaction-contract.md §I1; I1.1"
+      ],
+      "rationale": "기준 file/text와 awaiting_documents 이후 target 제한, 승인기준 카드 및 sourcePreview 대체 조건이 명시된다."
+    },
+    {
+      "id": "UI-04-C02",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §3",
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/auxiliary-contract.md §A6"
+      ],
+      "rationale": "accept 목록·12000자·role FormData/DELETE와 size 표시를 정하며 20MB는 App 사전검사가 아닌 서버 제한임을 명확히 한다."
+    },
+    {
+      "id": "UI-04-C03",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/interaction-fixtures.json §UPLOAD-01; UPLOAD-02; SAMPLE-01"
+      ],
+      "rationale": "drag/drop·upload 성공/실패·원문 토글·mode 전환 보존과 sampleTargets 소비를 상태/요청별로 재현할 수 있다."
+    },
+    {
+      "id": "UI-04-C04",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.2; 2.5; 5.3",
+        "architecture/ui/VISUAL-CONTRACT.md §2; 6"
+      ],
+      "rationale": "입력 y12와 file-row y6 진입, 업로드 SVG/아이콘 값과 좁은 화면 한 열 배치의 정본이 지정된다."
+    },
+    {
+      "id": "UI-04-C05",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D5",
+        "architecture/ui/interaction-fixtures.json §GOLDEN-01; GOLDEN-02; GOLDEN-EMPTY"
+      ],
+      "rationale": "catalog 실패와 load 실패, load 중 X/Escape 잠금, P10 PNG notice 및 target0 금지/빈 criteria catalog 한계를 구분한다."
+    },
+    {
+      "id": "UI-04-C06",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/detail-controls.md §D5",
+        "architecture/ui/interaction-fixtures.json §GOLDEN-01; GOLDEN-02; UPLOAD-02"
+      ],
+      "rationale": "criteria/target App 진입 payload와 role 필터, file/text 시작 시 활성 방식만 보내는 절차·기대값이 있다."
+    },
+    {
+      "id": "UI-04-C07",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A6"
+      ],
+      "rationale": "App >1MiB와 Ledger ≥1MiB의 차이, 최소1KB·정수KB·MB1소수 및 정확한 공백 표시가 수치 예로 정의된다."
+    },
+    {
+      "id": "UI-04-C08",
+      "moduleId": "UI-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1",
+        "architecture/ui/interaction-fixtures.json §INPUT-DELETE-RACE"
+      ],
+      "rationale": "삭제 중 잠금/epoch/abort/dedupe 부재와 시작 preview closure 때문에 B까지 닫히는 trace, 동일 파일 재선택·중복 append 정책이 자족적이다."
+    },
+    {
+      "id": "UI-05-C01",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D2.1–D2.2",
+        "architecture/ui/interaction-fixtures.json §CRITERIA-TREE",
+        "architecture/ui/detail-controls.md §D2.1.1"
+      ],
+      "rationale": "문서 ID/파일명 fallback 우선순위와 정확한 token/natural marker matcher·case/trim/metadata 경계, categoryPath8단계·sample leaf·무유형 평면 목록을 원본 없이 결정할 수 있다."
+    },
+    {
+      "id": "UI-05-C02",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D2.2–D2.3"
+      ],
+      "rationale": "choose/numeric/qualitative, 6개 비교와 범위 포함, 단위/조건/source/revision DTO의 제거·trim·직렬화 순서를 명시한다."
+    },
+    {
+      "id": "UI-05-C03",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D2.1; D2.3",
+        "architecture/ui/interaction-contract.md §I1.1",
+        "architecture/ui/interaction-fixtures.json §CRITERIA-REVISION",
+        "architecture/ui/detail-controls.md §D2.1.1"
+      ],
+      "rationale": "제외/uncertain, source 동기화, hidden confirmation 유지와 feedback sending/sent/applied/failed 및 revision 재초기화 조건이 명시된다."
+    },
+    {
+      "id": "UI-05-C04",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.4",
+        "architecture/ui/detail-controls.md §D2.3–D2.4"
+      ],
+      "rationale": "compact row 열·치수와 editor 확장, 모든 criterion highlight 및 원문↔행 선택/nearest scroll 연결이 정해져 있다."
+    },
+    {
+      "id": "UI-05-C05",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D2.2–D2.3",
+        "architecture/ui/interaction-fixtures.json §CRITERIA-LIMIT; CRITERIA-REVISION"
+      ],
+      "rationale": "첫 invalid 행 선택·펼침·rAF scroll, 숫자/범위/조건 오류와 revision 실패 입력 보존 및 실패 이력을 결정할 수 있다."
+    },
+    {
+      "id": "UI-05-C06",
+      "moduleId": "UI-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §CRITERIA-TREE; CRITERIA-REVISION",
+        "architecture/ui/detail-controls.md §D6 detail-07–09",
+        "architecture/ui/detail-controls.md §D2.1.1"
+      ],
+      "rationale": "동명 파일·다중 sheet·무유형/제외·revision fixture에 group/criterion/cell oracle가 있고 D2.1.1은 구두점·대소문자·unknown ID·자연어 source의 11개 경계를 자족적으로 판정한다."
+    },
+    {
+      "id": "UI-06-C01",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D3.1–D3.2",
+        "architecture/ui/interaction-contract.md §I7"
+      ],
+      "rationale": "파일 선택→구조 지도→맥락/확인/전사 drawer→원문 링크와 접힌 로그의 표시·초점 계층을 결정할 수 있다."
+    },
+    {
+      "id": "UI-06-C02",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.2; D3.1–D3.2",
+        "architecture/ui/interaction-contract.md §I7"
+      ],
+      "rationale": "reader/context/coverage 완료를 분리하고 전사 카운트와 markdown 객체를 다른 필드로 매핑하며 preview cap을 읽기 완료로 사용하지 않는다."
+    },
+    {
+      "id": "UI-06-C03",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I7",
+        "architecture/ui/detail-controls.md §D3.1–D3.2"
+      ],
+      "rationale": "파일 라벨 우선순위·quality 제한·실제 rounds/maxAttempts 및 여러 no-data 문구가 정해져 있다."
+    },
+    {
+      "id": "UI-06-C04",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D3.3"
+      ],
+      "rationale": "phase550ms·region520ms+min(index,5)75ms+120ms·drawer400ms와 busy/terminal/quality의 모션 조건 및 cleanup이 구체적이다."
+    },
+    {
+      "id": "UI-06-C05",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D3.1–D3.2",
+        "architecture/ui/interaction-contract.md §I7"
+      ],
+      "rationale": "로그 거리<28px follow, busy 종료 접기, reader/context/truncated 전사 경고의 독립 표시를 명시한다."
+    },
+    {
+      "id": "UI-06-C06",
+      "moduleId": "UI-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §ANALYSIS-SHEETS; ANALYSIS-PDF; ANALYSIS-EMPTY"
+      ],
+      "rationale": "hidden sheet·복수 region·90도 PDF·부분coverage의 표시/개수/arc/원문 callback을 실제 합성 입력으로 판정 가능하다."
+    },
+    {
+      "id": "UI-07-C01",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.4; 4.1",
+        "architecture/ui/interaction-contract.md §I2"
+      ],
+      "rationale": "3 milestone 집계와 theater/context/옆 작업실 배치를 정하며 작업실 확대의 CSS hide가 unmount가 아님까지 명시한다."
+    },
+    {
+      "id": "UI-07-C02",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I2",
+        "architecture/ui/interaction-fixtures.json §FLOW-INTERLEAVE"
+      ],
+      "rationale": "operation→최신 processing event→첫 processing→최신 analysis→첫 대상의 우선순위와 승인 빈 배열도 우선하는 규칙이 명확하다."
+    },
+    {
+      "id": "UI-07-C03",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I2",
+        "architecture/ui/interaction-fixtures.json §FLOW-STATE; FLOW-INTERLEAVE"
+      ],
+      "rationale": "실제 fields/structure 대체·연결 끊김 마지막 자료·완료시 기본 접힘 및 독립 2개/page modulo 탐색 상태를 결정할 수 있다."
+    },
+    {
+      "id": "UI-07-C04",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.3",
+        "architecture/ui/interaction-contract.md §I2",
+        "architecture/ui/VISUAL-CONTRACT.md §6"
+      ],
+      "rationale": "240ms 접힘/160ms 페이지 전환과 busy&&observing working class, bridge/status CSS의 2.2s/2.6s 값 연결이 제공된다."
+    },
+    {
+      "id": "UI-07-C05",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I2",
+        "architecture/specs/04-ui-motion.md §10"
+      ],
+      "rationale": "context는 마지막 수신 자료 안내와 working 해제, Theater에는 connection prop이 없어 busy ambience가 남는 범위를 명시한다."
+    },
+    {
+      "id": "UI-07-C06",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §FLOW-INTERLEAVE; FLOW-STATE; ARRIVAL-BURST"
+      ],
+      "rationale": "두 파일 interleave·추출 선행·판정 burst·9000ms 무출력에서 active file/count/packet/expanded oracle가 있다."
+    },
+    {
+      "id": "UI-07-C07",
+      "moduleId": "UI-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A5",
+        "architecture/DECISIONS.md §D18–D19"
+      ],
+      "rationale": "completed/partial만 완료로 읽고 failed/cancelled/null은 진행 중인 현재 aria 문구를 ARIA-TERMINAL 미래 문구와 분리한다."
+    },
+    {
+      "id": "UI-08-C01",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.1",
+        "architecture/ui/VISUAL-CONTRACT.md §2; 6"
+      ],
+      "rationale": "문서·엔진·세 레인, 중앙 fail 포함 4개 SVG path와 viewBox/좌표/gradient를 정한다."
+    },
+    {
+      "id": "UI-08-C02",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I3",
+        "architecture/specs/04-ui-motion.md §5.2"
+      ],
+      "rationale": "preview/live 구분, item와 field signature 및 nonpending 변경만 판정 packet 후보인 규칙이 자족적이다."
+    },
+    {
+      "id": "UI-08-C03",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I3",
+        "architecture/ui/interaction-fixtures.json §ARRIVAL-BURST"
+      ],
+      "rationale": "초기/context/empty baseline, field 예약·상태별 후보/dedupe/마지막6개 선택과 전체 counts 즉시100의 oracle가 있다."
+    },
+    {
+      "id": "UI-08-C04",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.2",
+        "architecture/ui/interaction-contract.md §I3"
+      ],
+      "rationale": "판정1800ms·추출1300ms·75ms 지연, chip30/max126/font10, 만료1920ms 및 sweep350ms를 정한다."
+    },
+    {
+      "id": "UI-08-C05",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I3",
+        "architecture/specs/04-ui-motion.md §2.5; 10"
+      ],
+      "rationale": "ambience와 실제 도착을 구분하고 실패/취소는 purge하지 않으며 OFF/context/empty 정리와 모바일 숨김 후 timer 유지까지 명시한다."
+    },
+    {
+      "id": "UI-08-C06",
+      "moduleId": "UI-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §ARRIVAL-BURST; THEATER-SELECT",
+        "architecture/ui/interaction-contract.md §I3"
+      ],
+      "rationale": "수신 이벤트의 이동/레인 선택·counts·인라인 근거를 검증하며 preview 카드와 떠다니는 packet의 비클릭 경계를 명시한다."
+    },
+    {
+      "id": "UI-09-C01",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4",
+        "architecture/specs/01-state-api.md §8"
+      ],
+      "rationale": "GET/SSE observer가 작업을 시작하지 않음과 네 호출의 run/context/cutoff/kinds AND scope가 구체적이다."
+    },
+    {
+      "id": "UI-09-C02",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4",
+        "architecture/ui/interaction-fixtures.json §DOCK-SCOPE; DOCK-CAP"
+      ],
+      "rationale": "executing과 waiting parent를 분리하고 task tail100/event tail200·최신순 서버에서 오래된100 보존이라는 한계를 명시한다."
+    },
+    {
+      "id": "UI-09-C03",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4",
+        "architecture/ui/interaction-fixtures.json §DOCK-COLLAPSE; DOCK-PREFERRED"
+      ],
+      "rationale": "0→active 펼침/수동선택/기본선택 우선순위와 800ms 자동접힘 전체 조건·연결 freeze·타이머 cleanup을 정한다."
+    },
+    {
+      "id": "UI-09-C04",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4",
+        "architecture/ui/auxiliary-contract.md §A2",
+        "architecture/ui/interaction-fixtures.json §DOCK-LOG"
+      ],
+      "rationale": "title/phase/detail, active live 1초 clock 및 nonlog/stdout/stderr 기준 >3000ms 대기 문구와 heartbeat 제외를 명시한다."
+    },
+    {
+      "id": "UI-09-C05",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4",
+        "architecture/ui/interaction-fixtures.json §DOCK-RECONNECT; OBSERVER-REFRESH; DOCK-LOG"
+      ],
+      "rationale": "10초 GET·15초 quiet·4/8…60초 retry, frozenAt와 재연결 wall time, 28px 엄격 경계 및 최신내용 버튼이 자족적이다."
+    },
+    {
+      "id": "UI-09-C06",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §DOCK-SCOPE; DOCK-LOG; DOCK-COLLAPSE; DOCK-RECONNECT",
+        "architecture/ui/interaction-contract.md §I4"
+      ],
+      "rationale": "scope 누출·waiting 이중 실행·단절/실패 보존·무출력·완료접기/수동 스크롤을 실제 입력과 기대 상태로 검사할 수 있다."
+    },
+    {
+      "id": "UI-09-C07",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A4"
+      ],
+      "rationale": "container1050/680 분기, flow 초기/reset dependency, aria-selected/data-pane과 CSS 가시성을 명시하며 단순 viewport/group 변경은 reset하지 않는다."
+    },
+    {
+      "id": "UI-09-C08",
+      "moduleId": "UI-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I4–I5"
+      ],
+      "rationale": "group parent 상속은 존재/순환만 검사하고 actualTransfers는 양측 document/run/context 호환을 검사하는 차이를 재현할 수 있다."
+    },
+    {
+      "id": "UI-10-C01",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I5–I6"
+      ],
+      "rationale": "runtime chamber 선택·capacity/문구·disabled 작업없음, 방향/caption 및 최근 nonlog 이력3개(모바일2개)를 정한다."
+    },
+    {
+      "id": "UI-10-C02",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I5",
+        "architecture/ui/interaction-fixtures.json §HANDOFF-KEY; HANDOFF-DUP-TIME"
+      ],
+      "rationale": "parent 첫 running 또는 explicit nonlog만 인정하고 runtime/scope guard·canonical key·eligibility 이전 dedupe까지 정의된다."
+    },
+    {
+      "id": "UI-10-C03",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I5",
+        "architecture/ui/interaction-fixtures.json §HANDOFF-LIFECYCLE"
+      ],
+      "rationale": "session/liveSince/visited/seen과 최초 live 예외·history baseline·disconnect 남은시간·OFF 정리·terminal 비purge를 구체화한다."
+    },
+    {
+      "id": "UI-10-C04",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I5",
+        "architecture/specs/04-ui-motion.md §4.3"
+      ],
+      "rationale": "실제 인계 1400ms hold·1300ms cubic-bezier(.28,.18,.44,1) 이동·70ms trail 및 단회 큐 재생을 정한다."
+    },
+    {
+      "id": "UI-10-C05",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I5",
+        "architecture/ui/interaction-fixtures.json §HANDOFF-20; HANDOFF-KEY"
+      ],
+      "rationale": "로그/동일 canonical은 재생하지 않고 pending8 초과시 오래된 연출만 버리며 omitted/seen 및 실제 결과를 보존한다."
+    },
+    {
+      "id": "UI-10-C06",
+      "moduleId": "UI-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I6",
+        "architecture/ui/interaction-fixtures.json §SCENE-MAP"
+      ],
+      "rationale": "문서 read/reread/transcribe/structure/context/quality/repair와 dashboard install/build/validate/complete의 stage/그림/loop oracle가 있다."
+    },
+    {
+      "id": "UI-11-C01",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.1–D1.2"
+      ],
+      "rationale": "PDF→image→sheets→정의된 text→원본 링크 순서, PDF 자산·page/zoom와 sheet hidden/tab 조건을 결정할 수 있다."
+    },
+    {
+      "id": "UI-11-C02",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.3"
+      ],
+      "rationale": "문서별 evidence 필터·missing 전처리·PDF witness/표 좌표 우선·selected>fail>review>pending>pass를 정확히 분리한다."
+    },
+    {
+      "id": "UI-11-C03",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.2–D1.3",
+        "architecture/ui/interaction-fixtures.json §PREVIEW-PDF-FRACTION"
+      ],
+      "rationale": "문서ID/URL reset·1..2 zoom step.25·sheet 전환·중첩 선택·위치칩과 요청 page 정수검사/칩 소수 허용 차이를 명시한다."
+    },
+    {
+      "id": "UI-11-C04",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.1; D1.3–D1.4"
+      ],
+      "rationale": "DPR≤2·ResizeObserver≥140·PDF matrix/진입과 내부 scroll의 상하좌우 경계·offset 및 reduced instant를 수치화한다."
+    },
+    {
+      "id": "UI-11-C05",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D1.1–D1.2"
+      ],
+      "rationale": "PDF load/render/text 실패와 cancel/image/truncated 문구를 구분하고 destroy/cancel/disconnect/cancelled guard로 stale 반영 경계를 정한다."
+    },
+    {
+      "id": "UI-11-C06",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §PREVIEW-MISSING; PREVIEW-LABEL; PREVIEW-LABEL-REJECT; PREVIEW-PDF-PAGE",
+        "architecture/ui/detail-controls.md §D1.3; D6"
+      ],
+      "rationale": "missing 머리글 비채색, quote/중복행/PDF page 및 단일 record label 보충·거부 조건에 입력과 기대값이 있다."
+    },
+    {
+      "id": "UI-11-C07",
+      "moduleId": "UI-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/auxiliary-contract.md §A7"
+      ],
+      "rationale": "raw mark의 호출 fallback·원래 quote 대소문자/공백·숫자부분 허용·quote당30 비중첩 탐색과 접촉 범위 병합을 예제로 결정한다."
+    },
+    {
+      "id": "UI-12-C01",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §2.4; 7",
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "파일탭/집계→왼쪽 원문·오른쪽 items/criteria와 목록 대체 상세 구조·연결 기준 선택을 규정한다."
+    },
+    {
+      "id": "UI-12-C02",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "target 입력순·documentId scope·item.criterionId가 참조한 기준만 원순서 적용, highlights는 filter 무관 전체 파일이라는 규칙이 명확하다."
+    },
+    {
+      "id": "UI-12-C03",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8",
+        "architecture/ui/interaction-fixtures.json §RESULT-SELECTION"
+      ],
+      "rationale": "파일 reset·같은 mount 목록복귀 scroll/focus·현재 filter 내 비순환 이전/다음·수정 후 all 전환이 사건별로 정의된다."
+    },
+    {
+      "id": "UI-12-C04",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8",
+        "architecture/specs/04-ui-motion.md §5.3",
+        "architecture/ui/interaction-fixtures.json §RESULT-MOBILE"
+      ],
+      "rationale": "상세200ms/x12·판정bar350ms와 ≤780px order/rows swap 및 정확한 section scrollTop0이 정해져 있다."
+    },
+    {
+      "id": "UI-12-C05",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8",
+        "architecture/ui/interaction-fixtures.json §RESULT-EMPTY"
+      ],
+      "rationale": "target0/file.error/items0/filter0/linkedcriteria0/unmappedN을 서로 다른 문구로 표시하면서 원본을 유지한다."
+    },
+    {
+      "id": "UI-12-C06",
+      "moduleId": "UI-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-fixtures.json §RESULT-SELECTION; RESULT-MOBILE",
+        "architecture/ui/VISUAL-CONTRACT.md §7"
+      ],
+      "rationale": "파일/필터/상세/탭/복귀 입력과 expected selection/page/scroll/focus, 제목·사유 bounds를 검증할 관측 기준이 있다."
+    },
+    {
+      "id": "UI-13-C01",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §7",
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "compact 제목/판정→값/기준 비교→사유→원문 근거→수정 CTA의 구조와 상세 유지 규칙을 결정할 수 있다."
+    },
+    {
+      "id": "UI-13-C02",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §7",
+        "architecture/ui/interaction-contract.md §I8",
+        "architecture/specs/01-state-api.md §4.2; 7"
+      ],
+      "rationale": "itemId/status/raw note resolve와 source 좌표·human note/stamp, 서버 저장 후 item/summary 갱신을 명시한다."
+    },
+    {
+      "id": "UI-13-C03",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8",
+        "architecture/ui/interaction-fixtures.json §INSPECTOR-SAVE"
+      ],
+      "rationale": "id/status/humanNote 변경 초기화와 saving 미reset, heading preventScroll, pending 수정불가 및 재저장 잠금이 정의된다."
+    },
+    {
+      "id": "UI-13-C04",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "legacy full220ms/y14·compact initialfalse·외부200ms/x12를 구분하고 비교 .85:1.15 폭·폰트/line-height·내부scroll을 수치화한다."
+    },
+    {
+      "id": "UI-13-C05",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8; I9.2",
+        "architecture/ui/interaction-fixtures.json §INSPECTOR-SAVE"
+      ],
+      "rationale": "저장 전 cancel API0과 전송 후 폼만 닫기·abort 없음, editable controls/연속 save 금지 및 late 성공/실패를 현재 동작으로 규정한다."
+    },
+    {
+      "id": "UI-13-C06",
+      "moduleId": "UI-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §7",
+        "architecture/specs/05-dashboard-exports.md §D02; D09",
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "resolve의 live item/summary/highlight 갱신과 생성 preview의 frozen sourceSnapshot·cache 유지가 별도여서 불변성 검증이 가능하다."
+    },
+    {
+      "id": "UI-14-C01",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §6",
+        "architecture/specs/05-dashboard-exports.md §D10b",
+        "architecture/ui/interaction-contract.md §I1.1"
+      ],
+      "rationale": "3 KPI·donut·파일bar·항목map과 tile onSelect→App files 탭 상세의 연결을 명시한다."
+    },
+    {
+      "id": "UI-14-C02",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §6",
+        "architecture/specs/05-dashboard-exports.md §D10b"
+      ],
+      "rationale": "completed=pass+fail+review/attention=fail+review/pending, target0항목 문서와 orphan ID 추가·ID별 집계를 결정할 수 있다."
+    },
+    {
+      "id": "UI-14-C03",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §6",
+        "architecture/specs/05-dashboard-exports.md §D10b",
+        "architecture/ui/interaction-contract.md §I8"
+      ],
+      "rationale": "donut/legend status toggle, hover/focus tooltip과 leave/blur/click/scroll 닫기, exiting tile pointer/tab/aria 제거 및 empty를 명시한다."
+    },
+    {
+      "id": "UI-14-C04",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §5.3; 6",
+        "architecture/specs/05-dashboard-exports.md §D10b"
+      ],
+      "rationale": "count650/donut850/bar800/tile300+min(i,8)22ms·hover-2/tap.98와 app OR OS reduced 정지를 수치로 정한다."
+    },
+    {
+      "id": "UI-14-C05",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I8–I8.1",
+        "architecture/ui/interaction-fixtures.json §TOOLTIP-LIMIT; TOOLTIP-G13-REBUILD",
+        "architecture/specs/04-ui-motion.md §6"
+      ],
+      "rationale": "현재280px/12px tooltip의 세로 넘침·Escape/재배치 미지원과 미래 개선을 구분하며 empty 장식 ring1과 실제0 집계를 분리한다."
+    },
+    {
+      "id": "UI-14-C06",
+      "moduleId": "UI-14",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/04-ui-motion.md §1; 6",
+        "architecture/specs/05-dashboard-exports.md §D01",
+        "architecture/ui/VISUAL-CONTRACT.md §6"
+      ],
+      "rationale": "기본 요약/원문 mini chart의 Recharts와 맞춤 iframe Chart.js/react-chartjs-2 버전·canvas 경계가 명확하다."
+    },
+    {
+      "id": "UI-15-C01",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D09–D09a",
+        "architecture/ui/dashboard-interaction-cases.json §suggestions; modalCases"
+      ],
+      "rationale": "sidebar·4개 preset 전체교체/자동생성 없음·workroom·preview·재구성·source switch·HTML 다운로드 절차가 구체적이다."
+    },
+    {
+      "id": "UI-15-C02",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D02–D03; D07; D09"
+      ],
+      "rationale": "POST DTO·immutable snapshot/ready sourceItems allowlist와 bridge source/origin/token/knownItemIds 검사 및 cache5 eviction을 결정할 수 있다."
+    },
+    {
+      "id": "UI-15-C03",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D03–D04; D09a"
+      ],
+      "rationale": "6 job 상태와 standard fallback, cancel/close/재시도 때 old preview 보존, 적용 tag와 제한 안내의 조건을 명시한다."
+    },
+    {
+      "id": "UI-15-C04",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D09; D09a",
+        "architecture/ui/dashboard-interaction-cases.json §MODAL-01–04; MODAL-06"
+      ],
+      "rationale": "shell240ms/app-only reduced와 content260ms, lazy source·memo iframe·방문한 chart hidden 유지/모달 재열기 초기화가 분명하다."
+    },
+    {
+      "id": "UI-15-C05",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D03; D09a; D12"
+      ],
+      "rationale": "GET완료 후1200ms·3번째 연속 실패·abort/sequence·late POST DELETE·빈HTML 오류·finish≤1600ms를 사건별로 정한다."
+    },
+    {
+      "id": "UI-15-C06",
+      "moduleId": "UI-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/dashboard-interaction-cases.json §MODAL-01–08",
+        "architecture/specs/05-dashboard-exports.md §D11"
+      ],
+      "rationale": "첫열기/재열기/source왕복/재구성의 iframe 수·instance·선택 기본값과 bridge 전 motionHtml export oracle가 있다. 성능 목표는 미래/미실행으로 분리된다."
+    },
+    {
+      "id": "UI-16-C01",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D05–D06"
+      ],
+      "rationale": "14필드와 enum/default/schema, layout/emphasis/size/legend/corners/fileVisualization 조합의 실제 root/CSS/차트 효과가 명시된다."
+    },
+    {
+      "id": "UI-16-C02",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D04–D05a",
+        "architecture/contracts/dashboard-customization-cases.json §preferenceCases; baseDesignCase; currentReproduction"
+      ],
+      "rationale": "모델 JSON-only와 현재 regex 후처리, 성공시 비요청 필드 미강제·fallback base 유지 및 부정/범위 오해석 baseline을 미래 judge와 구분한다."
+    },
+    {
+      "id": "UI-16-C03",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D05-layout; D06–D07"
+      ],
+      "rationale": "focus별 첫 파일/필터·안정 정렬, 4 layout·파일/상태 변경 detail reset·100개 추가와 empty/긴 내용 표시를 결정할 수 있다."
+    },
+    {
+      "id": "UI-16-C04",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D05-layout; D06",
+        "architecture/contracts/dashboard-customization-cases.json §browserMatrix"
+      ],
+      "rationale": "light page/card/text/axis/tooltip palette, doughnut78%/pie0, 크기/범례/모션/모서리 수치와 viewport oracle가 있다."
+    },
+    {
+      "id": "UI-16-C05",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D02; D04–D05",
+        "architecture/contracts/dashboard-customization-cases.json §currentReproduction"
+      ],
+      "rationale": "지원 없는 trend를 만들지 않는 현재 count renderer와 snapshot 불변성, 실패의 ready/standard 제한 문구 및 helper 의미 한계를 정직하게 규정한다."
+    },
+    {
+      "id": "UI-16-C06",
+      "moduleId": "UI-16",
+      "status": "PASS",
+      "evidence": [
+        "architecture/contracts/dashboard-customization-cases.json §preferenceCases; browserMatrix",
+        "architecture/specs/05-dashboard-exports.md §D11"
+      ],
+      "rationale": "복합 요청별 observed14필드와 18개 plan/viewport/OS 조합의 chart counts/palette/legend/geometry/detail 검사를 제공하며 모두 NOT_RUN으로 분리한다."
+    },
+    {
+      "id": "UI-17-C01",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D07; D10a–D10b",
+        "architecture/ui/dashboard-interaction-cases.json §sourceTrace"
+      ],
+      "rationale": "파일 탭/집계·원본/항목 맵/선택 상세의 배치와 trusted chart click→source 전환·focus를 명시한다."
+    },
+    {
+      "id": "UI-17-C02",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D02; D10a–D10b",
+        "architecture/ui/dashboard-interaction-cases.json §projectionCases"
+      ],
+      "rationale": "frozen files/items만 사용하고 active source의 전체 연결 highlights와 item.documentId 집계, ready pending→review 및 missing 필드 손실까지 구분한다."
+    },
+    {
+      "id": "UI-17-C03",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D10a",
+        "architecture/ui/dashboard-interaction-cases.json §sourceTrace"
+      ],
+      "rationale": "다른 파일 선택 reset과 known same-file→target→known doc의 evidence 우선순위, 같은 item selectionVersion 재선택을 표로 결정한다."
+    },
+    {
+      "id": "UI-17-C04",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D10a–D10b"
+      ],
+      "rationale": "320ms/y6 진입·app OR OS reduced, 독립 source/map/inspector scroll·compact viewer·filter 무관 전체 색을 수치/조건으로 규정한다."
+    },
+    {
+      "id": "UI-17-C05",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05-dashboard-exports.md §D07; D09; D10a",
+        "architecture/ui/dashboard-interaction-cases.json §MODAL-02; MODAL-06; sourceTrace"
+      ],
+      "rationale": "구형 sourceSnapshot 부재 switch disabled/재구성 안내와 unknown message 거부·known source만 이동·근거 없음 null 규칙을 정한다."
+    },
+    {
+      "id": "UI-17-C06",
+      "moduleId": "UI-17",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/dashboard-interaction-cases.json §sourceFixture; sourceTrace",
+        "architecture/specs/05-dashboard-exports.md §D10a"
+      ],
+      "rationale": "두 파일 동명 항목·교차 기준 근거·filter·반복선택의 11단계 data-* 기대값으로 원본과 사유 정합성을 검증 가능하다."
+    },
+    {
+      "id": "UI-18-C01",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/interaction-contract.md §I1.1",
+        "architecture/ui/detail-controls.md §D4",
+        "architecture/specs/05a-ledger-export.md §6–7"
+      ],
+      "rationale": "xlsx/csv/json 링크·메뉴닫기와 대장 선택→문서/번호→분석/두셀 비교→명시 사본 다운로드 흐름을 정한다."
+    },
+    {
+      "id": "UI-18-C02",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D4.2",
+        "architecture/specs/05a-ledger-export.md §4–6"
+      ],
+      "rationale": "ready/blocked·두 targetCells·proposal fingerprint 및 현재 4필드 basis 일치의 canExport 전체 AND 조건과 서버 재검증을 명시한다."
+    },
+    {
+      "id": "UI-18-C03",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D4.1–D4.2",
+        "architecture/specs/05a-ledger-export.md §6"
+      ],
+      "rationale": "operation/busyRef 직렬화·입력 disabled·번호 자동추출/200자·선택 변경 무효화와 메모만 변경시 mapping 보존을 결정한다."
+    },
+    {
+      "id": "UI-18-C04",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D4.3",
+        "architecture/specs/05a-ledger-export.md §6.1–6.2"
+      ],
+      "rationale": "230ms/scale.985/y14·분석중 context scope inline dock·현재/기입 2행 비교와 ≤780px 한 열/입력숨김을 규정한다."
+    },
+    {
+      "id": "UI-18-C05",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D4.1–D4.3",
+        "architecture/specs/05a-ledger-export.md §6"
+      ],
+      "rationale": "xlsx/0bytes/20MiB/한개drop 검사와 blocked reason, 닫기 abort+late guard·empty blob·HTTP 오류 alert 및 다운로드 시작 안내를 정한다."
+    },
+    {
+      "id": "UI-18-C06",
+      "moduleId": "UI-18",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/05a-ledger-export.md §4.1; 5; 8 LED-01–15",
+        "architecture/ui/detail-controls.md §D6 detail-12–14"
+      ],
+      "rationale": "틀린/중복 key·위조 mapping/source·basis 변경·stale fingerprint와 정상 사본의 기대 HTTP/UI 상태를 검사할 수 있고 humanNote만 변경은 fingerprint 유지임을 명시한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "CLARITY-UI-SOURCE-TOKEN",
+      "severity": "P2",
+      "description": "D2.1 출처 fallback의 완전한 token 경계·case/trim과 자연어 marker 판별식이 정의되지 않아 구두점/접두어/자연어 표기에 따른 source group을 원본 없이 결정할 수 없음.",
+      "questionIds": [
+        "UI-05-C01",
+        "UI-05-C03",
+        "UI-05-C06"
+      ],
+      "requiredChange": "현재 token matcher와 natural marker의 정확한 정규식·정규화 순서 및 경계 입력/기대값을 D2.1/fixture에 추가",
+      "status": "resolved",
+      "resolution": "D2.1.1의 정확한 mentions 함수, natural marker 정규식, mode 집합, metadata 우선순위 및 11개 독립 입력/기대 group을 source-blind로 재검토하여 해소 확인.",
+      "evidence": [
+        "architecture/ui/detail-controls.md §D2.1.1",
+        "architecture/ui/interaction-fixtures.json §CRITERIA-TREE/sourceResolutionEdgeCases"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "evaluatedInputsSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+  "summary": {
+    "modules": 18,
+    "questions": 119,
+    "pass": 119,
+    "fail": 0,
+    "unverified": 0,
+    "unreviewed": 0,
+    "openIssues": 0,
+    "resolvedIssues": 1
+  }
+}

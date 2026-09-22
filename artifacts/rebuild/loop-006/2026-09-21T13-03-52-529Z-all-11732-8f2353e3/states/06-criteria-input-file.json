@@ -1,0 +1,72 @@
+{
+  "id": "06-criteria-input-file",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "06-criteria-input-file",
+    "screenshot": {
+      "path": "06-criteria-input-file.png",
+      "bytes": 277119,
+      "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/06-criteria-input-file.json",
+      "bytes": 376314,
+      "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T13:04:22.721Z",
+  "fontReadiness": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/diagnostics/06-criteria-input-file-font-readiness.json",
+    "bytes": 2301204,
+    "sha256": "1b57966f7748cb71656e6321c11e657bb98cdb923327103c88147cc938501256"
+  },
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/06-criteria-input-file.png",
+    "bytes": 269232,
+    "sha256": "78b954338b6f9b86cf047e03554507c57f87afa5667541c8514d59d36f71dab0",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T13:04:25.474Z",
+    "capturedAt": "2026-09-21T13:04:25.772Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/dom/06-criteria-input-file.json",
+    "bytes": 581450,
+    "sha256": "544a2e71ad71192d566c67c5015565cfa7144d9445bc702312f1f75f4dd6f0a3"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-006/2026-09-21T13-03-52-529Z-all-11732-8f2353e3/06-criteria-input-file-measurement.json",
+    "bytes": 189761,
+    "sha256": "7e015a7a56e02f125efea578b77f548e6e0335f9c8942e989cd8496aaac8cf16"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "fontConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T13:04:26.654Z"
+}

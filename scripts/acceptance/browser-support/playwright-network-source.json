@@ -1,0 +1,145 @@
+{
+  "kind": "installed-native-request-forwarding-source",
+  "createdAt": "2026-09-21T20:37:47.059Z",
+  "version": "1.62.1",
+  "refs": [
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json",
+      "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af",
+      "bytes": 1416
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs",
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f",
+      "bytes": 704
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44",
+      "bytes": 648
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/package.json",
+      "sha256": "07c47543631fef9508760365dee9fbe958c562093ec8d122543949ed231f233f",
+      "bytes": 876
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/index.mjs",
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd",
+      "bytes": 1063
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/index.js",
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b",
+      "bytes": 697
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "9393fa79e1c67c74edc26b610d65a4f7ed73d345a762465cc88340a33a2454ac",
+      "bytes": 3425603
+    }
+  ],
+  "sourceOnly": true,
+  "excerpts": [
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 35933,
+      "last": 35994,
+      "text": "      _onRequestWillBeSent(sessionInfo, event) {\n        if (this._protocolRequestInterceptionEnabled && !event.request.url.startsWith(\"data:\")) {\n          const requestId = event.requestId;\n          const requestPausedEvent = this._requestIdToRequestPausedEvent.get(requestId);\n          if (requestPausedEvent) {\n            this._onRequest(sessionInfo, event, requestPausedEvent.sessionInfo, requestPausedEvent.event);\n            this._requestIdToRequestPausedEvent.delete(requestId);\n          } else {\n            this._requestIdToRequestWillBeSentEvent.set(event.requestId, { sessionInfo, event });\n          }\n        } else {\n          this._onRequest(sessionInfo, event, void 0, void 0);\n        }\n      }\n      _onRequestServedFromCache(event) {\n        this._responseExtraInfoTracker.requestServedFromCache(event);\n      }\n      _onRequestWillBeSentExtraInfo(event) {\n        this._responseExtraInfoTracker.requestWillBeSentExtraInfo(event);\n      }\n      _onAuthRequired(sessionInfo, event) {\n        let response2 = \"Default\";\n        const shouldProvideCredentials = this._shouldProvideCredentials(event.request.url);\n        if (this._attemptedAuthentications.has(event.requestId)) {\n          response2 = \"CancelAuth\";\n        } else if (shouldProvideCredentials) {\n          response2 = \"ProvideCredentials\";\n          this._attemptedAuthentications.add(event.requestId);\n        }\n        const { username, password } = shouldProvideCredentials && this._credentials ? this._credentials : { username: void 0, password: void 0 };\n        sessionInfo.session._sendMayFail(\"Fetch.continueWithAuth\", {\n          requestId: event.requestId,\n          authChallengeResponse: { response: response2, username, password }\n        });\n      }\n      _shouldProvideCredentials(url3) {\n        if (!this._credentials)\n          return false;\n        return !this._credentials.origin || new URL(url3).origin.toLowerCase() === this._credentials.origin.toLowerCase();\n      }\n      _onRequestPaused(sessionInfo, event) {\n        if (!event.networkId) {\n          sessionInfo.session._sendMayFail(\"Fetch.continueRequest\", { requestId: event.requestId });\n          return;\n        }\n        if (event.request.url.startsWith(\"data:\"))\n          return;\n        const requestId = event.networkId;\n        const requestWillBeSentEvent = this._requestIdToRequestWillBeSentEvent.get(requestId);\n        if (requestWillBeSentEvent) {\n          this._onRequest(requestWillBeSentEvent.sessionInfo, requestWillBeSentEvent.event, sessionInfo, event);\n          this._requestIdToRequestWillBeSentEvent.delete(requestId);\n        } else {\n          const existingRequest = this._requestIdToRequest.get(requestId);\n          const alreadyContinuedParams = existingRequest?._originalRequestRoute?._alreadyContinuedParams;\n          if (alreadyContinuedParams && !event.redirectedRequestId) {\n            sessionInfo.session._sendMayFail(\"Fetch.continueRequest\", {\n              ...alreadyContinuedParams,\n              requestId: event.requestId\n            });\n            return;\n          }"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 36065,
+      "last": 36073,
+      "text": "          headersOverride: headersOverride || null\n        });\n        this._requestIdToRequest.set(requestWillBeSentEvent.requestId, request2);\n        if (route2) {\n          request2.request.setRawRequestHeaders(headersObjectToArray(requestPausedEvent.request.headers, \"\\n\"));\n        }\n        (this._page?.frameManager || this._serviceWorker).requestStarted(request2.request, route2 || void 0);\n      }\n      _createResponse(request2, responsePayload, hasExtraInfo) {"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 36163,
+      "last": 36194,
+      "text": "        }\n        this._deleteRequest(request2);\n        (this._page?.frameManager || this._serviceWorker).reportRequestFinished(request2.request, response2);\n      }\n      _onLoadingFailed(sessionInfo, event) {\n        this._responseExtraInfoTracker.loadingFailed(event);\n        let request2 = this._requestIdToRequest.get(event.requestId);\n        if (!request2) {\n          const requestWillBeSentEvent = this._requestIdToRequestWillBeSentEvent.get(event.requestId);\n          if (requestWillBeSentEvent) {\n            this._requestIdToRequestWillBeSentEvent.delete(event.requestId);\n            this._onRequest(sessionInfo, requestWillBeSentEvent.event, void 0, void 0);\n            request2 = this._requestIdToRequest.get(event.requestId);\n          }\n        }\n        if (!request2)\n          return;\n        this._maybeUpdateRequestSession(sessionInfo, request2);\n        const response2 = request2.request._existingResponse();\n        if (response2) {\n          response2.setTransferSize(null);\n          response2.setEncodedBodySize(null);\n          response2._requestFinished(helper.secondsToRoundishMillis(event.timestamp - request2._timestamp));\n        } else {\n          request2.request.setRawRequestHeaders(null);\n        }\n        this._deleteRequest(request2);\n        request2.request._setFailureText(event.errorText || event.blockedReason || \"\");\n        (this._page?.frameManager || this._serviceWorker).requestFailed(request2.request, !!event.canceled);\n      }\n      _onWebSocketWillSendHandshakeRequest(event) {\n        const wallTimeMs = event.wallTime * 1e3;"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 22780,
+      "last": 22805,
+      "text": "          return;\n        this._page.emitOnContext(BrowserContext.Events.RequestFinished, { request: request2, response: response2 });\n      }\n      requestFailed(request2, canceled) {\n        const frame = request2.frame();\n        this._inflightRequestFinished(request2);\n        if (frame && frame.pendingDocument() && frame.pendingDocument().request === request2) {\n          let errorText = request2.failure().errorText;\n          if (canceled)\n            errorText += \"; maybe frame was detached?\";\n          this.frameAbortedNavigation(frame._id, errorText, frame.pendingDocument().documentId);\n        }\n        if (request2._isFavicon)\n          return;\n        this._page.emitOnContext(BrowserContext.Events.RequestFailed, request2);\n      }\n      removeChildFramesRecursively(frame) {\n        for (const child of frame._getChildFrames())\n          this._removeFramesRecursively(child);\n      }\n      _removeFramesRecursively(frame) {\n        this.removeChildFramesRecursively(frame);\n        frame._onDetached();\n        this._frames.delete(frame._id);\n        if (!this._page.isClosed())\n          this._page.emit(Page.Events.FrameDetached, frame);"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 53925,
+      "last": 53945,
+      "text": "          const requestDispatcher = this.connection.existingDispatcher(response2.request());\n          if (!requestDispatcher && !this._shouldDispatchNetworkEvent(response2.request(), \"response\"))\n            return;\n          this._dispatchEvent(\"response\", {\n            response: ResponseDispatcher.from(this, response2),\n            page: PageDispatcher.fromNullable(this, response2.frame()?._page.initializedOrUndefined())\n          });\n        });\n        this.addObjectListener(BrowserContext.Events.RequestFailed, (request2) => {\n          const requestDispatcher = this.connection.existingDispatcher(request2);\n          if (!requestDispatcher && !this._shouldDispatchNetworkEvent(request2, \"requestFailed\"))\n            return;\n          this._dispatchEvent(\"requestFailed\", {\n            request: RequestDispatcher.from(this, request2),\n            failureText: request2._failureText || void 0,\n            responseEndTiming: request2._responseEndTiming,\n            page: PageDispatcher.fromNullable(this, request2.frame()?._page.initializedOrUndefined())\n          });\n        });\n        this.addObjectListener(BrowserContext.Events.RequestFinished, ({ request: request2, response: response2 }) => {\n          const requestDispatcher = this.connection.existingDispatcher(request2);"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 61865,
+      "last": 61885,
+      "text": "          let hasListeners = this.emit(Events.BrowserContext.Dialog, dialogObject);\n          const page = dialogObject.page();\n          if (page)\n            hasListeners = page.emit(Events.Page.Dialog, dialogObject) || hasListeners;\n          if (!hasListeners) {\n            if (dialogObject.type() === \"beforeunload\")\n              dialog.accept({}, kNoTimeout).catch(() => {\n              });\n            else\n              dialog.dismiss({}, kNoTimeout).catch(() => {\n              });\n          }\n        });\n        this._channel.on(\"request\", ({ request: request2, page }) => this._onRequest(Request2.from(request2), Page2.fromNullable(page)));\n        this._channel.on(\"requestFailed\", ({ request: request2, failureText, responseEndTiming, page }) => this._onRequestFailed(Request2.from(request2), responseEndTiming, failureText, Page2.fromNullable(page)));\n        this._channel.on(\"requestFinished\", (params2) => this._onRequestFinished(params2));\n        this._channel.on(\"response\", ({ response: response2, page }) => this._onResponse(Response3.from(response2), Page2.fromNullable(page)));\n        this._channel.on(\"recorderEvent\", ({ event, data, page, code }) => {\n          if (event === \"actionAdded\")\n            this._onRecorderEventSink?.actionAdded?.(Page2.from(page), data, code);\n          else if (event === \"actionUpdated\")"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 59137,
+      "last": 59152,
+      "text": "        this._failureText = null;\n        this._response = null;\n        this._fallbackOverrides = {};\n        this._redirectedFrom = _Request.fromNullable(initializer.redirectedFrom);\n        if (this._redirectedFrom)\n          this._redirectedFrom._redirectedTo = this;\n        this._provisionalHeaders = new RawHeaders(initializer.headers);\n        this._timing = {\n          startTime: 0,\n          domainLookupStart: -1,\n          domainLookupEnd: -1,\n          connectStart: -1,\n          secureConnectionStart: -1,\n          connectEnd: -1,\n          requestStart: -1,\n          responseStart: -1,"
+    },
+    {
+      "path": "C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js",
+      "first": 59580,
+      "last": 59596,
+      "text": "    };\n    Response3 = class _Response extends ChannelOwner {\n      constructor(parent, type3, guid, initializer) {\n        super(parent, type3, guid, initializer);\n        this._finishedPromise = new ManualPromise();\n        this._provisionalHeaders = new RawHeaders(initializer.headers);\n        this._request = Request2.from(this._initializer.request);\n        this._request._response = this;\n        Object.assign(this._request._timing, this._initializer.timing);\n      }\n      static from(response2) {\n        return response2._object;\n      }\n      static fromNullable(response2) {\n        return response2 ? _Response.from(response2) : null;\n      }\n      url() {"
+    }
+  ],
+  "findings": [
+    "Network.requestWillBeSent and Fetch.requestPaused are paired per native request ID before public requestStarted; public ordering alone does not prove native ordering.",
+    "Native loadingFailed sets failureText on that exact Request and forwards requestFailed using the same Request object.",
+    "A unique closed terminal-failure relation can join those streams with exact frame/type/URL/method/failureText; compatible duplicate failures remain ambiguous.",
+    "Public timing.startTime is0 before Response construction and can be shifted by requestTime on response; it is not used as a native identity."
+  ],
+  "productImports": 0,
+  "actuals": 0,
+  "bridgeSourceNote": {
+    "path": ".cache/rebuild/reviews/native-abort-loop010-actual-independent/identity-bridge-source-note.md",
+    "sha256": "776ace8c5f9046e3d0b3e32719380c4847e3e605a9eb4f1d7ed32877b9b6c2e2"
+  },
+  "bridgeSourceRanges": [
+    [
+      63588,
+      63594
+    ],
+    [
+      18525,
+      18532
+    ],
+    [
+      18688,
+      18694
+    ],
+    [
+      36213,
+      36220
+    ],
+    [
+      36248,
+      36268
+    ],
+    [
+      36120,
+      36120
+    ],
+    [
+      35842,
+      35848
+    ],
+    [
+      13200,
+      13225
+    ]
+  ],
+  "bridgeFindings": [
+    "Version-pinned in-process toImpl maps the exact public Request GUID to its dispatcher server object.",
+    "The unique own InterceptableRequest symbol stores a reciprocal wrapper with native requestId/timestamp/wallTime copied from requestWillBeSent.",
+    "Capture only immutable primitives early; absent/cleared/wrong-owner/private-shape identity fails closed.",
+    "No ordinal map, public timing identity, ambiguous terminal relation or group exemption is used."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "trace-review-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:client": "vite --host 127.0.0.1",
+    "dev:server": "node --watch server/index.mjs",
+    "build": "tsc -b && vite build",
+    "start": "node server/index.mjs",
+    "test": "node --test server/*.test.mjs src/components/*.test.mjs integrations/test/*.test.mjs",
+    "predev": "node scripts/copy-pdfjs-assets.mjs",
+    "predev:client": "node scripts/copy-pdfjs-assets.mjs",
+    "prebuild": "node scripts/copy-pdfjs-assets.mjs && npm run build:dashboard-charts",
+    "build:dashboard-charts": "node scripts/build-dashboard-chart-runtime.mjs"
+  },
+  "dependencies": {
+    "chart.js": "4.5.1",
+    "csv-parse": "^7.0.2",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.468.0",
+    "mammoth": "^1.11.0",
+    "motion": "^12.23.24",
+    "multer": "^2.0.2",
+    "pdfjs-dist": "^6.2.108",
+    "react": "^19.2.0",
+    "react-chartjs-2": "5.3.1",
+    "react-dom": "^19.2.0",
+    "react-is": "19.3.0",
+    "recharts": "3.10.1",
+    "saxes": "6.0.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "esbuild": "0.28.2",
+    "jsdom": "26.1.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "11.1.1"
+    }
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

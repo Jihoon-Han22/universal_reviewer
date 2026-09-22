@@ -1,0 +1,30 @@
+{
+  "case_id": "I201",
+  "report": "inputs/reports/I201.pdf",
+  "criteria": "inputs/criteria/I201_criteria.xlsx",
+  "output_template": "inputs/criteria/I201_criteria.xlsx",
+  "target_identity": "STA 2+480 / LIFT 03",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "density",
+      "name": "다짐도"
+    },
+    {
+      "field_id": "cbr",
+      "name": "수정 CBR"
+    },
+    {
+      "field_id": "sieve075",
+      "name": "0.075 mm 통과량"
+    },
+    {
+      "field_id": "sieve475",
+      "name": "4.75 mm 통과량"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

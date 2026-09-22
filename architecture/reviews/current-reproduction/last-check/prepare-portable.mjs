@@ -1,0 +1,13 @@
+import {mkdir,cp,mkdtemp,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const cache=resolve('.cache/architecture-final-challenge');
+await mkdir(cache,{recursive:true});
+const parent=await mkdtemp(resolve(cache,'portable-'));
+const arch=resolve(parent,'architecture');
+await mkdir(resolve(arch,'tools'),{recursive:true});
+for(const name of ['bootstrap.mjs','test-bootstrap.mjs','export-visual-contract.mjs']) await cp(resolve('architecture/tools',name),resolve(arch,'tools',name));
+await cp(resolve('architecture/environment'),resolve(arch,'environment'),{recursive:true});
+await cp(resolve('architecture/ui/fonts'),resolve(arch,'ui/fonts'),{recursive:true});
+await cp(resolve('architecture/ui/style-catalog.json'),resolve(arch,'ui/style-catalog.json'));
+await writeFile(resolve(cache,'portable-location.json'),JSON.stringify({parent,arch},null,2)+'\n');
+console.log(JSON.stringify({parent,arch,originalApplicationSourceSupplied:false}));

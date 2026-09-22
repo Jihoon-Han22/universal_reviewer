@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "case_id": "B101",
+      "pages": 14,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 1077,
+      "preserved_formulas": 0
+    },
+    {
+      "case_id": "B102",
+      "pages": 51,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 956,
+      "preserved_formulas": 0
+    },
+    {
+      "case_id": "I201",
+      "pages": 38,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 1077,
+      "preserved_formulas": 0
+    },
+    {
+      "case_id": "I202",
+      "pages": 75,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 725,
+      "preserved_formulas": 1
+    },
+    {
+      "case_id": "P301",
+      "pages": 229,
+      "gt_fields": 6,
+      "output_cells": 18,
+      "preserved_cells": 2160,
+      "preserved_formulas": 2
+    },
+    {
+      "case_id": "P302",
+      "pages": 100,
+      "gt_fields": 5,
+      "output_cells": 15,
+      "preserved_cells": 711,
+      "preserved_formulas": 1
+    },
+    {
+      "case_id": "N401",
+      "pages": 26,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 1077,
+      "preserved_formulas": 0
+    },
+    {
+      "case_id": "N402",
+      "pages": 42,
+      "gt_fields": 4,
+      "output_cells": 12,
+      "preserved_cells": 1440,
+      "preserved_formulas": 0
+    }
+  ],
+  "all_32_effects_present": true,
+  "report_pages": 575,
+  "atlas_pages": 33,
+  "updated_labels": 3,
+  "evidence_polygons_within_pages": true,
+  "modified_pages_have_no_hidden_text": true,
+  "note": "Numeric readability is reviewed visually for scored pages. Synthetic labels are not independently domain certified."
+}

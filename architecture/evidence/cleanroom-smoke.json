@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-20T17:36:00.520Z",
+  "scope": "full architecture package copied without original source; package integrity, scaffold, CSS regeneration only",
+  "status": "pass",
+  "implementationExecuted": false,
+  "completeProductAcceptance": false,
+  "providerCalls": 0,
+  "npmInstallExecuted": false,
+  "sourceApplicationCopied": false,
+  "protectedSyntheticInputs": [
+    {
+      "path": ".env",
+      "sha256": "2f87c95608a17af35e4c9eb22ef785b013ce2f356310a395679967434ccdacbd"
+    },
+    {
+      "path": "golden/sentinel.txt",
+      "sha256": "c82b8ac3a61ada9f7a6f64e40a27a814d81ae4ba228d1679a40a74d75d674280"
+    },
+    {
+      "path": "ralph-golden-v3/sentinel.txt",
+      "sha256": "c82b8ac3a61ada9f7a6f64e40a27a814d81ae4ba228d1679a40a74d75d674280"
+    }
+  ],
+  "commands": [
+    {
+      "command": "node architecture/tools/verify-package.mjs",
+      "exitCode": 0,
+      "stdout": "{\n  \"schemaVersion\": 1,\n  \"checkedAt\": \"2026-09-20T17:35:59.502Z\",\n  \"scope\": \"package integrity only, not product equivalence\",\n  \"implementationExecuted\": false,\n  \"completeProductAcceptance\": false,\n  \"files\": 341,\n  \"jsonFiles\": 92,\n  \"checkedLinks\": 161,\n  \"requiredFiles\": 63,\n  \"moduleCount\": 37,\n  \"questionCount\": 203,\n  \"referenceCaptures\": 34,\n  \"goalCharacters\": 812,\n  \"errors\": [],\n  \"warnings\": [],\n  \"status\": \"pass\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": "node architecture/tools/bootstrap.mjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"scaffold-only\",\"created\":141,\"root\":\"C:\\\\Users\\\\User\\\\Desktop\\\\hackathon3\\\\.cache\\\\architecture-final-s75Jak\",\"next\":[\"npm ci\",\"npm --prefix integrations ci\",\"Implement architecture/PLAN.md M0 onward; src/server/integrations application code is not supplied.\"]}",
+      "stderr": ""
+    },
+    {
+      "command": "node architecture/tools/bootstrap.mjs",
+      "exitCode": 0,
+      "stdout": "{\"status\":\"scaffold-only\",\"created\":0,\"root\":\"C:\\\\Users\\\\User\\\\Desktop\\\\hackathon3\\\\.cache\\\\architecture-final-s75Jak\",\"next\":[\"npm ci\",\"npm --prefix integrations ci\",\"Implement architecture/PLAN.md M0 onward; src/server/integrations application code is not supplied.\"]}",
+      "stderr": ""
+    },
+    {
+      "command": "node architecture/tools/export-visual-contract.mjs --generate --catalog architecture/ui/style-catalog.json --out generated-visual",
+      "exitCode": 0,
+      "stdout": "{\n  \"mode\": \"generate\",\n  \"cssSources\": 28,\n  \"files\": 30,\n  \"output\": \"C:\\\\Users\\\\User\\\\Desktop\\\\hackathon3\\\\.cache\\\\architecture-final-s75Jak\\\\generated-visual\",\n  \"originalSourceRequired\": false,\n  \"externalPackagesRequired\": false,\n  \"result\": \"PASS\"\n}",
+      "stderr": ""
+    },
+    {
+      "command": "node architecture/tools/export-visual-contract.mjs --check-generated --catalog architecture/ui/style-catalog.json --out generated-visual",
+      "exitCode": 0,
+      "stdout": "{\n  \"mode\": \"check-generated\",\n  \"cssSources\": 28,\n  \"files\": 30,\n  \"output\": \"C:\\\\Users\\\\User\\\\Desktop\\\\hackathon3\\\\.cache\\\\architecture-final-s75Jak\\\\generated-visual\",\n  \"originalSourceRequired\": false,\n  \"externalPackagesRequired\": false,\n  \"result\": \"PASS\"\n}",
+      "stderr": ""
+    }
+  ]
+}

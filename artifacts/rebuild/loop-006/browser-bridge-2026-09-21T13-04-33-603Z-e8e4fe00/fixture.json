@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "1.0",
+  "synthetic": true,
+  "fixtureId": "g12-bridge-v1",
+  "sourceText": "GSPEC_G12_ORIGINAL_ONLY_SENTINEL\nSynthetic review quote\nOther synthetic source quote\n",
+  "documents": [
+    {
+      "id": "g12-source-a",
+      "name": "Synthetic source.txt",
+      "kind": "txt",
+      "mime": "text/plain",
+      "role": "target",
+      "size": 85,
+      "url": "/api/documents/g12-source-a/content",
+      "status": "completed",
+      "preview": {
+        "type": "text",
+        "text": "GSPEC_G12_ORIGINAL_ONLY_SENTINEL\nSynthetic review quote\nOther synthetic source quote\n"
+      }
+    }
+  ],
+  "run": {
+    "id": "g12-bridge-run",
+    "status": "completed",
+    "stage": "complete",
+    "mode": "criteria_first",
+    "criterionVersion": 1,
+    "criteria": [],
+    "criteriaDocuments": [],
+    "documents": [
+      {
+        "id": "g12-source-a",
+        "name": "Synthetic source.txt",
+        "kind": "txt",
+        "mime": "text/plain",
+        "role": "target",
+        "size": 85,
+        "url": "/api/documents/g12-source-a/content",
+        "status": "completed",
+        "preview": {
+          "type": "text",
+          "text": "GSPEC_G12_ORIGINAL_ONLY_SENTINEL\nSynthetic review quote\nOther synthetic source quote\n"
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "g12-item-a",
+        "documentId": "g12-source-a",
+        "label": "Synthetic bridge item A",
+        "value": "31",
+        "unit": "MPa",
+        "criterionId": "g12-criterion",
+        "criterion": "At least 30 MPa",
+        "status": "pass",
+        "presence": "present",
+        "explanation": "31 MPa meets the synthetic threshold.",
+        "evidence": [
+          {
+            "documentId": "g12-source-a",
+            "quote": "Synthetic review quote"
+          }
+        ]
+      },
+      {
+        "id": "g12-item-b",
+        "documentId": "g12-source-a",
+        "label": "Synthetic bridge item B",
+        "value": "29",
+        "unit": "MPa",
+        "criterionId": "g12-criterion",
+        "criterion": "At least 30 MPa",
+        "status": "fail",
+        "presence": "present",
+        "explanation": "29 MPa is below the synthetic threshold.",
+        "evidence": [
+          {
+            "documentId": "g12-source-a",
+            "quote": "Other synthetic source quote"
+          }
+        ]
+      }
+    ],
+    "analyses": [],
+    "events": [],
+    "summary": {
+      "total": 2,
+      "pass": 1,
+      "fail": 1,
+      "review": 0,
+      "pending": 0
+    }
+  }
+}

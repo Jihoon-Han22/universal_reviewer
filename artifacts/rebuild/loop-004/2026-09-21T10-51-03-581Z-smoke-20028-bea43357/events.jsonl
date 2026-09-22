@@ -1,0 +1,22 @@
+{"time":"2026-09-21T10:51:03.776Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T10:51:03.780Z","kind":"pre-reset-state","phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T10:51:03.826Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200,"phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T10:51:06.735Z","kind":"browser-launched","playwrightVersion":"1.62.1","bundledExecutable":"C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe","bundledExists":false,"executable":"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe","selection":"explicit-installed-edge-fallback","userProfile":"none; Playwright isolated temporary profile","headless":true,"node":"v24.13.1","browserVersion":"153.0.4234.48","browserName":"chromium","referenceBrowser":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","environmentMatchNotAssumed":true}
+{"time":"2026-09-21T10:51:09.603Z","kind":"local-font-intercept","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;450;500;550;600;650;700&display=swap"}
+{"time":"2026-09-21T10:51:10.151Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T10:51:10.153Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T10:51:13.440Z","kind":"browser-context","name":"states-01-28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0","platform":"Win32","language":"ko-KR","languages":["ko-KR"],"timeZone":"Asia/Seoul","devicePixelRatio":1,"viewport":{"width":1440,"height":960},"visualViewport":{"width":1440,"height":960,"scale":1},"prefersColorScheme":"light","reducedMotion":false}
+{"time":"2026-09-21T10:51:14.622Z","kind":"state-start","id":"01-landing-desktop"}
+{"time":"2026-09-21T10:51:28.477Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T10:51:28.588Z","kind":"state-captured","id":"01-landing-desktop","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T10:51:28.616Z","kind":"state-start","id":"02-landing-mobile"}
+{"time":"2026-09-21T10:51:28.620Z","kind":"action","action":"set viewport","width":390,"height":844}
+{"time":"2026-09-21T10:51:32.986Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T10:51:33.210Z","kind":"state-captured","id":"02-landing-mobile","png":{"width":390,"height":844},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T10:51:33.326Z","kind":"state-start","id":"04-criteria-input-empty"}
+{"time":"2026-09-21T10:51:33.327Z","kind":"action","action":"set viewport","width":1440,"height":960}
+{"time":"2026-09-21T10:51:33.747Z","kind":"action","action":"set OS reduced motion","reducedMotion":"no-preference"}
+{"time":"2026-09-21T10:51:33.887Z","kind":"action","action":"click","role":"button","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T10:51:36.937Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T10:51:37.042Z","kind":"state-captured","id":"04-criteria-input-empty","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T10:51:43.926Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}

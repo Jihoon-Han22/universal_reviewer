@@ -1,0 +1,45 @@
+{
+  "id": "live-aria",
+  "startedAt": "2026-09-21T12:32:10.218Z",
+  "state": "passed",
+  "expected": {
+    "announcement": "검토 진행 중. 추출 3개, 판정 3개.",
+    "polite": true
+  },
+  "observations": {
+    "announcement": "검토 진행 중. 추출 3개, 판정 3개.",
+    "polite": true,
+    "all": [
+      {
+        "text": "검토 진행 중. 추출 3개, 판정 3개.",
+        "role": "status",
+        "live": "polite"
+      }
+    ]
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-aria.dom.json",
+      "sha256": "c6f81429d37caad4db4ac1d6f7f7686290bcc18da7d9896c135af00f9111ddc5"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/live-aria.png",
+      "sha256": "ef78deee93000d5669cce0e2b96ef90b98611ac0e84c8217b924c237408a37d2"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "announcement",
+      "expected": "검토 진행 중. 추출 3개, 판정 3개.",
+      "actual": "검토 진행 중. 추출 3개, 판정 3개.",
+      "passed": true
+    },
+    {
+      "key": "polite",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:32:18.131Z"
+}

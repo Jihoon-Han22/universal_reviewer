@@ -1,0 +1,66 @@
+{
+  "traceRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/context-1-trace.zip",
+      "sha256": "21ba26dde58907fa713e6f0dac904e7cc7a93f5e669c82660e910c202973a5e2"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/context-2-trace.zip",
+      "sha256": "7116d9529bbe957376ce14e7264a3e8c7b83b4330ffd91a62d139c2c2de46730"
+    }
+  ],
+  "actions": {
+    "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/actions.jsonl",
+    "sha256": "7a95e16a629f01b1e0f1ed60cf8616f13467906fe6383d8b2a70491b044e1449"
+  },
+  "contexts": [
+    {
+      "id": 1,
+      "label": "main",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "platform": "Win32",
+        "languages": [
+          "ko-KR"
+        ],
+        "hardwareConcurrency": 4,
+        "deviceMemory": 8,
+        "dpr": 1,
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "timezone": "Asia/Seoul"
+      }
+    },
+    {
+      "id": 2,
+      "label": "cancel",
+      "environment": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "platform": "Win32",
+        "languages": [
+          "ko-KR"
+        ],
+        "hardwareConcurrency": 4,
+        "deviceMemory": 8,
+        "dpr": 1,
+        "viewport": {
+          "width": 1440,
+          "height": 960
+        },
+        "timezone": "Asia/Seoul"
+      }
+    }
+  ],
+  "browser": {
+    "name": "chromium",
+    "version": "153.0.8010.48",
+    "executable": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
+    "node": "v24.13.1",
+    "headless": true,
+    "profile": "isolated temporary; no user profile",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+  },
+  "blockedExternal": []
+}

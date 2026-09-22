@@ -1,0 +1,66 @@
+{
+  "id": "13-review-active",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "13-review-active",
+    "screenshot": {
+      "path": "13-review-active.png",
+      "bytes": 422812,
+      "sha256": "1a9b068bfa2d20fb30912e121cba279c94337335caf66e51cc2d7ab3fcba4164",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/13-review-active.json",
+      "bytes": 2021983,
+      "sha256": "d4ee3b1498ad2ef5b19d73f271e32da827f237e08ed97764aee114a93e9cefb3"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:14:44.881Z",
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/13-review-active.png",
+    "bytes": 410682,
+    "sha256": "dd18552e036050be5bd586f7d4963f042a0e9b4dd57d7f8b4b888a02159d35f5",
+    "width": 1440,
+    "height": 960,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T11:14:51.429Z",
+    "capturedAt": "2026-09-21T11:14:52.164Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/dom/13-review-active.json",
+    "bytes": 3096376,
+    "sha256": "ffc7fee52027a27c4bdfc4ad6a5aeb3bf5b79e00613b8beba0fa48a1fee8e876"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-13-41-736Z-all-23428-e01d7282/13-review-active-measurement.json",
+    "bytes": 192498,
+    "sha256": "a1ff3d4b08576bb7f1670bc7a5e8a39add48b147b7cbc325bb127ee94dc16c40"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "settling": {
+    "livePhase": true,
+    "finiteAnimationsSettled": null,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "review",
+  "endedAt": "2026-09-21T11:15:12.373Z"
+}

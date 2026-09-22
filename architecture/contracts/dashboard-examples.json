@@ -1,0 +1,288 @@
+{
+  "$comment": "Synthetic data only. IDs, names, values and evidence are invented contract examples, not uploaded documents.",
+  "snapshot": {
+    "runId": "run-example",
+    "createdAt": "2026-09-20T00:00:00.000Z",
+    "criterionVersion": 2,
+    "partial": false,
+    "summary": {
+      "total": 3,
+      "pass": 1,
+      "fail": 1,
+      "review": 1,
+      "humanReviewed": 1,
+      "documents": 2
+    },
+    "documents": [
+      {
+        "id": "doc-a",
+        "name": "합성 측정표 A.xlsx"
+      },
+      {
+        "id": "doc-b",
+        "name": "합성 측정표 B.csv"
+      }
+    ],
+    "items": [
+      {
+        "id": "item-a",
+        "documentId": "doc-a",
+        "documentName": "합성 측정표 A.xlsx",
+        "label": "밀도",
+        "value": "1.10",
+        "unit": "g/cm3",
+        "criterionId": "c-density",
+        "criterion": "1.00 이상 1.20 이하",
+        "status": "pass",
+        "explanation": "확인된 수치가 허용 범위 안입니다.",
+        "reviewedByHuman": false,
+        "humanNote": "",
+        "sourceEvidence": [
+          {
+            "documentId": "doc-a",
+            "sheet": "측정",
+            "cell": "B2",
+            "quote": "밀도 1.10 g/cm3"
+          }
+        ],
+        "evidence": {
+          "page": null,
+          "sheet": "측정",
+          "cell": "B2",
+          "quote": "밀도 1.10 g/cm3"
+        }
+      },
+      {
+        "id": "item-b",
+        "documentId": "doc-b",
+        "documentName": "합성 측정표 B.csv",
+        "label": "밀도",
+        "value": "1.30",
+        "unit": "g/cm3",
+        "criterionId": "c-density",
+        "criterion": "1.00 이상 1.20 이하",
+        "status": "fail",
+        "explanation": "확인된 수치가 상한을 초과합니다.",
+        "reviewedByHuman": true,
+        "humanNote": "단위를 다시 확인했습니다.",
+        "sourceEvidence": [
+          {
+            "documentId": "doc-b",
+            "cell": "B2",
+            "quote": "밀도,1.30,g/cm3"
+          }
+        ],
+        "evidence": {
+          "page": null,
+          "sheet": "",
+          "cell": "B2",
+          "quote": "밀도,1.30,g/cm3"
+        }
+      },
+      {
+        "id": "item-c",
+        "documentId": "doc-b",
+        "documentName": "합성 측정표 B.csv",
+        "label": "외관",
+        "value": "",
+        "unit": "",
+        "criterionId": "c-look",
+        "criterion": "균열 없음",
+        "status": "review",
+        "explanation": "전사에서 외관 기입 내용을 판독하지 못했습니다.",
+        "reviewedByHuman": false,
+        "humanNote": "",
+        "sourceEvidence": [],
+        "evidence": {
+          "page": null,
+          "sheet": "",
+          "cell": "",
+          "quote": ""
+        }
+      }
+    ],
+    "numericGroups": [
+      {
+        "label": "밀도",
+        "unit": "g/cm3",
+        "criterion": "1.00 이상 1.20 이하",
+        "total": 2,
+        "values": [
+          {
+            "id": "item-a",
+            "documentId": "doc-a",
+            "documentName": "합성 측정표 A.xlsx",
+            "value": 1.1
+          },
+          {
+            "id": "item-b",
+            "documentId": "doc-b",
+            "documentName": "합성 측정표 B.csv",
+            "value": 1.3
+          }
+        ]
+      }
+    ]
+  },
+  "post": {
+    "runId": "run-example",
+    "instruction": "라이트 테마와 큰 파이 차트로, 범례는 아래에 놓아 주세요."
+  },
+  "accepted": {
+    "statusCode": 202,
+    "body": {
+      "id": "job-example",
+      "status": "queued",
+      "message": "대시보드 생성을 준비하고 있습니다.",
+      "attempt": 0,
+      "logs": [],
+      "criterionVersion": 2
+    }
+  },
+  "readyShape": {
+    "id": "job-example",
+    "status": "ready",
+    "message": "검토 결과 대시보드가 완성되었습니다.",
+    "attempt": 1,
+    "logs": [],
+    "criterionVersion": 2,
+    "presentation": "generated",
+    "design": {
+      "title": "검토 결과, 한눈에.",
+      "subtitle": "파일을 선택하면 항목별 판정과 근거를 볼 수 있습니다.",
+      "accent": "cobalt",
+      "focus": "overview",
+      "density": "comfortable",
+      "layout": "balanced",
+      "distribution": "pie",
+      "theme": "light",
+      "emphasis": "charts",
+      "chartSize": "large",
+      "legend": "bottom",
+      "motion": "full",
+      "corners": "rounded",
+      "fileVisualization": "cards"
+    },
+    "html": "<!doctype html>... actual full standalone HTML, not this placeholder ...",
+    "sourceItems": [
+      {
+        "id": "item-a",
+        "documentId": "doc-a",
+        "label": "밀도",
+        "value": "1.10",
+        "unit": "g/cm3",
+        "criterionId": "c-density",
+        "criterion": "1.00 이상 1.20 이하",
+        "status": "pass",
+        "explanation": "확인된 수치가 허용 범위 안입니다.",
+        "reviewedByHuman": false,
+        "humanNote": "",
+        "evidence": [
+          {
+            "documentId": "doc-a",
+            "sheet": "측정",
+            "cell": "B2",
+            "quote": "밀도 1.10 g/cm3"
+          }
+        ]
+      },
+      {
+        "id": "item-b",
+        "documentId": "doc-b",
+        "label": "밀도",
+        "value": "1.30",
+        "unit": "g/cm3",
+        "criterionId": "c-density",
+        "criterion": "1.00 이상 1.20 이하",
+        "status": "fail",
+        "explanation": "확인된 수치가 상한을 초과합니다.",
+        "reviewedByHuman": true,
+        "humanNote": "단위를 다시 확인했습니다.",
+        "evidence": [
+          {
+            "documentId": "doc-b",
+            "cell": "B2",
+            "quote": "밀도,1.30,g/cm3"
+          }
+        ]
+      },
+      {
+        "id": "item-c",
+        "documentId": "doc-b",
+        "label": "외관",
+        "value": "",
+        "unit": "",
+        "criterionId": "c-look",
+        "criterion": "균열 없음",
+        "status": "review",
+        "explanation": "전사에서 외관 기입 내용을 판독하지 못했습니다.",
+        "reviewedByHuman": false,
+        "humanNote": "",
+        "evidence": []
+      }
+    ]
+  },
+  "errors": [
+    {
+      "statusCode": 409,
+      "body": {
+        "error": "대시보드를 생성하고 있습니다. 잠시 후 다시 시도하세요."
+      }
+    },
+    {
+      "statusCode": 400,
+      "body": {
+        "error": "이전 대시보드의 디자인 구성이 올바르지 않습니다."
+      }
+    },
+    {
+      "statusCode": 404,
+      "body": {
+        "error": "대시보드를 찾을 수 없습니다."
+      }
+    }
+  ],
+  "validatorSuccess": {
+    "version": 1,
+    "ok": true,
+    "engine": "node-dom",
+    "visualBrowser": false,
+    "checks": {
+      "input": true,
+      "syntax": true,
+      "csp": true,
+      "offline": true,
+      "kpis": true,
+      "charts": true,
+      "files": true,
+      "findings": true,
+      "filters": true,
+      "details": true,
+      "escaping": true
+    },
+    "diagnostics": [],
+    "totals": {
+      "total": 3,
+      "pass": 1,
+      "fail": 1,
+      "review": 1
+    },
+    "files": 2
+  },
+  "requiredRebuildAcceptance": {
+    "requirement": "OPTIONAL_FUTURE",
+    "contract": "contracts/dashboard-customization-cases.json",
+    "sequentialRequestOracle": "requiredRebuildSequence",
+    "legacyCompatibilityOracle": "legacyParserCases",
+    "plannerEnvelopeContract": "plannerEnvelopeContract",
+    "missingProjectionOracle": "ui/dashboard-interaction-cases.json#/projectionCases",
+    "gates": [
+      "DB-H01",
+      "DB-H02",
+      "DB-H03"
+    ],
+    "executionStatus": "NOT_RUN",
+    "note": "Historical property name retained. This block is inactive for current reproduction; source outputs and the current snapshot allowlist are the active oracle. Legacy parser cases remain current compatibility behavior."
+  },
+  "profile": "CURRENT_REPRODUCTION"
+}

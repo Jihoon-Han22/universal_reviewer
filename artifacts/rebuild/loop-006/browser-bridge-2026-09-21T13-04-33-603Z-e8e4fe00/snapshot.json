@@ -1,0 +1,79 @@
+{
+  "runId": "g12-bridge-run",
+  "createdAt": "2026-09-21T13:04:33.627Z",
+  "criterionVersion": 1,
+  "partial": false,
+  "summary": {
+    "total": 2,
+    "pass": 1,
+    "fail": 1,
+    "review": 0,
+    "humanReviewed": 0,
+    "documents": 1
+  },
+  "documents": [
+    {
+      "id": "g12-source-a",
+      "name": "Synthetic source.txt"
+    }
+  ],
+  "items": [
+    {
+      "id": "g12-item-a",
+      "documentId": "g12-source-a",
+      "documentName": "Synthetic source.txt",
+      "label": "Synthetic bridge item A",
+      "value": "31",
+      "unit": "MPa",
+      "criterionId": "g12-criterion",
+      "criterion": "At least 30 MPa",
+      "status": "pass",
+      "explanation": "31 MPa meets the synthetic threshold.",
+      "reviewedByHuman": false,
+      "humanNote": "",
+      "sourceEvidence": [
+        {
+          "documentId": "g12-source-a",
+          "sheet": "",
+          "cell": "",
+          "quote": "Synthetic review quote"
+        }
+      ],
+      "evidence": {
+        "page": null,
+        "sheet": "",
+        "cell": "",
+        "quote": "Synthetic review quote"
+      }
+    },
+    {
+      "id": "g12-item-b",
+      "documentId": "g12-source-a",
+      "documentName": "Synthetic source.txt",
+      "label": "Synthetic bridge item B",
+      "value": "29",
+      "unit": "MPa",
+      "criterionId": "g12-criterion",
+      "criterion": "At least 30 MPa",
+      "status": "fail",
+      "explanation": "29 MPa is below the synthetic threshold.",
+      "reviewedByHuman": false,
+      "humanNote": "",
+      "sourceEvidence": [
+        {
+          "documentId": "g12-source-a",
+          "sheet": "",
+          "cell": "",
+          "quote": "Other synthetic source quote"
+        }
+      ],
+      "evidence": {
+        "page": null,
+        "sheet": "",
+        "cell": "",
+        "quote": "Other synthetic source quote"
+      }
+    }
+  ],
+  "numericGroups": []
+}

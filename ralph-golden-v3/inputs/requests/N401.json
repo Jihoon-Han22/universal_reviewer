@@ -1,0 +1,30 @@
+{
+  "case_id": "N401",
+  "report": "inputs/reports/N401.pdf",
+  "criteria": "inputs/criteria/N401_criteria.xlsx",
+  "output_template": "inputs/criteria/N401_criteria.xlsx",
+  "target_identity": "SAMPLE W-240 / 2026-08-14 / OUTLET B",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "lead",
+      "name": "납 Pb"
+    },
+    {
+      "field_id": "cadmium",
+      "name": "카드뮴 Cd"
+    },
+    {
+      "field_id": "cod",
+      "name": "COD"
+    },
+    {
+      "field_id": "ph",
+      "name": "pH"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GSPEC · 전체 아키텍처</title>
+<style>
+:root{font-family:"Malgun Gothic","맑은 고딕",sans-serif;color:#dae5f6;background:#080f1b;color-scheme:dark}*{box-sizing:border-box}body{margin:0;padding:18px 24px}.toolbar,.notes,.status{max-width:1600px;margin:0 auto}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;flex-wrap:wrap}.toolbar span{font-size:14px;color:#a7bad5}button{font:inherit;font-size:14px;background:#142237;border:1px solid #35475f;border-radius:8px;padding:9px 15px;color:#e5eefb;cursor:pointer}button:hover{background:#223a58}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ffd28a;outline-offset:4px}.buttons{display:flex;gap:8px}.primary{background:#dae5f6;color:#142237;font-weight:700}.primary:hover{background:white}.stage{max-width:1600px;margin:auto;box-shadow:0 18px 70px #0004}.stage svg{width:100%;height:auto;display:block;aspect-ratio:16/9}.stage:fullscreen{max-width:none;display:flex;align-items:center;justify-content:center;background:#080f1b}.stage:fullscreen svg{width:min(100vw,177.7778vh);max-height:100vh}.notes,.status{font-size:13px;color:#91a6c2;line-height:1.8;padding-top:10px}.notes summary{cursor:pointer;width:fit-content}.notes a{color:#a3b9ff}.notes ul{padding-left:22px}.status{min-height:26px}@media(max-width:600px){body{padding:10px}.toolbar span{font-size:12px}.buttons{flex-wrap:wrap}button{font-size:12px;padding:7px 10px}}@page{size:16in 9in;margin:0}@media print{html,body{margin:0;padding:0;background:#0b1423}.toolbar,.notes,.status{display:none!important}.stage{max-width:none;width:16in;height:9in;box-shadow:none}.stage svg{width:16in;height:9in;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style></head><body>
+<header class="toolbar"><span>전체 구조 · 하나의 16:9 슬라이드</span><div class="buttons"><button id="fullscreen">전체 화면</button><button id="print">인쇄 / PDF</button><button id="download" class="primary">PPT용 PNG 저장</button></div></header>
+<main id="stage" class="stage"><svg xmlns="http://www.w3.org/2000/svg" id="slide" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">GSPEC 문서 검토 아키텍처</title><desc id="desc">하나의 통합 구조도입니다. 위쪽 기준서가 E2B에서 읽히고 LLM이 기준을 추출합니다. 사람이 승인한 기준과 아래쪽 대상 파일에서 분석한 내용이 오른쪽 LLM 판정 모듈에 모입니다. 서버 재검사 후 적합·부적합·확인 필요 및 근거를 출력합니다. 기준과 문서 분석에서는 문제가 있으면 LLM이 다시 읽을 위치를 요청하고 E2B는 원문과 위치를 반환합니다. PDF·사진은 E2B 종료 후 AI끼리 원본을 대조합니다. 선택적 맞춤 화면은 결과를 받아 LLM 설정, 서버 HTML 생성, E2B 검사, 검사 실패 이유로 설정 수정의 반복을 수행합니다.</desc>
+<defs>
+<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0 H0 V32" fill="none" stroke="#758ba8" stroke-opacity=".075" stroke-width="1"/></pattern>
+<linearGradient id="model-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263257"/><stop offset="1" stop-color="#171f37"/></linearGradient>
+<linearGradient id="sandbox-fill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#113632"/><stop offset="1" stop-color="#10252b"/></linearGradient>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11Z" fill="#9badc8"/></marker>
+<marker id="a-blue" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12Z" fill="#a2b4ff"/></marker>
+<marker id="a-teal" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12Z" fill="#59d8c4"/></marker>
+<marker id="a-gold" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L12 6.5 L1 12Z" fill="#f4c97e"/></marker>
+<style>
+text{font-family:"Malgun Gothic","맑은 고딕",sans-serif;fill:#e0e9f7}.title{font-size:51px;font-weight:800;letter-spacing:-1.8px}.sub{font-size:26px;fill:#9eb0ca}.phase{font-size:29px;font-weight:700;letter-spacing:-.8px}.node{font-size:29px;font-weight:800}.label{font-size:25px;font-weight:700;letter-spacing:-.5px}.body{font-size:23px;letter-spacing:-.3px}.small{font-size:21px;letter-spacing:-.3px}.muted{fill:#9aadc8}.blue{fill:#a2b4ff}.teal{fill:#59d8c4}.gold{fill:#f4c97e}.center{text-anchor:middle}.right{text-anchor:end}.line{fill:none;stroke:#9badc8;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;marker-end:url(#arrow)}.blue-line{fill:none;stroke:#a2b4ff;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;marker-end:url(#a-blue)}.teal-line{fill:none;stroke:#59d8c4;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;marker-end:url(#a-teal)}.approval-line{fill:none;stroke:#f4c97e;stroke-width:2.5;stroke-dasharray:7 8;stroke-linejoin:round;marker-end:url(#a-gold)}.ink{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.source-box{fill:#111f32;stroke:#455b78;stroke-width:1.5}.boundary{fill:#0d1c2a;fill-opacity:.65;stroke:#295a5d;stroke-width:1.5;stroke-dasharray:6 5}.model{fill:url(#model-fill);stroke:#718be6;stroke-width:1.7}.sandbox{fill:url(#sandbox-fill);stroke:#3b9c91;stroke-width:1.7}
+</style>
+<symbol id="file" viewBox="0 0 80 90"><path d="M12 5 H48 L67 24 V80 H12Z" class="ink"/><path d="M48 5 V24 H67M24 37 H54M24 49 H54M24 61 H45" class="ink"/></symbol>
+<symbol id="chip" viewBox="0 0 64 64"><rect x="13" y="13" width="38" height="38" rx="7" class="ink"/><path d="M22 3 V13M32 3 V13M42 3 V13M22 51 V61M32 51 V61M42 51 V61M3 22 H13M3 32 H13M3 42 H13M51 22 H61M51 32 H61M51 42 H61" class="ink"/><path d="M24 25 L39 23 L40 39 L24 40 L32 32Z M24 25 L40 39M39 23 L24 40" fill="none" stroke="currentColor" stroke-width="1.5"/><g fill="currentColor"><circle cx="24" cy="25" r="3"/><circle cx="39" cy="23" r="3"/><circle cx="40" cy="39" r="3"/><circle cx="24" cy="40" r="3"/></g></symbol>
+<symbol id="terminal" viewBox="0 0 80 64"><rect x="3" y="3" width="74" height="56" rx="7" class="ink"/><path d="M3 17 H77M16 29 L25 37 L16 45M34 45 H53" class="ink"/><circle cx="13" cy="10" r="2" fill="currentColor"/><circle cx="21" cy="10" r="2" fill="currentColor"/></symbol>
+<symbol id="check" viewBox="0 0 60 60"><path d="M30 4 L51 13 V31 Q49 45 30 56 Q11 45 9 31 V13Z" class="ink"/><path d="M19 30 L27 38 L42 21" class="ink"/></symbol>
+<symbol id="person" viewBox="0 0 60 60"><circle cx="30" cy="17" r="10" class="ink"/><path d="M10 52 Q10 34 30 34 Q50 34 50 52" class="ink"/></symbol>
+</defs>
+<rect width="1920" height="1080" fill="#0b1423"/><rect width="1920" height="1080" fill="url(#grid)"/>
+<path d="M56 148 H1864" stroke="#2c3b52"/>
+<text x="57" y="80" class="title">GSPEC 문서 검토 아키텍처</text>
+<text x="60" y="124" class="sub">기준 확정 → 대상 읽기 → 근거로 판정</text>
+<rect x="1222" y="49" width="14" height="14" rx="3" fill="#a2b4ff"/><text x="1247" y="64" class="small">LLM · 생각·판단</text>
+<rect x="1485" y="49" width="14" height="14" rx="3" fill="#59d8c4"/><text x="1510" y="64" class="small">E2B 샌드박스 · 격리 실행</text>
+<path d="M1223 104 H1260" class="line"/><text x="1275" y="110" class="small muted">데이터 이동</text><path d="M1487 104 H1526" class="approval-line"/><text x="1541" y="110" class="small muted">승인 후 시작</text>
+
+<!-- 기준 준비: 입력 -> 파일 읽기/모델 해석 -> 사람 승인 -->
+<text x="58" y="207" class="phase">01  기준 준비</text>
+<text x="259" y="251" class="body muted">기준 만들기</text>
+<rect x="55" y="343" width="145" height="122" rx="10" class="source-box"/>
+<use href="#file" x="95" y="357" width="65" height="74" style="color:#bccde3"/>
+<text x="127" y="450" class="body center">기준서</text>
+<path d="M202 402 H294" class="line"/>
+<text x="246" y="385" class="small muted center">원본</text>
+<rect x="287" y="337" width="236" height="143" rx="12" class="boundary"/>
+<rect x="301" y="351" width="208" height="115" rx="8" class="sandbox"/>
+<use href="#terminal" x="316" y="369" width="65" height="51" style="color:#59d8c4"/>
+<text x="441" y="394" class="node teal center">E2B</text><text x="405" y="448" class="body center">원본 읽기</text>
+<rect x="654" y="351" width="207" height="115" rx="8" class="model"/>
+<use href="#chip" x="668" y="370" width="58" height="58" style="color:#a2b4ff"/>
+<text x="786" y="394" class="node blue center">LLM</text><text x="757" y="448" class="body center">이해·기준 추출</text>
+<path d="M756 344 V308 H405 V331" class="blue-line"/>
+<text x="581" y="292" class="body blue center">빠짐·의문 → 위치 요청</text>
+<path d="M405 486 V510 H757 V472" class="teal-line"/>
+<rect x="479" y="493" width="210" height="32" fill="#0b1423"/><text x="584" y="518" class="body teal center">원문 값 + 위치</text>
+<text x="571" y="552" class="small muted center">Excel 기준 탐색은 별도 E2B 세션</text>
+<path d="M865 406 H934" class="line"/><text x="900" y="380" class="small muted center">초안</text>
+<path d="M958 346 H1061 L1082 367 V448 L1061 469 H958 L937 448 V367Z" fill="#30281d" stroke="#b9995f" stroke-width="1.8"/>
+<use href="#person" x="981" y="355" width="51" height="51" style="color:#f4c97e"/>
+<text x="1009" y="437" class="label gold center">사람 승인</text>
+
+<!-- 승인 기준과 분석한 내용이 각각 판정 모델로 합류 -->
+<path d="M1088 406 H1208" class="blue-line"/>
+<text x="1147" y="380" class="body blue center">승인 기준</text>
+<path d="M1009 475 V585 H276 V675 H126 V697" class="approval-line"/>
+<rect x="375" y="568" width="265" height="32" fill="#0b1423"/><text x="507" y="592" class="small gold center">승인해야 대상 처리 시작</text>
+
+<!-- 대상 읽기: 샌드박스와 LLM 재조회. -->
+<text x="58" y="635" class="phase">02  대상 읽기</text>
+<rect x="55" y="704" width="145" height="122" rx="10" class="source-box"/>
+<use href="#file" x="95" y="718" width="65" height="74" style="color:#bccde3"/>
+<text x="127" y="811" class="body center">검토 파일</text>
+<path d="M202 763 H294" class="line"/><text x="246" y="746" class="small muted center">원본</text>
+<rect x="287" y="698" width="236" height="143" rx="12" class="boundary"/>
+<rect x="301" y="712" width="208" height="115" rx="8" class="sandbox"/>
+<use href="#terminal" x="316" y="730" width="65" height="51" style="color:#59d8c4"/>
+<text x="441" y="755" class="node teal center">E2B</text><text x="405" y="809" class="body center">원본 읽기</text>
+<rect x="654" y="712" width="207" height="115" rx="8" class="model"/>
+<use href="#chip" x="668" y="731" width="58" height="58" style="color:#a2b4ff"/>
+<text x="786" y="755" class="node blue center">LLM</text><text x="757" y="809" class="body center">내용 이해·검증</text>
+<path d="M756 705 V669 H405 V692" class="blue-line"/>
+<text x="581" y="653" class="body blue center">빠짐·오독 → 다시 읽기</text>
+<path d="M405 847 V871 H757 V833" class="teal-line"/>
+<rect x="479" y="854" width="210" height="32" fill="#0b1423"/><text x="584" y="879" class="body teal center">원문 값 + 위치</text>
+<path d="M866 768 H1149 V457 H1208" class="teal-line"/>
+<text x="1005" y="747" class="label teal center">내용 + 근거</text>
+<text x="583" y="927" class="small muted center">PDF·사진: E2B 종료 → 시각 LLM ⇄ 원본 대조 LLM</text>
+
+<!-- 판정: 모델 제안 -> 서버 재검사 -> 결과. -->
+<text x="1217" y="251" class="phase">03  판정·결과</text>
+<rect x="1215" y="348" width="236" height="133" rx="10" class="model"/>
+<use href="#chip" x="1236" y="368" width="62" height="62" style="color:#a2b4ff"/>
+<text x="1370" y="398" class="node blue center">LLM</text><text x="1333" y="456" class="body center">기준 비교·판정 제안</text>
+<path d="M1333 488 V537" class="line"/><text x="1362" y="518" class="small muted">판정안</text>
+<rect x="1215" y="544" width="236" height="121" rx="10" fill="#162234" stroke="#60738d" stroke-width="1.7"/>
+<use href="#check" x="1237" y="562" width="57" height="57" style="color:#b8c8df"/>
+<text x="1365" y="588" class="node center">서버</text><text x="1333" y="642" class="body center">수치·조건·근거 검사</text>
+<path d="M1456 604 H1579" class="line"/><text x="1518" y="580" class="small muted center">판정·근거</text>
+<path d="M1585 351 H1796 L1841 397 V672 H1585Z" fill="#111f32" stroke="#7d95b5" stroke-width="1.8"/>
+<path d="M1796 351 V397 H1841" fill="#21334c" stroke="#7d95b5" stroke-width="1.8"/>
+<text x="1713" y="414" class="node center">검토 결과</text>
+<line x1="1612" y1="438" x2="1809" y2="438" stroke="#334860"/>
+<circle cx="1626" cy="477" r="13" fill="#164d40"/><path d="M1619 477 L1624 483 L1634 471" stroke="#65dfb6" stroke-width="3" fill="none"/>
+<text x="1661" y="486" class="label">적합</text>
+<circle cx="1626" cy="533" r="13" fill="#553134"/><path d="M1620 527 L1632 539 M1632 527 L1620 539" stroke="#f29398" stroke-width="3"/>
+<text x="1661" y="542" class="label">부적합</text>
+<circle cx="1626" cy="589" r="13" fill="#514329"/><text x="1626" y="597" class="small gold center">?</text>
+<text x="1661" y="598" class="label">확인 필요</text>
+<text x="1713" y="646" class="small muted center">이유 + 원문 위치</text>
+<text x="1713" y="708" class="small muted center">XLSX · CSV · JSON</text>
+
+<!-- 결과에서만 갈라지는 선택적 맞춤 화면 생성 -->
+<path d="M1848 520 H1881 V811 H1249 V847" class="line"/>
+<text x="1370" y="779" class="body">선택: 맞춤 결과 화면</text>
+<rect x="1433" y="795" width="267" height="30" fill="#0b1423"/><text x="1567" y="819" class="small muted center">결과 + 화면 요청</text>
+<rect x="1178" y="855" width="144" height="69" rx="8" class="model"/><text x="1250" y="883" class="label blue center">LLM</text><text x="1250" y="911" class="small center">디자인 설정</text>
+<path d="M1328 888 H1381" class="blue-line"/>
+<rect x="1388" y="855" width="164" height="69" rx="8" fill="#162234" stroke="#60738d" stroke-width="1.7"/><text x="1470" y="883" class="label center">서버</text><text x="1470" y="911" class="small center">HTML 생성</text>
+<path d="M1558 888 H1615" class="line"/>
+<rect x="1622" y="855" width="192" height="69" rx="8" class="sandbox"/><text x="1718" y="883" class="label teal center">E2B</text><text x="1718" y="911" class="small center">구조·값 검사</text>
+<path d="M1819 888 H1830" class="teal-line"/><use href="#file" x="1837" y="862" width="45" height="52" style="color:#59d8c4"/><text x="1860" y="940" class="small teal center">HTML</text><path d="M1718 930 V967 H1250 V930" class="teal-line"/>
+<rect x="1370" y="950" width="247" height="32" fill="#0b1423"/><text x="1493" y="975" class="small teal center">실패 이유 → 설정 수정</text>
+<text x="571" y="991" class="small muted center">규칙 문장은 파일 읽기 없이 LLM으로 바로 입력</text>
+<path d="M56 1017 H1864" stroke="#2c3b52"/>
+<text x="59" y="1053" class="small muted">반복은 문제 해결 시 종료 · 한도 / 진전 없음 → 미해결 표시</text>
+<text x="1862" y="1053" class="small muted right">각 단계는 별도 E2B 세션 · 반복 안에서는 같은 세션</text>
+</svg></main>
+<div class="status" id="status" aria-live="polite"></div>
+<details class="notes"><summary>반복 횟수와 설계 근거</summary><ul>
+<li><a href="specs/02-backend-pipeline.md">문서 이해</a>: 최초 포함 검증 최대 3라운드, 재조회 최대 2회. 원본을 먼저 읽고 LLM이 이해·검증합니다. 서버가 요청 위치를 검사하고 고정 reader를 실행합니다. LLM과 E2B 사이 화살표는 서버가 중계하는 데이터 흐름입니다.</li>
+<li><a href="specs/03-algorithms.md">Excel 기준 탐색</a>: 문서 이해 세션 종료 뒤 별도 E2B에서 실제 범위를 최대 2회 읽습니다. 위쪽 E2B↔LLM은 기준 준비 중 발생하는 교환을 묶어 표현합니다. 모든 기준 파일이 동일한 추가 탐색을 하는 것은 아닙니다.</li>
+<li><a href="specs/02-backend-pipeline.md">PDF·이미지</a>: E2B 종료 후 시각 LLM 전사와 별도 LLM의 원본 대조를 최초 포함 최대 3라운드 수행합니다. 대상의 별도 사실 추출에는 기준을 주지 않습니다.</li>
+<li><a href="specs/01-state-api.md">사람 승인</a>: 승인 기준을 고정한 후 대상 분석을 시작합니다. <a href="specs/03-algorithms.md">서버 판정</a>은 모델 제안을 수치·조건·근거 등으로 재검사합니다.</li>
+<li><a href="specs/05-dashboard-exports.md">맞춤 화면</a>: LLM 디자인 JSON → 고정 HTML 렌더러 → E2B 구조·데이터 검사. 오류 진단으로 설정을 수정하며 모델 호출 총합 최대 3회(최초 포함). 생성 실패 시 기본 화면, 취소 시 중단. 이 작업이 판정이나 실제 값을 바꾸지 않습니다.</li>
+<li>현재 동작(CURRENT_REPRODUCTION)의 설명이며 화면을 나누지 않고 모든 모듈을 한 장에 표시합니다.</li>
+</ul></details>
+<script>
+const svg=document.getElementById('slide'),status=document.getElementById('status');
+document.getElementById('print').addEventListener('click',()=>window.print());
+document.getElementById('fullscreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.getElementById('stage').requestFullscreen()}catch{status.textContent='전체 화면을 지원하지 않는 브라우저입니다.'}});
+document.addEventListener('fullscreenchange',()=>document.getElementById('fullscreen').textContent=document.fullscreenElement?'전체 화면 닫기':'전체 화면');
+document.getElementById('download').addEventListener('click',async()=>{const button=document.getElementById('download');button.disabled=true;let source;try{await document.fonts.ready;source=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));const image=new Image();await new Promise((ok,no)=>{image.onload=ok;image.onerror=no;image.src=source});const canvas=document.createElement('canvas');canvas.width=3840;canvas.height=2160;canvas.getContext('2d').drawImage(image,0,0,3840,2160);const blob=await new Promise(ok=>canvas.toBlob(ok,'image/png'));if(!blob)throw new Error('png');const url=URL.createObjectURL(blob),anchor=document.createElement('a');anchor.href=url;anchor.download='gspec-architecture-blueprint.png';document.body.appendChild(anchor);anchor.click();anchor.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);status.textContent='전체 아키텍처를 한 장의 PNG로 저장했습니다.'}catch{status.textContent='PNG 저장에 실패했습니다. 인쇄 / PDF를 사용해 주세요.'}finally{if(source)URL.revokeObjectURL(source);button.disabled=false}});
+</script></body></html>

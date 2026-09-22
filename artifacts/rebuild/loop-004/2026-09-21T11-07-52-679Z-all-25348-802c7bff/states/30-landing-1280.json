@@ -1,0 +1,66 @@
+{
+  "id": "30-landing-1280",
+  "selected": true,
+  "captureStatus": "CAPTURED",
+  "visualAcceptance": "NOT_RUN",
+  "reference": {
+    "id": "30-landing-1280",
+    "screenshot": {
+      "path": "30-landing-1280.png",
+      "bytes": 451355,
+      "sha256": "628df56809767574ca118d2edf1ee6cd41ae4a0fd0428087329ebc24bb62ab8c",
+      "width": 1280,
+      "height": 800,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/30-landing-1280.json",
+      "bytes": 941856,
+      "sha256": "24dea3529cbab5d642fae59ad6f5c367b95f7937bafa04b1ad6290f97589cf2f"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 800,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:09:05.741Z",
+  "screenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/30-landing-1280.png",
+    "bytes": 443849,
+    "sha256": "877a31a2a633ffe2b1df3b4dc39e8324d5c0877552722dfd1277926f3e16cfb7",
+    "width": 1280,
+    "height": 800,
+    "mode": "viewport",
+    "scale": "device",
+    "startedAt": "2026-09-21T11:09:08.388Z",
+    "capturedAt": "2026-09-21T11:09:09.467Z"
+  },
+  "dom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/dom/30-landing-1280.json",
+    "bytes": 1469049,
+    "sha256": "fd9322902e8410cba5b85bf317c74485f08ca0f56be843b2d47f29580ba88b81"
+  },
+  "measurement": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/30-landing-1280-measurement.json",
+    "bytes": 188876,
+    "sha256": "af11dbecfcd76ee5c8601aa167543bff05c53f49d8476380bc256d679f9b3763"
+  },
+  "dimensionsVerified": true,
+  "motionConditionsVerified": true,
+  "settling": {
+    "livePhase": false,
+    "finiteAnimationsSettled": true,
+    "minimumSettleMs": 650,
+    "animationFreeze": "none"
+  },
+  "serverPhase": "idle",
+  "endedAt": "2026-09-21T11:09:16.325Z"
+}

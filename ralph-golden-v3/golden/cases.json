@@ -1,0 +1,4017 @@
+[
+  {
+    "case_id": "B101",
+    "division": "건축주택",
+    "pages": 14,
+    "title": "외장 패널 및 마감재 시험 묶음",
+    "identity": "LOT HX-824 / PANEL T4",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "thermal",
+        "name": "열전도율",
+        "raw_value": null,
+        "raw_unit": "W/(m K)",
+        "value": null,
+        "unit": "W/(m K)",
+        "operator": "lte",
+        "limit": 0.034,
+        "verdict": "review",
+        "page": 3,
+        "reason": "불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가",
+        "qualifier": "unreadable",
+        "criterion_source": {
+          "file": "inputs/criteria/B101_criteria.xlsx",
+          "sheet": "단열 성능",
+          "cells": [
+            "E10",
+            "C10"
+          ],
+          "expression": "상한",
+          "header_rows": [
+            9
+          ],
+          "table_range": "B9:I11"
+        },
+        "output": {
+          "sheet": "단열 성능",
+          "value_cell": "G10",
+          "status_cell": "H10",
+          "reason_cell": "I10"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B101.pdf",
+          "physical_page": 3,
+          "source_v2_page": 4,
+          "source_v2_bbox": [
+            32,
+            386.0,
+            563.28,
+            426.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              386.028
+            ],
+            [
+              563.346,
+              386.028
+            ],
+            [
+              563.346,
+              426.03
+            ],
+            [
+              32.004,
+              426.03
+            ]
+          ],
+          "bbox": [
+            32.004,
+            386.028,
+            563.346,
+            426.03
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "[VALUE OCCLUDED BY STICKY NOTE]",
+          "effects": [
+            "sticky",
+            "coffee"
+          ],
+          "value_polygon": [
+            [
+              276.423,
+              386.028
+            ],
+            [
+              414.569,
+              386.028
+            ],
+            [
+              414.569,
+              426.03
+            ],
+            [
+              276.423,
+              426.03
+            ]
+          ],
+          "value_bbox": [
+            276.423,
+            386.028,
+            414.569,
+            426.03
+          ],
+          "context_pages": [],
+          "quote_type": "annotator description of occlusion"
+        },
+        "source_page": 4,
+        "source_context_pages": [],
+        "context_pages": [],
+        "v2_reference": {
+          "raw_value": "0.033",
+          "value": 0.033,
+          "verdict": "pass"
+        },
+        "censored": false,
+        "missing": "VALUE_UNREADABLE"
+      },
+      {
+        "field_id": "stress",
+        "name": "압축응력",
+        "raw_value": "142",
+        "raw_unit": "kPa",
+        "value": 142,
+        "unit": "kPa",
+        "operator": "gte",
+        "limit": 140,
+        "verdict": "pass",
+        "page": 3,
+        "reason": "최소 140 kPa 이상",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/B101_criteria.xlsx",
+          "sheet": "단열 성능",
+          "cells": [
+            "D11",
+            "C11"
+          ],
+          "expression": "하한",
+          "header_rows": [
+            9
+          ],
+          "table_range": "B9:I11"
+        },
+        "output": {
+          "sheet": "단열 성능",
+          "value_cell": "G11",
+          "status_cell": "H11",
+          "reason_cell": "I11"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B101.pdf",
+          "physical_page": 3,
+          "source_v2_page": 4,
+          "source_v2_bbox": [
+            32,
+            426.0,
+            563.28,
+            466.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              426.03
+            ],
+            [
+              563.346,
+              426.03
+            ],
+            [
+              563.346,
+              466.033
+            ],
+            [
+              32.004,
+              466.033
+            ]
+          ],
+          "bbox": [
+            32.004,
+            426.03,
+            563.346,
+            466.033
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "압축응력 | 142 | kPa",
+          "effects": [
+            "sticky",
+            "coffee"
+          ],
+          "value_polygon": [
+            [
+              276.423,
+              426.03
+            ],
+            [
+              414.569,
+              426.03
+            ],
+            [
+              414.569,
+              466.033
+            ],
+            [
+              276.423,
+              466.033
+            ]
+          ],
+          "value_bbox": [
+            276.423,
+            426.03,
+            414.569,
+            466.033
+          ],
+          "context_pages": []
+        },
+        "source_page": 4,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "absorption",
+        "name": "흡수율",
+        "raw_value": "0.41",
+        "raw_unit": "%",
+        "value": 0.41,
+        "unit": "%",
+        "operator": "lte",
+        "limit": 0.5,
+        "verdict": "pass",
+        "page": 11,
+        "reason": "상한 0.5% 이하",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/B101_criteria.xlsx",
+          "sheet": "마감재 기준",
+          "cells": [
+            "C7",
+            "D7"
+          ],
+          "expression": "문자열 부등호 파싱",
+          "header_rows": [
+            6
+          ],
+          "table_range": "B6:H8"
+        },
+        "output": {
+          "sheet": "마감재 기준",
+          "value_cell": "E7",
+          "status_cell": "F7",
+          "reason_cell": "G7"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B101.pdf",
+          "physical_page": 11,
+          "source_v2_page": 9,
+          "source_v2_bbox": [
+            32,
+            386.0,
+            563.28,
+            426.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              386.028
+            ],
+            [
+              563.346,
+              386.028
+            ],
+            [
+              563.346,
+              426.03
+            ],
+            [
+              32.004,
+              426.03
+            ]
+          ],
+          "bbox": [
+            32.004,
+            386.028,
+            563.346,
+            426.03
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "흡수율 | 0.41 | %",
+          "effects": [
+            "watermark",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              276.423,
+              386.028
+            ],
+            [
+              414.569,
+              386.028
+            ],
+            [
+              414.569,
+              426.03
+            ],
+            [
+              276.423,
+              426.03
+            ]
+          ],
+          "value_bbox": [
+            276.423,
+            386.028,
+            414.569,
+            426.03
+          ],
+          "context_pages": []
+        },
+        "source_page": 9,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "bond",
+        "name": "접착강도",
+        "raw_value": "1.12",
+        "raw_unit": "MPa",
+        "value": 1.12,
+        "unit": "MPa",
+        "operator": "gte",
+        "limit": 1,
+        "verdict": "pass",
+        "page": 13,
+        "reason": "최소 1.0 MPa 이상",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/B101_criteria.xlsx",
+          "sheet": "마감재 기준",
+          "cells": [
+            "C8",
+            "D8"
+          ],
+          "expression": "문자열 부등호 파싱",
+          "header_rows": [
+            6
+          ],
+          "table_range": "B6:H8"
+        },
+        "output": {
+          "sheet": "마감재 기준",
+          "value_cell": "E8",
+          "status_cell": "F8",
+          "reason_cell": "G8"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B101.pdf",
+          "physical_page": 13,
+          "source_v2_page": 11,
+          "source_v2_bbox": [
+            32,
+            386.0,
+            563.28,
+            426.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              386.028
+            ],
+            [
+              563.35,
+              386.028
+            ],
+            [
+              563.35,
+              426.03
+            ],
+            [
+              32.004,
+              426.03
+            ]
+          ],
+          "bbox": [
+            32.004,
+            386.028,
+            563.35,
+            426.03
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "접착강도 | 1.12 | MPa",
+          "effects": [
+            "highlight",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              276.424,
+              386.028
+            ],
+            [
+              414.572,
+              386.028
+            ],
+            [
+              414.572,
+              426.03
+            ],
+            [
+              276.424,
+              426.03
+            ]
+          ],
+          "value_bbox": [
+            276.424,
+            386.028,
+            414.572,
+            426.03
+          ],
+          "context_pages": []
+        },
+        "source_page": 11,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 2,
+        "reason": "다른 LOT HX-823",
+        "identity": "LOT HX-823 / PANEL T4",
+        "source_v2_page": 3
+      },
+      {
+        "page": 9,
+        "reason": "다른 시험조건 10 C",
+        "identity": "LOT HX-824 / 10 C",
+        "source_v2_page": 8
+      }
+    ],
+    "report": "inputs/reports/B101.pdf",
+    "criteria": "inputs/criteria/B101_criteria.xlsx",
+    "template": "inputs/criteria/B101_criteria.xlsx",
+    "native_gt": "golden/native/B101_completed.xlsx",
+    "expected_verdict": "review",
+    "relevant_pages": [
+      3,
+      11,
+      13
+    ],
+    "source_v2_pages": 12
+  },
+  {
+    "case_id": "B102",
+    "division": "건축주택",
+    "pages": 51,
+    "title": "구조재 반입검사 기록철",
+    "identity": "LOT CT-619 / ZONE H-03",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "strength",
+        "name": "28일 압축강도",
+        "raw_value": "31.2",
+        "raw_unit": "MPa",
+        "value": 31.2,
+        "unit": "MPa",
+        "operator": "gte",
+        "limit": 30,
+        "verdict": "pass",
+        "page": 16,
+        "reason": "28일 양생 조건을 앞쪽 시험계획에서 연결",
+        "qualifier": "eq",
+        "context_pages": [
+          15
+        ],
+        "criterion_source": {
+          "file": "inputs/criteria/B102_criteria.xlsx",
+          "sheet": "현장 종합기준",
+          "cells": [
+            "D7",
+            "E7"
+          ],
+          "expression": ">= 30",
+          "header_rows": [
+            6
+          ],
+          "table_range": "B6:I11"
+        },
+        "output": {
+          "sheet": "현장 종합기준",
+          "value_cell": "F7",
+          "status_cell": "G7",
+          "reason_cell": "H7"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B102.pdf",
+          "physical_page": 16,
+          "source_v2_page": 16,
+          "source_v2_bbox": [
+            32,
+            477.0,
+            563.28,
+            519.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              477.034
+            ],
+            [
+              563.346,
+              477.034
+            ],
+            [
+              563.346,
+              519.037
+            ],
+            [
+              32.004,
+              519.037
+            ]
+          ],
+          "bbox": [
+            32.004,
+            477.034,
+            563.346,
+            519.037
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "H07 | 압축강도 | 31.2 | MPa",
+          "effects": [
+            "salt_pepper",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              313.617,
+              477.034
+            ],
+            [
+              430.511,
+              477.034
+            ],
+            [
+              430.511,
+              519.037
+            ],
+            [
+              313.617,
+              519.037
+            ]
+          ],
+          "value_bbox": [
+            313.617,
+            477.034,
+            430.511,
+            519.037
+          ],
+          "context_pages": [
+            15
+          ]
+        },
+        "source_page": 16,
+        "source_context_pages": [
+          15
+        ]
+      },
+      {
+        "field_id": "chloride",
+        "name": "염화물량",
+        "raw_value": "0.047",
+        "raw_unit": "%",
+        "value": 0.047,
+        "unit": "%",
+        "operator": "lte",
+        "limit": 0.05,
+        "verdict": "pass",
+        "page": 18,
+        "reason": "전 페이지 헤더 및 LOT를 연결해야 하는 연속 표",
+        "qualifier": "eq",
+        "context_pages": [
+          16
+        ],
+        "criterion_source": {
+          "file": "inputs/criteria/B102_criteria.xlsx",
+          "sheet": "현장 종합기준",
+          "cells": [
+            "D23",
+            "E23"
+          ],
+          "expression": "<= 0.05",
+          "header_rows": [
+            22
+          ],
+          "table_range": "B22:I27"
+        },
+        "output": {
+          "sheet": "현장 종합기준",
+          "value_cell": "F23",
+          "status_cell": "G23",
+          "reason_cell": "H23"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B102.pdf",
+          "physical_page": 18,
+          "source_v2_page": 17,
+          "source_v2_bbox": [
+            32,
+            445.0,
+            1158.55,
+            487.0
+          ],
+          "polygon": [
+            [
+              396.918,
+              32.004
+            ],
+            [
+              396.918,
+              1158.696
+            ],
+            [
+              354.915,
+              1158.696
+            ],
+            [
+              354.915,
+              32.004
+            ]
+          ],
+          "bbox": [
+            354.915,
+            32.004,
+            396.918,
+            1158.696
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "H07 | 염화물량 | 0.047 | %",
+          "effects": [
+            "rotate90",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              396.918,
+              629.149
+            ],
+            [
+              396.918,
+              877.02
+            ],
+            [
+              354.915,
+              877.02
+            ],
+            [
+              354.915,
+              629.149
+            ]
+          ],
+          "value_bbox": [
+            354.915,
+            629.149,
+            396.918,
+            877.02
+          ],
+          "context_pages": [
+            16
+          ]
+        },
+        "source_page": 17,
+        "source_context_pages": [
+          16
+        ]
+      },
+      {
+        "field_id": "elongation",
+        "name": "연신율",
+        "raw_value": "14",
+        "raw_unit": "%",
+        "value": 14,
+        "unit": "%",
+        "operator": "gte",
+        "limit": 16,
+        "verdict": "fail",
+        "page": 45,
+        "reason": "구개정 기준 12%가 아닌 현행 최소 16% 적용",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/B102_criteria.xlsx",
+          "sheet": "현장 종합기준",
+          "cells": [
+            "D42",
+            "E42"
+          ],
+          "expression": ">= 16",
+          "header_rows": [
+            41
+          ],
+          "table_range": "B41:I42"
+        },
+        "output": {
+          "sheet": "현장 종합기준",
+          "value_cell": "F42",
+          "status_cell": "G42",
+          "reason_cell": "H42"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B102.pdf",
+          "physical_page": 45,
+          "source_v2_page": 42,
+          "source_v2_bbox": [
+            32,
+            477.0,
+            563.28,
+            519.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              477.034
+            ],
+            [
+              563.35,
+              477.034
+            ],
+            [
+              563.35,
+              519.037
+            ],
+            [
+              32.004,
+              519.037
+            ]
+          ],
+          "bbox": [
+            32.004,
+            477.034,
+            563.35,
+            519.037
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "H07 | 연신율 | 14 | %",
+          "effects": [
+            "fold",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              313.619,
+              477.034
+            ],
+            [
+              430.514,
+              477.034
+            ],
+            [
+              430.514,
+              519.037
+            ],
+            [
+              313.619,
+              519.037
+            ]
+          ],
+          "value_bbox": [
+            313.619,
+            477.034,
+            430.514,
+            519.037
+          ],
+          "context_pages": []
+        },
+        "source_page": 42,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "fire",
+        "name": "내화시간",
+        "raw_value": "60",
+        "raw_unit": "min",
+        "value": 60,
+        "unit": "min",
+        "operator": "gte",
+        "limit": 60,
+        "verdict": "pass",
+        "page": 45,
+        "reason": "주석의 H-03 특별기준 60분 적용",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/B102_criteria.xlsx",
+          "sheet": "현장 종합기준",
+          "cells": [
+            "D46",
+            "B52"
+          ],
+          "expression": "주석 4의 H-03 한계 60 우선",
+          "header_rows": [
+            45
+          ],
+          "table_range": "B45:I46"
+        },
+        "output": {
+          "sheet": "현장 종합기준",
+          "value_cell": "F46",
+          "status_cell": "G46",
+          "reason_cell": "H46"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/B102.pdf",
+          "physical_page": 45,
+          "source_v2_page": 42,
+          "source_v2_bbox": [
+            32,
+            519.0,
+            563.28,
+            561.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              519.037
+            ],
+            [
+              563.35,
+              519.037
+            ],
+            [
+              563.35,
+              561.04
+            ],
+            [
+              32.004,
+              561.04
+            ]
+          ],
+          "bbox": [
+            32.004,
+            519.037,
+            563.35,
+            561.04
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "H07 | 내화시간 | 60 | min",
+          "effects": [
+            "fold",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              313.619,
+              519.037
+            ],
+            [
+              430.514,
+              519.037
+            ],
+            [
+              430.514,
+              561.04
+            ],
+            [
+              313.619,
+              561.04
+            ]
+          ],
+          "value_bbox": [
+            313.619,
+            519.037,
+            430.514,
+            561.04
+          ],
+          "context_pages": []
+        },
+        "source_page": 42,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 5,
+        "reason": "구개정 시험 기록 R0",
+        "identity": "LOT CT-619 / REV R0",
+        "source_v2_page": 6
+      },
+      {
+        "page": 37,
+        "reason": "같은 품목의 다른 LOT CT-618",
+        "identity": "LOT CT-618 / ZONE H-03",
+        "source_v2_page": 35
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 23,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 47,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      }
+    ],
+    "report": "inputs/reports/B102.pdf",
+    "criteria": "inputs/criteria/B102_criteria.xlsx",
+    "template": "inputs/criteria/B102_criteria.xlsx",
+    "native_gt": "golden/native/B102_completed.xlsx",
+    "expected_verdict": "fail",
+    "relevant_pages": [
+      15,
+      16,
+      18,
+      45
+    ],
+    "source_v2_pages": 48
+  },
+  {
+    "case_id": "I201",
+    "division": "인프라",
+    "pages": 38,
+    "title": "연결도로 노체·기층 시험 일지",
+    "identity": "STA 2+480 / LIFT 03",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "density",
+        "name": "다짐도",
+        "raw_value": "96.3",
+        "raw_unit": "%",
+        "value": 96.3,
+        "unit": "%",
+        "operator": "gte",
+        "limit": 95,
+        "verdict": "pass",
+        "page": 4,
+        "reason": "중앙 시료 C열 해당 구간 선택",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/I201_criteria.xlsx",
+          "sheet": "노체 기준 행렬",
+          "cells": [
+            "D7",
+            "D6",
+            "D9"
+          ],
+          "expression": "노체 / STA 2+480 열 하한",
+          "header_rows": [
+            5,
+            6
+          ],
+          "table_range": "B5:F9"
+        },
+        "output": {
+          "sheet": "노체 기준 행렬",
+          "value_cell": "C16",
+          "status_cell": "D16",
+          "reason_cell": "E16"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I201.pdf",
+          "physical_page": 4,
+          "source_v2_page": 7,
+          "source_v2_bbox": [
+            32,
+            207.0,
+            1158.55,
+            247.0
+          ],
+          "polygon": [
+            [
+              223.097,
+              248.984
+            ],
+            [
+              1273.65,
+              297.608
+            ],
+            [
+              1270.26,
+              335.162
+            ],
+            [
+              219.173,
+              285.603
+            ]
+          ],
+          "bbox": [
+            219.173,
+            248.984,
+            1273.65,
+            335.162
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "다짐도 | 93.41 | 98.23 | 96.3 | % | SIM-ROAD",
+          "effects": [
+            "photo",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              857.815,
+              278.362
+            ],
+            [
+              1038.094,
+              286.706
+            ],
+            [
+              1034.582,
+              324.05
+            ],
+            [
+              854.21,
+              315.545
+            ]
+          ],
+          "value_bbox": [
+            854.21,
+            278.362,
+            1038.094,
+            324.05
+          ],
+          "context_pages": []
+        },
+        "source_page": 7,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "cbr",
+        "name": "수정 CBR",
+        "raw_value": "79; handwritten 89 ?",
+        "raw_unit": "%",
+        "value": null,
+        "unit": "%",
+        "operator": "gte",
+        "limit": 80,
+        "verdict": "review",
+        "page": 21,
+        "reason": "인쇄값 79와 확인되지 않은 수기 89 ?가 충돌하므로 원본 확인 필요",
+        "qualifier": "ambiguous",
+        "criterion_source": {
+          "file": "inputs/criteria/I201_criteria.xlsx",
+          "sheet": "노체 기준 행렬",
+          "cells": [
+            "D8",
+            "D6",
+            "D9"
+          ],
+          "expression": "노체 / STA 2+480 열 하한",
+          "header_rows": [
+            5,
+            6
+          ],
+          "table_range": "B5:F9"
+        },
+        "output": {
+          "sheet": "노체 기준 행렬",
+          "value_cell": "C17",
+          "status_cell": "D17",
+          "reason_cell": "E17"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I201.pdf",
+          "physical_page": 21,
+          "source_v2_page": 19,
+          "source_v2_bbox": [
+            32,
+            207.0,
+            1158.55,
+            247.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              207.015
+            ],
+            [
+              1158.696,
+              207.015
+            ],
+            [
+              1158.696,
+              247.018
+            ],
+            [
+              32.004,
+              247.018
+            ]
+          ],
+          "bbox": [
+            32.004,
+            207.015,
+            1158.696,
+            247.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "79; handwritten 89 ?; correction authority not stated",
+          "effects": [
+            "correction",
+            "watermark"
+          ],
+          "value_polygon": [
+            [
+              719.291,
+              207.015
+            ],
+            [
+              910.825,
+              207.015
+            ],
+            [
+              910.825,
+              247.018
+            ],
+            [
+              719.291,
+              247.018
+            ]
+          ],
+          "value_bbox": [
+            719.291,
+            207.015,
+            910.825,
+            247.018
+          ],
+          "context_pages": []
+        },
+        "source_page": 19,
+        "source_context_pages": [],
+        "context_pages": [],
+        "v2_reference": {
+          "raw_value": "79",
+          "value": 79,
+          "verdict": "fail"
+        },
+        "censored": false,
+        "missing": "CONFLICTING_ANNOTATION"
+      },
+      {
+        "field_id": "sieve075",
+        "name": "0.075 mm 통과량",
+        "raw_value": "4.8",
+        "raw_unit": "%",
+        "value": 4.8,
+        "unit": "%",
+        "operator": "between",
+        "limit": [
+          2,
+          7
+        ],
+        "verdict": "pass",
+        "page": 33,
+        "reason": "입도곡선 대신 수치표에서 정확한 값 추출",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/I201_criteria.xlsx",
+          "sheet": "입도 범위",
+          "cells": [
+            "C22",
+            "D22",
+            "C20"
+          ],
+          "expression": "하한..상한 포함",
+          "header_rows": [
+            20,
+            21
+          ],
+          "table_range": "B20:G23"
+        },
+        "output": {
+          "sheet": "입도 범위",
+          "value_cell": "E22",
+          "status_cell": "F22",
+          "reason_cell": "G22"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I201.pdf",
+          "physical_page": 33,
+          "source_v2_page": 31,
+          "source_v2_bbox": [
+            32,
+            207.0,
+            1158.55,
+            247.0
+          ],
+          "polygon": [
+            [
+              620.334,
+              320.268
+            ],
+            [
+              1150.491,
+              320.268
+            ],
+            [
+              1150.491,
+              339.091
+            ],
+            [
+              620.334,
+              339.091
+            ]
+          ],
+          "bbox": [
+            620.334,
+            320.268,
+            1150.491,
+            339.091
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "0.075 mm 통과량 | 4.66 | 4.9 | 4.8 | % | SIM-ROAD",
+          "effects": [
+            "blueprint",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              943.732,
+              320.268
+            ],
+            [
+              1033.857,
+              320.268
+            ],
+            [
+              1033.857,
+              339.091
+            ],
+            [
+              943.732,
+              339.091
+            ]
+          ],
+          "value_bbox": [
+            943.732,
+            320.268,
+            1033.857,
+            339.091
+          ],
+          "context_pages": []
+        },
+        "source_page": 31,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "sieve475",
+        "name": "4.75 mm 통과량",
+        "raw_value": "99.1",
+        "raw_unit": "%",
+        "value": 99.1,
+        "unit": "%",
+        "operator": "between",
+        "limit": [
+          90,
+          100
+        ],
+        "verdict": "pass",
+        "page": 33,
+        "reason": "포함 경계의 범위 기준",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/I201_criteria.xlsx",
+          "sheet": "입도 범위",
+          "cells": [
+            "C23",
+            "D23",
+            "C20"
+          ],
+          "expression": "하한..상한 포함",
+          "header_rows": [
+            20,
+            21
+          ],
+          "table_range": "B20:G23"
+        },
+        "output": {
+          "sheet": "입도 범위",
+          "value_cell": "E23",
+          "status_cell": "F23",
+          "reason_cell": "G23"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I201.pdf",
+          "physical_page": 33,
+          "source_v2_page": 31,
+          "source_v2_bbox": [
+            32,
+            247.0,
+            1158.55,
+            287.0
+          ],
+          "polygon": [
+            [
+              620.334,
+              339.091
+            ],
+            [
+              1150.491,
+              339.091
+            ],
+            [
+              1150.491,
+              357.914
+            ],
+            [
+              620.334,
+              357.914
+            ]
+          ],
+          "bbox": [
+            620.334,
+            339.091,
+            1150.491,
+            357.914
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "4.75 mm 통과량 | 96.13 | 101.08 | 99.1 | % | SIM-ROAD",
+          "effects": [
+            "blueprint",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              943.732,
+              339.091
+            ],
+            [
+              1033.857,
+              339.091
+            ],
+            [
+              1033.857,
+              357.914
+            ],
+            [
+              943.732,
+              357.914
+            ]
+          ],
+          "value_bbox": [
+            943.732,
+            339.091,
+            1033.857,
+            357.914
+          ],
+          "context_pages": []
+        },
+        "source_page": 31,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 5,
+        "reason": "인접 측점 STA 2+460",
+        "identity": "STA 2+460 / LIFT 03",
+        "source_v2_page": 6
+      },
+      {
+        "page": 22,
+        "reason": "다른 층 LIFT 02",
+        "identity": "STA 2+480 / LIFT 02",
+        "source_v2_page": 20
+      },
+      {
+        "page": 11,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 24,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      }
+    ],
+    "report": "inputs/reports/I201.pdf",
+    "criteria": "inputs/criteria/I201_criteria.xlsx",
+    "template": "inputs/criteria/I201_criteria.xlsx",
+    "native_gt": "golden/native/I201_completed.xlsx",
+    "expected_verdict": "review",
+    "relevant_pages": [
+      4,
+      21,
+      33
+    ],
+    "source_v2_pages": 36
+  },
+  {
+    "case_id": "I202",
+    "division": "인프라",
+    "pages": 75,
+    "title": "포장 시공·코어 시험 합본",
+    "identity": "SECTION R-17 / CORE K-09",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "pdf",
+    "fields": [
+      {
+        "field_id": "voids",
+        "name": "Air voids",
+        "raw_value": "3,8",
+        "raw_unit": "%",
+        "value": 3.8,
+        "unit": "%",
+        "operator": "between",
+        "limit": [
+          3,
+          5
+        ],
+        "verdict": "pass",
+        "page": 29,
+        "reason": "쉼표는 소수 구분자",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "현장 검토서",
+          "value_cell": "C9",
+          "status_cell": "E9",
+          "reason_cell": "C10"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/I202_criteria.pdf",
+          "page": 5,
+          "clause": "5.2",
+          "expression": "between [3, 5]",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: between [3, 5] %. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I202.pdf",
+          "physical_page": 29,
+          "source_v2_page": 28,
+          "source_v2_bbox": [
+            312.64,
+            154.0,
+            563.28,
+            229.0
+          ],
+          "polygon": [
+            [
+              319.069,
+              173.025
+            ],
+            [
+              551.857,
+              173.025
+            ],
+            [
+              551.857,
+              242.68
+            ],
+            [
+              319.069,
+              242.68
+            ]
+          ],
+          "bbox": [
+            319.069,
+            173.025,
+            551.857,
+            242.68
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "For the identified sample, Air voids was recorded as 3,8 %.",
+          "effects": [
+            "stamp",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 28,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "stability",
+        "name": "Stability",
+        "raw_value": "9,2",
+        "raw_unit": "kN",
+        "value": 9.2,
+        "unit": "kN",
+        "operator": "gte",
+        "limit": 8,
+        "verdict": "pass",
+        "page": 29,
+        "reason": "영문 문장 속 시험값 추출",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "현장 검토서",
+          "value_cell": "C16",
+          "status_cell": "E16",
+          "reason_cell": "C17"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/I202_criteria.pdf",
+          "page": 5,
+          "clause": "5.2",
+          "expression": "gte 8",
+          "bbox": [
+            32,
+            232.0,
+            563.276,
+            319.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: gte 8 kN. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I202.pdf",
+          "physical_page": 29,
+          "source_v2_page": 29,
+          "source_v2_bbox": [
+            312.64,
+            154.0,
+            563.28,
+            229.0
+          ],
+          "polygon": [
+            [
+              904.098,
+              224.567
+            ],
+            [
+              1086.356,
+              241.021
+            ],
+            [
+              1083.897,
+              295.208
+            ],
+            [
+              901.463,
+              278.147
+            ]
+          ],
+          "bbox": [
+            901.463,
+            224.567,
+            1086.356,
+            295.208
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "For the identified sample, Stability was recorded as 9,2 kN.",
+          "effects": [
+            "photo",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 29,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "thickness",
+        "name": "Core thickness",
+        "raw_value": "47",
+        "raw_unit": "mm",
+        "value": 47,
+        "unit": "mm",
+        "operator": "gte",
+        "limit": 50,
+        "verdict": "fail",
+        "page": 66,
+        "reason": "특기시방의 최소 두께 50 mm 미달",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "현장 검토서",
+          "value_cell": "C23",
+          "status_cell": "E23",
+          "reason_cell": "C24"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/I202_criteria.pdf",
+          "page": 9,
+          "clause": "9.1",
+          "expression": "gte 50",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: gte 50 mm. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I202.pdf",
+          "physical_page": 66,
+          "source_v2_page": 63,
+          "source_v2_bbox": [
+            312.64,
+            154.0,
+            563.28,
+            229.0
+          ],
+          "polygon": [
+            [
+              312.679,
+              154.011
+            ],
+            [
+              563.35,
+              154.011
+            ],
+            [
+              563.35,
+              229.016
+            ],
+            [
+              312.679,
+              229.016
+            ]
+          ],
+          "bbox": [
+            312.679,
+            154.011,
+            563.35,
+            229.016
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "For the identified sample, Core thickness was recorded as 47 mm.",
+          "effects": [
+            "negative",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 63,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "permeability",
+        "name": "Permeability",
+        "raw_value": "NOT TESTED",
+        "raw_unit": "m/s",
+        "value": null,
+        "unit": "m/s",
+        "operator": "lte",
+        "limit": 1e-05,
+        "verdict": "review",
+        "page": 66,
+        "reason": "미시험 표기를 0으로 바꾸지 않음",
+        "qualifier": "eq",
+        "missing": "NOT_TESTED",
+        "output": {
+          "sheet": "현장 검토서",
+          "value_cell": "C30",
+          "status_cell": "E30",
+          "reason_cell": "C31"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/I202_criteria.pdf",
+          "page": 11,
+          "clause": "A.3",
+          "expression": "lte 1e-05",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: lte 1e-05 m/s. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/I202.pdf",
+          "physical_page": 66,
+          "source_v2_page": 63,
+          "source_v2_bbox": [
+            312.64,
+            224.0,
+            563.28,
+            299.0
+          ],
+          "polygon": [
+            [
+              312.679,
+              224.016
+            ],
+            [
+              563.35,
+              224.016
+            ],
+            [
+              563.35,
+              299.021
+            ],
+            [
+              312.679,
+              299.021
+            ]
+          ],
+          "bbox": [
+            312.679,
+            224.016,
+            563.35,
+            299.021
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "For the identified sample, Permeability was recorded as NOT TESTED m/s.",
+          "effects": [
+            "negative",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 63,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 28,
+        "reason": "다른 코어 K-08",
+        "identity": "SECTION R-17 / CORE K-08",
+        "source_v2_page": 27
+      },
+      {
+        "page": 65,
+        "reason": "견적 단계의 예상 두께",
+        "identity": "DESIGN ESTIMATE / NOT MEASURED",
+        "source_v2_page": 62
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 22,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 34,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 46,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 57,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-055 / separate lot / REV C",
+        "source_v2_page": 55
+      },
+      {
+        "page": 69,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      }
+    ],
+    "report": "inputs/reports/I202.pdf",
+    "criteria": "inputs/criteria/I202_criteria.pdf",
+    "template": "inputs/templates/I202_form.xlsx",
+    "native_gt": "golden/native/I202_completed.xlsx",
+    "expected_verdict": "fail",
+    "relevant_pages": [
+      29,
+      66
+    ],
+    "source_v2_pages": 72
+  },
+  {
+    "case_id": "P301",
+    "division": "플랜트",
+    "pages": 229,
+    "title": "Pressure Assembly Manufacturing Record Book",
+    "identity": "TAG V-204 / HEAT HX-72 / REV C",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "yield",
+        "name": "Yield strength",
+        "raw_value": "345",
+        "raw_unit": "N/mm2",
+        "value": 345,
+        "unit": "MPa",
+        "operator": "gte",
+        "limit": 335,
+        "verdict": "pass",
+        "page": 37,
+        "reason": "같은 Heat의 현행 기계적 성질 표 선택",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Mechanical R3",
+          "cells": [
+            "D15",
+            "F15",
+            "C15"
+          ],
+          "expression": "R3 limits; impact at -20 C",
+          "header_rows": [
+            13,
+            14
+          ],
+          "table_range": "B13:K17"
+        },
+        "output": {
+          "sheet": "Mechanical R3",
+          "value_cell": "G15",
+          "status_cell": "H15",
+          "reason_cell": "I15"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 37,
+          "source_v2_page": 37,
+          "source_v2_bbox": [
+            32,
+            233.0,
+            809.89,
+            271.0
+          ],
+          "polygon": [
+            [
+              47.752,
+              271.279
+            ],
+            [
+              825.698,
+              271.279
+            ],
+            [
+              825.698,
+              309.284
+            ],
+            [
+              47.752,
+              309.284
+            ]
+          ],
+          "bbox": [
+            47.752,
+            271.279,
+            825.698,
+            309.284
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Yield strength | 331.2 | 362.25 | 345 | 348.45 | N/mm2",
+          "effects": [
+            "screen",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              506.745,
+              271.279
+            ],
+            [
+              631.214,
+              271.279
+            ],
+            [
+              631.214,
+              309.284
+            ],
+            [
+              506.745,
+              309.284
+            ]
+          ],
+          "value_bbox": [
+            506.745,
+            271.279,
+            631.214,
+            309.284
+          ],
+          "context_pages": []
+        },
+        "source_page": 37,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "tensile",
+        "name": "Tensile strength",
+        "raw_value": "510",
+        "raw_unit": "MPa",
+        "value": 510,
+        "unit": "MPa",
+        "operator": "between",
+        "limit": [
+          490,
+          650
+        ],
+        "verdict": "pass",
+        "page": 37,
+        "reason": "하한 및 상한 포함",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Mechanical R3",
+          "cells": [
+            "D16",
+            "E16",
+            "F16",
+            "C16"
+          ],
+          "expression": "R3 limits; impact at -20 C",
+          "header_rows": [
+            13,
+            14
+          ],
+          "table_range": "B13:K17"
+        },
+        "output": {
+          "sheet": "Mechanical R3",
+          "value_cell": "G16",
+          "status_cell": "H16",
+          "reason_cell": "I16"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 37,
+          "source_v2_page": 37,
+          "source_v2_bbox": [
+            32,
+            271.0,
+            809.89,
+            309.0
+          ],
+          "polygon": [
+            [
+              47.752,
+              309.284
+            ],
+            [
+              825.698,
+              309.284
+            ],
+            [
+              825.698,
+              347.288
+            ],
+            [
+              47.752,
+              347.288
+            ]
+          ],
+          "bbox": [
+            47.752,
+            309.284,
+            825.698,
+            347.288
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Tensile strength | 489.6 | 535.5 | 510 | 515.1 | MPa",
+          "effects": [
+            "screen",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              506.745,
+              309.284
+            ],
+            [
+              631.214,
+              309.284
+            ],
+            [
+              631.214,
+              347.288
+            ],
+            [
+              506.745,
+              347.288
+            ]
+          ],
+          "value_bbox": [
+            506.745,
+            309.284,
+            631.214,
+            347.288
+          ],
+          "context_pages": []
+        },
+        "source_page": 37,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "carbon",
+        "name": "Carbon C",
+        "raw_value": "0.21",
+        "raw_unit": "%",
+        "value": 0.21,
+        "unit": "%",
+        "operator": "lte",
+        "limit": 0.23,
+        "verdict": "pass",
+        "page": 114,
+        "reason": "전체 Heat 표 중 HX-72만 선택",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Chemistry R3",
+          "cells": [
+            "C8",
+            "D8"
+          ],
+          "expression": "Carbon upper limit",
+          "header_rows": [
+            7
+          ],
+          "table_range": "B7:H9"
+        },
+        "output": {
+          "sheet": "Chemistry R3",
+          "value_cell": "E8",
+          "status_cell": "F8",
+          "reason_cell": "G8"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 114,
+          "source_v2_page": 112,
+          "source_v2_bbox": [
+            32,
+            233.0,
+            809.89,
+            271.0
+          ],
+          "polygon": [
+            [
+              47.752,
+              271.277
+            ],
+            [
+              825.698,
+              271.277
+            ],
+            [
+              825.698,
+              309.282
+            ],
+            [
+              47.752,
+              309.282
+            ]
+          ],
+          "bbox": [
+            47.752,
+            271.277,
+            825.698,
+            309.282
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Carbon C | 0.202 | 0.221 | 0.21 | 0.212 | %",
+          "effects": [
+            "screen",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              506.745,
+              271.277
+            ],
+            [
+              631.214,
+              271.277
+            ],
+            [
+              631.214,
+              309.282
+            ],
+            [
+              506.745,
+              309.282
+            ]
+          ],
+          "value_bbox": [
+            506.745,
+            271.277,
+            631.214,
+            309.282
+          ],
+          "context_pages": []
+        },
+        "source_page": 112,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "impact",
+        "name": "Impact energy",
+        "raw_value": null,
+        "raw_unit": "J",
+        "value": null,
+        "unit": "J",
+        "operator": "gte",
+        "limit": 30,
+        "verdict": "review",
+        "page": 118,
+        "reason": "불투명 메모지가 측정값 전체를 가려 원본 값 복원 불가",
+        "qualifier": "unreadable",
+        "context_pages": [
+          114
+        ],
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Mechanical R3",
+          "cells": [
+            "D17",
+            "F17",
+            "C17"
+          ],
+          "expression": "R3 limits; impact at -20 C",
+          "header_rows": [
+            13,
+            14
+          ],
+          "table_range": "B13:K17"
+        },
+        "output": {
+          "sheet": "Mechanical R3",
+          "value_cell": "G17",
+          "status_cell": "H17",
+          "reason_cell": "I17"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 118,
+          "source_v2_page": 113,
+          "source_v2_bbox": [
+            32,
+            222.0,
+            809.89,
+            260.0
+          ],
+          "polygon": [
+            [
+              32.002,
+              222.026
+            ],
+            [
+              809.948,
+              222.026
+            ],
+            [
+              809.948,
+              260.031
+            ],
+            [
+              32.002,
+              260.031
+            ]
+          ],
+          "bbox": [
+            32.002,
+            222.026,
+            809.948,
+            260.031
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "[VALUE OCCLUDED BY STICKY NOTE]",
+          "effects": [
+            "sticky",
+            "watermark"
+          ],
+          "value_polygon": [
+            [
+              490.995,
+              222.026
+            ],
+            [
+              615.464,
+              222.026
+            ],
+            [
+              615.464,
+              260.031
+            ],
+            [
+              490.995,
+              260.031
+            ]
+          ],
+          "value_bbox": [
+            490.995,
+            222.026,
+            615.464,
+            260.031
+          ],
+          "context_pages": [
+            114
+          ],
+          "quote_type": "annotator description of occlusion"
+        },
+        "source_page": 113,
+        "source_context_pages": [
+          112
+        ],
+        "v2_reference": {
+          "raw_value": "27",
+          "value": 27,
+          "verdict": "fail"
+        },
+        "censored": false,
+        "missing": "VALUE_UNREADABLE"
+      },
+      {
+        "field_id": "pressure",
+        "name": "Hydrostatic pressure",
+        "raw_value": "150",
+        "raw_unit": "bar",
+        "value": 15,
+        "unit": "MPa",
+        "operator": "gte",
+        "limit": 15,
+        "verdict": "pass",
+        "page": 191,
+        "reason": "150 bar = 15 MPa; 현행 설계압력의 1.5배",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Hydro R3",
+          "cells": [
+            "C13",
+            "K8",
+            "'Design Basis'!D8",
+            "'Design Basis'!D10"
+          ],
+          "expression": "10 MPa * 1.5 = 15 MPa",
+          "header_rows": [
+            12
+          ],
+          "table_range": "B12:H14"
+        },
+        "output": {
+          "sheet": "Hydro R3",
+          "value_cell": "E13",
+          "status_cell": "F13",
+          "reason_cell": "G13"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 191,
+          "source_v2_page": 187,
+          "source_v2_bbox": [
+            32,
+            446.0,
+            563.28,
+            488.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              446.032
+            ],
+            [
+              563.35,
+              446.032
+            ],
+            [
+              563.35,
+              488.035
+            ],
+            [
+              32.004,
+              488.035
+            ]
+          ],
+          "bbox": [
+            32.004,
+            446.032,
+            563.35,
+            488.035
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Hydrostatic pressure | 150 | bar",
+          "effects": [
+            "handwriting",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              297.677,
+              446.032
+            ],
+            [
+              446.455,
+              446.032
+            ],
+            [
+              446.455,
+              488.035
+            ],
+            [
+              297.677,
+              488.035
+            ]
+          ],
+          "value_bbox": [
+            297.677,
+            446.032,
+            446.455,
+            488.035
+          ],
+          "context_pages": []
+        },
+        "source_page": 187,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "hold",
+        "name": "Holding duration",
+        "raw_value": "30",
+        "raw_unit": "min",
+        "value": 30,
+        "unit": "min",
+        "operator": "gte",
+        "limit": 30,
+        "verdict": "pass",
+        "page": 224,
+        "reason": "유지시간은 압력 차트가 아닌 최종 입회 기록에 있음",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/P301_criteria.xlsx",
+          "sheet": "Hydro R3",
+          "cells": [
+            "C14",
+            "D14"
+          ],
+          "expression": "Duration minimum",
+          "header_rows": [
+            12
+          ],
+          "table_range": "B12:H14"
+        },
+        "output": {
+          "sheet": "Hydro R3",
+          "value_cell": "E14",
+          "status_cell": "F14",
+          "reason_cell": "G14"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P301.pdf",
+          "physical_page": 224,
+          "source_v2_page": 219,
+          "source_v2_bbox": [
+            32,
+            367.0,
+            563.28,
+            409.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              367.026
+            ],
+            [
+              563.346,
+              367.026
+            ],
+            [
+              563.346,
+              409.029
+            ],
+            [
+              32.004,
+              409.029
+            ]
+          ],
+          "bbox": [
+            32.004,
+            367.026,
+            563.346,
+            409.029
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Holding duration | 30 | min",
+          "effects": [
+            "salt_pepper",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              297.675,
+              367.026
+            ],
+            [
+              446.452,
+              367.026
+            ],
+            [
+              446.452,
+              409.029
+            ],
+            [
+              297.675,
+              409.029
+            ]
+          ],
+          "value_bbox": [
+            297.675,
+            367.026,
+            446.452,
+            409.029
+          ],
+          "context_pages": []
+        },
+        "source_page": 219,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 38,
+        "reason": "같은 Grade 다른 Heat HX-71",
+        "identity": "TAG V-204 / HEAT HX-71 / REV C",
+        "source_v2_page": 38
+      },
+      {
+        "page": 48,
+        "reason": "폐기된 개정 B 결과",
+        "identity": "TAG V-204 / HEAT HX-72 / REV B",
+        "source_v2_page": 48
+      },
+      {
+        "page": 190,
+        "reason": "교정기기의 정격압력 250 bar",
+        "identity": "CALIBRATION RANGE / NOT TEST PRESSURE",
+        "source_v2_page": 186
+      },
+      {
+        "page": 223,
+        "reason": "다른 태그 V-203 유지시간",
+        "identity": "TAG V-203 / HEAT HX-72 / REV C",
+        "source_v2_page": 218
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 21,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 33,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 44,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 55,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-055 / separate lot / REV C",
+        "source_v2_page": 55
+      },
+      {
+        "page": 67,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      },
+      {
+        "page": 79,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-077 / separate lot / REV C",
+        "source_v2_page": 77
+      },
+      {
+        "page": 90,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-088 / separate lot / REV C",
+        "source_v2_page": 88
+      },
+      {
+        "page": 102,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-099 / separate lot / REV C",
+        "source_v2_page": 99
+      },
+      {
+        "page": 113,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-110 / separate lot / REV C",
+        "source_v2_page": 110
+      },
+      {
+        "page": 123,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-121 / separate lot / REV C",
+        "source_v2_page": 121
+      },
+      {
+        "page": 135,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-132 / separate lot / REV C",
+        "source_v2_page": 132
+      },
+      {
+        "page": 146,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-143 / separate lot / REV C",
+        "source_v2_page": 143
+      },
+      {
+        "page": 156,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-154 / separate lot / REV C",
+        "source_v2_page": 154
+      },
+      {
+        "page": 168,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-165 / separate lot / REV C",
+        "source_v2_page": 165
+      },
+      {
+        "page": 179,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-176 / separate lot / REV C",
+        "source_v2_page": 176
+      },
+      {
+        "page": 203,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-198 / separate lot / REV C",
+        "source_v2_page": 198
+      },
+      {
+        "page": 214,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-209 / separate lot / REV C",
+        "source_v2_page": 209
+      },
+      {
+        "page": 225,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-220 / separate lot / REV C",
+        "source_v2_page": 220
+      }
+    ],
+    "report": "inputs/reports/P301.pdf",
+    "criteria": "inputs/criteria/P301_criteria.xlsx",
+    "template": "inputs/criteria/P301_criteria.xlsx",
+    "native_gt": "golden/native/P301_completed.xlsx",
+    "expected_verdict": "review",
+    "relevant_pages": [
+      37,
+      114,
+      118,
+      191,
+      224
+    ],
+    "source_v2_pages": 224
+  },
+  {
+    "case_id": "P302",
+    "division": "플랜트",
+    "pages": 100,
+    "title": "Valve Package Inspection & Release Dossier",
+    "identity": "TAG XV-618 / SERIAL S-902 / REV 4",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "pdf",
+    "fields": [
+      {
+        "field_id": "wall",
+        "name": "Wall thickness",
+        "raw_value": "8.2",
+        "raw_unit": "mm",
+        "value": 8.2,
+        "unit": "mm",
+        "operator": "gte",
+        "limit": 8,
+        "verdict": "pass",
+        "page": 22,
+        "reason": "최소 측정값 8.2 mm를 사용",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "Release Form",
+          "value_cell": "E19",
+          "status_cell": "F19",
+          "reason_cell": "G19"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/P302_criteria.pdf",
+          "page": 9,
+          "clause": "M.2",
+          "expression": "gte 8",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: gte 8 mm. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P302.pdf",
+          "physical_page": 22,
+          "source_v2_page": 22,
+          "source_v2_bbox": [
+            433.94,
+            167.0,
+            809.89,
+            253.0
+          ],
+          "polygon": [
+            [
+              433.971,
+              167.021
+            ],
+            [
+              809.948,
+              167.021
+            ],
+            [
+              809.948,
+              253.031
+            ],
+            [
+              433.971,
+              253.031
+            ]
+          ],
+          "bbox": [
+            433.971,
+            167.021,
+            809.948,
+            253.031
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Wall thickness: 8.2 mm",
+          "effects": [
+            "stamp",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 22,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "weld",
+        "name": "Visual weld examination",
+        "raw_value": "Acceptable",
+        "raw_unit": "",
+        "value": "Acceptable",
+        "unit": "",
+        "operator": "eq",
+        "limit": "Acceptable",
+        "verdict": "pass",
+        "page": 57,
+        "reason": "문구 기준과 일치",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "Release Form",
+          "value_cell": "E20",
+          "status_cell": "F20",
+          "reason_cell": "G20"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/P302_criteria.pdf",
+          "page": 9,
+          "clause": "M.2",
+          "expression": "eq Acceptable",
+          "bbox": [
+            32,
+            232.0,
+            563.276,
+            319.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: eq Acceptable . Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P302.pdf",
+          "physical_page": 57,
+          "source_v2_page": 55,
+          "source_v2_bbox": [
+            310.64,
+            167.0,
+            563.28,
+            253.0
+          ],
+          "polygon": [
+            [
+              310.677,
+              167.012
+            ],
+            [
+              563.346,
+              167.012
+            ],
+            [
+              563.346,
+              253.018
+            ],
+            [
+              310.677,
+              253.018
+            ]
+          ],
+          "bbox": [
+            310.677,
+            167.012,
+            563.346,
+            253.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Visual weld examination: Acceptable ",
+          "effects": [
+            "watermark",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 55,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "leak",
+        "name": "Helium leak rate",
+        "raw_value": "<1.0E-6",
+        "raw_unit": "Pa m3/s",
+        "value": 1e-06,
+        "unit": "Pa m3/s",
+        "operator": "lte",
+        "limit": 1e-05,
+        "verdict": "pass",
+        "page": 92,
+        "reason": "검출 상한이 허용 상한보다 작음",
+        "qualifier": "eq",
+        "censored": true,
+        "output": {
+          "sheet": "Release Form",
+          "value_cell": "E21",
+          "status_cell": "F21",
+          "reason_cell": "G21"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/P302_criteria.pdf",
+          "page": 10,
+          "clause": "L.1",
+          "expression": "lte 1e-05",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "Requirement: lte 1e-05 Pa m3/s. Boundaries are inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P302.pdf",
+          "physical_page": 92,
+          "source_v2_page": 88,
+          "source_v2_bbox": [
+            310.64,
+            167.0,
+            563.28,
+            253.0
+          ],
+          "polygon": [
+            [
+              310.677,
+              167.012
+            ],
+            [
+              563.346,
+              167.012
+            ],
+            [
+              563.346,
+              253.018
+            ],
+            [
+              310.677,
+              253.018
+            ]
+          ],
+          "bbox": [
+            310.677,
+            167.012,
+            563.346,
+            253.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Helium leak rate: <1.0E-6 Pa m3/s",
+          "effects": [
+            "fold",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 88,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "coating",
+        "name": "Dry film thickness",
+        "raw_value": "280",
+        "raw_unit": "um",
+        "value": 280,
+        "unit": "um",
+        "operator": "between",
+        "limit": [
+          250,
+          350
+        ],
+        "verdict": "pass",
+        "page": 92,
+        "reason": "부록 개정값 250..350 적용; 본문 구기준 300..400 제외",
+        "qualifier": "eq",
+        "output": {
+          "sheet": "Release Form",
+          "value_cell": "E22",
+          "status_cell": "F22",
+          "reason_cell": "G22"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/P302_criteria.pdf",
+          "page": 16,
+          "clause": "ADD-4",
+          "expression": "between [250, 350]",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "ADDENDUM 4 supersedes the body text: Dry film thickness shall be 250 to 350 um inclusive."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P302.pdf",
+          "physical_page": 92,
+          "source_v2_page": 88,
+          "source_v2_bbox": [
+            310.64,
+            272.0,
+            563.28,
+            358.0
+          ],
+          "polygon": [
+            [
+              310.677,
+              272.019
+            ],
+            [
+              563.346,
+              272.019
+            ],
+            [
+              563.346,
+              358.026
+            ],
+            [
+              310.677,
+              358.026
+            ]
+          ],
+          "bbox": [
+            310.677,
+            272.019,
+            563.346,
+            358.026
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Dry film thickness: 280 um",
+          "effects": [
+            "fold",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 88,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "ferrite",
+        "name": "Ferrite content",
+        "raw_value": "6.2",
+        "raw_unit": "%",
+        "value": 6.2,
+        "unit": "%",
+        "operator": null,
+        "limit": null,
+        "verdict": "review",
+        "page": 57,
+        "reason": "현행 기준서에 합격 한계가 제공되지 않음",
+        "qualifier": "eq",
+        "missing": "CRITERION_MISSING",
+        "output": {
+          "sheet": "Release Form",
+          "value_cell": "E23",
+          "status_cell": "F23",
+          "reason_cell": "G23"
+        },
+        "criterion_source": {
+          "file": "inputs/criteria/P302_criteria.pdf",
+          "page": 17,
+          "clause": "APP-SCOPE",
+          "expression": "not supplied",
+          "bbox": [
+            32,
+            161.0,
+            563.276,
+            248.0
+          ],
+          "coordinate_system": "top-left PDF points",
+          "quote": "No acceptance limit is specified; obtain engineering clarification."
+        },
+        "report_evidence": {
+          "file": "inputs/reports/P302.pdf",
+          "physical_page": 57,
+          "source_v2_page": 55,
+          "source_v2_bbox": [
+            310.64,
+            272.0,
+            563.28,
+            358.0
+          ],
+          "polygon": [
+            [
+              310.677,
+              272.019
+            ],
+            [
+              563.346,
+              272.019
+            ],
+            [
+              563.346,
+              358.026
+            ],
+            [
+              310.677,
+              358.026
+            ]
+          ],
+          "bbox": [
+            310.677,
+            272.019,
+            563.346,
+            358.026
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Ferrite content: 6.2 %",
+          "effects": [
+            "watermark",
+            "grain"
+          ],
+          "context_pages": []
+        },
+        "source_page": 55,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 21,
+        "reason": "다른 일련번호 S-901",
+        "identity": "TAG XV-618 / SERIAL S-901 / REV 4",
+        "source_v2_page": 21
+      },
+      {
+        "page": 56,
+        "reason": "개정 3의 결과",
+        "identity": "TAG XV-618 / SERIAL S-902 / REV 3",
+        "source_v2_page": 54
+      },
+      {
+        "page": 91,
+        "reason": "계측기 교정 값",
+        "identity": "CALIBRATION CERTIFICATE",
+        "source_v2_page": 87
+      },
+      {
+        "page": 10,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 33,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      },
+      {
+        "page": 46,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-044 / separate lot / REV C",
+        "source_v2_page": 44
+      },
+      {
+        "page": 69,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-066 / separate lot / REV C",
+        "source_v2_page": 66
+      },
+      {
+        "page": 81,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-077 / separate lot / REV C",
+        "source_v2_page": 77
+      }
+    ],
+    "report": "inputs/reports/P302.pdf",
+    "criteria": "inputs/criteria/P302_criteria.pdf",
+    "template": "inputs/templates/P302_form.xlsx",
+    "native_gt": "golden/native/P302_completed.xlsx",
+    "expected_verdict": "review",
+    "relevant_pages": [
+      22,
+      57,
+      92
+    ],
+    "source_v2_pages": 96
+  },
+  {
+    "case_id": "N401",
+    "division": "신성장개발",
+    "pages": 26,
+    "title": "재이용수 분석 및 채수 기록",
+    "identity": "SAMPLE W-240 / 2026-08-14 / OUTLET B",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "lead",
+        "name": "납 Pb",
+        "raw_value": "<0.004",
+        "raw_unit": "mg/L",
+        "value": 0.004,
+        "unit": "mg/L",
+        "operator": "lte",
+        "limit": 0.01,
+        "verdict": "pass",
+        "page": 6,
+        "reason": "검출상한 0.004가 한계 0.01보다 작음",
+        "qualifier": "eq",
+        "censored": true,
+        "criterion_source": {
+          "file": "inputs/criteria/N401_criteria.xlsx",
+          "sheet": "분석 허용치",
+          "cells": [
+            "B19",
+            "D19",
+            "E19",
+            "B26"
+          ],
+          "expression": "OUTLET B; ug/L / 1000 if required",
+          "header_rows": [
+            18
+          ],
+          "table_range": "B18:I21"
+        },
+        "output": {
+          "sheet": "분석 허용치",
+          "value_cell": "F19",
+          "status_cell": "G19",
+          "reason_cell": "H19"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N401.pdf",
+          "physical_page": 6,
+          "source_v2_page": 5,
+          "source_v2_bbox": [
+            32,
+            208.0,
+            563.28,
+            246.0
+          ],
+          "polygon": [
+            [
+              563.346,
+              208.015
+            ],
+            [
+              32.004,
+              208.015
+            ],
+            [
+              32.004,
+              246.018
+            ],
+            [
+              563.346,
+              246.018
+            ]
+          ],
+          "bbox": [
+            32.004,
+            208.015,
+            563.346,
+            246.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "납 Pb | <0.004 | mg/L | 0.004 | SIM-WQ",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              409.258,
+              208.015
+            ],
+            [
+              302.986,
+              208.015
+            ],
+            [
+              302.986,
+              246.018
+            ],
+            [
+              409.258,
+              246.018
+            ]
+          ],
+          "value_bbox": [
+            302.986,
+            208.015,
+            409.258,
+            246.018
+          ],
+          "context_pages": []
+        },
+        "source_page": 5,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "cadmium",
+        "name": "카드뮴 Cd",
+        "raw_value": "ND",
+        "raw_unit": "mg/L",
+        "value": null,
+        "unit": "mg/L",
+        "operator": "lte",
+        "limit": 0.003,
+        "verdict": "review",
+        "page": 6,
+        "reason": "ND이나 LOD/LOQ 미기재",
+        "qualifier": "eq",
+        "missing": "DETECTION_LIMIT_MISSING",
+        "criterion_source": {
+          "file": "inputs/criteria/N401_criteria.xlsx",
+          "sheet": "분석 허용치",
+          "cells": [
+            "B20",
+            "D20",
+            "E20",
+            "B26"
+          ],
+          "expression": "OUTLET B; ug/L / 1000 if required",
+          "header_rows": [
+            18
+          ],
+          "table_range": "B18:I21"
+        },
+        "output": {
+          "sheet": "분석 허용치",
+          "value_cell": "F20",
+          "status_cell": "G20",
+          "reason_cell": "H20"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N401.pdf",
+          "physical_page": 6,
+          "source_v2_page": 5,
+          "source_v2_bbox": [
+            32,
+            246.0,
+            563.28,
+            284.0
+          ],
+          "polygon": [
+            [
+              563.346,
+              246.018
+            ],
+            [
+              32.004,
+              246.018
+            ],
+            [
+              32.004,
+              284.02
+            ],
+            [
+              563.346,
+              284.02
+            ]
+          ],
+          "bbox": [
+            32.004,
+            246.018,
+            563.346,
+            284.02
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "카드뮴 Cd | ND | mg/L | 미기재 | SIM-WQ",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              409.258,
+              246.018
+            ],
+            [
+              302.986,
+              246.018
+            ],
+            [
+              302.986,
+              284.02
+            ],
+            [
+              409.258,
+              284.02
+            ]
+          ],
+          "value_bbox": [
+            302.986,
+            246.018,
+            409.258,
+            284.02
+          ],
+          "context_pages": []
+        },
+        "source_page": 5,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "cod",
+        "name": "COD",
+        "raw_value": "18",
+        "raw_unit": "mg/L",
+        "value": 18,
+        "unit": "mg/L",
+        "operator": "lte",
+        "limit": 20,
+        "verdict": "pass",
+        "page": 15,
+        "reason": "지정 채수일과 OUTLET B의 결과",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/N401_criteria.xlsx",
+          "sheet": "분석 허용치",
+          "cells": [
+            "B21",
+            "D21",
+            "E21",
+            "B26"
+          ],
+          "expression": "OUTLET B; ug/L / 1000 if required",
+          "header_rows": [
+            18
+          ],
+          "table_range": "B18:I21"
+        },
+        "output": {
+          "sheet": "분석 허용치",
+          "value_cell": "F21",
+          "status_cell": "G21",
+          "reason_cell": "H21"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N401.pdf",
+          "physical_page": 15,
+          "source_v2_page": 14,
+          "source_v2_bbox": [
+            32,
+            208.0,
+            563.28,
+            246.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              208.015
+            ],
+            [
+              563.35,
+              208.015
+            ],
+            [
+              563.35,
+              246.018
+            ],
+            [
+              32.004,
+              246.018
+            ]
+          ],
+          "bbox": [
+            32.004,
+            208.015,
+            563.35,
+            246.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "COD | 18 | mg/L | - | SIM-WQ",
+          "effects": [
+            "negative",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              186.093,
+              208.015
+            ],
+            [
+              292.366,
+              208.015
+            ],
+            [
+              292.366,
+              246.018
+            ],
+            [
+              186.093,
+              246.018
+            ]
+          ],
+          "value_bbox": [
+            186.093,
+            208.015,
+            292.366,
+            246.018
+          ],
+          "context_pages": []
+        },
+        "source_page": 14,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "ph",
+        "name": "pH",
+        "raw_value": "9.1",
+        "raw_unit": "",
+        "value": 9.1,
+        "unit": "",
+        "operator": "between",
+        "limit": [
+          6.5,
+          8.5
+        ],
+        "verdict": "fail",
+        "page": 23,
+        "reason": "허용 상한 8.5 초과",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/N401_criteria.xlsx",
+          "sheet": "현장 측정",
+          "cells": [
+            "C12",
+            "D12"
+          ],
+          "expression": "inclusive range",
+          "header_rows": [
+            11
+          ],
+          "table_range": "B11:H12"
+        },
+        "output": {
+          "sheet": "현장 측정",
+          "value_cell": "F12",
+          "status_cell": "G12",
+          "reason_cell": "H12"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N401.pdf",
+          "physical_page": 23,
+          "source_v2_page": 21,
+          "source_v2_bbox": [
+            32,
+            208.0,
+            563.28,
+            246.0
+          ],
+          "polygon": [
+            [
+              563.346,
+              208.015
+            ],
+            [
+              32.0,
+              208.015
+            ],
+            [
+              32.0,
+              246.018
+            ],
+            [
+              563.346,
+              246.018
+            ]
+          ],
+          "bbox": [
+            32.0,
+            208.015,
+            563.346,
+            246.018
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "pH | 9.1 |  | - | SIM-WQ",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              409.257,
+              208.015
+            ],
+            [
+              302.984,
+              208.015
+            ],
+            [
+              302.984,
+              246.018
+            ],
+            [
+              409.257,
+              246.018
+            ]
+          ],
+          "value_bbox": [
+            302.984,
+            208.015,
+            409.257,
+            246.018
+          ],
+          "context_pages": []
+        },
+        "source_page": 21,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 3,
+        "reason": "전일 시료",
+        "identity": "SAMPLE W-239 / 2026-08-13 / OUTLET B",
+        "source_v2_page": 4
+      },
+      {
+        "page": 14,
+        "reason": "다른 지점 OUTLET A",
+        "identity": "SAMPLE W-240 / 2026-08-14 / OUTLET A",
+        "source_v2_page": 13
+      },
+      {
+        "page": 12,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 24,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      }
+    ],
+    "report": "inputs/reports/N401.pdf",
+    "criteria": "inputs/criteria/N401_criteria.xlsx",
+    "template": "inputs/criteria/N401_criteria.xlsx",
+    "native_gt": "golden/native/N401_completed.xlsx",
+    "expected_verdict": "fail",
+    "relevant_pages": [
+      6,
+      15,
+      23
+    ],
+    "source_v2_pages": 24
+  },
+  {
+    "case_id": "N402",
+    "division": "신성장개발",
+    "pages": 42,
+    "title": "PV Module Factory Acceptance Record",
+    "identity": "MODEL PVX-72 / BATCH Q-51",
+    "description": "스캔·도장·필기·촬영 변형 / 혼합 품질 / 순서 변경·중복·2-up",
+    "criteria_type": "xlsx",
+    "fields": [
+      {
+        "field_id": "power",
+        "name": "Maximum power Pmax",
+        "raw_value": "449",
+        "raw_unit": "W",
+        "value": 449,
+        "unit": "W",
+        "operator": "gte",
+        "limit": 450,
+        "verdict": "fail",
+        "page": 4,
+        "reason": "STC 조건 결과가 최소 450 W 미달",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/N402_criteria.xlsx",
+          "sheet": "성능 매트릭스",
+          "cells": [
+            "E9",
+            "E8",
+            "C9",
+            "'환경 조건'!C7"
+          ],
+          "expression": "PVX-72 column / minimum under STC",
+          "header_rows": [
+            8
+          ],
+          "table_range": "B8:F11"
+        },
+        "output": {
+          "sheet": "완성 검토",
+          "value_cell": "C8",
+          "status_cell": "C10",
+          "reason_cell": "C12"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N402.pdf",
+          "physical_page": 4,
+          "source_v2_page": 8,
+          "source_v2_bbox": [
+            32,
+            431.0,
+            809.89,
+            476.0
+          ],
+          "polygon": [
+            [
+              1144.254,
+              509.7
+            ],
+            [
+              626.571,
+              509.7
+            ],
+            [
+              626.571,
+              539.648
+            ],
+            [
+              1144.254,
+              539.648
+            ]
+          ],
+          "bbox": [
+            626.571,
+            509.7,
+            1144.254,
+            539.648
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Maximum power Pmax | 449 | W",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              916.475,
+              509.7
+            ],
+            [
+              750.812,
+              509.7
+            ],
+            [
+              750.812,
+              539.648
+            ],
+            [
+              916.475,
+              539.648
+            ]
+          ],
+          "value_bbox": [
+            750.812,
+            509.7,
+            916.475,
+            539.648
+          ],
+          "context_pages": []
+        },
+        "source_page": 8,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "insulation",
+        "name": "Insulation resistance",
+        "raw_value": "240000",
+        "raw_unit": "kOhm",
+        "value": 240,
+        "unit": "MOhm",
+        "operator": "gte",
+        "limit": 100,
+        "verdict": "pass",
+        "page": 28,
+        "reason": "kOhm을 MOhm으로 환산",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/N402_criteria.xlsx",
+          "sheet": "성능 매트릭스",
+          "cells": [
+            "E10",
+            "E8",
+            "C10",
+            "'환경 조건'!C7"
+          ],
+          "expression": "PVX-72 column / minimum under STC",
+          "header_rows": [
+            8
+          ],
+          "table_range": "B8:F11"
+        },
+        "output": {
+          "sheet": "완성 검토",
+          "value_cell": "D8",
+          "status_cell": "D10",
+          "reason_cell": "D12"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N402.pdf",
+          "physical_page": 28,
+          "source_v2_page": 27,
+          "source_v2_bbox": [
+            32,
+            391.0,
+            563.28,
+            436.0
+          ],
+          "polygon": [
+            [
+              563.346,
+              391.028
+            ],
+            [
+              32.004,
+              391.028
+            ],
+            [
+              32.004,
+              436.031
+            ],
+            [
+              563.346,
+              436.031
+            ]
+          ],
+          "bbox": [
+            32.004,
+            391.028,
+            563.346,
+            436.031
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Insulation resistance | 240000 | kOhm",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              329.559,
+              391.028
+            ],
+            [
+              159.529,
+              391.028
+            ],
+            [
+              159.529,
+              436.031
+            ],
+            [
+              329.559,
+              436.031
+            ]
+          ],
+          "value_bbox": [
+            159.529,
+            391.028,
+            329.559,
+            436.031
+          ],
+          "context_pages": []
+        },
+        "source_page": 27,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "wetleak",
+        "name": "Wet leakage resistance",
+        "raw_value": null,
+        "raw_unit": "MOhm",
+        "value": null,
+        "unit": "MOhm",
+        "operator": "gte",
+        "limit": 40,
+        "verdict": "review",
+        "page": 40,
+        "reason": "결과 숫자 인쇄 손상으로 판독 불가",
+        "qualifier": "eq",
+        "missing": "VALUE_UNREADABLE",
+        "criterion_source": {
+          "file": "inputs/criteria/N402_criteria.xlsx",
+          "sheet": "성능 매트릭스",
+          "cells": [
+            "E11",
+            "E8",
+            "C11",
+            "'환경 조건'!C7"
+          ],
+          "expression": "PVX-72 column / minimum under STC",
+          "header_rows": [
+            8
+          ],
+          "table_range": "B8:F11"
+        },
+        "output": {
+          "sheet": "완성 검토",
+          "value_cell": "E8",
+          "status_cell": "E10",
+          "reason_cell": "E12"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N402.pdf",
+          "physical_page": 40,
+          "source_v2_page": 38,
+          "source_v2_bbox": [
+            32,
+            391.0,
+            563.28,
+            436.0
+          ],
+          "polygon": [
+            [
+              32.004,
+              391.028
+            ],
+            [
+              563.346,
+              391.028
+            ],
+            [
+              563.346,
+              436.031
+            ],
+            [
+              32.004,
+              436.031
+            ]
+          ],
+          "bbox": [
+            32.004,
+            391.028,
+            563.346,
+            436.031
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Wet leakage resistance | [UNREADABLE] | MOhm",
+          "effects": [
+            "holes",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              265.791,
+              391.028
+            ],
+            [
+              435.821,
+              391.028
+            ],
+            [
+              435.821,
+              436.031
+            ],
+            [
+              265.791,
+              436.031
+            ]
+          ],
+          "value_bbox": [
+            265.791,
+            391.028,
+            435.821,
+            436.031
+          ],
+          "context_pages": []
+        },
+        "source_page": 38,
+        "source_context_pages": [],
+        "context_pages": []
+      },
+      {
+        "field_id": "model",
+        "name": "Model designation",
+        "raw_value": "PVX-72",
+        "raw_unit": "",
+        "value": "PVX-72",
+        "unit": "",
+        "operator": "eq",
+        "limit": "PVX-72",
+        "verdict": "pass",
+        "page": 4,
+        "reason": "요청 모델과 일치",
+        "qualifier": "eq",
+        "criterion_source": {
+          "file": "inputs/criteria/N402_criteria.xlsx",
+          "sheet": "환경 조건",
+          "cells": [
+            "'적용 모델'!D8",
+            "C10"
+          ],
+          "expression": "exact model match",
+          "header_rows": [],
+          "table_range": "B7:C10"
+        },
+        "output": {
+          "sheet": "완성 검토",
+          "value_cell": "F8",
+          "status_cell": "F10",
+          "reason_cell": "F12"
+        },
+        "report_evidence": {
+          "file": "inputs/reports/N402.pdf",
+          "physical_page": 4,
+          "source_v2_page": 8,
+          "source_v2_bbox": [
+            32,
+            476.0,
+            809.89,
+            521.0
+          ],
+          "polygon": [
+            [
+              1144.254,
+              539.648
+            ],
+            [
+              626.571,
+              539.648
+            ],
+            [
+              626.571,
+              569.597
+            ],
+            [
+              1144.254,
+              569.597
+            ]
+          ],
+          "bbox": [
+            626.571,
+            539.648,
+            1144.254,
+            569.597
+          ],
+          "coordinate_system": "displayed PDF page, top-left origin, points",
+          "quote": "Model designation | PVX-72 | ",
+          "effects": [
+            "mirror",
+            "grain"
+          ],
+          "value_polygon": [
+            [
+              916.475,
+              539.648
+            ],
+            [
+              750.812,
+              539.648
+            ],
+            [
+              750.812,
+              569.597
+            ],
+            [
+              916.475,
+              569.597
+            ]
+          ],
+          "value_bbox": [
+            750.812,
+            539.648,
+            916.475,
+            569.597
+          ],
+          "context_pages": []
+        },
+        "source_page": 8,
+        "source_context_pages": [],
+        "context_pages": []
+      }
+    ],
+    "distractors": [
+      {
+        "page": 4,
+        "reason": "다른 모델 PVX-60",
+        "identity": "MODEL PVX-60 / BATCH Q-51",
+        "source_v2_page": 7
+      },
+      {
+        "page": 27,
+        "reason": "기기 교정 확인 값",
+        "identity": "METER CALIBRATION / NOT SAMPLE RESULT",
+        "source_v2_page": 26
+      },
+      {
+        "page": 9,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-011 / separate lot / REV C",
+        "source_v2_page": 11
+      },
+      {
+        "page": 23,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-022 / separate lot / REV C",
+        "source_v2_page": 22
+      },
+      {
+        "page": 35,
+        "reason": "동일 시험항목 / 다른 시료 ID",
+        "identity": "ALTERNATE SAMPLE ALT-033 / separate lot / REV C",
+        "source_v2_page": 33
+      }
+    ],
+    "report": "inputs/reports/N402.pdf",
+    "criteria": "inputs/criteria/N402_criteria.xlsx",
+    "template": "inputs/criteria/N402_criteria.xlsx",
+    "native_gt": "golden/native/N402_completed.xlsx",
+    "expected_verdict": "fail",
+    "relevant_pages": [
+      4,
+      28,
+      40
+    ],
+    "source_v2_pages": 40
+  }
+]

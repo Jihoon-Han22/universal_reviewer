@@ -1,0 +1,756 @@
+[
+  {
+    "case_id": "B101",
+    "field_id": "thermal",
+    "operator": "lte",
+    "limit": 0.034,
+    "unit": "W/(m K)",
+    "source": {
+      "file": "inputs/criteria/B101_criteria.xlsx",
+      "sheet": "단열 성능",
+      "cells": [
+        "E10",
+        "C10"
+      ],
+      "expression": "상한",
+      "header_rows": [
+        9
+      ],
+      "table_range": "B9:I11"
+    }
+  },
+  {
+    "case_id": "B101",
+    "field_id": "stress",
+    "operator": "gte",
+    "limit": 140,
+    "unit": "kPa",
+    "source": {
+      "file": "inputs/criteria/B101_criteria.xlsx",
+      "sheet": "단열 성능",
+      "cells": [
+        "D11",
+        "C11"
+      ],
+      "expression": "하한",
+      "header_rows": [
+        9
+      ],
+      "table_range": "B9:I11"
+    }
+  },
+  {
+    "case_id": "B101",
+    "field_id": "absorption",
+    "operator": "lte",
+    "limit": 0.5,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/B101_criteria.xlsx",
+      "sheet": "마감재 기준",
+      "cells": [
+        "C7",
+        "D7"
+      ],
+      "expression": "문자열 부등호 파싱",
+      "header_rows": [
+        6
+      ],
+      "table_range": "B6:H8"
+    }
+  },
+  {
+    "case_id": "B101",
+    "field_id": "bond",
+    "operator": "gte",
+    "limit": 1,
+    "unit": "MPa",
+    "source": {
+      "file": "inputs/criteria/B101_criteria.xlsx",
+      "sheet": "마감재 기준",
+      "cells": [
+        "C8",
+        "D8"
+      ],
+      "expression": "문자열 부등호 파싱",
+      "header_rows": [
+        6
+      ],
+      "table_range": "B6:H8"
+    }
+  },
+  {
+    "case_id": "B102",
+    "field_id": "strength",
+    "operator": "gte",
+    "limit": 30,
+    "unit": "MPa",
+    "source": {
+      "file": "inputs/criteria/B102_criteria.xlsx",
+      "sheet": "현장 종합기준",
+      "cells": [
+        "D7",
+        "E7"
+      ],
+      "expression": ">= 30",
+      "header_rows": [
+        6
+      ],
+      "table_range": "B6:I11"
+    }
+  },
+  {
+    "case_id": "B102",
+    "field_id": "chloride",
+    "operator": "lte",
+    "limit": 0.05,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/B102_criteria.xlsx",
+      "sheet": "현장 종합기준",
+      "cells": [
+        "D23",
+        "E23"
+      ],
+      "expression": "<= 0.05",
+      "header_rows": [
+        22
+      ],
+      "table_range": "B22:I27"
+    }
+  },
+  {
+    "case_id": "B102",
+    "field_id": "elongation",
+    "operator": "gte",
+    "limit": 16,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/B102_criteria.xlsx",
+      "sheet": "현장 종합기준",
+      "cells": [
+        "D42",
+        "E42"
+      ],
+      "expression": ">= 16",
+      "header_rows": [
+        41
+      ],
+      "table_range": "B41:I42"
+    }
+  },
+  {
+    "case_id": "B102",
+    "field_id": "fire",
+    "operator": "gte",
+    "limit": 60,
+    "unit": "min",
+    "source": {
+      "file": "inputs/criteria/B102_criteria.xlsx",
+      "sheet": "현장 종합기준",
+      "cells": [
+        "D46",
+        "B52"
+      ],
+      "expression": "주석 4의 H-03 한계 60 우선",
+      "header_rows": [
+        45
+      ],
+      "table_range": "B45:I46"
+    }
+  },
+  {
+    "case_id": "I201",
+    "field_id": "density",
+    "operator": "gte",
+    "limit": 95,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/I201_criteria.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cells": [
+        "D7",
+        "D6",
+        "D9"
+      ],
+      "expression": "노체 / STA 2+480 열 하한",
+      "header_rows": [
+        5,
+        6
+      ],
+      "table_range": "B5:F9"
+    }
+  },
+  {
+    "case_id": "I201",
+    "field_id": "cbr",
+    "operator": "gte",
+    "limit": 80,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/I201_criteria.xlsx",
+      "sheet": "노체 기준 행렬",
+      "cells": [
+        "D8",
+        "D6",
+        "D9"
+      ],
+      "expression": "노체 / STA 2+480 열 하한",
+      "header_rows": [
+        5,
+        6
+      ],
+      "table_range": "B5:F9"
+    }
+  },
+  {
+    "case_id": "I201",
+    "field_id": "sieve075",
+    "operator": "between",
+    "limit": [
+      2,
+      7
+    ],
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/I201_criteria.xlsx",
+      "sheet": "입도 범위",
+      "cells": [
+        "C22",
+        "D22",
+        "C20"
+      ],
+      "expression": "하한..상한 포함",
+      "header_rows": [
+        20,
+        21
+      ],
+      "table_range": "B20:G23"
+    }
+  },
+  {
+    "case_id": "I201",
+    "field_id": "sieve475",
+    "operator": "between",
+    "limit": [
+      90,
+      100
+    ],
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/I201_criteria.xlsx",
+      "sheet": "입도 범위",
+      "cells": [
+        "C23",
+        "D23",
+        "C20"
+      ],
+      "expression": "하한..상한 포함",
+      "header_rows": [
+        20,
+        21
+      ],
+      "table_range": "B20:G23"
+    }
+  },
+  {
+    "case_id": "I202",
+    "field_id": "voids",
+    "operator": "between",
+    "limit": [
+      3,
+      5
+    ],
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/I202_criteria.pdf",
+      "page": 5,
+      "clause": "5.2",
+      "expression": "between [3, 5]",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: between [3, 5] %. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "I202",
+    "field_id": "stability",
+    "operator": "gte",
+    "limit": 8,
+    "unit": "kN",
+    "source": {
+      "file": "inputs/criteria/I202_criteria.pdf",
+      "page": 5,
+      "clause": "5.2",
+      "expression": "gte 8",
+      "bbox": [
+        32,
+        232.0,
+        563.276,
+        319.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: gte 8 kN. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "I202",
+    "field_id": "thickness",
+    "operator": "gte",
+    "limit": 50,
+    "unit": "mm",
+    "source": {
+      "file": "inputs/criteria/I202_criteria.pdf",
+      "page": 9,
+      "clause": "9.1",
+      "expression": "gte 50",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: gte 50 mm. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "I202",
+    "field_id": "permeability",
+    "operator": "lte",
+    "limit": 1e-05,
+    "unit": "m/s",
+    "source": {
+      "file": "inputs/criteria/I202_criteria.pdf",
+      "page": 11,
+      "clause": "A.3",
+      "expression": "lte 1e-05",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: lte 1e-05 m/s. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "yield",
+    "operator": "gte",
+    "limit": 335,
+    "unit": "MPa",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Mechanical R3",
+      "cells": [
+        "D15",
+        "F15",
+        "C15"
+      ],
+      "expression": "R3 limits; impact at -20 C",
+      "header_rows": [
+        13,
+        14
+      ],
+      "table_range": "B13:K17"
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "tensile",
+    "operator": "between",
+    "limit": [
+      490,
+      650
+    ],
+    "unit": "MPa",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Mechanical R3",
+      "cells": [
+        "D16",
+        "E16",
+        "F16",
+        "C16"
+      ],
+      "expression": "R3 limits; impact at -20 C",
+      "header_rows": [
+        13,
+        14
+      ],
+      "table_range": "B13:K17"
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "carbon",
+    "operator": "lte",
+    "limit": 0.23,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Chemistry R3",
+      "cells": [
+        "C8",
+        "D8"
+      ],
+      "expression": "Carbon upper limit",
+      "header_rows": [
+        7
+      ],
+      "table_range": "B7:H9"
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "impact",
+    "operator": "gte",
+    "limit": 30,
+    "unit": "J",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Mechanical R3",
+      "cells": [
+        "D17",
+        "F17",
+        "C17"
+      ],
+      "expression": "R3 limits; impact at -20 C",
+      "header_rows": [
+        13,
+        14
+      ],
+      "table_range": "B13:K17"
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "pressure",
+    "operator": "gte",
+    "limit": 15,
+    "unit": "MPa",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Hydro R3",
+      "cells": [
+        "C13",
+        "K8",
+        "'Design Basis'!D8",
+        "'Design Basis'!D10"
+      ],
+      "expression": "10 MPa * 1.5 = 15 MPa",
+      "header_rows": [
+        12
+      ],
+      "table_range": "B12:H14"
+    }
+  },
+  {
+    "case_id": "P301",
+    "field_id": "hold",
+    "operator": "gte",
+    "limit": 30,
+    "unit": "min",
+    "source": {
+      "file": "inputs/criteria/P301_criteria.xlsx",
+      "sheet": "Hydro R3",
+      "cells": [
+        "C14",
+        "D14"
+      ],
+      "expression": "Duration minimum",
+      "header_rows": [
+        12
+      ],
+      "table_range": "B12:H14"
+    }
+  },
+  {
+    "case_id": "P302",
+    "field_id": "wall",
+    "operator": "gte",
+    "limit": 8,
+    "unit": "mm",
+    "source": {
+      "file": "inputs/criteria/P302_criteria.pdf",
+      "page": 9,
+      "clause": "M.2",
+      "expression": "gte 8",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: gte 8 mm. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "P302",
+    "field_id": "weld",
+    "operator": "eq",
+    "limit": "Acceptable",
+    "unit": "",
+    "source": {
+      "file": "inputs/criteria/P302_criteria.pdf",
+      "page": 9,
+      "clause": "M.2",
+      "expression": "eq Acceptable",
+      "bbox": [
+        32,
+        232.0,
+        563.276,
+        319.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: eq Acceptable . Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "P302",
+    "field_id": "leak",
+    "operator": "lte",
+    "limit": 1e-05,
+    "unit": "Pa m3/s",
+    "source": {
+      "file": "inputs/criteria/P302_criteria.pdf",
+      "page": 10,
+      "clause": "L.1",
+      "expression": "lte 1e-05",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "Requirement: lte 1e-05 Pa m3/s. Boundaries are inclusive."
+    }
+  },
+  {
+    "case_id": "P302",
+    "field_id": "coating",
+    "operator": "between",
+    "limit": [
+      250,
+      350
+    ],
+    "unit": "um",
+    "source": {
+      "file": "inputs/criteria/P302_criteria.pdf",
+      "page": 16,
+      "clause": "ADD-4",
+      "expression": "between [250, 350]",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "ADDENDUM 4 supersedes the body text: Dry film thickness shall be 250 to 350 um inclusive."
+    }
+  },
+  {
+    "case_id": "P302",
+    "field_id": "ferrite",
+    "operator": null,
+    "limit": null,
+    "unit": "%",
+    "source": {
+      "file": "inputs/criteria/P302_criteria.pdf",
+      "page": 17,
+      "clause": "APP-SCOPE",
+      "expression": "not supplied",
+      "bbox": [
+        32,
+        161.0,
+        563.276,
+        248.0
+      ],
+      "coordinate_system": "top-left PDF points",
+      "quote": "No acceptance limit is specified; obtain engineering clarification."
+    }
+  },
+  {
+    "case_id": "N401",
+    "field_id": "lead",
+    "operator": "lte",
+    "limit": 0.01,
+    "unit": "mg/L",
+    "source": {
+      "file": "inputs/criteria/N401_criteria.xlsx",
+      "sheet": "분석 허용치",
+      "cells": [
+        "B19",
+        "D19",
+        "E19",
+        "B26"
+      ],
+      "expression": "OUTLET B; ug/L / 1000 if required",
+      "header_rows": [
+        18
+      ],
+      "table_range": "B18:I21"
+    }
+  },
+  {
+    "case_id": "N401",
+    "field_id": "cadmium",
+    "operator": "lte",
+    "limit": 0.003,
+    "unit": "mg/L",
+    "source": {
+      "file": "inputs/criteria/N401_criteria.xlsx",
+      "sheet": "분석 허용치",
+      "cells": [
+        "B20",
+        "D20",
+        "E20",
+        "B26"
+      ],
+      "expression": "OUTLET B; ug/L / 1000 if required",
+      "header_rows": [
+        18
+      ],
+      "table_range": "B18:I21"
+    }
+  },
+  {
+    "case_id": "N401",
+    "field_id": "cod",
+    "operator": "lte",
+    "limit": 20,
+    "unit": "mg/L",
+    "source": {
+      "file": "inputs/criteria/N401_criteria.xlsx",
+      "sheet": "분석 허용치",
+      "cells": [
+        "B21",
+        "D21",
+        "E21",
+        "B26"
+      ],
+      "expression": "OUTLET B; ug/L / 1000 if required",
+      "header_rows": [
+        18
+      ],
+      "table_range": "B18:I21"
+    }
+  },
+  {
+    "case_id": "N401",
+    "field_id": "ph",
+    "operator": "between",
+    "limit": [
+      6.5,
+      8.5
+    ],
+    "unit": "",
+    "source": {
+      "file": "inputs/criteria/N401_criteria.xlsx",
+      "sheet": "현장 측정",
+      "cells": [
+        "C12",
+        "D12"
+      ],
+      "expression": "inclusive range",
+      "header_rows": [
+        11
+      ],
+      "table_range": "B11:H12"
+    }
+  },
+  {
+    "case_id": "N402",
+    "field_id": "power",
+    "operator": "gte",
+    "limit": 450,
+    "unit": "W",
+    "source": {
+      "file": "inputs/criteria/N402_criteria.xlsx",
+      "sheet": "성능 매트릭스",
+      "cells": [
+        "E9",
+        "E8",
+        "C9",
+        "'환경 조건'!C7"
+      ],
+      "expression": "PVX-72 column / minimum under STC",
+      "header_rows": [
+        8
+      ],
+      "table_range": "B8:F11"
+    }
+  },
+  {
+    "case_id": "N402",
+    "field_id": "insulation",
+    "operator": "gte",
+    "limit": 100,
+    "unit": "MOhm",
+    "source": {
+      "file": "inputs/criteria/N402_criteria.xlsx",
+      "sheet": "성능 매트릭스",
+      "cells": [
+        "E10",
+        "E8",
+        "C10",
+        "'환경 조건'!C7"
+      ],
+      "expression": "PVX-72 column / minimum under STC",
+      "header_rows": [
+        8
+      ],
+      "table_range": "B8:F11"
+    }
+  },
+  {
+    "case_id": "N402",
+    "field_id": "wetleak",
+    "operator": "gte",
+    "limit": 40,
+    "unit": "MOhm",
+    "source": {
+      "file": "inputs/criteria/N402_criteria.xlsx",
+      "sheet": "성능 매트릭스",
+      "cells": [
+        "E11",
+        "E8",
+        "C11",
+        "'환경 조건'!C7"
+      ],
+      "expression": "PVX-72 column / minimum under STC",
+      "header_rows": [
+        8
+      ],
+      "table_range": "B8:F11"
+    }
+  },
+  {
+    "case_id": "N402",
+    "field_id": "model",
+    "operator": "eq",
+    "limit": "PVX-72",
+    "unit": "",
+    "source": {
+      "file": "inputs/criteria/N402_criteria.xlsx",
+      "sheet": "환경 조건",
+      "cells": [
+        "'적용 모델'!D8",
+        "C10"
+      ],
+      "expression": "exact model match",
+      "header_rows": [],
+      "table_range": "B7:C10"
+    }
+  }
+]

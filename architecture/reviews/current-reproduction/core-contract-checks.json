@@ -1,0 +1,272 @@
+{
+  "timestamp": "2026-09-21T06:05:46.020Z",
+  "kind": "STATIC_CONTRACT_CHECK",
+  "providerCalls": 0,
+  "results": [
+    {
+      "id": "sandbox-documents:CONTEXT_SYSTEM:35",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/sandbox-documents.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "sandbox-documents:text-part:307",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/sandbox-documents.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "document-quality:DOCUMENT_UNIT_POLICY:10",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/document-quality.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "document-quality:REVIEW_SYSTEM:188",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/document-quality.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "document-quality:text-part:212",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/document-quality.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "document-quality:text-part:263",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/document-quality.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-transcription:SYSTEM:13",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-transcription.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-transcription:returned-template:198",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-transcription.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-transcription:returned-template:228",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-transcription.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-transcription:text-part:385",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-transcription.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-quality-judge:SYSTEM:39",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-quality-judge.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-quality-judge:text-part:71",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-quality-judge.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "visual-quality-judge:returned-template:78",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/visual-quality-judge.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "field-extraction:SYSTEM:5",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/field-extraction.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "field-extraction:prompt:162",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/field-extraction.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "field-extraction:text-part:179",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/field-extraction.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:SYSTEM:24",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:441",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:467",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:469",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:470",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:471",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:533",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:535",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:536",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:537",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:538",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "review:text-part:539",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/review.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-sandbox.HIERARCHY_GUIDANCE",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-sandbox.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-sandbox.CLASSIFICATION_GUIDANCE",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-sandbox.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-sandbox.SYSTEM",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-sandbox.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-sandbox.plan",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-sandbox.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-sandbox.extract",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-sandbox.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-eligibility.SYSTEM",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-eligibility.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-eligibility.repair",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-eligibility.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-eligibility.assess",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-eligibility.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-revision.SYSTEM",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-revision.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-revision.revise",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-revision.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "criteria-revision.document-separator",
+      "kind": "SOURCE_TEMPLATE_LITERAL",
+      "path": "server/criteria-revision.mjs",
+      "status": "PASS"
+    },
+    {
+      "id": "server/criteria-sandbox.mjs",
+      "kind": "CATALOG_SOURCE_SHA256",
+      "status": "PASS",
+      "expected": "929b02ad1e7ec59e33df4dba1e59e66a5de15525c5e8b9dc2b00fb94aa3b8865",
+      "actual": "929b02ad1e7ec59e33df4dba1e59e66a5de15525c5e8b9dc2b00fb94aa3b8865"
+    },
+    {
+      "id": "server/criteria-eligibility.mjs",
+      "kind": "CATALOG_SOURCE_SHA256",
+      "status": "PASS",
+      "expected": "167bdf1475baf053de0a70f311d9df8007138e685721f5e30b8bd3292c995475",
+      "actual": "167bdf1475baf053de0a70f311d9df8007138e685721f5e30b8bd3292c995475"
+    },
+    {
+      "id": "server/criteria-revision.mjs",
+      "kind": "CATALOG_SOURCE_SHA256",
+      "status": "PASS",
+      "expected": "906d61ab0f20de493c24df8170098d5fa5522130c743b418ddf22b96a0a5809f",
+      "actual": "906d61ab0f20de493c24df8170098d5fa5522130c743b418ddf22b96a0a5809f"
+    },
+    {
+      "id": "algorithm-case-ids",
+      "kind": "UNIQUE_FIXTURES",
+      "status": "PASS"
+    },
+    {
+      "id": "algorithm-case-profiles",
+      "kind": "EXPLICIT_PROFILES",
+      "status": "PASS"
+    }
+  ]
+}

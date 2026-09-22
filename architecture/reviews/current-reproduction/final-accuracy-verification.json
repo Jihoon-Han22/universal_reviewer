@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "role": "accuracy",
+  "reviewerId": "/root/review_verification",
+  "evaluatedInputsSha256": "f3f78e1ffa4e28cc684e6ce2752c4492392a9fc806e357f53a14a4c9551c72fa",
+  "reviewedAt": "2026-09-21T06:53:52.922Z",
+  "scope": "CORE-20/CORE-21 정확성18개; manifest 전수delta 확인 후 영향7개 재판정/불변11개 유지",
+  "independence": {
+    "normativeDocumentsAuthored": false,
+    "productFilesModified": false,
+    "originalSourceInspected": true,
+    "priorScoresReused": false
+  },
+  "verification": {
+    "frozenRelevantFilesChecked": 49,
+    "environmentFileComparisons": 11,
+    "lockedPackageEntries": 26,
+    "baselineSourceFiles": 210,
+    "sourceTraceFiles": 211,
+    "configurationProbes": [
+      "envPath:null does not read environment file",
+      "frozen defaults",
+      "missing keys public booleans false",
+      "missing provider key throws CONFIG_MISSING on requireKey",
+      "invalid model throws CONFIG_INVALID"
+    ],
+    "originalConfigHelperExecuted": true,
+    "rebuiltImplementationExecuted": false,
+    "validatorSelftests": {
+      "passed": 48,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 910089.029,
+      "scope": "offline validator tests; started before final freeze"
+    },
+    "inheritedProfileProbeChecks": 4,
+    "auditCliFixtureChecks": 10,
+    "auditToolSha256": "8036ebb76229747f1968eda9f973fc5cd8807aa70a5de8aace8733b5758633e7",
+    "scoreToolSha256": "daa8b10e1c30e9ce59779e6a3e31ec148acad6912a9662690fe8112ac244f2e7",
+    "node": "v24.21.0",
+    "completeProductAcceptance": false,
+    "implementationExecuted": false,
+    "providerCalls": 0,
+    "realEnvironmentFileRead": false,
+    "priorRoundOnly": true
+  },
+  "limitations": [
+    "새 앱 재구현, npm install/build, 실제 provider, 실제 browser 및 dataset 전수 gate는 이 평가에서 실행하지 않았다.",
+    "독립 합성 CLI fixture 결과는 채점/해시 검사 자체시험이며 실제 설계 의견이나 제품 성공을 대체하지 않는다.",
+    "validator 48개 자체시험은 최종 freeze 전 시작했다. 실행 뒤 추가된 inherited-profile selftest는 그 48개에 없으며 최신 runGate를 별도 4개 prototype 이름 probe로 검사했다.",
+    "환경 기준 Node 24.13.1과 이번 검증 Node 24.21.0을 구분한다.",
+    "이번 delta에서는 기존48 validator/10audit/4prototype 검사를 반복하지 않았다. 코드 hash 불변을 확인해 이전 실행 근거를 보존했다. 새 순수 source 직렬화10벡터만 추가 실행했고 Python reader/UI브라우저 재실행은 하지 않았다."
+  ],
+  "questionResults": [
+    {
+      "id": "CORE-20-C01",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        "architecture/environment/README.md: 정확한 실행 환경과 설치 / 최소 구조",
+        "architecture/environment/versions.json: packages",
+        "package.json:1; package-lock.json:1; integrations/package.json:1; integrations/package-lock.json:1; tsconfig.json:1; vite.config.ts:1; index.html:1"
+      ],
+      "rationale": "원본 package/lock/tsconfig/Vite/index 및 실행·자산 템플릿 11개를 byte 비교했고 26개 패키지의 declared/locked 값이 일치했다. Node 24.13.1/npm 11.8.0은 캡처 기준이고 이번 감사 Node 24.21.0과 구별한다. bootstrap은 앱 소스를 제공하지 않는 scaffold-only다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-20-C02",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        "architecture/environment/README.md: 최소 구조 / asset 생성",
+        "src/components/DocumentPreview.tsx:6",
+        "scripts/copy-pdfjs-assets.mjs:9",
+        "scripts/build-dashboard-chart-runtime.mjs:8",
+        "package.json:15"
+      ],
+      "rationale": "PDF worker URL import, 버전 디렉터리의 cmaps/standard_fonts/wasm/iccs/LICENSE 복사, esbuild IIFE/browser/es2020/minify/production 출력과 prebuild 두 단계가 원본과 일치한다. 실제 build를 이번 평가에서 실행했다는 뜻은 아니다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-20-C03",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        "architecture/environment/README.md: 앱 구현 이후 실행 명령",
+        "scripts/dev.mjs:4",
+        "vite.config.ts:6",
+        "server/index.mjs:3",
+        "server/app.mjs:157"
+      ],
+      "rationale": "dev의 두 child 명령, Vite 5180 strictPort/API 8787 proxy, loopback listen 및 process.env.PORT만 읽는 분기, createApp 시점의 dist 존재 검사, 소유 child kill 및 서버 signal 취소 처리 계약을 원본과 대조했다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-20-C04",
+      "moduleId": "CORE-20",
+      "status": "PASS",
+      "evidence": [
+        "architecture/environment/README.md: Node 회귀와 별도 Python 회귀",
+        "integrations/scripts/smoke.mjs:10",
+        "integrations/src/config.mjs:7",
+        "server/document-reader.test.py:25",
+        "server/document-reader.test.py:226",
+        "package.json:13"
+      ],
+      "rationale": "config-only는 키가 없어도 configured=false/exit0이며 실제 requireKey 때 CONFIG_MISSING인 분기를 envPath:null의 비밀 없는 probe로 확인했다. Node glob과 별도 Python unittest, openpyxl/PyMuPDF/Pillow 설치 및 PDF skip/12초 sparse timeout을 원본과 대조했다. smoke의 실제 provider 실행과 로컬 회귀는 별도이며 이번 실제 provider/앱 실행은 NOT_RUN이다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C01",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/decomposition/source-trace.json: entries 및 denominator",
+        "architecture/baseline/source-snapshot.json: files",
+        "architecture/decomposition/README.md: 작성과 검증",
+        "architecture/reviews/current-reproduction/audit.mjs:49",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "원본 snapshot 210파일 각각이 211개 역추적 entry(추가 server/README.md 포함)에 같은 SHA와 유효 module/question ID로 연결됨을 별도 검사했다. 새 원본 변경은 freeze의 baseline 비교에서 거부하고 기존 235질문 삭제/재배치는 거부한다. 파일 추적률을 실행 경로 검증률로 해석하지 않는다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "현재 source210개를 실제 bytes로 재해시하여 이전 snapshot과 동일함을 확인했다. source-trace211개와 현재243질문 연결을 재검사했고 신규 CORE-04-C06/CORE-05-C06/UI-06-C07 모두 원장과 source trace에 존재한다. 기존240개 질문 객체는 변경·삭제 없이 보존됐다."
+    },
+    {
+      "id": "CORE-21-C02",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: 실제 파일 변형과 adapter",
+        "architecture/validation/harness.mjs:63",
+        "architecture/validation/run-gate.mjs:20",
+        "architecture/validation/adapter-worker.mjs:14",
+        "architecture/validation/acceptance-selftest.mjs:56"
+      ],
+      "rationale": "부모가 생성 시점 deadline과 expired를 검사하고 worker가 호출 전후 abort를 검사한다. timeout 뒤 정상 반환은 실패하며 10초 grace는 정리 대기일 뿐 성공 시간이 아니다. 새 실행에서 late-return gate 음성대조 PASS를 직접 관측했으며 제품 timeout 동등성 자체는 미실행이다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C03",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: gate 실행과 최종 증거 검사",
+        "architecture/validation/acceptance.mjs:27",
+        "architecture/validation/acceptance.mjs:91",
+        "architecture/validation/run-gate.mjs:16",
+        "architecture/tools/verify-package.mjs: verifyPackage manifest comparison"
+      ],
+      "rationale": "정확한 architecture/package-manifest.json 경로, 현재 패키지 검증 및 전후 manifest byte 동등성, gate의 packageManifestSha256가 모두 필요하다. 빈/다른 경로 manifest와 package 변경은 실패한다. 이번 실행에서도 비어 있는/다른 위치 manifest 및 gate 중 package mutation 음성대조의 PASS를 관측했다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C04",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: gate 실행과 최종 증거 검사",
+        "architecture/validation/acceptance.mjs:25",
+        "architecture/validation/acceptance.mjs:117",
+        "architecture/validation/acceptance-selftest.mjs:100"
+      ],
+      "rationale": "provider 수는 Number.isSafeInteger && >0, 선택 미래 G08 seed는 안전 정수 >=3로 제한한다. 문자열/boolean/소수/Infinity는 조건을 만족하지 못한다. CURRENT_REPRODUCTION의 replay G06/07/08에 미래 holdout 필수를 이식하지 않는다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C05",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: 실제 파일 변형과 adapter / v3 및 dashboard 전용 도구",
+        "architecture/validation/harness.mjs:13",
+        "architecture/validation/harness.mjs:24",
+        "architecture/validation/harness.mjs:110",
+        "architecture/validation/evaluate-v3.mjs:9",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "comparator의 빈 expected/document, 중복 item/coverage, 틀린 nonce/value/status/quote/location 및 만들어낸 highlight 거부를 코드와 음성대조 목록으로 대조했다. oracle-copy 양성대조와 v3 truth=selftest는 구현/provider 성공이 아니며 report는 implementationExecutionVerified/completeProductAcceptance false를 유지한다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "두 새 자료를 합성/source-derived 검증 벡터로 검토했다. source serialization 4개 exact문자열과 6개 경계 recipe를 원본 순수 profileSource로 재실행하여 길이·UTF8 hash·retained hash·구간 수가 모두 일치했다. UI8사례는 입력/expected와 NOT_RUN/BASELINE_OBSERVATION 경계를 확인했으며 실제 browser 성공으로 바꾸지 않는다."
+    },
+    {
+      "id": "CORE-21-C06",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/06-verification.md: 독립 감사 보충 / P13 fixture conflict",
+        "scripts/verify-golden.mjs:155",
+        "scripts/verify-golden.mjs:164"
+      ],
+      "rationale": "expectedCertificate는 P10 PNG를 첫쪽 4개로 제한하고 PDF는 8개 전체를 유지한다. P13 인쇄 0.025와 corrupt JSON 0.015의 충돌은 평가자에서만 보정하며 제품 ID 분기로 주입하지 않는다. 두 규칙은 원본 evaluator와 일치하고 26판독 경로 분모를 유지한다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C07",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/environment/README.md: 최소 구조 / asset 생성",
+        "architecture/tools/bootstrap.mjs:15",
+        "architecture/tools/test-bootstrap.mjs: BOOT-01..04",
+        "architecture/validation/README.md: 지금 실행 가능한 검사"
+      ],
+      "rationale": "bootstrap 고정 mapping과 font 디렉터리만 읽고 모든 기존 target을 대조한 뒤 pending write를 시작한다. 다른 기존 bytes는 거부하고 같은 파일은 다시 쓰지 않으며 .env/dataset는 mapping에 없다. scaffold-only와 충돌 preflight 한계가 명시되어 있으며 이를 앱 재현 완료로 세지 않는다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C08",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/REPRODUCTION.md: 구현 순서와 완료 경계",
+        "architecture/validation/acceptance.mjs:107",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 질문별 판정과 산식",
+        "architecture/reviews/independent-audit/score.mjs:30",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "gate는 passed/exit0/selected>0/모두pass/skip0 및 해당 실행종류가 필요하다. 설계 점수의 미검토/UNVERIFIED는 분모에 남고 모든 역할 PASS와 열린 이슈0 없이는 인수되지 않는다. 새 audit fixture에서 stale design/report/source/score 거부와 source 생략 NOT_RUN 표시를 확인했다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "PROTOCOL은 이전 승인본을 원래 bytes로 보관하되 완전한 과거 규범 복원본은 아니라고 명시한다. old seal의 모든 보고서 hash를 archive bytes와 대조했고 새 의견은 현재 hash에 연결한다. 이전48+10+4 자체시험은 재실행 주장 없이 보존하며 새 앱/provider/browser는 여전히 NOT_RUN이다."
+    },
+    {
+      "id": "CORE-21-C09",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: 실제 파일 변형과 adapter / gate 실행",
+        "architecture/validation/harness.mjs:82",
+        "architecture/validation/run-gate.mjs:10",
+        "architecture/validation/selftest.mjs:104"
+      ],
+      "rationale": "harness와 runGate 모두 child 실행 전 1..21600000ms 안전 정수만 허용한다. 범위를 벗어난 큰 값·소수·문자열의 timer clamp 성공 경로를 막으며 selftest의 음성 입력 목록이 이 조건과 일치한다. CLI timeout은 숫자로 변환된 뒤 같은 검사를 거친다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C10",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 역할과 독립성",
+        "architecture/reviews/current-reproduction/audit.mjs:65",
+        "architecture/reviews/independent-audit/score.mjs:10",
+        "architecture/reviews/independent-audit/score.mjs:22",
+        "architecture/reviews/independent-audit/score.mjs:26",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "wrapper는 역할/모듈별 지정 reviewer를 요구하고 scorer는 역할 겸임·빈 근거·빈 rationale·중복/unknown 질문·stale hash를 거부한다. 이번 score.test의 6개 대조 PASS를 직접 관측했고 새 CLI fixture에서 /root 자기승인과 원래 질문 삭제가 실패함을 확인했다. reviewerId 자체가 사람의 신원을 암호학적으로 인증한다는 주장은 하지 않는다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "추가 교정자 세 역할의 명칭·범위가 PROTOCOL에 기록됐고 지정 final accuracy/clarity 평가자와 분리된다. audit.mjs/score.mjs/score.test.mjs의 hash는 이전 승인본과 동일하며 현재 모듈 지정 reviewer 및 hash/중복/근거 검사를 유지한다. 내 역할은 계속 CORE20/21 정확성만 담당한다."
+    },
+    {
+      "id": "CORE-21-C11",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/validation/README.md: gate 실행과 최종 증거 검사",
+        "architecture/validation/acceptance.mjs:40",
+        "architecture/validation/acceptance.mjs:46",
+        "architecture/validation/acceptance-selftest.mjs:162",
+        "architecture/tools/verify-package.mjs: walk"
+      ],
+      "rationale": "evidence resolver가 상대 내부 경로만 받고 각 ancestor와 최종 항목을 lstat하여 symlink/junction/특수파일을 거부한다. architecture 자체와 manifest도 regular 경로 검사를 받는다. 경로 밖/ancestor junction 음성대조 코드가 이 계약과 일치한다. 이는 파일 참조 경계이지 서명된 실행 증명은 아니다.",
+      "reviewMethod": "retained_after_full_manifest_delta_check",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "retentionReason": "담당 질문·환경/검증기/도구 bytes와 관련 원본 source hash가 이전 승인본과 동일하며, 변경12개/추가2개를 전수 검토한 결과 이 질문의 판정 조건을 바꾸지 않음."
+    },
+    {
+      "id": "CORE-21-C12",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/DECISIONS.md: CURRENT_REPRODUCTION / D18",
+        "architecture/REPRODUCTION.md: 구현 순서와 완료 경계",
+        "architecture/validation/README.md: 실제 파일 변형과 adapter",
+        "architecture/validation/run-gate.mjs:10",
+        "architecture/validation/acceptance.mjs:85",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "제품 gate 제출 fixture/report는 CURRENT_REPRODUCTION 또는 명시적 OPTIONAL_FUTURE를 분리하고 누락/unknown/혼합을 거부한다. 기존 무profile generator/harness/v3 출력은 합성 진단 자체시험 전용이며 current gate 직접 증거로 제출할 수 없다고 범위를 명시했다. 최신 runGate에 constructor/toString/__proto__/hasOwnProperty 4개를 주입해 모두 dispatch 전 거부함을 확인했고 과거 전수/geometry/3seed 요구는 현재 필수에서 분리한다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "현재 profile 요구는 불변이다. 새 source 벡터는 CURRENT_REPRODUCTION, UI 벡터는 명시적 CURRENT_REPRODUCTION 목적/BASELINE_OBSERVATION/NOT_RUN으로 현재 관찰값과 합성 실행범위를 표시한다. 둘은 gate 실행보고서가 아니므로 새 provider/browser 성공으로 제출하지 않는다. 환경·validation·gate runner·scorer 코드는 모두 기존 bytes와 동일하다."
+    },
+    {
+      "id": "CORE-21-C13",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/REPRODUCTION.md: 무엇을 같게 만드는가 / 기준선과 정답 선택",
+        "architecture/specs/06-verification.md: 현재 재현의 대조 방법",
+        "server/document-sandbox-resources.mjs:8",
+        "server/criteria-sandbox.mjs:601",
+        "architecture/environment/README.md: .env와 비밀 경계",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "결정 경로는 같은 입력·주입 응답 exact 비교, ID/시간은 형식·관계·순서 비교, live 모델 응답과 지연은 비결정성으로 분리한다. 현재 cap/partial/무bbox/기존 dashboard 한계를 재현하고 개선된 결과를 동일성 PASS로 바꾸지 않는다. E2B 의존성 직접 버전과 미고정 OS/Python 전이 의존성 한계도 실제 설치 코드와 일치한다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "02의 Python Reader.text 초과조건은 원본 len(text)>remaining과 일치하며 정확히1500000자는 helper에서 partial을 만들지 않는다. profileSource의 JSON.stringify/순서/생략/LF 및 JS UTF16 code-unit cap은 원본 sandbox-documents.mjs:76–95/280–285와 대조했다. 새 벡터10개를 실제 순수 helper로 재계산했고 이를 전체 제품 실행으로 보지 않는다."
+    },
+    {
+      "id": "CORE-21-C14",
+      "moduleId": "CORE-21",
+      "status": "PASS",
+      "evidence": [
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 재현 가능한 계산",
+        "architecture/reviews/current-reproduction/audit.mjs:72",
+        "architecture/reviews/current-reproduction/audit.mjs:110",
+        "architecture/reviews/current-reproduction/audit.mjs:124",
+        "architecture/REPRODUCTION.md: 구현 순서와 완료 경계",
+        "architecture/reviews/current-reproduction/PROTOCOL.md: 이전 승인본 보존 및 후속 delta 평가"
+      ],
+      "rationale": "243질문 중 기존235 보존 및 변경원장 일치, 입력 snapshot digest, 실제 보고서 byte hash, 점수 재계산을 각각 강제한다. 독립 합성 CLI 10개 검사에서 정상 control과 stale/삭제/자기승인 거부를 확인했다. 이 점수는 설계 선언 범위만 평가하며 실제 빈 프로젝트 구현·provider·브라우저·전수 dataset gate는 NOT_RUN이다.",
+      "reviewMethod": "reassessed_current_delta",
+      "previousOpinionSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+      "deltaRationale": "현재 전체 모집단은243이며 이전240개 객체를 모두 그대로 보존하고3개를 추가했다. old317→new319 규범 manifest 전수 대조 결과 변경12/추가2/삭제0, source210개 변화0이다. 현재319개 파일 bytes 및 archived seal의 보고서 hashes를 검증했다. 재평가7개와 입력불변으로 유지11개를 명시하고 이번 전체 의견18개를 새 snapshot에 연결한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "RV-01",
+      "severity": "medium",
+      "description": "환경 캡처 Node24.13.1을 현재 감사 런타임처럼 읽을 수 있었음",
+      "relatedQuestionIds": [
+        "CORE-20-C01"
+      ],
+      "requiredFix": "캡처 기준과 이번 Node24.21.0 실행을 구분",
+      "resolution": "environment README 첫 문단에서 명시적으로 구분했고 최종 고정본 재검토 완료",
+      "status": "resolved"
+    },
+    {
+      "id": "RV-02",
+      "severity": "medium",
+      "description": "키 누락 CONFIG_MISSING과 config-only exit0의 발생 시점이 모호했음",
+      "relatedQuestionIds": [
+        "CORE-20-C04"
+      ],
+      "requiredFix": "실제 provider 사용 시 key 검사와 config-only configured=false를 구분",
+      "resolution": "환경 표와 실행 문구 수정, envPath:null 원본 config probe로 확인",
+      "status": "resolved"
+    },
+    {
+      "id": "RV-03",
+      "severity": "medium",
+      "description": "freeze가 원래235 질문 삭제와 변경원장 불일치를 직접 검증하지 않았음",
+      "relatedQuestionIds": [
+        "CORE-21-C10",
+        "CORE-21-C14"
+      ],
+      "requiredFix": "원래 ID/module 보존과 변경원장 일치 검사를 추가",
+      "resolution": "audit.mjs 원본질문/변경원장 검사 추가. 독립 CLI fixture에서 삭제 거부와 수정 중 원장불일치 거부 확인",
+      "status": "resolved"
+    },
+    {
+      "id": "RV-04",
+      "severity": "medium",
+      "description": "모든 fixture의 profile/origin 요구가 기존 무profile 합성 진단 출력과 충돌했음",
+      "relatedQuestionIds": [
+        "CORE-21-C12"
+      ],
+      "requiredFix": "제품 gate 제출 비교fixture와 합성 자체시험 output의 경계를 명시",
+      "resolution": "REPRODUCTION은 제품 gate 제출 증거에 요구를 한정하고 기존 합성 output의 직접 제출 불가를 명시",
+      "status": "resolved"
+    },
+    {
+      "id": "RV-05",
+      "severity": "low",
+      "description": "새 평가 재계산 진입점과 imported scorer가 필수 배포파일 목록에서 빠져 있었음",
+      "relatedQuestionIds": [
+        "CORE-21-C14"
+      ],
+      "requiredFix": "현재 audit/PROTOCOL/independent score를 REQUIRED_FILES에 포함",
+      "resolution": "verify-package.mjs:65–66에서 세 파일을 필수로 추가한 최종 고정본 확인",
+      "status": "resolved"
+    }
+  ],
+  "deltaReview": {
+    "method": "Full previous/current design-manifest comparison, current file byte checks, unchanged source verification, affected opinion reassessment; prior tests are retained with unchanged-tool evidence and are not claimed as reruns.",
+    "previousSnapshotSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+    "currentSnapshotSha256": "f3f78e1ffa4e28cc684e6ce2752c4492392a9fc806e357f53a14a4c9551c72fa",
+    "previousReportSha256": "d839c88eae55d62d8df43ccf4ae8dc5f3a19e93bdbd3dd3dfe5a81dc0afb98f1",
+    "previousReportPath": "reviews/current-reproduction/round-01-accepted/final-accuracy-verification.json",
+    "previousDesignFiles": 317,
+    "currentDesignFiles": 319,
+    "changed": [
+      {
+        "path": "decomposition/core-modules.json",
+        "before": "fecabfc93d3a113fe221a1856e95b16c1544d8a01aa401485a4d8042c685d16b",
+        "after": "4e78c367e57ae04fda34151303a2084aa5bbbf596755d57715e4be9c014986a5"
+      },
+      {
+        "path": "decomposition/core-tree.md",
+        "before": "ec7cdd008a0d144d90c0f943dcf3e346fa2016071d5f853d04324e695f1080a4",
+        "after": "2fe9a755b80172c9259b128ae256cbd35420fed1cf33ebb8caa9f9ead73e9109"
+      },
+      {
+        "path": "decomposition/README.md",
+        "before": "bec6f5cbfda61e727a0a8f8fa6e45f6715012703478a20fb2b4ea17a0f01919f",
+        "after": "c609bf89f4519ab433f2e290c2ce9646780c9a1215c41b41aee36e54131cf2d0"
+      },
+      {
+        "path": "decomposition/source-trace.json",
+        "before": "aa99df5ce502ebc1b73b30d927804156c6ac4a32dfb6d04785389ccf3848bf8d",
+        "after": "5958d56ba7e6508e9c2b71db8f1839c2a4a88b9422dca5ba1d26a3d621424e91"
+      },
+      {
+        "path": "decomposition/ui-modules.json",
+        "before": "a443cbf030d5429b0f1ca6e839df9c1cae0ee296a3e8ac84c807c5263f172e75",
+        "after": "c1fd8b2aac53f2c09392009dfc8094eaddbee8e894568d864efd2977a0367f96"
+      },
+      {
+        "path": "decomposition/ui-tree.md",
+        "before": "5d9203780deb008a07c2c9408bc6387983228b71198e26cbbf277143697af31f",
+        "after": "aee8aede8611a3110c8b6aa41da7078815c26e51f45d1e5b8f7aff90b7b49176"
+      },
+      {
+        "path": "reviews/current-reproduction/population-changes.json",
+        "before": "4ad62427995c4041d5374d020165ff7ee6ab52cbc14bbdd11b66533e5b7c2586",
+        "after": "c02826ad4959039db45a5b41eb2c60d9423a24159e5514bc5a747ad613fa2e6e"
+      },
+      {
+        "path": "reviews/current-reproduction/PROTOCOL.md",
+        "before": "0075451011b1ce4253b75ffcf989898a4c4dbbd1e770265b2d1b0e3ac5912d5d",
+        "after": "8c70ff8c2bcf8481b7e743a487459cbe240126ba1b7286239372f7298c053041"
+      },
+      {
+        "path": "specs/01-state-api.md",
+        "before": "5f9d192a2819f236cfdfd342f7ed90de41fbdcac5ed673ac4c58e9dfe231438f",
+        "after": "e8ec5fb27dbee03c1a110a4b618805b4368162d4a30b792299719927fff33e2e"
+      },
+      {
+        "path": "specs/02-backend-pipeline.md",
+        "before": "dedba15404bb4126325f81bbb153d7fdb76495c30772c7bbcd74d6c2fe64f0cf",
+        "after": "43737c0b671f8626a92c7d3b096aed3101d181d5f213de70c0c483a1a5f65b2b"
+      },
+      {
+        "path": "traceability.csv",
+        "before": "36b6759481312d6d90c0ebbfedc7a532c1248d3eac13aa6498038e3d6ca45e46",
+        "after": "68047b1cefcc0b8d4326e073ef0eacc9b557761266ffb36e96215cb06429c42d"
+      },
+      {
+        "path": "ui/detail-controls.md",
+        "before": "ab04f39eb7bb329525e58b29d83d118666ce379cb29f91f6356347700e4de5b0",
+        "after": "7bcedab9dfc8d342ec21e03a9c0268ec40801b6dda68edfb4e3af46f8288d0b1"
+      }
+    ],
+    "added": [
+      {
+        "path": "contracts/source-serialization-cases.json",
+        "bytes": 16999,
+        "sha256": "671e66ab04aeb4ea504d7d4e31bda59fdda4aa827d2f5de501296ff3727d5399"
+      },
+      {
+        "path": "ui/document-analysis-structure-cases.json",
+        "bytes": 8879,
+        "sha256": "7936de19c1f4889fc4b26f8c4b02740f0198fff1ad513fa01cc93e4d2108e7c5"
+      }
+    ],
+    "removed": [],
+    "sourceFilesVerified": 210,
+    "sourceChanges": 0,
+    "unchangedEnvironmentAndToolPaths": [
+      "environment/assets/gspec.svg",
+      "environment/integrations/package-lock.json",
+      "environment/integrations/package.json",
+      "environment/README.md",
+      "environment/root/package-lock.json",
+      "environment/root/package.json",
+      "environment/templates/index.html",
+      "environment/templates/scripts/build-dashboard-chart-runtime.mjs",
+      "environment/templates/scripts/copy-pdfjs-assets.mjs",
+      "environment/templates/scripts/dev.mjs",
+      "environment/templates/tsconfig.json",
+      "environment/templates/vite.config.ts",
+      "environment/versions.json",
+      "reviews/current-reproduction/audit.mjs",
+      "reviews/independent-audit/score.mjs",
+      "reviews/independent-audit/score.test.mjs",
+      "tools/bootstrap.mjs",
+      "tools/build-traceability.mjs",
+      "tools/capture-environment.mjs",
+      "tools/export-visual-contract.mjs",
+      "tools/mirror-fonts.mjs",
+      "tools/snapshot-source.mjs",
+      "tools/test-bootstrap.mjs",
+      "tools/verify-package.mjs",
+      "validation/acceptance-selftest.mjs",
+      "validation/acceptance.mjs",
+      "validation/adapter-result.schema.json",
+      "validation/adapter-worker.mjs",
+      "validation/dashboard-dom-validator.cjs",
+      "validation/dataset-inventory.json",
+      "validation/evaluate-v3.mjs",
+      "validation/evidence.schema.json",
+      "validation/fixture-generator.mjs",
+      "validation/harness.mjs",
+      "validation/inventory-datasets.mjs",
+      "validation/package-validator-selftest.mjs",
+      "validation/README.md",
+      "validation/run-gate.mjs",
+      "validation/selftest.mjs",
+      "validation/test-package-fixture.mjs"
+    ],
+    "previousQuestions": 240,
+    "currentQuestions": 243,
+    "preservedPriorQuestionObjects": 240,
+    "addedQuestionIds": [
+      "CORE-04-C06",
+      "CORE-05-C06",
+      "UI-06-C07"
+    ],
+    "removedQuestionIds": [],
+    "reassessedQuestionIds": [
+      "CORE-21-C01",
+      "CORE-21-C05",
+      "CORE-21-C08",
+      "CORE-21-C10",
+      "CORE-21-C12",
+      "CORE-21-C13",
+      "CORE-21-C14"
+    ],
+    "retainedQuestionIds": [
+      "CORE-20-C01",
+      "CORE-20-C02",
+      "CORE-20-C03",
+      "CORE-20-C04",
+      "CORE-21-C02",
+      "CORE-21-C03",
+      "CORE-21-C04",
+      "CORE-21-C06",
+      "CORE-21-C07",
+      "CORE-21-C09",
+      "CORE-21-C11"
+    ],
+    "archivedReportHashesVerified": 6,
+    "serializationSourceHelperChecks": [
+      {
+        "id": "SRC-TEXT-LINES-ORDER",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-SHEET-CELL-FORMULA",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-EXTRA-RECORDS-ORDER",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-CSV-SHEET-ROW",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-149999",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-150000",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-150001",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-1199999",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-1200000",
+        "status": "PASS"
+      },
+      {
+        "id": "SRC-BOUNDARY-1200001",
+        "status": "PASS"
+      }
+    ],
+    "uiFixtureCases": 8,
+    "uiFixtureExecution": "NOT_RUN",
+    "readerPythonBoundary": "source reviewed; not re-executed",
+    "providerCalls": 0,
+    "realEnvironmentFileRead": false,
+    "completeProductAcceptance": false
+  }
+}

@@ -1,0 +1,249 @@
+{"time":"2026-09-21T11:13:41.842Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}
+{"time":"2026-09-21T11:13:42.581Z","kind":"source-preflight","verified":true,"digest":"66a677498117f7cd0fc943298dc753000be14428bf9df89079e79ad0037e9128","implementationDigest":"35515de52f076621af3a02a093580e80d4a0f9bb0faa7ef9e3ed8a1b1153b12e","fileCount":661,"serverProcessId":17788}
+{"time":"2026-09-21T11:13:42.591Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:13:42.595Z","kind":"pre-reset-state","phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:13:42.643Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200,"phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:13:44.158Z","kind":"browser-launched","playwrightVersion":"1.62.1","bundledExecutable":"C:\\Users\\user\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe","bundledExists":false,"executable":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe","selection":"explicit-installed-chrome-fallback","userProfile":"none; Playwright isolated temporary profile","headless":true,"node":"v24.13.1","browserVersion":"153.0.8010.48","browserName":"chromium","referenceBrowser":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","environmentMatchNotAssumed":true}
+{"time":"2026-09-21T11:13:47.430Z","kind":"local-font-intercept","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;450;500;550;600;650;700&display=swap"}
+{"time":"2026-09-21T11:13:48.057Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:13:48.080Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:13:50.024Z","kind":"browser-context","name":"states-01-28","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","platform":"Win32","language":"ko-KR","languages":["ko-KR"],"timeZone":"Asia/Seoul","devicePixelRatio":1,"viewport":{"width":1440,"height":960},"visualViewport":{"width":1440,"height":960,"scale":1},"prefersColorScheme":"light","reducedMotion":false}
+{"time":"2026-09-21T11:13:51.040Z","kind":"state-start","id":"01-landing-desktop"}
+{"time":"2026-09-21T11:14:00.541Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:00.610Z","kind":"state-captured","id":"01-landing-desktop","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:00.837Z","kind":"state-start","id":"02-landing-mobile"}
+{"time":"2026-09-21T11:14:00.859Z","kind":"action","action":"set viewport","width":390,"height":844}
+{"time":"2026-09-21T11:14:06.174Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:06.260Z","kind":"state-captured","id":"02-landing-mobile","png":{"width":390,"height":844},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:06.286Z","kind":"state-start","id":"03-landing-mobile-motion-off"}
+{"time":"2026-09-21T11:14:06.287Z","kind":"action","action":"set OS reduced motion","reducedMotion":"reduce"}
+{"time":"2026-09-21T11:14:06.413Z","kind":"action","action":"click","role":"button","name":"모션 ON"}
+{"time":"2026-09-21T11:14:09.044Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:09.096Z","kind":"state-captured","id":"03-landing-mobile-motion-off","png":{"width":390,"height":844},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:09.112Z","kind":"state-start","id":"04-criteria-input-empty"}
+{"time":"2026-09-21T11:14:09.113Z","kind":"action","action":"set viewport","width":1440,"height":960}
+{"time":"2026-09-21T11:14:09.383Z","kind":"action","action":"set OS reduced motion","reducedMotion":"no-preference"}
+{"time":"2026-09-21T11:14:09.561Z","kind":"action","action":"click","role":"button","name":"모션 OFF"}
+{"time":"2026-09-21T11:14:09.830Z","kind":"action","action":"click","role":"button","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T11:14:12.403Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:12.475Z","kind":"state-captured","id":"04-criteria-input-empty","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:12.493Z","kind":"state-start","id":"05-criteria-natural-language"}
+{"time":"2026-09-21T11:14:12.493Z","kind":"action","action":"click","role":"button","name":"말로 기준 알려주기 원하는 조건을 직접 입력"}
+{"time":"2026-09-21T11:14:14.368Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:14.461Z","kind":"state-captured","id":"05-criteria-natural-language","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:14.479Z","kind":"state-start","id":"06-criteria-input-file"}
+{"time":"2026-09-21T11:14:14.480Z","kind":"action","action":"click","role":"button","name":"기준 파일 넣기 기준서·규정·표준 문서"}
+{"time":"2026-09-21T11:14:14.622Z","kind":"action","action":"upload","role":"criteria","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:14:14.869Z","kind":"locator-adaptation","reference":"file-open button named 합성_품질기준.xlsx XLSX","previousDriver":"button accessible name containing 합성_품질기준.xlsx","actual":"button.workflow-file-open containing 합성_품질기준.xlsx","difference":"The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."}
+{"time":"2026-09-21T11:14:14.958Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:14:16.623Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:16.665Z","kind":"state-captured","id":"06-criteria-input-file","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:16.682Z","kind":"state-start","id":"07-criteria-reading"}
+{"time":"2026-09-21T11:14:16.683Z","kind":"action","action":"click","role":"button","name":"기준 정리하기"}
+{"time":"2026-09-21T11:14:16.828Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs","status":202}
+{"time":"2026-09-21T11:14:16.861Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:14:16.891Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:16.941Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/events?after=0","status":200}
+{"time":"2026-09-21T11:14:17.001Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:17.003Z","kind":"action","action":"HTTP synthetic fixture control","name":"startReading"}
+{"time":"2026-09-21T11:14:17.014Z","kind":"controller","method":"POST","path":"/__visual/control/startReading","status":200,"phase":"read","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:14:18.767Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:14:18.828Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:14:18.944Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity/events","status":200}
+{"time":"2026-09-21T11:14:23.485Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:23.601Z","kind":"state-captured","id":"07-criteria-reading","png":{"width":1440,"height":960},"finiteAnimationsSettled":null}
+{"time":"2026-09-21T11:14:23.623Z","kind":"state-start","id":"08-criteria-context"}
+{"time":"2026-09-21T11:14:23.624Z","kind":"action","action":"HTTP synthetic fixture control","name":"context"}
+{"time":"2026-09-21T11:14:23.629Z","kind":"controller","method":"POST","path":"/__visual/control/context","status":200,"phase":"context","started":true,"subscribers":{"run":1,"activity":1}}
+{"time":"2026-09-21T11:14:28.972Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:29.207Z","kind":"state-captured","id":"08-criteria-context","png":{"width":1440,"height":960},"finiteAnimationsSettled":null}
+{"time":"2026-09-21T11:14:29.221Z","kind":"state-start","id":"09-criteria-confirmation"}
+{"time":"2026-09-21T11:14:29.222Z","kind":"action","action":"HTTP synthetic fixture control","name":"confirmReady"}
+{"time":"2026-09-21T11:14:29.228Z","kind":"controller","method":"POST","path":"/__visual/control/confirmReady","status":200,"phase":"confirmation","started":true,"subscribers":{"run":1,"activity":1}}
+{"time":"2026-09-21T11:14:29.849Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:14:29.865Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity/events","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:14:34.024Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:34.137Z","kind":"state-captured","id":"09-criteria-confirmation","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:34.152Z","kind":"state-start","id":"10-criteria-hitl-editor"}
+{"time":"2026-09-21T11:14:34.153Z","kind":"action","action":"click","role":"button","name":"흡수율 수정 열기"}
+{"time":"2026-09-21T11:14:37.645Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:37.783Z","kind":"state-captured","id":"10-criteria-hitl-editor","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:37.799Z","kind":"state-start","id":"11-target-input-empty"}
+{"time":"2026-09-21T11:14:37.800Z","kind":"action","action":"click","role":"button","name":"흡수율 수정 닫기"}
+{"time":"2026-09-21T11:14:38.492Z","kind":"action","action":"click","role":"button","name":"기준 확정 · 검토 파일 넣기"}
+{"time":"2026-09-21T11:14:38.659Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/criteria/confirm","status":200}
+{"time":"2026-09-21T11:14:41.090Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:41.208Z","kind":"state-captured","id":"11-target-input-empty","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:41.226Z","kind":"state-start","id":"12-target-input-file"}
+{"time":"2026-09-21T11:14:41.227Z","kind":"action","action":"upload","role":"target","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:14:41.549Z","kind":"locator-adaptation","reference":"file-open button named 합성_시험성적서_A.xlsx XLSX","previousDriver":"button accessible name containing 합성_시험성적서_A.xlsx","actual":"button.workflow-file-open containing 합성_시험성적서_A.xlsx","difference":"The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."}
+{"time":"2026-09-21T11:14:41.655Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:14:44.675Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:44.865Z","kind":"state-captured","id":"12-target-input-file","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:14:44.881Z","kind":"state-start","id":"13-review-active"}
+{"time":"2026-09-21T11:14:44.882Z","kind":"action","action":"click","role":"button","name":"이 기준으로 검토하기"}
+{"time":"2026-09-21T11:14:45.656Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/documents","status":202}
+{"time":"2026-09-21T11:14:45.780Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:14:45.781Z","kind":"action","action":"HTTP synthetic fixture control","name":"reviewActive"}
+{"time":"2026-09-21T11:14:45.792Z","kind":"controller","method":"POST","path":"/__visual/control/reviewActive","status":200,"phase":"review","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:14:47.040Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:14:47.456Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:14:47.497Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity/events","status":200}
+{"time":"2026-09-21T11:15:07.399Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity/events","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:08.192Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:15:09.103Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity/events","status":200}
+{"time":"2026-09-21T11:15:10.608Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:12.340Z","kind":"state-captured","id":"13-review-active","png":{"width":1440,"height":960},"finiteAnimationsSettled":null}
+{"time":"2026-09-21T11:15:13.521Z","kind":"state-start","id":"14-results"}
+{"time":"2026-09-21T11:15:13.555Z","kind":"action","action":"HTTP synthetic fixture control","name":"complete"}
+{"time":"2026-09-21T11:15:13.623Z","kind":"controller","method":"POST","path":"/__visual/control/complete","status":200,"phase":"complete","started":true,"subscribers":{"run":1,"activity":1}}
+{"time":"2026-09-21T11:15:14.440Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:15:14.445Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/runs/visual-run/events?after=0","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:16.619Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity/events","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:22.425Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:22.554Z","kind":"state-captured","id":"14-results","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:22.574Z","kind":"state-start","id":"15-result-detail-fail"}
+{"time":"2026-09-21T11:15:23.326Z","kind":"locator-adaptation","reference":"tabpanel named 선택한 항목 상세","actual":".frr-focus-view[aria-label=\"선택한 항목 상세\"]","difference":"Current detail may lack the reference tabpanel role; preserved in DOM."}
+{"time":"2026-09-21T11:15:27.512Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:27.668Z","kind":"state-captured","id":"15-result-detail-fail","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:27.683Z","kind":"state-start","id":"16-result-detail-review"}
+{"time":"2026-09-21T11:15:27.684Z","kind":"action","action":"click","role":"button","name":"항목 목록"}
+{"time":"2026-09-21T11:15:31.737Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:31.885Z","kind":"state-captured","id":"16-result-detail-review","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:31.903Z","kind":"state-start","id":"17-result-applied-criteria"}
+{"time":"2026-09-21T11:15:31.975Z","kind":"locator-adaptation","reference":"tab 적용 기준","actual":".frr-detail-tabs button 적용 기준","difference":"Current tab control may lack the reference tab role; preserved in DOM."}
+{"time":"2026-09-21T11:15:34.833Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:34.956Z","kind":"state-captured","id":"17-result-applied-criteria","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:34.973Z","kind":"state-start","id":"18-result-criterion-source"}
+{"time":"2026-09-21T11:15:37.981Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:38.064Z","kind":"state-captured","id":"18-result-criterion-source","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:38.178Z","kind":"state-start","id":"19-dashboard-controls"}
+{"time":"2026-09-21T11:15:38.179Z","kind":"action","action":"click","role":"button","name":"나만의 대시보드"}
+{"time":"2026-09-21T11:15:43.513Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:43.692Z","kind":"state-captured","id":"19-dashboard-controls","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:43.707Z","kind":"state-start","id":"20-dashboard-generating"}
+{"time":"2026-09-21T11:15:43.708Z","kind":"action","action":"click","role":"button","name":"대시보드 만들기"}
+{"time":"2026-09-21T11:15:44.054Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:44.316Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards","status":200}
+{"time":"2026-09-21T11:15:44.364Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:15:44.389Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:44.397Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity/events","status":200}
+{"time":"2026-09-21T11:15:48.809Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:49.183Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:49.258Z","kind":"state-captured","id":"20-dashboard-generating","png":{"width":1440,"height":960},"finiteAnimationsSettled":null}
+{"time":"2026-09-21T11:15:49.286Z","kind":"state-start","id":"21-dashboard-light"}
+{"time":"2026-09-21T11:15:49.287Z","kind":"action","action":"HTTP synthetic fixture control","name":"dashboardReady"}
+{"time":"2026-09-21T11:15:49.300Z","kind":"controller","method":"POST","path":"/__visual/control/dashboardReady","status":200,"phase":"complete","started":true,"subscribers":{"run":0,"activity":1}}
+{"time":"2026-09-21T11:15:49.302Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:50.471Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:50.673Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity/events","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:50.991Z","kind":"pageerror","context":"states-01-28","name":"SecurityError","message":"Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.","stack":"SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"}
+{"time":"2026-09-21T11:15:54.455Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:54.511Z","kind":"state-captured","id":"21-dashboard-light","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:54.526Z","kind":"state-start","id":"22-dashboard-customize"}
+{"time":"2026-09-21T11:15:54.527Z","kind":"action","action":"click","role":"button","name":"구성 수정"}
+{"time":"2026-09-21T11:15:54.646Z","kind":"action","action":"click","role":"button","name":"다크 · 차트 중심"}
+{"time":"2026-09-21T11:15:57.682Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:15:57.733Z","kind":"state-captured","id":"22-dashboard-customize","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:15:57.747Z","kind":"state-start","id":"23-dashboard-dark"}
+{"time":"2026-09-21T11:15:58.048Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:15:58.050Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards","status":200}
+{"time":"2026-09-21T11:15:58.143Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:15:58.144Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:58.270Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity/events","status":200}
+{"time":"2026-09-21T11:15:58.507Z","kind":"action","action":"HTTP synthetic fixture control","name":"dashboardReady"}
+{"time":"2026-09-21T11:15:58.516Z","kind":"controller","method":"POST","path":"/__visual/control/dashboardReady","status":200,"phase":"complete","started":true,"subscribers":{"run":0,"activity":1}}
+{"time":"2026-09-21T11:15:59.406Z","kind":"api-response","url":"http://127.0.0.1:5210/api/dashboards/visual-dashboard","status":200}
+{"time":"2026-09-21T11:15:59.539Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity/events","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:16:00.183Z","kind":"pageerror","context":"states-01-28","name":"SecurityError","message":"Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.","stack":"SecurityError: Failed to read the 'serviceWorker' property from 'Navigator': Service worker is disabled because the context is sandboxed and lacks the 'allow-same-origin' flag.\n    at <anonymous>:3:15\n    at <anonymous>:5:7"}
+{"time":"2026-09-21T11:16:03.892Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:03.944Z","kind":"state-captured","id":"23-dashboard-dark","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:03.961Z","kind":"state-start","id":"24-dashboard-activity"}
+{"time":"2026-09-21T11:16:06.951Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:07.013Z","kind":"state-captured","id":"24-dashboard-activity","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:07.029Z","kind":"state-start","id":"25-dashboard-source"}
+{"time":"2026-09-21T11:16:07.030Z","kind":"action","action":"click","role":"button","name":"원본과 판정"}
+{"time":"2026-09-21T11:16:19.598Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:19.700Z","kind":"state-captured","id":"25-dashboard-source","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:19.719Z","kind":"state-start","id":"26-ledger-empty"}
+{"time":"2026-09-21T11:16:19.720Z","kind":"action","action":"click","role":"button","name":"대시보드 닫기"}
+{"time":"2026-09-21T11:16:19.915Z","kind":"action","action":"click","role":"button","name":"내보내기"}
+{"time":"2026-09-21T11:16:20.100Z","kind":"action","action":"click","role":"button","name":"검토대장에 기록"}
+{"time":"2026-09-21T11:16:24.934Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:25.065Z","kind":"state-captured","id":"26-ledger-empty","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:25.083Z","kind":"state-start","id":"27-ledger-mapping"}
+{"time":"2026-09-21T11:16:25.937Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:16:26.619Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/activity","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:16:26.958Z","kind":"api-response","url":"http://127.0.0.1:5210/api/ledgers/analyze","status":200}
+{"time":"2026-09-21T11:16:26.963Z","kind":"api-response","url":"http://127.0.0.1:5210/api/activity","status":200}
+{"time":"2026-09-21T11:16:30.074Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:30.188Z","kind":"state-captured","id":"27-ledger-mapping","png":{"width":1440,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:30.205Z","kind":"state-start","id":"28-results-mobile-motion-off"}
+{"time":"2026-09-21T11:16:30.206Z","kind":"action","action":"click","role":"button","name":"검토대장 창 닫기"}
+{"time":"2026-09-21T11:16:30.516Z","kind":"action","action":"click","role":"button","name":"검토 대상으로"}
+{"time":"2026-09-21T11:16:42.558Z","kind":"state-error","id":"28-results-mobile-motion-off","name":"TimeoutError","message":"locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '검토 대상으로', exact: true })\u001b[22m\n","stack":"locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '검토 대상으로', exact: true })\u001b[22m\n\n    at click (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:95:181)\n    at C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:265:38\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:206:9)\n    at async flow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:264:5)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:304:39)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:343:22"}
+{"time":"2026-09-21T11:16:49.202Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:49.208Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:49.210Z","kind":"pre-reset-state","phase":"complete","started":true,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:16:49.220Z","kind":"controller","method":"POST","path":"/__visual/control/reset","status":200,"phase":"idle","started":false,"subscribers":{"run":0,"activity":0}}
+{"time":"2026-09-21T11:16:50.365Z","kind":"local-font-intercept","url":"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;450;500;550;600;650;700&display=swap"}
+{"time":"2026-09-21T11:16:50.855Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:16:50.863Z","kind":"api-response","url":"http://127.0.0.1:5210/api/health","status":200}
+{"time":"2026-09-21T11:16:52.259Z","kind":"browser-context","name":"states-29-34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36","platform":"Win32","language":"ko-KR","languages":["ko-KR"],"timeZone":"Asia/Seoul","devicePixelRatio":1,"viewport":{"width":1440,"height":960},"visualViewport":{"width":1440,"height":960,"scale":1},"prefersColorScheme":"light","reducedMotion":false}
+{"time":"2026-09-21T11:16:52.290Z","kind":"state-start","id":"29-landing-1600"}
+{"time":"2026-09-21T11:16:52.295Z","kind":"action","action":"set viewport","width":1600,"height":960}
+{"time":"2026-09-21T11:16:59.313Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:16:59.656Z","kind":"state-captured","id":"29-landing-1600","png":{"width":1600,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:16:59.786Z","kind":"state-start","id":"30-landing-1280"}
+{"time":"2026-09-21T11:16:59.805Z","kind":"action","action":"set viewport","width":1280,"height":800}
+{"time":"2026-09-21T11:17:04.504Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:04.906Z","kind":"state-captured","id":"30-landing-1280","png":{"width":1280,"height":800},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:17:05.045Z","kind":"state-start","id":"31-criteria-confirmation-1600"}
+{"time":"2026-09-21T11:17:05.047Z","kind":"action","action":"click","role":"button","name":"검토 기준부터 시작하기"}
+{"time":"2026-09-21T11:17:05.757Z","kind":"action","action":"upload","role":"criteria","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:17:06.165Z","kind":"locator-adaptation","reference":"file-open button named 합성_품질기준.xlsx XLSX","previousDriver":"button accessible name containing 합성_품질기준.xlsx","actual":"button.workflow-file-open containing 합성_품질기준.xlsx","difference":"The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."}
+{"time":"2026-09-21T11:17:06.264Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:17:06.373Z","kind":"action","action":"click","role":"button","name":"기준 정리하기"}
+{"time":"2026-09-21T11:17:07.073Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs","status":202}
+{"time":"2026-09-21T11:17:07.319Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:07.402Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:17:07.423Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:07.424Z","kind":"action","action":"HTTP synthetic fixture control","name":"startReading"}
+{"time":"2026-09-21T11:17:07.430Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/events?after=0","status":200}
+{"time":"2026-09-21T11:17:07.434Z","kind":"controller","method":"POST","path":"/__visual/control/startReading","status":200,"phase":"read","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:17:07.434Z","kind":"action","action":"HTTP synthetic fixture control","name":"confirmReady"}
+{"time":"2026-09-21T11:17:07.440Z","kind":"controller","method":"POST","path":"/__visual/control/confirmReady","status":200,"phase":"confirmation","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:17:07.466Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:17:08.214Z","kind":"action","action":"set viewport","width":1600,"height":960}
+{"time":"2026-09-21T11:17:11.650Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:11.754Z","kind":"state-captured","id":"31-criteria-confirmation-1600","png":{"width":1600,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:17:11.770Z","kind":"state-start","id":"32-criteria-confirmation-1280"}
+{"time":"2026-09-21T11:17:11.771Z","kind":"action","action":"set viewport","width":1280,"height":800}
+{"time":"2026-09-21T11:17:15.671Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:15.878Z","kind":"state-captured","id":"32-criteria-confirmation-1280","png":{"width":1280,"height":800},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:17:15.895Z","kind":"state-start","id":"33-result-detail-fail-1600"}
+{"time":"2026-09-21T11:17:15.896Z","kind":"action","action":"click","role":"button","name":"기준 확정 · 검토 파일 넣기"}
+{"time":"2026-09-21T11:17:16.435Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/criteria/confirm","status":200}
+{"time":"2026-09-21T11:17:17.236Z","kind":"action","action":"upload","role":"target","path":"architecture/ui/reference/synthetic-fixture.json"}
+{"time":"2026-09-21T11:17:17.312Z","kind":"locator-adaptation","reference":"file-open button named 합성_시험성적서_A.xlsx XLSX","previousDriver":"button accessible name containing 합성_시험성적서_A.xlsx","actual":"button.workflow-file-open containing 합성_시험성적서_A.xlsx","difference":"The filename-only driver locator also matched the delete button. The observed file-open control identifies the intended action; strict uniqueness is retained. This correction is not a UI defect."}
+{"time":"2026-09-21T11:17:17.472Z","kind":"api-response","url":"http://127.0.0.1:5210/api/documents","status":201}
+{"time":"2026-09-21T11:17:17.720Z","kind":"action","action":"click","role":"button","name":"이 기준으로 검토하기"}
+{"time":"2026-09-21T11:17:17.802Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:17.804Z","kind":"action","action":"HTTP synthetic fixture control","name":"reviewActive"}
+{"time":"2026-09-21T11:17:17.814Z","kind":"controller","method":"POST","path":"/__visual/control/reviewActive","status":200,"phase":"review","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:17:17.815Z","kind":"action","action":"HTTP synthetic fixture control","name":"complete"}
+{"time":"2026-09-21T11:17:17.822Z","kind":"controller","method":"POST","path":"/__visual/control/complete","status":200,"phase":"complete","started":true,"subscribers":{"run":1,"activity":0}}
+{"time":"2026-09-21T11:17:17.911Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run/documents","status":202}
+{"time":"2026-09-21T11:17:18.128Z","kind":"api-response","url":"http://127.0.0.1:5210/api/runs/visual-run","status":200}
+{"time":"2026-09-21T11:17:18.144Z","kind":"requestfailed","url":"http://127.0.0.1:5210/api/runs/visual-run/events?after=0","failure":{"errorText":"net::ERR_ABORTED"}}
+{"time":"2026-09-21T11:17:19.065Z","kind":"locator-adaptation","reference":"tabpanel named 선택한 항목 상세","actual":".frr-focus-view[aria-label=\"선택한 항목 상세\"]","difference":"Current detail may lack the reference tabpanel role; preserved in DOM."}
+{"time":"2026-09-21T11:17:19.090Z","kind":"action","action":"set viewport","width":1600,"height":960}
+{"time":"2026-09-21T11:17:22.095Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:22.182Z","kind":"state-captured","id":"33-result-detail-fail-1600","png":{"width":1600,"height":960},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:17:22.198Z","kind":"state-start","id":"34-result-detail-fail-1280"}
+{"time":"2026-09-21T11:17:22.199Z","kind":"action","action":"set viewport","width":1280,"height":800}
+{"time":"2026-09-21T11:17:25.851Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}
+{"time":"2026-09-21T11:17:25.990Z","kind":"state-captured","id":"34-result-detail-fail-1280","png":{"width":1280,"height":800},"finiteAnimationsSettled":true}
+{"time":"2026-09-21T11:17:34.601Z","kind":"controller","method":"GET","path":"/__visual/provenance","status":200}
+{"time":"2026-09-21T11:17:35.735Z","kind":"source-postflight","verified":true,"digest":"66a677498117f7cd0fc943298dc753000be14428bf9df89079e79ad0037e9128","fileCount":661}
+{"time":"2026-09-21T11:17:36.019Z","kind":"controller","method":"GET","path":"/__visual/state","status":200}

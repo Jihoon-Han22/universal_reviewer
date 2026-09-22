@@ -113,6 +113,18 @@ test('waiting SSE observes confirmation without leases or writes and can disconn
   assert.equal((await h.storage.getState('run',id)).state.run.status,'awaiting_confirmation');
 });
 
+test('confirmation events permit an immediate confirmation request after durable save and lease release',{timeout:10000},async()=>{
+  const h=harness(),id=await h.start(),response=await h.request(`/api/runs/${id}/events`),reader=response.body.getReader(),decoder=new TextDecoder();
+  let text='';
+  while(!text.includes('criteria.confirmation_required')){const {done,value}=await reader.read();assert.equal(done,false);text+=decoder.decode(value,{stream:true});}
+  const waiting=await h.storage.getState('run',id);
+  assert.equal(waiting.state.run.status,'awaiting_confirmation');assert.equal(waiting.state.run.pendingJob,undefined);assert.equal(waiting.lease,null);
+  const confirmed=await h.request(`/api/runs/${id}/criteria/confirm`,{method:'POST',body:{expectedCriterionVersion:1}});
+  assert.equal(confirmed.status,200,await confirmed.clone().text());
+  await reader.cancel();await Promise.all(h.pending);
+  const stored=await h.storage.getState('run',id);assert.ok(stored.state.run.approvedCriteria);assert.equal(stored.lease,null);assert.equal(h.calls.discover,1);
+});
+
 test('concurrent SSE connections share one execution lease',async()=>{
   let entered,release;const started=new Promise(resolve=>{entered=resolve;}),gate=new Promise(resolve=>{release=resolve;});
   const h=harness({discover:async()=>{entered();await gate;return {criteria:[clone(criterion)]};}}),id=await h.start();
@@ -127,6 +139,29 @@ test('expired executing checkpoints fail visibly without replaying provider call
   record.state.run.pendingJob.state='executing';record.lease={owner:'expired-owner',fence:1,expiresAt:Date.now()-1};record.fence=1;
   const text=await h.events(id),stored=await h.storage.getState('run',id);
   assert.equal(h.calls.discover,0);assert.equal(stored.state.run.status,'failed');assert.match(stored.state.run.error,/연결이 중단/);assert.equal(stored.state.run.pendingJob,undefined);assert.match(text,/run\.failed/);
+});
+
+test('terminal run events wait for durable state and survive immediate reader cancellation',{timeout:10000},async()=>{
+  const h=harness(),id=await h.start();h.storage.states.get(`run:${id}`).state.run.pendingJob.state='executing';
+  let entered,release,allowCancel;
+  const saving=new Promise(resolve=>{entered=resolve;}),gate=new Promise(resolve=>{release=resolve;}),canCancel=new Promise(resolve=>{allowCancel=resolve;});
+  const putState=h.storage.putState.bind(h.storage);
+  h.storage.putState=async(kind,key,state,options)=>{
+    if(kind==='run'&&key===id&&state.run.status==='failed'&&state.run.pendingJob===undefined){entered();await gate;}
+    return putState(kind,key,state,options);
+  };
+  const response=await h.request(`/api/runs/${id}/events`),reader=response.body.getReader(),decoder=new TextDecoder();
+  let text='';
+  const consumed=(async()=>{
+    while(true){const {done,value}=await reader.read();if(done)return;text+=decoder.decode(value,{stream:true});if(text.includes('run.failed')){await canCancel;await reader.cancel();return;}}
+  })();
+  await saving;await new Promise(resolve=>setImmediate(resolve));
+  const beforeSave=text,unsaved=await h.storage.getState('run',id);
+  allowCancel();release();await consumed;await Promise.all(h.pending);
+  const stored=await h.storage.getState('run',id);
+  assert.doesNotMatch(beforeSave,/run\.failed/);assert.equal(unsaved.state.run.status,'running');
+  assert.match(text,/run\.failed/);assert.equal(stored.state.run.status,'failed');assert.equal(stored.state.run.pendingJob,undefined);assert.equal(stored.lease,null);
+  assert.equal(h.calls.discover,0);assert.equal(h.calls.analyze,0);
 });
 
 test('failed durable confirmation returns an error and preserves the stored unapproved state',async()=>{

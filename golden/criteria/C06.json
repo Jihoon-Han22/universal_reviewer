@@ -1,0 +1,60 @@
+{
+  "id": "C06",
+  "desc": "구역 캡션 [화학성분]/[물리성능] + 사이 빈행, 헤더는 5행 하나",
+  "expect": "adapter",
+  "sheet": "품질기준",
+  "table": {
+    "header_row": 5,
+    "data_from": 6
+  },
+  "columns": {
+    "item": "A",
+    "op_value": "B",
+    "unit": "C",
+    "note": "D"
+  },
+  "criteria": [
+    {
+      "item": "산화마그네슘",
+      "op": ">=",
+      "value": 2.0,
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "op": "<=",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "item": "비표면적",
+      "op": ">=",
+      "value": 4000,
+      "unit": "cm2/g"
+    },
+    {
+      "item": "활성도지수",
+      "op": ">=",
+      "value": 80,
+      "unit": "%"
+    },
+    {
+      "item": "밀도",
+      "op": ">=",
+      "value": 2.2,
+      "unit": "g/cm3"
+    },
+    {
+      "item": "압축강도",
+      "op": ">=",
+      "value": 24.0,
+      "unit": "MPa"
+    }
+  ]
+}

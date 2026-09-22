@@ -1,0 +1,144 @@
+{
+  "id": "C19",
+  "desc": "20개 기준행 뒤 빈 행, 그 아래 4980행의 무관한 로그 데이터",
+  "expect": "adapter",
+  "sheet": "품질기준",
+  "table": {
+    "header_row": 1,
+    "data_from": 2
+  },
+  "columns": {
+    "item": "A",
+    "op_value": "B",
+    "unit": "C",
+    "note": "D"
+  },
+  "criteria": [
+    {
+      "item": "산화마그네슘",
+      "op": ">=",
+      "value": 2.0,
+      "unit": "%"
+    },
+    {
+      "item": "염화물",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "알칼리량",
+      "op": ">",
+      "value": 1.0,
+      "unit": "%"
+    },
+    {
+      "item": "강열감량",
+      "op": "<",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "item": "수분함량",
+      "op": "between",
+      "value": [
+        2,
+        5
+      ],
+      "unit": "%"
+    },
+    {
+      "item": "삼산화황",
+      "op": "between",
+      "value": [
+        0.5,
+        1.5
+      ],
+      "unit": "%"
+    },
+    {
+      "item": "유리석회",
+      "op": "<=",
+      "value": 0.02,
+      "unit": "%"
+    },
+    {
+      "item": "밀도",
+      "op": ">=",
+      "value": 2.2,
+      "unit": "g/cm3"
+    },
+    {
+      "item": "팽창률",
+      "op": "<",
+      "value": 0.1,
+      "unit": "%"
+    },
+    {
+      "item": "활성도지수",
+      "op": ">",
+      "value": 80,
+      "unit": "%"
+    },
+    {
+      "item": "비표면적",
+      "op": ">=",
+      "value": 4000,
+      "unit": "cm2/g"
+    },
+    {
+      "item": "응결시간(초결)",
+      "op": "<=",
+      "value": 300,
+      "unit": "min"
+    },
+    {
+      "item": "공기량",
+      "op": ">=",
+      "value": 3.0,
+      "unit": "%"
+    },
+    {
+      "item": "압축강도",
+      "op": ">=",
+      "value": 24.0,
+      "unit": "MPa"
+    },
+    {
+      "item": "유해물질",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    },
+    {
+      "item": "6가크롬",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    },
+    {
+      "item": "외관",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    },
+    {
+      "item": "안정성",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    },
+    {
+      "item": "부가시험",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    },
+    {
+      "item": "규격적합성",
+      "op": "qualitative",
+      "value": null,
+      "unit": null
+    }
+  ]
+}

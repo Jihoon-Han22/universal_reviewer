@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="slide" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+<title id="title">GSPEC: 입력, 사람 승인, 검토 결과의 세 단계</title>
+<desc id="desc">1단계 입력 자료는 기준서와 시험성적서들입니다. 기준서를 먼저 읽어 2단계에서 검사항목, 허용값과 단위, 적용 조건을 정리하고 사람이 확인·수정·승인합니다. 승인된 기준과 승인 후 투입하는 시험성적서들을 3단계에서 비교합니다. 최종 출력은 적합, 부적합, 확인 필요 판정, 기준과 측정값, 판정 이유와 원문 위치를 담은 검토 결과표입니다. 전체 세 단계가 한 장에 표시됩니다.</desc>
+<defs>
+<pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#537093" opacity=".17"/></pattern>
+<linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#192c46"/><stop offset="1" stop-color="#112138"/></linearGradient>
+<marker id="arrow" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L16 9 L2 16Z" fill="#89a1c8"/></marker>
+<marker id="arrow-gold" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse"><path d="M2 2 L16 9 L2 16Z" fill="#f1c877"/></marker>
+<marker id="arrow-teal" markerWidth="15" markerHeight="15" refX="12" refY="7.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L13 7.5 L1 14Z" fill="#5acaba"/></marker>
+<style>
+text{font-family:"Malgun Gothic","맑은 고딕",sans-serif;fill:#e8eef8}.title{font-size:53px;font-weight:800;letter-spacing:-1.6px}.heading{font-size:38px;font-weight:800;letter-spacing:-1px}.name{font-size:33px;font-weight:800;letter-spacing:-.7px}.label{font-size:28px;font-weight:700;letter-spacing:-.5px}.body{font-size:26px;letter-spacing:-.4px}.small{font-size:23px;letter-spacing:-.3px}.tiny{font-size:21px}.center{text-anchor:middle}.right{text-anchor:end}.muted{fill:#9bb0ce}.blue{fill:#a9c2ff}.gold{fill:#f1c877}.teal{fill:#6bdac1}.red{fill:#f4a1a9}.ink{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.flow{fill:none;stroke:#89a1c8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.pass{fill:none;stroke:#f1c877;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-gold)}.target{fill:none;stroke:#5acaba;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-teal)}
+</style>
+<symbol id="file" viewBox="0 0 100 120"><path d="M13 7 H66 L89 30 V109 H13Z" fill="#182e4c" stroke="#91afe0" stroke-width="3" stroke-linejoin="round"/><path d="M66 7 V30 H89M29 49 H72M29 64 H72M29 79 H64" stroke="#91afe0" stroke-width="3.5" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="person" viewBox="0 0 60 60"><circle cx="30" cy="17" r="10" class="ink"/><path d="M10 53 Q10 35 30 35 Q50 35 50 53" class="ink"/></symbol>
+<symbol id="check" viewBox="0 0 30 30"><path d="M6 15 L12 21 L25 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs>
+<rect width="1920" height="1080" fill="#0c1729"/><rect width="1920" height="1080" fill="url(#dots)"/>
+<text x="65" y="91" class="title">GSPEC 검토 흐름</text>
+<text x="67" y="143" class="body muted">무엇을 넣고, 무엇을 승인하고, 어떤 결과를 받는가</text>
+<text x="1853" y="88" class="small muted right">기준서 · 시험성적서 검토</text>
+
+<!-- 한 줄, 세 단계. 번호 사이 화살표가 전체 순서를 보여줍니다. -->
+<circle cx="99" cy="238" r="31" fill="#203862"/><text x="99" y="250" class="name blue center">1</text>
+<text x="151" y="251" class="heading">자료 입력</text>
+<path d="M373 238 H675" class="flow"/>
+<circle cx="746" cy="238" r="31" fill="#44361f"/><text x="746" y="250" class="name gold center">2</text>
+<text x="798" y="251" class="heading">기준 정리·승인</text>
+<path d="M1114 238 H1311" class="flow"/>
+<circle cx="1382" cy="238" r="31" fill="#183e38"/><text x="1382" y="250" class="name teal center">3</text>
+<text x="1434" y="251" class="heading">검토·결과 출력</text>
+
+<!-- 1: 두 종류의 입력. 성적서는 승인 후 검토하는 대기 입력입니다. -->
+<rect x="66" y="327" width="496" height="213" rx="18" fill="#13243b" stroke="#355174" stroke-width="1.5"/>
+<use href="#file" x="104" y="354" width="115" height="140"/>
+<text x="257" y="406" class="name">기준서</text>
+<text x="257" y="454" class="body muted">무엇을 검사할지</text>
+<rect x="257" y="479" width="180" height="36" rx="18" fill="#203862"/><text x="347" y="505" class="small blue center">먼저 읽기</text>
+<text x="314" y="580" class="name muted center">+</text>
+<rect x="66" y="609" width="496" height="213" rx="18" fill="#112a31" stroke="#315c60" stroke-width="1.5"/>
+<use href="#file" x="124" y="636" width="108" height="130" opacity=".45"/>
+<use href="#file" x="111" y="648" width="108" height="130" opacity=".7"/>
+<use href="#file" x="98" y="660" width="108" height="130"/>
+<text x="257" y="688" class="name">시험성적서들</text>
+<text x="257" y="736" class="body muted">실제 측정한 값</text>
+<rect x="257" y="760" width="222" height="37" rx="18.5" fill="#173e38"/><text x="368" y="786" class="small teal center">승인 후 검토</text>
+<path d="M573 435 H703" class="flow"/>
+<text x="639" y="411" class="small blue center">기준서</text>
+
+<!-- 2: 기술 구성보다 전달되는 기준과 사람의 승인을 중심에 둡니다. -->
+<text x="963" y="340" class="label center">AI가 검토 기준을 정리</text>
+<rect x="764" y="374" width="380" height="331" rx="16" fill="url(#paper)" stroke="#7894bc" stroke-width="1.7"/>
+<rect x="864" y="360" width="180" height="33" rx="9" fill="#243e61" stroke="#7894bc" stroke-width="1.7"/>
+<text x="954" y="444" class="name center">검토 기준 초안</text>
+<path d="M791 466 H1114" stroke="#365272" stroke-width="1.5"/>
+<use href="#check" x="800" y="494" width="32" height="32" style="color:#a9c2ff"/><text x="854" y="520" class="body">검사 항목</text>
+<use href="#check" x="800" y="552" width="32" height="32" style="color:#a9c2ff"/><text x="854" y="578" class="body">허용값 · 단위</text>
+<use href="#check" x="800" y="610" width="32" height="32" style="color:#a9c2ff"/><text x="854" y="636" class="body">적용 조건</text>
+<rect x="822" y="730" width="374" height="92" rx="16" fill="#3d301f" stroke="#d7b36e" stroke-width="1.8"/>
+<use href="#person" x="842" y="746" width="56" height="56" style="color:#f1c877"/>
+<text x="1034" y="786" class="label gold center">사람 확인·수정·승인</text>
+<path d="M954 712 V727" class="pass"/>
+<path d="M1206 773 H1272 V432 H1335" class="pass"/>
+<rect x="1165" y="540" width="216" height="93" rx="13" fill="#0c1729"/>
+<text x="1273" y="573" class="label gold center">승인된</text>
+<text x="1273" y="613" class="label gold center">검토 기준</text>
+
+<!-- 3: 비교한 뒤 실제로 얻는 결과표. 별도의 네 번째 단계는 없습니다. -->
+<text x="1610" y="340" class="label center">승인 기준 × 성적서 값 비교</text>
+<path d="M1366 376 H1779 L1838 435 V825 H1366Z" fill="#11282d" stroke="#5b9f95" stroke-width="1.7"/>
+<path d="M1779 376 V435 H1838" fill="#1f413f" stroke="#5b9f95" stroke-width="1.7"/>
+<text x="1585" y="439" class="name center">검토 결과표</text>
+<path d="M1394 470 H1808" stroke="#355a57"/>
+<circle cx="1418" cy="514" r="19" fill="#215547"/><use href="#check" x="1403" y="499" width="30" height="30" style="color:#6bdac1"/>
+<text x="1456" y="525" class="label teal">적합</text><text x="1789" y="525" class="body muted right">기준 충족</text>
+<circle cx="1418" cy="581" r="19" fill="#593540"/><path d="M1410 573 L1426 589 M1426 573 L1410 589" stroke="#f4a1a9" stroke-width="3.5" stroke-linecap="round"/>
+<text x="1456" y="592" class="label red">부적합</text><text x="1789" y="592" class="body muted right">기준 불충족</text>
+<circle cx="1418" cy="648" r="19" fill="#554529"/><text x="1418" y="659" class="label gold center">?</text>
+<text x="1456" y="659" class="label gold">확인 필요</text><text x="1789" y="659" class="body muted right">근거 불확실</text>
+<path d="M1394 689 H1808" stroke="#355a57"/>
+<text x="1602" y="739" class="label center">기준 · 측정값 · 판정 이유</text>
+<text x="1602" y="787" class="body teal center">원문 페이지·셀 위치</text>
+<text x="1602" y="872" class="small muted center">저장: XLSX · CSV · JSON</text>
+
+<!-- 성적서 대기 입력: 중앙 승인 이후에만 세 번째 단계로 전달. -->
+<path d="M314 832 V927 H1602 V890" class="target"/>
+<rect x="736" y="903" width="563" height="43" rx="14" fill="#0c1729"/>
+<text x="1017" y="933" class="body teal center">시험성적서들 → 사람 승인 후 검토</text>
+<path d="M66 989 H1854" stroke="#263b57"/>
+<text x="66" y="1035" class="small muted">일반 문서 읽기: LLM ↔ 샌드박스 · 빠짐·오독이 있으면 다시 확인</text>
+<text x="1854" y="1035" class="small muted right">최종 산출물 = 판정 + 이유 + 근거</text>
+</svg>

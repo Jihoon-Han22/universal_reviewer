@@ -1,0 +1,1080 @@
+{
+  "role": "accuracy",
+  "reviewerId": "/root/accuracy_core",
+  "evaluatedInputsSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+  "scope": "CURRENT_REPRODUCTION 설계 정확성. 원본 src/server/integrations와 명세/DTO/prompt/테스트 정의를 독립 대조했다. 과거 점수는 사용하지 않았다. 실제 provider, 브라우저, 새 디렉터리 재구현은 실행하지 않았고 .env 파일을 읽지 않았다.",
+  "verification": {
+    "frozenFileHashes": {
+      "designFiles": 317,
+      "sourceFiles": 210
+    },
+    "boundedOfflineProbes": {
+      "path": ".cache/accuracy-core-probe-results.json",
+      "observations": 12
+    },
+    "staticCatalogComparison": {
+      "path": ".cache/accuracy-core-catalog-results.json",
+      "exportedSchemas": 4,
+      "pipelineLiteralCount": 28,
+      "criteriaLiteralCount": 11,
+      "criteriaSourceHashes": 3
+    },
+    "notRun": [
+      "real Gemini/E2B",
+      "new implementation product acceptance",
+      "full original regression suite",
+      "browser geometry/performance"
+    ]
+  },
+  "questionResults": [
+    {
+      "id": "CORE-01-C01",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8.1; architecture/specs/01-state-api.md §4.1",
+        "integrations/src/config.mjs:7",
+        "integrations/src/config.mjs:35",
+        "server/app.mjs:58"
+      ],
+      "rationale": "env[name] ?? fileEnv[name] 우선순위, 빈 환경값 우선, 두 모델 기본값과 template, 공개 boolean/모델 allowlist가 일치한다. envPath:null probe로 비밀파일 없이 기본값과 공개필드를 확인했다."
+    },
+    {
+      "id": "CORE-01-C02",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8.1 adapter port/error 표",
+        "integrations/src/gemini.mjs:28",
+        "integrations/src/gemini.mjs:46",
+        "integrations/src/errors.mjs:27"
+      ],
+      "rationale": "contents 우선, 역할별 model 선택, schema/systemInstruction/abortSignal 조립 및 text/data/model/usage 반환과 HTTP 상태별 안전 오류 매핑을 실제 분기와 대조했다. Fake SDK JSON probe도 동일 반환을 확인했다."
+    },
+    {
+      "id": "CORE-01-C03",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8; architecture/specs/07-data-algorithms-concurrency.md §7.5",
+        "integrations/src/task-pool.mjs:43",
+        "integrations/src/gemini.mjs:46",
+        "integrations/src/sandbox.mjs:20"
+      ],
+      "rationale": "실행 Promise/stream 종료 및 sandbox kill settle까지 슬롯을 보유한다. abort 때 kill을 요청하되 memoized finally 정리를 기다리는 순서이며 bounded probe로 실행 중 abort 슬롯 보유를 확인했다."
+    },
+    {
+      "id": "CORE-01-C04",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8.1; architecture/specs/07-data-algorithms-concurrency.md §7.8",
+        "integrations/src/gemini.mjs:32",
+        "integrations/src/gemini.mjs:54",
+        "integrations/src/sandbox.mjs:42"
+      ],
+      "rationale": "현재 adapter의 token cap 32768과 JSON 파싱/사용자 validator 실패 INVALID_RESPONSE, kill 실패 CLEANUP_FAILED가 일치한다. 범용 response-byte/file-part 상한은 adapter에 없고 호출단계 상한이라는 현재 한계를 명시하므로 새 guard를 구현됐다고 오인하지 않는다."
+    },
+    {
+      "id": "CORE-01-C05",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8.1; architecture/specs/06-verification.md 현재 재현 실행 구분",
+        "integrations/test/integrations.test.mjs:10",
+        "integrations/test/integrations.test.mjs:67",
+        "integrations/test/gemini-limits.test.mjs:8"
+      ],
+      "rationale": "설정 fixture와 주입 client로 원문 JSON/오류/정리를 검사하는 사례 및 offline/live 구분이 있다. 이번 독립 실행은 .cache/accuracy-core-probe.mjs의 fake client와 envPath:null 범위이며 실제 provider 성공을 주장하지 않는다."
+    },
+    {
+      "id": "CORE-02-C01",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§4.1–4.2; architecture/contracts/types.ts PublicDocument/요청 DTO",
+        "server/app.mjs:58",
+        "server/app.mjs:94",
+        "server/documents.mjs:439"
+      ],
+      "rationale": "문서·run method/body/status/error와 allowlisted publicDocument가 일치한다. buffer/modelParts/sourceRows/sourceSheets를 public 응답에서 제외하는 것을 작은 업로드 probe에서도 확인했다."
+    },
+    {
+      "id": "CORE-02-C02",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §1 및 §4; architecture/DECISIONS.md D13",
+        "server/documents.mjs:470",
+        "server/review.mjs:247",
+        "server/app.mjs:71",
+        "server/app.mjs:95"
+      ],
+      "rationale": "기본 저장소는 프로세스 Map이며 재시작 복구가 없다. 미존재 문서/run의 404와 재업로드·재실행 안내를 실제 route와 대조했다. 임시 보관 도구를 기본 영속기능으로 승격하지 않는다."
+    },
+    {
+      "id": "CORE-02-C03",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §4.1; architecture/specs/07-data-algorithms-concurrency.md §7.8",
+        "server/app.mjs:63",
+        "server/app.mjs:76"
+      ],
+      "rationale": "다중 업로드 catch가 이번 배치 added ID만 삭제하고, retained run의 targets/criteria/analysis references 중 하나라도 포함되면 DELETE409인 실제 조건과 일치한다."
+    },
+    {
+      "id": "CORE-02-C04",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §4 공통 HTTP 계약; architecture/specs/02-backend-pipeline.md §2.2",
+        "server/app.mjs:15",
+        "server/app.mjs:47",
+        "server/app.mjs:159"
+      ],
+      "rationale": "Origin이 존재하는 write만 loopback hostname 검사, 그 뒤 JSON2mb/multipart10files3fields100fieldSize13parts, LIMIT_FILE_SIZE413와 기타 Multer400 분기가 일치한다. Origin 부재까지 거부하는 새 정책을 추가하지 않는다."
+    },
+    {
+      "id": "CORE-02-C05",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §11; architecture/environment/README.md 실행 계약",
+        "server/index.mjs:3",
+        "server/app.mjs:157"
+      ],
+      "rationale": "PORT||8787/127.0.0.1, app 생성 당시 dist 존재 시 정적 서빙, SIGINT/SIGTERM의 cancel 후 server.close가 일치한다. 명세는 shutdown이 모든 kill을 await하거나 SSE를 강제종료하지 않는 한계와 process-level 미실행을 구분한다."
+    },
+    {
+      "id": "CORE-03-C01",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.2 입력/서명/원본",
+        "server/documents.mjs:20",
+        "server/documents.mjs:43",
+        "server/documents.mjs:131",
+        "server/documents.mjs:475"
+      ],
+      "rationale": "11개 확장자, role3종, basename/control 제거, Buffer 복사 보존과 서명 대조가 일치한다. CSV 합성 업로드로 파일명 정제와 원본 bytes 보존을 확인했다."
+    },
+    {
+      "id": "CORE-03-C02",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.2 XLSX preview 복제본",
+        "server/documents.mjs:192",
+        "server/documents.mjs:270",
+        "server/spreadsheet-xml-compatibility.test.mjs:8"
+      ],
+      "rationale": "namespace/comment 관계 보정과 모든 drawing 관계 제거는 메모리 zip 복제본에 적용한다. hidden/merged/formula cache 표시와 원본 다운로드는 분리되어 있으며 prefixed XML 시험이 값/관계 보존을 다룬다."
+    },
+    {
+      "id": "CORE-03-C03",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.2 deferredSpreadsheetPreview",
+        "server/documents.mjs:178",
+        "server/documents.mjs:255",
+        "server/documents.mjs:271"
+      ],
+      "rationale": "30sheet/100000cell/source1500000자 초과는 로컬 미리보기 제한 예외를 받아 sourceSheets=[]와 truncated text preview로 전환한다. 파서 자체 오류와 deferred를 구별한다."
+    },
+    {
+      "id": "CORE-03-C04",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.2; architecture/specs/07-data-algorithms-concurrency.md §7.2",
+        "server/documents.mjs:64",
+        "server/documents.mjs:475",
+        "server/documents.mjs:499"
+      ],
+      "rationale": "20MiB/100문서/250MiB 예약을 parse 전에 가산하고 catch/finally에서 반환한다. ZIP20000entry/100MiB, actual inflate 크기와 central metadata 검사는 있지만 local size-field equality는 검사하지 않는 차이까지 일치한다."
+    },
+    {
+      "id": "CORE-03-C05",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.2 preview 경고/잘림",
+        "server/documents.mjs:293",
+        "server/documents.mjs:315",
+        "server/documents.test.mjs:241",
+        "server/documents.test.mjs:270"
+      ],
+      "rationale": "미캐시 수식 sentinel, drawing warning, image-only/deferred, PDF 보조읽기 실패 허용을 구분한다. 셀을 private preview에서 먼저2000자로 잘라 public 단계가 그 손실을 탐지하지 못할 수 있는 truncated 한계도 설명되어 있다."
+    },
+    {
+      "id": "CORE-04-C01",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §§2.3–2.4; architecture/contracts/internal-pipeline.ts",
+        "server/sandbox-documents.mjs:223",
+        "server/sandbox-documents.mjs:363"
+      ],
+      "rationale": "kind/digest/coverage/inventory/warnings 검사 후 profile/modelParts/analysis 및 형식별 source 변환을 반환한다. public projection에서 원본 bytes/inlineData와 내부 profile을 분리하는 계약과 일치한다."
+    },
+    {
+      "id": "CORE-04-C02",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8; architecture/specs/07-data-algorithms-concurrency.md §7.5",
+        "server/sandbox-documents.mjs:144",
+        "server/document-sandbox-resources.mjs:27",
+        "server/document-sandbox-session.test.mjs:54"
+      ],
+      "rationale": "outer physical sandbox1개에 local TaskPool1 retainedRunner를 두고 source/parser/query Promise를 한 번 준비한다. 사전 발견한 HITL revision sandbox 문구는 Gemini-only로 교정되어 현재 코드와 일치한다."
+    },
+    {
+      "id": "CORE-04-C03",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8 시간표/cleanup; architecture/specs/07-data-algorithms-concurrency.md §7.6",
+        "server/sandbox-documents.mjs:136",
+        "server/sandbox-documents.mjs:167",
+        "server/sandbox-document-reader.py:33",
+        "integrations/src/sandbox.mjs:42"
+      ],
+      "rationale": "큐 대기 전300000ms 세션 timer, reader150초 soft budget, command180초, create30초/kill15초를 구별한다. cleanup 실패 우선 전파와 caller abort/session deadline 매핑이 실제 순서와 같다."
+    },
+    {
+      "id": "CORE-04-C04",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.3 한도별 결과표",
+        "server/sandbox-document-reader.py:23",
+        "server/sandbox-document-reader.py:108",
+        "server/sandbox-document-reader.py:298"
+      ],
+      "rationale": "100sheet/100000cell/1500000char/300page/8image/40MP 경계를 명시한다. 모든 실패를 일괄 partial로 부르지 않고 unsupported·image decode incomplete·partial(reason)의 truncated 차이를 보존한다."
+    },
+    {
+      "id": "CORE-04-C05",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §§2.3,2.9 DN01–04 범위",
+        "server/sandbox-documents.mjs:222",
+        "server/sandbox-document-reader.py:153",
+        "server/sandbox-document-reader.py:261",
+        "server/document-quality.test.mjs:253"
+      ],
+      "rationale": "고정 reader/allowlisted kind, keep_links=false와 formula cache 읽기를 실제 호출과 대조했다. 모델 문자열을 shell 코드로 실행하지 않는다. 명세는 실제 악성 macro/link E2E가 미실행이면 NOT_RUN임을 명시하므로 단위검사로 전수 불실행 성공을 주장하지 않는다."
+    },
+    {
+      "id": "CORE-05-C01",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.5 허용 selector",
+        "server/document-quality.mjs:46",
+        "server/document-requery.mjs:16",
+        "server/document-requery.mjs:48"
+      ],
+      "rationale": "selector를 kind/sheet/A1 또는 BLOCK/L 데이터로 검증하고 digest·반환 순서를 대조한다. Node는 sheet 물리 maxRow가 아닌 Excel bounds를 검사한다는 한계를 직접 probe로 확인했다."
+    },
+    {
+      "id": "CORE-05-C02",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §§2.4–2.5; architecture/specs/07-data-algorithms-concurrency.md §7.3B",
+        "server/sandbox-documents.mjs:279",
+        "server/document-quality.mjs:100",
+        "server/document-quality.mjs:206"
+      ],
+      "rationale": "retained1200000자/150000자 chunk의 최초 해석과 모든 retained segment 독립검증, 헤더/셀/시트/BLOCK/L coverage가 일치한다. full-source 무제한 완독이나 semantic certainty로 과장하지 않는다."
+    },
+    {
+      "id": "CORE-05-C03",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.5 loop; architecture/prompts/pipeline-prompts.md replacement 계약",
+        "server/document-quality.mjs:203",
+        "server/document-quality.mjs:238",
+        "server/document-quality.mjs:251"
+      ],
+      "rationale": "최초 포함3회 검증, 최대2회 reread/replacement, source_limit/no-progress 조기종료와 전체 context 교체 후 재검증이 일치한다. repair160과 public1000을 혼동하지 않는다."
+    },
+    {
+      "id": "CORE-05-C04",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.5 단위공란/미해결; architecture/prompts/pipeline-prompts.md 운영 실패",
+        "server/document-quality.mjs:72",
+        "server/document-quality.mjs:218",
+        "server/document-quality.mjs:269"
+      ],
+      "rationale": "원문 연결된 정성 unit blank만 issue에서 제외한다. 비취소 repair 실패는 기존 context needs_review/limited를 반환하지만 caller/session abort는 전파한다. 재조회 불완전이 source_limit을 추가하는 실제 분기와 같다."
+    },
+    {
+      "id": "CORE-05-C05",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.9 acceptance/DN03; architecture/specs/07-data-algorithms-concurrency.md EF05–07",
+        "server/document-quality.test.mjs:96",
+        "server/document-quality.test.mjs:166",
+        "server/document-quality.test.mjs:172",
+        "server/document-reader.test.py:123"
+      ],
+      "rationale": "숨김시트/false header/Word block/text line 누락과 sparse 이동 사례를 검사하는 실제 테스트 정의가 있다. 복잡한 nested DOCX 실물과 모델 의미 E2E를 이 정적·stub 사례가 이미 실행한 것으로 승격하지 않는다."
+    },
+    {
+      "id": "CORE-06-C01",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.6; architecture/contracts/pipeline-model-schemas.json visualTranscriptionSchema",
+        "server/visual-transcription.mjs:59",
+        "server/visual-transcription.mjs:137"
+      ],
+      "rationale": "page/rotation/block/root+nested table/anchor/uncertainty/coverage와 overlap/cycle 검사가 실제 schema와 일치한다. exported schema4개 독립 비교에서 전사 schema도 완전히 같았다."
+    },
+    {
+      "id": "CORE-06-C02",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.6 독립 judge",
+        "server/visual-transcription.mjs:309",
+        "server/visual-quality-judge.mjs:94"
+      ],
+      "rationale": "text-rich PDF도 원본 judge를 호출하고 빈전사는 blankPages reason 없으면 거절한다. 누락page/겹친셀/품질 issue가 complete 플래그보다 우선하며 숫자·텍스트를 자동 보충하지 않는다."
+    },
+    {
+      "id": "CORE-06-C03",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.6 제한·stopReason",
+        "server/visual-transcription.mjs:7",
+        "server/visual-transcription.mjs:201",
+        "server/visual-transcription.mjs:264",
+        "server/visual-transcription.mjs:344"
+      ],
+      "rationale": "30page/3page요청/3round/180초/60초와 첫유효page 부재 hard failure, 일부성공 보존 및 no-progress/round/page-limit의 우선순위가 일치한다."
+    },
+    {
+      "id": "CORE-06-C04",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.6 sticky uncertainty/원본",
+        "server/visual-transcription.mjs:283",
+        "server/visual-transcription.mjs:321",
+        "server/visual-transcription.mjs:361"
+      ],
+      "rationale": "이전 source line 손실 교체를 거부하고 독립text 없는 uncertainty/judge limits를 sticky로 유지한다. 원본을 추측 전사로 채우지 않으며 최종 coverage/warnings/requiresConfirmation을 보존한다."
+    },
+    {
+      "id": "CORE-06-C05",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.9 검증 범위; architecture/contracts/document-negative-cases.json DN04",
+        "server/visual-quality-judge.test.mjs:55",
+        "server/visual-quality-judge.test.mjs:73",
+        "server/visual-transcription.test.mjs:52",
+        "server/visual-transcription.test.mjs:162"
+      ],
+      "rationale": "blank-page 거짓승인·요청밖page·nested 링크·이미지 invented page 거부 사례가 실제 stub 테스트에 정의된다. 실제 두문서 오염 end-to-end DN04는 별도 미실행 증거를 요구하며 존재하지 않는 통합 통과를 주장하지 않는다."
+    },
+    {
+      "id": "CORE-06-C06",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "evidence": [
+        "architecture/DECISIONS.md D18 및 원본/개선 우선순위; architecture/specs/02-backend-pipeline.md 현재 상한과 향후 전수 처리; architecture/specs/08-rebuild-coverage-geometry.md OPTIONAL_FUTURE",
+        "server/visual-transcription.mjs:7",
+        "server/visual-transcription.mjs:251",
+        "server/visual-transcription.mjs:356",
+        "server/sandbox-document-reader.py:23",
+        "server/review.mjs:317"
+      ],
+      "rationale": "VLM30page/180초와 reader300page/150초·8images의 별도 상한을 보존한다. 초과한 원문을 추정 완료로 채우지 않고 partial·잔여경고·사람 확인을 유지하며 자동window와575쪽 geometry 확장은 OPTIONAL_FUTURE로 분리했다. 실제575쪽/provider gate는 실행하지 않았다."
+    },
+    {
+      "id": "CORE-07-C01",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §13.1 raw/public 자격 DTO",
+        "server/criteria-eligibility.mjs:146",
+        "server/criteria-eligibility.mjs:159"
+      ],
+      "rationale": "raw status/hasNormativeContent/sourceKind 조합과 공개 assessment에서 hasNormativeContent가 빠지는 투영을 정확히 구별한다. not_criteria에 standard/policy/mixed가 모순인 분기도 일치한다."
+    },
+    {
+      "id": "CORE-07-C02",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §13.1 completeAnalysis exact predicate",
+        "server/criteria-eligibility.mjs:131",
+        "server/criteria-eligibility.mjs:157"
+      ],
+      "rationale": "not_criteria 제외는 실제 source citation, 완전 reader/context flags, 전입력 공급을 모두 요구한다. partial은 기준 존재를 증명할 수 있으나 부재를 확정하지 못하며 optional flag 생략을 일괄실패로 바꾸지 않는다."
+    },
+    {
+      "id": "CORE-07-C03",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §13.1 단일 repair; architecture/specs/01-state-api.md §5",
+        "server/criteria-eligibility.mjs:198",
+        "server/review.mjs:596",
+        "server/review.mjs:619"
+      ],
+      "rationale": "invalid 구조/인용 또는 Gemini INVALID_RESPONSE만 총2호출, 정상 uncertain/불완전 source/transport는 즉시 uncertain이며 abort는 전파한다. excluded source의 draft/revise 재진입 guard와 일치한다."
+    },
+    {
+      "id": "CORE-07-C04",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §13.1 인용 admission/input cap",
+        "server/criteria-eligibility.mjs:34",
+        "server/criteria-eligibility.mjs:120",
+        "server/criteria-eligibility.mjs:166"
+      ],
+      "rationale": "filename/role header 배제, 실제 body substring+숫자경계, parts64/text160000/binary8MiB를 넘으면 부분 classifier 호출을 하지 않는 분기가 일치한다. full-string equality로 과장하지 않는다."
+    },
+    {
+      "id": "CORE-07-C05",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §13.1 및 §9; architecture/prompts/criteria-algorithms.catalog.json 자격 prompt",
+        "server/criteria-eligibility.test.mjs:50",
+        "server/criteria-eligibility.test.mjs:242",
+        "server/criteria-eligibility.test.mjs:532"
+      ],
+      "rationale": "혼합 규범·완료 ledger rationale·prompt injection을 source 의미와 인용으로 다루며 파일명 lookup을 허용하지 않는 실제 테스트/프롬프트 계약이다. 모델의 의미 품질 실측과 stub 검증을 분리한다."
+    },
+    {
+      "id": "CORE-08-C01",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§11.1–11.2; architecture/specs/02-backend-pipeline.md §2.4 CriteriaWorkbookInventory",
+        "server/criteria-workbook-profile.py:84",
+        "server/criteria-sandbox.mjs:715",
+        "server/criteria-sandbox.mjs:734"
+      ],
+      "rationale": "inventory/sample/ranges/assessment/disposition/criteria 및 region별 examined와 extractionStatus가 분리되어 있다. criteriaComplete가 images/classification 한도를 직접 AND하지 않는 한계도 명시한다."
+    },
+    {
+      "id": "CORE-08-C02",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§3.1,11.2; architecture/specs/07-data-algorithms-concurrency.md §7.3A",
+        "server/criteria-sandbox.mjs:627",
+        "server/criteria-layout.mjs:142",
+        "server/criteria-generalization.test.mjs:136"
+      ],
+      "rationale": "모델 selected ranges에 빠진 작은 inventory region을 보완하고 양방향 역할 탐색과 독립 omission 검사를 수행한다. hidden 다른 시트의 신규 어휘 fixture가 실제 source loop2회/설치1회/6기준을 검증한다."
+    },
+    {
+      "id": "CORE-08-C03",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §11.1 세션 경계; architecture/specs/02-backend-pipeline.md §2.8",
+        "server/criteria-sandbox.mjs:566",
+        "server/criteria-sandbox.mjs:639",
+        "server/sandbox-documents.mjs:144"
+      ],
+      "rationale": "generic 문서분석 종료 후 discovery가 별도 physical session을 열고 내부 plan/read/extract 최대2round만 공유한다. cached inventory 재사용과 sandbox 재사용을 구별한다."
+    },
+    {
+      "id": "CORE-08-C04",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §11.1 한도 및 §11.1a; architecture/specs/07-data-algorithms-concurrency.md §7.8",
+        "server/criteria-workbook-profile.py:73",
+        "server/criteria-workbook-profile.py:131",
+        "server/criteria-sandbox.mjs:97"
+      ],
+      "rationale": "모든 metadata와 첫100sheet cell profiling, 누적200000cells/300regions, 고유6000record/220000Python문자 및 별도 rawJSON1500000JS문자·좌표24000 예산을 정확히 나눈다. overlap 중복출력이 chars 예산에 중복가산되지 않는 실제 제한도 보존한다."
+    },
+    {
+      "id": "CORE-08-C05",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §9 metamorphic; architecture/specs/07-data-algorithms-concurrency.md EF05–06",
+        "server/criteria-generalization.test.mjs:41",
+        "server/criteria-generalization.test.mjs:93",
+        "server/criteria-generalization.test.mjs:136"
+      ],
+      "rationale": "임의 sheet/어휘·큰 좌표이동·전치·비고/조건 교환 fixture가 실제 존재하며 generic geometry/role 알고리즘에 연결된다. 보이지 않는 실모델 holdout 통과를 이 테스트 정의로 대체하지 않는다."
+    },
+    {
+      "id": "CORE-08-X01",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §11.1; architecture/specs/07-data-algorithms-concurrency.md §7.8 criteria inventory",
+        "server/criteria-workbook-profile.py:78",
+        "server/criteria-workbook-profile.py:87",
+        "server/sandbox-document-reader.py:298"
+      ],
+      "rationale": "index100 이후도 metadata를 append하며 cells=[]와 total0인 빈sheet는 complete=true이다. generic reader는100번째 이후 partial+break이므로 두 profile을 같은 cap으로 구현하면 달라진다는 설명이 정확하다."
+    },
+    {
+      "id": "CORE-09-C01",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §2 DTO/§11.3 grounding",
+        "server/review.mjs:89",
+        "server/criteria-sandbox.mjs:397",
+        "server/criteria-sandbox.mjs:475"
+      ],
+      "rationale": "rule/comparison/unit/scope/category/sample/conditions와 인용을 구분하고 분류 부재=[]/not_applicable을 정상으로 취급한다. 일반 shape validator와 XLSX source grounding의 보증 차이도 현재대로 명시한다."
+    },
+    {
+      "id": "CORE-09-C02",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §3.3",
+        "server/conditions.mjs:20",
+        "server/criteria-notes.mjs:1",
+        "server/criteria-generalization.test.mjs:93"
+      ],
+      "rationale": "notes 역할을 좌표로 제외하고 실제 조건 열을 복원한다. sourceEvidence-only 후보의 행 연결이 약할 수 있고 기존 sourceEvidence가 모든 경로에서 지워지지 않는 한계를 숨기지 않아 현재 결과와 일치한다."
+    },
+    {
+      "id": "CORE-09-C03",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§11.3,12",
+        "server/criteria-sandbox.mjs:345",
+        "server/criteria-sandbox.mjs:397",
+        "server/criteria-context.mjs:219"
+      ],
+      "rationale": "부모/하위유형/시료와 장제목을 분리하고 hierarchy geometry 및 disposition의 target/replacement 실제근거를 검사한다. 동일 rule이라는 이유만으로 다른 문서·scope·conditions를 dedup하지 않는다."
+    },
+    {
+      "id": "CORE-09-C04",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§2,11.3 및 generic validator 한계",
+        "server/review.mjs:90",
+        "server/review.mjs:117",
+        "server/criteria-sandbox.mjs:475"
+      ],
+      "rationale": "250기준/8단계/길이와 grounded numeric/분류 실패의 확인 경로가 일치한다. 일반 validator의 invalid comparison 삭제가 needsConfirmation을 자동true로 올리지 않는 실제 한계를 별도로 명시했고 probe로 확인했다."
+    },
+    {
+      "id": "CORE-09-C05",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §9; architecture/specs/07-data-algorithms-concurrency.md EF09",
+        "server/criteria-generalization.test.mjs:41",
+        "server/criterion-applicability.test.mjs:120",
+        "server/document-quality.test.mjs:46"
+      ],
+      "rationale": "임의 어휘/계층·동일항목 다른시료·정성unit blank를 구별하는 테스트 정의와 실제 generic path/condition key를 확인했다. 특정 자재명으로 verdict를 정하는 동작을 계약으로 요구하지 않는다."
+    },
+    {
+      "id": "CORE-10-C01",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§3,4.2,5; architecture/contracts/types.ts HITL DTO",
+        "server/review.mjs:614",
+        "server/review.mjs:671"
+      ],
+      "rationale": "confirm/revise의 criteria/feedback/documentId/scope/version과 approvedCriteria deep clone/version/approvedAt 응답이 일치한다. revise202와 confirm200도 route와 같다."
+    },
+    {
+      "id": "CORE-10-C02",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§8,13.2; architecture/specs/01-state-api.md §5",
+        "server/criteria-approval.mjs:148",
+        "server/criteria-approval.mjs:177",
+        "server/review.mjs:601"
+      ],
+      "rationale": "editable 의미필드만 validator에 전달하고 provenance는 서버 원본에서 복제한다. 실제 semantic edit에만 userOverride를 붙이고 cosmetic/label 변경으로 미해결 context를 해소하지 않는 분기가 같다."
+    },
+    {
+      "id": "CORE-10-C03",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §3 상태기계",
+        "server/review.mjs:624",
+        "server/review.mjs:629",
+        "server/review.mjs:640",
+        "server/review.mjs:675"
+      ],
+      "rationale": "revise 중 running/criteria_revising, 성공 version/revision+1 후 재확인, 실패 기존 criteria/version 유지, confirm 배열 제출시에만 version+1 후 awaiting_documents 전이가 일치한다."
+    },
+    {
+      "id": "CORE-10-C04",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §4.2 version/feedback 오류; architecture/specs/03-algorithms.md §13.2",
+        "server/review.mjs:592",
+        "server/review.mjs:617",
+        "server/review.mjs:620",
+        "server/review.mjs:629"
+      ],
+      "rationale": "criteria_first 누락version400/stale409, feedback12000자/20회429, revisionToken와 abort의 late completion 차단이 정확하다."
+    },
+    {
+      "id": "CORE-10-C05",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §5 approved snapshot/audit",
+        "server/review.mjs:649",
+        "server/review.mjs:671",
+        "server/review.mjs:61"
+      ],
+      "rationale": "승인 전 target409, 승인본 재귀freeze와 attach 시 승인배열/version 재지정, confirmation/revision audit를 보존한다. source와 사람초안을 같은 mutable 객체로 공유하지 않는다."
+    },
+    {
+      "id": "CORE-11-C01",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.7; architecture/specs/03-algorithms.md §2; architecture/contracts/pipeline-model-schemas.json",
+        "server/field-extraction.mjs:61",
+        "server/review.mjs:137",
+        "server/review.mjs:524"
+      ],
+      "rationale": "PDF/image 독립 fields300과 모든 review findings250의 다른 스키마/단계를 정확히 나눈다. source fields schema는 exported 값과 독립 동등비교를 통과했다."
+    },
+    {
+      "id": "CORE-11-C02",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §4; architecture/prompts/pipeline-prompts.md source facts binding",
+        "server/field-extraction.mjs:159",
+        "server/field-extraction.mjs:133"
+      ],
+      "rationale": "독립 facts 호출은 승인 기준을 받지 않으며 printed notation·실제 report ID·전체 관측field를 요청한다. 값 text검증 mismatch와 label 미검출 unverified를 구분하고 미검증 PDF 번호를 지우는 동작이 일치한다."
+    },
+    {
+      "id": "CORE-11-C03",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.1 DAG; architecture/specs/01-state-api.md §6",
+        "server/review.mjs:301",
+        "server/review.mjs:524",
+        "server/review.mjs:542"
+      ],
+      "rationale": "analyze/transcribe 후 visual facts, semantic review, normalizeItems, pending document.extracted와 item.decided 순서가 소스와 같다. 비시각 문서에 없는 독립 facts 호출을 추가하지 않는다."
+    },
+    {
+      "id": "CORE-11-C04",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§5–6 및 §10 한계",
+        "server/review.mjs:141",
+        "server/review.mjs:169",
+        "server/criterion-applicability.mjs:157",
+        "server/field-extraction.mjs:103"
+      ],
+      "rationale": "미등록 criterion/wrong document는 오류, 실제 조건/known-record subtype 연결/독립값 불일치는 review다. 독립 label-value 매칭 자체에는 모든 행 동일성 guard가 없다는 현재 한계도 구별한다."
+    },
+    {
+      "id": "CORE-11-C05",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §7 record coverage",
+        "server/table-records.mjs:6",
+        "server/table-records.mjs:30",
+        "server/review.mjs:206",
+        "server/review.mjs:538"
+      ],
+      "rationale": "blank record도 원본 ID/header를 따라 남기며 coverage의 actual rows와 excludedRows를 구분한다. CSV 제외이유 검증이 XLSX보다 약하고 한행 coverage가 모든 row×criterion 조합 완료를 증명하지 않는 실제 한계를 명시한다."
+    },
+    {
+      "id": "CORE-12-C01",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §5.1 및 §5 최종 Item",
+        "server/review.mjs:124",
+        "server/review.mjs:152",
+        "server/review.mjs:202"
+      ],
+      "rationale": "exact decimal과 unitKey 동등만 비교하고 lt/lte/gt/gte/eq/inclusive range를 적용한다. status/machineStatus/uncertain/presence와 선택 missing flags 생성이 일치하며 수치 경계·무환산 probe로 확인했다."
+    },
+    {
+      "id": "CORE-12-C02",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§5–6",
+        "server/missing-result.mjs:21",
+        "server/missing-result.mjs:118",
+        "server/missing-result.mjs:139",
+        "server/review.mjs:144",
+        "server/review.mjs:154",
+        "server/review.mjs:159"
+      ],
+      "rationale": "완전읽기+required+실제 blank/위치근거+모순없음만 confirmed fail이며 optional missing은 제거한다. ND는 absentValue로 review지만 미캐시/잘림 자체의 문자열만으로 항상 review가 강제되지는 않는다. raw uncertainty·presence·comparison 유무와 helper의 누락 증거 거절을 구별한 현재 분기를 재현한다."
+    },
+    {
+      "id": "CORE-12-C03",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §5 순서; architecture/specs/07-data-algorithms-concurrency.md §7.4",
+        "server/review.mjs:152",
+        "server/review.mjs:169",
+        "server/review.mjs:174",
+        "server/review.mjs:177"
+      ],
+      "rationale": "초기 수치/누락 상태 뒤 conditions→applicability→independent mismatch가 review로 덮어쓴다. 이후 display label을 보정하고 최종status를 machineStatus로 저장하며 raw 모델status 보존필드를 발명하지 않는다."
+    },
+    {
+      "id": "CORE-12-C04",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §5.3",
+        "server/criterion-applicability.mjs:152",
+        "server/criterion-applicability.mjs:157",
+        "server/criterion-applicability.mjs:189"
+      ],
+      "rationale": "실제 target source에 path/sample 인용이 필요하고 알려진 CSV/XLSX record는 measurement/classification 모두 같은 단일행이어야 한다. 일반 무분류 기준은 즉시 verified라는 예외까지 일치한다."
+    },
+    {
+      "id": "CORE-12-C05",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §9 ALG-N/M/E; architecture/specs/07-data-algorithms-concurrency.md EF10",
+        "server/missing-result.test.mjs:79",
+        "server/missing-result.test.mjs:86",
+        "server/missing-result.test.mjs:105",
+        "server/missing-result.test.mjs:122"
+      ],
+      "rationale": "0/ND/실제blank/merged/미캐시/optional/불완전source를 다른 결과로 검사하는 실제 테스트 정의와 helper 분기가 있다. 독립 probe는 숫자/조건/느슨한 source admission만 실행했고 이 전체 테스트 실행을 주장하지 않는다."
+    },
+    {
+      "id": "CORE-12-X01",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §15 OBSERVED_BASELINE/SOURCE-GROUNDING; architecture/DECISIONS.md D18",
+        "server/review.mjs:145",
+        "server/review.mjs:165",
+        "server/criterion-applicability.mjs:189"
+      ],
+      "rationale": "A0/ZZZ9999999/B2:A1와 가짜quote도 무조건·무유형 numeric pass가 가능한 baseline을 직접 probe로 확인했다. 실제 조건/분류/필수누락 helper와 일반 evidence admission을 구별하며 강화guard는 OPTIONAL_FUTURE다."
+    },
+    {
+      "id": "CORE-12-X02",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §§5.3,15 시각 helper 반례",
+        "server/criterion-applicability.mjs:92",
+        "server/criterion-applicability.mjs:104",
+        "server/criteria-eligibility.mjs:54",
+        "server/criteria-eligibility.mjs:68"
+      ],
+      "rationale": "전역 page ID/count/coverage/warnings 검사를 통과한 뒤 citedPage만 block/cell shape·uncertainty를 검사하는 코드와 같다. 비인용page uncertainty까지 이 helper가 재검사한다고 주장하지 않는다."
+    },
+    {
+      "id": "CORE-13-C01",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§3,6,10; architecture/contracts/types.ts RunSnapshot/RunEvent",
+        "server/review.mjs:222",
+        "server/review.mjs:255",
+        "server/review.mjs:258"
+      ],
+      "rationale": "legacy/criteria_first 상태와 stage, snapshot 필드, sequence/timestamp, payload status와 runStatus 분리, summary 카운트가 실제 enum/계산식과 일치한다."
+    },
+    {
+      "id": "CORE-13-C02",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.8–2.9; architecture/specs/07-data-algorithms-concurrency.md §7.5",
+        "server/review.mjs:332",
+        "server/review.mjs:506",
+        "server/review.mjs:564"
+      ],
+      "rationale": "분석과 target review는 shared next++ worker2개이며 각 문서 catch 뒤 sibling을 계속한다. 완료순과 상관없이 document.id로 결과/state를 결합한다. 기준 source 실패가 상위 run 실패로 이어지는 경계도 보존한다."
+    },
+    {
+      "id": "CORE-13-C03",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§3,6; architecture/specs/07-data-algorithms-concurrency.md §7.2",
+        "server/review.mjs:258",
+        "server/review.mjs:360",
+        "server/review.mjs:686"
+      ],
+      "rationale": "열린 run 취소와 late event 차단, feedback/queued·processing 취소, 분석 owner와 후발 waiter signal 분리를 소스와 대조했다. completed/partial/failed 집계는 실제 종료 predicate를 따른다."
+    },
+    {
+      "id": "CORE-13-C04",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§1,3,4.1; architecture/specs/02-backend-pipeline.md §2.9; architecture/specs/07-data-algorithms-concurrency.md §7.2",
+        "server/review.mjs:270",
+        "server/review.mjs:279",
+        "server/review.mjs:332",
+        "server/review.mjs:360",
+        "server/review.mjs:548",
+        "server/review.mjs:575",
+        "server/review.mjs:686",
+        "server/app.mjs:76"
+      ],
+      "rationale": "open3/보관40, 동일document ID 분석dedup·Promise 공유, terminal cancel 멱등과 참조문서 삭제409·메모리 재시작 소실을 현재대로 기술한다. target은 optional 제거 후 normalized items250 및 complete===false를 검사하고 오류는 missingRows가 마지막 덮어쓴다. run은 명시된9개 discovery 신호만 검사해 누락값은 신호가 아니며 extractedCriteriaComplete 등은 직접 검사하지 않는 한계까지 일치한다."
+    },
+    {
+      "id": "CORE-13-C05",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§4.2,5",
+        "server/review.mjs:693"
+      ],
+      "rationale": "open/cancelled에서 resolve409, 종료뒤 nonblank note 필요, before/after audit와 machineStatus 보존·summary 갱신·item.resolved 발행이 일치한다."
+    },
+    {
+      "id": "CORE-15-C01",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§6,8; architecture/specs/02-backend-pipeline.md §2.9",
+        "integrations/src/activity.mjs:41",
+        "integrations/src/activity.mjs:82",
+        "server/review.mjs:261"
+      ],
+      "rationale": "task identity/runtime/phase/currentOperation와 handoff from/to, run sequence와 activity snapshot revision의 서로 다른 의미가 일치한다. sanitizer의 허용필드/길이를 확인했고 실제 source·비밀을 stdout UI에 그대로 게시하지 않는다."
+    },
+    {
+      "id": "CORE-15-C02",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §7.5",
+        "integrations/src/gemini.mjs:7",
+        "integrations/src/sandbox.mjs:8",
+        "integrations/src/task-pool.mjs:9",
+        "server/review.mjs:227",
+        "server/sandbox-documents.mjs:149"
+      ],
+      "rationale": "process-wide Gemini2/E2B2 pending100 FIFO, engine별 ModelQueue2(대기 cap 없음), retained command1을 분리한다. 대기 cap을 engine 큐까지 있다고 과장하지 않는다."
+    },
+    {
+      "id": "CORE-15-C03",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/01-state-api.md §§6–8; architecture/specs/07-data-algorithms-concurrency.md §7.7",
+        "integrations/src/activity.mjs:99",
+        "integrations/src/task-pool.mjs:30",
+        "server/activity.mjs:18",
+        "src/activity-observer.mjs:78"
+      ],
+      "rationale": "queued/running/terminal·queued abort 제거·late response 차단이 일치한다. run SSE는 cursor replay, activity SSE는 즉시 전체snapshot 후 subscribe이며 같은 replay protocol로 설명하지 않는다."
+    },
+    {
+      "id": "CORE-15-C04",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.9 command framing; architecture/specs/07-data-algorithms-concurrency.md §7.7",
+        "integrations/src/command-progress.mjs:84",
+        "integrations/src/command-progress.mjs:96",
+        "integrations/src/command-progress.mjs:105",
+        "integrations/src/activity.mjs:82"
+      ],
+      "rationale": "heartbeat는 다음응답 대기 안내이고 maxLogs24/pending8/seen100으로 제한한다. streaming을 받은 channel의 aggregate replay를 생략하고 타document/context handoff 충돌을 거부한다. command 자체에 abortSignal이 없고 owning sandbox kill이 취소를 담당하는 한계도 일치한다."
+    },
+    {
+      "id": "CORE-15-C05",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §7.7 frontend; architecture/specs/04-ui-motion.md handoff 계약",
+        "src/handoff-queue.mjs:8",
+        "src/handoff-queue.mjs:35",
+        "src/components/SandboxWorkroomScene.tsx:174",
+        "src/components/SandboxActivityDock.tsx:12"
+      ],
+      "rationale": "handoff pending8/seen256 안정(time,sequence) 재생은 실제 판정 데이터와 별개다. 완료 연출/접힘과 연결중단 pause, 앱모션OFF 큐제거와 OS CSS reduced-motion의 차이를 보존하며 작업결과를 연출시간으로 변경하지 않는다."
+    },
+    {
+      "id": "CORE-15-X01",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/02-backend-pipeline.md §2.9 문서 sanitizer와 channel framing",
+        "server/sandbox-documents.mjs:26",
+        "integrations/src/command-progress.mjs:87"
+      ],
+      "rationale": "문서로그는 입력 앞20000자→정제/trim→앞1500자이고 command channel은 마지막16000자/미완성 마지막8000자다. prefix probe를 실행했고 두 방향을 혼동하지 않는 명세와 일치한다."
+    },
+    {
+      "id": "CORE-19-C01",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §§7.2,7.7; architecture/contracts/efficiency-inventory.json ES01–22",
+        "server/documents.mjs:470",
+        "server/review.mjs:360",
+        "server/document-sandbox-resources.mjs:12",
+        "src/components/SandboxActivityDock.tsx:12",
+        "src/components/DashboardModal.tsx:54"
+      ],
+      "rationale": "원본Map/분석Promise와 cache/physicalWeakMap/기준cells/활동/화면cache의 owner와 수명·상한·실패 무효화를 실제 구조와 대조했다. presentation30 삽입FIFO와 preview5 쓰기recency를 read-LRU로 부르지 않는다."
+    },
+    {
+      "id": "CORE-19-C02",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §§7.1,7.3,7.4; architecture/contracts/efficiency-inventory.json EA01–07",
+        "server/criteria-workbook-profile.py:78",
+        "server/criteria-workbook-profile.py:150",
+        "server/criteria-layout.mjs:149",
+        "server/criteria-context.mjs:92",
+        "server/document-quality.mjs:100"
+      ],
+      "rationale": "sparse sorting과 range별 scan, 양방향 header 중첩, coverage sweep, 누적근거 dedup의 반복직렬화 비용을 source 반복문과 대조했다. Map조회O(1)을 parser/네트워크/전체알고리즘 선형성으로 과장하지 않는다."
+    },
+    {
+      "id": "CORE-19-C03",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §§7.5–7.6; architecture/contracts/efficiency-inventory.json EC01–05",
+        "integrations/src/task-pool.mjs:21",
+        "integrations/src/sandbox.mjs:20",
+        "server/sandbox-documents.mjs:144",
+        "server/review.mjs:227"
+      ],
+      "rationale": "전역2/100·엔진2·문서worker2·retained command1의 cap과 abort/work/kill 정산순서가 일치한다. retainedRunner가 또 global slot을 얻지 않아 같은문서 repair 교착을 피하는 경계를 확인했고 taskpool/cleanup synthetic probe를 실행했다."
+    },
+    {
+      "id": "CORE-19-C04",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §7.7; architecture/contracts/efficiency-inventory.json EC06–10",
+        "integrations/src/command-progress.mjs:84",
+        "server/activity.mjs:15",
+        "server/app.mjs:107",
+        "src/activity-observer.mjs:9",
+        "src/components/DocumentPreview.tsx:280"
+      ],
+      "rationale": "command/log 상한, activity512KiB disconnect와 cap없는 runSSE, late-response guard·handoff queue·PDF cleanup을 구별한다. rAF batching/전역visibility pause/숨김iframe pause가 없다는 한계와 source가 일치하며 측정없는 FPS 주장은 없다."
+    },
+    {
+      "id": "CORE-19-C05",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/07-data-algorithms-concurrency.md §§7.8–7.10; architecture/contracts/efficiency-inventory.json EL/EF/knownLimitations",
+        "server/documents.mjs:11",
+        "server/sandbox-document-reader.py:23",
+        "server/criteria-workbook-profile.py:131",
+        "server/visual-transcription.mjs:7",
+        "integrations/src/gemini.mjs:9"
+      ],
+      "rationale": "byte/JS문자/Python문자/cell/page/token/시간 예산과 stop/partial을 단계별 실제 상수에 대조했다. EF는 재현시험 조건이며 성능실측·provider·새앱 완료로 바뀌지 않는다. 이번실행은12개 bounded probe와 정적 catalog대조로 제한된다."
+    },
+    {
+      "id": "CORE-19-X01",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "evidence": [
+        "architecture/specs/03-algorithms.md §5; architecture/specs/07-data-algorithms-concurrency.md §7.4; architecture/contracts/efficiency-inventory.json EA06",
+        "server/review.mjs:152",
+        "server/review.mjs:169",
+        "server/review.mjs:174",
+        "server/review.mjs:177",
+        "server/review.mjs:187",
+        "server/review.mjs:202"
+      ],
+      "rationale": "숫자/누락→조건→분류→독립추출→표시label→machineStatus를 소유 알고리즘과 요약/기계목록까지 대조했다. EA06의 사전검토 순서 누락이 최종 입력에서 교정되었으며 모델 rawstatus와 normalized machineStatus를 구별한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "ACCORE-01",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-10-C02"
+      ],
+      "description": "사전 설계에서 HITL 기준 수정도 별도 E2B sandbox 수명으로 묶어 실제 Gemini-only 경로와 불일치했다.",
+      "evidence": [
+        "server/criteria-revision.mjs:212",
+        "architecture/specs/02-backend-pipeline.md §2.8"
+      ],
+      "resolution": "최종 명세가 XLSX discovery sandbox와 HITL Gemini 1회 최소 patch 경로를 구분한 것을 재검토했다."
+    },
+    {
+      "id": "ACCORE-02",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-13-C04"
+      ],
+      "description": "사전 설계의 포괄적인 criteria coverage 미완료 표현이 실제 최종 run 집계보다 강한 완료 조건을 암시했다.",
+      "evidence": [
+        "server/review.mjs:548",
+        "server/review.mjs:575",
+        "architecture/specs/01-state-api.md §3",
+        "architecture/specs/02-backend-pipeline.md §2.9",
+        "architecture/specs/03-algorithms.md §11.2"
+      ],
+      "resolution": "최종 입력의 exact9signal·strictfalse·optional제거 후 cap·error overwrite 및 producer/aggregate 분리를 재검토했다."
+    },
+    {
+      "id": "ACCORE-03",
+      "status": "resolved",
+      "questionIds": [
+        "CORE-19-X01"
+      ],
+      "description": "EA06의 사전 단계 요약이 numeric/missing 판정과 조건·분류 검증의 실제 순서를 혼동하고 display-label 단계를 생략했다.",
+      "evidence": [
+        "server/review.mjs:152",
+        "server/review.mjs:169",
+        "server/review.mjs:187",
+        "architecture/contracts/efficiency-inventory.json EA06",
+        "architecture/specs/03-algorithms.md §5"
+      ],
+      "resolution": "최종 EA06은 numeric/missing→conditions→applicability→independent extraction→display label→machineStatus 순서와 separate raw coverage 집계를 반영한다."
+    }
+  ]
+}

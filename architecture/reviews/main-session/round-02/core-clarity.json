@@ -1,0 +1,2536 @@
+{
+  "schemaVersion": 1,
+  "round": 2,
+  "role": "clarity",
+  "reviewerId": "/root/architecture_clarity_core",
+  "modules": [
+    {
+      "moduleId": "CORE-01",
+      "checks": [
+        {
+          "id": "CORE-01-C01",
+          "status": "pass",
+          "reason": "Environment precedence, required/optional keys, model defaults, validation and secret-free health projection are explicit.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8.1 configuration"
+            },
+            {
+              "path": "environment/README.md",
+              "section": "환경 변수 / integrations test·check·smoke"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "HealthResponse"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C02",
+          "status": "pass",
+          "reason": "Typed adapter and fake SDK ports define request precedence, SDK mapping, text/data/model/usage results and provider errors.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8.1 adapter methods/error table"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "GeminiAdapter, GeminiRequest, GeminiFakeClient, IntegrationFailure"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C03",
+          "status": "pass",
+          "reason": "Timeout/abort ownership, late creation cleanup and global slot retention through actual work and kill settlement are explicit.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8–2.8.1"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8 cleanup activity"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–7.6; EF-01..04"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C04",
+          "status": "pass",
+          "reason": "Token bounds/default, JSON errors, safe errors and cleanup failure are defined; absent generic response/part caps are distinguished from stage caps.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.6, §2.8.1"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "Gemini/Sandbox adapter contracts"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-01-C05",
+          "status": "pass",
+          "reason": "Injected fake clients/factories and offline test/check commands are provided separately from real-service smoke tests.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8.1 fake dependency contract"
+            },
+            {
+              "path": "environment/README.md",
+              "section": "integrations test/check/smoke"
+            },
+            {
+              "path": "environment/integrations/package.json",
+              "section": "scripts"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.9 EF-01..04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-02",
+      "checks": [
+        {
+          "id": "CORE-02-C01",
+          "status": "pass",
+          "reason": "Each route has method, body/query, status and error contracts; public documents are separated from private buffers, model parts and profiles.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1–4.2, §8–9"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "HTTP request/response types"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "StoredDocument/AnalyzedDocument"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C02",
+          "status": "pass",
+          "reason": "Document, run, activity and dashboard stores are explicitly process-memory state with restart loss and missing-ID404 behavior.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1–4.2"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C03",
+          "status": "pass",
+          "reason": "Upload reservations and whole-batch rollback are specified; retained-run references protect documents with DELETE409.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1, §4.1"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "contracts/examples/02-errors.json",
+              "section": "retained run reference"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C04",
+          "status": "pass",
+          "reason": "Origin checks, middleware order, JSON and multipart limits, and413 versus400 errors have concrete boundaries.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4, §4.1"
+            },
+            {
+              "path": "contracts/examples/02-errors.json",
+              "section": "request errors"
+            }
+          ]
+        },
+        {
+          "id": "CORE-02-C05",
+          "status": "pass",
+          "reason": "Startup and signal shutdown specify port/host/dist, cancel-all, server.close and exit0; absent cleanup supervision and deadlines are honestly scoped with process-test requirements.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§11 server startup/shutdown"
+            },
+            {
+              "path": "environment/README.md",
+              "section": "app run commands"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-03",
+      "checks": [
+        {
+          "id": "CORE-03-C01",
+          "status": "pass",
+          "reason": "Supported extensions, roles, filename sanitation, signature/ZIP/UTF8 checks and original-byte preservation are explicit.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1 upload/content"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C02",
+          "status": "pass",
+          "reason": "Compatibility and drawing removal affect a copy only; formula-cache sentinels, merged masters and original analysis remain distinct.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "SourceCell/ReaderCell/profileToSources"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C03",
+          "status": "pass",
+          "reason": "Local limits yield an exact accepted deferred-preview DTO, discard partial source sheets and retain original bytes for sandbox analysis.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 deferredSpreadsheetPreview"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1 deferred upload"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "DeferredSpreadsheetParse"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C04",
+          "status": "pass",
+          "reason": "Reservation-before-parse, concurrent100-document/250MiB capacity, release/rollback and ZIP boundaries are specified.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2 ES01, §7.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-03-C05",
+          "status": "pass",
+          "reason": "The exact drawing warning and image-only fallback are specified; omission alone does not set truncated. Formula-cache and PDF auxiliary-read failure signals are also explicit.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.2 local drawing removal"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1 preview"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "DocumentPreview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-04",
+      "checks": [
+        {
+          "id": "CORE-04-C01",
+          "status": "pass",
+          "reason": "Concrete reader, stored/analyzed document, model-part, source-sheet/row and inventory DTOs connect profile conversion to digest/kind validation.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3–2.4"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "ReaderProfile, profileToSources, StoredDocument, AnalyzedDocument, CriteriaWorkbookInventory"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C02",
+          "status": "pass",
+          "reason": "Physical sandbox identity owns preparation promises; retained rereads share one session and local TaskPool1 without repeating installation.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5, §2.8"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.5–7.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C03",
+          "status": "pass",
+          "reason": "Document wall time, reader soft limit, command/create/kill deadlines and cleanup activity ownership are distinct.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.8"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–7.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C04",
+          "status": "pass",
+          "reason": "Reader limits and partial/unsupported/hard-error branches cannot be mistaken for full source completion.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3 limits and result states"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "ReaderProfile/Coverage"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.8 EL04..09"
+            }
+          ]
+        },
+        {
+          "id": "CORE-04-C05",
+          "status": "pass",
+          "reason": "Fixed commands and allowlisted kinds forbid evaluating document formulas, macros, links or instructions; negative acceptance is specified.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.5 fixed commands"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G12"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-04/05"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-05",
+      "checks": [
+        {
+          "id": "CORE-05-C01",
+          "status": "pass",
+          "reason": "Typed selectors, range/order limits, digest/kind validation and concrete reread response DTOs are specified.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "DocumentRequeryRequest/Response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C02",
+          "status": "pass",
+          "reason": "Retained source chunks, independent deterministic coverage and verification of every segment are defined.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3B"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C03",
+          "status": "pass",
+          "reason": "Repair replaces at most160 structures, distinct from merged1000; validated recovery clears initial missing-segment state while preserving history and source truncation.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.4–2.5"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "문맥 replacement와 구간 복구의 정확한 크기 계약"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3B"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C04",
+          "status": "pass",
+          "reason": "Incomplete or mismatched selections produce source_limit/limited; exceptions or invalid replacements retain context with needs_review unless source_limit applies. Abort propagates.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.5 repair failure and limited branches"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "replacement"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-05-C05",
+          "status": "pass",
+          "reason": "Structural, sparse, shifted, transposed, hidden and no-progress cases define coverage behavior without relying on filenames or row-count guesses.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.5 acceptance"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-05/07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-06",
+      "checks": [
+        {
+          "id": "CORE-06-C01",
+          "status": "pass",
+          "reason": "Page/table/cell geometry, nesting, blank pages and coverage have separate transcription and judge schemas with numerical limits.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "VisualTranscription/VisualPage/VisualTable/VisualCell"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "visual transcription and judge schemas"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C02",
+          "status": "pass",
+          "reason": "Independent verification compares original visuals with transcription and checks page identity, geometry, overlap and blank-page reasons.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6 validation and independent judge"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C03",
+          "status": "pass",
+          "reason": "Page-local replacement, bounded rounds/deadlines, retry eligibility and stopReason precedence are specified.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6 stopReason and repair"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3C"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C04",
+          "status": "pass",
+          "reason": "Page/image/output limits and uncertain content retain partial state rather than fabricate text or completion.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.3, §2.6"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.8; EF-08"
+            }
+          ]
+        },
+        {
+          "id": "CORE-06-C05",
+          "status": "pass",
+          "reason": "Negative cases cover invented or mixed pages, invalid parents, false blank approval and independent-verifier failures.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.6 acceptance"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G03/G12"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-08"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-07",
+      "checks": [
+        {
+          "id": "CORE-07-C01",
+          "status": "pass",
+          "reason": "Eligibility combinations and excluded public fields are closed; private Word block/PDF table provenance is separated from public quote/page citations.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1 eligibility and native citation boundary"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "InternalStructuredTable/InternalNativeCitation"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "Evidence/ExcludedCriteriaDocument"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C02",
+          "status": "pass",
+          "reason": "Only fully verified not_criteria documents can be excluded; complete reading and source quality are explicit, while mixed documents retain genuine reusable rules.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1 exclusion predicate"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "eligibility legal/business/mixed cases"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C03",
+          "status": "pass",
+          "reason": "Only invalid schema/citations get one repair; transient uncertainty and abort differ, and excluded sources cannot re-enter candidates, approval or revision.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1–13.2"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C04",
+          "status": "pass",
+          "reason": "Names, roles and summaries are not evidence; exact normalized quotes, numeric boundaries, range/comment grounding and input caps prevent false exclusion.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1 grounding/input caps"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "citation numeric-boundary/comment fixtures"
+            }
+          ]
+        },
+        {
+          "id": "CORE-07-C05",
+          "status": "pass",
+          "reason": "Legal, business, qualitative, retrospective, external-reference, mixed and injection cases have filename-independent expected classifications.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.1"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "ALG-X-ELIGIBILITY cases"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-eligibility.SYSTEM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-08",
+      "checks": [
+        {
+          "id": "CORE-08-C01",
+          "status": "pass",
+          "reason": "Inventory regions, samples, detail reads, plans, dispositions, region assessments and citations have distinct DTOs and complete region accounting.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.2"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "CriteriaWorkbookInventory/CriteriaReadRange/CriteriaRegionAssessment"
+            },
+            {
+              "path": "prompts/criteria-algorithms.catalog.json",
+              "section": "criteria-sandbox schemas"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C02",
+          "status": "pass",
+          "reason": "Discovery supplements omitted sparse regions and specifies two orientations, transposed/merged blocks, separated bounds and actual header roles.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.1, §11.1–11.3"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3A, §7.4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C03",
+          "status": "pass",
+          "reason": "Discovery creates a separate physical sandbox after structural analysis; only inventory data may carry over, while its two detail rounds reuse that discovery session.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1 session ownership"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–7.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C04",
+          "status": "pass",
+          "reason": "Inventory/detail/range/coordinate/output caps distinguish unique returned cells, record JSON size and repeated coordinate budget, preserving partial coverage.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.1–11.2"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.3A, §7.8"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "CriteriaWorkbookInventory/detail response"
+            }
+          ]
+        },
+        {
+          "id": "CORE-08-C05",
+          "status": "pass",
+          "reason": "Rename, shift, transpose, hidden, adjacent-table and condition/note transformations define equivalent or intentionally changed source/coverage outcomes.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9 metamorphic, §11"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-05/06/09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-09",
+      "checks": [
+        {
+          "id": "CORE-09-C01",
+          "status": "pass",
+          "reason": "Rule, comparison, units, scope, hierarchy, sample and conditions have distinct provenance; absent and unresolved types have explicit representations.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §3.3, §11.3"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "Criterion"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "grounding fixtures"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C02",
+          "status": "pass",
+          "reason": "Actual note-role cells are excluded while genuine conditions are recovered. Same-label sourceEvidence limitations and required unique-row corrections have separate fixtures.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3.1, §3.3, §11.3"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "baseline condition01/02; ALG-X-CONDITION01/02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C03",
+          "status": "pass",
+          "reason": "Shared/child/sample and replacement priorities are specified; mandatory HIERARCHY_SCOPE_V2 distinguishes owned applicability headings from generic titles.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§11.3, §12"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "필수 prompt overlays: HIERARCHY_SCOPE_V2"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "ALG-X-HIERARCHY01/02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C04",
+          "status": "pass",
+          "reason": "Size/depth/text bounds and current invalid-grounding behavior are explicit; mandatory additional cases require conservative confirmation instead of hidden guessing.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §11.3"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§5"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "baseline grounding01; ALG-X-GROUND01/02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-09-C05",
+          "status": "pass",
+          "reason": "Variable hierarchies, arbitrary materials, unitless qualitative rules and same-label/different-condition cases are tested without filename or material-name branches.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§3, §5.3, §9, §12"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "condition/hierarchy/eligibility fixtures"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-09"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-10",
+      "checks": [
+        {
+          "id": "CORE-10-C01",
+          "status": "pass",
+          "reason": "Confirm/revise carry the current draft, feedback, source/scope and expected version; approved clone/version/time and feedback history are typed.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "ConfirmCriteriaRequest/ReviseCriteriaRequest/RunSnapshot"
+            },
+            {
+              "path": "contracts/examples/01-criteria-first-commands.json",
+              "section": "confirm/revise"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C02",
+          "status": "pass",
+          "reason": "Editable meaning is separated from server provenance. REQUIRED_PATCH_V2 handles required:boolean with consistent rule text, preserved unrelated fields and human reapproval.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§8, §13.2"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "REQUIRED_PATCH_V2"
+            },
+            {
+              "path": "contracts/algorithm-edge-cases.json",
+              "section": "revision baseline and ALG-X-REVISION01/02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C03",
+          "status": "pass",
+          "reason": "Revision success/failure, confirmation return, confirmation-to-target transition and version/revision increments are explicit.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §5–6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C04",
+          "status": "pass",
+          "reason": "Missing/stale versions, feedback limits, scoped-source validation and cancellation/revision guards close late-response races.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5, §7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§13.2"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-10-C05",
+          "status": "pass",
+          "reason": "Preapproval targets are rejected; approved criteria are cloned/frozen with server version and provenance/audit preserved.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3–5, §10"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "AuditEntry"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§1, §8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-11",
+      "checks": [
+        {
+          "id": "CORE-11-C01",
+          "status": "pass",
+          "reason": "Independent visual facts300 and review items250 per document use different schemas and calls; facts extraction is explicitly PDF/image-only.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§2, §4"
+            },
+            {
+              "path": "contracts/pipeline-model-schemas.json",
+              "section": "documentFieldsSchema/itemSchema"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C02",
+          "status": "pass",
+          "reason": "Facts preserve actual observations, samples, report identity, zero/unit/ND notation independently of approved limits.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§4"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C03",
+          "status": "pass",
+          "reason": "Analysis, visual facts, semantic proposal, ordered normalization, item events and coverage have a defined sequence.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.7"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§4–5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C04",
+          "status": "pass",
+          "reason": "Invalid IDs/shapes fail the document; uncertainty, different records, conditions and independent-fact mismatches downgrade according to explicit precedence.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-11-C05",
+          "status": "pass",
+          "reason": "CSV/XLSX record blanks remain present; valid exclusions and missing rows are distinguished without claiming row coverage proves every criterion.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§7"
+            },
+            {
+              "path": "prompts/pipeline-prompts.md",
+              "section": "대상 판정/records bindings"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-12",
+      "checks": [
+        {
+          "id": "CORE-12-C01",
+          "status": "pass",
+          "reason": "Numeric operators, inclusive ranges, exact unit normalization and status/machine/missing fields are specified without implicit unit conversion.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "Item"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C02",
+          "status": "pass",
+          "reason": "Missing failure requires complete reading, required applicability and actual absence evidence; uncertainty/ND/cache loss stay review and optional absence is omitted.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5–6, §9 ALG-M"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C03",
+          "status": "pass",
+          "reason": "Ordered normalization prioritizes source, criterion, applicability, conditions and independent facts over numeric outcomes.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D07"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C04",
+          "status": "pass",
+          "reason": "Literal hierarchy/sample, numeric boundaries, ordered components, specified pages and same-record source checks prevent label-only passes.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5.3"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.4 applicability"
+            }
+          ]
+        },
+        {
+          "id": "CORE-12-C05",
+          "status": "pass",
+          "reason": "Deterministic vectors distinguish zero, blanks, merged continuation, absent cache, verified/unverified missing and conflicting extracted values.",
+          "evidence": [
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§6, §9 ALG-N/M/E"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-09/10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-13",
+      "checks": [
+        {
+          "id": "CORE-13-C01",
+          "status": "pass",
+          "reason": "Closed run/document/stage enums, modes, event sequence/time and exact document summary predicates are supplied.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §6, §10"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "RunStatus/Summary/RunSnapshot"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RunDocumentStatus/RunStage"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C02",
+          "status": "pass",
+          "reason": "Separate two-worker analysis/review stages define deduplication, sibling failure isolation and document-ID ownership independently of global pools.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8–2.9"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§6"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C03",
+          "status": "pass",
+          "reason": "Cancellation, late-run-event rejection, terminal aggregation and waiter isolation are explicit; late kill failure uses activity while the run stays cancelled.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§3, §8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.1, §2.8"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.5"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C04",
+          "status": "pass",
+          "reason": "Open runs are capped at3; insertion precedes pruning to total40. The250-item cap and incomplete-coverage partial state remain distinct.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "ES02"
+            }
+          ]
+        },
+        {
+          "id": "CORE-13-C05",
+          "status": "pass",
+          "reason": "Post-run human decisions require reasons and preserve original machine status, before/after audit, summary and item.resolved events.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2, §5–6, §10"
+            },
+            {
+              "path": "contracts/examples/01-criteria-first-commands.json",
+              "section": "resolve"
+            },
+            {
+              "path": "contracts/types.ts",
+              "section": "AuditEntry/Item"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-14",
+      "checks": [
+        {
+          "id": "CORE-14-C01",
+          "status": "pass",
+          "reason": "Public citations, criterion/item identity, missing flags, PDF anchors and selection callbacks are distinct from private native table provenance.",
+          "evidence": [
+            {
+              "path": "contracts/types.ts",
+              "section": "Evidence/Item"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D0, D1.3"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "InternalNativeCitation"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C02",
+          "status": "pass",
+          "reason": "Filters affect lists while highlights use every item linked to the selected source; owner counts and explicit transition traces prevent cross-document mixing.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§7"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D10a"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "sourceTrace"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C03",
+          "status": "pass",
+          "reason": "Required DB-H01 preserves missing flags in frozen projections. Missing target contextual citations are suppressed for highlighting while explanatory evidence and grounded criterion-label recovery remain.",
+          "evidence": [
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02, D11"
+            },
+            {
+              "path": "ui/dashboard-interaction-cases.json",
+              "section": "projectionCases"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D08/D16"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C04",
+          "status": "pass",
+          "reason": "Required I9.1 specifies source hash, unique sheet, full bounds, exact cell quote/numeric boundaries, verified same-record anchor/unit and atomic rejection; twenty fixtures cover wrong cells, headers and ambiguity. PDF page admission is separately exact.",
+          "evidence": [
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I9.1 REQUIRED_REBUILD table admission"
+            },
+            {
+              "path": "ui/interaction-fixtures.json",
+              "section": "TABLE-HIGHLIGHT-REBUILD; PREVIEW-PDF-PAGE"
+            },
+            {
+              "path": "ui/detail-controls.md",
+              "section": "D1.3 spreadsheet and PDF rules"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18"
+            }
+          ]
+        },
+        {
+          "id": "CORE-14-C05",
+          "status": "pass",
+          "reason": "The revised acceptance matches source/origin/channel/type/token/item validation, immutable preview binding, listener cleanup and original-file exclusion from exports.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D07"
+            },
+            {
+              "path": "reviews/main-session/CHANGES.md",
+              "section": "CORE-14-C05 scope correction"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-15",
+      "checks": [
+        {
+          "id": "CORE-15-C01",
+          "status": "pass",
+          "reason": "Activity identities, runtime/status, causal handoffs, sanitation and log bounds are defined; publication revision differs from run sequence and includes cleanup failures.",
+          "evidence": [
+            {
+              "path": "contracts/types.ts",
+              "section": "ActivityEvent/Task/Snapshot"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.7"
+            },
+            {
+              "path": "contracts/examples/04-activity-snapshot.json",
+              "section": "cleanup failure"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C02",
+          "status": "pass",
+          "reason": "Global pools, engine queue, document workers and local commands have separate caps plus FIFO admission, abort checks and release after cleanup.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC01..05"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C03",
+          "status": "pass",
+          "reason": "Terminal/cancel/cleanup publication and GET/SSE/recovery/disposal order are explicit.07 now agrees on supplied-array tail100 rather than newest100.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§8"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C04",
+          "status": "pass",
+          "reason": "Channel framing, partial buffers, progress allowlists, dedup keys, stream/aggregate ownership, caps, heartbeat and scoped observation are concrete.",
+          "evidence": [
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.9"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4"
+            }
+          ]
+        },
+        {
+          "id": "CORE-15-C05",
+          "status": "pass",
+          "reason": "Auto-collapse defaults, causal eligibility, ordering, burst handling, pause/remainder and app OFF versus OS CSS reduction are specified without changing authoritative work state.",
+          "evidence": [
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2–4.3"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I5"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC08"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-16",
+      "checks": [
+        {
+          "id": "CORE-16-C01",
+          "status": "pass",
+          "reason": "Export states and JSON/CSV/four-sheet XLSX fields retain final/machine decisions, reasons, evidence and audit.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§7"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.2 export"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C02",
+          "status": "pass",
+          "reason": "User-selected report identity and real header/row mapping constrain two-cell changes in a copied workbook with ZIP/XML preservation.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3, §5"
+            },
+            {
+              "path": "contracts/examples/05-ledger-analyze.json",
+              "section": "proposal and allowed cells"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C03",
+          "status": "pass",
+          "reason": "Analyze, confirm and export bind to serialized proposal fields; note-only changes do not automatically invalidate fingerprints, as LED13/14 demonstrate.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§2.3 step5, §4.1 LED13/14"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§9–10"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "EF-15"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C04",
+          "status": "pass",
+          "reason": "Formula injection, ZIP/relationship paths, existing cells, incomplete results and sample allowlists have explicit rejection/preservation contracts.",
+          "evidence": [
+            {
+              "path": "specs/05a-ledger-export.md",
+              "section": "§3.1–3.2, §5, §7.3–7.4"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G11/G12"
+            }
+          ]
+        },
+        {
+          "id": "CORE-16-C05",
+          "status": "pass",
+          "reason": "Golden UI selection and v3 direct-input verification are distinguished, with oracle isolation, no answer/filename injection and metamorphic checks.",
+          "evidence": [
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§4.1"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§9"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "§2, §5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-17",
+      "checks": [
+        {
+          "id": "CORE-17-C01",
+          "status": "pass",
+          "reason": "D05a enumerates five required and nine defaultable stored fields, legacy5/7 acceptance and null/invalid/extra rejection; generated designs require all14.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02–D03, D05a"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "required"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "legacyParserContract/legacyParserCases"
+            },
+            {
+              "path": "contracts/internal-pipeline.ts",
+              "section": "RequiredRebuildDashboardNoticeCode/NoticeMetadata/PublicReadyJobExtension/StandaloneMetadataExtension"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C02",
+          "status": "pass",
+          "reason": "Mandatory DB-H02/03 use independent semantic judgment before approved-only host composition. Scope, exact spans, dependencies, preserved fields and negative cases are explicit, with model-quality limits separated from mechanical guarantees.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a–D05b"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "REQUIRED_REBUILD planner override and semantic judge"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "plannerEnvelopeContract, semanticNegativeCases"
+            },
+            {
+              "path": "DECISIONS.md",
+              "section": "D18"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C03",
+          "status": "pass",
+          "reason": "Planner, semantic judge and all retries share three total model calls. D05b defines parse failures, absent judge budget and constrained repair; one sandbox installation, generated/standard fallback/failed states and DELETE204 cancellation remain explicit.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D03–D04, D05a–D05b, D12"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "shared budget"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.6"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C04",
+          "status": "pass",
+          "reason": "Frozen review data and restricted plans prevent model code or verdict changes; host composition preserves unapproved fields, invalid input rejects and fixed notices disclose standard/partial fallback without rewriting unrelated titles.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D02–D05b, D07"
+            },
+            {
+              "path": "contracts/dashboard-design.schema.json",
+              "section": "closed schema"
+            },
+            {
+              "path": "prompts/dashboard-loop.md",
+              "section": "parse/errors/fallback"
+            }
+          ]
+        },
+        {
+          "id": "CORE-17-C05",
+          "status": "pass",
+          "reason": "DB-SEQ-01 gives sequential requests, full designs, preserved fields and canvas/style/count oracles; dark+compact control tests implicit meaning. Runtime status remains NOT_RUN.",
+          "evidence": [
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "requiredRebuildSequence and implicitDarkControl"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05a, D11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-18",
+      "checks": [
+        {
+          "id": "CORE-18-C01",
+          "status": "pass",
+          "reason": "Design attributes, CSS variables, chart configuration, standalone output and mount/update/destroy are defined by bounded included references.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05–D07, including D05b notice layout"
+            },
+            {
+              "path": "reference/dashboard/chart-entry.reference.jsx",
+              "section": "mount/update/destroy"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "chart contract"
+            },
+            {
+              "path": "ui/library-effects.csv",
+              "section": "dashboard runtime"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C02",
+          "status": "pass",
+          "reason": "Actual chart shape/size/theme/legend, selection/filter/details and snapshot identity/counts have eighteen complete browser-case plans and assertions.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D06–D08, D11"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "browserMatrix"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "counts/files/findings/filters/details"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C03",
+          "status": "pass",
+          "reason": "Initial state, detail layout, motion precedence, runtime cleanup and retained hidden iframe life are distinct without invented visibility suspension.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05, D07, D09–D10a"
+            },
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "browserMatrix"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C04",
+          "status": "pass",
+          "reason": "Nonce/CSP, escaping, offline/sandbox/bridge checks and exact HTML/report readback prevent treating exit0 as sufficient validation.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D04, D07–D08"
+            },
+            {
+              "path": "validation/dashboard-dom-validator.cjs",
+              "section": "input/syntax/csp/offline/escaping"
+            }
+          ]
+        },
+        {
+          "id": "CORE-18-C05",
+          "status": "pass",
+          "reason": "Eleven DOM checks are separate from actual browser geometry, visibility, canvas and style evidence across named viewport branches.",
+          "evidence": [
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D08, D11"
+            },
+            {
+              "path": "contracts/dashboard-customization-cases.json",
+              "section": "browserMatrix DB-V01..18"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "G11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "CORE-19",
+      "checks": [
+        {
+          "id": "CORE-19-C01",
+          "status": "pass",
+          "reason": "Cache keys, owners, lifetimes, caps, invalidation and FIFO/write-recency distinctions are specified, including insert-before-prune40→41→40 retention.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.2, §7.7"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "ES01..22"
+            },
+            {
+              "path": "specs/01-state-api.md",
+              "section": "§1"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C02",
+          "status": "pass",
+          "reason": "Sparse inventory, orientations, sweep, dedup/matching/missing order and nested scans/parser memory/serialization costs are explicit; H denotes checked header citations.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.1, §7.3–7.4"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EA01..07"
+            },
+            {
+              "path": "specs/03-algorithms.md",
+              "section": "§5, §11–12"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C03",
+          "status": "pass",
+          "reason": "Exact pool/queue/worker caps, FIFO/abort/cleanup order, same-sandbox boundaries, deadlines and nested-acquisition restrictions avoid undefined scheduling.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.5–7.6"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC01..05"
+            },
+            {
+              "path": "specs/02-backend-pipeline.md",
+              "section": "§2.8"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C04",
+          "status": "pass",
+          "reason": "Bounded logs, replay, stale gates, handoffs and PDF/iframe lifetimes distinguish absent backpressure/batching/suspension; tail100 selection now agrees.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.7"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EC06..10"
+            },
+            {
+              "path": "ui/interaction-contract.md",
+              "section": "I4–I5"
+            },
+            {
+              "path": "specs/04-ui-motion.md",
+              "section": "§4.2–4.3"
+            }
+          ]
+        },
+        {
+          "id": "CORE-19-C05",
+          "status": "pass",
+          "reason": "Byte/character/cell/page/time/token units, stop/partial semantics, negative gates and measurement protocol avoid unmeasured performance or completion claims.",
+          "evidence": [
+            {
+              "path": "specs/07-data-algorithms-concurrency.md",
+              "section": "§7.8–7.10"
+            },
+            {
+              "path": "contracts/efficiency-inventory.json",
+              "section": "EL01..35, knownLimitations"
+            },
+            {
+              "path": "specs/06-verification.md",
+              "section": "§4"
+            },
+            {
+              "path": "specs/05-dashboard-exports.md",
+              "section": "D05b planner/judge shared three-call budget"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "R1-CORE-001",
+      "moduleId": "CORE-08",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/03-algorithms.md",
+      "section": "11.1 환경·한도; specs/02-backend-pipeline.md §2.1, §2.8",
+      "problem": "XLSX 기준 탐색의 세션 소유권이 충돌한다. 02는 구조 분석 E2B를 항상 종료한 뒤 탐색 전용 세션을 시작하지만 03은 기존 분석 세션을 재사용한다고 한다.",
+      "alternativeInterpretations": [
+        "항상 구조 분석과 탐색에 별도 E2B 세션을 만든다.",
+        "분석 세션을 유지하여 기준 탐색에도 재사용한다."
+      ],
+      "requiredDecision": "기준 파이프라인의 세션 생성·종료 책임을 하나로 고정하고 선택적 어댑터 재사용 기능과 구분한다.",
+      "resolution": "03 §11.1 and 02 §2.1/2.8 now require a distinct discovery sandbox; only inventory data may be reused, while discovery detail rounds reuse that discovery session.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-002",
+      "moduleId": "CORE-09",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "prompts/pipeline-prompt-catalog.json",
+      "section": "review:text-part:469; specs/03-algorithms.md §11.3",
+      "problem": "같은 hierarchy prompt가 categoryPath를 shared section headings에서 보존하라고 하면서 section titles에서 category를 도출하지 말라고 한다. 적용 가능한 section heading과 금지된 title의 구분이 없다.",
+      "alternativeInterpretations": [
+        "실제 상위 섹션 제목을 유형 계층 근거로 수용한다.",
+        "섹션 제목에서 나온 유형을 모두 제외하고 표 머리글/열만 수용한다."
+      ],
+      "requiredDecision": "업무상 유형·적용 범위를 가진 섹션 헤더와 일반 목차/문서 제목을 구별하는 조건 및 예시를 지정하고 프롬프트 충돌의 우선순위를 정한다.",
+      "resolution": "pipeline-prompts HIERARCHY_SCOPE_V2 is a mandatory reconstruction overlay distinguishing structurally owned applicability headings from generic document/TOC/section titles; algorithm-edge-cases provides positive and negative cases.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-003",
+      "moduleId": "CORE-10",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "prompts/criteria-algorithms.catalog.json",
+      "section": "criteria-revision.editableProperties; criteria-revision.revise; specs/03-algorithms.md §8, §13.2, §6",
+      "problem": "required는 편집 가능한 필드와 PATCH schema에 있지만 revision prompt의 허용 변경 목록과 모호성 해소 목록에는 없다. required=true 기준을 '선택 항목'으로 바꿔 달라는 요청에서 rule만 수정하면 §6의 명시 required 우선 정책 때문에 필수로 남는다.",
+      "alternativeInterpretations": [
+        "자연어 수정은 required:false를 직접 patch하여 선택 항목으로 바꾼다.",
+        "prompt 목록만 지켜 rule을 선택 사항으로 바꾸고 기존 required:true는 보존한다."
+      ],
+      "requiredDecision": "required의 자연어 수정 가능 여부를 명시하고 가능하면 prompt의 editable·semantic edit 목록에 포함하거나, 불가하면 사용자 메시지와 direct-edit 경로를 지정한다.",
+      "resolution": "03 §13.2 and mandatory REQUIRED_PATCH_V2 explicitly permit required:boolean and require consistent optional prose, preservation of unrelated fields, provenance protection and another human confirmation.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-004",
+      "moduleId": "CORE-13",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/01-state-api.md",
+      "section": "§3 상태 기계; §10 요약; contracts/types.ts Summary",
+      "problem": "summary의 문서 관련 네 필드는 이름만 있고 계산식이 없다. 특히 incompleteDocuments가 partial 문서만인지 failed/cancelled/queued/processing까지 포함한 비완료 문서인지 결정할 수 없다. 문서 status와 stage도 wire enum보다 느슨한 string으로 남아 있다.",
+      "alternativeInterpretations": [
+        "incompleteDocuments는 status='partial'만 센다.",
+        "incompleteDocuments는 status!='completed'인 모든 문서를 센다."
+      ],
+      "requiredDecision": "허용 문서 status/stage와 documents/completedDocuments/failedDocuments/incompleteDocuments의 정확한 predicate, 진행/취소 snapshot 예시를 명시한다.",
+      "resolution": "01 §3/§10, types Summary and internal-pipeline RunDocumentStatus/RunStage enumerate wire states and all four document-count predicates, including partial-only incompleteDocuments.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-005",
+      "moduleId": "CORE-07",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/03-algorithms.md",
+      "section": "§13.1 native citation paragraph; contracts/types.ts Evidence; prompts/criteria-algorithms.catalog.json criteria-eligibility.SCHEMA",
+      "problem": "Word native citation은 documentId/block/table, visual은 documentId/page/table이라고 하나 공개 Evidence와 eligibility schema에는 block/table이 없다. 내부 structured-table provenance와 공개 citation 중 어느 경계의 형식인지 명시되지 않는다.",
+      "alternativeInterpretations": [
+        "공개 evidence에 block/table 필드를 추가해 native 위치를 보존한다.",
+        "기존 Evidence 계약을 따라 Word는 quote만, PDF는 page+quote만 노출하고 block/table은 내부에만 둔다."
+      ],
+      "requiredDecision": "내부 table indexing, 모델 eligibility evidence, normalized public evidence 각각의 타입과 변환을 지정하고 공개 가능한 Word/PDF native 위치 예시를 제공한다.",
+      "resolution": "03 §13.1 and internal-pipeline distinguish private block/table provenance from the public/eligibility citation allowlist; Word uses quote-only and PDF uses page+quote without synthetic A1 coordinates.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-006",
+      "moduleId": "CORE-04",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.1, §2.3–2.4; prompts/pipeline-prompts.md binding; specs/03-algorithms.md §3.1, §11",
+      "problem": "분석 완료 Document의 modelParts/sourceSheets/sourceRows/private analysis 반환 컨테이너와 profile→DTO 변환이 없다. criteria inventory sheet/region 입력 타입도 필수 키·주소·region ID 형태가 없는 설명으로 남아 있다.",
+      "alternativeInterpretations": [
+        "profile-native sparse rows와 typed value를 그대로 전달한다.",
+        "normalized cell/text 배열이나 Map으로 변환하고 blank/sentinel을 새로 만든다."
+      ],
+      "requiredDecision": "AnalyzedDocument, model parts, sheet/row/cell, criteria inventory/region DTO와 변환 예제를 명시한다. 원래 행·셀 주소, 빈 셀, 수식/cache/sentinel 및 읽기 한도 보존 규칙도 포함한다.",
+      "resolution": "02 §2.3–2.4 and internal-pipeline provide concrete stored/analyzed document, model parts, source sheet/row, profile conversion, inventory region and detail DTOs.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-007",
+      "moduleId": "CORE-15",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.8–2.9; specs/01-state-api.md §3, §8",
+      "problem": "취소 뒤 run event와 terminal activity report는 차단되지만 늦은 E2B kill 실패는 CLEANUP_FAILED로 사용자에게 보여야 한다. 취소 응답 시점·활동 terminal 시점·오류 공개 경로가 없다.",
+      "alternativeInterpretations": [
+        "취소 즉시 모두 terminal로 만들고 뒤 cleanup 실패는 서버 로그만 보관한다.",
+        "cleanup까지 activity를 비종료로 두거나 cancelled snapshot에 별도 오류 필드를 붙인다."
+      ],
+      "requiredDecision": "run은 cancelled를 유지하면서 cleanup 대기·실패를 어느 activity 상태/공개 필드/연결로 언제 전달하는지 명시한다. slot은 cleanup settle까지 보존한다.",
+      "resolution": "01 §8 and 02 §2.8 keep the global E2B task nonterminal through kill. Late kill failure is failed/cleanup activity via GET/SSE while the run remains cancelled and late run events stay blocked.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-008",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2; contracts/types.ts DocumentPreview",
+      "problem": "로컬 XLSX 한도 초과는 deferred preview라고 하지만 DocumentPreview에 해당 상태나 retained-content 정책이 없다.",
+      "alternativeInterpretations": [
+        "빈 table sheets와 truncated=true/warning을 반환한다.",
+        "이미 읽은 부분 시트 또는 text fallback을 반환한다."
+      ],
+      "requiredDecision": "각 source cap에서 정확한 public preview JSON과 partial retained content/경고 정책을 지정한다.",
+      "resolution": "01 §4.1 and 02 §2.2 provide exact accepted201 deferred text preview/private source result, discard partial sourceSheets and retain original bytes for sandbox analysis.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-009",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.4–2.5",
+      "problem": "매 attempt의 deterministic 검사에 최초 context chunk 누락이 포함되나 repair 검증 성공 시 contextSegmentsRead를 전체로 바꾸고 initial count만 유지한다고 한다. 최초 실패가 해소 가능한지 불분명하다.",
+      "alternativeInterpretations": [
+        "최초 실패는 sticky여서 repair해도 verified가 불가능하다.",
+        "전체 replacement 검증 성공 시 최초 실패는 이력만 남고 현재 issue는 해제한다."
+      ],
+      "requiredDecision": "최초 누락 진단이 현재 완료 gate에서 해제되는 정확한 조건을 지정하고 초기 1구간 실패→repair 복구 예시를 추가한다.",
+      "resolution": "02 §2.5 and pipeline-prompts make initial missing-chunk state recoverable only after a validated full replacement, then verify every retained segment; initial statistics and sourceTruncated remain preserved.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-010",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.4 structure limits; §2.5 completeReplacement; prompts/pipeline-prompts.md repair",
+      "problem": "단일 응답 structure 상한160, 결합 context 상한1000, repair는 전체 context 대체라는 세 규칙에서 repair 응답의 상한이 결정되지 않는다.",
+      "alternativeInterpretations": [
+        "repair도 단일 응답이므로160개만 허용한다.",
+        "repair는 combined context replacement여서1000개까지 허용한다."
+      ],
+      "requiredDecision": "repair 전용 상한과 160개 이상 기존 context를 안전하게 보존하거나 partial로 남기는 정책을 명시한다.",
+      "resolution": "02 §2.4–2.5 and pipeline-prompts distinguish replacement structure≤160 from combined/public≤1000;161 replacement rejects, retains old context and returns needs_review.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-011",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D02 sourceItems; D10; ui/detail-controls.md D1.3",
+      "problem": "dashboard immutable sourceItems가 presence/missingVerified를 버린다. missing 원문 색칠 방지는 이 필드가 필요하고 null→빈 문자열 변환은 legacy missing 인식에도 걸리지 않는다.",
+      "alternativeInterpretations": [
+        "정확한 snapshot allowlist를 지켜 contextual target evidence가 일반 highlight가 된다.",
+        "명세에 없는 missing 메타데이터/안전 highlight projection을 추가한다."
+      ],
+      "requiredDecision": "snapshot/sourceItems에 missing 필드를 보존하거나 별도의 검증된 highlight projection을 지정한다. value=null 또는 빈 문자열+presence=missing+문맥 target 근거의 왕복 예제를 추가한다.",
+      "resolution": "DECISIONS D18 and05 D02/D05a make DB-H01/02/03 REQUIRED_REBUILD, with observed defects retained only as negative controls. Projection, semantic scopes and mandatory gate precedence are explicit. The subsequent D05a/D05b independent judge, approved-only host merge and shared three-call budget also resolve R2-CORE-011; model-quality limits remain explicit.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-012",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D1.3 spreadsheet coordinate rules; specs/04-ui-motion.md §7",
+      "problem": "좌표 우선과 quote-only 전체 셀 탐색은 있지만 좌표의 실제 값과 quote 일치 및 record/item anchor 검증이 없다. 요구사항 CORE14 C04의 wrong-location/header/other-row 거절을 독립 구현할 수 없다.",
+      "alternativeInterpretations": [
+        "B3=10인데 cell=B3,quote=99이면 좌표대로 B3를 칠한다. quote-only 99는 여러 행을 모두 칠한다.",
+        "실제 quote/항목 record를 검증하고 불일치면 위치 확인만 표시한다."
+      ],
+      "requiredDecision": "형식별 highlight admission predicate를 지정한다. multi-cell quote, repeated value, header-only, 서로 다른 record, PDF 지정 page와 rendered page의 일치 조건을 포함한다.",
+      "resolution": "Required interaction I9.1 now specifies independently checked source-hash/record metadata, unique sheet and full bounds, exact cell quote with numeric-token boundaries, verified item/unit anchors, and atomic per-item rejection without relocation or verdict changes. Twenty TABLE-HIGHLIGHT-REBUILD fixtures cover positive and negative paths. D1.3 separately fixes PDF page admission; D18 makes the new rule mandatory.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-013",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D07 bridge; decomposition/core-modules.json CORE-14-C05",
+      "problem": "bridge wire payload는 channel/type/token/itemId만인데 acceptance는 runId 검증을 요구한다.",
+      "alternativeInterpretations": [
+        "토큰과 iframe source 및 item membership만 검증한다.",
+        "runId를 새 필수 필드로 추가하고 없는 메시지를 거절한다."
+      ],
+      "requiredDecision": "runId를 transport/receiver 모두에 명시하거나 token의 immutable run/dashboard binding과 preview 교체 정리로 동등성을 검증하도록 acceptance를 명시적으로 정정한다.",
+      "resolution": "CORE14C05 and CHANGES match the preview-token bridge.05 D07 specifies source/origin/channel/type/token/item allowlist, immutable preview binding and listener cleanup; no wire runId is required.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-014",
+      "moduleId": "CORE-15",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.9 TRACE_PROGRESS; specs/05-dashboard-exports.md D04 command observer",
+      "problem": "command stdout의 partial-line framing, final stdout replay 소유권, 중복 키, 허용 설치 진단 규칙이 없다. 같은 설치가 두 번처럼 보이는 것과 실제 반복 command를 구별하지 못한다.",
+      "alternativeInterpretations": [
+        "callback와 final output의 모든 발생을 별도 log로 기록한다.",
+        "정규화 text 또는 stage/current로 dedup하여 실제 반복 작업도 지울 수 있다."
+      ],
+      "requiredDecision": "command별 line buffering·parse·dedup key·stream/final ownership·malformed line 정책과 허용 진단을 정하고 중복/정당한 반복 trace 예제를 제공한다.",
+      "resolution": "02 §2.9 and07 §7.7 define channel buffers, partial-line framing, allowlisted progress/install diagnostics, dedup key, stream versus final aggregate ownership, limits and finish flushing.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-015",
+      "moduleId": "CORE-15",
+      "severity": "low",
+      "status": "resolved",
+      "document": "specs/04-ui-motion.md",
+      "section": "§4.2 criteria-analysis autoCollapse",
+      "problem": "criteria-analysis dock의 autoCollapse 기본값을 기존 구현에서 확인하라고 남겨 패키지만으로 종료 후 상태를 결정할 수 없다.",
+      "alternativeInterpretations": [
+        "criteria-analysis도 기본 true여서800ms 후 접힌다.",
+        "기본 false여서 완료 후에도 열린다."
+      ],
+      "requiredDecision": "각 host의 autoCollapse 값을 패키지에 직접 명시한다.",
+      "resolution": "04 §4.2 explicitly defaults autoCollapse to false and enables it only for target review; no original source lookup is needed.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-016",
+      "moduleId": "CORE-16",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05a-ledger-export.md",
+      "section": "§4 proposal fingerprint; specs/01-state-api.md §9",
+      "problem": "fingerprint는 출력 proposal만 해시하지만 01은 UI human override 뒤 기존 proposal이409라고 한다. 동일 판정의 note/audit만 바꾸거나 첫5개/6500자 밖 변경은 해시가 같을 수 있다.",
+      "alternativeInterpretations": [
+        "실제로 대장에 쓸 결과/비고가 달라질 때만 재확인한다.",
+        "모든 HITL/result revision은 다시 확인해야 한다."
+      ],
+      "requiredDecision": "payload-only invalidation으로 문구를 좁히거나 result revision/item digest를 hash에 포함한다.",
+      "resolution": "01 §9–10 and05a §2.3/§4.1 agree that only serialized proposal changes invalidate the fingerprint; LED13/14 cover note-only and out-of-payload modifications.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-017",
+      "moduleId": "CORE-17",
+      "severity": "high",
+      "status": "resolved",
+      "document": "reference/dashboard/design-functions.reference.mjs",
+      "section": "applyDashboardPreferences theme; prompts/dashboard-system.md independent theme",
+      "problem": "'Keep the dark page; make the charts light blue.'에서 semantic prompt는 dark 페이지를 유지하지만 authoritative matcher는 뒤 light를 페이지 theme=light로 덮어쓴다.",
+      "alternativeInterpretations": [
+        "사용자 의미대로 theme=dark, accent=blue를 유지한다.",
+        "명시 override 코드대로 theme=light가 된다."
+      ],
+      "requiredDecision": "theme matcher의 적용 문맥을 차트 색 표현과 분리하거나 현재 한계를 명시하여 semantic acceptance와 코드 우선순위를 일치시킨다.",
+      "resolution": "DECISIONS D18 and05 D02/D05a make DB-H01/02/03 REQUIRED_REBUILD, with observed defects retained only as negative controls. Projection, semantic scopes and mandatory gate precedence are explicit. The subsequent D05a/D05b independent judge, approved-only host merge and shared three-call budget also resolve R2-CORE-011; model-quality limits remain explicit.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-018",
+      "moduleId": "CORE-17",
+      "severity": "high",
+      "status": "resolved",
+      "document": "reference/dashboard/design-functions.reference.mjs",
+      "section": "applyDashboardPreferences distribution/fileVisualization; prompts/dashboard-loop.md examples",
+      "problem": "'전체는 파이, 파일별 결과는 비교 막대로'는 독립 distribution=pie/fileVisualization=bars 의미지만 matcher의 좁은 파일 전용 접두식에 맞지 않아 둘 다 bar가 된다.",
+      "alternativeInterpretations": [
+        "전체 pie와 파일별 bars를 독립 선택한다.",
+        "마지막 막대 token으로 전체도 bar로 바꾼다."
+      ],
+      "requiredDecision": "파일 비교 차트 문맥 인식 범위를 정하고 그 범위의 복합·순서변형 fixture를 추가하거나 semantic 보장을 좁힌다.",
+      "resolution": "DECISIONS D18 and05 D02/D05a make DB-H01/02/03 REQUIRED_REBUILD, with observed defects retained only as negative controls. Projection, semantic scopes and mandatory gate precedence are explicit. The subsequent D05a/D05b independent judge, approved-only host merge and shared three-call budget also resolve R2-CORE-011; model-quality limits remain explicit.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-019",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "prompts/dashboard-loop.md",
+      "section": "CURRENT DESIGN block; specs/05-dashboard-exports.md D11; DECISIONS.md D11",
+      "problem": "baseDesign 비요청 필드 보존은 필수 semantic acceptance이나 성공 경로는 prompt만 의존하고 parser/명시 override는 비요청 필드를 되돌리는 유효 모델 plan도 허용한다.",
+      "alternativeInterpretations": [
+        "규격상 valid model plan이면 light/red/pie가 바뀌어도 성공으로 수용한다.",
+        "비요청 변경을 탐지하여 repair 또는 거절한다."
+      ],
+      "requiredDecision": "모델 준수에 의존하는 현행 한계인지 검증된 보존 보장인지 명시한다. 보장이면 preservation 검증 및 shared3-call budget 처리를 정의한다.",
+      "resolution": "DECISIONS D18 and05 D02/D05a make DB-H01/02/03 REQUIRED_REBUILD, with observed defects retained only as negative controls. Projection, semantic scopes and mandatory gate precedence are explicit. The subsequent D05a/D05b independent judge, approved-only host merge and shared three-call budget also resolve R2-CORE-011; model-quality limits remain explicit.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-020",
+      "moduleId": "CORE-17",
+      "severity": "low",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D01 implementation assets; contracts/dashboard-design.schema.json; specs/06-verification.md §4 G11",
+      "problem": "generation schema 필드가15개라고 적혔지만 schema/default/CORE17은14개다. 새06 G11도15design choices를 반복한다.",
+      "alternativeInterpretations": [
+        "15는 오기이며14개가 전체다.",
+        "명세에서 누락된15번째 독립 설정이 있다."
+      ],
+      "requiredDecision": "정확한 필드 수를14로 고치거나 누락 필드를 schema/default/renderer 전체에 정의한다.",
+      "resolution": "05 D01/D05 and06 G11 consistently say fourteen design fields, matching schema/default and CORE17C01.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-021",
+      "moduleId": "CORE-01",
+      "severity": "high",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.8; prompts/pipeline-prompts.md 공통 조립; environment/README.md; specs/06-verification.md G01/G09",
+      "problem": "generateJson/generateText의 구조화 contents/systemInstruction/schema/role 입력, text/data/usage 반환, provider 오류 분류와 response/token/inline file-part/JSON parse 한도·코드가 없다. 호출부의 토큰값과 SDK 버전만으로 어댑터·fake client 계약을 결정할 수 없다.",
+      "alternativeInterpretations": [
+        "SDK raw response/text를 그대로 반환하고 SDK 오류를 각 호출부에서 해석한다.",
+        "adapter가 표준 data/text/usage와 typed errors로 정규화하고 response/parts cap을 선검사한다."
+      ],
+      "requiredDecision": "두 adapter 메서드의 정확한 TypeScript/JSON 계약, 기본/override 범위, usage 매핑, provider error taxonomy·retry/abort·limit/parse 정책과 offline fake-client 기대 예제를 추가한다.",
+      "resolution": "02 §2.8.1 and internal-pipeline define request/response/fake ports, SDK mapping, token limits/default, safe error taxonomy and absent generic adapter byte/part caps separately from stage caps.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R1-CORE-022",
+      "moduleId": "CORE-02",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "environment/README.md",
+      "section": "앱 구현 이후 실행 명령; environment/templates/scripts/dev.mjs; specs/01-state-api.md §1/§3; specs/06-verification.md G02",
+      "problem": "포트/정적 dist와 개발 child kill은 설명되지만 API server의 SIGINT/SIGTERM shutdown 순서·진행run cancellation/cleanup 대기·종료 코드 및 검증 기대가 없다.",
+      "alternativeInterpretations": [
+        "signal 수신 즉시 listen을 닫고 run abort 후 바로 process를 종료한다.",
+        "새 요청을 막고 모든 run abort·E2B cleanup을 제한시간까지 기다린 뒤 종료한다."
+      ],
+      "requiredDecision": "production server signal handler의 순서, deadline/exit code, 열린 SSE 및 cleanup 실패 처리, PORT override/dist 있는·없는 상태의 확인 명령과 기대를 명시한다.",
+      "resolution": "01 §11 specifies PORT/host/dist and cancel-all→server.close(callback exit0). Lack of cleanup supervision, explicit SSE close and hard deadline is documented with process-level acceptance scenarios.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-001",
+      "moduleId": "CORE-15",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.7 Activity dock input",
+      "problem": "07 originally required latest100 tasks while04/I4 preserve the provided array tail100, meaning oldest100 on a newest-first snapshot.",
+      "alternativeInterpretations": [
+        "Take the newest100 tasks by time or input prefix.",
+        "Preserve slice(-100) without reordering and retain the older100."
+      ],
+      "requiredDecision": "Use the same supplied-array selection rule everywhere; keep newest-first correction separate.",
+      "resolution": "07 §7.7 now explicitly preserves provided-array tail100 and explains oldest100 on newest-first input, agreeing with04 §4.2 and interaction I4.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-002",
+      "moduleId": "CORE-05",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.5 incomplete reread failure",
+      "problem": "02 mapped reread failures to needs_review while pipeline-prompts mapped incomplete reread to limited;07 said needs_review or limited without a branch.",
+      "alternativeInterpretations": [
+        "Incomplete coverage from a capped reread returns needs_review.",
+        "The same reread returns limited with source_limit."
+      ],
+      "requiredDecision": "Distinguish incomplete/missing/mismatched selections from exceptions and invalid replacement responses.",
+      "resolution": "02 §2.5 now specifies source_limit→limited for incomplete/missing/mismatched selections and needs_review for selector absence, exceptions or replacement failures unless source_limit already applies.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-003",
+      "moduleId": "CORE-14",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "ui/detail-controls.md",
+      "section": "D1.3 PDF matching",
+      "problem": "PDF text/row matching omitted admission by rendered page, allowing page1 evidence to color the same text on page2.",
+      "alternativeInterpretations": [
+        "Reject supplied-page evidence differing from the current page.",
+        "Run the quote matcher against whichever page is displayed."
+      ],
+      "requiredDecision": "Specify supplied-page, omitted-page and mixed-page admission before quote matching.",
+      "resolution": "D1.3 now states !source.page || source.page===currentPage: specified other pages reject; omitted/falsy0 admits current-page matching without a uniqueness guarantee.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-004",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "prompts/dashboard-loop.md",
+      "section": "parser acceptance and legacy seven-field inputs",
+      "problem": "Legacy parser rules require focus/density and default newer fields without enumerating old/new keys; schema requires14 while normalization defaults all enums.",
+      "alternativeInterpretations": [
+        "Reject title/subtitle/accent/focus/density because layout/distribution were required old fields.",
+        "Accept that five-field object and normalize omitted layout/distribution."
+      ],
+      "requiredDecision": "Enumerate required/defaultable fields with omitted/null semantics and legacy7/minimal/missing-key fixtures.",
+      "resolution": "05 D05a and customization legacyParserContract/Cases enumerate five required and nine defaultable stored fields, legacy5/7 acceptance, null rejection and full14 generated plans.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-005",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D02/D05/D11; DECISIONS D08/D11/D16",
+      "problem": "Baseline projection, semantic matcher and preservation defects are explicit, but future/additional DB-H01/02/03 do not select one binding rebuilt-product target despite source safety and semantic preservation questions.",
+      "alternativeInterpretations": [
+        "Ship exact baseline projection/matcher outputs and allow untouched successful-model fields to drift.",
+        "Require missing-flag preservation, scoped semantic settings and untouched-field drift repair before product acceptance."
+      ],
+      "requiredDecision": "Declare gates mandatory or optional, including precedence over parity fixtures and repair/fallback behavior.",
+      "resolution": "DECISIONS D18 and05 D02/D05a make DB-H01/02/03 REQUIRED_REBUILD, with observed defects retained only as negative controls. Projection, semantic scopes and mandatory gate precedence are explicit. The subsequent D05a/D05b independent judge, approved-only host merge and shared three-call budget also resolve R2-CORE-011; model-quality limits remain explicit.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-006",
+      "moduleId": "CORE-03",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/02-backend-pipeline.md",
+      "section": "§2.2 local XLSX drawing removal",
+      "problem": "Drawing relationships are removed, but warning/truncated policy for a readable table with images was unspecified.",
+      "alternativeInterpretations": [
+        "Return a silent table with truncated false or absent.",
+        "Return a drawing warning and set truncated true."
+      ],
+      "requiredDecision": "Give the exact warning and drawing-only truncated rule, including image-only fallback.",
+      "resolution": "02 §2.2 gives the warning/example, says omission alone does not add truncated, explains absent versus false, and specifies source limitation text and imageOnly fallback.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-007",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "contracts/dashboard-customization-cases.json",
+      "section": "named CORE17C05 request sequence",
+      "problem": "Isolated preference tests and supplied-plan browser cases omit the named green/light/large-doughnut→preserved-pie→implicit bright-report planning sequence.",
+      "alternativeInterpretations": [
+        "Separate preference examples and supplied-plan rendering satisfy the question.",
+        "Returned baseDesign must flow through three actual requests with retained-field/render checks."
+      ],
+      "requiredDecision": "Provide exact request/baseDesign flow, constrained/retained fields, render assertions and gate mapping.",
+      "resolution": "customization requiredRebuildSequence DB-SEQ-01 gives three requests/baseDesigns/full expected designs and render oracles, plus a dark+compact control for implicit light/comfortable inference.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-008",
+      "moduleId": "CORE-19",
+      "severity": "low",
+      "status": "resolved",
+      "document": "specs/01-state-api.md",
+      "section": "§1 run retention;07 §7.2;efficiency ES02",
+      "problem": "Run pruning originally omitted whether insertion precedes pruning;40 terminal runs yield different retention.",
+      "alternativeInterpretations": [
+        "Prune then insert, leaving41 records.",
+        "Insert then prune, leaving40 and evicting the oldest terminal."
+      ],
+      "requiredDecision": "Give operation ordering and a40terminal+newopen boundary example.",
+      "resolution": "01 §1 explicitly runs.set first then insertion-order pruning while size>40, yielding39terminal+1open and rejecting prune-before-insert.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-009",
+      "moduleId": "CORE-19",
+      "severity": "low",
+      "status": "resolved",
+      "document": "contracts/efficiency-inventory.json",
+      "section": "EA03 complexity notation",
+      "problem": "EA03 uses H in O(H*N+N*M), but shared notation does not define H.",
+      "alternativeInterpretations": [
+        "H counts individual claimed header entries.",
+        "H counts grouped header rows or groups."
+      ],
+      "requiredDecision": "Define H consistently with the actual header lookup loop.",
+      "resolution": "07 §7.1 and efficiency dimensions now define H as source-header citations checked against stored cells, consistent with §7.3B and EA03.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-010",
+      "moduleId": "CORE-15",
+      "severity": "low",
+      "status": "resolved",
+      "document": "specs/07-data-algorithms-concurrency.md",
+      "section": "§7.7 handoff eligibility/light;efficiency EC08",
+      "problem": "Reduced motion clears active+pending can include OS-only reduction, whereas04/I5 say only app OFF clears JS and OS preference changes CSS.",
+      "alternativeInterpretations": [
+        "Any reduced-motion preference clears active/pending handoffs.",
+        "Only app OFF clears; OS-only preference leaves queue state running."
+      ],
+      "requiredDecision": "Qualify shorthand as app OFF and state OS-only behavior separately.",
+      "resolution": "07 §7.7 now explicitly clears active/pending only when app OFF makes useAppReducedMotion true; OS-only reduction changes CSS without clearing this JS queue, matching04/I5.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    },
+    {
+      "id": "R2-CORE-011",
+      "moduleId": "CORE-17",
+      "severity": "medium",
+      "status": "resolved",
+      "document": "specs/05-dashboard-exports.md",
+      "section": "D05a semantic changes validation; prompts/dashboard-loop REQUIRED_REBUILD override",
+      "problem": "A model-generated changes mask can self-authorize unrelated fields. For instruction '범례 아래로', both legend=bottom and theme=dark with basis=semantic and the same exact span pass the listed structural checks, while the prose says span meaning must justify each change.",
+      "alternativeInterpretations": [
+        "Trust the planner's semantic attribution after schema/scope/span checks; accept both declared changes.",
+        "Independently validate that each span entails its field/value and reject or repair the unrelated theme change."
+      ],
+      "requiredDecision": "Assign semantic intent validation to a concrete stage or explicitly delimit the model trust guarantee; specify this adversarial envelope's acceptance, repair and budget behavior.",
+      "resolution": "05 D05a–D05b and dashboard-loop explicitly require an independent semantic judge before the mask, with approvedChanges-only host merge. Planner/judge/retries share three total calls; no judge budget forbids generated success. SEM-UNREQUESTED-THEME specifies actual-judge rejection and separate mock host checks, while documenting that mistaken semantic judgments remain possible.",
+      "recheckedBy": "/root/architecture_clarity_core"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "DECISIONS.md",
+      "sha256": "29b743be0d89e94fd4fc8ea9b3b176e73f4616bbbee342d9324f8a68b7c82049"
+    },
+    {
+      "path": "contracts/algorithm-edge-cases.json",
+      "sha256": "9eeefb895810cd4e7fb30c2c7850a5115d293019af968805b1465b4391c396db"
+    },
+    {
+      "path": "contracts/dashboard-customization-cases.json",
+      "sha256": "e96442f6086dbac69ec88248888645d14834ac5d237ccdf34fd8ea8aeb3fcdba"
+    },
+    {
+      "path": "contracts/dashboard-design.default.json",
+      "sha256": "db93eada45386a7950f1ccc41053d9fef1e3359731e4d83820e2482e85e0f997"
+    },
+    {
+      "path": "contracts/dashboard-design.schema.json",
+      "sha256": "cff7fd6863b65743e3c6fc66a04dae98902c5862e7bd95f5d860fb724d7b5892"
+    },
+    {
+      "path": "contracts/dashboard-examples.json",
+      "sha256": "ca1ccc560c51c5a2c1620893ad50e1b94eddd60d9df94ccc949de3f38a7ee4b4"
+    },
+    {
+      "path": "contracts/efficiency-inventory.json",
+      "sha256": "f459041735071276a208e4cf18be29711b251239c4514fa9b844dd248d2c1e60"
+    },
+    {
+      "path": "contracts/examples/01-criteria-first-commands.json",
+      "sha256": "ba592b746c1b56721f3e19e938216868b619d59c1f3e10eb5e2f4cc0a7aaf5cd"
+    },
+    {
+      "path": "contracts/examples/02-errors.json",
+      "sha256": "aa60a88b88a97d6d1b6b57c8a96b5dcb0a66e5cfb4dfe6ca8b659fe8572432e2"
+    },
+    {
+      "path": "contracts/examples/03-run-sse.json",
+      "sha256": "5acca7e52c87ae8ab4430d130f345736c80e680539e66980cf5c1c32549d3a87"
+    },
+    {
+      "path": "contracts/examples/04-activity-snapshot.json",
+      "sha256": "967bac1a4e0dd1e5277ac2ad746fae6e34cc137c7fd80e6ebe304befb1a4f388"
+    },
+    {
+      "path": "contracts/examples/05-ledger-analyze.json",
+      "sha256": "998a4a6cb8bbacac82e0b1e2c9c0b95692da1d355c5a131cf527045cb272ed66"
+    },
+    {
+      "path": "contracts/internal-pipeline.ts",
+      "sha256": "75785d4c71661d35235b321ad9794290cc67da67d57392a117c269dc33e7c70b"
+    },
+    {
+      "path": "contracts/pipeline-model-schemas.json",
+      "sha256": "476e013b88764213945aa5d6b6ad8eecd3b125f3ee7b820628a1f3b9b635cfa6"
+    },
+    {
+      "path": "contracts/types.ts",
+      "sha256": "124e8b34fa38f2b191d9ca03a3e58f9b3b3819740f5c22ded64a022e77c1f32c"
+    },
+    {
+      "path": "decomposition/core-modules.json",
+      "sha256": "cf51606f635ef5acb090c59f46fcbae350d9b12697e2bbad8e9c372f6969162e"
+    },
+    {
+      "path": "decomposition/ui-modules.json",
+      "sha256": "9a0306aeaf8cc3c8d272e0ab69db893a06d8c9ef42e460be6e6b13e3ac8dffab"
+    },
+    {
+      "path": "environment/README.md",
+      "sha256": "20fef8d11b0370d911419b1c0ed3b101e548ce3a2617f04e8dd83d7c075196eb"
+    },
+    {
+      "path": "environment/integrations/package-lock.json",
+      "sha256": "a0a7a2dfefb08f27494b68daf8f6da059316ecce1da901aeda7caf5a1b144441"
+    },
+    {
+      "path": "environment/integrations/package.json",
+      "sha256": "35dd7d6863b15706ed00b3a50ccee29fb65f06a286db0ab362ffa4e01b218ef1"
+    },
+    {
+      "path": "environment/versions.json",
+      "sha256": "377cce5dbfe104346091e5f0287dda5977a3f6250d64648a2224c9a3dcd540cf"
+    },
+    {
+      "path": "prompts/criteria-algorithms.catalog.json",
+      "sha256": "c1b5354f702b02106d2ddbc1d192668f55d041f7980cbb7b7a46cd5cccebfc01"
+    },
+    {
+      "path": "prompts/dashboard-loop.md",
+      "sha256": "056426a15df4ee452661a2be9681b50268afc8c1276c25747390162a3a26c97e"
+    },
+    {
+      "path": "prompts/dashboard-system.md",
+      "sha256": "9688c6e90d3923c3260a2f889d6934322e372e7fddc9f4312e4e8a927f21f091"
+    },
+    {
+      "path": "prompts/pipeline-prompts.md",
+      "sha256": "3dfae0bb6d4c0369814bd22ff9121ed5bfe45ea2be73f70c232d71921d5f03b1"
+    },
+    {
+      "path": "reference/dashboard/chart-entry.reference.jsx",
+      "sha256": "29899aaadfb8a47bc3662c3cef567743bc0f6582da2edaa077bbec1d468092b0"
+    },
+    {
+      "path": "reviews/main-session/CHANGES.md",
+      "sha256": "1e1f0b5f8b4a510c256f039f234bb023a4f293a2485ccacbdb83e85c76633d0a"
+    },
+    {
+      "path": "specs/01-state-api.md",
+      "sha256": "e17e736dc6725b61bdaa397564fe2a848add2438d097262c1edfdb4b18b54024"
+    },
+    {
+      "path": "specs/02-backend-pipeline.md",
+      "sha256": "6d718ab72e0b435cd417eb5e779ee97579f2472bb75bc87d0cc46d7a78fa11f5"
+    },
+    {
+      "path": "specs/03-algorithms.md",
+      "sha256": "30ff7f4c4b396182e2757ed2972067e6a1e4a5d07d2dc49c904da2b7c1c9d389"
+    },
+    {
+      "path": "specs/04-ui-motion.md",
+      "sha256": "739e58c015ade3318558b23d5cb4df23a3f0770fabc74e9b38e3e0466c2131d8"
+    },
+    {
+      "path": "specs/05-dashboard-exports.md",
+      "sha256": "167b8fc7110de3a87bc8af7513fcdc980b60542fe329d52b3091e90226c45743"
+    },
+    {
+      "path": "specs/05a-ledger-export.md",
+      "sha256": "7297f0024bc878c89422636202fa59f870363622926388372b800078990a4f80"
+    },
+    {
+      "path": "specs/06-verification.md",
+      "sha256": "c139c30d7cec0c23af1b0592af05e61fea842a7b8bcbf1c2208595e9164f2889"
+    },
+    {
+      "path": "specs/07-data-algorithms-concurrency.md",
+      "sha256": "c53218ec4b1d57bfa179442805762e8dd2dda300bd0df4623e39b61f74731678"
+    },
+    {
+      "path": "ui/dashboard-interaction-cases.json",
+      "sha256": "3e0c645495dfbc3bbabf5e7da4f417a28fce9e1c0003709cc3b8f958ad8c6ac4"
+    },
+    {
+      "path": "ui/detail-controls.md",
+      "sha256": "e1214fcdd2eacf3bf2b60e42192159befe9574f72f634a6b3dd162199a3e53b4"
+    },
+    {
+      "path": "ui/interaction-contract.md",
+      "sha256": "d228621fadc5fb785387d31226bac07ef50583710325dab5664aaa330db4f9db"
+    },
+    {
+      "path": "ui/interaction-fixtures.json",
+      "sha256": "175dcf310c7e60da833fdcc7c4fdf2fa84b0fcbb2945a969c5d840f98d8de358"
+    },
+    {
+      "path": "ui/library-effects.csv",
+      "sha256": "25326c447363c184d174cc3d9c48e0aaf79cff3b7d7677d17f0cf821b5edb784"
+    },
+    {
+      "path": "validation/dashboard-dom-validator.cjs",
+      "sha256": "710a07958a8ef34fb527b07dc786d292fd8a4d332ba6c065ff2a9a4f35830c60"
+    }
+  ]
+}

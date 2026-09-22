@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "originalQuestions": 203,
+  "currentQuestions": 235,
+  "removed": 0,
+  "changes": [
+    {
+      "id": "UI-01-C07",
+      "moduleId": "UI-01",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "UI-01-C07"
+        },
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-01-C07"
+        }
+      ],
+      "question": "health 조회의 최초 시점·기본값·실패·재시도/폴링·unmount/늦은응답 처리와 의존 UI gating을 동일하게 구현할 수 있는가?"
+    },
+    {
+      "id": "CORE-16-C06",
+      "moduleId": "CORE-16",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-16-C06"
+        }
+      ],
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?"
+    },
+    {
+      "id": "UI-02-C09",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "UI-02-C07"
+        }
+      ],
+      "question": "I9의 모든 추가 acceptance 후보가 baseline/필수개선/선택으로 개별 결정되고 gate와 목표 fixture에 연결되는가?"
+    },
+    {
+      "id": "CORE-06-C06",
+      "moduleId": "CORE-06",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-06-C06"
+        }
+      ],
+      "question": "VLM30쪽/180초 제한과 G07의575쪽 처리·35필드 exact/source gate를 만족하는 required 경로와 완료/차단 판정이 지정되는가?"
+    },
+    {
+      "id": "CORE-14-C06",
+      "moduleId": "CORE-14",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "clarity",
+          "originalId": "CORE-14-C06"
+        }
+      ],
+      "question": "scan/image/회전/2-up geometry가 text-layer-only viewer와 G07 전필드overlay 사이에서 어떤 DTO·좌표·tolerance·fallback/필수확장으로 구현되는가?"
+    },
+    {
+      "id": "CORE-15-X01",
+      "moduleId": "CORE-15",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-15-X01"
+        }
+      ],
+      "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?"
+    },
+    {
+      "id": "CORE-12-X01",
+      "moduleId": "CORE-12",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-12-X01"
+        }
+      ],
+      "question": "일반finding evidence의 permissive regex/미검증원문과 조건·분류·필수누락의 실제검증을 구별하고 invalid좌표·가짜quote numericpass baseline 및 강화REQUIRED_REBUILD를 명시하는가?"
+    },
+    {
+      "id": "CORE-12-X02",
+      "moduleId": "CORE-12",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-12-X02"
+        }
+      ],
+      "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?"
+    },
+    {
+      "id": "CORE-08-X01",
+      "moduleId": "CORE-08",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-08-X01"
+        }
+      ],
+      "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?"
+    },
+    {
+      "id": "CORE-19-X01",
+      "moduleId": "CORE-19",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "core-accuracy",
+          "originalId": "CORE-19-X01"
+        }
+      ],
+      "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?"
+    },
+    {
+      "id": "UI-02-C07",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-02-C07"
+        }
+      ],
+      "question": "공통 formatValue와 기준 편집 numberLabel의 서로 다른 정규식·trim·null·15자리·12소수·선행0·부호·과학표기 표시 규칙이 자족적으로 정의되는가?"
+    },
+    {
+      "id": "UI-02-C08",
+      "moduleId": "UI-02",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-02-C08"
+        }
+      ],
+      "question": "짧은 활동 title/phase의 Gemini→LLM·E2B→샌드박스 변환과 코드/URL/path/filename/config token 보호, 원문·로그·오류body 무변환 경계가 명시되는가?"
+    },
+    {
+      "id": "UI-04-C07",
+      "moduleId": "UI-04",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-04-C07"
+        }
+      ],
+      "question": "업로드와 대장 파일 크기의 KB 반올림·최소1KB·MB1소수 및 정확히1MiB에서 서로 다른 > / >= 분기를 정의하는가?"
+    },
+    {
+      "id": "UI-07-C07",
+      "moduleId": "UI-07",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-07-C07"
+        }
+      ],
+      "question": "LiveReviewFlow의 aria-live 문구가 completed/partial 외 failed/cancelled/idle에서도 검토 진행 중으로 남는 observed baseline과 개선 요구를 명확히 구분하는가?"
+    },
+    {
+      "id": "UI-11-C07",
+      "moduleId": "UI-11",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-11-C07"
+        }
+      ],
+      "question": "판정색 highlight와 별개 raw <mark> fallback의 호출 조건·case/whitespace·숫자경계 부재·quote당30개 비중첩 검색·범위병합이 정의되는가?"
+    },
+    {
+      "id": "UI-09-C07",
+      "moduleId": "UI-09",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-09-C07"
+        }
+      ],
+      "question": "작업실의 container≤1050px group select 및 ≤680px 처리흐름/실행내역 탭, flow초기값·scope reset·aria-selected·data-pane에 따른 내용 가시성이 정의되는가?"
+    },
+    {
+      "id": "UI-09-C08",
+      "moduleId": "UI-09",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "ui-accuracy",
+          "originalId": "UI-09-C08"
+        }
+      ],
+      "question": "groupTasks parent identity 상속은 별도 document/run/context 호환 guard 없이 순환만 막고, actualTransfers의 양측 scope guard와 다르다는 현재 동작을 정의하는가?"
+    },
+    {
+      "id": "CORE-20-C01",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C01"
+        }
+      ],
+      "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?"
+    },
+    {
+      "id": "CORE-20-C02",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C02"
+        }
+      ],
+      "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?"
+    },
+    {
+      "id": "CORE-20-C03",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C03"
+        }
+      ],
+      "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?"
+    },
+    {
+      "id": "CORE-20-C04",
+      "moduleId": "CORE-20",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-20-C04"
+        }
+      ],
+      "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?"
+    },
+    {
+      "id": "CORE-21-C01",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C01"
+        }
+      ],
+      "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?"
+    },
+    {
+      "id": "CORE-21-C02",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C02"
+        }
+      ],
+      "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?"
+    },
+    {
+      "id": "CORE-21-C03",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C03"
+        }
+      ],
+      "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?"
+    },
+    {
+      "id": "CORE-21-C04",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C04"
+        }
+      ],
+      "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?"
+    },
+    {
+      "id": "CORE-21-C05",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C05"
+        }
+      ],
+      "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?"
+    },
+    {
+      "id": "CORE-21-C06",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C06"
+        }
+      ],
+      "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?"
+    },
+    {
+      "id": "CORE-21-C07",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C07"
+        }
+      ],
+      "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?"
+    },
+    {
+      "id": "CORE-21-C08",
+      "moduleId": "CORE-21",
+      "origin": "round-01-new",
+      "proposedBy": [
+        {
+          "report": "verification-accuracy",
+          "originalId": "CORE-21-C08"
+        }
+      ],
+      "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?"
+    },
+    {
+      "id": "CORE-21-C09",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C09"
+        }
+      ],
+      "question": "harness와 run-gate timeout의 1..21600000ms 안전정수 상한 및 Node timer clamp 거부를 명시하고 실패 시험으로 검증하는가?"
+    },
+    {
+      "id": "CORE-21-C10",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C10"
+        }
+      ],
+      "question": "채점기가 독립 명확성/정확성 reviewer, nonblank 근거, 현재 평가입력 hash를 강제하고 미검토·중복·stale 의견을 통과시키지 않는가?"
+    },
+    {
+      "id": "CORE-21-C11",
+      "moduleId": "CORE-21",
+      "origin": "round-02-cross-discovery",
+      "proposedBy": [
+        {
+          "report": "round-02/cross-precheck",
+          "originalId": "CORE-21-C11"
+        }
+      ],
+      "question": "evidence 경로의 모든 ancestor symlink/junction·프로젝트 밖 파일을 거부하고 현재 패키지의 정규 경로만 승인하는가?"
+    },
+    {
+      "id": "UI-13-C05",
+      "kind": "wording-correction-no-removal",
+      "before": "메모 공백 제출 금지·최대1000자·서버 저장실패 inline error·취소 시 서버 변경 없음이 정의되는가?",
+      "after": "저장 전 취소의 서버 변경 없음과 저장 중 취소의 폼 닫힘·이미 전송된 resolve 지속, 실패·연속 클릭·race 상태를 관찰 기준선과 필수 정책으로 구분하는가?",
+      "reason": "Remove contradictory unconditional claim; preserve baseline and required behavior branches"
+    },
+    {
+      "id": "CORE-17-C03",
+      "kind": "wording-correction-no-removal",
+      "before": "최대3회 계획·같은 E2B 설치1회·검증 진단 재전달과 ready/generated·ready/standard(fallback)·failed·DELETE 204 취소/제거 계약을 구별하는가?",
+      "after": "관찰 기준선 최대3회 plan 호출·같은 sandbox/설치1회와 REQUIRED_REBUILD planner/judge/repair 합계3회 예산·fallback·취소·정리를 분리하여 결정하는가?",
+      "reason": "Remove contradictory unconditional claim; preserve baseline and required behavior branches"
+    },
+    {
+      "id": "CORE-08-C04",
+      "kind": "wording-correction-no-removal",
+      "before": "100시트/200,000 inventory셀/300영역, 상세6,000셀/220,000자, 18범위·범위12,000·총24,000셀·250기준 한도 초과를 미확인 coverage로 기록하는가?",
+      "after": "첫100시트 cell-profile 대상과 모든 시트 metadata/후속 빈 시트 예외, 200,000 inventory셀/300영역·상세6,000셀/220,000자·18범위·범위12,000·총24,000셀·250기준의 실제 생략과 미확인 coverage를 구별하는가?",
+      "reason": "100 is a profiled sheet index cap, not metadata array cap; retains every boundary and adds empty-sheet branch"
+    }
+  ]
+}

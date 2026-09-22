@@ -3,6 +3,7 @@ import {readFile,writeFile,mkdir,cp,rm} from 'node:fs/promises';
 import {resolve,join,relative,isAbsolute} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {builtinModules} from 'node:module';
+import {buildDatasets} from './sites-datasets.mjs';
 
 const root=resolve(import.meta.dirname,'..');
 const output=join(root,'.cache','sites-output');
@@ -19,6 +20,7 @@ if(!workerOnly)await rm(output,{recursive:true,force:true});
 await mkdir(join(output,'server'),{recursive:true});
 await mkdir(join(output,'.openai'),{recursive:true});
 if(!workerOnly)await cp(join(root,'dist'),join(output,'client'),{recursive:true});
+const datasetManifest=await buildDatasets(root,join(output,'client'));
 await cp(join(root,'.openai','hosting.json'),join(output,'.openai','hosting.json'));
 const resourceNames=[
  'server/assets/dashboard-design.schema.json','server/assets/dashboard-system.txt',
@@ -37,9 +39,10 @@ const result=await build({
  plugins:[{name:'sites-embedded-resources',setup(builder){
   builder.onResolve({filter:/pdf-text\.mjs$/},args=>args.importer.replaceAll('\\','/').endsWith('/server/documents.mjs')?{path:join(root,'server','sites','pdf-text.mjs')}:null);
   builder.onLoad({filter:/[\\/]sites[\\/]resource-registry\.mjs$/},()=>({contents:`export default ${JSON.stringify(resources)};`,loader:'js'}));
+  builder.onLoad({filter:/[\\/]sites[\\/]dataset-manifest\.mjs$/},()=>({contents:`export default ${JSON.stringify(datasetManifest)};`,loader:'js'}));
  }}],
 });
-const config={name:'universal-reviewer',main:'./index.js',compatibility_date:'2026-09-22',compatibility_flags:['nodejs_compat'],assets:{directory:'../client',binding:'ASSETS',not_found_handling:'single-page-application',run_worker_first:['/api/*']}};
+const config={name:'universal-reviewer',main:'./index.js',compatibility_date:'2026-09-22',compatibility_flags:['nodejs_compat'],assets:{directory:'../client',binding:'ASSETS',not_found_handling:'single-page-application',run_worker_first:['/api/*',...Object.keys(datasetManifest)]}};
 await writeFile(join(output,'server','wrangler.json'),JSON.stringify(config,null,2)+'\n');
 await writeFile(join(root,'.cache','sites-metafile.json'),JSON.stringify(result.metafile));
 console.log(`Sites artifact ready: ${output}`);

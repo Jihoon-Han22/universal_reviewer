@@ -1,0 +1,19 @@
+[
+  {"scenario":"missing current version in criteria_first confirmation","method":"POST","path":"/api/runs/R/criteria/confirm","request":{},"status":400,"response":{"error":"현재 기준 버전을 함께 보내 주세요."}},
+  {"scenario":"stale current version","method":"POST","path":"/api/runs/R/documents","request":{"documentIds":["D"],"expectedCriterionVersion":1},"serverCriterionVersion":2,"status":409,"response":{"error":"기준이 변경되었습니다. 최신 기준을 확인한 뒤 다시 시도해 주세요."}},
+  {"scenario":"target attachment before approval","method":"POST","path":"/api/runs/R/documents","request":{"documentIds":["D"],"expectedCriterionVersion":1},"status":409,"response":{"error":"기준을 먼저 승인한 뒤 검토 대상을 추가해 주세요."}},
+  {"scenario":"SSE negative cursor","method":"GET","path":"/api/runs/R/events?after=-1","status":400,"response":{"error":"이벤트 순서가 올바르지 않습니다."}},
+  {"scenario":"missing run after backend restart","method":"GET","path":"/api/runs/R","status":404,"response":{"error":"검토 기록이 없습니다. 서버를 재시작했다면 다시 실행해 주세요."}},
+  {"scenario":"human override blank note","method":"POST","path":"/api/runs/R/items/I/resolve","request":{"status":"pass","note":" "},"status":400,"response":{"error":"변경 사유를 입력해 주세요."}},
+  {"scenario":"origin outside loopback on mutation","method":"POST","path":"/api/runs","headers":{"Origin":"https://example.invalid"},"status":403,"response":{"error":"이 로컬 앱에서만 요청할 수 있습니다."}},
+  {"scenario":"document referenced by retained run","method":"DELETE","path":"/api/documents/D","status":409,"response":{"error":"검토 기록의 근거로 사용 중인 문서는 삭제할 수 없습니다."}},
+  {"scenario":"fourth open run","method":"POST","path":"/api/runs","status":429,"response":{"error":"동시 검토 한도에 도달했습니다. 진행 중인 검토가 끝난 뒤 다시 시도해 주세요."}},
+  {"scenario":"multipart file >20 MiB","method":"POST","path":"/api/documents","status":413,"response":{"error":"파일당 20MB까지 업로드할 수 있습니다."}},
+  {"scenario":"unknown API path","method":"GET","path":"/api/not-a-route","status":404,"response":{"error":"API 경로를 찾을 수 없습니다."}},
+  {"scope":"internal adapter errorSummary, not HTTP response","scenario":"generateText output token budget below valid range","request":{"prompt":"합성 요청","maxOutputTokens":0},"errorSummary":{"service":"gemini","code":"CONFIG_INVALID","message":"gemini: 서비스 설정 형식이 올바르지 않습니다."}},
+  {"scope":"internal adapter errorSummary, not HTTP response","scenario":"generateText blank provider response","providerResponse":{"text":"  "},"errorSummary":{"service":"gemini","code":"INVALID_RESPONSE","message":"gemini: 서비스 응답 형식이 예상과 다릅니다."}},
+  {"scope":"internal adapter errorSummary, not HTTP response","scenario":"generateJson malformed JSON or supplied validate returns false","providerResponse":{"text":"{bad json"},"errorSummary":{"service":"gemini","code":"INVALID_RESPONSE","message":"gemini: 서비스 응답 형식이 예상과 다릅니다."}},
+  {"scope":"internal adapter errorSummary, not HTTP response","scenario":"safeError provider status429; raw error is not retained","providerFailure":{"status":429},"errorSummary":{"service":"gemini","code":"QUOTA","status":429,"message":"gemini: 서비스 할당량 또는 사용 한도를 확인하세요."}},
+  {"scope":"internal adapter errorSummary, not HTTP response","scenario":"AbortError without numeric status","providerFailure":{"name":"AbortError"},"errorSummary":{"service":"gemini","code":"TIMEOUT","message":"gemini: 서비스 요청 시간이 초과되었습니다."}},
+  {"scope":"internal adapter errorSummary plus separate global activity, not a later run SSE event","scenario":"kill fails after run cancellation","errorSummary":{"service":"e2b","code":"CLEANUP_FAILED","message":"e2b: 샌드박스 종료를 확인하지 못했습니다. 설정한 제한 시간 후 자동 종료됩니다."},"runStatus":"cancelled","activityAssertions":{"runtime":"e2b","status":"failed","phase":"cleanup","lastEvent.title":"실행 환경 종료를 확인하지 못했습니다"}}
+]

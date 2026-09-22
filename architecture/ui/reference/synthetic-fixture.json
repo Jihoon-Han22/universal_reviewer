@@ -1,0 +1,19 @@
+{
+  "fixtureId": "architecture-visual-v1",
+  "synthetic": true,
+  "documents": [
+    {"id":"visual-criteria","name":"합성_품질기준.xlsx","kind":"xlsx","mime":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","size":4820,"role":"criteria","url":"/api/documents/visual-criteria/file","preview":{"type":"spreadsheet","sheets":[{"name":"검토 기준","rows":[["시료","시험 항목","판정 기준","단위","조건"],["표준 시료","압축강도","25 이상","MPa","28일"],["표준 시료","흡수율","5 이하","%","상온"],["표준 시료","외관","균열 없음","","육안 확인"]]}]}},
+    {"id":"visual-target","name":"합성_시험성적서_A.xlsx","kind":"xlsx","mime":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","size":5260,"role":"target","url":"/api/documents/visual-target/file","preview":{"type":"spreadsheet","sheets":[{"name":"시험 결과","rows":[["시험성적서","SYN-2026-001","",""],["시료","표준 시료","시험일","2026-09-01"],["시험 항목","측정값","단위","조건"],["압축강도","28.4","MPa","28일"],["흡수율","6.2","%","상온"],["외관","사진 판독 불명확","","육안 확인"]]}]},"extraction":{"referenceNumber":"SYN-2026-001","documentType":"시험성적서","fields":[{"label":"압축강도","value":"28.4","unit":"MPa"},{"label":"흡수율","value":"6.2","unit":"%"},{"label":"외관","value":"사진 판독 불명확","uncertain":true}]}}
+  ],
+  "criteria": [
+    {"id":"visual-c1","label":"압축강도","rule":"28일 압축강도 25 MPa 이상","required":true,"sourceDocumentId":"visual-criteria","sourceName":"합성_품질기준.xlsx","sampleName":"표준 시료","classificationStatus":"not_applicable","categoryPath":[],"conditions":["28일"],"comparison":{"operator":"gte","value":25,"unit":"MPa"},"comparatorConfirmed":true,"sourceEvidence":[{"documentId":"visual-criteria","sheet":"검토 기준","cell":"B2:E2","quote":"압축강도 25 이상 MPa 28일"}]},
+    {"id":"visual-c2","label":"흡수율","rule":"흡수율 5% 이하","required":true,"sourceDocumentId":"visual-criteria","sourceName":"합성_품질기준.xlsx","sampleName":"표준 시료","classificationStatus":"not_applicable","categoryPath":[],"conditions":["상온"],"comparison":{"operator":"lte","value":5,"unit":"%"},"comparatorConfirmed":true,"sourceEvidence":[{"documentId":"visual-criteria","sheet":"검토 기준","cell":"B3:E3","quote":"흡수율 5 이하 % 상온"}]},
+    {"id":"visual-c3","label":"외관","rule":"육안 확인 시 균열 없음","required":true,"sourceDocumentId":"visual-criteria","sourceName":"합성_품질기준.xlsx","sampleName":"표준 시료","classificationStatus":"not_applicable","categoryPath":[],"conditions":["육안 확인"],"sourceEvidence":[{"documentId":"visual-criteria","sheet":"검토 기준","cell":"B4:E4","quote":"외관 균열 없음 육안 확인"}]}
+  ],
+  "items": [
+    {"id":"visual-i1","documentId":"visual-target","label":"압축강도","value":28.4,"unit":"MPa","criterionId":"visual-c1","criterion":"28일 압축강도 25 MPa 이상","status":"pass","presence":"present","explanation":"28일 측정값 28.4 MPa가 기준 25 MPa 이상을 충족합니다.","evidence":[{"documentId":"visual-target","sheet":"시험 결과","cell":"A4:D4","quote":"압축강도 28.4 MPa 28일"}]},
+    {"id":"visual-i2","documentId":"visual-target","label":"흡수율","value":6.2,"unit":"%","criterionId":"visual-c2","criterion":"흡수율 5% 이하","status":"fail","presence":"present","explanation":"상온 측정값 6.2%가 허용 상한 5%를 초과합니다. 기준과 측정값의 단위가 같습니다.","evidence":[{"documentId":"visual-target","sheet":"시험 결과","cell":"A5:D5","quote":"흡수율 6.2 % 상온"}]},
+    {"id":"visual-i3","documentId":"visual-target","label":"외관","value":"사진 판독 불명확","unit":"","criterionId":"visual-c3","criterion":"육안 확인 시 균열 없음","status":"review","presence":"unreadable","explanation":"판독 가능한 외관 결과가 없어 균열 없음 조건의 충족 여부를 확인할 수 없습니다. 원본 사진을 사람이 확인해 주세요.","evidence":[{"documentId":"visual-target","sheet":"시험 결과","cell":"A6:D6","quote":"외관 사진 판독 불명확 육안 확인"}]}
+  ],
+  "design": {"theme":"light","distribution":"doughnut","accent":"cobalt","emphasis":"charts","chartSize":"large","layout":"charts-first","legend":"bottom","motion":"none","corners":"rounded","fileVisualization":"cards"}
+}

@@ -1,0 +1,17 @@
+{
+  "id": "L03",
+  "desc": "동일 성적서번호가 2개 행(5행, 12행)에 존재",
+  "expect": "flag",
+  "sheet": "검토대장",
+  "header_row": 1,
+  "key_column": "C",
+  "key_header": "성적서번호",
+  "result_column": "F",
+  "note_column": "G",
+  "key": "2026-0891",
+  "flag_reason": "duplicate key",
+  "duplicate_rows": [
+    5,
+    12
+  ]
+}

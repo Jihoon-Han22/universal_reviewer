@@ -1,0 +1,113 @@
+{
+  "exactCases": [
+    {
+      "id": "SRC-TEXT-LINES-ORDER",
+      "sourceChars": 166,
+      "sourceUtf8Bytes": 166,
+      "sourceSha256Utf8": "6b53d71c6c042932a9a34b84f5aa0a271fdefaf7d17b8325f39a733aa8f99349",
+      "contextChars": 166,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "6b53d71c6c042932a9a34b84f5aa0a271fdefaf7d17b8325f39a733aa8f99349"
+    },
+    {
+      "id": "SRC-SHEET-CELL-FORMULA",
+      "sourceChars": 495,
+      "sourceUtf8Bytes": 545,
+      "sourceSha256Utf8": "812b332c76770a8bf81ffa9b9110de320faeba958dea0845316c2d5cc38ff4c8",
+      "contextChars": 495,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "812b332c76770a8bf81ffa9b9110de320faeba958dea0845316c2d5cc38ff4c8"
+    },
+    {
+      "id": "SRC-EXTRA-RECORDS-ORDER",
+      "sourceChars": 581,
+      "sourceUtf8Bytes": 581,
+      "sourceSha256Utf8": "5b4b31d0a01ab282aa7672040cb3d28f2ca7d54249286ca67989e99e05bf5578",
+      "contextChars": 581,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "5b4b31d0a01ab282aa7672040cb3d28f2ca7d54249286ca67989e99e05bf5578"
+    },
+    {
+      "id": "SRC-CSV-SHEET-ROW",
+      "sourceChars": 216,
+      "sourceUtf8Bytes": 216,
+      "sourceSha256Utf8": "1f22128aa45c758eae135c8d250821574d8c908b44f95d09ff4d7185deb40adf",
+      "contextChars": 216,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "1f22128aa45c758eae135c8d250821574d8c908b44f95d09ff4d7185deb40adf"
+    }
+  ],
+  "boundaryCases": [
+    {
+      "id": "SRC-BOUNDARY-149999",
+      "repeatCount": 149839,
+      "sourceChars": 149999,
+      "sourceUtf8Bytes": 149999,
+      "sourceSha256Utf8": "51c49a5ef8d3e560a3ab344cd1eb7319ef890aa64981ad177ada2a8f9b354f20",
+      "contextChars": 149999,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "51c49a5ef8d3e560a3ab344cd1eb7319ef890aa64981ad177ada2a8f9b354f20"
+    },
+    {
+      "id": "SRC-BOUNDARY-150000",
+      "repeatCount": 149840,
+      "sourceChars": 150000,
+      "sourceUtf8Bytes": 150000,
+      "sourceSha256Utf8": "2e588920f398a93895e8c7dbf14e2433bf9d4dddb2e923f297d0c64f877f0ad3",
+      "contextChars": 150000,
+      "contextSegmentsTotal": 1,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "2e588920f398a93895e8c7dbf14e2433bf9d4dddb2e923f297d0c64f877f0ad3"
+    },
+    {
+      "id": "SRC-BOUNDARY-150001",
+      "repeatCount": 149841,
+      "sourceChars": 150001,
+      "sourceUtf8Bytes": 150001,
+      "sourceSha256Utf8": "e30be535ebc2533f33058827e651dd3534dad4c91a4bec48c9e9547fbc760ca0",
+      "contextChars": 150001,
+      "contextSegmentsTotal": 2,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "e30be535ebc2533f33058827e651dd3534dad4c91a4bec48c9e9547fbc760ca0"
+    },
+    {
+      "id": "SRC-BOUNDARY-1199999",
+      "repeatCount": 1199839,
+      "sourceChars": 1199999,
+      "sourceUtf8Bytes": 1199999,
+      "sourceSha256Utf8": "464098b937939918c3c38cacf1742cca820a554ebbeb6e08d3d3194512148989",
+      "contextChars": 1199999,
+      "contextSegmentsTotal": 8,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "464098b937939918c3c38cacf1742cca820a554ebbeb6e08d3d3194512148989"
+    },
+    {
+      "id": "SRC-BOUNDARY-1200000",
+      "repeatCount": 1199840,
+      "sourceChars": 1200000,
+      "sourceUtf8Bytes": 1200000,
+      "sourceSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f",
+      "contextChars": 1200000,
+      "contextSegmentsTotal": 8,
+      "sourceTruncated": false,
+      "retainedSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f"
+    },
+    {
+      "id": "SRC-BOUNDARY-1200001",
+      "repeatCount": 1199841,
+      "sourceChars": 1200001,
+      "sourceUtf8Bytes": 1200001,
+      "sourceSha256Utf8": "e3c9f790a4422d74fc7247d8ea86fdfe99fae525f6beaae38f46ed95e4d5af0e",
+      "contextChars": 1200000,
+      "contextSegmentsTotal": 8,
+      "sourceTruncated": true,
+      "retainedSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f"
+    }
+  ],
+  "readerTextCases": 3
+}

@@ -1,0 +1,1701 @@
+{
+  "schemaVersion": 1,
+  "modules": [
+    {
+      "id": "CORE-01",
+      "name": "설정과 외부 서비스 어댑터",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "환경 변수를 검증하고 역할별 LLM 호출·E2B 생성/정리·오류 정제를 공통 어댑터로 제공한다.",
+      "sourceFiles": [
+        "integrations/src/config.mjs",
+        "integrations/src/gemini.mjs",
+        "integrations/src/sandbox.mjs",
+        "integrations/src/errors.mjs",
+        "integrations/src/index.mjs"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "environment/versions.json",
+        "environment/integrations/package-lock.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 구조화 JSON/텍스트 요청과 취소"
+        },
+        {
+          "name": "e2b",
+          "role": "2.51.0; 샌드박스 생성·실행·종료"
+        },
+        {
+          "name": "Node.js",
+          "role": "환경 파일·AbortSignal·timeout"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-01-C01",
+          "category": "contract",
+          "question": "설계가 .env 우선순위, 필수/선택 키, 역할별 model ID와 기본값을 모두 지정하고 공개 health 응답에 비밀키를 포함하지 않는가?",
+          "requiredEvidence": "환경 변수 표와 publicConfig 예시; integrations/test/integrations.test.mjs의 설정/키 비공개 사례"
+        },
+        {
+          "id": "CORE-01-C02",
+          "category": "behavior",
+          "question": "generateJson/generateText의 contents·systemInstruction·schema·role 입력과 text/data/usage 출력, provider 오류 분류를 독립 구현할 수 있는가?",
+          "requiredEvidence": "두 메서드의 요청/응답 예시와 integrations/src/gemini.mjs 대응표"
+        },
+        {
+          "id": "CORE-01-C03",
+          "category": "states",
+          "question": "LLM 요청과 E2B callback의 timeout·abort·finally 정리 순서를 명시하고 작업 취소 후에도 실제 종료까지 자원을 점유하는가?",
+          "requiredEvidence": "호출 상태도와 integrations/test/concurrency.test.mjs의 cancel/cleanup 사례"
+        },
+        {
+          "id": "CORE-01-C04",
+          "category": "failure",
+          "question": "응답 용량·토큰·파일 부분·JSON 파싱 오류와 E2B kill 실패를 성공으로 처리하지 않는 정책이 수치와 오류 코드로 지정되어 있는가?",
+          "requiredEvidence": "integrations/test/gemini-limits.test.mjs와 integrations/test/integrations.test.mjs의 실패 입력/기대 결과"
+        },
+        {
+          "id": "CORE-01-C05",
+          "category": "verification",
+          "question": "키를 노출하거나 실제 외부 호출을 필수로 하지 않고 fake client로 설정·응답·정리를 검사하는 재현 명령이 있는가?",
+          "requiredEvidence": "integrations/package.json test/check 명령 및 실제 API smoke와 오프라인 테스트의 구분"
+        }
+      ]
+    },
+    {
+      "id": "CORE-02",
+      "name": "로컬 HTTP API와 메모리 저장소 경계",
+      "layer": "core",
+      "stepIds": [
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "로컬 서비스의 요청·오류·공개 객체 계약과 문서/run 수명을 정의한다.",
+      "sourceFiles": [
+        "server/index.mjs",
+        "server/app.mjs",
+        "server/documents.mjs",
+        "server/review.mjs"
+      ],
+      "specFiles": [
+        "specs/01-state-api.md",
+        "contracts/types.ts",
+        "contracts/examples/02-errors.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-01"
+      ],
+      "libraries": [
+        {
+          "name": "express",
+          "role": "lock 5.2.1; HTTP route, middleware, 정적 배포"
+        },
+        {
+          "name": "multer",
+          "role": "lock 2.4.0; memoryStorage 업로드"
+        },
+        {
+          "name": "Node.js",
+          "role": "Map·Set·원본 Buffer의 메모리 보관"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-02-C01",
+          "category": "contract",
+          "question": "각 /api route의 method, body/query, 성공 상태 코드, 오류 응답이 정의되고 문서 private buffer/modelParts/profile과 publicDocument가 분리되어 있는가?",
+          "requiredEvidence": "01-state-api route 표, contracts/types.ts, server/app.test.mjs의 공개 응답 검사"
+        },
+        {
+          "id": "CORE-02-C02",
+          "category": "behavior",
+          "question": "문서·run·dashboard job이 기본 구현에서는 메모리 저장이고 서버 재시작 시 사라짐을 명시하며 존재하지 않는 ID의 404 동작을 정의하는가?",
+          "requiredEvidence": "저장소 수명 표와 서버 재시작/404 수용 사례; 임시 보존 스크립트와 제품 기본 기능 구분"
+        },
+        {
+          "id": "CORE-02-C03",
+          "category": "states",
+          "question": "업로드 다중 파일 중 한 개 실패 시 이미 추가한 문서가 rollback되고 run 근거로 쓰이는 문서는 DELETE 409로 보호되는가?",
+          "requiredEvidence": "server/app.test.mjs의 업로드 rollback/근거 삭제 방지 사례"
+        },
+        {
+          "id": "CORE-02-C04",
+          "category": "failure",
+          "question": "local-origin write guard, 2 MB JSON 한도, multipart 파일/필드 한도, 파일 크기 오류 413와 형식 오류 400이 명시되어 있는가?",
+          "requiredEvidence": "middleware 실행 순서와 공격·경계 요청 예시"
+        },
+        {
+          "id": "CORE-02-C05",
+          "category": "verification",
+          "question": "실제 포트 기본값/환경 override, dist 정적 서빙, SIGINT/SIGTERM의 run 취소와 종료를 검증할 명령과 기대 응답이 있는가?",
+          "requiredEvidence": "server/index.mjs, app.test.mjs, 환경 실행 명령에 연결된 체크리스트"
+        }
+      ]
+    },
+    {
+      "id": "CORE-03",
+      "name": "업로드 검증과 원본 보존·로컬 미리보기",
+      "layer": "core",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "purpose": "지원 형식의 원본 bytes를 보존하고 제한된 미리보기만 생성하며 복잡한 문서는 샌드박스 분석으로 넘긴다.",
+      "sourceFiles": [
+        "server/documents.mjs",
+        "server/spreadsheet-xml-compatibility.mjs"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "contracts/types.ts",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-02"
+      ],
+      "libraries": [
+        {
+          "name": "exceljs",
+          "role": "4.4.0; XLSX 로컬 미리보기"
+        },
+        {
+          "name": "jszip",
+          "role": "lock 3.10.2; OOXML 복제본 호환 보정"
+        },
+        {
+          "name": "mammoth",
+          "role": "lock 1.12.3; DOCX 로컬 텍스트"
+        },
+        {
+          "name": "csv-parse",
+          "role": "7.0.2; UTF-8 CSV 논리 행"
+        },
+        {
+          "name": "pdfjs-dist",
+          "role": "lock 6.3.289 (declared ^6.2.108); PDF 원문 검증용 보조 텍스트"
+        },
+        {
+          "name": "saxes",
+          "role": "6.0.0; OOXML namespace 호환 처리"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-03-C01",
+          "category": "contract",
+          "question": "허용 확장자 pdf/docx/xlsx/csv/txt/md/json/png/jpg/jpeg/webp, role, 파일명 정제와 원본 bytes 보존 계약이 지정되어 있는가?",
+          "requiredEvidence": "지원 형식 표, original-content 응답 및 잘못된 확장자/내용 조합 사례"
+        },
+        {
+          "id": "CORE-03-C02",
+          "category": "behavior",
+          "question": "XLSX 미리보기의 namespace/comment 호환 보정이 복제본에만 적용되고 hidden/merged/formula cache 정보를 원본과 혼동하지 않는가?",
+          "requiredEvidence": "server/spreadsheet-xml-compatibility.test.mjs와 documents.test.mjs의 원본 digest 비교"
+        },
+        {
+          "id": "CORE-03-C03",
+          "category": "states",
+          "question": "시트 30개·셀 100,000개·source 1,500,000자 등 로컬 미리보기 한도 초과를 파일 손상으로 거절하지 않고 deferred preview로 넘기는 조건이 명시되어 있는가?",
+          "requiredEvidence": "한도별 ready/deferred/rejected 표와 해당 documents.test.mjs 사례"
+        },
+        {
+          "id": "CORE-03-C04",
+          "category": "failure",
+          "question": "20 MiB 파일, 100문서, 250 MiB 예약 용량 및 ZIP 20,000 entries/100 MiB 팽창 한도가 동시 add·실패 반환까지 정의되는가?",
+          "requiredEvidence": "예약/반환 의사코드와 ZIP/동시 업로드 경계 테스트 매핑"
+        },
+        {
+          "id": "CORE-03-C05",
+          "category": "verification",
+          "question": "미리보기 성공이 전체 분석 완료를 의미하지 않으며 formula cache 없음·embedded drawing 생략·PDF 보조 읽기 실패가 어떻게 표시되는지 검증 가능한가?",
+          "requiredEvidence": "경고와 preview.truncated 예시; documents.test.mjs 및 spreadsheet-xml-compatibility.test.mjs"
+        }
+      ]
+    },
+    {
+      "id": "CORE-04",
+      "name": "같은 샌드박스의 신뢰 문서 리더",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "원본·고정 Python reader를 E2B에 올리고 한 문서의 재조회까지 같은 세션/설치를 사용한다.",
+      "sourceFiles": [
+        "server/sandbox-documents.mjs",
+        "server/document-sandbox-resources.mjs",
+        "server/sandbox-document-reader.py"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json",
+        "contracts/source-serialization-cases.json"
+      ],
+      "dependencies": [
+        "CORE-01",
+        "CORE-03",
+        "CORE-15"
+      ],
+      "libraries": [
+        {
+          "name": "e2b",
+          "role": "2.51.0; 문서 단위 세션"
+        },
+        {
+          "name": "openpyxl",
+          "role": "3.1.5; workbook 구조·셀·hidden·merged·formula"
+        },
+        {
+          "name": "python-docx",
+          "role": "1.1.2; 문단/표/머리말/꼬리말 블록"
+        },
+        {
+          "name": "PyMuPDF",
+          "role": "1.26.4; PDF 페이지·텍스트·시각 자료"
+        },
+        {
+          "name": "Pillow",
+          "role": "11.3.0; 이미지 크기·회전·안전 제한"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-04-C01",
+          "category": "contract",
+          "question": "Document.buffer/kind/id → profile/modelParts/sourceSheets/sourceRows/analysis의 반환 형태와 SHA-256·kind 대조가 명시되어 있는가?",
+          "requiredEvidence": "reader profile schema, 공개/내부 필드 구분 및 sandbox-documents.test.mjs digest mismatch 사례"
+        },
+        {
+          "id": "CORE-04-C02",
+          "category": "behavior",
+          "question": "한 문서의 원본 재조회가 retained sandbox와 TaskPool(1)을 공유하고 source 업로드·parser 설치를 세션당 한 번 수행하는가?",
+          "requiredEvidence": "document-sandbox-session.test.mjs의 동일 sandbox ID·설치 1회·명령 직렬화 증거"
+        },
+        {
+          "id": "CORE-04-C03",
+          "category": "states",
+          "question": "문서 세션 300,000 ms, Python reader 150초 등 서로 다른 제한과 정상/실패/취소의 세션 종료 책임이 구분되어 있는가?",
+          "requiredEvidence": "세션 상태도와 cleanup 실패 전파 사례"
+        },
+        {
+          "id": "CORE-04-C04",
+          "category": "failure",
+          "question": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한을 명시하고 형식·실패 단계별 partial/unsupported/hard error 및 coverage 표시를 구별하는가?",
+          "requiredEvidence": "reader limits 표 및 server/document-reader.test.py의 한도·악성 archive 검사"
+        },
+        {
+          "id": "CORE-04-C05",
+          "category": "verification",
+          "question": "업로드 문서의 수식·매크로·링크·문구를 실행하지 않고 고정 reader/명령만 수행함을 재현 테스트로 확인하는가?",
+          "requiredEvidence": "신뢰 경계와 고정 명령 목록, document-reader.test.py 및 sandbox-documents.test.mjs"
+        },
+        {
+          "id": "CORE-04-C06",
+          "category": "current-reproduction",
+          "question": "현재 text reader의 1,500,000자 제한에서 정확히 도달/초과의 ready·partial 분기와 Python 문자 수 단위를 구별하고 경계 입력으로 확인할 수 있는가?",
+          "requiredEvidence": "specs/02-backend-pipeline.md §2.3 및 source-serialization-cases.json readerTextBoundaryCases: ASCII 1,499,999/1,500,000/1,500,001자 결과"
+        }
+      ]
+    },
+    {
+      "id": "CORE-05",
+      "name": "문서 맥락 검증과 범위 재조회 루프",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "실제 source inventory와 LLM 구조 해석을 대조하고 부족한 범위만 타입 있는 selector로 다시 읽는다.",
+      "sourceFiles": [
+        "server/document-quality.mjs",
+        "server/document-requery.mjs",
+        "server/document-requery.py",
+        "server/sandbox-documents.mjs"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "prompts/pipeline-prompts.md",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json",
+        "contracts/source-serialization-cases.json"
+      ],
+      "dependencies": [
+        "CORE-04",
+        "CORE-01"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "source chunk·범위 검증·AbortSignal"
+        },
+        {
+          "name": "openpyxl",
+          "role": "3.1.5; 기존 세션의 셀 범위 재조회"
+        },
+        {
+          "name": "python-docx",
+          "role": "1.1.2; BLOCK 범위 재조회"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-05-C01",
+          "category": "contract",
+          "question": "xlsx/csv의 sheet+A1, Word BLOCK, text L 범위 selector가 코드/경로가 아닌 데이터이며 유효 범위와 응답 digest를 검사하는가?",
+          "requiredEvidence": "validateRequeryRequest 계약과 document-quality.test.mjs의 범위·주입 거절 사례"
+        },
+        {
+          "id": "CORE-05-C02",
+          "category": "behavior",
+          "question": "150,000자 source chunk, 최대 1,200,000자 맥락 입력에서 모든 retained 구간을 해석/독립 검증하고 미기술 셀·헤더·시트를 찾는가?",
+          "requiredEvidence": "coverage 계산식, initial/verify/requery/replace 흐름 및 sandbox-documents.test.mjs"
+        },
+        {
+          "id": "CORE-05-C03",
+          "category": "states",
+          "question": "최대 3회 교정의 계속/종료 조건, 교정 후 전체 context 대체·재검증, 같은 E2B 재사용을 명시하는가?",
+          "requiredEvidence": "verifyAndRepairDocumentContext 단계 표와 document-quality.test.mjs·document-sandbox-session.test.mjs"
+        },
+        {
+          "id": "CORE-05-C04",
+          "category": "failure",
+          "question": "미해결·truncated·검증기 실패를 needsConfirmation/partial로 남기며 정성 기준의 정당한 단위 공백만으로 재시도를 만들지 않는가?",
+          "requiredEvidence": "qualitative unit 예외의 source evidence 조건과 미해결 issues 응답 예시"
+        },
+        {
+          "id": "CORE-05-C05",
+          "category": "verification",
+          "question": "셀 이동·멀티시트·숨김·행/열 방향·헤더 누락·Word 중첩 표·text line 누락을 특정 파일명 없이 검사하는가?",
+          "requiredEvidence": "document-quality.test.mjs와 document-reader.test.py의 변형 입력별 예상 coverage"
+        },
+        {
+          "id": "CORE-05-C06",
+          "category": "current-reproduction",
+          "question": "profileSource의 형식별 출력·metadata key 순서·JSON stringify·빈값 생략·개행을 정확히 재현하고 직렬화 후 150,000/1,200,000 UTF-16 code unit 경계를 계산할 수 있는가?",
+          "requiredEvidence": "specs/02-backend-pipeline.md §2.4.1–2.4.2 및 source-serialization-cases.json: exact 문자열과 경계 recipe/길이/hash"
+        }
+      ]
+    },
+    {
+      "id": "CORE-06",
+      "name": "PDF·이미지 시각 전사와 독립 판독 검증",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05"
+      ],
+      "purpose": "원본 시각 자료의 문단·표·중첩·회전을 먼저 보존한 뒤 별도 검증자가 원본과 전사 내용을 확인한다.",
+      "sourceFiles": [
+        "server/visual-transcription.mjs",
+        "server/visual-quality-judge.mjs"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "prompts/pipeline-prompts.md",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json",
+        "specs/08-rebuild-coverage-geometry.md",
+        "contracts/rebuild-extensions.ts"
+      ],
+      "dependencies": [
+        "CORE-04",
+        "CORE-01",
+        "CORE-15"
+      ],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 원본 PDF/image VLM 요청"
+        },
+        {
+          "name": "Node.js",
+          "role": "페이지 배치·deadline·구조 검증"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-06-C01",
+          "category": "contract",
+          "question": "page/rotation/block/table/cell/parentTableId/uncertain/coverage 필드를 정의하고 시트 번호를 PDF 페이지로 취급하지 않는가?",
+          "requiredEvidence": "visualTranscriptionSchema와 페이지/중첩 표 JSON 예시"
+        },
+        {
+          "id": "CORE-06-C02",
+          "category": "behavior",
+          "question": "전사 모델과 독립 visual judge가 실제 원본을 비교하고 빈 페이지·겹친 셀·누락 페이지를 모델 complete=true만으로 승인하지 않는가?",
+          "requiredEvidence": "visual-quality-judge.test.mjs 및 visual-transcription-alignment.test.mjs"
+        },
+        {
+          "id": "CORE-06-C03",
+          "category": "states",
+          "question": "최대 30페이지·요청당 3페이지·3회 교정·전체 180초·요청 60초 제한과 미완료 배치의 병합/재검증 규칙이 있는가?",
+          "requiredEvidence": "배치/교정 상태도와 visual-transcription.test.mjs의 timeout·partial 사례"
+        },
+        {
+          "id": "CORE-06-C04",
+          "category": "failure",
+          "question": "원본 이미지/전사 공급 제한이나 회전/표 구조 오류가 있으면 판독불가를 추정 텍스트로 채우지 않고 coverage·경고를 보존하는가?",
+          "requiredEvidence": "PDF page image 8개/16 MiB 제한, judge 요청 3페이지/250,000자 제한 및 기대 경고"
+        },
+        {
+          "id": "CORE-06-C05",
+          "category": "verification",
+          "question": "서로 다른 문서의 페이지 혼합, invented page, blank-page 거짓 승인, nested table 참조 오류가 오프라인 모델 stub 테스트에서 거절되는가?",
+          "requiredEvidence": "visual-transcription.test.mjs·visual-quality-judge.test.mjs·visual-transcription-alignment.test.mjs"
+        },
+        {
+          "id": "CORE-06-C06",
+          "category": "independent-audit",
+          "question": "현재 VLM 30쪽·180초 제한과 reader의 별도 한도, 초과 시 coverage/partial·fallback을 재현하고 OPTIONAL_FUTURE의 575쪽 전수·geometry 확장과 구분하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-07",
+      "name": "기준 문서 자격 판별과 제외",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "purpose": "실제 원문 규범 내용을 근거로 기준서/비기준서/불확실을 구별하며 확실한 비기준서만 제외한다.",
+      "sourceFiles": [
+        "server/criteria-eligibility.mjs",
+        "server/review.mjs"
+      ],
+      "specFiles": [
+        "specs/03-algorithms.md",
+        "prompts/pipeline-prompts.md",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-05",
+        "CORE-06",
+        "CORE-01"
+      ],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 실제 source 기반 분류 제안"
+        },
+        {
+          "name": "Node.js",
+          "role": "위치별 literal evidence 검증"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-07-C01",
+          "category": "contract",
+          "question": "criteria/not_criteria/uncertain, hasNormativeContent, sourceKind, reason, evidence의 조합과 제외 파일 공개 응답 형태를 정의하는가?",
+          "requiredEvidence": "자격 schema, criteria.document.assessed 이벤트 예시"
+        },
+        {
+          "id": "CORE-07-C02",
+          "category": "behavior",
+          "question": "완전 읽기·원문 인용 검증이 충족된 not_criteria만 제외하고 혼합 문서의 실제 재사용 기준은 남기는가?",
+          "requiredEvidence": "criteria-eligibility.test.mjs의 순수 결과표/혼합표/역사적 판정 근거 사례"
+        },
+        {
+          "id": "CORE-07-C03",
+          "category": "states",
+          "question": "잘못된 자격 응답에만 추가 1회 교정을 허용하고 일시 실패는 uncertain으로 유지하며 제외한 source가 후보·편집·인용에 재진입하면 거절하는가?",
+          "requiredEvidence": "review.eligibility.test.mjs의 source guard와 수정 요청 사례"
+        },
+        {
+          "id": "CORE-07-C04",
+          "category": "failure",
+          "question": "파일명·upload role·생성 요약을 자격 증거로 쓰지 않고 잘못된 인용·단축 소수·부분 source 전달은 자동 제외를 막는가?",
+          "requiredEvidence": "criteria-eligibility.test.mjs의 source-kind별 quote/location 반례"
+        },
+        {
+          "id": "CORE-07-C05",
+          "category": "verification",
+          "question": "정성 규칙·법무/업무 규칙·측정치와 제한이 같은 표·규범 없는 기록·prompt injection을 특정 데이터셋 이름 없이 분류 검증하는가?",
+          "requiredEvidence": "criteria-eligibility.test.mjs와 review.eligibility.test.mjs 입력/기대 상태 매핑"
+        }
+      ]
+    },
+    {
+      "id": "CORE-08",
+      "name": "전 시트 기준 탐색·영역 coverage",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03"
+      ],
+      "purpose": "모든 시트의 sparse 영역을 조사하고 여러 표·가로/세로/분리 min-max 기준을 후보와 source coverage로 남긴다.",
+      "sourceFiles": [
+        "server/criteria-sandbox.mjs",
+        "server/criteria-workbook-profile.py",
+        "server/criteria-layout.mjs",
+        "server/criteria-context.mjs"
+      ],
+      "specFiles": [
+        "specs/03-algorithms.md",
+        "prompts/criteria-algorithms.catalog.json",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-07",
+        "CORE-01",
+        "CORE-15"
+      ],
+      "libraries": [
+        {
+          "name": "openpyxl",
+          "role": "3.1.5; 전 workbook inventory와 선택 범위 상세"
+        },
+        {
+          "name": "e2b",
+          "role": "2.51.0; 기준 탐색 전용 세션"
+        },
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 영역 분류·기준 후보·재조회 계획"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-08-C01",
+          "category": "contract",
+          "question": "inventory의 sheet/region, ranges, regionAssessments, dispositions, criteria와 citations가 별도 구조로 정의되고 모든 region의 처리 상태가 반환되는가?",
+          "requiredEvidence": "plan/extract schema와 coverage 전체 필드 예시"
+        },
+        {
+          "id": "CORE-08-C02",
+          "category": "behavior",
+          "question": "모델이 한 표만 선택해도 다른 시트의 작은 sparse 영역을 보완하고 최소/최대 분리·전치·병합·떨어진 표를 위치/헤더로 탐색하는가?",
+          "requiredEvidence": "criteria-layout.test.mjs·criteria-matrix-regression.test.mjs·criteria-generalization.test.mjs"
+        },
+        {
+          "id": "CORE-08-C03",
+          "category": "states",
+          "question": "기준 발견 자체는 별도 E2B 세션이고 내부 최대 2회 상세 추출/추가범위 루프는 같은 세션임을 구조 분석 세션과 구별하는가?",
+          "requiredEvidence": "discoverWorkbookCriteria 수명도 및 criteria-sandbox.test.mjs의 설치/세션 카운트"
+        },
+        {
+          "id": "CORE-08-C04",
+          "category": "failure",
+          "question": "첫100시트 cell-profile 대상과 모든 시트 metadata/후속 빈 시트 예외, 200,000 inventory셀/300영역·상세6,000셀/220,000자·18범위·범위12,000·총24,000셀·250기준의 실제 생략과 미확인 coverage를 구별하는가?",
+          "requiredEvidence": "제한별 remainingRanges/unresolvedRanges/criteriaLimitReached 표와 경계 테스트"
+        },
+        {
+          "id": "CORE-08-C05",
+          "category": "verification",
+          "question": "시트·항목명 변경, 열/행 이동, 숨김, 옆 표, 신규 유형과 규범 없는 열을 변형해도 기준/근거/coverage가 동치인지 검사하는가?",
+          "requiredEvidence": "criteria-generalization.test.mjs·criteria-matrix-regression.test.mjs의 fixture-independent 변형 목록"
+        },
+        {
+          "id": "CORE-08-X01",
+          "category": "independent-audit",
+          "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-09",
+      "name": "기준 정규화·분류 계층·비고 정책",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-05"
+      ],
+      "purpose": "규칙·단위·조건·유형 경로를 독립 필드로 정리하고 비고·관측값·폐기 기준을 규칙으로 잘못 쓰지 않는다.",
+      "sourceFiles": [
+        "server/criteria-adapter.mjs",
+        "server/criteria-normalization.mjs",
+        "server/criteria-notes.mjs",
+        "server/criteria-table-sources.mjs",
+        "server/conditions.mjs",
+        "server/criteria-context.mjs",
+        "server/review.mjs"
+      ],
+      "specFiles": [
+        "specs/03-algorithms.md",
+        "contracts/types.ts",
+        "prompts/criteria-algorithms.catalog.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-08",
+        "CORE-07"
+      ],
+      "libraries": [
+        {
+          "name": "exceljs",
+          "role": "4.4.0; 기준 원본 셀 읽기 보조"
+        },
+        {
+          "name": "jszip",
+          "role": "lock 3.10.2; OOXML 보조"
+        },
+        {
+          "name": "Node.js",
+          "role": "숫자식·좌표·표 역할 정규화"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-09-C01",
+          "category": "contract",
+          "question": "Criterion의 rule/comparison/unit/scope/categoryPath/sampleName/conditions와 각각의 증거를 구별하고 없는 유형은 빈 경로로 표현하는가?",
+          "requiredEvidence": "contracts/types.ts와 not_applicable/resolved/ambiguous 진리표"
+        },
+        {
+          "id": "CORE-09-C02",
+          "category": "behavior",
+          "question": "비고/참고/notes 열은 나이·온도를 포함해 판정 조건에서 제외하되 실제 조건 열의 재령·기간·온도는 보존하는가?",
+          "requiredEvidence": "criteria-notes.test.mjs·conditions.test.mjs·criteria-table-sources.test.mjs"
+        },
+        {
+          "id": "CORE-09-C03",
+          "category": "states",
+          "question": "상위 공통 기준, 세부 유형, 명시적 시료, 문서 목차 제목과 규칙 중복/대체/폐기의 우선순위를 source 근거와 함께 지정하는가?",
+          "requiredEvidence": "criteria-context.test.mjs·review.classification.test.mjs의 hierarchy/disposition 사례"
+        },
+        {
+          "id": "CORE-09-C04",
+          "category": "failure",
+          "question": "250기준·8단계·ID/문구 길이 한도를 명시하고 잘못된 비교식·충돌 source·미검증 계층의 generic validator/discovery/approval 경로별 처리와 확인 상태가 강제되지 않는 현재 한계를 구별하는가?",
+          "requiredEvidence": "validateCriteria 입력 경계 표와 review.test.mjs·review.classification.test.mjs"
+        },
+        {
+          "id": "CORE-09-C05",
+          "category": "verification",
+          "question": "1종/2종 또는 특정 자재명을 규칙에 하드코딩하지 않고 정성 무단위·가변 계층·동일 항목 다른 조건을 구별하는 테스트가 있는가?",
+          "requiredEvidence": "criteria-generalization.test.mjs·criteria-adapter.test.mjs·criteria-notes.test.mjs"
+        }
+      ]
+    },
+    {
+      "id": "CORE-10",
+      "name": "기준 HITL 편집·피드백·버전 승인",
+      "layer": "core",
+      "stepIds": [
+        "STEP-03",
+        "STEP-04"
+      ],
+      "purpose": "사용자가 원문별 기준을 수정·재요청하고 버전이 고정된 승인 기준으로만 대상 검토를 시작한다.",
+      "sourceFiles": [
+        "server/criteria-approval.mjs",
+        "server/criteria-revision.mjs",
+        "server/review.mjs"
+      ],
+      "specFiles": [
+        "specs/01-state-api.md",
+        "specs/03-algorithms.md",
+        "contracts/examples/01-criteria-first-commands.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-09",
+        "CORE-13"
+      ],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 기준 피드백 반영"
+        },
+        {
+          "name": "Node.js",
+          "role": "deep freeze·version·revision token"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-10-C01",
+          "category": "contract",
+          "question": "confirm/revise의 criteria, feedback, documentId, scope, expectedCriterionVersion 요청과 승인본 approvedCriteria 응답이 정의되는가?",
+          "requiredEvidence": "명령 JSON 예시와 criteria-approval.test.mjs·criteria-revision.test.mjs"
+        },
+        {
+          "id": "CORE-10-C02",
+          "category": "behavior",
+          "question": "사용자 직접 편집 가능 필드와 서버 보존 provenance가 분리되고 의미 수정에 userOverride를 기록하는가?",
+          "requiredEvidence": "approveCriteria/normalizeCriterionDraft field allowlist와 provenance 위조 반례"
+        },
+        {
+          "id": "CORE-10-C03",
+          "category": "states",
+          "question": "awaiting_confirmation → criteria_revising → 재확인 또는 실패 복귀, confirm → awaiting_documents 전이가 버전 증가 규칙과 함께 정의되는가?",
+          "requiredEvidence": "상태/이벤트 표, review.wizard.test.mjs·criteria-revision.test.mjs"
+        },
+        {
+          "id": "CORE-10-C04",
+          "category": "failure",
+          "question": "stale version 409·누락 version 400·피드백20회/12,000자 한도·취소 후 늦은 응답 차단이 지정되는가?",
+          "requiredEvidence": "version/token 가드 의사코드와 실패 경로 테스트"
+        },
+        {
+          "id": "CORE-10-C05",
+          "category": "verification",
+          "question": "승인 전 대상 첨부가 거절되고 승인 뒤 기준 배열 deep freeze 및 승인본/수정 이력이 유지되는가?",
+          "requiredEvidence": "review.wizard.test.mjs와 criteria-approval.test.mjs의 불변성/단계 거절 검증"
+        }
+      ]
+    },
+    {
+      "id": "CORE-11",
+      "name": "독립 항목 추출과 의미 기반 기준 매칭",
+      "layer": "core",
+      "stepIds": [
+        "STEP-05"
+      ],
+      "purpose": "대상 문서의 관측값을 원문에서 읽고 승인 규칙 ID와 자료 유형·항목을 연결하는 모델 제안을 생성한다.",
+      "sourceFiles": [
+        "server/field-extraction.mjs",
+        "server/review.mjs",
+        "server/table-records.mjs"
+      ],
+      "specFiles": [
+        "specs/02-backend-pipeline.md",
+        "specs/03-algorithms.md",
+        "prompts/pipeline-prompts.md",
+        "contracts/pipeline-model-schemas.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-06",
+        "CORE-10",
+        "CORE-05"
+      ],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; facts 추출과 review 제안"
+        },
+        {
+          "name": "Node.js",
+          "role": "record coverage·field evidence 검사"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-11-C01",
+          "category": "contract",
+          "question": "PDF/image facts extraction과 review proposal의 서로 다른 schema를 정의하고 extraction 최대300개·review 문서당250개를 구별하는가?",
+          "requiredEvidence": "documentFieldsSchema/itemSchema 및 field-extraction.test.mjs·review.test.mjs 경계 사례"
+        },
+        {
+          "id": "CORE-11-C02",
+          "category": "behavior",
+          "question": "추출은 승인 기준값을 측정값으로 복사하지 않고 실제 대상의 모든 관측 항목·식별번호·원문 표기를 보존하는가?",
+          "requiredEvidence": "field-extraction.test.mjs의 판정과 독립 추출/불일치 검증"
+        },
+        {
+          "id": "CORE-11-C03",
+          "category": "states",
+          "question": "원문 분석 → 시각 자료 독립 facts → 승인 기준 매칭 → 결정론적 정규화 → item.decided 이벤트 순서가 정의되는가?",
+          "requiredEvidence": "review.pipeline.test.mjs와 review.integration.test.mjs의 순서/중간 이벤트"
+        },
+        {
+          "id": "CORE-11-C04",
+          "category": "failure",
+          "question": "틀린 criterionId/documentId·다른 시료/행·누락/ND/판독불가를 잘못 매칭한 제안의 거절 또는 review 하향 조건이 명시되는가?",
+          "requiredEvidence": "review.test.mjs·criterion-applicability.test.mjs·field-extraction.test.mjs"
+        },
+        {
+          "id": "CORE-11-C05",
+          "category": "verification",
+          "question": "CSV/XLSX의 빈값 record 보존, 모든 적용 기준을 요청하는 model 지시, out-of-scope 제외·missingRows·reviewCoverage를 구별하며 현재 행 coverage가 모든 행×기준의 검토를 증명하지 않는 한계를 명시하는가?",
+          "requiredEvidence": "table-records.test.mjs·review.integration.test.mjs의 missingRows/excludedRows 사례"
+        }
+      ]
+    },
+    {
+      "id": "CORE-12",
+      "name": "결정론적 판정·필수 누락·불확실성",
+      "layer": "core",
+      "stepIds": [
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "모델 제안을 실제 단위·수치·조건·대상 분류·읽기 완전성으로 재검증해 pass/fail/review를 결정한다.",
+      "sourceFiles": [
+        "server/review.mjs",
+        "server/missing-result.mjs",
+        "server/criterion-applicability.mjs",
+        "server/conditions.mjs",
+        "server/table-records.mjs"
+      ],
+      "specFiles": [
+        "specs/03-algorithms.md",
+        "contracts/types.ts",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-11",
+        "CORE-09"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "유한 숫자·literal evidence·분류 순서·record linkage 검사"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-12-C01",
+          "category": "contract",
+          "question": "lt/lte/gt/gte/eq/range의 경계와 단위 정규화, 최종 status/machineStatus/presence/missingVerified/missingConditions가 지정되는가?",
+          "requiredEvidence": "numericVerdict 비교표와 review.test.mjs의 등호·range·단위 반례"
+        },
+        {
+          "id": "CORE-12-C02",
+          "category": "behavior",
+          "question": "필수 항목의 검증된 누락 fail predicate·선택 항목 누락 제외를 명시하고 판독불가/ND/잘림/formula cache 없음의 raw uncertainty와 비교식 유무에 따른 현재 판정·누락 증거 여부를 구별하는가?",
+          "requiredEvidence": "missing-result.test.mjs 진리표와 source evidence/completeAnalysis 조건"
+        },
+        {
+          "id": "CORE-12-C03",
+          "category": "states",
+          "question": "확인되지 않은 기준/조건/분류/독립 추출 불일치가 숫자 pass/fail보다 우선하는 순서를 결정론적으로 명시하는가?",
+          "requiredEvidence": "normalizeItems guard 순서와 조건/계층/추출 충돌 복합 테스트"
+        },
+        {
+          "id": "CORE-12-C04",
+          "category": "failure",
+          "question": "자재/하위유형/시료 근거가 대상 원문에 없거나 record의 다른 행이면 rule label이 같아도 pass로 확정하지 않는가?",
+          "requiredEvidence": "criterion-applicability.test.mjs의 순서·ancestor·same-record 부정 사례"
+        },
+        {
+          "id": "CORE-12-C05",
+          "category": "verification",
+          "question": "0·빈 셀·merged continuation·수식 미캐시·정상 누락·불확실 누락·상충 독립 추출을 서로 다른 결과로 검사하는가?",
+          "requiredEvidence": "missing-result.test.mjs·conditions.test.mjs·review.test.mjs 테스트 매핑"
+        },
+        {
+          "id": "CORE-12-X01",
+          "category": "independent-audit",
+          "question": "일반 finding evidence의 permissive regex/미검증 원문과 조건·분류·필수누락의 실제 검증을 구별하고 invalid좌표·가짜quote numeric pass baseline 및 OPTIONAL_FUTURE 강화를 명시하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-12-X02",
+          "category": "independent-audit",
+          "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-13",
+      "name": "검토 실행 상태·작업 조정·취소·감사",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "문서 단위 실패를 격리하고 run 상태와 승인 버전, 이벤트, 사람 판정 변경 이력을 일관되게 보존한다.",
+      "sourceFiles": [
+        "server/review.mjs",
+        "src/review-state.ts",
+        "src/useReview.ts",
+        "server/task-pool.mjs"
+      ],
+      "specFiles": [
+        "specs/01-state-api.md",
+        "contracts/types.ts",
+        "contracts/examples/03-run-sse.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-02",
+        "CORE-15"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "Map·Set·FIFO ModelQueue·AbortController"
+        },
+        {
+          "name": "React",
+          "role": "UI event reducer 소비; 시각 컴포넌트 책임과 분리"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-13-C01",
+          "category": "contract",
+          "question": "run/document/stage enum, snapshot, sequence/timestamp event 필드, summary 계산식을 정의하고 legacy와 criteria_first 모드를 구별하는가?",
+          "requiredEvidence": "01-state-api 상태표, contracts/types.ts, review-state.test.mjs"
+        },
+        {
+          "id": "CORE-13-C02",
+          "category": "behavior",
+          "question": "문서 분석과 대상 review의 각각 2-worker 실행에서 한 문서 실패가 다른 문서를 중단하지 않으며 결과가 파일 ID별로 결합되는가?",
+          "requiredEvidence": "review.pipeline.test.mjs·review.integration.test.mjs의 순서 변형/부분 실패"
+        },
+        {
+          "id": "CORE-13-C03",
+          "category": "states",
+          "question": "running/awaiting_confirmation/awaiting_documents 취소, late event 차단, completed/partial/failed 집계 및 ensureAnalyzed waiter 취소를 정의하는가?",
+          "requiredEvidence": "review.wizard.test.mjs·review.test.mjs·use-review-commands.test.mjs"
+        },
+        {
+          "id": "CORE-13-C04",
+          "category": "failure",
+          "question": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 run/target 집계의 정확한 coverage 검사 필드·누락값 처리와 직접 검사하지 않는 현재 한계를 구분하는가?",
+          "requiredEvidence": "start/reviewDocuments 경계표와 review.integration.test.mjs의 outputLimited 사례"
+        },
+        {
+          "id": "CORE-13-C05",
+          "category": "verification",
+          "question": "사람 판정 변경은 종료 후 사유와 함께만 허용하고 machineStatus·before/after audit·summary·item.resolved를 유지하는가?",
+          "requiredEvidence": "review.test.mjs·app.test.mjs의 resolve와 export 감사 검증"
+        }
+      ]
+    },
+    {
+      "id": "CORE-14",
+      "name": "원문 근거 연결과 하이라이트 무결성",
+      "layer": "core",
+      "stepIds": [
+        "STEP-03",
+        "STEP-06"
+      ],
+      "purpose": "판정·기준의 원문 위치와 실제 항목 앵커를 검증해 문서 전체의 올바른 영역만 색상으로 표시한다.",
+      "sourceFiles": [
+        "server/criterion-applicability.mjs",
+        "src/components/source-highlights.mjs",
+        "src/components/item-source-highlights.mjs",
+        "src/components/criterion-preview-evidence.mjs",
+        "src/components/file-review-model.mjs",
+        "src/components/dashboard-bridge.mjs",
+        "src/components/dashboard-file-scope.mjs"
+      ],
+      "specFiles": [
+        "specs/03-algorithms.md",
+        "specs/04-ui-motion.md",
+        "specs/05-dashboard-exports.md",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json",
+        "specs/08-rebuild-coverage-geometry.md",
+        "contracts/rebuild-extensions.ts"
+      ],
+      "dependencies": [
+        "CORE-12",
+        "CORE-09"
+      ],
+      "libraries": [
+        {
+          "name": "pdfjs-dist",
+          "role": "lock 6.3.289 (declared ^6.2.108); PDF 실제 text item과 원문 렌더 좌표"
+        },
+        {
+          "name": "Node.js/JavaScript",
+          "role": "pure evidence projection·file scope 검증"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-14-C01",
+          "category": "contract",
+          "question": "원본 document/page/sheet/cell/quote, criterion evidence와 review-item evidence, PDF text anchor와 결과 ID의 연결을 구별하는가?",
+          "requiredEvidence": "source-highlights 인터페이스 및 contracts/types.ts의 Evidence/Highlight 구조"
+        },
+        {
+          "id": "CORE-14-C02",
+          "category": "behavior",
+          "question": "선택 파일의 모든 항목을 한 번에 표시하며 필터 변경이 다른 항목 근거를 삭제하지 않고 파일 전환이 다른 문서의 근거를 섞지 않는가?",
+          "requiredEvidence": "file-review-model.test.mjs·dashboard-file-scope.test.mjs·source-highlights.test.mjs"
+        },
+        {
+          "id": "CORE-14-C03",
+          "category": "states",
+          "question": "현재 missing 전처리의 적용 조건과 contextual evidence 보호 범위를 명시하고 dashboard projection 필드 손실 예외 및 기준 클릭의 실제 label/rule/unit cell 보충 경계를 구별하는가?",
+          "requiredEvidence": "item-source-highlights.test.mjs·criterion-preview-evidence.test.mjs의 누락/항목명 표시 사례"
+        },
+        {
+          "id": "CORE-14-C04",
+          "category": "failure",
+          "question": "표 좌표·quote와 PDF witness의 현재 검증/미검증 경계, clip·fallback 및 누락 필드 보호의 한계를 명시하고 OPTIONAL_FUTURE 차단 규칙과 구분하는가?",
+          "requiredEvidence": "source-highlights.test.mjs의 header-only·duplicate text·wrong-page 음성 사례"
+        },
+        {
+          "id": "CORE-14-C05",
+          "category": "verification",
+          "question": "iframe 근거 메시지를 source window·opaque origin·channel·type·preview token·itemId 허용 목록으로 검사하고, 원본 파일을 다운로드 HTML에 포함하지 않는가?",
+          "requiredEvidence": "dashboard-bridge.test.mjs·dashboard-file-scope.test.mjs와 export 안내 수용 기준"
+        },
+        {
+          "id": "CORE-14-C06",
+          "category": "independent-audit",
+          "question": "scan/image/회전/2-up의 현재 text-layer-only viewer와 bbox 없는 DTO·페이지/근거 chip fallback을 재현하고 OPTIONAL_FUTURE geometry 확장과 구별하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-15",
+      "name": "실제 작업 이벤트·인과 handoff·동시성",
+      "layer": "core",
+      "stepIds": [
+        "STEP-02",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "실제 LLM/E2B 작업·명령 출력을 추적하고 FIFO 제한과 인과 handoff를 UI가 오해 없이 표시하도록 전달한다.",
+      "sourceFiles": [
+        "integrations/src/task-pool.mjs",
+        "integrations/src/activity.mjs",
+        "integrations/src/command-progress.mjs",
+        "server/activity.mjs",
+        "src/activity-observer.mjs",
+        "src/activity-scope.mjs",
+        "src/handoff-queue.mjs"
+      ],
+      "specFiles": [
+        "specs/01-state-api.md",
+        "specs/02-backend-pipeline.md",
+        "specs/04-ui-motion.md",
+        "contracts/examples/04-activity-snapshot.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-01"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "Map·Set listener registry·FIFO pool·AbortSignal·SSE"
+        },
+        {
+          "name": "JavaScript",
+          "role": "handoff animation queue는 실제 event를 재생"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-15-C01",
+          "category": "contract",
+          "question": "taskId/runId/contextId/documentId/parentTaskId/runtime/step/status/sequence와 handoff from/to를 정의하고 비밀키·명령 출력 길이를 정제하는가?",
+          "requiredEvidence": "activity schema, command-progress.test.mjs와 activity.test.mjs"
+        },
+        {
+          "id": "CORE-15-C02",
+          "category": "behavior",
+          "question": "Gemini와 E2B 각각 process-wide 동시2·대기100 FIFO 제한, ReviewEngine ModelQueue2, 문서 retained 명령1의 서로 다른 역할을 명시하는가?",
+          "requiredEvidence": "TaskPool 구성표와 integrations/test/concurrency.test.mjs·server/task-pool.test.mjs"
+        },
+        {
+          "id": "CORE-15-C03",
+          "category": "states",
+          "question": "queued/running/completed/failed/cancelled·대기 중 abort·늦은 완료·observer 재연결과 snapshot replay 순서가 명시되는가?",
+          "requiredEvidence": "activity-observer.test.mjs·activity.test.mjs·task-pool.test.mjs"
+        },
+        {
+          "id": "CORE-15-C04",
+          "category": "failure",
+          "question": "설치가 조용한 동안 heartbeat를 실제 진행률/가짜 내부 추론으로 표현하지 않으며 command timeout·로그 중복·다른 run 작업 섞임을 방지하는가?",
+          "requiredEvidence": "command-progress.test.mjs·activity-scope.test.mjs·review-activity.test.mjs"
+        },
+        {
+          "id": "CORE-15-C05",
+          "category": "verification",
+          "question": "빠른 실제 handoff를 UI 재생 큐에서 읽기 가능한 순서로 보이되 작업 완료 후 접힘과 reduced-motion이 상태를 바꾸지 않는가?",
+          "requiredEvidence": "handoff-queue.test.mjs·activity-observer.test.mjs와 UI 모션 수용 기준"
+        },
+        {
+          "id": "CORE-15-X01",
+          "category": "independent-audit",
+          "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-16",
+      "name": "결과 내보내기·검토대장 복사본 기입·예제 카탈로그",
+      "layer": "core",
+      "stepIds": [
+        "STEP-01",
+        "STEP-04",
+        "STEP-06"
+      ],
+      "purpose": "검토 결과와 감사 이력을 내보내고 사용자가 확인한 XLSX 대장 위치에만 결과를 기록하며 예제 원본을 안전하게 선택한다.",
+      "sourceFiles": [
+        "server/app.mjs",
+        "server/ledger.mjs",
+        "server/golden-catalog.mjs"
+      ],
+      "specFiles": [
+        "specs/01-state-api.md",
+        "specs/05a-ledger-export.md",
+        "specs/05-dashboard-exports.md",
+        "contracts/examples/05-ledger-analyze.json",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json",
+        "contracts/sample-recipes.json"
+      ],
+      "dependencies": [
+        "CORE-03",
+        "CORE-12",
+        "CORE-13"
+      ],
+      "libraries": [
+        {
+          "name": "exceljs",
+          "role": "4.4.0; 결과 XLSX와 대장 탐색"
+        },
+        {
+          "name": "jszip",
+          "role": "lock 3.10.2; 대장 OOXML 최소 패치"
+        },
+        {
+          "name": "Node.js",
+          "role": "digest fingerprint·allowlist path·CSV escaping"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-16-C01",
+          "category": "contract",
+          "question": "JSON/CSV/XLSX 결과 필드, XLSX 4시트, 최종/원판정/사람 사유/근거와 export 허용 run 상태를 지정하는가?",
+          "requiredEvidence": "app.mjs exportRows/headings 대응 및 app.test.mjs export 검증"
+        },
+        {
+          "id": "CORE-16-C02",
+          "category": "behavior",
+          "question": "대장 매핑은 사용자가 지정한 성적서번호와 실제 header/row를 확인하고 원본 대신 복사본의 허용된 결과·비고 셀만 쓰는가?",
+          "requiredEvidence": "05a-ledger-export 셀 매핑/보존 계약 및 ledger.test.mjs ZIP-entry 비교"
+        },
+        {
+          "id": "CORE-16-C03",
+          "category": "states",
+          "question": "대장 analyze → 제안/대상 셀 확인 → confirmed export이며 결과 변경 시 proposalFingerprint mismatch 409로 재확인을 요구하는가?",
+          "requiredEvidence": "contracts/examples/05-ledger-analyze.json 및 ledger.test.mjs 상태 사례"
+        },
+        {
+          "id": "CORE-16-C04",
+          "category": "failure",
+          "question": "CSV formula injection, 대장 수식/기존 셀 구조 훼손, 경로 traversal/부적절한 sample 경로를 거절하고 파일 부분 실패를 성공으로 쓰지 않는가?",
+          "requiredEvidence": "app.test.mjs·ledger.test.mjs·golden-catalog.test.mjs의 공격·불완전 검토 사례"
+        },
+        {
+          "id": "CORE-16-C05",
+          "category": "verification",
+          "question": "golden은 UI 예제 원본 선택, ralph-golden-v3는 직접 업로드/검증용이라는 현재 범위를 구별하고 정답·파일명 패턴을 판정 알고리즘에 주입하지 않는가?",
+          "requiredEvidence": "golden-catalog source allowlist, fixture provenance 표와 generalization 검증 계획"
+        },
+        {
+          "id": "CORE-16-C06",
+          "category": "independent-audit",
+          "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-17",
+      "name": "대시보드 의미 설계·사용자 취향·수정 루프",
+      "layer": "core",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "purpose": "확정 결과 snapshot을 보존한 채 자연어로 독립적인 테마·차트·배치·강조·모션 옵션을 계획한다.",
+      "sourceFiles": [
+        "server/dashboard.mjs",
+        "server/dashboard-plan.mjs"
+      ],
+      "specFiles": [
+        "specs/05-dashboard-exports.md",
+        "contracts/dashboard-design.schema.json",
+        "contracts/dashboard-design.default.json",
+        "contracts/dashboard-examples.json",
+        "prompts/dashboard-system.md",
+        "prompts/dashboard-loop.md",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-13",
+        "CORE-01",
+        "CORE-15",
+        "CORE-18"
+      ],
+      "libraries": [
+        {
+          "name": "@google/genai",
+          "role": "2.23.0; 제한된 presentation plan 생성"
+        },
+        {
+          "name": "e2b",
+          "role": "2.51.0; 검증 진단을 같은 세션에서 feedback"
+        },
+        {
+          "name": "express",
+          "role": "dashboard job API"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-17-C01",
+          "category": "contract",
+          "question": "snapshotRun의 immutable 검토 데이터와 14-field design, instruction/baseDesign/ready job 계약을 분리하고 기존 7-field 입력의 기본값을 정의하는가?",
+          "requiredEvidence": "dashboard-design.schema/default/examples와 dashboard-plan.test.mjs"
+        },
+        {
+          "id": "CORE-17-C02",
+          "category": "behavior",
+          "question": "14개 디자인 필드의 정규식 선호 후처리와 baseDesign 기본값/전달을 재현하며 미요청 필드 보존과 자연어 scope 해석의 현재 한계를 명시하는가?",
+          "requiredEvidence": "dashboard-plan.test.mjs의 복합/부정문/비문자적 표현/baseDesign 사례"
+        },
+        {
+          "id": "CORE-17-C03",
+          "category": "states",
+          "question": "현재 최대 3회 plan 호출·같은 sandbox/설치 1회·fallback·취소·정리를 재현하고 OPTIONAL_FUTURE planner/judge/repair와 구별하는가?",
+          "requiredEvidence": "dashboard.test.mjs의 generate loop와 job 상태 전이 표"
+        },
+        {
+          "id": "CORE-17-C04",
+          "category": "failure",
+          "question": "모델이 수치·판정을 바꾸거나 HTML/JS/CSS를 공급하지 못하며 잘못된 enum/baseDesign/지나친 입력을 거절하고 fallback을 맞춤 성공으로 표기하지 않는가?",
+          "requiredEvidence": "parseDashboardPlan allowlist·route validation·fallback 표시 예시"
+        },
+        {
+          "id": "CORE-17-C05",
+          "category": "verification",
+          "question": "복합/부분 수정/비문자적 표현에 대한 현재 observed 계획값과 렌더 결과를 OPTIONAL_FUTURE desired 값과 구분해 독립 검증할 수 있는가?",
+          "requiredEvidence": "contracts/dashboard-examples.json과 dashboard-plan.test.mjs·dashboard.test.mjs; 실제 서비스 검증은 별도 evidence"
+        }
+      ]
+    },
+    {
+      "id": "CORE-18",
+      "name": "신뢰 대시보드 렌더러·오프라인 차트·검증",
+      "layer": "core",
+      "stepIds": [
+        "STEP-06"
+      ],
+      "purpose": "모델 계획을 검증된 React 차트와 HTML로 구현하고 데이터·상호작용·보안·오프라인 수출을 검사한다.",
+      "sourceFiles": [
+        "server/dashboard-fallback.mjs",
+        "server/dashboard-chart-runtime.mjs",
+        "scripts/dashboard-chart-entry.jsx",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/dashboard-plan-validation.mjs"
+      ],
+      "specFiles": [
+        "specs/05-dashboard-exports.md",
+        "contracts/dashboard-design.schema.json",
+        "validation/dashboard-dom-validator.cjs",
+        "ui/library-effects.csv",
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-12"
+      ],
+      "libraries": [
+        {
+          "name": "React",
+          "role": "lock 19.3.0; 신뢰된 차트 컴포넌트 bundle"
+        },
+        {
+          "name": "react-dom",
+          "role": "lock 19.3.0; createRoot/flushSync·차트 mount/update/destroy"
+        },
+        {
+          "name": "react-chartjs-2",
+          "role": "5.3.1; Doughnut/Pie/Bar/PolarArea"
+        },
+        {
+          "name": "chart.js",
+          "role": "4.5.1; canvas chart registration·tooltip·animation"
+        },
+        {
+          "name": "esbuild",
+          "role": "0.28.2; 오프라인 runtime bundle"
+        },
+        {
+          "name": "jsdom",
+          "role": "26.1.0; E2B DOM/data 검증, 픽셀 QA와 별도"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-18-C01",
+          "category": "contract",
+          "question": "design → data-* root attrs/CSS variables/chart config/standalone HTML 출력과 chart runtime mount/update/destroy 계약을 지정하는가?",
+          "requiredEvidence": "dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs와 design-to-render 표"
+        },
+        {
+          "id": "CORE-18-C02",
+          "category": "behavior",
+          "question": "차트의 실제 모양·크기·theme 축/tooltip·범례·선택 파일·필터·항목 상세가 변경되며 전체 수치와 item ID는 snapshot과 동일한가?",
+          "requiredEvidence": "11 validation checks 및 dashboard-fallback.test.mjs·dashboard-plan-validation.test.mjs"
+        },
+        {
+          "id": "CORE-18-C03",
+          "category": "states",
+          "question": "initial file/filter/focus, 차트 강조 중 상세 열기/닫기 배분, prefers-reduced-motion과 design.motion, 재mount 정리를 구분하는가?",
+          "requiredEvidence": "렌더 상태 표와 차트/상세 수용 화면·검증 사례"
+        },
+        {
+          "id": "CORE-18-C04",
+          "category": "failure",
+          "question": "CSP nonce·escaping·외부 네트워크 차단·iframe sandbox/bridge를 명시하고 샌드박스 exit 0만으로 승인하지 않고 bytes/report를 대조하는가?",
+          "requiredEvidence": "dashboard-plan-validation.test.mjs·dashboard.test.mjs의 악성 문구·오프라인·tamper 사례"
+        },
+        {
+          "id": "CORE-18-C05",
+          "category": "verification",
+          "question": "검증 11종 input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping과 실제 브라우저 geometry/visibility 검증이 별개임을 명시하는가?",
+          "requiredEvidence": "validation report schema 및 1600/1280/390px 화면에서 overflow·detail visibility·canvas 종류 수용 기준"
+        }
+      ]
+    },
+    {
+      "id": "CORE-19",
+      "name": "자료구조·알고리즘·비동기 자원 효율 계약",
+      "layer": "core",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "재현 구현의 저장·계산·동시성·자원 정리·화면 전달 비용을 실제 상한과 관측 가능한 불변식으로 지정한다.",
+      "sourceFiles": [
+        "integrations/src/task-pool.mjs",
+        "integrations/src/gemini.mjs",
+        "integrations/src/sandbox.mjs",
+        "integrations/src/activity.mjs",
+        "integrations/src/command-progress.mjs",
+        "server/documents.mjs",
+        "server/review.mjs",
+        "server/sandbox-documents.mjs",
+        "server/document-sandbox-resources.mjs",
+        "server/document-quality.mjs",
+        "server/criteria-sandbox.mjs",
+        "server/criteria-layout.mjs",
+        "server/table-records.mjs",
+        "server/dashboard.mjs",
+        "src/review-state.ts",
+        "src/activity-observer.mjs",
+        "src/handoff-queue.mjs",
+        "src/components/DashboardModal.tsx",
+        "src/components/DocumentPreview.tsx"
+      ],
+      "specFiles": [
+        "specs/07-data-algorithms-concurrency.md",
+        "contracts/efficiency-inventory.json"
+      ],
+      "dependencies": [
+        "CORE-01",
+        "CORE-03",
+        "CORE-04",
+        "CORE-05",
+        "CORE-08",
+        "CORE-12",
+        "CORE-13",
+        "CORE-15",
+        "CORE-18",
+        "UI-01",
+        "UI-09",
+        "UI-10",
+        "UI-11",
+        "UI-15"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "Map/Set/WeakMap/AbortSignal/crypto 및 제한된 비동기 풀"
+        },
+        {
+          "name": "React",
+          "role": "lock 19.3.0; lazy/useMemo/효과 정리"
+        },
+        {
+          "name": "pdfjs-dist",
+          "role": "lock 6.3.289; 문서·render task 수명"
+        },
+        {
+          "name": "openpyxl",
+          "role": "3.1.5; 저장된 셀 기반 workbook 탐색"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-19-C01",
+          "category": "contract",
+          "question": "원문/run/분석 Promise/물리 sandbox/기준 셀/활동/dashboard/UI 캐시의 key·owner·수명·상한·무효화를 명시하고 FIFO를 LRU로 오표기하지 않는가?",
+          "requiredEvidence": "07 §§7.2,7.7; efficiency-inventory ES01..22"
+        },
+        {
+          "id": "CORE-19-C02",
+          "category": "algorithm",
+          "question": "sparse inventory, 두 방향 역할 탐색, coverage sweep, 기준 dedup·매칭·누락 판정의 단계와 시간/공간 가정을 명시하고 중첩 스캔·파서 비용을 선형으로 과장하지 않는가?",
+          "requiredEvidence": "07 §§7.1,7.3,7.4; EA01..07; 합성 EF05..10"
+        },
+        {
+          "id": "CORE-19-C03",
+          "category": "concurrency",
+          "question": "전역 LLM/E2B 풀·엔진 큐·문서 worker·로컬 재조회 큐의 정확한 cap과 실행/취소/cleanup 순서, 같은 sandbox 재사용 경계 및 중첩 슬롯 교착 방지를 지정하는가?",
+          "requiredEvidence": "07 §§7.5–7.6; EC01..05; EF01..04"
+        },
+        {
+          "id": "CORE-19-C04",
+          "category": "events",
+          "question": "로그 폭주·SSE 순서·재접속·늦은 응답·핑퐁 큐·PDF/iframe 수명과 화면용 생략의 상한을 명시하며 없는 batching/backpressure/visibility pause를 구현됐다고 주장하지 않는가?",
+          "requiredEvidence": "07 §7.7; EC06..10; EF11..14/16"
+        },
+        {
+          "id": "CORE-19-C05",
+          "category": "verification",
+          "question": "byte/문자/cell/page/시간/token 상한 및 stop/partial 의미가 재현 가능하고 성능 계측과 음성 시험 조건을 정해 실제 측정 없는 FPS/처리시간·완료 증거를 주장하지 않는가?",
+          "requiredEvidence": "07 §§7.8–7.10; EL01..35; EF01..16; knownLimitations"
+        },
+        {
+          "id": "CORE-19-X01",
+          "category": "independent-audit",
+          "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-20",
+      "name": "설치·실행·lock·자산 환경",
+      "layer": "core",
+      "stepIds": [
+        "STEP-00"
+      ],
+      "purpose": "새 프로젝트 scaffold와 정확한 runtime/asset/launch 계약",
+      "sourceFiles": [
+        "package.json",
+        "package-lock.json",
+        "integrations/package.json",
+        "integrations/package-lock.json",
+        "integrations/scripts/smoke.mjs",
+        "index.html",
+        "tsconfig.json",
+        "vite.config.ts",
+        "public/gspec.svg",
+        "scripts/dev.mjs",
+        "scripts/copy-pdfjs-assets.mjs",
+        "scripts/build-dashboard-chart-runtime.mjs",
+        "server/index.mjs"
+      ],
+      "specFiles": [
+        "environment/README.md",
+        "environment/versions.json",
+        "tools/bootstrap.mjs",
+        "PLAN.md"
+      ],
+      "dependencies": [
+        "CORE-01"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js/npm/Vite/esbuild",
+          "role": "잠긴 버전의 설치·로컬 실행·PDF 및 차트 자산 빌드"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-20-C01",
+          "category": "independent-audit",
+          "question": "Node/npm, 선언/lock/관측 버전과 양쪽 package/lock/tsconfig/Vite/index scaffold가 원본과 일치하며 새 앱 부재를 구분하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-20-C02",
+          "category": "independent-audit",
+          "question": "PDF worker·CMaps/font/wasm/iccs와 standalone 차트의 build/prebuild 생성·경로·타깃을 지정하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-20-C03",
+          "category": "independent-audit",
+          "question": "dev 두 child·Vite strictPort/proxy·API loopback/PORT·dist 시작 시점·소유 child 종료가 실제 설정과 일치하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-20-C04",
+          "category": "independent-audit",
+          "question": "config-only와 실제 Gemini/E2B smoke·Node/Python 회귀의 실행 전제와 제품 인수 증거 범위를 구분하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        }
+      ]
+    },
+    {
+      "id": "CORE-21",
+      "name": "검증기·평가 무결성·전수 역방향 추적",
+      "layer": "core",
+      "stepIds": [
+        "STEP-00",
+        "STEP-01",
+        "STEP-02",
+        "STEP-03",
+        "STEP-04",
+        "STEP-05",
+        "STEP-06"
+      ],
+      "purpose": "검토 모집단·검증기 실패 경계·현재 입력 해시·실행 증거를 분리",
+      "sourceFiles": [
+        "scripts/verify-golden.mjs",
+        "scripts/verify-criteria-first.mjs",
+        "scripts/verify-hierarchy-guards.mjs",
+        "scripts/verify-xlsx-target.mjs",
+        "scripts/ui-qa-observe.js",
+        "scripts/ui-qa-dashboard-observe.js",
+        "server/test-support.mjs"
+      ],
+      "specFiles": [
+        "specs/06-verification.md",
+        "validation/README.md",
+        "validation/acceptance.mjs",
+        "validation/run-gate.mjs",
+        "validation/harness.mjs",
+        "decomposition/source-trace.json",
+        "reviews/independent-audit/PROTOCOL.md",
+        "reviews/independent-audit/score.mjs",
+        "DECISIONS.md",
+        "REPRODUCTION.md",
+        "reviews/current-reproduction/PROTOCOL.md"
+      ],
+      "dependencies": [
+        "CORE-20"
+      ],
+      "libraries": [
+        {
+          "name": "Node.js",
+          "role": "오프라인 검증기·SHA256·child process·증거 검사"
+        }
+      ],
+      "acceptanceQuestions": [
+        {
+          "id": "CORE-21-C01",
+          "category": "independent-audit",
+          "question": "역방향 전체 source/config/test inventory에 module 또는 명시적 제외 이유가 있고 신규/미검토 파일이 평가 분모에서 조용히 사라지지 않는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C02",
+          "category": "independent-audit",
+          "question": "adapter timeout/abort 후 늦은 정상 반환이 harness/run-gate에서 반드시 실패하며 grace period가 성공 허용 시간이 아닌가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C03",
+          "category": "independent-audit",
+          "question": "acceptance가 비어 있거나 다른 위치의 package manifest와 현재 architecture 변경을 거부하고 gate 증거를 현재 설계 패키지에 묶는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C04",
+          "category": "independent-audit",
+          "question": "live 호출 수와 holdout seed 수는 문자열/소수/Infinity/boolean을 거부하는 유한 양의 안전 정수로 검사하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C05",
+          "category": "independent-audit",
+          "question": "synthetic comparator·v3 selftest·holdout oracle와 실제 앱/provider 실행 증거를 구분하고 빈/중복/틀린 source를 실패시키는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C06",
+          "category": "independent-audit",
+          "question": "golden P10 PDF와 PNG가 동일한 전체 fields 정답을 공유하지 않도록 각각8개/첫쪽4개 기대값과 P13충돌을 평가자 전용 예외로 지정하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C07",
+          "category": "independent-audit",
+          "question": "bootstrap은 환경파일/데이터를 읽거나 덮지 않고 전부 사전 대조·동일 파일 멱등성·충돌 거부와 scaffold-only 한계를 명시하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C08",
+          "category": "independent-audit",
+          "question": "검증기 검사와 제품 gate의 NOT_RUN/blocked/skip/partial을 pass로 합산하지 않고 과거와 현재 입력해시를 구분하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C09",
+          "category": "independent-audit",
+          "question": "harness와 run-gate timeout의 1..21600000ms 안전정수 상한 및 Node timer clamp 거부를 명시하고 실패 시험으로 검증하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C10",
+          "category": "independent-audit",
+          "question": "채점기가 독립 명확성/정확성 reviewer, nonblank 근거, 현재 평가입력 hash를 강제하고 미검토·중복·stale 의견을 통과시키지 않는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C11",
+          "category": "independent-audit",
+          "question": "evidence 경로의 모든 ancestor symlink/junction·프로젝트 밖 파일을 거부하고 현재 패키지의 정규 경로만 승인하는가?",
+          "requiredEvidence": "CURRENT_REPRODUCTION 원본 계약과 OPTIONAL_FUTURE 구분; 독립 질문별 의견과 현재 입력 SHA256. 실제 gate는 미실행을 통과로 세지 않음."
+        },
+        {
+          "id": "CORE-21-C12",
+          "category": "current-reproduction",
+          "question": "현재 프로젝트 재현 profile이 모든 진입점·fixture·gate에서 일치하며 과거 강화 기능을 임의로 추가하지 않는가?",
+          "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견"
+        },
+        {
+          "id": "CORE-21-C13",
+          "category": "current-reproduction",
+          "question": "동일성 대상·허용 차이·고정 provider 응답과 실제 provider의 비결정성·현재 처리 한계를 원본 없이 결정할 수 있는가?",
+          "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견"
+        },
+        {
+          "id": "CORE-21-C14",
+          "category": "current-reproduction",
+          "question": "이번 점수의 고정 입력·전체 질문·독립 의견·보고서 해시를 재계산하며 제품 완료와 설계 완료를 혼동하지 않는가?",
+          "requiredEvidence": "DECISIONS/REPRODUCTION/06와 current-reproduction PROTOCOL 및 audit.mjs; 현재 고정 입력의 독립 의견"
+        }
+      ]
+    }
+  ]
+}

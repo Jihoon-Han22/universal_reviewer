@@ -1,0 +1,30 @@
+{
+  "case_id": "B101",
+  "report": "inputs/reports/B101.pdf",
+  "criteria": "inputs/criteria/B101_criteria.xlsx",
+  "output_template": "inputs/criteria/B101_criteria.xlsx",
+  "target_identity": "LOT HX-824 / PANEL T4",
+  "criteria_selection": "Apply current revision and explicit project-specific notes.",
+  "requested_fields": [
+    {
+      "field_id": "thermal",
+      "name": "열전도율"
+    },
+    {
+      "field_id": "stress",
+      "name": "압축응력"
+    },
+    {
+      "field_id": "absorption",
+      "name": "흡수율"
+    },
+    {
+      "field_id": "bond",
+      "name": "접착강도"
+    }
+  ],
+  "as_of": "2026-08-20",
+  "output_policy": "Fill the designated measurement, verdict and evidence slots for requested fields. Preserve all other cells, formulas and notes.",
+  "synthetic": true,
+  "review_policy": "Use the visible evidence. If a result is physically hidden or an unconfirmed handwritten correction conflicts with the printed result, return review and request the original. Do not infer hidden digits."
+}

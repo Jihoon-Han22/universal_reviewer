@@ -1,0 +1,1120 @@
+{
+  "schemaVersion": 1,
+  "role": "clarity",
+  "reviewerId": "/root/clarity_core",
+  "evaluatedInputsSha256": "a62da86c7e905679a4cf31308b81fc7f8a9d74549bbf76dcd02ef943502ea178",
+  "evaluatedPopulationSha256": "735d44d3a0e15140eafe5a9dd5d5bed3cab9011be713c2901f8423f76bf1579c",
+  "acceptanceProfile": "CURRENT_REPRODUCTION",
+  "scope": {
+    "modules": "CORE-01..CORE-19",
+    "assignedQuestions": 103,
+    "declaredTotalPopulation": 240
+  },
+  "methodology": {
+    "sourceBlind": true,
+    "originalProductSourceRead": false,
+    "environmentSecretsRead": false,
+    "priorReviewScoresUsed": false,
+    "designEditedByReviewer": false,
+    "basis": "Packaged normative documents, contracts, prompts, reference assets and concrete examples; original source/test filenames alone were not accepted as behavioral evidence.",
+    "limits": "This evaluates document sufficiency for the 103 declared CORE questions. It is not proof of universal behavior for arbitrary inputs, source accuracy, or successful product reconstruction.",
+    "productExecution": "NOT_RUN",
+    "providerExecution": "NOT_RUN",
+    "browserExecution": "NOT_RUN",
+    "incidentalExposure": "After the 103 question-level draft rationales had been prepared, collaboration.list_agents automatically displayed audit_exports/audit_ui completion summaries, including an author self-check count. No author report file or original source was opened; those summaries were not used as evidence or copied into verdicts. Authors also supplied change locations/source filenames for the two precheck corrections; judgments were based on rereading packaged sections only.",
+    "documentationSnippetCheck": "The packaged D2.1.1 mentions function was compiled in an isolated VM and checked on seven documented boundary/literal cases. This is a document-snippet consistency check, not product execution."
+  },
+  "inputIntegrity": {
+    "manifestSha256Matched": true,
+    "populationBoundToManifest": true,
+    "designFilesChecked": 317,
+    "designFileMismatches": [],
+    "sourceFileFreshness": "NOT_CHECKED_SOURCE_BLIND",
+    "assignedQuestionIdsComplete": true,
+    "duplicateQuestionIds": []
+  },
+  "summary": {
+    "pass": 103,
+    "fail": 0,
+    "unverified": 0,
+    "unreviewed": 0,
+    "openIssues": 0,
+    "clarityPercent": 100,
+    "ambiguityPercent": 0,
+    "scopeWarning": "Percentages apply only to this assigned declared question set."
+  },
+  "questionResults": [
+    {
+      "id": "CORE-01-C01",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "question": "설계가 .env 우선순위, 필수/선택 키, 역할별 model ID와 기본값을 모두 지정하고 공개 health 응답에 비밀키를 포함하지 않는가?",
+      "evidence": [
+        "environment/README.md §.env와 비밀 경계; specs/02-backend-pipeline.md §2.8.1"
+      ],
+      "rationale": "환경 값의 nullish 우선순위와 빈 문자열 우선, 두 모델 기본값, template, key 미설정 오류, 공개 configured boolean을 지정한다."
+    },
+    {
+      "id": "CORE-01-C02",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "question": "generateJson/generateText의 contents·systemInstruction·schema·role 입력과 text/data/usage 출력, provider 오류 분류를 독립 구현할 수 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.8.1"
+      ],
+      "rationale": "contents/prompt 우선순위, role별 모델, SDK request와 JSON schema, text/data/usage 반환 및 safeError의 status별 분류가 구체적이다."
+    },
+    {
+      "id": "CORE-01-C03",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "question": "LLM 요청과 E2B callback의 timeout·abort·finally 정리 순서를 명시하고 작업 취소 후에도 실제 종료까지 자원을 점유하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.8; specs/07-data-algorithms-concurrency.md §§7.5–7.6"
+      ],
+      "rationale": "호출 settle까지 슬롯 유지, create 이후 abort 확인, 동일 kill Promise의 finally await와 CLEANUP_FAILED 우선순위를 지정한다."
+    },
+    {
+      "id": "CORE-01-C04",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "question": "응답 용량·토큰·파일 부분·JSON 파싱 오류와 E2B kill 실패를 성공으로 처리하지 않는 정책이 수치와 오류 코드로 지정되어 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.3,2.6,2.8.1"
+      ],
+      "rationale": "adapter의 범용 byte/part cap 부재를 명시하고 호출 단계의 32MiB profile, 전사·토큰 한도와 INVALID_RESPONSE/CLEANUP_FAILED를 구별한다."
+    },
+    {
+      "id": "CORE-01-C05",
+      "moduleId": "CORE-01",
+      "status": "PASS",
+      "question": "키를 노출하거나 실제 외부 호출을 필수로 하지 않고 fake client로 설정·응답·정리를 검사하는 재현 명령이 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.8.1; specs/07-data-algorithms-concurrency.md §7.9 EF-01..04; environment/README.md §앱 구현 이후 실행 명령"
+      ],
+      "rationale": "fake client 주입의 키 검사 우회와 동일 validator 사용을 정의하며 오프라인 시험·config check·실제 smoke의 역할과 실행 전제를 분리한다."
+    },
+    {
+      "id": "CORE-02-C01",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "question": "각 /api route의 method, body/query, 성공 상태 코드, 오류 응답이 정의되고 문서 private buffer/modelParts/profile과 publicDocument가 분리되어 있는가?",
+      "evidence": [
+        "specs/01-state-api.md §§4,8–10; contracts/types.ts HTTP DTO"
+      ],
+      "rationale": "route별 method/body/status/error와 공개 문서 allowlist를 정의하며 private buffer/modelParts/profile은 공개 응답에 포함하지 않는다."
+    },
+    {
+      "id": "CORE-02-C02",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "question": "문서·run·dashboard job이 기본 구현에서는 메모리 저장이고 서버 재시작 시 사라짐을 명시하며 존재하지 않는 ID의 404 동작을 정의하는가?",
+      "evidence": [
+        "specs/01-state-api.md §§1,4.1–4.2; specs/05-dashboard-exports.md D03"
+      ],
+      "rationale": "메모리 저장소의 재시작 소멸과 문서/run/job의 404, 열린 run·완료기록 pruning 시점을 명시한다."
+    },
+    {
+      "id": "CORE-02-C03",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "question": "업로드 다중 파일 중 한 개 실패 시 이미 추가한 문서가 rollback되고 run 근거로 쓰이는 문서는 DELETE 409로 보호되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§1,4.1"
+      ],
+      "rationale": "한 요청 중간 실패 시 이번 요청에서 추가한 문서만 rollback하며 retained run의 target/criteria/analysis 참조 문서는 DELETE 409다."
+    },
+    {
+      "id": "CORE-02-C04",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "question": "local-origin write guard, 2 MB JSON 한도, multipart 파일/필드 한도, 파일 크기 오류 413와 형식 오류 400이 명시되어 있는가?",
+      "evidence": [
+        "specs/01-state-api.md §4–4.1"
+      ],
+      "rationale": "Origin hostname 검사·없을 때 허용, JSON 2MiB, multipart 10files/3fields/13parts/100byte field와 400/413 분기를 수치로 지정한다."
+    },
+    {
+      "id": "CORE-02-C05",
+      "moduleId": "CORE-02",
+      "status": "PASS",
+      "question": "실제 포트 기본값/환경 override, dist 정적 서빙, SIGINT/SIGTERM의 run 취소와 종료를 검증할 명령과 기대 응답이 있는가?",
+      "evidence": [
+        "specs/01-state-api.md §11; environment/README.md §앱 구현 이후 실행 명령"
+      ],
+      "rationale": "8787/process PORT·loopback·시작 시 dist 존재와 signal의 cancel 후 server.close를 지정한다. cleanup supervisor나 SSE 강제 종료가 없다는 현재 한계를 구별한다."
+    },
+    {
+      "id": "CORE-03-C01",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "question": "허용 확장자 pdf/docx/xlsx/csv/txt/md/json/png/jpg/jpeg/webp, role, 파일명 정제와 원본 bytes 보존 계약이 지정되어 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.2; specs/01-state-api.md §4.1"
+      ],
+      "rationale": "허용 확장자 목록과 role,basename/control/trim/240자 이름 정책,MIME/signature 대조 및 원본 bytes 반환을 정의한다."
+    },
+    {
+      "id": "CORE-03-C02",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "question": "XLSX 미리보기의 namespace/comment 호환 보정이 복제본에만 적용되고 hidden/merged/formula cache 정보를 원본과 혼동하지 않는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.2–2.3"
+      ],
+      "rationale": "메모 namespace/drawing 관계 보정은 preview 복제본에만 적용하고 원본 bytes·hidden/merge/formula cache를 별도 보존한다."
+    },
+    {
+      "id": "CORE-03-C03",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "question": "시트 30개·셀 100,000개·source 1,500,000자 등 로컬 미리보기 한도 초과를 파일 손상으로 거절하지 않고 deferred preview로 넘기는 조건이 명시되어 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.2 deferredSpreadsheetPreview"
+      ],
+      "rationale": "30sheet/100000cell/1500000자 초과의 text preview와 원본 보존, sourceSheets 제거를 정확한 객체·문구로 지정한다."
+    },
+    {
+      "id": "CORE-03-C04",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "question": "20 MiB 파일, 100문서, 250 MiB 예약 용량 및 ZIP 20,000 entries/100 MiB 팽창 한도가 동시 add·실패 반환까지 정의되는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.2; specs/07-data-algorithms-concurrency.md §7.2"
+      ],
+      "rationale": "20MiB/100문서/250MiB의 파싱 전 예약·실패 반환 및 ZIP 20000entry/100MiB와 signature·압축 검사를 구별한다."
+    },
+    {
+      "id": "CORE-03-C05",
+      "moduleId": "CORE-03",
+      "status": "PASS",
+      "question": "미리보기 성공이 전체 분석 완료를 의미하지 않으며 formula cache 없음·embedded drawing 생략·PDF 보조 읽기 실패가 어떻게 표시되는지 검증 가능한가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.2–2.3"
+      ],
+      "rationale": "formula cache sentinel, drawing warning 및 이미지전용 fallback, PDF 보조읽기 실패의 업로드 허용과 preview truncation 한계를 명시한다."
+    },
+    {
+      "id": "CORE-04-C01",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "question": "Document.buffer/kind/id → profile/modelParts/sourceSheets/sourceRows/analysis의 반환 형태와 SHA-256·kind 대조가 명시되어 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.3–2.4; contracts/internal-pipeline.ts ReaderProfile/AnalyzedDocument"
+      ],
+      "rationale": "원본 id/kind/digest 검증과 profile→sourceSheets/sourceRows/modelParts/analysis 변환 및 private/public 필드 경계를 지정한다."
+    },
+    {
+      "id": "CORE-04-C02",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "question": "한 문서의 원본 재조회가 retained sandbox와 TaskPool(1)을 공유하고 source 업로드·parser 설치를 세션당 한 번 수행하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.1,2.8; specs/07-data-algorithms-concurrency.md §§7.2,7.5"
+      ],
+      "rationale": "같은 문서 세션의 물리 sandbox와 로컬 TaskPool(1), source/parser/query Promise 단일 준비를 정의한다."
+    },
+    {
+      "id": "CORE-04-C03",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "question": "문서 세션 300,000 ms, Python reader 150초 등 서로 다른 제한과 정상/실패/취소의 세션 종료 책임이 구분되어 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.8; specs/07-data-algorithms-concurrency.md §7.6"
+      ],
+      "rationale": "queue 진입 전 300000ms session deadline, Python 150초·명령180초·kill15초와 finally 소유권을 분리한다."
+    },
+    {
+      "id": "CORE-04-C04",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "question": "reader의 100시트/100,000셀/1,500,000자/300 PDF페이지/8이미지/40MP 제한을 명시하고 형식·실패 단계별 partial/unsupported/hard error 및 coverage 표시를 구별하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.3"
+      ],
+      "rationale": "reader의 sheet/cell/text/page/image/pixel cap과 partial(reason), unsupported JSON, Node hard-error를 구별하므로 잘림 결과를 재현할 수 있다."
+    },
+    {
+      "id": "CORE-04-C05",
+      "moduleId": "CORE-04",
+      "status": "PASS",
+      "question": "업로드 문서의 수식·매크로·링크·문구를 실행하지 않고 고정 reader/명령만 수행함을 재현 테스트로 확인하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.3,2.5,2.9; contracts/document-negative-cases.json DN-01..04"
+      ],
+      "rationale": "고정 reader/requery 명령과 data-only selector·링크 비fetch·수식 비실행 경계를 지정하고 불실행 음성 시험 및 NOT_RUN을 구별한다."
+    },
+    {
+      "id": "CORE-05-C01",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "question": "xlsx/csv의 sheet+A1, Word BLOCK, text L 범위 selector가 코드/경로가 아닌 데이터이며 유효 범위와 응답 digest를 검사하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.5 허용 selector와 재조회 응답"
+      ],
+      "rationale": "sheet Excel bounds, BLOCK200/text1000 구간, 1..8 selector, duplicate/extra key 거절과 재조회 digest·request/order·coverage 검증이 지정된다."
+    },
+    {
+      "id": "CORE-05-C02",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "question": "150,000자 source chunk, 최대 1,200,000자 맥락 입력에서 모든 retained 구간을 해석/독립 검증하고 미기술 셀·헤더·시트를 찾는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.4–2.5; specs/07-data-algorithms-concurrency.md §7.3 B"
+      ],
+      "rationale": "150000자 chunk와 1200000자 cap, 모든 retained segment 검증, populated cell·header·sheet/BLOCK/line coverage 및 initial/repair count를 구별한다."
+    },
+    {
+      "id": "CORE-05-C03",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "question": "최대 3회 교정의 계속/종료 조건, 교정 후 전체 context 대체·재검증, 같은 E2B 재사용을 명시하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.5–2.5.1; specs/07-data-algorithms-concurrency.md §7.8"
+      ],
+      "rationale": "3round·fingerprint·source_limit,전체 replacement 재검증과 동일 sandbox를 지정한다. proposed가 비어 있을 때만 sheet retained bounding→BLOCK1..200→L1..1000 fallback을 택한 뒤 normalize/dedup/앞8을 적용한다."
+    },
+    {
+      "id": "CORE-05-C04",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "question": "미해결·truncated·검증기 실패를 needsConfirmation/partial로 남기며 정성 기준의 정당한 단위 공백만으로 재시도를 만들지 않는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.4–2.5; prompts/pipeline-prompts.md §문맥 replacement"
+      ],
+      "rationale": "정성 unit 공란 예외의 실제 단일 cell 증명을 명시하고 불완전 reread는 limited, 그 밖의 repair 실패는 prior context 보존 needs_review로 분리한다."
+    },
+    {
+      "id": "CORE-05-C05",
+      "moduleId": "CORE-05",
+      "status": "PASS",
+      "question": "셀 이동·멀티시트·숨김·행/열 방향·헤더 누락·Word 중첩 표·text line 누락을 특정 파일명 없이 검사하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.9 필수 acceptance; contracts/document-negative-cases.json DN-03; specs/07-data-algorithms-concurrency.md EF-05,07"
+      ],
+      "rationale": "행/시트 이동·숨김·전치·누락구역과 nested DOCX·text line coverage의 입력 변형 및 expected incomplete/verified를 명시한다. 실모델 실행과 설계 사례는 구별된다."
+    },
+    {
+      "id": "CORE-06-C01",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "page/rotation/block/table/cell/parentTableId/uncertain/coverage 필드를 정의하고 시트 번호를 PDF 페이지로 취급하지 않는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.6; contracts/internal-pipeline.ts VisualTable/VisualCell; contracts/pipeline-model-schemas.json"
+      ],
+      "rationale": "page/rotation/block/table/cell 및 nested parent 양방향 관계와 table rectangle overlap, 페이지 ID를 정의하며 spreadsheet에는 page를 만들지 않는다."
+    },
+    {
+      "id": "CORE-06-C02",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "전사 모델과 독립 visual judge가 실제 원본을 비교하고 빈 페이지·겹친 셀·누락 페이지를 모델 complete=true만으로 승인하지 않는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.6"
+      ],
+      "rationale": "원본을 받는 별도 visual judge, page inventory·digital source alignment·blankPages 증명으로 self complete만의 승인을 막는 현재 절차를 정의한다."
+    },
+    {
+      "id": "CORE-06-C03",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "최대 30페이지·요청당 3페이지·3회 교정·전체 180초·요청 60초 제한과 미완료 배치의 병합/재검증 규칙이 있는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.6 종료 분기"
+      ],
+      "rationale": "3page batch/30page/3round/180초/60초와 교체 개선 조건·sticky uncertainty, no_progress 및 stopReason 우선순위를 명시한다."
+    },
+    {
+      "id": "CORE-06-C04",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "원본 이미지/전사 공급 제한이나 회전/표 구조 오류가 있으면 판독불가를 추정 텍스트로 채우지 않고 coverage·경고를 보존하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.3,2.6"
+      ],
+      "rationale": "보조 PNG8/16MiB·전사 JSON250000자 cap, 회전·nested 오류 및 미완료 페이지의 보존을 명시하고 OCR 값을 지어내지 않는다."
+    },
+    {
+      "id": "CORE-06-C05",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "서로 다른 문서의 페이지 혼합, invented page, blank-page 거짓 승인, nested table 참조 오류가 오프라인 모델 stub 테스트에서 거절되는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.6; contracts/document-negative-cases.json DN-04; specs/07-data-algorithms-concurrency.md EF-08"
+      ],
+      "rationale": "requested page membership/중복·parent cycle·blank judge 실패를 거절하는 계약과 실제 두 문서 오염 음성 시나리오가 있다. stub/실제provider 시험은 별도로 기록한다."
+    },
+    {
+      "id": "CORE-06-C06",
+      "moduleId": "CORE-06",
+      "status": "PASS",
+      "question": "현재 VLM 30쪽·180초 제한과 reader의 별도 한도, 초과 시 coverage/partial·fallback을 재현하고 OPTIONAL_FUTURE의 575쪽 전수·geometry 확장과 구분하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §현재 상한과 향후 전수 처리 제안의 차이; REPRODUCTION.md §기준선과 정답 선택"
+      ],
+      "rationale": "현재 reader8/VLM30/180초 초과는 partial/stopReason을 보존하며 575쪽 자동 이어읽기·35필드 전수 gate는 OPTIONAL_FUTURE로 구별한다."
+    },
+    {
+      "id": "CORE-07-C01",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "question": "criteria/not_criteria/uncertain, hasNormativeContent, sourceKind, reason, evidence의 조합과 제외 파일 공개 응답 형태를 정의하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §13.1; contracts/types.ts CriteriaDocumentAssessment"
+      ],
+      "rationale": "raw proposal의 hasNormativeContent/status/sourceKind와 공개 assessment의 해당 필드 생략, reason/evidence/제외 DTO를 분리한다."
+    },
+    {
+      "id": "CORE-07-C02",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "question": "완전 읽기·원문 인용 검증이 충족된 not_criteria만 제외하고 혼합 문서의 실제 재사용 기준은 남기는가?",
+      "evidence": [
+        "specs/03-algorithms.md §13.1 completeAnalysis predicate"
+      ],
+      "rationale": "not_criteria 제외에는 strict reader/context complete 및 실제 quote를 요구하며 혼합 문서의 재사용 규범을 criteria로 유지하는 지시가 있다."
+    },
+    {
+      "id": "CORE-07-C03",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "question": "잘못된 자격 응답에만 추가 1회 교정을 허용하고 일시 실패는 uncertain으로 유지하며 제외한 source가 후보·편집·인용에 재진입하면 거절하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §13.1; specs/01-state-api.md §5"
+      ],
+      "rationale": "invalid schema/citation/INVALID_RESPONSE만 총2호출, transport 실패 uncertain·abort 전파 및 excluded source의 revise/approve 재진입 거절을 명시한다."
+    },
+    {
+      "id": "CORE-07-C04",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "question": "파일명·upload role·생성 요약을 자격 증거로 쓰지 않고 잘못된 인용·단축 소수·부분 source 전달은 자동 제외를 막는가?",
+      "evidence": [
+        "specs/03-algorithms.md §13.1; contracts/algorithm-edge-cases.json ALG-B-CITATION-01/02"
+      ],
+      "rationale": "filename/role/summary를 증거로 쓰지 않고 입력64parts/160000자/8MiB 초과는 uncertain이며 숫자 경계·형식별 실제 quote 검증을 명시한다."
+    },
+    {
+      "id": "CORE-07-C05",
+      "moduleId": "CORE-07",
+      "status": "PASS",
+      "question": "정성 규칙·법무/업무 규칙·측정치와 제한이 같은 표·규범 없는 기록·prompt injection을 특정 데이터셋 이름 없이 분류 검증하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§1,9,13.1; prompts/criteria-algorithms.catalog.json criteria-eligibility.SYSTEM"
+      ],
+      "rationale": "자격의 기준은 재사용 규범의 존재이며 관찰기록·과거 판정근거·혼합표·비신뢰 문구를 구분한다. 미래 의미품질 fixture와 현재 prompt/validator 재현을 구별한다."
+    },
+    {
+      "id": "CORE-08-C01",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "inventory의 sheet/region, ranges, regionAssessments, dispositions, criteria와 citations가 별도 구조로 정의되고 모든 region의 처리 상태가 반환되는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.4; specs/03-algorithms.md §§11.1–11.2,특히 §11.1a"
+      ],
+      "rationale": "inventory/plan/assessment/disposition/citation과 region coverage를 나누고,워크북·행band·열group 순서 및 Python ties-to-even의24-cell sample index 공식을 제공한다."
+    },
+    {
+      "id": "CORE-08-C02",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "모델이 한 표만 선택해도 다른 시트의 작은 sparse 영역을 보완하고 최소/최대 분리·전치·병합·떨어진 표를 위치/헤더로 탐색하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§3.1,11.1–11.3; specs/07-data-algorithms-concurrency.md §7.3 A"
+      ],
+      "rationale": "계획에 빠진 모든 region 보완, row/column 역할 탐색·sparse grouping·aligned lower/upper/merge 인용 grounding을 지정한다."
+    },
+    {
+      "id": "CORE-08-C03",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "기준 발견 자체는 별도 E2B 세션이고 내부 최대 2회 상세 추출/추가범위 루프는 같은 세션임을 구조 분석 세션과 구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §11.1; specs/07-data-algorithms-concurrency.md §7.6"
+      ],
+      "rationale": "문서 구조 분석 종료 후 별도 discovery sandbox를 열며 내부 두 read/extract round만 같은 환경과 설치를 공유한다. inventory 재사용과 물리 세션 재사용은 다르다."
+    },
+    {
+      "id": "CORE-08-C04",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "첫100시트 cell-profile 대상과 모든 시트 metadata/후속 빈 시트 예외, 200,000 inventory셀/300영역·상세6,000셀/220,000자·18범위·범위12,000·총24,000셀·250기준의 실제 생략과 미확인 coverage를 구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§11.1–11.2; specs/07-data-algorithms-concurrency.md §7.8 selectRanges"
+      ],
+      "rationale": "100sheet profile/전체 metadata,200000cells/300regions,고유6000records/220000 Python문자와 raw1500000JS문자,18ranges/12000/24000coords 및250기준의 상한·미완료를 구별한다."
+    },
+    {
+      "id": "CORE-08-C05",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "시트·항목명 변경, 열/행 이동, 숨김, 옆 표, 신규 유형과 규범 없는 열을 변형해도 기준/근거/coverage가 동치인지 검사하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §9 metamorphic; specs/07-data-algorithms-concurrency.md EF-05,06"
+      ],
+      "rationale": "이름·행열·숨김·전치·인접표 이동의 불변 조건과 값/조건/단위 변경의 비동치 기대를 적고 filename/골든 ID 분기를 금지한다."
+    },
+    {
+      "id": "CORE-08-X01",
+      "moduleId": "CORE-08",
+      "status": "PASS",
+      "question": "기준inventory는100sheet초과에도 모든metadata를반환하며후속빈sheet는complete=true라는점을genericreaderhardstop과구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §11.1 inventory cell-profile 표"
+      ],
+      "rationale": "index100 이후도 metadata를 보존하고 실제 nonempty/comment가 없으면 complete:true이며 populated면 incomplete다. generic reader 100sheet partial과 구별한다."
+    },
+    {
+      "id": "CORE-09-C01",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "question": "Criterion의 rule/comparison/unit/scope/categoryPath/sampleName/conditions와 각각의 증거를 구별하고 없는 유형은 빈 경로로 표현하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §2; contracts/types.ts Criterion/Evidence"
+      ],
+      "rationale": "비교식·단위·scope·순서 있는 path·sample·conditions와 source/hierarchy 근거를 나누고 flat path는 not_applicable, 충돌 classification은 ambiguous로 지정한다."
+    },
+    {
+      "id": "CORE-09-C02",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "question": "비고/참고/notes 열은 나이·온도를 포함해 판정 조건에서 제외하되 실제 조건 열의 재령·기간·온도는 보존하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §3.3; contracts/algorithm-edge-cases.json ALG-B-CONDITION-01/02"
+      ],
+      "rationale": "notes의 좌표 기반 제거와 실제 조건열 보존을 구별하고 evidenceCells 없는 sourceEvidence-only 후보의 현행 조건 병합 한계를 적는다."
+    },
+    {
+      "id": "CORE-09-C03",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "question": "상위 공통 기준, 세부 유형, 명시적 시료, 문서 목차 제목과 규칙 중복/대체/폐기의 우선순위를 source 근거와 함께 지정하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§11.3,12; prompts/pipeline-prompts.md OPTIONAL_FUTURE overlay"
+      ],
+      "rationale": "검증된 계층 prefix·sharedScope·sample citation과 disposition/replacement/semantic dedup 순서를 정의한다. generic 제목 보완 overlay는 현재 prompt에 추가하지 않는다."
+    },
+    {
+      "id": "CORE-09-C04",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "question": "250기준·8단계·ID/문구 길이 한도를 명시하고 잘못된 비교식·충돌 source·미검증 계층의 generic validator/discovery/approval 경로별 처리와 확인 상태가 강제되지 않는 현재 한계를 구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §2,§§11.3–13.1"
+      ],
+      "rationale": "250/8단계/길이·비교식 bounds와 source/conflict를 정의한다. generic validator의 ungrounded path resolved/invalid comparison 생략 한계를 discovery grounding과 구별한다."
+    },
+    {
+      "id": "CORE-09-C05",
+      "moduleId": "CORE-09",
+      "status": "PASS",
+      "question": "1종/2종 또는 특정 자재명을 규칙에 하드코딩하지 않고 정성 무단위·가변 계층·동일 항목 다른 조건을 구별하는 테스트가 있는가?",
+      "evidence": [
+        "specs/03-algorithms.md §9; specs/07-data-algorithms-concurrency.md EF-09"
+      ],
+      "rationale": "임의 항목명·가변 계층·동일 label 다른 조건/시료/단위를 유지하는 변형 시험과 무단위 정성 정책을 제공한다. 고정 재료/사례 ID를 판정 분기로 쓰지 않는다."
+    },
+    {
+      "id": "CORE-10-C01",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "question": "confirm/revise의 criteria, feedback, documentId, scope, expectedCriterionVersion 요청과 승인본 approvedCriteria 응답이 정의되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§4.2–5; specs/03-algorithms.md §13.2; contracts/types.ts Confirm/ReviseCriteriaRequest"
+      ],
+      "rationale": "criteria/feedback/documentId/scope/version 입력과 approvedCriteria의 criteria/version/approvedAt 출력이 정의된다."
+    },
+    {
+      "id": "CORE-10-C02",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "question": "사용자 직접 편집 가능 필드와 서버 보존 provenance가 분리되고 의미 수정에 userOverride를 기록하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §8; specs/01-state-api.md §5"
+      ],
+      "rationale": "편집 allowlist와 서버 provenance clone을 분리하고 human UUID 신규 기준 및 실제 의미 변경의 userOverride/overrideSource를 지정한다."
+    },
+    {
+      "id": "CORE-10-C03",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "question": "awaiting_confirmation → criteria_revising → 재확인 또는 실패 복귀, confirm → awaiting_documents 전이가 버전 증가 규칙과 함께 정의되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§3,5–6"
+      ],
+      "rationale": "revise 접수 running/criteria_revising→성공 version+1/revision+1→재확인, 실패 기존 버전 복귀, confirm 제출 criteria 있을 때만 version 증가를 명시한다."
+    },
+    {
+      "id": "CORE-10-C04",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "question": "stale version 409·누락 version 400·피드백20회/12,000자 한도·취소 후 늦은 응답 차단이 지정되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§4.2,7; specs/03-algorithms.md §13.2"
+      ],
+      "rationale": "missing version400/stale409,접수 feedback20회/12000자,revisionToken·signal·generation의 late response 차단을 정의한다."
+    },
+    {
+      "id": "CORE-10-C05",
+      "moduleId": "CORE-10",
+      "status": "PASS",
+      "question": "승인 전 대상 첨부가 거절되고 승인 뒤 기준 배열 deep freeze 및 승인본/수정 이력이 유지되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§3–5"
+      ],
+      "rationale": "승인 전 target attach409, 승인 snapshot deep freeze와 attach시 승인본 재설정, 수정/확정 audit를 보존한다."
+    },
+    {
+      "id": "CORE-11-C01",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "question": "PDF/image facts extraction과 review proposal의 서로 다른 schema를 정의하고 extraction 최대300개·review 문서당250개를 구별하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.7; specs/03-algorithms.md §§2,4; contracts/pipeline-model-schemas.json"
+      ],
+      "rationale": "시각문서의 독립 Extraction과 RawFinding/reviewCoverage를 별도 구조로 정의하고 fields300·findings250의 한도와 잘림 의미를 구분한다."
+    },
+    {
+      "id": "CORE-11-C02",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "question": "추출은 승인 기준값을 측정값으로 복사하지 않고 실제 대상의 모든 관측 항목·식별번호·원문 표기를 보존하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §4; prompts/pipeline-prompts.md source facts 추출"
+      ],
+      "rationale": "독립 추출에는 승인 기준을 주지 않고 실제 모든 reviewable fact와 번호 우선순위, 단위·소수0·ND·선행0 원문을 보존한다."
+    },
+    {
+      "id": "CORE-11-C03",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "question": "원문 분석 → 시각 자료 독립 facts → 승인 기준 매칭 → 결정론적 정규화 → item.decided 이벤트 순서가 정의되는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.1 DAG; specs/01-state-api.md §6"
+      ],
+      "rationale": "분석→시각 facts→matching proposal→server normalize→pending extracted/item.decided 순서를 명시하며 문서간 interleaving은 허용한다."
+    },
+    {
+      "id": "CORE-11-C04",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "question": "틀린 criterionId/documentId·다른 시료/행·누락/ND/판독불가를 잘못 매칭한 제안의 거절 또는 review 하향 조건이 명시되는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§4–6; contracts/algorithm-edge-cases.json ALG-B-ADMISSION-01..03"
+      ],
+      "rationale": "잘못된 ID/shape는 문서 오류이고 known-record 다른 행 적용성 및 독립 값 불일치는 review다. 일반 finding quote/좌표의 permissive admission과 엄격 guard를 분리한다."
+    },
+    {
+      "id": "CORE-11-C05",
+      "moduleId": "CORE-11",
+      "status": "PASS",
+      "question": "CSV/XLSX의 빈값 record 보존, 모든 적용 기준을 요청하는 model 지시, out-of-scope 제외·missingRows·reviewCoverage를 구별하며 현재 행 coverage가 모든 행×기준의 검토를 증명하지 않는 한계를 명시하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §7"
+      ],
+      "rationale": "CSV 실제 비빈행과 식별자 있는 XLSX record의 빈 result cell을 보존하고 valid exclusion/missingRows를 구분한다. 행 coverage가 모든 기준 조합을 증명하지 않는 한계도 적는다."
+    },
+    {
+      "id": "CORE-12-C01",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "lt/lte/gt/gte/eq/range의 경계와 단위 정규화, 최종 status/machineStatus/presence/missingVerified/missingConditions가 지정되는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§5–6 numericVerdict"
+      ],
+      "rationale": "정확한 숫자 정규식·unitKey·비교 연산 함수와 최종 machineStatus/uncertain/missing 필드의 적용 순서를 제시한다."
+    },
+    {
+      "id": "CORE-12-C02",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "필수 항목의 검증된 누락 fail predicate·선택 항목 누락 제외를 명시하고 판독불가/ND/잘림/formula cache 없음의 raw uncertainty와 비교식 유무에 따른 현재 판정·누락 증거 여부를 구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §6"
+      ],
+      "rationale": "required 기본값·optional 예외, exact completeAnalysis·시각 전사·실제 blank/원문 증명의 모두 충족 조건을 지정한다. ND는 누락 증거가 아니며 수치 비교 가능 여부와 raw uncertainty를 별도 검사하고 미캐시·병합·partial을 구별한다."
+    },
+    {
+      "id": "CORE-12-C03",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "확인되지 않은 기준/조건/분류/독립 추출 불일치가 숫자 pass/fail보다 우선하는 순서를 결정론적으로 명시하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §5; specs/07-data-algorithms-concurrency.md §7.4"
+      ],
+      "rationale": "수치/누락 뒤 조건→유형·시료→독립 추출→표시 label→machineStatus 순서가 명시되어 후속 review guard가 수치 pass/fail을 덮어쓴다."
+    },
+    {
+      "id": "CORE-12-C04",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "자재/하위유형/시료 근거가 대상 원문에 없거나 record의 다른 행이면 rule label이 같아도 pass로 확정하지 않는가?",
+      "evidence": [
+        "specs/03-algorithms.md §5.3"
+      ],
+      "rationale": "순서 있는 path 부분수열·sample exact 비교·numeric boundary와 actual cited source를 검증하고 known-record measurement/classification evidence의 같은 단일 row를 요구한다."
+    },
+    {
+      "id": "CORE-12-C05",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "0·빈 셀·merged continuation·수식 미캐시·정상 누락·불확실 누락·상충 독립 추출을 서로 다른 결과로 검사하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§6,9 ALG-M01..05,ALG-E01..02"
+      ],
+      "rationale": "0/실제 공란/merged/수식 미캐시/완전한 필수누락/partial/독립추출 모순의 서로 다른 결과와 최소 테스트 벡터가 제공된다."
+    },
+    {
+      "id": "CORE-12-X01",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "일반 finding evidence의 permissive regex/미검증 원문과 조건·분류·필수누락의 실제 검증을 구별하고 invalid좌표·가짜quote numeric pass baseline 및 OPTIONAL_FUTURE 강화를 명시하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §§5,15; contracts/algorithm-edge-cases.json ALG-B-ADMISSION-01..03"
+      ],
+      "rationale": "일반 evidence는 regex 형식만 검사하여 A0·역범위·가짜quote의 numeric pass가 가능함을 명시한다. 조건/분류/필수누락의 실제 원문 검사와 미래 SOURCE-GROUNDING을 분리한다."
+    },
+    {
+      "id": "CORE-12-X02",
+      "moduleId": "CORE-12",
+      "status": "PASS",
+      "question": "시각 applicability/자격helper의 전역pagecoverage검사와 인용page만의 block/cell uncertainty검사를 구별하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §5.3,§13.1"
+      ],
+      "rationale": "시각 helper의 전역 page set/coverage/quality와 citedPage만의 block/table/cell shape·uncertainty 재검사를 구분하므로 비인용 page를 더 강하게 재검증하지 않는다."
+    },
+    {
+      "id": "CORE-13-C01",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "question": "run/document/stage enum, snapshot, sequence/timestamp event 필드, summary 계산식을 정의하고 legacy와 criteria_first 모드를 구별하는가?",
+      "evidence": [
+        "specs/01-state-api.md §§3,6,10; contracts/types.ts RunSnapshot/RunEnvelope/Summary"
+      ],
+      "rationale": "run/document/stage enum,legacy/criteria_first,snapshot 및 runStatus 권위,event sequence/time과 최종 status 기반 summary 수식을 정의한다."
+    },
+    {
+      "id": "CORE-13-C02",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "question": "문서 분석과 대상 review의 각각 2-worker 실행에서 한 문서 실패가 다른 문서를 중단하지 않으며 결과가 파일 ID별로 결합되는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §§2.1,2.9; specs/07-data-algorithms-concurrency.md §7.5"
+      ],
+      "rationale": "분석·대상 검토 각각 worker2,파일 ID 결합과 sibling 지속을 명시하며 criteria failure/run failure와 target partial 분기를 구별한다."
+    },
+    {
+      "id": "CORE-13-C03",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "question": "running/awaiting_confirmation/awaiting_documents 취소, late event 차단, completed/partial/failed 집계 및 ensureAnalyzed waiter 취소를 정의하는가?",
+      "evidence": [
+        "specs/01-state-api.md §3; specs/07-data-algorithms-concurrency.md §§7.2,7.6"
+      ],
+      "rationale": "열린 상태 취소·legacy resume 해제·terminal no-op·late event 차단과 ensureAnalyzed owner/waiter 취소 분리를 정의한다. 최종 run은 target failures/partial,analysis.status 및 열거된 criteria9개 신호만 검사하며 생략된 optional 신호를 강제로 incomplete로 만들지 않는다."
+    },
+    {
+      "id": "CORE-13-C04",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "question": "동시 open run 3개·완료 run 정리 40개·문서당250결과 한도를 지정하고 run/target 집계의 정확한 coverage 검사 필드·누락값 처리와 직접 검사하지 않는 현재 한계를 구분하는가?",
+      "evidence": [
+        "specs/01-state-api.md §§1,3; specs/02-backend-pipeline.md §2.9"
+      ],
+      "rationale": "open3와 새 run 삽입 후 전체Map40 pruning,정규화·optional 제거 후250결과 한도 및 strict-false target coverage 검사를 지정한다. run 집계가 직접 검사하지 않는 complete계열 필드와 missingRows>analysis incomplete>outputLimited의 설명 우선순위도 명시한다."
+    },
+    {
+      "id": "CORE-13-C05",
+      "moduleId": "CORE-13",
+      "status": "PASS",
+      "question": "사람 판정 변경은 종료 후 사유와 함께만 허용하고 machineStatus·before/after audit·summary·item.resolved를 유지하는가?",
+      "evidence": [
+        "specs/01-state-api.md §§4.2,5,6,10; specs/05a-ledger-export.md §7"
+      ],
+      "rationale": "completed/partial/failed에서만 사유 있는 resolve, 최초 machineStatus·before/after audit·summary·item.resolved 및 export 보존을 명시한다."
+    },
+    {
+      "id": "CORE-14-C01",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "원본 document/page/sheet/cell/quote, criterion evidence와 review-item evidence, PDF text anchor와 결과 ID의 연결을 구별하는가?",
+      "evidence": [
+        "ui/detail-controls.md D1.3; contracts/types.ts Evidence; specs/03-algorithms.md §§5,13.1"
+      ],
+      "rationale": "공개 page/sheet/cell/quote와 내부 block/table을 구별하고 criterion/review-item 근거·targetDocumentId·anchorLabels·PDF text run ID 연결을 정의한다."
+    },
+    {
+      "id": "CORE-14-C02",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "선택 파일의 모든 항목을 한 번에 표시하며 필터 변경이 다른 항목 근거를 삭제하지 않고 파일 전환이 다른 문서의 근거를 섞지 않는가?",
+      "evidence": [
+        "specs/04-ui-motion.md §7; ui/detail-controls.md D1.3; specs/05-dashboard-exports.md D10a"
+      ],
+      "rationale": "현재 문서 ID로 evidence를 먼저 제한하고 파일의 모든 highlight를 함께 유지하며 선택은 우선색·강조에만 영향을 준다. 필터 결과와 전체 근거 보존을 구별한다."
+    },
+    {
+      "id": "CORE-14-C03",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "현재 missing 전처리의 적용 조건과 contextual evidence 보호 범위를 명시하고 dashboard projection 필드 손실 예외 및 기준 클릭의 실제 label/rule/unit cell 보충 경계를 구별하는가?",
+      "evidence": [
+        "ui/detail-controls.md D1.3 리뷰 항목 전처리/기준서 preview; specs/05-dashboard-exports.md D02"
+      ],
+      "rationale": "누락 target evidence는 highlight에서 제거하되 설명에는 보존한다. 기준 label 보충은 같은 record·실제 quote·유일한 label/header 검증이 필요하며 dashboard projection 손실 예외도 공개한다."
+    },
+    {
+      "id": "CORE-14-C04",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "표 좌표·quote와 PDF witness의 현재 검증/미검증 경계, clip·fallback 및 누락 필드 보호의 한계를 명시하고 OPTIONAL_FUTURE 차단 규칙과 구분하는가?",
+      "evidence": [
+        "ui/detail-controls.md D1.3; ui/interaction-contract.md I9; specs/05-dashboard-exports.md D02"
+      ],
+      "rationale": "PDF는 item-name witness/same-row/numeric boundary로 위치를 검사하지만 표의 유효 좌표는 quote 대조 없이100×100에 clip한다. 좌표 없는 quote fallback·missing 전처리 및 dashboard projection의 누락 플래그 손실 예외를 미래 guard와 구별한다."
+    },
+    {
+      "id": "CORE-14-C05",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "iframe 근거 메시지를 source window·opaque origin·channel·type·preview token·itemId 허용 목록으로 검사하고, 원본 파일을 다운로드 HTML에 포함하지 않는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D07"
+      ],
+      "rationale": "parent는 해당 frame source/null origin/channel/type/token/itemId를 모두 검증하며 preview교체시 listener 제거,다운로드는 bridge·원본bytes 없이 구성한다."
+    },
+    {
+      "id": "CORE-14-C06",
+      "moduleId": "CORE-14",
+      "status": "PASS",
+      "question": "scan/image/회전/2-up의 현재 text-layer-only viewer와 bbox 없는 DTO·페이지/근거 chip fallback을 재현하고 OPTIONAL_FUTURE geometry 확장과 구별하는가?",
+      "evidence": [
+        "ui/detail-controls.md D1.1,D1.3; REPRODUCTION.md §기준선과 정답 선택; specs/02-backend-pipeline.md §현재 상한과 향후 전수 처리 제안의 차이"
+      ],
+      "rationale": "이미지 overlay 없음과 text-layer 없는 스캔PDF의 chip-only를 명시한다. 현재 회전은 PDF.js text-run affine bbox로 처리하며 별도2-up/물리page geometry DTO를 추가하지 않는다. 미래 bbox·전필드 overlay는 현재 정답과 분리한다."
+    },
+    {
+      "id": "CORE-15-C01",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "taskId/runId/contextId/documentId/parentTaskId/runtime/step/status/sequence와 handoff from/to를 정의하고 비밀키·명령 출력 길이를 정제하는가?",
+      "evidence": [
+        "specs/01-state-api.md §8; specs/02-backend-pipeline.md §2.9; contracts/types.ts ActivityTask/ActivityEvent"
+      ],
+      "rationale": "task/run/context/document/parent IDs·runtime/status/time·handoff와 safe ID·parent 관계 검사를 정의하고 비밀·명령·출력 정제를 지정한다."
+    },
+    {
+      "id": "CORE-15-C02",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "Gemini와 E2B 각각 process-wide 동시2·대기100 FIFO 제한, ReviewEngine ModelQueue2, 문서 retained 명령1의 서로 다른 역할을 명시하는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §7.5"
+      ],
+      "rationale": "process-wide Gemini2/E2B2 각각pending100 FIFO,engine ModelQueue2 무제한 대기,문서 local1의 별도 책임을 명시한다."
+    },
+    {
+      "id": "CORE-15-C03",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "queued/running/completed/failed/cancelled·대기 중 abort·늦은 완료·observer 재연결과 snapshot replay 순서가 명시되는가?",
+      "evidence": [
+        "specs/01-state-api.md §§6–8; specs/07-data-algorithms-concurrency.md §§7.5,7.7"
+      ],
+      "rationale": "queue abort 제거·work settle까지 slot 유지·terminal 불변식,run replay sequence와 activity 전체 snapshot observer/reconnect를 구분한다."
+    },
+    {
+      "id": "CORE-15-C04",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "설치가 조용한 동안 heartbeat를 실제 진행률/가짜 내부 추론으로 표현하지 않으며 command timeout·로그 중복·다른 run 작업 섞임을 방지하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.9 명령 framing; specs/07-data-algorithms-concurrency.md §7.7"
+      ],
+      "rationale": "allowlisted TRACE/설치 진단만 발행하고 8초 heartbeat를 대기 안내로 제한한다. channel별 streaming/final replay dedup,context scope와 timer 정리를 지정한다."
+    },
+    {
+      "id": "CORE-15-C05",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "빠른 실제 handoff를 UI 재생 큐에서 읽기 가능한 순서로 보이되 작업 완료 후 접힘과 reduced-motion이 상태를 바꾸지 않는가?",
+      "evidence": [
+        "specs/04-ui-motion.md §4.3; ui/interaction-contract.md I5; specs/07-data-algorithms-concurrency.md §7.7"
+      ],
+      "rationale": "실제 edge의 시간/순서·pending8/seen 상한·1400ms 재생·disconnect pause와 완료 정리를 정의한다. 앱 OFF와 OS reduced의 큐 동작 차이는 실제 상태에 반영하지 않는다."
+    },
+    {
+      "id": "CORE-15-X01",
+      "moduleId": "CORE-15",
+      "status": "PASS",
+      "question": "문서로그의 입력앞20000자→정제→앞1500자와 command tailbuffer의 잘림방향을 구별하는가?",
+      "evidence": [
+        "specs/02-backend-pipeline.md §2.9"
+      ],
+      "rationale": "문서 log는 입력 앞20000→정제→앞1500자이며 command는 channel별 뒤16000/미완성뒤8000/최근40line다. 두 잘림 방향이 명시적이다."
+    },
+    {
+      "id": "CORE-16-C01",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "JSON/CSV/XLSX 결과 필드, XLSX 4시트, 최종/원판정/사람 사유/근거와 export 허용 run 상태를 지정하는가?",
+      "evidence": [
+        "specs/05a-ledger-export.md §§7.1–7.4; specs/01-state-api.md §10"
+      ],
+      "rationale": "completed/partial/failed+items 허용,JSON allowlist·CSV11열/BOM/CRLF·XLSX4시트·너비·판정/원판정/사람사유/근거를 정확히 지정한다."
+    },
+    {
+      "id": "CORE-16-C02",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "대장 매핑은 사용자가 지정한 성적서번호와 실제 header/row를 확인하고 원본 대신 복사본의 허용된 결과·비고 셀만 쓰는가?",
+      "evidence": [
+        "specs/05a-ledger-export.md §§3,5"
+      ],
+      "rationale": "실제 헤더 allowlist·key exact·유일 row와 protection/merge/formula 순서로 mapping을 검증하고 대상 두 cell XML만 수정한 사본의 비대상 bytes 보존을 요구한다."
+    },
+    {
+      "id": "CORE-16-C03",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "대장 analyze → 제안/대상 셀 확인 → confirmed export이며 결과 변경 시 proposalFingerprint mismatch 409로 재확인을 요구하는가?",
+      "evidence": [
+        "specs/05a-ledger-export.md §§2,4.1,5; contracts/examples/05-ledger-analyze.json"
+      ],
+      "rationale": "analyze preview→confirmed export와 proposal 재계산 hash 불일치409를 정의한다. humanNote-only 수정처럼 proposal이 같으면 fingerprint 유지하는 현재 범위도 명시한다."
+    },
+    {
+      "id": "CORE-16-C04",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "CSV formula injection, 대장 수식/기존 셀 구조 훼손, 경로 traversal/부적절한 sample 경로를 거절하고 파일 부분 실패를 성공으로 쓰지 않는가?",
+      "evidence": [
+        "specs/05a-ledger-export.md §§3.1–3.2,4–5,7.3; specs/01-state-api.md §4.1"
+      ],
+      "rationale": "CSV formula prefix·대장 inlineStr·ZIP 경로/수식/보존 검증과 불완전 문서 확인필요를 지정하고 golden은 지정 ID 경로만 로드한다."
+    },
+    {
+      "id": "CORE-16-C05",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "golden은 UI 예제 원본 선택, ralph-golden-v3는 직접 업로드/검증용이라는 현재 범위를 구별하고 정답·파일명 패턴을 판정 알고리즘에 주입하지 않는가?",
+      "evidence": [
+        "specs/01-state-api.md §4.1; REPRODUCTION.md §기준선과 정답 선택; ui/detail-controls.md D5"
+      ],
+      "rationale": "golden C/P/L allowlist UI 선택과 ralph-golden-v3 직접 업로드·검증 범위를 구별하고 정답/사례ID를 runtime 판정에 넣지 않는다."
+    },
+    {
+      "id": "CORE-16-C06",
+      "moduleId": "CORE-16",
+      "status": "PASS",
+      "question": "/api/samples expenses/materials의 실제 파일·역할·내용·criteriaText와 생성/오류 규칙을 동일하게 재현할 수 있는가?",
+      "evidence": [
+        "contracts/sample-recipes.json recipes/failurePolicy; specs/01-state-api.md §실제 samples recipe"
+      ],
+      "rationale": "expenses UTF8 CSV의 정확한 text/bytes/hash와 materials P01/P07/P13→C01 순서·role·MIME·criteriaText·요청단위 rollback을 제공한다."
+    },
+    {
+      "id": "CORE-17-C01",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "question": "snapshotRun의 immutable 검토 데이터와 14-field design, instruction/baseDesign/ready job 계약을 분리하고 기존 7-field 입력의 기본값을 정의하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D02–D05; prompts/dashboard-loop.md CURRENT_REPRODUCTION; contracts/dashboard-design.schema.json"
+      ],
+      "rationale": "immutable snapshot allowlist와14-field 디자인을 분리하고 current host parser가5필수/9기본값 및 old7-field를 받는다는 provider schema와의 차이를 명시한다."
+    },
+    {
+      "id": "CORE-17-C02",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "question": "14개 디자인 필드의 정규식 선호 후처리와 baseDesign 기본값/전달을 재현하며 미요청 필드 보존과 자연어 scope 해석의 현재 한계를 명시하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D05; reference/dashboard/design-functions.reference.mjs; contracts/dashboard-customization-cases.json"
+      ],
+      "rationale": "14개 디자인 차원과 명시 regex override의 현재 결과를 제공한다. 성공 경로는 전체 model plan이며 미요청 필드를 강제 보존하지 않고 fallback만 baseDesign 보존임을 구별한다."
+    },
+    {
+      "id": "CORE-17-C03",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "question": "현재 최대 3회 plan 호출·같은 sandbox/설치 1회·fallback·취소·정리를 재현하고 OPTIONAL_FUTURE planner/judge/repair와 구별하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D04,D05b; prompts/dashboard-loop.md"
+      ],
+      "rationale": "current plan 총3호출·같은 sandbox/설치1회·parse vs IntegrationError·validation repair/fallback/abort/finally를 지정하고 별도 semantic judge 예산은 미래 범위로 분리한다."
+    },
+    {
+      "id": "CORE-17-C04",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "question": "모델이 수치·판정을 바꾸거나 HTML/JS/CSS를 공급하지 못하며 잘못된 enum/baseDesign/지나친 입력을 거절하고 fallback을 맞춤 성공으로 표기하지 않는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D02–D05; prompts/dashboard-loop.md"
+      ],
+      "rationale": "모델은 디자인JSON만 생성하며 snapshot 수치/판정은 고정한다. enum/baseDesign/크기 오류를 거절하고 standard fallback의 문구·presentation을 generated 성공과 분리한다."
+    },
+    {
+      "id": "CORE-17-C05",
+      "moduleId": "CORE-17",
+      "status": "PASS",
+      "question": "복합/부분 수정/비문자적 표현에 대한 현재 observed 계획값과 렌더 결과를 OPTIONAL_FUTURE desired 값과 구분해 독립 검증할 수 있는가?",
+      "evidence": [
+        "contracts/dashboard-customization-cases.json; specs/05-dashboard-exports.md D05,D11; prompts/dashboard-loop.md"
+      ],
+      "rationale": "복합 요청·수정 요청의 observed 전체14필드와 desired 의미를 구분한 oracle가 제공된다. 넓은 regex/성공 모델 drift 한계를 current expected로 유지하며 실제 provider 의미품질은 별도 실행이다."
+    },
+    {
+      "id": "CORE-18-C01",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "question": "design → data-* root attrs/CSS variables/chart config/standalone HTML 출력과 chart runtime mount/update/destroy 계약을 지정하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D05–D07; reference/dashboard/chart-entry.reference.jsx; reference/dashboard/standalone-reference.css"
+      ],
+      "rationale": "root data attributes·theme/palette·chart configuration·HTML 구조와 WeakMap controller의 mount/update/destroy/RAF 정리를 지정한다."
+    },
+    {
+      "id": "CORE-18-C02",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "question": "차트의 실제 모양·크기·theme 축/tooltip·범례·선택 파일·필터·항목 상세가 변경되며 전체 수치와 item ID는 snapshot과 동일한가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D06–D08; validation/dashboard-dom-validator.cjs"
+      ],
+      "rationale": "실제4종 chart configuration·size/theme/HTML legend와 선택파일/필터/상세를 snapshot count/itemId에 묶고11종 DOM/data 체크의 기대값을 제시한다."
+    },
+    {
+      "id": "CORE-18-C03",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "question": "initial file/filter/focus, 차트 강조 중 상세 열기/닫기 배분, prefers-reduced-motion과 design.motion, 재mount 정리를 구분하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D07,D09; reference/dashboard/chart-entry.reference.jsx"
+      ],
+      "rationale": "exceptions initial file/filter·stable status sort·선택시 상세닫기/limit100·Escape focus 회복과 motion/OS reduced/host meta·재mount 정리를 지정한다."
+    },
+    {
+      "id": "CORE-18-C04",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "question": "CSP nonce·escaping·외부 네트워크 차단·iframe sandbox/bridge를 명시하고 샌드박스 exit 0만으로 승인하지 않고 bytes/report를 대조하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D04,D07–D08"
+      ],
+      "rationale": "18byte nonce CSP/escaping·외부network금지·opaque iframe bridge를 고정하고 exit0 외 report 전체 true·현재 totals/파일수·HTML 문자열 동일성까지 검사한다."
+    },
+    {
+      "id": "CORE-18-C05",
+      "moduleId": "CORE-18",
+      "status": "PASS",
+      "question": "검증 11종 input/syntax/csp/offline/kpis/charts/files/findings/filters/details/escaping과 실제 브라우저 geometry/visibility 검증이 별개임을 명시하는가?",
+      "evidence": [
+        "specs/05-dashboard-exports.md D08,D11"
+      ],
+      "rationale": "11종 node-dom 보고서의 구조검사와 실제canvas/ResizeObserver/Chromium·1600/1280/390 viewport·visibility/motion 검증을 분리하고 미실행을 성공으로 표시하지 않는다."
+    },
+    {
+      "id": "CORE-19-C01",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "원문/run/분석 Promise/물리 sandbox/기준 셀/활동/dashboard/UI 캐시의 key·owner·수명·상한·무효화를 명시하고 FIFO를 LRU로 오표기하지 않는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §§7.2,7.7; contracts/efficiency-inventory.json"
+      ],
+      "rationale": "원본/run/promise/sandbox/cell/activity/job/UI cache의 key·owner·cap·invalidation을 구체화하며 first insertion/read non-refresh인 FIFO·write-order를 LRU와 구별한다."
+    },
+    {
+      "id": "CORE-19-C02",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "sparse inventory, 두 방향 역할 탐색, coverage sweep, 기준 dedup·매칭·누락 판정의 단계와 시간/공간 가정을 명시하고 중첩 스캔·파서 비용을 선형으로 과장하지 않는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §§7.1,7.3–7.4"
+      ],
+      "rationale": "sparse sorting·두 방향 역할·line sweep·grounding/dedup/findings의 순서와 O(NlogN),중첩N²/I·C/C²근거병합 및 parser 비용을 명시한다."
+    },
+    {
+      "id": "CORE-19-C03",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "전역 LLM/E2B 풀·엔진 큐·문서 worker·로컬 재조회 큐의 정확한 cap과 실행/취소/cleanup 순서, 같은 sandbox 재사용 경계 및 중첩 슬롯 교착 방지를 지정하는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §§7.5–7.6"
+      ],
+      "rationale": "global2/100·engine2·worker2·local1 및 FIFO/abort/settle/kill 순서를 정의하고 retained sandbox에서 global slot을 재취득하지 않아 중첩교착을 피한다."
+    },
+    {
+      "id": "CORE-19-C04",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "로그 폭주·SSE 순서·재접속·늦은 응답·핑퐁 큐·PDF/iframe 수명과 화면용 생략의 상한을 명시하며 없는 batching/backpressure/visibility pause를 구현됐다고 주장하지 않는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §7.7; specs/01-state-api.md §§6–8"
+      ],
+      "rationale": "로그·snapshot·observer·handoff·PDF/iframe 수명과 화면상 생략 한도를 정의하고 run SSE backpressure/RAF batching/visibility pause 부재를 실제 기능처럼 주장하지 않는다."
+    },
+    {
+      "id": "CORE-19-C05",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "byte/문자/cell/page/시간/token 상한 및 stop/partial 의미가 재현 가능하고 성능 계측과 음성 시험 조건을 정해 실제 측정 없는 FPS/처리시간·완료 증거를 주장하지 않는가?",
+      "evidence": [
+        "specs/07-data-algorithms-concurrency.md §§7.8–7.10; specs/02-backend-pipeline.md §§2.3,2.6"
+      ],
+      "rationale": "byte/JS UTF16/Python char/cell/page/time/token 한도·stop/partial의 차이를 지정하고 EF01..16 입력스케줄과 측정환경/표본/median/p95를 요구한다. 측정없는 성능 주장이나 gate 성공을 금지한다."
+    },
+    {
+      "id": "CORE-19-X01",
+      "moduleId": "CORE-19",
+      "status": "PASS",
+      "question": "normalizeItems의 숫자/누락→조건→분류→독립추출→표시label→machineStatus 순서를 모든요약표가 owning알고리즘과동일하게기술하는가?",
+      "evidence": [
+        "specs/03-algorithms.md §5; specs/07-data-algorithms-concurrency.md §7.4; contracts/efficiency-inventory.json EA-06"
+      ],
+      "rationale": "owning normalizeItems와 효율 spec/EA-06은 수치·누락→조건→분류→독립추출→표시label→machineStatus를 같은 순서로 기술한다. raw review의 row coverage와 최종 document/run 집계는 별도 후속 단계로 분리한다."
+    }
+  ],
+  "issues": [
+    {
+      "id": "CC-PRE-01",
+      "severity": "P2",
+      "status": "resolved",
+      "description": "The initial context-repair specification did not define which fallback selectors were generated when issues supplied no requests.",
+      "questionIds": [
+        "CORE-05-C03"
+      ],
+      "requiredChange": "Specify the pre-validation fallback trigger, format precedence, ordering, bounds, deduplication and examples.",
+      "resolution": "Reread specs/02-backend-pipeline.md §2.5.1 and synchronized §2.5/07 §7.8 pseudocode: proposed.length===0 only; first8 retained-sheet bounding ranges, else BLOCK1..200, else L1..1000; normalize/dedup afterward; no second fallback."
+    },
+    {
+      "id": "CC-PRE-02",
+      "severity": "P2",
+      "status": "resolved",
+      "description": "The initial workbook inventory contract limited region samples to24 cells without defining the deterministic selection and order.",
+      "questionIds": [
+        "CORE-08-C01",
+        "CORE-08-C02"
+      ],
+      "requiredChange": "Specify ordered region construction, sample index formula, rounding and clipping with small examples.",
+      "resolution": "Reread specs/03-algorithms.md §11.1a: workbook/row-band/column-group ordering, sorted cell population, Python ties-to-even index formula, N1/N25/N47 examples and text/formula/comment clipping make the input construction self-contained."
+    },
+    {
+      "id": "CC-Q-SCOPE-01",
+      "severity": "P2",
+      "status": "resolved",
+      "description": "Seven registry questions retained stronger or unconditional future requirements that conflicted with explicitly documented current limits and branch behavior.",
+      "questionIds": [
+        "CORE-04-C04",
+        "CORE-06-C06",
+        "CORE-09-C04",
+        "CORE-11-C05",
+        "CORE-12-C02",
+        "CORE-13-C04",
+        "CORE-14-C03"
+      ],
+      "requiredChange": "Preserve question IDs, quantitative topics and denominator while making the questions explicitly assess current branches/limitations and their separation from OPTIONAL_FUTURE.",
+      "resolution": "Reread all seven acceptanceQuestions in decomposition/core-modules.json and their exact frozen population.json copies. They now explicitly cover partial/unsupported/error, current VLM cap, generic/discovery/approval differences, row×criterion coverage limitations, raw/comparison-dependent missing behavior, exact run aggregation and dashboard projection exceptions."
+    }
+  ]
+}

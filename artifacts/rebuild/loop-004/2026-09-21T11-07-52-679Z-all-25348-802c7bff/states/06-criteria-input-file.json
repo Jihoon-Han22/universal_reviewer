@@ -1,0 +1,52 @@
+{
+  "id": "06-criteria-input-file",
+  "selected": true,
+  "captureStatus": "ERROR",
+  "visualAcceptance": "NOT_RUN",
+  "reason": "Actual state setup/capture failed; any diagnostic is not a successful state screenshot.",
+  "reference": {
+    "id": "06-criteria-input-file",
+    "screenshot": {
+      "path": "06-criteria-input-file.png",
+      "bytes": 277119,
+      "sha256": "06956a1d4ce7fe91c4627022e36f1593b628cb9064d408682fd28798f5f4952f",
+      "width": 1440,
+      "height": 960,
+      "mode": "viewport",
+      "scale": "device; DPR 1 required by dimension validation"
+    },
+    "dom": {
+      "path": "dom/06-criteria-input-file.json",
+      "bytes": 376314,
+      "sha256": "a2ca60fbb53dadb1481fdb404bfd0460609d92d7b380b030476e8654abde69d8"
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 960,
+      "dpr": 1
+    },
+    "motion": {
+      "app": "full",
+      "osReduce": false,
+      "animationFreeze": "none",
+      "finiteTransitionSettleMs": 650
+    }
+  },
+  "startedAt": "2026-09-21T11:08:36.723Z",
+  "error": {
+    "name": "Error",
+    "message": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n",
+    "stack": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: /합성_품질기준\\.xlsx/ }) resolved to 2 elements:\n    1) <button class=\"workflow-file-open\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx XLSX · 5 KB' })\n    2) <button class=\"icon-button\" aria-label=\"합성_품질기준.xlsx 삭제\">…</button> aka getByRole('button', { name: '합성_품질기준.xlsx 삭제' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /합성_품질기준\\.xlsx/ }) to be visible\u001b[22m\n\n    at upload (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:103:96)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:226:92\n    at async step (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:203:9)\n    at async flow (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:226:9)\n    at async captureVisualReplay (C:\\Users\\user\\Desktop\\universal_reviewer\\scripts\\acceptance\\capture-visual-replay.mjs:301:39)\n    at async file:///C:/Users/user/Desktop/universal_reviewer/scripts/acceptance/capture-visual-replay.mjs:340:22"
+  },
+  "failureScreenshot": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/diagnostics/06-criteria-input-file-failure.png",
+    "bytes": 269232,
+    "sha256": "78b954338b6f9b86cf047e03554507c57f87afa5667541c8514d59d36f71dab0"
+  },
+  "failureDom": {
+    "path": "artifacts/rebuild/loop-004/2026-09-21T11-07-52-679Z-all-25348-802c7bff/diagnostics/06-criteria-input-file-failure-dom.json",
+    "bytes": 545120,
+    "sha256": "8c9bafc95430c2914574e3b7b5f29aeb1ebc4f0f9a949d85d3a3b0294d8c2069"
+  },
+  "endedAt": "2026-09-21T11:08:38.791Z"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "detail-focus",
+  "startedAt": "2026-09-21T12:32:38.005Z",
+  "state": "passed",
+  "expected": {
+    "headingFocused": true,
+    "restored": true,
+    "iterations": 5
+  },
+  "observations": {
+    "headingFocused": true,
+    "restored": true,
+    "iterations": 5,
+    "trials": [
+      {
+        "headingFocused": true,
+        "restored": true,
+        "milliseconds": 1764.5999999977648
+      },
+      {
+        "headingFocused": true,
+        "restored": true,
+        "milliseconds": 860.8999999985099
+      },
+      {
+        "headingFocused": true,
+        "restored": true,
+        "milliseconds": 748.7000000029802
+      },
+      {
+        "headingFocused": true,
+        "restored": true,
+        "milliseconds": 518.3000000007451
+      },
+      {
+        "headingFocused": true,
+        "restored": true,
+        "milliseconds": 927.0999999977648
+      }
+    ]
+  },
+  "artifactRefs": [
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.dom.json",
+      "sha256": "302b9a0575be9b69cc12f2fe480c834aa5b6ea86eb3dc6a2f0c74f5438916a8d"
+    },
+    {
+      "path": "artifacts/rebuild/loop-005/browser-behavior-2026-09-21T12-20-47-710Z-24644a07/facets/detail-focus.png",
+      "sha256": "f4602a3a1d51d97b54d018877140cd0893b1349b1e49daa93829d519961a19e1"
+    }
+  ],
+  "assertions": [
+    {
+      "key": "headingFocused",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "restored",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "key": "iterations",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    }
+  ],
+  "endedAt": "2026-09-21T12:33:00.688Z"
+}
