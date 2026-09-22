@@ -1,0 +1,19 @@
+{
+  "name": "reviewer-service-integrations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": "./src/index.mjs",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/smoke.mjs --config-only",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "2.23.0",
+    "e2b": "2.51.0"
+  }
+}

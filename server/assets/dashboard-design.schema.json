@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "subtitle": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "accent": {
+      "type": "string",
+      "pattern": "^(cobalt|lime|cyan|violet|red|rose|orange|mint|#[0-9A-Fa-f]{6})$"
+    },
+    "focus": {
+      "type": "string",
+      "enum": [
+        "overview",
+        "exceptions",
+        "documents"
+      ]
+    },
+    "density": {
+      "type": "string",
+      "enum": [
+        "comfortable",
+        "compact"
+      ]
+    },
+    "layout": {
+      "type": "string",
+      "enum": [
+        "balanced",
+        "files-first",
+        "findings-first",
+        "charts-first"
+      ]
+    },
+    "distribution": {
+      "type": "string",
+      "enum": [
+        "doughnut",
+        "pie",
+        "bar",
+        "polarArea"
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "dark",
+        "light"
+      ]
+    },
+    "emphasis": {
+      "type": "string",
+      "enum": [
+        "balanced",
+        "charts",
+        "findings"
+      ]
+    },
+    "chartSize": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "large"
+      ]
+    },
+    "legend": {
+      "type": "string",
+      "enum": [
+        "right",
+        "bottom",
+        "hidden"
+      ]
+    },
+    "motion": {
+      "type": "string",
+      "enum": [
+        "full",
+        "subtle",
+        "none"
+      ]
+    },
+    "corners": {
+      "type": "string",
+      "enum": [
+        "rounded",
+        "square"
+      ]
+    },
+    "fileVisualization": {
+      "type": "string",
+      "enum": [
+        "cards",
+        "bars"
+      ]
+    }
+  },
+  "required": [
+    "title",
+    "subtitle",
+    "accent",
+    "focus",
+    "density",
+    "layout",
+    "distribution",
+    "theme",
+    "emphasis",
+    "chartSize",
+    "legend",
+    "motion",
+    "corners",
+    "fileVisualization"
+  ]
+}

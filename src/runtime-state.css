@@ -1,0 +1,5 @@
+.sandbox-activity-dock.is-disconnected *,
+.sandbox-activity-dock.is-disconnected *::before,
+.sandbox-activity-dock.is-disconnected *::after {
+  animation-play-state: paused !important;
+}

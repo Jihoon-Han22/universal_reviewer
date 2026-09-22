@@ -1,0 +1,32 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import ExcelJS from 'exceljs';
+import JSZip from 'jszip';
+import {DocumentStore} from './documents.mjs';
+
+test('local XLSX displays cached zero and false while retaining missing-cache and merged-cell markers',async()=>{
+  const workbook=new ExcelJS.Workbook(),sheet=workbook.addWorksheet('Formula results');
+  sheet.getCell('A1').value={formula:'1-1',result:0};
+  sheet.getCell('B1').value={formula:'1=0',result:false};
+  sheet.getCell('C1').value={formula:'1+1'};
+  sheet.getCell('D1').value={formula:'1+1',result:2};
+  sheet.getCell('E1').value={formula:'1-1',result:0,shareType:'shared',ref:'E1:E2'};
+  sheet.getCell('E2').value={sharedFormula:'E1',result:0};
+  sheet.getCell('F1').value={formula:'1-1',result:0};sheet.mergeCells('F1:G1');
+  const original=Buffer.from(await workbook.xlsx.writeBuffer()),zip=await JSZip.loadAsync(original),xml=await zip.file('xl/worksheets/sheet1.xml').async('string');
+  assert.match(xml,/<c r="A1"[^>]*><f>1-1<\/f><v>0<\/v><\/c>/);
+  assert.match(xml,/<c r="B1"[^>]*t="b"[^>]*><f>1=0<\/f><v>0<\/v><\/c>/);
+  const rawWorkbook=new ExcelJS.Workbook();await rawWorkbook.xlsx.load(original);
+  assert.equal(rawWorkbook.worksheets[0].getCell('A1').value.result,undefined);
+  assert.equal(rawWorkbook.worksheets[0].getCell('A1').result,0);
+  assert.equal(rawWorkbook.worksheets[0].getCell('B1').result,false);
+  const store=new DocumentStore(),document=await store.add({name:'formula-values.xlsx',buffer:original,role:'criteria'});
+  const cells=new Map(document.sourceSheets[0].rows.flatMap(row=>row.cells.map(cell=>[cell.address,cell])));
+  assert.equal(cells.get('A1').text,'0');assert.equal(cells.get('A1').cachedValue,0);
+  assert.equal(cells.get('B1').text,'false');assert.equal(cells.get('B1').cachedValue,false);
+  assert.equal(cells.get('C1').text,'[계산 결과 없음: 수식 재계산 필요]');assert.equal(cells.get('C1').cachedValue,undefined);
+  assert.equal(cells.get('D1').text,'2');assert.equal(cells.get('E2').text,'0');
+  assert.equal(cells.get('F1').text,'0');assert.equal(cells.get('G1').text,'[병합 셀: F1]');
+  assert.equal(document.preview.sheets[0].rows[0][0],'0');assert.equal(document.preview.sheets[0].rows[0][1],'false');
+  assert.match(document.source,/A1: 0 \| B1: false/);assert.deepEqual(document.buffer,original);
+});

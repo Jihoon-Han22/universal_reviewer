@@ -1,0 +1,1246 @@
+.app-shell.workflow-shell .criteria-confirmation {
+  --criteria-ink: #eff3ff;
+  --criteria-muted: #a0abc1;
+  --criteria-line: #343d4d;
+  --criteria-accent: #99b5ff;
+  color-scheme: dark;
+  color: var(--criteria-ink);
+  border-color: #343d4d;
+  background: #1b2029;
+  box-shadow: 0 12px 28px #0000000b;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-header, .criteria-confirmation-footer, .criteria-source-nav, .criteria-file-tabs, .criteria-feedback, .criteria-source-pane > header) {
+  background: #222936;
+  border-color: #343d4d;
+  box-shadow: none;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-draft-pane, .criteria-source-pane, .criteria-text-source) {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-symbol, .criteria-source-pane-icon) {
+  background: #222936;
+  border-color: #343d4d;
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-eyebrow, .criteria-confirmation-count, .criteria-confirmation-guidance, .criteria-edit-legend, .criteria-guide-details > summary, .criteria-list-heading, .criteria-card-summary > p, .criteria-editor label, .criteria-editor-mode p, .criteria-confirmation-footer p, .criteria-feedback > label, .criteria-source-pane > header strong, .criteria-tree-heading h3, .criteria-text-source > p, .criteria-no-source strong, .criteria-card-toggle > strong) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-header p, .criteria-edit-legend svg, .criteria-list-heading small, .criteria-card-index, .criteria-card-toggle > svg, .criteria-source-links > span, .criteria-editor label > span, .criteria-empty p, .criteria-confirmation-footer p > span, .criteria-original-label, .criteria-preview-loading, .criteria-no-source, .criteria-no-source > span, .criteria-source-pane > header > div > span, .criteria-feedback-history li > header, .criteria-activity time, .criteria-activity p, .criteria-region-list p, .criteria-item-path, .criteria-tree-node, .criteria-exclusion-reason) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-discovery, .criteria-activity, .criteria-guide-details > p, .criteria-text-source > p, .criteria-empty, .criteria-excluded-documents) {
+  background: #1b2029;
+  border-color: #343d4d;
+  box-shadow: none;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-empty {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-source-nav, .criteria-confirmation-body, .criteria-discovery-content, .criteria-activity > ol, .criteria-feedback-history ol) {
+  scrollbar-color: #4c5870 transparent;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-discovery > summary, .criteria-activity > summary, .criteria-discovery-entry > strong, .criteria-activity strong, .criteria-region-list strong, .criteria-feedback-history li p, .criteria-feedback-history > summary > strong) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-discovery > summary > small, .criteria-discovery > summary > .criteria-discovery-totals, .criteria-source-pane > header > small, .criteria-feedback > label > span, .criteria-tree-count) {
+  color: #a0abc1;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-discovery-entry, .criteria-region-list, .criteria-activity li, .criteria-feedback-reply, .criteria-tree-section.is-nested, .criteria-tree-section.is-nested > .criteria-tree-heading::before) {
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-sheet-tags > span, .criteria-region-list li > span, .criteria-type, .criteria-type.is-qualitative, .criteria-context-chip, .criteria-context-more, .criteria-context-chip.is-scope, .criteria-source-links > .criteria-source-count) {
+  color: #99b5ff;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-context-chip > svg, .criteria-context-chip.is-scope > svg, .criteria-source-links > button, .criteria-region-list button, .criteria-item-path button, .criteria-feedback-history > summary, .criteria-feedback > label > svg, .criteria-open-original, .criteria-empty > svg) {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-region-list button:hover, .criteria-source-links > button:hover, .criteria-item-path button:hover, .criteria-open-original:hover) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-context-chip:hover, .criteria-context-more:hover) {
+  color: #eff3ff;
+  border-color: #343d4d;
+  background: #243554;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-add, .criteria-empty button, .criteria-confirmation-actions > button) {
+  color: #99b5ff;
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-add:hover:not(:disabled), .criteria-empty button:hover:not(:disabled), .criteria-confirmation-actions > .criteria-cancel:hover:not(:disabled)) {
+  color: #fff;
+  background: #243554;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-card,
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-card {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-card.is-expanded {
+  background: #222936;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-card.is-excluded {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-card.is-invalid {
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-include > span {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-include input:checked + span {
+  background: #3d6dff;
+  border-color: #527be1;
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-numeric-badge, .criteria-numeric-badge:hover, .criteria-numeric-operator, .criteria-numeric-unit, .criteria-range-values > span, .criteria-numeric-badge > small) {
+  color: #99b5ff;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-section.is-nested > .criteria-tree-heading h3 {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-node > span {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-editor {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-row .criteria-editor {
+  border-top-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-editor :is(input, textarea, select) {
+  color-scheme: dark;
+  background: #1b2029;
+  color: #eff3ff;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-editor input::placeholder, .criteria-editor textarea::placeholder, .criteria-feedback-composer > textarea::placeholder) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-feedback-composer {
+  background: #1b2029;
+  border-color: #343d4d;
+  box-shadow: inset 0 1px 3px #00000005;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-feedback-composer:focus-within {
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-feedback-composer > textarea {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-feedback-history li {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-actions > .criteria-confirm, .criteria-feedback-composer > button) {
+  background: #315fe9;
+  color: #fff;
+  border-color: #527be1;
+  box-shadow: 0 3px 12px #00000014;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-actions > .criteria-confirm:hover:not(:disabled), .criteria-feedback-composer > button:hover:not(:disabled)) {
+  background: #3b68ef;
+  color: #fff;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button {
+  background: #1b2029;
+  color: #a0abc1;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button > svg {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button > strong {
+  color: #99b5ff;
+  background: #222936;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button:hover {
+  border-color: #343d4d;
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button.is-active {
+  background: #243554;
+  color: #99b5ff;
+  border-color: #527be1;
+  box-shadow: inset 0 1px #00000024;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button.is-active > svg {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button.is-active > strong {
+  color: #99b5ff;
+  background: #1b2029;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents .criteria-notice-details > p {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents .criteria-notice-details > p > svg {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents .criteria-notice-details > p > strong {
+  color: #99b5ff;
+  background: #243554;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents li {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents li.is-previewing {
+  background: #243554;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents li > button {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-excluded-documents li > button:hover {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-notice-toggle {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-notice-toggle > span {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-review-toolbar > .criteria-discovery {
+  background: transparent;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-review-toolbar > .criteria-discovery[open] {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-table-heading {
+  background: #222936;
+  color: #a0abc1;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-row {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-row:nth-child(even) {
+  background: #1b2029;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-row:hover {
+  background: #222936;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-row.is-expanded {
+  background: #243554;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-tree-items .criteria-row.is-source-selected {
+  background: #243554;
+  box-shadow: inset 2px 0 0 #00000024;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-row-label, .criteria-row-rule, .criteria-row-conditions) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-row-rule.is-numeric, .criteria-row-rule > i) {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-row-unit, .criteria-row-conditions.is-empty, .criteria-row-source > span, .criteria-row-source small, .criteria-row-summary > .criteria-row-expand) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-row-source > button {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-row-summary > button:hover, .criteria-row-source > button:hover) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-guidance > svg, .criteria-confirmation-guidance strong, .criteria-discovery-entry > .criteria-discovery-warning, .criteria-reason-toggle, .criteria-reason-toggle:hover, .criteria-reason, .criteria-row-errors, .criteria-classification-warning, .criteria-tree-section.is-unclassified > .criteria-tree-heading h3, .criteria-tree-section.is-unclassified > .criteria-tree-heading .criteria-tree-node, .criteria-feedback-history li p.criteria-feedback-warning, .criteria-row-summary > .criteria-row-expand.has-error) {
+  color: #ffd080;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-guidance-attention, .criteria-attention, .criteria-type.is-choose, .criteria-region-list li.needs-attention > span, .criteria-discovery > summary > .criteria-discovery-warning-count, .criteria-document-uncertain) {
+  color: #ffd080;
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-discovery.has-warning {
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-discovery.has-warning > summary > small {
+  color: #ffd080;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-editor > .criteria-reason {
+  color: #ffd080;
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-document-uncertain :is(.criteria-notice-details > div, button, button:hover, p, .criteria-notice-toggle, .criteria-notice-toggle > span) {
+  color: #ffd080;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-source-nav > button > .criteria-source-uncertain {
+  color: #ffd080;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-log-state, .criteria-feedback-history li > header > small, .criteria-feedback-reply) {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-activity li.is-running .criteria-log-state {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-activity li.is-failed .criteria-log-state, .criteria-feedback-history li.is-failed > header > small, .criteria-confirmation-footer .criteria-submit-error) {
+  color: #ff8f91;
+}
+.app-shell.workflow-shell .file-review-results {
+  --frr-bg: #111318;
+  --frr-panel: #1b2029;
+  --frr-border: #343d4d;
+  --frr-ink: #eff3ff;
+  --frr-muted: #a0abc1;
+  color: var(--frr-ink);
+  color-scheme: dark;
+}
+.app-shell.workflow-shell .file-review-results button:focus-visible {
+  outline-color: #527be1;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-files, .frr-item-list, .frr-inspector-area) {
+  scrollbar-color: #4c5870 transparent;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-file, .frr-source, .frr-detail, .frr-criterion, .frr-empty) {
+  background: #1b2029;
+  border-color: #343d4d;
+  box-shadow: 0 8px 22px #00000007;
+}
+.app-shell.workflow-shell .file-review-results .frr-file:hover {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results .frr-file.is-active {
+  background: #243554;
+  border-color: #527be1;
+  box-shadow: inset 0 1px #00000024;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-file-copy > strong, .frr-current-file h2, .frr-current-file p strong, .frr-source-heading > span, .frr-item, .frr-item-value, .frr-inspector-empty h3, .frr-criterion h3, .frr-empty h2, .frr-criterion-rule, .frr-scope strong, .frr-conditions p, .frr-applicability > div > p) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-file-icon, .frr-file-icon small, .frr-file-copy em, .frr-eyebrow, .frr-current-file p, .frr-current-file p span, .frr-counts button, .frr-source-heading small, .frr-item-value small, .frr-item > svg, .frr-list-empty, .frr-list-empty p, .frr-list-empty > span, .frr-inspector-empty svg, .frr-inspector-empty p, .frr-criterion-source, .frr-category-path svg, .frr-scope > span, .frr-conditions, .frr-criterion-outcomes, .frr-empty, .frr-applicability > div > span) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-file-selected, .frr-source-heading svg, .frr-source-heading button, .frr-category-path span, .frr-applicability > button) {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .file-review-results .frr-counts button b {
+  color: var(--frr-status, #eff3ff);
+}
+.app-shell.workflow-shell .file-review-results .frr-counts button.is-active {
+  color: #99b5ff;
+  background: #243554;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results .frr-count-bar {
+  background: #222936;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-source-heading, .frr-detail-tabs) {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-reference-name, .frr-applied-link) {
+  color: #99b5ff;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-pages button, .frr-criterion-sources button) {
+  color: #99b5ff;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results .frr-pages button.is-active {
+  color: #99b5ff;
+  background: #243554;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results .frr-detail-tabs button {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .file-review-results .frr-detail-tabs button.is-active {
+  color: #99b5ff;
+  background: #243554;
+}
+.app-shell.workflow-shell .file-review-results .frr-detail-tabs button > span {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .file-review-results .frr-item:hover {
+  background: #222936;
+}
+.app-shell.workflow-shell .file-review-results .frr-item.is-selected {
+  background: #243554;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-scope, .frr-conditions p) {
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-file-warning, .frr-classification-warning, .frr-applicability) {
+  color: #ffd080;
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .file-review-results :is(.frr-unmapped, .frr-unmapped p, .frr-applicability > strong, .frr-applicability-reason) {
+  color: #ffd080;
+}
+.app-shell.workflow-shell .file-review-results .frr-applicability.is-verified {
+  background: #70f3c410;
+  border-color: #70f3c445;
+}
+.app-shell.workflow-shell .file-review-results .frr-applicability.is-verified > strong {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .inspector {
+  color: #eff3ff;
+  background: #1b2029;
+  border-color: #343d4d;
+  box-shadow: 0 8px 22px #00000009;
+}
+.app-shell.workflow-shell .inspector .inspector-header {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .inspector :is(.inspector-header > span, .evidence-value strong, .criterion-match p, .decision-reason) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .inspector :is(.evidence-value small, .evidence-value strong > span, .evidence-value p, .criterion-match small, .resolution-form label) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .inspector .evidence-connector {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .inspector .evidence-connector span {
+  background: #222936;
+}
+.app-shell.workflow-shell .inspector .criterion-match {
+  background: #222936;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .inspector .source-quote {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .inspector .source-quote:hover {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .inspector .source-quote > div {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .inspector .source-quote blockquote {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .inspector :is(.human-stamp, .human-note) {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .inspector .resolution-form {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .inspector :is(.resolution-form select, .resolution-form textarea) {
+  color-scheme: dark;
+  color: #eff3ff;
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .inspector .resolution-form textarea::placeholder {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .inspector .verdict-badge.pass {
+  background: #70f3c410;
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .inspector .verdict-badge.fail {
+  background: #ff8f9110;
+  color: #ff8f91;
+}
+.app-shell.workflow-shell .inspector .verdict-badge.review {
+  background: #ffd08010;
+  color: #ffd080;
+}
+.app-shell.workflow-shell .inspector .verdict-badge.pending {
+  background: #222936;
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .results-visuals {
+  --rv-surface: #1b2029;
+  --rv-line: #343d4d;
+  --rv-ink: #eff3ff;
+  --rv-muted: #a0abc1;
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .results-visuals button:focus-visible {
+  outline-color: #527be1;
+}
+.app-shell.workflow-shell .results-visuals .rv-heading-icon {
+  color: #99b5ff;
+  background: #243554;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-heading-note {
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-dashboard {
+  color: #fff;
+  background: #315fe9;
+  border-color: #527be1;
+  box-shadow: 0 4px 14px #00000014;
+}
+.app-shell.workflow-shell .results-visuals .rv-dashboard:hover:enabled {
+  color: #fff;
+  background: #3b68ef;
+  border-color: #527be1;
+  box-shadow: 0 5px 18px #0000001c;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-kpi, .rv-chart-panel, .rv-item-panel) {
+  background: #1b2029;
+  border-color: #343d4d;
+  box-shadow: 0 8px 22px #00000007;
+}
+.app-shell.workflow-shell .results-visuals .rv-kpi-icon.cyan {
+  color: #99b5ff;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-kpi-icon.lime {
+  color: #70f3c4;
+  background: #70f3c410;
+  border-color: #70f3c445;
+}
+.app-shell.workflow-shell .results-visuals .rv-kpi-icon.amber {
+  color: #ffd080;
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-kpi-label, .rv-kpi-number small, .rv-donut-center > span, .rv-small-empty, .rv-map-empty, .rv-tile-value small) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-attention:hover, .rv-attention.is-filtered) {
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .results-visuals .rv-mini-sheets i {
+  border-color: #343d4d;
+  background: #222936;
+}
+.app-shell.workflow-shell .results-visuals .rv-attention-dots i {
+  background: #222936;
+}
+.app-shell.workflow-shell .results-visuals .rv-attention-dots i.lit {
+  background: #ffd08010;
+  box-shadow: none;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-document-scroll, .rv-item-scroll) {
+  scrollbar-color: #4c5870 transparent;
+}
+.app-shell.workflow-shell .results-visuals .rv-chart-tooltip {
+  color: #eff3ff;
+  background: #1b2029f5;
+  border-color: #343d4d;
+  box-shadow: 0 9px 30px #00000024;
+}
+.app-shell.workflow-shell .results-visuals .rv-chart-tooltip b {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .results-visuals .rv-item-heading {
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-legend button {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .results-visuals .rv-legend button b {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .results-visuals .rv-legend button:hover {
+  background: #222936;
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .results-visuals .rv-legend button.active {
+  background: #243554;
+  color: #99b5ff;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-item-tile {
+  background: linear-gradient(130deg, color-mix(in srgb, var(--rv-color) 5%, #1b2029), #1b2029);
+  border-color: color-mix(in srgb, var(--rv-color) 28%, #343d4d);
+  box-shadow: inset 0 1px #00000024;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-item-tile:hover, .rv-item-tile:focus-visible) {
+  background: color-mix(in srgb, var(--rv-color) 9%, #1b2029);
+  border-color: color-mix(in srgb, var(--rv-color) 60%, #343d4d);
+  box-shadow: 0 5px 16px #00000014;
+}
+.app-shell.workflow-shell .results-visuals :is(.rv-tile-title > span, .rv-tile-value strong) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .results-visuals .rv-tile-status {
+  opacity: 1;
+}
+.app-shell.workflow-shell .results-visuals .rv-empty-mosaic i {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .results-visuals .rv-empty-mosaic i:nth-child(3n) {
+  background: #222936;
+}
+.app-shell.workflow-shell .results-visuals .recharts-cartesian-axis-tick text {
+  fill: #a0abc1;
+}
+.app-shell.workflow-shell .results-visuals .recharts-tooltip-cursor {
+  fill: #99b5ff0c;
+}
+body:has(.app-shell.workflow-shell) .rv-item-tooltip {
+  color: #eff3ff;
+  background: #1b2029f7;
+  border-color: #343d4d;
+  box-shadow: 0 15px 45px #00000029;
+}
+body:has(.app-shell.workflow-shell) .rv-item-tooltip :is(.rv-tooltip-document, p) {
+  color: #a0abc1;
+}
+body:has(.app-shell.workflow-shell) .rv-item-tooltip p b {
+  color: #eff3ff;
+}
+body:has(.app-shell.workflow-shell) .rv-item-tooltip > small {
+  color: #99b5ff;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis {
+  --analysis-bg: #111318;
+  --analysis-card: #1b2029;
+  --analysis-ink: #eff3ff;
+  --analysis-muted: #a0abc1;
+  --analysis-line: #343d4d;
+  --analysis-action: #99b5ff;
+  --analysis-success: #70f3c4;
+  --analysis-warning: #ffd080;
+  --analysis-error: #ff8f91;
+  background: var(--analysis-card);
+  border-color: var(--analysis-line);
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(button, summary, .analysis-detail-scroll, .analysis-map-scroll, .analysis-activity-content):focus-visible {
+  outline-color: #527be1;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-heading, .analysis-scene, .analysis-phase-rail, .analysis-quality-rail) {
+  background: var(--analysis-bg);
+  border-color: var(--analysis-line);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-heading-icon, .analysis-scene-symbol, .analysis-phase-node, .analysis-quality-loop) {
+  background: #1b2029;
+  border-color: #343d4d;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-heading p, .analysis-heading-caption, .analysis-completion, .analysis-file-info small, .analysis-status, .analysis-files-empty, .analysis-engine, .analysis-phase-list > li, .analysis-phase-rail li, .analysis-phase-caption > span, .analysis-quality-label, .analysis-quality-result > small) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-completion strong, .analysis-file-info strong, .analysis-scene-copy > strong, .analysis-phase-caption strong, .analysis-context p, .analysis-section-label, .analysis-section-heading h3) {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis .analysis-file-list {
+  background: #1b2029;
+  border-color: var(--analysis-line);
+}
+.app-shell.workflow-shell .document-analysis .analysis-file {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-file:hover {
+  background: #222936;
+}
+.app-shell.workflow-shell .document-analysis .analysis-file.is-selected {
+  background: #243554;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .document-analysis .analysis-file-icon {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-status.is-complete, .analysis-phase-list > .is-current, .analysis-phase-rail li.is-done, .analysis-section-heading > .coverage-complete, .analysis-coverage-stages > .is-complete) {
+  color: var(--analysis-success);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-status.is-attention, .analysis-section-heading > .coverage-warning, .analysis-coverage-stages > .is-partial, .analysis-region-uncertain) {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-phase-rail li.is-current {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-phase-node > i {
+  border-color: #343d4d;
+  background: #7ca0ff80;
+  box-shadow: 0 0 20px #0000001a;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-phase-wire, .analysis-scene-connector) {
+  background: #222936;
+}
+.app-shell.workflow-shell .document-analysis .analysis-phase-wire::after {
+  background: linear-gradient(90deg, transparent, #3d6dff, transparent);
+}
+.app-shell.workflow-shell .document-analysis .analysis-phase-caption {
+  border-color: var(--analysis-line);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-rail.is-verified .analysis-quality-loop {
+  color: var(--analysis-success);
+  border-color: #70f3c445;
+  background: #70f3c410;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-quality-rail.is-needs_review, .analysis-quality-rail.is-limited) .analysis-quality-loop {
+  color: var(--analysis-warning);
+  border-color: #ffd08045;
+  background: #ffd08010;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li:not(:last-child)::after {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li.is-active {
+  border-color: #527be1;
+  color: var(--analysis-action);
+  background: #243554;
+  box-shadow: 0 0 13px #00000019;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li.is-retry {
+  color: var(--analysis-action);
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li.is-verified {
+  color: var(--analysis-success);
+  border-color: #70f3c445;
+  background: #70f3c410;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-flow li.is-needs_review {
+  color: var(--analysis-warning);
+  border-color: #ffd08045;
+  background: #ffd08010;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-quality-result > button, .analysis-quality-result > span) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-result > .is-active {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-result > .is-verified {
+  color: var(--analysis-success);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-quality-result > .is-needs_review, .analysis-quality-result > .is-limited) {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-toolbar {
+  background: #1b2029;
+  border-color: var(--analysis-line);
+}
+.app-shell.workflow-shell .document-analysis .analysis-document-type {
+  color: var(--analysis-action);
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis .analysis-context-peek {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-context-peek:hover {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-checks-button {
+  color: var(--analysis-warning);
+  border-color: #ffd08045;
+  background: #ffd08010;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-workspace {
+  background: radial-gradient(ellipse at 50% 15%, #1b202980, transparent 72%), radial-gradient(#3d6dff1a .7px, transparent .7px), var(--analysis-bg);
+  background-size: auto, 15px 15px, auto;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-metrics {
+  border-color: var(--analysis-line);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-arc, .analysis-map-stat) {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-arc-track {
+  stroke: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-arc.is-complete, .analysis-map-seal.is-complete) {
+  color: var(--analysis-success);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-arc.is-partial, .analysis-map-seal) {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-arc-center, .analysis-arc-center strong, .analysis-map-stat > strong) {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-arc-center strong > small, .analysis-arc-center > span, .analysis-arc-label, .analysis-map-stat > small) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet {
+  border-color: #343d4d;
+  background: #1b2029;
+  box-shadow: 0 9px 24px #00000012, inset 0 1px 0 #00000024;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet::after {
+  border-color: #343d4d;
+  background: #243554;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet > header {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet-icon {
+  border-color: #343d4d;
+  background: #222936;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet header strong {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet header small {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-branches::before {
+  background: linear-gradient(#222936, #222936);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region {
+  border-color: #343d4d;
+  color: var(--analysis-action);
+  background: #222936;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region::before {
+  background: #222936;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region.is-text {
+  border-color: #343d4d;
+  color: #99b5ff;
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region.is-uncertain {
+  border-color: #ffd08045;
+  background: #ffd08010;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region:hover:not(:disabled) {
+  border-color: #527be1;
+  background: #243554;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-region-copy > strong {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-map-region-copy > small, .analysis-map-region-arrow, .analysis-map-headers > em, .analysis-map-unread, .analysis-map-sheet footer > span) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-alert {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-headers > span {
+  border-color: #343d4d;
+  background: #1b2029;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-nested {
+  color: #b8a5ff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-unread {
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet > footer {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet footer > i {
+  background: #3d6dff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-legend {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-legend i {
+  background: #3d6dff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-legend > span:nth-child(2) i {
+  background: #b8a5ff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-legend > span:nth-child(3) i {
+  background: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-legend small {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-discovery-orbit > span {
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-paper, .analysis-discovery-paper) {
+  border-color: #343d4d;
+  background: linear-gradient(145deg, #1b2029, #243554);
+  color: var(--analysis-action);
+  box-shadow: 0 11px 28px #0000001a, 0 0 42px #00000012;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-scan-line, .analysis-discovery-scan) {
+  background: #3d6dff;
+  box-shadow: 0 -12px 20px 9px #00000040;
+}
+.app-shell.workflow-shell .document-analysis .analysis-discovery-corner {
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-discovery > strong, .analysis-empty h3) {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-discovery > span, .analysis-empty, .analysis-empty p) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-workspace[data-quality-phase='validate'] .analysis-discovery-paper {
+  color: var(--analysis-success);
+  box-shadow: 0 11px 28px #0000001a, 0 0 42px #70f3c426;
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-workspace[data-quality-phase='repair'] .analysis-discovery-paper {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-detail-actions {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-detail-actions > button, .analysis-map-sheet header > button, .analysis-inventory button, .analysis-region-heading button, .analysis-insight-regions button) {
+  border-color: var(--analysis-action);
+  background: var(--analysis-action);
+  color: #fff;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-detail-actions > button, .analysis-map-sheet header > button, .analysis-inventory button, .analysis-region-heading button, .analysis-insight-regions button):hover {
+  border-color: #527be1;
+  background: #3b68ef;
+  color: #fff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-insight-drawer {
+  background: #1b2029f8;
+  box-shadow: -6px 0 24px #0000001a;
+}
+.app-shell.workflow-shell .document-analysis .analysis-insight-drawer > header {
+  border-color: var(--analysis-line);
+  background: var(--analysis-bg);
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis .analysis-insight-drawer header > button {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-insight-scroll h3, .analysis-insight-inventory strong, .analysis-insight-regions strong, .analysis-inventory strong, .analysis-region-heading strong) {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-insight-scroll p, .analysis-insight-regions small, .analysis-inventory small, .analysis-regions p, .analysis-header-chips small, .analysis-region-number, .analysis-region-location, .analysis-section-heading > span, .analysis-coverage-stages > span) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-insight-inventory > li, .analysis-insight-regions > li, .analysis-inventory li, .analysis-regions > li) {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-facts > span, .analysis-header-chips > span) {
+  border-color: #343d4d;
+  background: #222936;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-waiting, .analysis-structure-empty) {
+  border-color: #343d4d;
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-structure-empty p {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-questions {
+  border-color: #343d4d;
+  background: #222936;
+}
+.app-shell.workflow-shell .document-analysis .analysis-questions h3 {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-questions ol {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-warnings {
+  border-color: #ffd08045;
+  background: #ffd08010;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-warnings h3, .analysis-insight-scroll .analysis-warnings h3, .analysis-warnings ul, .analysis-warnings p, .analysis-quality-issues) {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-transcription {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-transcription summary {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-transcription > p {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-transcription > pre, .analysis-transcript-view pre) {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-transcription > small, .analysis-transcript-view > small) {
+  color: var(--analysis-warning);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-history {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-history > ol > li {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-history li b {
+  border-color: #343d4d;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis .analysis-quality-history li strong {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-quality-history li > div > span, .analysis-quality-history li > p) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis .analysis-activity {
+  border-color: var(--analysis-line);
+  background: #1b2029;
+}
+.app-shell.workflow-shell .document-analysis .analysis-activity-toggle {
+  background: #222936;
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-activity-toggle strong, .analysis-activity-content strong) {
+  color: var(--analysis-ink);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-activity-toggle > span, .analysis-activity-toggle small, .analysis-activity-content time, .analysis-log-state, .analysis-activity-content p) {
+  color: var(--analysis-muted);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-activity-content .is-completed .analysis-log-state, .analysis-activity-content .is-ready .analysis-log-state) {
+  color: var(--analysis-success);
+}
+.app-shell.workflow-shell .document-analysis .analysis-activity-content .is-running .analysis-log-state {
+  color: var(--analysis-action);
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-activity-content .is-failed .analysis-log-state, .analysis-activity-content .is-error .analysis-log-state) {
+  color: var(--analysis-error);
+}
+.app-shell.workflow-shell .doc-preview {
+  --source-ink: #202634;
+  --source-muted: #a0abc1;
+  --source-purple: #99b5ff;
+  color-scheme: dark;
+  color: #202634;
+  border-color: #343d4d;
+  background: #1b2029;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__toolbar, .doc-preview__page-controls, .doc-preview__sheets, .doc-preview__legend, .doc-preview__source-chips) {
+  color: #a0abc1;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview.doc-preview--compact .doc-preview__legend--inline {
+  background: transparent;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__filename, .doc-preview__page-controls > div) {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__filename svg, .doc-preview__open, .doc-preview__unsupported a) {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__open:hover, .doc-preview__unsupported a:hover) {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__legend > span, .doc-preview__legend small, .doc-preview__source-chip > small, .doc-preview__message, .doc-preview__unsupported, .doc-preview__unsupported p) {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__viewport {
+  background: #14181f;
+  scrollbar-color: #4c5870 transparent;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__sheets, .doc-preview__source-chips) {
+  scrollbar-color: #4c5870 transparent;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__canvas, .doc-preview__text-paper) {
+  background: #fff;
+  box-shadow: 0 6px 22px #0003;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__text-paper, .doc-preview__viewport--table, .doc-preview__table) {
+  color-scheme: light;
+  color: #202634;
+  background: #fff;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__table th, .doc-preview__table td) {
+  border-color: #e4e7ed;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__table th {
+  color: #687086;
+  background: #f5f6f9;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__viewport--image img {
+  box-shadow: 0 6px 22px #0003;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__page-controls button, .doc-preview__source-chip) {
+  color: #c3cde0;
+  background: #1b2029;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__page-controls button.doc-preview__zoom-reset {
+  color: #c3cde0;
+  border-color: transparent;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__page-controls button:not(:disabled):hover {
+  color: #eff3ff;
+  background: #243554;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__source-chip:hover, .doc-preview__source-chip.is-selected) {
+  color: #eff3ff;
+  background: color-mix(in srgb, var(--source-mark-line) 25%, #1b2029);
+  border-color: var(--source-mark-line);
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__source-chip:hover, .doc-preview__source-chip.is-selected) > small {
+  color: inherit;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__sheets button {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__sheets button.is-active {
+  color: #b5c9ff;
+  background: #243554;
+  border-color: #527be1;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__hidden-sheet {
+  color: #a0abc1;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview :is(.doc-preview__loading, .doc-preview__scan-status) {
+  color: #70f3c4;
+  background: #1b2029f5;
+  border-color: #70f3c450;
+  box-shadow: 0 5px 18px #0003;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__loading > span {
+  border-color: #343d4d;
+  border-top-color: #70f3c4;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__scan-status > i {
+  background: #70f3c4;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__scan-overlay > span {
+  background: linear-gradient(transparent, #70f3c408 70%, #70f3c425);
+  border-color: #70f3c4;
+  box-shadow: 0 3px 15px #70f3c433;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__registration i {
+  border-color: #3d6dff;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__truncated {
+  color: #a0abc1;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__warning {
+  color: #ffd080;
+  background: #ffd08010;
+  border-color: #ffd08045;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__evidence {
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__evidence-heading {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__evidence-heading > span {
+  background: #70f3c4;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__evidence-location {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__evidence-item p {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .doc-preview.doc-preview--empty {
+  background: radial-gradient(ellipse at 50% 40%, #3d6dff16, transparent 64%), #1b2029;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__empty-sheet {
+  background: #222936;
+  border-color: #434e64;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__empty-sheet--front {
+  background: #293447;
+  border-color: #4d6390;
+  box-shadow: 0 12px 32px #0003;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__empty-sheet--front svg {
+  color: #99b5ff;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__empty-sheet--front i {
+  background: #4f6082;
+}
+.app-shell.workflow-shell .doc-preview.doc-preview--empty > p {
+  color: #eff3ff;
+}
+.app-shell.workflow-shell .doc-preview.doc-preview--empty > span {
+  color: #a0abc1;
+}
+.app-shell.workflow-shell .doc-preview .doc-preview__empty-formats > span {
+  color: #a0abc1;
+  background: #222936;
+  border-color: #343d4d;
+}
+.app-shell.workflow-shell .doc-preview :is(a, button):focus-visible {
+  outline-color: #7296ff;
+}
+.app-shell.workflow-shell .doc-preview .source-mark--pass {
+  --source-mark-fill: #70f3c43b;
+  --source-mark-line: #2c9c77;
+  --source-mark-ink: #1b6950;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-actions > .criteria-confirm, .criteria-feedback-composer > button) {
+  background: #315fe9;
+  border-color: #3d6dff;
+  box-shadow: 0 5px 18px #3d6dff20;
+}
+.app-shell.workflow-shell .criteria-confirmation :is(.criteria-confirmation-actions > .criteria-confirm:hover:not(:disabled), .criteria-feedback-composer > button:hover:not(:disabled)) {
+  background: #3b68ef;
+  border-color: #527dff;
+}
+.app-shell.workflow-shell .criteria-confirmation .criteria-confirmation-count strong {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .file-review-results .frr-file.is-active {
+  box-shadow: inset 0 2px #3d6dff;
+}
+.app-shell.workflow-shell .file-review-results .frr-file-selected {
+  color: #70f3c4;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-detail-actions > button, .analysis-map-sheet header > button, .analysis-inventory button, .analysis-region-heading button, .analysis-insight-regions button) {
+  border-color: #3d6dff;
+  background: #315fe9;
+  color: #fff;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-detail-actions > button, .analysis-map-sheet header > button, .analysis-inventory button, .analysis-region-heading button, .analysis-insight-regions button):hover {
+  border-color: #527dff;
+  background: #3b68ef;
+  color: #fff;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-scan-line, .analysis-discovery-scan) {
+  background: #70f3c4;
+  box-shadow: 0 -12px 20px 9px #70f3c422;
+}
+.app-shell.workflow-shell .document-analysis .analysis-phase-wire::after {
+  background: linear-gradient(90deg, transparent, #70f3c4, transparent);
+}
+.app-shell.workflow-shell .document-analysis .analysis-map-sheet footer > i {
+  background: #70f3c4;
+}
+.app-shell.workflow-shell .document-analysis :is(.analysis-paper, .analysis-discovery-paper) {
+  background: linear-gradient(145deg, #253149, #1b2029);
+  border-color: #5d789b;
+  color: #cbd9ff;
+}
+.app-shell.workflow-shell .document-analysis .analysis-paper-map .analysis-map-label {
+  color: #a0abc1;
+  border-color: #4c5870;
+}

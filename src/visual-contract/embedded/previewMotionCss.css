@@ -1,0 +1,64 @@
+@media (prefers-reduced-motion:no-preference) {
+  #root [data-dashboard="kpi"] {
+    animation: trace-preview-panel-in 320ms cubic-bezier(.22,1,.36,1) both!important;
+  }
+  #root [data-dashboard="kpi"]:nth-child(2) {
+    animation-delay: 45ms!important;
+  }
+  #root [data-dashboard="kpi"]:nth-child(3) {
+    animation-delay: 90ms!important;
+  }
+  #root [data-dashboard="kpi"]:nth-child(4) {
+    animation-delay: 135ms!important;
+  }
+  #root [data-dashboard="chart"] {
+    animation: trace-preview-panel-in 420ms cubic-bezier(.22,1,.36,1) 120ms both!important;
+  }
+  #root [data-dashboard="chart"]:nth-child(2) {
+    animation-delay: 190ms!important;
+  }
+  #root [data-dashboard="map"] {
+    animation: trace-preview-panel-in 450ms cubic-bezier(.22,1,.36,1) 240ms both!important;
+  }
+  #root [data-dashboard="plot"]>svg {
+    animation: trace-preview-plot-in 700ms cubic-bezier(.22,1,.36,1) 180ms backwards!important;
+  }
+  #root [data-dashboard="plot"] svg rect:not([transform]):not([style*="transform"]):not(defs rect):not(clipPath rect):not(mask rect):not(pattern rect) {
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: trace-preview-bar-in 650ms cubic-bezier(.22,1,.36,1) 200ms backwards!important;
+  }
+  @keyframes trace-preview-panel-in {
+    from {
+      opacity: 0;
+      translate: 0 8px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes trace-preview-plot-in {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      clip-path: inset(0);
+    }
+  }
+  @keyframes trace-preview-bar-in {
+    from {
+      transform: scaleX(.001);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation: none!important;
+    transition: none!important;
+    scroll-behavior: auto!important;
+  }
+}

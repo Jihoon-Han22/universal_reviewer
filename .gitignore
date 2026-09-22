@@ -1,0 +1,58 @@
+# Local credentials and private key material
+.env
+.env.*
+**/.env
+**/.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials.json
+token.json
+tokens.json
+
+# Installed dependencies, generated builds and local evidence
+node_modules/
+.cache/
+artifacts/
+dist/
+logs/
+*.log
+*.tsbuildinfo
+__pycache__/
+*.pyc
+*.pyo
+Microsoft/
+public/pdfjs/
+server/assets/dashboard-chart-runtime.js
+
+# Supplied document collections remain private and local
+golden/
+ralph-golden-v3/
+uploads/
+reports/
+*.pdf
+*.xls
+*.xlsx
+*.doc
+*.docx
+*.csv
+
+# Publish only these synthetic unit-test dependencies from the supplied package
+/architecture/*
+!/architecture/contracts/
+/architecture/contracts/*
+!/architecture/contracts/algorithm-edge-cases.json
+!/architecture/contracts/source-serialization-cases.json
+!/architecture/ui/
+/architecture/ui/*
+!/architecture/ui/document-analysis-structure-cases.json
+!/architecture/ui/interaction-fixtures.json
+
+# Machine-bound reconstruction and live-evidence tooling is not deployment code
+/scripts/acceptance/
+/scripts/acceptance-adapter.mjs
+/scripts/rebuild-record.mjs
+/scripts/live-smoke.mjs

@@ -1,0 +1,263 @@
+:root {
+  --motion-fast: 160ms;
+  --motion-state: 280ms;
+  --motion-reveal: 520ms;
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+  --motion-focus: #c5f65d;
+  --motion-focus-halo: #c5f65d18;
+}
+:is(.app-shell, .golden-picker, .ledger-modal, .dashboard-modal) :is(button, a, summary) {
+  transition-property: color, background-color, border-color, box-shadow, outline-color;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--motion-ease);
+}
+:is(.app-shell, .golden-picker, .ledger-modal, .dashboard-modal)
+  :is(button, a, summary):focus-visible {
+  outline: 2px solid var(--motion-focus);
+  outline-offset: 3px;
+}
+.app-shell :is(.button, .landing-primary, .landing-secondary, .landing-sample,
+  .golden-open, .new-review, .dashboard-cta, .resolve-button, .text-action),
+.criteria-confirmation :is(.criteria-add, .criteria-confirm, .criteria-cancel),
+.golden-picker :is(.golden-picker-load, .golden-picker-close),
+.ledger-modal :is(.ledger-analyze, .ledger-download, .ledger-close, .ledger-change-file),
+.dashboard-modal :is(.dashboard-generate, .dashboard-icon-button, .dashboard-download) {
+  transition-property: transform, color, background-color, border-color, box-shadow, outline-color;
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--motion-ease);
+}
+@media (hover: hover) and (pointer: fine) {
+  .app-shell :is(.button, .landing-primary, .landing-secondary, .landing-sample,
+    .golden-open, .new-review, .dashboard-cta, .resolve-button, .text-action):hover:not(:disabled),
+  .criteria-confirmation :is(.criteria-add, .criteria-confirm, .criteria-cancel):hover:not(:disabled),
+  .golden-picker :is(.golden-picker-load, .golden-picker-close):hover:not(:disabled),
+  .ledger-modal :is(.ledger-analyze, .ledger-download, .ledger-close, .ledger-change-file):hover:not(:disabled),
+  .dashboard-modal :is(.dashboard-generate, .dashboard-icon-button, .dashboard-download):hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .app-shell :is(.button, .landing-primary, .landing-secondary, .landing-sample,
+    .golden-open, .new-review, .dashboard-cta, .resolve-button, .text-action):active:not(:disabled),
+  .criteria-confirmation :is(.criteria-add, .criteria-confirm, .criteria-cancel):active:not(:disabled),
+  .golden-picker :is(.golden-picker-load, .golden-picker-close):active:not(:disabled),
+  .ledger-modal :is(.ledger-analyze, .ledger-download, .ledger-close, .ledger-change-file):active:not(:disabled),
+  .dashboard-modal :is(.dashboard-generate, .dashboard-icon-button, .dashboard-download):active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .app-shell :is(.landing-primary, .run-button, .dashboard-cta):hover:not(:disabled) > svg:last-child,
+  .golden-picker-load:hover:not(:disabled) > svg:last-child,
+  .ledger-analyze:hover:not(:disabled) > svg:last-child,
+  .dashboard-generate:hover:not(:disabled) .dashboard-button-arrow {
+    translate: 2px 0;
+  }
+}
+.app-shell :is(.landing-primary, .run-button, .dashboard-cta) > svg:last-child,
+.golden-picker-load > svg:last-child, .ledger-analyze > svg:last-child,
+.dashboard-button-arrow {
+  transition: translate var(--motion-state) var(--motion-ease);
+}
+.app-shell :is(input:not([type='checkbox']):not([type='radio']):not([type='file']), textarea, select),
+.golden-picker select,
+.ledger-modal :is(input:not([type='file']), textarea, select),
+.dashboard-modal textarea {
+  transition: border-color var(--motion-state) var(--motion-ease),
+    background-color var(--motion-state) var(--motion-ease),
+    box-shadow var(--motion-state) var(--motion-ease),
+    outline-color var(--motion-fast) var(--motion-ease);
+}
+.app-shell :is(input:not([type='checkbox']):not([type='radio']):not([type='file']), textarea, select):focus,
+.golden-picker select:focus,
+.ledger-modal :is(input:not([type='file']), textarea, select):focus,
+.dashboard-modal textarea:focus {
+  border-color: #adc96f;
+  box-shadow: 0 0 0 3px var(--motion-focus-halo);
+}
+.app-shell .upload-zone, .ledger-modal .ledger-upload {
+  transition: transform var(--motion-state) var(--motion-ease),
+    border-color var(--motion-state) var(--motion-ease),
+    background-color var(--motion-state) var(--motion-ease),
+    box-shadow var(--motion-state) var(--motion-ease);
+}
+.app-shell .upload-zone.drag-over, .ledger-modal .ledger-upload.is-dragging {
+  transform: scale(1.012);
+  border-color: var(--motion-focus);
+  box-shadow: 0 0 0 3px var(--motion-focus-halo), 0 8px 24px #0002;
+}
+.app-shell .upload-icon {
+  transition: translate var(--motion-state) var(--motion-ease),
+    color var(--motion-state) var(--motion-ease),
+    border-color var(--motion-state) var(--motion-ease),
+    background-color var(--motion-state) var(--motion-ease);
+}
+.app-shell .upload-zone.drag-over .upload-icon {
+  translate: 0 -3px;
+  color: var(--motion-focus);
+}
+.app-shell :is(.file-row, .file-type, .review-item, .item-status, .verdict-badge,
+  .criteria-card, .criteria-type, .analysis-file, .analysis-status, .analysis-phase-list > li,
+  .analysis-section-heading > span, .analysis-log-state, .criteria-log-state, .analysis-inventory li,
+  .analysis-regions > li, .extracted-field, .extracted-field-value),
+.golden-picker :is(.golden-picker-entry, .golden-picker-marker, .golden-picker-entry-description),
+.ledger-modal :is(.ledger-status-chip, .ledger-cell-address, .ledger-new-value),
+.dashboard-modal :is(.dashboard-suggestion, .dashboard-stages li, .dashboard-stage-icon,
+  .dashboard-sandbox-steps li, .dashboard-sandbox-step-icon, .dashboard-log-status,
+  .dashboard-preview-dot) {
+  transition: color var(--motion-state) var(--motion-ease),
+    background-color var(--motion-state) var(--motion-ease),
+    border-color var(--motion-state) var(--motion-ease),
+    box-shadow var(--motion-state) var(--motion-ease);
+}
+.app-shell :is(.workspace-nav, .view-tabs, .item-filters, .source-document-tabs) button,
+.app-shell .doc-preview__sheets button, .golden-picker-format button,
+.dashboard-suggestion {
+  transition-duration: var(--motion-state);
+}
+.app-shell .view-tabs button {
+  position: relative;
+}
+.app-shell .view-tabs button::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--motion-focus);
+  opacity: 0;
+  transform: scaleX(.6);
+  transform-origin: center;
+  transition: opacity var(--motion-state) var(--motion-ease),
+    transform var(--motion-state) var(--motion-ease);
+  pointer-events: none;
+}
+.app-shell .view-tabs button.active::after {
+  opacity: .85;
+  transform: scaleX(1);
+}
+.app-shell .understood-criteria > button > svg:last-child,
+.extracted-fields-chevron,
+.criteria-card-toggle > svg:last-child,
+.criteria-discovery > summary > svg:last-child,
+.criteria-activity > summary > svg:last-child,
+.analysis-activity-toggle > svg:last-child,
+.dashboard-activity-chevron {
+  transition: transform var(--motion-state) var(--motion-ease);
+}
+.criteria-card-summary, .criteria-card-toggle, .criteria-source-links,
+.criteria-editor fieldset {
+  transition: opacity var(--motion-state) var(--motion-ease);
+}
+.criteria-include > span {
+  transition: color var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease);
+}
+.criteria-include > span > svg, .golden-picker-marker > svg {
+  opacity: 0;
+  transform: scale(.75);
+  transition: opacity var(--motion-fast) var(--motion-ease),
+    transform var(--motion-state) var(--motion-ease);
+}
+.criteria-include input:checked + span > svg,
+.golden-picker-entry.is-selected .golden-picker-marker > svg {
+  opacity: 1;
+  transform: scale(1);
+}
+html[data-motion='full'] :is(.criteria-confirmation, .document-analysis) {
+  animation: motion-module-arrive var(--motion-reveal) var(--motion-ease) backwards;
+}
+html[data-motion='full'] .golden-picker[open] .golden-picker-shell {
+  animation: motion-module-arrive var(--motion-reveal) var(--motion-ease) backwards;
+}
+html[data-motion='full'] :is(.golden-picker, .ledger-modal, .dashboard-modal)[open]::backdrop {
+  animation: motion-fade-in var(--motion-state) var(--motion-ease) backwards;
+}
+html[data-motion='full'] :is(.criteria-card, .analysis-file,
+  .analysis-inventory li, .analysis-regions > li, .golden-picker-entry) {
+  animation: motion-row-arrive var(--motion-reveal) var(--motion-ease) backwards;
+}
+html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(2) {
+  animation-delay: 40ms;
+}
+html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(3) {
+  animation-delay: 80ms;
+}
+html[data-motion='full'] :is(.criteria-card, .analysis-file, .golden-picker-entry):nth-child(n + 4) {
+  animation-delay: 120ms;
+}
+html[data-motion='full'] :is(.export-popover, .resolution-form,
+  .criteria-editor:not([hidden]), .criteria-numeric-controls,
+  .extracted-fields[open] .extracted-fields-body,
+  .criteria-discovery[open] .criteria-discovery-content,
+  .criteria-activity[open] > ol,
+  .analysis-activity-content:not([hidden]),
+  .dashboard-activity-content:not([hidden]),
+  .ledger-uploaded, .ledger-mapping-table-wrap, .ledger-extra-note) {
+  animation: motion-row-arrive var(--motion-state) var(--motion-ease) backwards;
+}
+html[data-motion='full'] :is(.ready-note, .changed-note, .error-banner, .outcome-strip,
+  .criteria-submit-error, .criteria-row-errors, .analysis-warnings,
+  .golden-picker-error, .golden-picker-notices,
+  .ledger-callout, .ledger-success, .dashboard-error, .dashboard-notice,
+  .dashboard-log-entry, .analysis-activity-content li) {
+  animation: motion-fade-in var(--motion-state) var(--motion-ease) backwards;
+}
+@keyframes motion-module-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes motion-row-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes motion-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html[data-motion='reduced'] {
+  --motion-fast: 0ms;
+  --motion-state: 0ms;
+  --motion-reveal: 0ms;
+}
+html[data-motion='reduced'] *,
+html[data-motion='reduced'] *::before,
+html[data-motion='reduced'] *::after,
+html[data-motion='reduced'] dialog::backdrop {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html[data-motion='reduced'] .app-shell :is(.button, .landing-primary, .landing-secondary,
+  .landing-sample, .golden-open, .new-review, .dashboard-cta, .resolve-button, .text-action),
+html[data-motion='reduced'] .criteria-confirmation :is(.criteria-add, .criteria-confirm, .criteria-cancel),
+html[data-motion='reduced'] .golden-picker :is(.golden-picker-load, .golden-picker-close),
+html[data-motion='reduced'] .ledger-modal :is(.ledger-analyze, .ledger-download, .ledger-close,
+  .ledger-change-file, .ledger-upload),
+html[data-motion='reduced'] .dashboard-modal :is(.dashboard-generate, .dashboard-icon-button, .dashboard-download),
+html[data-motion='reduced'] .app-shell .upload-zone {
+  transform: none !important;
+}
+html[data-motion='reduced'] .app-shell :is(.landing-primary, .run-button, .dashboard-cta) > svg:last-child,
+html[data-motion='reduced'] .app-shell .upload-icon,
+html[data-motion='reduced'] .golden-picker-load > svg:last-child,
+html[data-motion='reduced'] .ledger-analyze > svg:last-child,
+html[data-motion='reduced'] .dashboard-button-arrow {
+  translate: none !important;
+}

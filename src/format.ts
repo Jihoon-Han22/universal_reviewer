@@ -1,0 +1,4 @@
+export function formatValue(value:unknown){if(value===null||value===undefined)return '확인 불가';const text=String(value);return /^-?\d{1,15}(\.\d+)?$/.test(text)?new Intl.NumberFormat('ko-KR',{maximumFractionDigits:12}).format(Number(text)):text;}
+export function numberLabel(value:string){const text=value.trim(),m=/^([+-]?)(\d+)(\.\d+)?$/.exec(text);return m?m[1]+m[2].replace(/\B(?=(\d{3})+(?!\d))/g,',')+(m[3]||''):text;}
+export function sizeLabel(bytes:number){return bytes>1048576?(bytes/1048576).toFixed(1)+' MB':Math.max(1,Math.round(bytes/1024))+' KB';}
+export function formatActivityText(value:string){return value.replace(/(```[\s\S]*?```|`[^`\r\n]*`|(?:[a-z][a-z\d+.-]*:\/\/|www\.)[^\s<>"']+|(?:[a-z]:[\\/]|\.{1,2}[\\/]|\/|@)[^\s<>"']+|\b[\w@.-]+(?:\.[a-z][a-z\d]{0,11})\b)|(?<![\w@./\\-])\b(gemini|e2b)\b(?![\w./\\-])/gi,(all,protectedText,brand)=>protectedText?all:brand.toLowerCase()==='gemini'?'LLM':'샌드박스');}

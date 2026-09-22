@@ -1,0 +1,592 @@
+.sandbox-activity-dock.sandbox-activity-dock,
+.sandbox-workroom-scene.sandbox-workroom-scene,
+.sandbox-work-scene.sandbox-work-scene {
+  color-scheme: dark;
+  --workroom-lime: #70f3c4;
+  --workroom-cyan: #92adff;
+  --workroom-text: #eff3ff;
+  --workroom-muted: #a0abc1;
+  --workroom-line: #343d4d;
+}
+.sandbox-activity-dock.sandbox-activity-dock {
+  color: var(--workroom-text);
+  border-color: var(--workroom-line);
+  background: #1b2029;
+  box-shadow: 0 1px 0 #ffffff06 inset, 0 8px 28px #080b101a;
+}
+.sandbox-activity-dock.sandbox-activity-dock.is-expanded {
+  border-color: #46536a;
+}
+.sandbox-activity-dock.sandbox-activity-dock button:focus-visible,
+.sandbox-activity-dock.sandbox-activity-dock select:focus-visible,
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed:focus-visible {
+  outline-color: #92adff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-toggle:hover {
+  background: #3d6dff0d;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-symbol {
+  color: #92adff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-symbol > i {
+  border-color: #70f3c466;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-count {
+  background: #3d6dff20;
+  color: #a8bdff;
+}
+.sandbox-activity-dock.sandbox-activity-dock :is(.sandbox-dock-live, .sandbox-dock-done) {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-attention {
+  color: #ffd17b;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-chevron {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-header {
+  border-color: #343d4d;
+  background: linear-gradient(105deg, #263451, #1b2029 74%);
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-mark {
+  border-color: #527cfb66;
+  color: #a8bdff;
+  background: #3d6dff18;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-header strong {
+  color: #eff3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-header > div > span {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-live-label {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-live-label > i {
+  background: #70f3c4;
+  box-shadow: 0 0 9px #70f3c480;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-minimize {
+  border-color: #46536a !important;
+  background: #222936;
+  color: #c9d2e7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-scene-loading {
+  background: #151921;
+  color: #75839b;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-scene-loading > i {
+  background: #3d6dff50;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-file-heading {
+  border-color: #343d4d;
+  color: #a8bdff;
+  background: #1b2029;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-file-heading strong {
+  color: #dce4f7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-file-heading > span {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-exchanges {
+  border-color: #343d4d;
+  background: #151921;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-exchanges > .sandbox-workroom-scene {
+  border-bottom-color: #343d4d;
+}
+.sandbox-activity-dock.sandbox-activity-dock :is(.sandbox-workroom-turns, .sandbox-workroom-tasks nav, .sandbox-workroom-feed) {
+  scrollbar-color: #46536a transparent;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns > button {
+  border-color: #343d4d;
+  background: #1b2029;
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns > button:hover {
+  border-color: #536789;
+  background: #222936;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns > .is-selected {
+  border-color: #5a81ff88;
+  background: #3d6dff18;
+  color: #afc3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns > button > span {
+  border-color: #46536a;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns b {
+  color: #e2e9fa;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns :is(small, em) {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns .is-running em {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-turns .is-failed em {
+  color: #ff958b;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-tasks {
+  border-color: #343d4d;
+  background: #181c24;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-tasks-heading,
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-tasks-heading b {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task:hover {
+  background: #3d6dff0e;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task.is-selected {
+  border-color: #527cfb66 !important;
+  background: linear-gradient(110deg, #3d6dff26, #3d6dff0b);
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task-icon {
+  color: #a8bdff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task.is-running .sandbox-dock-task-icon {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task-info > strong {
+  color: #c9d2e7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-task.is-selected .sandbox-dock-task-info > strong {
+  color: #eff3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-runtime {
+  color: #70f3c4;
+  border-color: #70f3c440;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-runtime.is-gemini {
+  color: #a8bdff;
+  border-color: #92adff50;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-state {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .is-running .sandbox-dock-state {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .is-failed .sandbox-dock-state {
+  color: #ff958b;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-history {
+  color: #a8bdff;
+  background: #3d6dff0d;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-history:hover {
+  background: #3d6dff20;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-detail {
+  background: linear-gradient(145deg, #202632, #1b2029 70%);
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-operation-icon {
+  color: #70f3c4;
+  border-color: #70f3c455;
+  background: #70f3c409;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-operation-icon > i {
+  background: linear-gradient(transparent, #70f3c422, transparent);
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-detail.is-waiting .sandbox-workroom-operation-icon {
+  color: #a0abc1;
+  border-color: #46536a;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-operation strong {
+  color: #eff3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock :is(.sandbox-workroom-operation-caption, .sandbox-workroom-operation-detail) {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-elapsed {
+  border-color: #343d4d;
+  color: #b9c5dc;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-quality > span {
+  border-color: #46536a;
+  color: #b9c5dc;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-quality > .is-verified {
+  color: #70f3c4;
+  border-color: #70f3c440;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-dock-quality > .is-attention {
+  color: #ffd17b;
+  border-color: #ffd17b40;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-head {
+  border-color: #343d4d;
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-head b {
+  color: #8f9bb2;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-head > button {
+  color: #a8bdff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-head > button[aria-pressed='true'] {
+  background: #3d6dff20;
+  color: #c6d3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-pulse > i {
+  background: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed li {
+  color: #c9d2e7;
+  border-color: #343d4d66;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-event-icon {
+  color: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed strong {
+  color: #dce4f7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed p {
+  color: #aebad0;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed time {
+  color: #8f9bb2;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed .is-output p {
+  color: #bbe8d8;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed .sandbox-workroom-event-kind {
+  color: #94d9bd;
+  border-color: #70f3c433;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed .is-heartbeat .sandbox-workroom-event-kind {
+  color: #a0abc1;
+  border-color: #46536a;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed :is(.is-stderr p, .is-failed strong) {
+  color: #ffd17b;
+}
+.sandbox-activity-dock.sandbox-activity-dock :is(.sandbox-workroom-empty, .sandbox-workroom-feed-status, .sandbox-workroom-connection-note) {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-status {
+  border-color: #343d4d;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-wait > i {
+  background: #70f3c4;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-feed-status > button {
+  background: #3d6dff24;
+  color: #c6d3ff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-empty-stage {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-empty-stage > svg {
+  color: #a8bdff;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-empty-stage strong {
+  color: #dce4f7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-empty-stage p {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock :is(.sandbox-workroom-mobile-select, .sandbox-workroom-mobile-tabs) {
+  color: #a0abc1;
+  border-color: #343d4d;
+  background: #1b2029;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-mobile-select select {
+  background: #222936;
+  color: #dce4f7;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-mobile-tabs > button {
+  color: #a0abc1;
+}
+.sandbox-activity-dock.sandbox-activity-dock .sandbox-workroom-mobile-tabs > button[aria-selected='true'] {
+  background: #3d6dff26;
+  color: #c6d3ff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene {
+  border-color: #343d4d;
+  background: radial-gradient(ellipse at 68% 40%, #3d6dff16, transparent 48%), radial-gradient(ellipse at 28% 45%, #70f3c40c, transparent 45%), #151921;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene::before {
+  background-image: radial-gradient(#92adff70 .6px, transparent .6px);
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-terminal {
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene :is(.workroom-back-sheet, .workroom-front-sheet) {
+  background: #252e3c;
+  color: #b9caff;
+  border-color: #6e8cd066;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-front-sheet > i {
+  background: linear-gradient(transparent, #70f3c426);
+  border-bottom-color: #70f3c499;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-document-corner {
+  border-color: #92adff66;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-bridge {
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene :is(.bridge-dialogue, .bridge-output) {
+  color: #92adff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber {
+  color: #b9c5dc;
+  border-color: #46536a !important;
+  background: linear-gradient(145deg, #283145, #1b2029) !important;
+  box-shadow: 0 9px 20px #080b1033, 0 1px 0 #ffffff07 inset;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber.is-active {
+  border-color: color-mix(in srgb, var(--chamber-accent) 58%, transparent) !important;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--chamber-accent) 10%, transparent), 0 1px 0 #ffffff0a inset;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber.is-selected {
+  border-color: color-mix(in srgb, var(--chamber-accent) 80%, transparent) !important;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber:not(:disabled):hover {
+  border-color: var(--chamber-accent) !important;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber:focus-visible {
+  outline-color: #a8bdff !important;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber-header {
+  border-color: #343d4d;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber-header > strong {
+  color: #eff3ff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-runtime-capacity {
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .is-active .workroom-runtime-capacity {
+  color: var(--chamber-accent);
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber-footer {
+  background: #11131855;
+  border-color: #343d4d;
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .is-active .workroom-chamber-footer {
+  color: var(--chamber-accent);
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber-file {
+  color: #dce4f7;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail button {
+  background: #222936 !important;
+  border-color: #343d4d !important;
+  color: #b9c5dc;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail button:focus-visible {
+  outline-color: #92adff !important;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail button:hover {
+  border-color: #6c82b0 !important;
+  color: #eff3ff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail b {
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail .is-gemini b {
+  color: #a8bdff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-trail .is-unknown b {
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-handoff-arrow {
+  color: #8095bc;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-structured-output {
+  border-color: #46536a;
+  background: #222936;
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-result-row > i {
+  background: #70f3c488;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-result-row > b {
+  background: #92adff88;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-result-row > em {
+  background: #70f3c466;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-structured-output.is-ready {
+  border-color: #70f3c477;
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-result-check {
+  border-color: #70f3c480;
+  background: #18372e;
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene.needs-attention .workroom-result-check {
+  border-color: #ffd17b80;
+  background: #3a3020;
+  color: #ffd17b;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-packet {
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-packet > b,
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-packet > em {
+  background: linear-gradient(90deg, transparent, #70f3c4 58%, #f0fff9);
+  box-shadow: 3px 0 10px #70f3c4, 0 0 18px #70f3c490;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-packet.is-backward > b,
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-packet.is-backward > em {
+  background: linear-gradient(270deg, transparent, #92adff 58%, #f0f4ff);
+  box-shadow: -3px 0 10px #92adff, 0 0 18px #3d6dff9c;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene.transfer-forward .bridge-dialogue {
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene.transfer-backward .bridge-dialogue {
+  color: #92adff;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber.is-sending {
+  border-color: var(--chamber-accent) !important;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--chamber-accent) 20%, transparent), 0 0 14px color-mix(in srgb, var(--chamber-accent) 10%, transparent) inset;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-chamber.is-receiving {
+  border-color: #e1fff5 !important;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--chamber-accent) 30%, transparent), 0 0 20px color-mix(in srgb, var(--chamber-accent) 14%, transparent) inset;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption {
+  color: #a0abc1;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption > b {
+  color: #bdc8de;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-kind {
+  border-color: #46536a;
+  color: #b9caff;
+  background: #3d6dff13;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption.is-current .workroom-transfer-kind {
+  border-color: #70f3c480;
+  color: #dffff3;
+  background: #70f3c41a;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption > small {
+  color: #c9d2e7;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption.is-current {
+  color: #70f3c4;
+}
+.sandbox-workroom-scene.sandbox-workroom-scene .workroom-transfer-caption.is-current > b {
+  color: #e1fff5;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-paper {
+  fill: #293344;
+  stroke: #92adff80;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-header {
+  fill: #92adff88;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-rule {
+  stroke: #a0abc180;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-highlight {
+  stroke: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-wire {
+  stroke: #92adff55;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-frame {
+  fill: #26334b;
+  stroke: #92adff88;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-chip {
+  fill: #70f3c488;
+  stroke: #b0ffe388;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-packet {
+  fill: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-floor {
+  stroke: #92adff22;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-bracket {
+  stroke: #92adff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-laser {
+  stroke: #70f3c4;
+  filter: drop-shadow(0 0 4px #70f3c499);
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-read-cells > rect {
+  fill: #3d6dff33;
+  stroke: #92adff88;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-routing {
+  stroke: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-package-path {
+  fill: #26334b;
+  stroke: #a8bdff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-muted-dot {
+  fill: #a0abc1;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-tile {
+  fill: #1b2029;
+  stroke: #46536a;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-donut-track {
+  stroke: #46536a88;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-donut {
+  stroke: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-bar {
+  fill: #7397ff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-check-disc {
+  fill: #1d4235;
+  stroke: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-check {
+  stroke: #caffec;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-gather {
+  fill: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-return-path {
+  stroke: #92adff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-inspected-row {
+  fill: #70f3c420;
+  stroke: #70f3c477;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-lens {
+  fill: #26334be8;
+  stroke: #a8bdff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-lens-handle {
+  stroke: #92adff;
+}
+.sandbox-work-scene.sandbox-work-scene .work-scene-quiet-check {
+  stroke: #70f3c477;
+}
+.sandbox-work-scene.sandbox-work-scene .sandbox-work-rail::before {
+  background: #46536a;
+}
+.sandbox-work-scene.sandbox-work-scene .sandbox-work-rail > li {
+  color: #a0abc1;
+}
+.sandbox-work-scene.sandbox-work-scene .sandbox-work-rail > li > i {
+  border-color: #6c82b0;
+  background: #222936;
+}
+.sandbox-work-scene.sandbox-work-scene .sandbox-work-rail > .is-current {
+  color: #70f3c4;
+}
+.sandbox-work-scene.sandbox-work-scene .sandbox-work-rail > .is-current > i {
+  background: #70f3c4;
+  border-color: #caffec;
+  box-shadow: 0 0 8px #70f3c477;
+}

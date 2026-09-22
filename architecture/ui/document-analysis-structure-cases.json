@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Self-contained CURRENT_REPRODUCTION inventory projection and structure group merge inputs with complete JSON-serialized outputs. No browser, provider or application execution is claimed.",
+  "contract": "detail-controls.md D3.2.1",
+  "contractClass": "BASELINE_OBSERVATION",
+  "executionStatus": "NOT_RUN",
+  "conventions": {
+    "input": "Each case is an independent analysis object. Missing fields are absent, not inherited from another case.",
+    "expected": "Exact structureGroups output after JSON serialization. Runtime undefined properties are omitted. Group and region array order is significant.",
+    "rendering": "Map cards use expected group order; context inventory and structure drawer lists have the distinct order documented in D3.2.1.",
+    "execution": "NOT_RUN refers to UI/browser fixture execution; local source-helper evidence, if run, is separate and does not update this field."
+  },
+  "cases": [
+    {
+      "id": "inventory-before-structure",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "sheets": [
+            "B",
+            "A"
+          ]
+        },
+        "structure": [
+          {
+            "sheet": "A",
+            "name": "A1"
+          },
+          {
+            "sheet": "C",
+            "name": "C1"
+          },
+          {
+            "sheet": "B",
+            "name": "B1"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "name": "B",
+          "description": "",
+          "sheet": "B",
+          "id": "sheet:B",
+          "regions": [
+            {
+              "sheet": "B",
+              "name": "B1"
+            }
+          ]
+        },
+        {
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "id": "sheet:A",
+          "regions": [
+            {
+              "sheet": "A",
+              "name": "A1"
+            }
+          ]
+        },
+        {
+          "id": "sheet:C",
+          "name": "C",
+          "description": "",
+          "sheet": "C",
+          "regions": [
+            {
+              "sheet": "C",
+              "name": "C1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duplicate-inventory-overwrite-in-place",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "sheets": [
+            {
+              "sheet": "B",
+              "title": "B first"
+            },
+            {
+              "sheet": "A",
+              "title": "A"
+            },
+            {
+              "sheet": "B",
+              "title": "B last"
+            }
+          ]
+        },
+        "structure": []
+      },
+      "expected": [
+        {
+          "name": "B last",
+          "description": "",
+          "sheet": "B",
+          "id": "sheet:B",
+          "regions": []
+        },
+        {
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "id": "sheet:A",
+          "regions": []
+        }
+      ]
+    },
+    {
+      "id": "direct-array-sheet-is-not-projected",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": [
+          {
+            "sheet": "A",
+            "name": "A inventory"
+          },
+          {
+            "sheet": "B",
+            "name": "B inventory"
+          }
+        ],
+        "structure": [
+          {
+            "sheet": "A",
+            "name": "A structure"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "name": "B inventory",
+          "description": "",
+          "id": "document",
+          "regions": []
+        },
+        {
+          "id": "sheet:A",
+          "name": "A",
+          "description": "",
+          "sheet": "A",
+          "regions": [
+            {
+              "sheet": "A",
+              "name": "A structure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-order-and-fallback-name",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "pages": [
+            {
+              "page": 2,
+              "rows": 3,
+              "columns": 4,
+              "range": "R",
+              "regions": [
+                {}
+              ],
+              "mergedRangeCount": 2,
+              "state": "hidden",
+              "rotation": 90
+            },
+            {
+              "page": 1
+            }
+          ]
+        },
+        "structure": [
+          {
+            "page": 3,
+            "name": "tail"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "name": "2페이지",
+          "description": "3행 · 4열 · R · 1개 영역 · 병합 2곳 · 숨김 시트 · 회전 90°",
+          "page": 2,
+          "range": "R",
+          "id": "page:2",
+          "regions": []
+        },
+        {
+          "name": "1페이지",
+          "description": "",
+          "page": 1,
+          "id": "page:1",
+          "regions": []
+        },
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "description": "",
+          "page": 3,
+          "regions": [
+            {
+              "page": 3,
+              "name": "tail"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-wrapper-description-only-with-transcription",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "transcription": {},
+        "inventory": {
+          "pages": [
+            {
+              "page": 2,
+              "rows": 3
+            }
+          ]
+        },
+        "structure": [
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2쪽",
+            "description": "요약"
+          },
+          {
+            "kind": "table",
+            "page": 2,
+            "name": "표"
+          },
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2페이지",
+            "description": "카드 보존"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "name": "2페이지",
+          "description": "3행 · 요약",
+          "page": 2,
+          "id": "page:2",
+          "regions": [
+            {
+              "kind": "table",
+              "page": 2,
+              "name": "표"
+            },
+            {
+              "kind": "text",
+              "page": 2,
+              "name": "2페이지",
+              "description": "카드 보존"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "page-wrapper-without-transcription-remains-region",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "pages": [
+            {
+              "page": 2
+            }
+          ]
+        },
+        "structure": [
+          {
+            "kind": "text",
+            "page": 2,
+            "name": "2쪽",
+            "description": "요약"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "name": "2페이지",
+          "description": "",
+          "page": 2,
+          "id": "page:2",
+          "regions": [
+            {
+              "kind": "text",
+              "page": 2,
+              "name": "2쪽",
+              "description": "요약"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empty-first-sheet-array-precedes-pages",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "sheets": [],
+          "worksheets": [
+            "ignored"
+          ],
+          "pages": [
+            {
+              "page": 1
+            }
+          ]
+        },
+        "structure": [
+          {
+            "page": 3,
+            "name": "tail"
+          }
+        ]
+      },
+      "expected": [
+        {
+          "id": "page:3",
+          "name": "3페이지",
+          "description": "",
+          "page": 3,
+          "regions": [
+            {
+              "page": 3,
+              "name": "tail"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nullish-aliases-empty-name-and-description-order",
+      "executionStatus": "NOT_RUN",
+      "input": {
+        "inventory": {
+          "sheets": null,
+          "worksheets": [
+            {
+              "sheet": "S",
+              "title": "",
+              "name": "Ignored",
+              "rows": 0,
+              "rowCount": 99,
+              "columnCount": 4,
+              "usedRange": "A1:D4",
+              "regions": [
+                {},
+                {}
+              ],
+              "mergedRangeCount": 2,
+              "state": "veryHidden",
+              "rotation": -90
+            }
+          ]
+        },
+        "structure": []
+      },
+      "expected": [
+        {
+          "name": "영역 1",
+          "description": "0행 · 4열 · A1:D4 · 2개 영역 · 병합 2곳 · 숨김 시트 · 회전 -90°",
+          "sheet": "S",
+          "range": "A1:D4",
+          "id": "sheet:S",
+          "regions": []
+        }
+      ]
+    }
+  ]
+}

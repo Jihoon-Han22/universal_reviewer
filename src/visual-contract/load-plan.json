@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "catalogSha256": "47e76196ad50d2a2f9e42b09e7842b98f77f46850af917ad2869bb76ad1a3527",
+  "eager": [
+    "src/components/golden-picker.css",
+    "src/components/criteria-confirmation.css",
+    "src/components/document-analysis.css",
+    "src/components/sandbox-activity-dock.css",
+    "src/components/workroom-current-operation.css",
+    "src/styles.css",
+    "src/cinematic.css",
+    "src/presentation.css",
+    "src/motion-system.css",
+    "src/workflow.css",
+    "src/workflow-polish.css",
+    "src/workspace-colors.css",
+    "src/components/charcoal-surfaces.css",
+    "src/components/charcoal-dialogs.css",
+    "src/components/charcoal-workroom.css"
+  ],
+  "dynamic": [
+    {
+      "id": "module:src/App.tsx:dynamic:14",
+      "importer": "module:src/App.tsx",
+      "line": 14,
+      "target": "module:src/components/DocumentPreview.tsx",
+      "newCssSourceIds": [
+        "css:src/components/document-preview.css"
+      ],
+      "sourcePaths": [
+        "src/components/document-preview.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:15",
+      "importer": "module:src/App.tsx",
+      "line": 15,
+      "target": "module:src/components/FileReviewResults.tsx",
+      "newCssSourceIds": [
+        "css:src/components/document-preview.css",
+        "css:src/components/file-review-results.css"
+      ],
+      "sourcePaths": [
+        "src/components/document-preview.css",
+        "src/components/file-review-results.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:16",
+      "importer": "module:src/App.tsx",
+      "line": 16,
+      "target": "module:src/components/ResultsVisuals.tsx",
+      "newCssSourceIds": [
+        "css:src/components/results-visuals.css"
+      ],
+      "sourcePaths": [
+        "src/components/results-visuals.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:17",
+      "importer": "module:src/App.tsx",
+      "line": 17,
+      "target": "module:src/components/DashboardModal.tsx",
+      "newCssSourceIds": [
+        "css:src/components/dashboard-modal.css"
+      ],
+      "sourcePaths": [
+        "src/components/dashboard-modal.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:20",
+      "importer": "module:src/App.tsx",
+      "line": 20,
+      "target": "module:src/components/LedgerModal.tsx",
+      "newCssSourceIds": [
+        "css:src/components/ledger-modal.css"
+      ],
+      "sourcePaths": [
+        "src/components/ledger-modal.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:21",
+      "importer": "module:src/App.tsx",
+      "line": 21,
+      "target": "module:src/components/LandingIntro.tsx",
+      "newCssSourceIds": [
+        "css:src/components/review-theater.css",
+        "css:src/components/landing-intro.css"
+      ],
+      "sourcePaths": [
+        "src/components/review-theater.css",
+        "src/components/landing-intro.css"
+      ]
+    },
+    {
+      "id": "module:src/App.tsx:dynamic:22",
+      "importer": "module:src/App.tsx",
+      "line": 22,
+      "target": "module:src/components/LiveReviewFlow.tsx",
+      "newCssSourceIds": [
+        "css:src/components/review-theater.css",
+        "css:src/components/live-review-flow.css"
+      ],
+      "sourcePaths": [
+        "src/components/review-theater.css",
+        "src/components/live-review-flow.css"
+      ]
+    },
+    {
+      "id": "module:src/components/CriteriaConfirmation.tsx:dynamic:10",
+      "importer": "module:src/components/CriteriaConfirmation.tsx",
+      "line": 10,
+      "target": "module:src/components/DocumentPreview.tsx",
+      "newCssSourceIds": [
+        "css:src/components/document-preview.css"
+      ],
+      "sourcePaths": [
+        "src/components/document-preview.css"
+      ]
+    },
+    {
+      "id": "module:src/components/SandboxActivityDock.tsx:dynamic:11",
+      "importer": "module:src/components/SandboxActivityDock.tsx",
+      "line": 11,
+      "target": "module:src/components/SandboxWorkroomScene.tsx",
+      "newCssSourceIds": [
+        "css:src/components/sandbox-work-scene.css",
+        "css:src/components/sandbox-workroom-scene.css"
+      ],
+      "sourcePaths": [
+        "src/components/sandbox-work-scene.css",
+        "src/components/sandbox-workroom-scene.css"
+      ]
+    },
+    {
+      "id": "module:src/components/DashboardModal.tsx:dynamic:17",
+      "importer": "module:src/components/DashboardModal.tsx",
+      "line": 17,
+      "target": "module:src/components/DashboardEvidence.tsx",
+      "newCssSourceIds": [
+        "css:src/components/document-preview.css",
+        "css:src/components/dashboard-evidence.css"
+      ],
+      "sourcePaths": [
+        "src/components/document-preview.css",
+        "src/components/dashboard-evidence.css"
+      ]
+    }
+  ],
+  "isolatedDocumentStyles": [
+    {
+      "sourceId": "css:src/components/DashboardModal.tsx#previewReducedMotionCss",
+      "outputPath": "embedded/previewReducedMotionCss.css",
+      "scope": "dashboard-preview-iframe",
+      "activation": "Append to iframe head when app motion OFF OR preview.job.design.motion is none. Also add trace-reduced-motion meta."
+    },
+    {
+      "sourceId": "css:src/components/DashboardModal.tsx#previewMotionCss",
+      "outputPath": "embedded/previewMotionCss.css",
+      "scope": "dashboard-preview-iframe",
+      "activation": "Append to iframe head only when app motion ON AND preview.job.design is absent (older cached preview). A present design owns motion. Internal media conditions still apply."
+    }
+  ],
+  "fontImport": "Original remote @import is preserved for semantic identity. In an offline browser intercept only that URL with the bundled ui/fonts/fonts.css; see VISUAL-CONTRACT.md.",
+  "sharedCss": "Insert each CSS source only once. Dynamic source order is per activation; do not concatenate all lazy styles into eager.css."
+}

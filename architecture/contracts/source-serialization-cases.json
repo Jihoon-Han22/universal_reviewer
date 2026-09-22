@@ -1,0 +1,534 @@
+{
+  "profile": "CURRENT_REPRODUCTION",
+  "description": "Original profileSource exact output and trusted Python reader equality vectors. Mixed-format extra-record fixture tests the serialization port, not an uploaded document claim.",
+  "units": {
+    "sourceChars": "JavaScript UTF-16 code units (String.length)",
+    "sourceUtf8Bytes": "UTF-8 bytes",
+    "hashes": "SHA-256 of UTF-8 encoded source/retained source; no BOM",
+    "readerTextChars": "Python len(str), Unicode code points; ASCII x recipes make code units and code points equal"
+  },
+  "serialization": {
+    "json": "ECMAScript JSON.stringify(value), no replacer and no indentation; retain object property enumeration order and input array order",
+    "recordJoin": "\n",
+    "addsTrailingNewline": false
+  },
+  "cases": [
+    {
+      "id": "SRC-TEXT-LINES-ORDER",
+      "input": {
+        "kind": "txt",
+        "inventory": {
+          "z": 2,
+          "a": 1
+        },
+        "coverage": {
+          "complete": true
+        },
+        "text": "A\r\nB C\n"
+      },
+      "expectedSource": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"z\":2,\"a\":1}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: A\nL2: B\nL3: C",
+      "expected": {
+        "sourceChars": 166,
+        "sourceUtf8Bytes": 166,
+        "sourceSha256Utf8": "6b53d71c6c042932a9a34b84f5aa0a271fdefaf7d17b8325f39a733aa8f99349",
+        "contextChars": 166,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "6b53d71c6c042932a9a34b84f5aa0a271fdefaf7d17b8325f39a733aa8f99349"
+      }
+    },
+    {
+      "id": "SRC-SHEET-CELL-FORMULA",
+      "input": {
+        "kind": "xlsx",
+        "inventory": {},
+        "coverage": {
+          "complete": true
+        },
+        "sheets": [
+          {
+            "name": "품질",
+            "state": "hidden",
+            "maxRow": 2,
+            "maxColumn": 3,
+            "mergedRanges": [
+              "B1:C1"
+            ],
+            "hiddenRows": [
+              2
+            ],
+            "hiddenColumns": [],
+            "autoFilter": null,
+            "rows": [
+              {
+                "row": 2,
+                "cells": [
+                  {
+                    "cell": "B2",
+                    "value": false,
+                    "comment": "메모",
+                    "numberFormat": "0",
+                    "hyperlink": "https://example.invalid/x"
+                  },
+                  {
+                    "cell": "A2",
+                    "value": null
+                  },
+                  {
+                    "cell": "C2",
+                    "formula": "=A1",
+                    "cachedValue": ""
+                  }
+                ]
+              },
+              {
+                "row": 1,
+                "cells": [
+                  {
+                    "cell": "A1",
+                    "formula": "=1-1",
+                    "cachedValue": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expectedSource": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {}\nREAD_COVERAGE: {\"complete\":true}\nSHEET \"품질\" state=hidden size=2x3\nMERGED_RANGES [\"B1:C1\"]\nHIDDEN_ROWS [2] HIDDEN_COLUMNS []\nSHEET_METADATA {\"autoFilter\":null}\nXLSX_ROW 2 | \"품질\"!B2: \"false\" COMMENT: \"메모\" FORMAT: \"0\" LINK_DATA_NOT_FETCHED: \"https://example.invalid/x\" | \"품질\"!A2: \"\" | \"품질\"!C2: \"[계산 결과 없음: 수식 재계산 필요]\" [FORMULA \"=A1\"; cached, not recalculated]\nXLSX_ROW 1 | \"품질\"!A1: \"0\" [FORMULA \"=1-1\"; cached, not recalculated]",
+      "expected": {
+        "sourceChars": 495,
+        "sourceUtf8Bytes": 545,
+        "sourceSha256Utf8": "812b332c76770a8bf81ffa9b9110de320faeba958dea0845316c2d5cc38ff4c8",
+        "contextChars": 495,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "812b332c76770a8bf81ffa9b9110de320faeba958dea0845316c2d5cc38ff4c8"
+      }
+    },
+    {
+      "id": "SRC-EXTRA-RECORDS-ORDER",
+      "input": {
+        "kind": "pdf",
+        "inventory": {
+          "path": "inventory-path-retained-here"
+        },
+        "coverage": {},
+        "pages": [
+          {
+            "page": 2,
+            "width": 0,
+            "height": 842,
+            "rotation": 0,
+            "text": "actual\ntext",
+            "tables": [
+              {
+                "b": 2,
+                "a": 1
+              }
+            ],
+            "blocks": [
+              {
+                "text": "b",
+                "type": "text"
+              }
+            ]
+          }
+        ],
+        "blocks": [
+          {
+            "index": 3,
+            "kind": "paragraph",
+            "text": "Word body"
+          }
+        ],
+        "sections": [
+          {
+            "orientation": "landscape"
+          }
+        ],
+        "supplementaryText": [
+          {
+            "part": "comments",
+            "text": "note"
+          }
+        ],
+        "text": "tail",
+        "rows": [
+          {
+            "row": 9,
+            "cells": [
+              0,
+              false,
+              null,
+              "x"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "path": "/home/user/document-image-1.png",
+            "mime": "image/png",
+            "page": 2,
+            "description": "img"
+          }
+        ],
+        "warnings": [
+          "z",
+          "a",
+          "z"
+        ]
+      },
+      "expectedSource": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"path\":\"inventory-path-retained-here\"}\nREAD_COVERAGE: {}\nPAGE 2 size=?x842 rotation=0\nactual\ntext\nPAGE 2 TABLE {\"b\":2,\"a\":1}\nPAGE 2 BLOCK {\"text\":\"b\",\"type\":\"text\"}\nBLOCK 3 {\"index\":3,\"kind\":\"paragraph\",\"text\":\"Word body\"}\nDOCUMENT_SECTIONS [{\"orientation\":\"landscape\"}]\nSUPPLEMENTARY_TEXT {\"part\":\"comments\",\"text\":\"note\"}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: tail\nCSV_ROW 9 | A9: 0 | B9: false | C9: null | D9: \"x\"\nEMBEDDED_IMAGE {\"mime\":\"image/png\",\"page\":2,\"description\":\"img\"}\nREADER_WARNINGS [\"z\",\"a\",\"z\"]",
+      "expected": {
+        "sourceChars": 581,
+        "sourceUtf8Bytes": 581,
+        "sourceSha256Utf8": "5b4b31d0a01ab282aa7672040cb3d28f2ca7d54249286ca67989e99e05bf5578",
+        "contextChars": 581,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "5b4b31d0a01ab282aa7672040cb3d28f2ca7d54249286ca67989e99e05bf5578"
+      }
+    },
+    {
+      "id": "SRC-CSV-SHEET-ROW",
+      "input": {
+        "kind": "csv",
+        "sheets": [
+          {
+            "name": "CSV",
+            "state": "visible",
+            "maxRow": 1,
+            "maxColumn": 1,
+            "rows": [
+              {
+                "row": 1,
+                "cells": [
+                  {
+                    "cell": "A1",
+                    "value": 7
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "expectedSource": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {}\nREAD_COVERAGE: {}\nSHEET \"CSV\" state=visible size=1x1\nMERGED_RANGES []\nHIDDEN_ROWS [] HIDDEN_COLUMNS []\nSHEET_METADATA {}\nCSV_ROW 1 | \"CSV\"!A1: \"7\"",
+      "expected": {
+        "sourceChars": 216,
+        "sourceUtf8Bytes": 216,
+        "sourceSha256Utf8": "1f22128aa45c758eae135c8d250821574d8c908b44f95d09ff4d7185deb40adf",
+        "contextChars": 216,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "1f22128aa45c758eae135c8d250821574d8c908b44f95d09ff4d7185deb40adf"
+      }
+    }
+  ],
+  "boundaryCases": [
+    {
+      "id": "SRC-BOUNDARY-149999",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 149839
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 149839
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 149999,
+        "sourceUtf8Bytes": 149999,
+        "sourceSha256Utf8": "51c49a5ef8d3e560a3ab344cd1eb7319ef890aa64981ad177ada2a8f9b354f20",
+        "contextChars": 149999,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "51c49a5ef8d3e560a3ab344cd1eb7319ef890aa64981ad177ada2a8f9b354f20"
+      }
+    },
+    {
+      "id": "SRC-BOUNDARY-150000",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 149840
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 149840
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 150000,
+        "sourceUtf8Bytes": 150000,
+        "sourceSha256Utf8": "2e588920f398a93895e8c7dbf14e2433bf9d4dddb2e923f297d0c64f877f0ad3",
+        "contextChars": 150000,
+        "contextSegmentsTotal": 1,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "2e588920f398a93895e8c7dbf14e2433bf9d4dddb2e923f297d0c64f877f0ad3"
+      }
+    },
+    {
+      "id": "SRC-BOUNDARY-150001",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 149841
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 149841
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 150001,
+        "sourceUtf8Bytes": 150001,
+        "sourceSha256Utf8": "e30be535ebc2533f33058827e651dd3534dad4c91a4bec48c9e9547fbc760ca0",
+        "contextChars": 150001,
+        "contextSegmentsTotal": 2,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "e30be535ebc2533f33058827e651dd3534dad4c91a4bec48c9e9547fbc760ca0"
+      }
+    },
+    {
+      "id": "SRC-BOUNDARY-1199999",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 1199839
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 1199839
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 1199999,
+        "sourceUtf8Bytes": 1199999,
+        "sourceSha256Utf8": "464098b937939918c3c38cacf1742cca820a554ebbeb6e08d3d3194512148989",
+        "contextChars": 1199999,
+        "contextSegmentsTotal": 8,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "464098b937939918c3c38cacf1742cca820a554ebbeb6e08d3d3194512148989"
+      }
+    },
+    {
+      "id": "SRC-BOUNDARY-1200000",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 1199840
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 1199840
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 1200000,
+        "sourceUtf8Bytes": 1200000,
+        "sourceSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f",
+        "contextChars": 1200000,
+        "contextSegmentsTotal": 8,
+        "sourceTruncated": false,
+        "retainedSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f"
+      }
+    },
+    {
+      "id": "SRC-BOUNDARY-1200001",
+      "inputRecipe": {
+        "baseProfile": {
+          "kind": "txt",
+          "inventory": {
+            "encoding": "utf-8"
+          },
+          "coverage": {
+            "complete": true
+          }
+        },
+        "text": {
+          "repeat": "x",
+          "count": 1199841
+        }
+      },
+      "expectedSourceRecipe": {
+        "prefix": "SANDBOX_READER: original bytes physically opened in E2B\nINVENTORY: {\"encoding\":\"utf-8\"}\nREAD_COVERAGE: {\"complete\":true}\nFULL_TEXT_WITH_SOURCE_LINE_NUMBERS\nL1: ",
+        "suffix": {
+          "repeat": "x",
+          "count": 1199841
+        },
+        "trailingNewline": false
+      },
+      "expected": {
+        "sourceChars": 1200001,
+        "sourceUtf8Bytes": 1200001,
+        "sourceSha256Utf8": "e3c9f790a4422d74fc7247d8ea86fdfe99fae525f6beaae38f46ed95e4d5af0e",
+        "contextChars": 1200000,
+        "contextSegmentsTotal": 8,
+        "sourceTruncated": true,
+        "retainedSha256Utf8": "e8072a6aa323dbbadf75f94c8ca0ae4ba059dcac66217b2a10ad9e3ffad7592f"
+      }
+    }
+  ],
+  "readerTextBoundaryCases": [
+    {
+      "id": "READER-TEXT-1499999",
+      "inputRecipe": {
+        "kind": "txt",
+        "bytes": {
+          "repeatAscii": "x",
+          "count": 1499999
+        }
+      },
+      "expected": {
+        "inputChars": 1499999,
+        "retainedChars": 1499999,
+        "status": "ready",
+        "coverage": {
+          "complete": true,
+          "unitsTotal": 1,
+          "unitsRead": 1,
+          "cellsTotal": 0,
+          "cellsRead": 0,
+          "textChars": 1499999,
+          "truncated": false,
+          "truncatedReasons": []
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "READER-TEXT-1500000",
+      "inputRecipe": {
+        "kind": "txt",
+        "bytes": {
+          "repeatAscii": "x",
+          "count": 1500000
+        }
+      },
+      "expected": {
+        "inputChars": 1500000,
+        "retainedChars": 1500000,
+        "status": "ready",
+        "coverage": {
+          "complete": true,
+          "unitsTotal": 1,
+          "unitsRead": 1,
+          "cellsTotal": 0,
+          "cellsRead": 0,
+          "textChars": 1500000,
+          "truncated": false,
+          "truncatedReasons": []
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "READER-TEXT-1500001",
+      "inputRecipe": {
+        "kind": "txt",
+        "bytes": {
+          "repeatAscii": "x",
+          "count": 1500001
+        }
+      },
+      "expected": {
+        "inputChars": 1500001,
+        "retainedChars": 1500000,
+        "status": "partial",
+        "coverage": {
+          "complete": false,
+          "unitsTotal": 1,
+          "unitsRead": 1,
+          "cellsTotal": 0,
+          "cellsRead": 0,
+          "textChars": 1500000,
+          "truncated": true,
+          "truncatedReasons": [
+            "Text extraction limit (1500000 characters) reached."
+          ]
+        },
+        "warnings": [
+          "Text extraction limit (1500000 characters) reached."
+        ]
+      }
+    }
+  ],
+  "execution": {
+    "command": "node .cache/architecture-final-challenge/build-source-cases.mjs; python -B .cache/architecture-final-challenge/core-reader-probe.py",
+    "scope": "Original deterministic functions only, manually specified expected source strings independently asserted against the original function. Real Python Reader.read for ASCII files. No provider or E2B execution, no .env reading.",
+    "implementationUnderTest": [
+      "server/sandbox-documents.mjs:profileSource",
+      "server/sandbox-document-reader.py:Reader.read"
+    ],
+    "result": "PASS: 4 exact source strings, 6 source length recipes, 3 observed reader equality cases"
+  }
+}

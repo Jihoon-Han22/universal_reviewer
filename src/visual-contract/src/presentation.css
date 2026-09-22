@@ -1,0 +1,1315 @@
+.criteria-confirmation-host {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+}
+.criteria-confirmation-host[hidden] {
+  display: none;
+}
+.criteria-return {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.criteria-return button {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c5f65d;
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+}
+.view-tabs .attention {
+  color: #eec678;
+}
+.view-tabs .analysis-attention-count {
+  color: #f5c763;
+  background: #f5c76318;
+  border: 1px solid #f5c76335;
+}
+.presentation.scene-analysis .live-caption, .presentation.scene-criteria .live-caption {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.presentation .golden-open {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  margin: 0 0 18px;
+  padding: 10px 11px;
+  border: 1px solid #334b59;
+  border-radius: 8px;
+  background: #14232d;
+  color: #c1d6e0;
+  text-align: left;
+  font-size: 12px;
+}
+.presentation .golden-open:hover:not(:disabled) {
+  background: #203541;
+  border-color: #5b8292;
+  color: #ebf7fa;
+}
+.presentation .golden-open > svg {
+  color: #85c6d0;
+}
+.presentation .extracted-fields {
+  flex-shrink: 0;
+}
+.presentation.scene-results .workspace-intro h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.presentation.scene-results .workspace-intro p {
+  display: none;
+}
+.presentation.scene-results .workspace-intro {
+  align-items: center;
+}
+.presentation .export-popover > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 39px;
+  padding: 10px 13px;
+  color: #e1eaee;
+  background: transparent;
+  border-top: 1px solid #344651;
+  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.presentation .export-popover > button:hover:not(:disabled) {
+  color: var(--accent);
+  background: #c5f65d10;
+}
+@media (min-width: 681px) {
+  .app-shell.presentation {
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-rows: 64px minmax(0, 1fr);
+    overflow: hidden;
+  }
+  .presentation .app-header {
+    grid-row: 1;
+    height: 64px;
+    min-height: 64px;
+    position: relative;
+  }
+  .presentation .input-sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    padding: 20px 16px;
+    scrollbar-gutter: stable;
+  }
+  .presentation .input-sidebar > * {
+    flex-shrink: 0;
+  }
+  .presentation.has-documents .workspace-nav {
+    display: none;
+  }
+  .presentation.has-documents .workspace-name {
+    padding-bottom: 12px;
+  }
+  .presentation.has-documents .golden-open {
+    min-height: 34px;
+    margin-bottom: 14px;
+    padding-block: 8px;
+  }
+  .presentation.has-documents .sidebar-section {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .presentation.has-documents .sidebar-title {
+    margin-bottom: 9px;
+  }
+  .presentation.has-documents .upload-zone > button {
+    display: grid;
+    grid-template-columns: 27px minmax(0, 1fr);
+    gap: 4px 8px;
+    padding: 10px 8px;
+    text-align: left;
+  }
+  .presentation.has-documents .upload-icon {
+    grid-row: 1 / 3;
+    width: 27px;
+    height: 31px;
+    margin: 0;
+    border-radius: 7px;
+  }
+  .presentation.has-documents .upload-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .presentation.has-documents .upload-zone strong {
+    font-size: 11px;
+  }
+  .presentation.has-documents .upload-zone button > span:last-child {
+    font-size: 8px;
+    line-height: 1.4;
+  }
+  .presentation.has-documents .upload-footnote {
+    margin-top: 7px;
+    font-size: 9px;
+  }
+  .presentation.has-documents .criteria-label {
+    margin-top: 9px;
+  }
+  .presentation.has-documents .criteria-section textarea {
+    min-height: 88px;
+    height: 88px;
+    padding: 9px 10px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .presentation.has-documents .criteria-upload {
+    padding-top: 9px;
+  }
+  .presentation .workspace-name {
+    padding-bottom: 17px;
+  }
+  .presentation .workspace-nav {
+    margin-bottom: 20px;
+  }
+  .presentation .sidebar-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  .presentation .sidebar-bottom {
+    padding-top: 10px;
+  }
+  .presentation .main-content {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100dvh - 64px);
+    min-height: 0;
+    min-width: 0;
+    padding: 19px 24px 16px;
+    overflow: hidden;
+  }
+  .presentation .workspace-intro {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  .presentation .workspace-intro > div:first-child {
+    min-width: 0;
+  }
+  .presentation.has-documents .workspace-intro h1 {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -.65px;
+  }
+  .presentation.has-documents .workspace-intro p {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+  .presentation.has-documents .breadcrumb {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .presentation .intro-actions {
+    width: auto;
+    padding: 0;
+    gap: 7px;
+  }
+  .presentation .intro-actions .button {
+    min-height: 37px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+  .presentation .run-button svg:last-child {
+    margin-left: 3px;
+  }
+  .presentation .export-popover {
+    min-width: 210px;
+    z-index: 30;
+  }
+  .presentation .export-popover > a,
+  .presentation .export-popover > button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 39px;
+    padding: 10px 13px;
+    border-radius: 4px;
+    background: transparent;
+    color: #e1eaee;
+    text-align: left;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .presentation .export-popover > button {
+    margin-top: 4px;
+    border-top: 1px solid #344651;
+    border-radius: 0 0 4px 4px;
+  }
+  .presentation .export-popover > a:hover,
+  .presentation .export-popover > button:hover:not(:disabled) {
+    color: var(--accent);
+    background: #c5f65d10;
+  }
+  .presentation .pipeline, .presentation .page-footer, .presentation .starter-strip {
+    display: none;
+  }
+  .presentation .ready-note, .presentation .changed-note {
+    flex: 0 0 auto;
+    min-height: 29px;
+    margin: 0 0 8px;
+    padding-block: 5px;
+    font-size: 11px;
+  }
+  .presentation .changed-note {
+    padding: 7px 12px;
+  }
+  .presentation .ready-note button {
+    font-size: 11px;
+  }
+  .presentation .review-toolbar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: 42px;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #263944;
+  }
+  .presentation .view-tabs {
+    gap: 6px;
+  }
+  .presentation .view-tabs button {
+    gap: 7px;
+    padding: 8px 11px;
+    border-radius: 7px;
+    color: #a6bbc8;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .presentation .view-tabs button.active {
+    color: var(--accent);
+    background: #c5f65d10;
+    box-shadow: inset 0 0 0 1px #c5f65d20;
+  }
+  .presentation .view-tabs button:not(.active):hover:not(:disabled) {
+    background: #182a35;
+    color: #e6f0f4;
+  }
+  .presentation .view-tabs button > span {
+    font-size: 10px;
+  }
+  .presentation .live-caption {
+    align-self: auto;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .presentation .error-banner {
+    flex: 0 0 auto;
+    max-height: 86px;
+    overflow: auto;
+    margin: 0 0 10px;
+    padding: 9px 13px;
+    font-size: 12px;
+    overscroll-behavior: contain;
+  }
+  .presentation .confirmation-banner {
+    flex: 0 1 auto;
+    max-height: 210px;
+    min-height: 100px;
+    overflow: auto;
+    margin-bottom: 10px;
+    padding: 14px 17px;
+  }
+  .presentation .confirmation-banner ul {
+    margin-block: 8px;
+  }
+  .presentation .confirmation-actions {
+    margin-top: 9px;
+  }
+  .presentation .confirmation-actions .button {
+    min-height: 34px;
+    padding-block: 8px;
+  }
+  .presentation-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .presentation-content > .workbench,
+  .presentation-content > .review-theater {
+    flex: 1 1 0;
+    min-height: 0;
+    height: 100%;
+    margin: 0;
+  }
+  .presentation .workbench {
+    min-height: 0;
+    max-height: 100%;
+    overflow: hidden;
+  }
+  .presentation .review-theater {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    border-radius: 13px;
+  }
+  .presentation .theater-header {
+    height: 43px;
+    min-height: 43px;
+    flex: 0 0 43px;
+    padding-inline: 20px;
+  }
+  .presentation .theater-scene {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+  }
+  .presentation .theater-connections {
+    top: 50%;
+    bottom: auto;
+    height: 300px;
+    transform: translateY(-50%);
+  }
+  .presentation .theater-source {
+    top: 50%;
+    margin-top: -132px;
+  }
+  .presentation .theater-engine {
+    top: 50%;
+    margin-top: -114px;
+  }
+  .presentation .theater-lanes {
+    top: 50%;
+    bottom: auto;
+    margin-top: -134px;
+    height: 268px;
+  }
+  .presentation .theater-footer {
+    height: 36px;
+    min-height: 36px;
+    flex: 0 0 36px;
+    padding-inline: 20px;
+  }
+  .presentation .theater-footer > p {
+    font-size: 10px;
+  }
+  .presentation .outcome-strip {
+    flex: 0 0 auto;
+    gap: 12px;
+    min-height: 41px;
+    padding: 8px 13px;
+    margin: 0 0 10px;
+  }
+  .presentation .outcome-strip > div {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .presentation .outcome-strip strong {
+    font-size: 13px;
+  }
+  .presentation .outcome-strip span {
+    font-size: 11px;
+    margin: 0;
+  }
+  .presentation .outcome-strip button {
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .presentation .run-footer {
+    flex: 0 0 auto;
+    min-height: 35px;
+    margin-top: 9px;
+    padding: 6px 1px 0;
+    gap: 16px;
+    border-top: 1px solid #263944;
+    flex-wrap: nowrap;
+  }
+  .presentation .result-counts {
+    gap: 19px;
+  }
+  .presentation .result-counts button {
+    font-size: 11px;
+    padding-block: 3px;
+  }
+  .presentation .result-counts b {
+    font-size: 14px;
+  }
+  .presentation .run-footnote {
+    font-size: 10px;
+  }
+  .presentation .run-footer .text-action {
+    margin-left: auto;
+    font-size: 11px;
+  }
+  .presentation .workbench.workspace.detail-workbench {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 16px;
+    height: 100%;
+  }
+  .presentation .source-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .presentation .panel-title {
+    flex: 0 0 auto;
+    padding: 13px 16px;
+  }
+  .presentation .panel-title h2 {
+    font-size: 14px;
+  }
+  .presentation .section-kicker {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  .presentation .source-document-tabs {
+    flex: 0 0 auto;
+    padding: 7px 9px;
+  }
+  .presentation .source-document-tabs button {
+    padding-block: 4px;
+    font-size: 11px;
+  }
+  .presentation .source-panel > .doc-preview {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    border: 0;
+  }
+  .presentation .source-panel .doc-preview__toolbar {
+    min-height: 38px;
+    flex: 0 0 38px;
+    padding-inline: 12px;
+  }
+  .presentation .source-panel .doc-preview__filename {
+    font-size: 11px;
+  }
+  .presentation .source-panel .doc-preview__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .presentation .source-panel .doc-preview__viewport {
+    flex: 1 1 0;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+  }
+  .presentation .source-panel .doc-preview__viewport--pdf {
+    padding-block: 16px;
+  }
+  .presentation .source-panel .doc-preview__page-controls {
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 6px 12px;
+  }
+  .presentation .source-panel .doc-preview__sheets {
+    flex: 0 0 auto;
+  }
+  .presentation .source-panel .doc-preview__truncated,
+  .presentation .source-panel .doc-preview__warning {
+    flex: 0 0 auto;
+    max-height: 55px;
+    overflow: auto;
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+  .presentation .source-panel .doc-preview__evidence {
+    flex: 0 0 auto;
+    max-height: 112px;
+    overflow: auto;
+    padding: 10px 13px;
+  }
+  .presentation .source-panel .doc-preview__evidence-heading {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  .presentation .source-panel .doc-preview__evidence-item p {
+    font-size: 12px;
+  }
+  .presentation .source-panel .doc-preview--empty {
+    min-height: 0;
+  }
+  .presentation .source-panel .preview-loading {
+    min-height: 0;
+    flex: 1;
+  }
+  .presentation .review-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    gap: 12px;
+  }
+  .presentation .review-right > .items-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .presentation .item-filters {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+  }
+  .presentation .item-filters button {
+    padding-block: 5px;
+    font-size: 11px;
+  }
+  .presentation .review-right .item-list {
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .presentation .review-right .item-list:empty {
+    flex: 0;
+  }
+  .presentation .extraction-empty {
+    min-height: 0;
+    flex: 1 1 0;
+    padding: 24px 18px;
+    overflow: auto;
+    justify-content: center;
+  }
+  .presentation .extraction-empty .extraction-skeleton {
+    margin-top: 18px;
+  }
+  .presentation .review-right > .inspector {
+    min-height: 0;
+    max-height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .presentation .review-right.has-selection > .inspector {
+    flex: 1 1 62%;
+    order: -1;
+  }
+  .presentation .review-right.has-selection > .items-panel {
+    flex: 1 1 38%;
+    min-height: 144px;
+  }
+  .presentation .review-right:has(> .extracted-fields[open]) {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .presentation .review-right:has(> .extracted-fields[open]) > .inspector {
+    flex: 0 0 auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .presentation .review-right:has(> .extracted-fields[open]) > .items-panel {
+    flex: 0 0 270px;
+    min-height: 180px;
+  }
+  .presentation .inspector-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: 12px 16px;
+  }
+  .presentation .inspector-header > span {
+    font-size: 12px;
+  }
+  .presentation .evidence-flow {
+    padding: 16px 18px;
+  }
+  .presentation .evidence-value strong {
+    font-size: 29px;
+  }
+  .presentation .evidence-connector {
+    margin-block: 9px;
+  }
+  .presentation .criterion-match {
+    padding: 11px 12px;
+  }
+  .presentation .decision-line {
+    margin-top: 13px;
+  }
+  .presentation .decision-reason {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .presentation .workbench.detail-workbench.results {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .presentation .results-workbench {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .presentation .results-overview {
+    flex: 0 0 auto;
+    grid-template-columns: minmax(120px, .75fr) minmax(160px, 1fr) minmax(220px, 1.1fr);
+    padding: 16px 19px;
+    gap: 22px;
+    margin: 0 0 12px;
+  }
+  .presentation .result-total > span {
+    font-size: 11px;
+  }
+  .presentation .result-total strong {
+    display: inline-block;
+    font-size: 35px;
+    line-height: 1.1;
+    margin: 5px 8px 0 0;
+  }
+  .presentation .result-total strong small {
+    font-size: 12px;
+  }
+  .presentation .result-total p {
+    display: inline;
+    font-size: 10px;
+  }
+  .presentation .result-bars {
+    gap: 10px;
+  }
+  .presentation .result-bar-row {
+    font-size: 11px;
+  }
+  .presentation .result-bar-row > span {
+    min-width: 72px;
+  }
+  .presentation .dashboard-cta {
+    grid-column: auto;
+    padding: 14px 13px;
+    gap: 10px;
+  }
+  .presentation .dashboard-cta strong {
+    font-size: 12px;
+  }
+  .presentation .dashboard-cta small {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  .presentation .dashboard-cta-icon {
+    width: 30px;
+    height: 34px;
+  }
+  .presentation .results-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    flex: 1 1 0;
+    min-height: 0;
+    gap: 15px;
+    overflow: hidden;
+  }
+  .presentation .results-detail > .items-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .presentation .board-panel .panel-title {
+    padding: 0 1px 11px;
+    flex: 0 0 auto;
+  }
+  .presentation .result-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    gap: 11px;
+    overflow: hidden;
+  }
+  .presentation .result-column {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 9px 9px;
+  }
+  .presentation .column-title {
+    flex: 0 0 auto;
+    padding: 13px 1px;
+    font-size: 12px;
+  }
+  .presentation .column-items {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1px 2px 3px;
+    gap: 9px;
+  }
+  .presentation .column-items:empty {
+    flex: 0;
+  }
+  .presentation .column-items .review-item {
+    flex: 0 0 auto;
+  }
+  .presentation .column-empty {
+    flex: 1 1 0;
+    display: grid;
+    place-items: center;
+    padding: 20px 2px;
+    font-size: 11px;
+  }
+  .app-shell.presentation.landing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .presentation.landing .input-sidebar {
+    display: none;
+  }
+  .presentation.landing .review-toolbar {
+    display: none;
+  }
+  .presentation.landing .main-content {
+    grid-column: 1;
+    padding: 25px 32px 19px;
+    max-width: 1600px;
+    margin-inline: auto;
+    max-height: calc(100dvh - 64px);
+    height: 100%;
+  }
+  .presentation.landing .workspace-intro {
+    flex: 0 0 auto;
+    margin: 0 0 20px;
+  }
+  .presentation.landing .landing-intro {
+    display: grid;
+    grid-template-columns: 1.03fr 1fr;
+    gap: 0 28px;
+  }
+  .presentation.landing .landing-kicker {
+    grid-column: 1 / -1;
+    font-size: 10px;
+    margin-bottom: 14px;
+  }
+  .presentation.landing .workspace-intro h1 {
+    font-size: clamp(40px, 5.9dvh, 66px);
+    grid-column: 1;
+    grid-row: 2 / 5;
+    line-height: 1.17;
+    margin: 0;
+  }
+  .presentation.landing .workspace-intro p {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.8;
+  }
+  .presentation.landing .landing-actions {
+    grid-column: 2;
+    grid-row: 3;
+    gap: 8px;
+    margin: 14px 0 10px;
+  }
+  .presentation.landing .landing-primary, .presentation.landing .landing-secondary {
+    min-height: 42px;
+    padding: 11px 13px;
+    font-size: 12px;
+  }
+  .presentation.landing .landing-proof {
+    grid-column: 2;
+    grid-row: 4;
+    font-size: 11px;
+    gap: 4px 11px;
+  }
+  .presentation.landing .landing-samples {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: 36px;
+    margin: 12px 0 0;
+    gap: 14px;
+    font-size: 11px;
+  }
+  .presentation.landing .landing-sample {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .presentation.landing .landing-samples > span {
+    line-height: 1.5;
+  }
+  .presentation.landing .landing-samples > span:last-child {
+    font-size: 11px;
+    margin-left: auto;
+  }
+}
+@media (min-width: 681px) and (max-width: 1055px) {
+  .presentation.landing .landing-samples {
+    flex-wrap: wrap;
+    gap: 10px 13px;
+  }
+}
+@media (min-width: 681px) and (max-width: 970px) {
+  .app-shell.presentation {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .presentation .input-sidebar {
+    padding: 18px 13px;
+  }
+  .presentation .main-content {
+    padding: 16px 17px 13px;
+  }
+  .presentation .workspace-intro {
+    gap: 12px;
+  }
+  .presentation.has-documents .workspace-intro h1 {
+    font-size: 18px;
+  }
+  .presentation.has-documents .workspace-intro p {
+    font-size: 11px;
+  }
+  .presentation .intro-actions .button {
+    font-size: 11px;
+    padding-inline: 10px;
+  }
+  .presentation .intro-actions .run-button > svg:last-child {
+    display: none;
+  }
+  .presentation .review-toolbar {
+    gap: 8px;
+  }
+  .presentation .view-tabs {
+    gap: 2px;
+  }
+  .presentation .view-tabs button {
+    gap: 5px;
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+  .presentation .live-caption {
+    font-size: 10px;
+  }
+  .presentation .workbench.workspace.detail-workbench {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .presentation .source-panel .panel-title, .presentation .items-panel .panel-title {
+    padding: 11px 13px;
+  }
+  .presentation .source-tag {
+    display: none;
+  }
+  .presentation .doc-preview__page-controls {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .presentation .doc-preview__page-controls > span:last-child {
+    display: none;
+  }
+  .presentation .results-overview {
+    grid-template-columns: minmax(90px, .7fr) minmax(130px, 1fr) minmax(165px, 1fr);
+    gap: 14px;
+    padding: 13px;
+  }
+  .presentation .result-total p {
+    display: none;
+  }
+  .presentation .result-total strong {
+    font-size: 30px;
+  }
+  .presentation .dashboard-cta {
+    padding: 11px;
+    gap: 8px;
+  }
+  .presentation .dashboard-cta strong {
+    font-size: 11px;
+  }
+  .presentation .dashboard-cta small {
+    font-size: 11px;
+  }
+  .presentation .dashboard-cta-icon {
+    display: none;
+  }
+  .presentation .dashboard-cta > svg {
+    width: 14px;
+  }
+  .presentation .result-columns {
+    gap: 8px;
+  }
+  .presentation .result-column {
+    padding-inline: 7px;
+  }
+  .presentation .column-items .item-main {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .presentation .column-items .item-main strong {
+    font-size: 12px;
+  }
+  .presentation .column-items .item-main small {
+    font-size: 11px;
+  }
+  .presentation .column-items .item-value {
+    width: 100%;
+    margin: 9px 0 0;
+    font-size: 18px;
+  }
+  .presentation .column-items .item-bottom {
+    font-size: 10px;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .presentation .theater-header, .presentation .theater-footer {
+    padding-inline: 14px;
+  }
+  .presentation .theater-header-note {
+    font-size: 10px;
+  }
+  .presentation .theater-step-key {
+    font-size: 10px;
+    gap: 9px;
+  }
+  .presentation .theater-footer > p {
+    font-size: 11px;
+  }
+  .presentation .outcome-strip {
+    gap: 10px;
+    padding: 7px 11px;
+  }
+  .presentation .outcome-strip > div {
+    gap: 5px 10px;
+  }
+  .presentation .outcome-strip strong {
+    font-size: 12px;
+  }
+  .presentation .outcome-strip span {
+    font-size: 10px;
+  }
+  .presentation .outcome-strip button {
+    font-size: 11px;
+  }
+  .presentation.landing .main-content {
+    padding: 21px 24px 16px;
+  }
+  .presentation.landing .landing-intro {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 23px;
+  }
+  .presentation.landing .workspace-intro h1 {
+    font-size: clamp(38px, 5.2vw, 49px);
+  }
+  .presentation.landing .workspace-intro p {
+    font-size: 12px;
+  }
+  .presentation.landing .landing-primary, .presentation.landing .landing-secondary {
+    font-size: 12px;
+    padding: 10px;
+    min-height: 39px;
+  }
+  .presentation.landing .landing-actions {
+    gap: 7px;
+    margin: 12px 0 9px;
+  }
+  .presentation.landing .landing-proof {
+    font-size: 11px;
+  }
+  .presentation.landing .landing-samples {
+    gap: 12px;
+  }
+}
+@media (min-width: 681px) and (max-height: 760px) {
+  .presentation .main-content {
+    padding-top: 13px;
+    padding-bottom: 11px;
+  }
+  .presentation .workspace-intro {
+    margin-bottom: 8px;
+  }
+  .presentation.has-documents .workspace-intro p {
+    display: none;
+  }
+  .presentation .review-toolbar {
+    margin-bottom: 10px;
+    min-height: 39px;
+    padding-bottom: 6px;
+  }
+  .presentation .outcome-strip {
+    margin-bottom: 8px;
+    min-height: 34px;
+    padding-block: 6px;
+  }
+  .presentation .run-footer {
+    min-height: 30px;
+    margin-top: 7px;
+    padding-top: 4px;
+  }
+  .presentation .theater-header {
+    height: 38px;
+    min-height: 38px;
+    flex-basis: 38px;
+  }
+  .presentation .theater-footer {
+    height: 31px;
+    min-height: 31px;
+    flex-basis: 31px;
+  }
+  .presentation .review-right.has-selection > .items-panel {
+    min-height: 118px;
+  }
+  .presentation .review-right.has-selection .items-panel .section-kicker {
+    display: none;
+  }
+  .presentation .results-overview {
+    padding-block: 11px;
+    margin-bottom: 10px;
+  }
+  .presentation .board-panel .panel-title {
+    padding-bottom: 8px;
+  }
+  .presentation .board-panel .section-kicker {
+    display: none;
+  }
+  .presentation .column-title {
+    padding-block: 10px;
+  }
+  .presentation.landing .main-content {
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+  .presentation.landing .workspace-intro {
+    margin-bottom: 16px;
+  }
+  .presentation.landing .landing-kicker {
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+  .presentation.landing .workspace-intro h1 {
+    font-size: clamp(35px, 5.8dvh, 44px);
+  }
+  .presentation.landing .workspace-intro p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .presentation.landing .landing-actions {
+    margin: 10px 0 8px;
+  }
+  .presentation.landing .landing-primary, .presentation.landing .landing-secondary {
+    min-height: 38px;
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+  .presentation.landing .landing-proof {
+    font-size: 11px;
+  }
+  .presentation.landing .landing-samples {
+    min-height: 34px;
+    margin-top: 9px;
+    font-size: 11px;
+  }
+  .presentation.landing .landing-sample {
+    min-height: 34px;
+    padding-block: 6px;
+    font-size: 12px;
+  }
+}
+@media (min-width: 681px) and (max-height: 610px) {
+  .presentation .workspace-intro {
+    margin-bottom: 5px;
+  }
+  .presentation .breadcrumb {
+    display: none;
+  }
+  .presentation .review-toolbar {
+    min-height: 35px;
+    margin-bottom: 8px;
+  }
+  .presentation .run-footer {
+    display: none;
+  }
+  .presentation .theater-connections {
+    height: 250px;
+  }
+  .presentation .theater-source {
+    scale: .82;
+    transform-origin: center;
+  }
+  .presentation .theater-engine {
+    scale: .82;
+    transform-origin: center;
+  }
+  .presentation .theater-lanes {
+    scale: 1 .88;
+    transform-origin: center;
+  }
+  .presentation.landing .landing-kicker {
+    margin-bottom: 8px;
+  }
+  .presentation.landing .workspace-intro h1 {
+    font-size: 34px;
+  }
+  .presentation.landing .landing-primary, .presentation.landing .landing-secondary {
+    min-height: 34px;
+    padding: 7px 10px;
+  }
+  .presentation.landing .landing-proof {
+    display: none;
+  }
+  .presentation.landing .landing-samples > span:last-child {
+    display: none;
+  }
+  .presentation .error-banner {
+    max-height: 60px;
+  }
+}
+@media (max-width: 680px) {
+  .app-shell.presentation {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+  .presentation .brand {
+    flex-shrink: 0;
+  }
+  .presentation .header-right {
+    flex: 0 0 auto;
+    gap: 9px;
+  }
+  .presentation .new-review, .presentation .motion-toggle {
+    white-space: nowrap;
+  }
+  .presentation.has-documents .connection-state {
+    width: 7px;
+    font-size: 0;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .presentation.has-documents .connection-state i {
+    flex-shrink: 0;
+  }
+  .presentation .main-content, .presentation-content {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  .presentation .input-sidebar {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+  .presentation .golden-open {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .presentation .page-footer, .presentation .pipeline {
+    display: none;
+  }
+  .presentation .review-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    padding: 10px 0;
+    margin: 0 0 16px;
+    background: #090c10f5;
+    backdrop-filter: blur(14px);
+  }
+  .presentation .view-tabs {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .presentation .view-tabs button {
+    font-size: 11px;
+  }
+  .presentation .live-caption {
+    font-size: 10px;
+  }
+  .presentation .workbench.workspace.detail-workbench {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .presentation .result-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .presentation .column-items {
+    max-height: 450px;
+    overflow-y: auto;
+  }
+  .presentation .review-right .item-list {
+    max-height: 420px;
+  }
+  .presentation .review-theater {
+    height: 440px;
+    min-height: 440px;
+    margin-bottom: 18px;
+  }
+  .presentation.landing .workspace-intro {
+    margin-bottom: 23px;
+  }
+  .presentation.landing .landing-intro {
+    display: block;
+  }
+  .presentation.landing .workspace-intro h1 {
+    font-size: clamp(36px, 8.9vw, 53px);
+  }
+  .presentation.landing .workspace-intro p {
+    margin-top: 15px;
+  }
+  .presentation.landing .landing-samples {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .presentation.landing .landing-samples > span:last-child {
+    margin-left: 0;
+  }
+}
