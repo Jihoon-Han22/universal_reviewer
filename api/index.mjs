@@ -16,6 +16,6 @@ export default {async fetch(request){
     bindings??={DB:createDatabase(process.env),BUCKET:createBucket(process.env)};
     const sessionSource=process.env.SUPABASE_JWT_SECRET||process.env.SUPABASE_SECRET_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY;
     const env={...process.env,...bindings,SESSION_SECRET:process.env.SESSION_SECRET||(sessionSource?createHash('sha256').update('reviewer-session-v1:'+sessionSource).digest('hex'):undefined),RUNTIME:'vercel',MAX_REVIEW_BYTES:250*1024*1024};
-    return await handleApi(request,env,{waitUntil},{configureRuntime:registerChunkedUploads,goldenOptions:{root:path.join(process.cwd(),'golden')},sampleOptions:{root:path.join(process.cwd(),'golden')}});
+    return await handleApi(request,env,{waitUntil},{onError:error=>console.error('Review backend error',{name:error.name,code:error.code??null}),configureRuntime:registerChunkedUploads,goldenOptions:{root:path.join(process.cwd(),'golden')},sampleOptions:{root:path.join(process.cwd(),'golden')}});
   }catch(error){console.error('Backend initialization failed:',error.code||error.name);return Response.json({error:'백엔드 저장소 연결을 확인해 주세요.'},{status:503});}
 }};

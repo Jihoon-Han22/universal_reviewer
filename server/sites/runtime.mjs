@@ -236,7 +236,7 @@ export async function handleApi(request,env,context={},options={}) {
       if(!res.headersSent)res.status(204).end();
     }finally{activity.unsubscribe();clearInterval(ledgerTimer);await ledgerRenewal.catch(()=>{});if(ledgerLease)await storage.releaseLease('activity',ledgerLockId,ledgerLease).catch(()=>{});if(lease)await storage.releaseLease('run',runId,lease).catch(()=>{});if(sessionLease)await storage.releaseLease('activity','session-mutations',sessionLease).catch(()=>{});}
     return res.response;
-  }catch(error){if(!res)res=createResponse(request);if(!res.streaming){res.reset();sendError(res,error);}else res.end();return res.response;}
+  }catch(error){options.onError?.(error);if(!res)res=createResponse(request);if(!res.streaming){res.reset();sendError(res,error);}else res.end();return res.response;}
 }
 
 function sendError(res,error){const known=error instanceof HttpError||error instanceof SessionError||error instanceof DocumentError||error instanceof ReviewError||['StorageConflictError','StorageError'].includes(error.name)||error.code==='RESOURCE_UNAVAILABLE';const message=known?error.message:safeMessage(error);const status=known?error.status:message===SAFE_MESSAGE?500:error.status??400;res.status(Number.isInteger(status)&&status>=400&&status<=599?status:500).json({error:message});}
