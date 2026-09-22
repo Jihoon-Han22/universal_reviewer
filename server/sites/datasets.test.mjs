@@ -16,3 +16,10 @@ test('dataset HEAD, invalid ranges, cache conditions and unrelated paths',async(
  assert.equal((await serveDataset(new Request('https://site.test/data/test.pdf',{headers:{'If-None-Match':'"test-hash"'}}),env,files)).status,304);
  assert.equal(await serveDataset(new Request('https://site.test/other'),env,files),null);
 });
+test('asset bindings that ignore Range still return exactly the requested bytes',async()=>{
+ const fullAssets={ASSETS:{async fetch(request){return new Response(originals[Number(new URL(request.url).pathname.split('/').at(-1))]);}}};
+ for(const [range,expected]of [['bytes=4-9','efghij'],['bytes=0-0','a'],['bytes=-4','mnop']]){
+  const response=await serveDataset(new Request('https://site.test/data/test.pdf',{headers:{Range:range}}),fullAssets,files);
+  assert.equal(response.status,206);assert.equal(await response.text(),expected);
+ }
+});

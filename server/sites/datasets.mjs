@@ -19,9 +19,9 @@ export async function serveDataset(request,env,files=manifest){
  if(request.method==='HEAD')return new Response(null,{status,headers});
  let offset=0;const pieces=[];
  for(const chunk of file.chunks){if(offset<=end&&offset+chunk.size>start)pieces.push({path:chunk.path,start:Math.max(0,start-offset),end:Math.min(chunk.size-1,end-offset)});offset+=chunk.size;}
- let index=0,reader;
- const next=async()=>{const part=pieces[index++];if(!part)return false;const response=await env.ASSETS.fetch(new Request(new URL(part.path,request.url),{headers:{Range:`bytes=${part.start}-${part.end}`}}));if(!response.ok||!response.body)throw new Error('Dataset asset unavailable');reader=response.body.getReader();return true;};
+ let index=0,reader,skip=0,remaining=0;
+ const next=async()=>{const part=pieces[index++];if(!part)return false;const response=await env.ASSETS.fetch(new Request(new URL(part.path,request.url),{headers:{Range:`bytes=${part.start}-${part.end}`}}));if(!response.ok||!response.body)throw new Error('Dataset asset unavailable');skip=response.status===206?0:part.start;remaining=part.end-part.start+1;reader=response.body.getReader();return true;};
  await next();
- const body=new ReadableStream({async pull(controller){try{for(;;){const {done,value}=await reader.read();if(!done){controller.enqueue(value);return;}reader.releaseLock();if(!await next()){controller.close();return;}}}catch(error){controller.error(error);}},async cancel(){await reader?.cancel();}});
+ const body=new ReadableStream({async pull(controller){try{for(;;){if(!reader&&!await next()){controller.close();return;}const {done,value}=await reader.read();if(done)throw new Error('Dataset asset truncated');const offset=Math.min(skip,value.byteLength);skip-=offset;const bytes=value.subarray(offset,offset+remaining);remaining-=bytes.byteLength;if(!remaining){await reader.cancel();reader.releaseLock();reader=null;}if(bytes.byteLength){controller.enqueue(bytes);return;}}}catch(error){controller.error(error);}},async cancel(){await reader?.cancel();}});
  return new Response(body,{status,headers});
 }
