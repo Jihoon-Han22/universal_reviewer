@@ -55,7 +55,7 @@ export async function createRuntime(env,sessionId,options={}) {
     // Loading a large collection together would exceed the Worker memory budget.
     const metadata=missing.length?await storage.listDocuments():[];
     const required=metadata.filter(doc=>missing.includes(doc.id)).reduce((sum,doc)=>sum+doc.size,0);
-    if(required>45*1024*1024)throw new HttpError('한 검토에 선택한 문서 용량이 큽니다. 문서를 나누어 검토해 주세요.',413);
+    if(required>(env.MAX_REVIEW_BYTES??45*1024*1024))throw new HttpError('한 검토에 선택한 문서 용량이 큽니다. 문서를 나누어 검토해 주세요.',413);
     for(const id of missing){const stored=await storage.getDocument(id);if(!stored)throw new DocumentError('문서를 찾을 수 없습니다. 파일을 다시 업로드해 주세요.',404);documents.documents.set(id,stored.document);documents.totalBytes+=stored.document.size;documentRevisions.set(id,stored.revision);analysisCaches.set(id,stored.document.sandboxAnalysisResult);}
   };
   const persistRun=async(run,lease)=>{await runtime.ensureMutationLease?.();const key=`run:${run.id}`,state=serializeRun(run,{externalizeOriginals:true}),old=revisions.get(key);const saved=old===undefined?await storage.createState('run',run.id,state):await storage.putState('run',run.id,state,{expectedRevision:old,lease});revisions.set(key,saved.revision);};
@@ -100,6 +100,7 @@ export async function createRuntime(env,sessionId,options={}) {
   router.get('/api/activity',async(req,res)=>res.json(await activitySnapshot(storage)));
   router.delete('/api/dashboards/:id',async(req,res)=>{const stored=await storage.getState('dashboard',req.params.id);if(!stored)throw notFound();if(stored.lease?.expiresAt>Date.now())await storage.requestCancel('dashboard',req.params.id);else await storage.deleteState('dashboard',req.params.id,{expectedRevision:stored.revision});res.status(204).end();});
   runtime.exports=registerExportRoutes(router,{documents,engine,gemini,withSandbox:sandbox,activityStore,config,deferExecution:true,ensureAnalyzed:engine.ensureAnalyzed.bind(engine)});
+  options.configureRuntime?.(runtime);
   return runtime;
 }
 
@@ -193,7 +194,7 @@ export async function handleApi(request,env,context={},options={}) {
     assertMutationOrigin(request);
     const session=await resolveSession(request,env),body=await readJson(request),req=createRequest(request,body);
     res=createResponse(request,{cookie:session.cookie,onClose:()=>req.emit('close')});
-    if(req.path==='/api/health'){const config=options.config??configFromEnv(env);res.json({...publicConfig(config),model:config.modelExtract,runtime:'sites'});return res.response;}
+    if(req.path==='/api/health'){const config=options.config??configFromEnv(env);res.json({...publicConfig(config),model:config.modelExtract,runtime:env.RUNTIME??'sites'});return res.response;}
     const runtime=await createRuntime(env,session.id,options),{storage,engine}=runtime;
     const stream=/^\/api\/(runs|dashboards)\/([^/]+)\/events$/.exec(req.path);
     if(stream||req.path==='/api/activity/events'){

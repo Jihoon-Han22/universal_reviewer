@@ -13,12 +13,20 @@ export const post = <T,>(path:string, body:unknown={}, signal?:AbortSignal) => r
 export async function upload(files:File[],role:Doc['role'],signal?:AbortSignal) {
   if (!files.length || files.length>10) throw new Error('한 번에 1~10개 파일을 선택해 주세요.');
   const documents:Doc[]=[];
+  const health=await get<{runtime?:string}>('/api/health',signal);
   try {
     // Persist one file at a time so a batch does not occupy the Worker heap.
     for (const file of files) {
       signal?.throwIfAborted();
-      const body=new FormData(); body.append('files',file); body.append('role',role);
-      const result=await request<UploadResponse>('/api/documents',{method:'POST',body,signal});
+      let result:UploadResponse;
+      if(health.runtime==='vercel'){
+        const ticket=await post<{uploadId:string;chunkSize:number}>('/api/uploads',{name:file.name,role,size:file.size},signal);
+        for(let start=0,index=0;start<file.size;start+=ticket.chunkSize,index++)await request(`/api/uploads/${ticket.uploadId}/parts/${index}`,{method:'PUT',headers:{'Content-Type':'application/octet-stream'},body:file.slice(start,start+ticket.chunkSize),signal});
+        result=await post<UploadResponse>('/api/documents',{uploadId:ticket.uploadId},signal);
+      }else{
+        const body=new FormData(); body.append('files',file); body.append('role',role);
+        result=await request<UploadResponse>('/api/documents',{method:'POST',body,signal});
+      }
       documents.push(...result.documents);
     }
     return {documents};

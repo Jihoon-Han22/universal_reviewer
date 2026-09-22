@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build && node scripts/build-vercel-data.mjs",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/index.mjs": {
+      "maxDuration": 800,
+      "includeFiles": "{golden/**,server/assets/**,server/*.py}",
+      "excludeFiles": "{ralph-golden-v3/**,artifacts/**,architecture/**,.cache/**,**/*.test.mjs}"
+    }
+  },
+  "rewrites": [{"source":"/api/:path*","destination":"/api/index?__route=:path*"}]
+}
