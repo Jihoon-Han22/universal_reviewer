@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createRouter,createResponse,readJson } from './router.mjs';
+
+test('router extracts parameters without accepting additional path segments',()=>{const router=createRouter();router.get('/api/runs/:id/export',()=>{});assert.deepEqual(router.match('GET','/api/runs/abc/export').params,{id:'abc'});assert.equal(router.match('POST','/api/runs/abc/export'),null);assert.equal(router.match('GET','/api/runs/abc/export/extra'),null);});
+test('JSON body reader rejects malformed and oversized bodies',async()=>{const req=text=>new Request('https://review.test',{method:'POST',headers:{'Content-Type':'application/json'},body:text});assert.deepEqual(await readJson(req('{"ok":true}')),{ok:true});await assert.rejects(readJson(req('{')),error=>error.status===400);await assert.rejects(readJson(req('{"long":"value"}'),5),error=>error.status===413);});
+test('buffered response may be replaced after persistence failure',async()=>{const res=createResponse(new Request('https://review.test'));res.json({success:true});res.reset();res.status(409).json({error:'conflict'});const result=await res.response;assert.equal(result.status,409);assert.deepEqual(await result.json(),{error:'conflict'});});
+test('stream cancellation emits close and prevents further writes',async()=>{const res=createResponse(new Request('https://review.test'));let closed=0;res.on('close',()=>closed++);res.type('text/event-stream').write('data: test\n\n');const response=await res.response;await response.body.cancel();assert.equal(closed,1);assert.equal(res.write('more'),false);});

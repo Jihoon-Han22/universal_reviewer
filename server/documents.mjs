@@ -6,6 +6,7 @@ import JSZip from 'jszip';
 import mammoth from 'mammoth';
 import { parse } from 'csv-parse/sync';
 import { SaxesParser } from 'saxes';
+import { pdfText } from './pdf-text.mjs';
 
 export const MAX_FILE_BYTES = 20 * 1024 * 1024;
 const MAX_SOURCE = 1_500_000;
@@ -225,26 +226,6 @@ async function parseWorkbook(buffer, entries) {
   });
   return { source, sourceSheets, preview: publicTablePreview(sheets, warnings) };
 }
-async function pdfText(buffer) {
-  let loading;
-  let timer;
-  try {
-    const work = async () => {
-      const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
-      loading = pdfjs.getDocument({ data: new Uint8Array(buffer), useSystemFonts: true, isEvalSupported: false, verbosity: 0 });
-      const doc = await loading.promise;
-      const pages = [];
-      let remaining = MAX_SOURCE;
-      for (let page = 1; page <= Math.min(doc.numPages, 30) && remaining > 0; page++) {
-        const contents = await (await doc.getPage(page)).getTextContent();
-        const text = contents.items.map(item => item.str + (item.hasEOL ? '\n' : ' ')).join('').slice(0, remaining);
-        remaining -= text.length; pages.push({ page, text });
-      }
-      return pages;
-    };
-    return await Promise.race([work(), new Promise(resolve => { timer = setTimeout(() => resolve([]), 25000); timer.unref?.(); })]);
-  } catch { return []; } finally { clearTimeout(timer); await loading?.destroy().catch(() => {}); }
-}
 export async function parseDocument(buffer, kind) {
   if (kind === 'pdf') {
     if (!buffer.subarray(0, 5).equals(Buffer.from('%PDF-'))) throw new DocumentError('PDF 파일의 형식이 올바르지 않습니다.');
@@ -261,7 +242,7 @@ export async function parseDocument(buffer, kind) {
     const entries = validateOOXML(buffer, kind);
     try {
       if (kind === 'xlsx') result = await parseWorkbook(buffer, entries);
-      else { const { value } = await mammoth.extractRawText({ buffer }); result = { source: value.slice(0, MAX_SOURCE), preview: { type: 'text', text: value.slice(0, 60000), ...(value.length > 60000 ? { truncated: true } : {}) } }; }
+      else { const { value } = await mammoth.extractRawText({ buffer, arrayBuffer: buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) }); result = { source: value.slice(0, MAX_SOURCE), preview: { type: 'text', text: value.slice(0, 60000), ...(value.length > 60000 ? { truncated: true } : {}) } }; }
     } catch (error) { if (error instanceof DocumentError) throw error; throw new DocumentError('Office 파일을 읽을 수 없습니다. 파일 형식과 내용을 확인해 주세요.'); }
   } else {
     const text = utf8(buffer);

@@ -63,9 +63,41 @@ function referencesExcludedSource(criterion, excluded) {
   ].some(evidence => excluded.has(evidence.documentId));
 }
 export class ReviewEngine {
-  constructor({ documents, analyzer, config = {}, geminiConfigured, gemini } = {}) {
+  constructor({ documents, analyzer, config = {}, geminiConfigured, gemini, deferJobs = false } = {}) {
     this.documents = documents; this.analyzer = analyzer; this.config = config; this.geminiConfigured = geminiConfigured ?? Boolean(config.geminiApiKey || gemini); this.runs = new Map();
+    this.deferJobs = deferJobs;
     this.modelActive = 0; this.modelWaiting = [];
+  }
+  scheduleJob(run, kind, details = {}) {
+    run.pendingJob = { id:randomUUID(), kind, state:'queued', ...clone(details) };
+    if (!this.deferJobs) this.executePendingJob(run);
+  }
+  executePendingJob(value, { beforeExecute } = {}) {
+    const run = this.get(value), pending = run.pendingJob;
+    if (run.executingJobId === pending?.id && run.job) return run.job;
+    if (!pending || run.status !== 'running' || run.controller.signal.aborted) return Promise.resolve();
+    // An executing descriptor restored in another request cannot be replayed:
+    // its provider call may already have completed before the connection ended.
+    if (pending.state !== 'queued') {
+      this.failRun(run,new ReviewError('작업 연결이 중단되었습니다. 저장된 진행 내용을 확인한 뒤 검토를 다시 시작해 주세요.'));
+      delete run.pendingJob;
+      return Promise.resolve();
+    }
+    pending.state = 'executing'; run.executingJobId = pending.id;
+    const execute = () => {
+      run.controller.signal.throwIfAborted();
+      if (pending.kind === 'prepare') return this.prepare(run);
+      if (pending.kind === 'review') return this.reviewTargets(run);
+      if (pending.kind === 'targets') return this.analyzeInputs(run,pending.documentIds).then(() => this.reviewTargets(run));
+      if (pending.kind === 'revise') return this.revisePending(run,pending);
+      throw new ReviewError('저장된 검토 작업을 확인할 수 없습니다. 검토를 다시 시작해 주세요.');
+    };
+    run.job = Promise.resolve().then(() => beforeExecute ? Promise.resolve(beforeExecute(run)).then(execute) : execute())
+      .catch(error => this.failRun(run,error)).finally(() => {
+        if (run.pendingJob?.id === pending.id) delete run.pendingJob;
+        if (run.executingJobId === pending.id) delete run.executingJobId;
+      });
+    return run.job;
   }
   queueModel(work, signal) {
     return new Promise((resolve, reject) => {
@@ -115,7 +147,7 @@ export class ReviewEngine {
     this.runs.set(run.id,run);
     for (const [id, old] of this.runs) if (this.runs.size > 40 && !OPEN_STATUSES.has(old.status)) this.runs.delete(id);
     this.emit(run,'run.started',{documents:run.documents});
-    run.job = Promise.resolve().then(() => this.prepare(run)).catch(error => this.failRun(run,error));
+    this.scheduleJob(run,'prepare');
     return run;
   }
   options(run, document, type = 'document.analysis.progress') {
@@ -149,7 +181,7 @@ export class ReviewEngine {
       const state = run.documents.find(d => d.id === document.id);
       this.emit(run,'document.analysis.started',{documentId:document.id,name:document.name,role:document.role});
       try {
-        const analyzed = await this.analyzeOne(document,this.options(run,document));
+        const analyzed = document.sandboxAnalysisResult ?? await this.analyzeOne(document,this.options(run,document));
         if (run.controller.signal.aborted) return;
         run.analyzedDocuments.set(document.id,analyzed);
         const analysis = {...analyzed.analysis,documentId:document.id,name:document.name,role:document.role};
@@ -202,7 +234,7 @@ export class ReviewEngine {
     run.audit.push({action:'criteria.confirmed',timestamp:now(),proposedCriteria,criteria:clone(criteria)});
     this.emit(run,'criteria.confirmed',{criteria:run.criteria,criteriaGroups:run.criteriaGroups,approvedCriteria:run.approvedCriteria});
     if (run.mode === 'criteria_first') { run.status = 'awaiting_documents'; run.stage = 'awaiting_documents'; this.emit(run,'run.awaiting_documents',{criteria:run.criteria,criteriaGroups:run.criteriaGroups,approvedCriteria:run.approvedCriteria}); }
-    else { run.status = 'running'; run.resume?.(); run.job = Promise.resolve().then(() => this.reviewTargets(run)).catch(error => this.failRun(run,error)); }
+    else { run.status = 'running'; run.resume?.(); this.scheduleJob(run,'review'); }
     return this.snapshot(run);
   }
   revise(value, request = {}) {
@@ -217,9 +249,14 @@ export class ReviewEngine {
     run.criteriaFeedback.push(entry); delete run.revisionError; run.status = 'running'; run.stage = 'criteria_revising';
     const token = ++run.revisionToken;
     this.emit(run,'criteria.revision.started',{criteriaRevision:run.criteriaRevision,criteriaFeedback:run.criteriaFeedback});
-    run.job = Promise.resolve().then(async () => {
+    this.scheduleJob(run,'revise',{ draft, entryId:entry.id, token, ...(request.documentId !== undefined ? { documentId:request.documentId } : {}), ...(request.scope !== undefined ? { scope:request.scope } : {}) });
+    return this.snapshot(run);
+  }
+  async revisePending(run, { draft, entryId, token, documentId, scope }) {
+    const entry = run.criteriaFeedback.find(feedback => feedback.id === entryId);
+    if (!entry) throw new ReviewError('저장된 기준 수정 요청을 확인할 수 없습니다.');
       try {
-        const result = await this.analyzer.reviseCriteria(draft,entry.feedback,{...this.options(run,null,'criteria.discovery.progress'),documents:run.criteriaDocumentIds.map(id => run.analyzedDocuments.get(id)).filter(Boolean),criteriaText:run.criteriaText,documentId:request.documentId,scope:request.scope});
+        const result = await this.analyzer.reviseCriteria(draft,entry.feedback,{...this.options(run,null,'criteria.discovery.progress'),documents:run.criteriaDocumentIds.map(id => run.analyzedDocuments.get(id)).filter(Boolean),criteriaText:run.criteriaText,documentId,scope});
         if (run.controller.signal.aborted || token !== run.revisionToken) return;
         const criteria = validateCriteria(result.criteria,{allowEmpty:true}); this.validateSources(run,criteria);
         run.criteria = criteria; run.criterionVersion++; run.criteriaRevision++; run.criteriaGroups = groupsOf(criteria,run.criteriaDocuments);
@@ -232,8 +269,6 @@ export class ReviewEngine {
         const message = safeMessage(error); Object.assign(entry,{status:'failed',completedAt:now(),message}); run.revisionError = message; run.status = 'awaiting_confirmation'; run.stage = 'criteria_confirmation';
         this.emit(run,'criteria.revision.failed',{message,revisionError:message,criteria:run.criteria,criteriaGroups:run.criteriaGroups,criteriaFeedback:run.criteriaFeedback}); this.confirmationEvent(run);
       }
-    });
-    return this.snapshot(run);
   }
   attachDocuments(value, request = {}) {
     const run = this.get(value);
@@ -248,7 +283,7 @@ export class ReviewEngine {
     run.documentIds = [...documentIds]; run.documents = targets.map(d => ({...this.documents.public(d),status:'queued'}));
     const ids = [...new Set([...documentIds,...analysisDocumentIds])]; run.analysisDocumentIds = [...new Set([...run.analysisDocumentIds,...ids])];
     run.status = 'running'; run.stage = 'analyzing_targets'; this.emit(run,'documents.attached',{documents:run.documents,approvedCriteria:run.approvedCriteria});
-    run.job = Promise.resolve().then(async () => { await this.analyzeInputs(run,ids); await this.reviewTargets(run); }).catch(error => this.failRun(run,error));
+    this.scheduleJob(run,'targets',{documentIds:ids});
     return this.snapshot(run);
   }
   async reviewTargets(run) {

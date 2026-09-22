@@ -1,11 +1,11 @@
-import {readFile} from 'node:fs/promises';
+import {readResourceText} from './sites/resources.mjs';
 import {createHash} from 'node:crypto';
 import {runObservedCommand,TaskPool} from '../integrations/src/index.mjs';
 const states=new WeakMap(),sources=new Map();
 const kinds=new Set(['pdf','docx','xlsx','csv','txt','md','json','png','jpg','jpeg','webp']);
 export class SandboxDocumentError extends Error { constructor(message='문서 샌드박스 분석에 실패했습니다.',code='SANDBOX_DOCUMENT_FAILED'){super(message);this.name='SandboxDocumentError';this.code=code;} }
 const abort=signal=>{if(signal?.aborted)throw signal.reason||new DOMException('Aborted','AbortError');};
-function script(name){if(!sources.has(name))sources.set(name,readFile(new URL(name,import.meta.url),'utf8'));return sources.get(name);}
+function script(name){if(!sources.has(name))sources.set(name,readResourceText(`server/${name}`));return sources.get(name);}
 export function documentSandboxResources(sandbox,document,{signal,report=()=>{}}={}) {
   if(!kinds.has(document.kind)||!document.buffer?.byteLength)throw new SandboxDocumentError('지원하지 않는 원본 문서입니다.');
   const sha256=createHash('sha256').update(document.buffer).digest('hex');let state=states.get(sandbox);

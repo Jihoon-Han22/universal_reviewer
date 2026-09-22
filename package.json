@@ -13,7 +13,11 @@
     "predev": "node scripts/copy-pdfjs-assets.mjs",
     "predev:client": "node scripts/copy-pdfjs-assets.mjs",
     "prebuild": "node scripts/copy-pdfjs-assets.mjs && npm run build:dashboard-charts",
-    "build:dashboard-charts": "node scripts/build-dashboard-chart-runtime.mjs"
+    "build:dashboard-charts": "node scripts/build-dashboard-chart-runtime.mjs",
+    "build:sites": "node scripts/build-sites.mjs",
+    "package:sites": "node scripts/package-sites.mjs",
+    "dev:sites": "wrangler dev --config sites.wrangler.json --ip 127.0.0.1 --port 8788 --persist-to .cache/sites-local",
+    "test:sites": "node --test --test-concurrency=1 server/sites/*.test.mjs"
   },
   "dependencies": {
     "chart.js": "4.5.1",
@@ -41,7 +45,8 @@
     "esbuild": "0.28.2",
     "jsdom": "26.1.0",
     "typescript": "^5.9.3",
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "wrangler": "4.136.1"
   },
   "overrides": {
     "exceljs": {

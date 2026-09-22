@@ -1,4 +1,4 @@
-import {readFile} from 'node:fs/promises';
+import {readResourceText} from './sites/resources.mjs';
 import {runObservedCommand} from '../integrations/src/index.mjs';
 import {parseRange,inRange} from './document-source.mjs';
 import {prompt,criteriaSchemas,systemInstruction} from './pipeline-prompts.mjs';
@@ -14,7 +14,7 @@ export async function discoverWorkbookCriteria(document,{gemini,withSandbox,sign
     const emit=event=>{sandboxReport(event);report(event);},abort=()=>{if(signal?.aborted)throw new CriteriaSandboxError('ABORTED','기준 탐색을 중단했습니다.');};
     const command=async(value,step,timeoutMs=45000)=>{abort();const result=await runObservedCommand(sandbox,value,{step,title:step==='install'?'기준 탐색 도구 준비':'기준 원문 범위 읽기',timeoutMs,requestTimeoutMs:timeoutMs+5000,signal,onActivity:emit,outputKind:step==='install'?'packages':'reader'});abort();if(result.exitCode!==0)throw new CriteriaSandboxError('READ','기준 원문 읽기를 완료하지 못했습니다.');};
     const readJson=async path=>{const raw=await sandbox.files.read(path);if(raw.length>1500000)throw new CriteriaSandboxError('LIMIT','기준 탐색 응답 크기 한도를 초과했습니다.');try{return JSON.parse(raw);}catch{throw new CriteriaSandboxError('READ','기준 탐색 응답 형식이 올바르지 않습니다.');}};
-    await command('mkdir -p /home/user/trace-criteria','files');await sandbox.files.write([{path:'/home/user/trace-criteria/profile.py',data:await readFile(new URL('criteria-workbook-profile.py',import.meta.url),'utf8')},{path:'/home/user/trace-criteria/workbook.xlsx',data:Uint8Array.from(document.buffer).buffer}]);
+    await command('mkdir -p /home/user/trace-criteria','files');await sandbox.files.write([{path:'/home/user/trace-criteria/profile.py',data:readResourceText('server/criteria-workbook-profile.py')},{path:'/home/user/trace-criteria/workbook.xlsx',data:Uint8Array.from(document.buffer).buffer}]);
     await command('python -m pip install --disable-pip-version-check --no-input openpyxl==3.1.5','install',60000);
     let inventory=document.sandboxProfile?.criteriaInventory;if(!inventory){await command('python /home/user/trace-criteria/profile.py /home/user/trace-criteria/workbook.xlsx inventory /home/user/trace-criteria/inventory.json','inventory');inventory=await readJson('/home/user/trace-criteria/inventory.json');}
     if(!Array.isArray(inventory?.sheets)||!Array.isArray(inventory?.warnings))throw new CriteriaSandboxError('READ','기준 시트 목록을 확인하지 못했습니다.');

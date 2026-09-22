@@ -21,9 +21,10 @@ function validLedger(ledger){
  for(const c of ledger.calls){if(!c||!uuid(c.id)||ids.has(c.id)||c.model!==BUDGET_POLICY.model||!nonnegative(c.chargedUpperEstimateKrw)||c.chargedUpperEstimateKrw>reservationKrw||!['usage-upper-estimate','full-reservation-uncertain'].includes(c.accounting))return false;ids.add(c.id);total+=c.chargedUpperEstimateKrw;}
  return Math.round(total*100)===Math.round(ledger.settledKrw*100);
 }
+export {validLedger as isValidProviderBudgetLedger};
 export function createProviderBudget({directory=path.join(projectRoot,'.cache/rebuild/provider-budget'),enabled=false,openingSpendKrw=0,allowInitialize=false}={}){
  if(!Number.isFinite(openingSpendKrw)||openingSpendKrw<0)throw fail('BUDGET_INVALID','Invalid opening spend.');
- const ledgerPath=path.join(directory,'ledger.json'),lockPath=path.join(directory,'ledger.lock');
+ const ledgerPath=path.join(directory,'ledger.json'),lockPath=path.join(directory,'ledger.lock'),migrationPath=path.join(directory,'sites-migration.json');
  async function transact(work){
   await fs.mkdir(directory,{recursive:true});let lock;
   for(let attempt=0;attempt<100;attempt++){
@@ -67,7 +68,11 @@ export function createProviderBudget({directory=path.join(projectRoot,'.cache/re
    const tiers=[request.config?.serviceTier,request.serviceTier,request.config?.service_tier,request.service_tier];
    if(tiers.some(tier=>tier!==undefined&&tier!=='standard'))throw fail('BUDGET_TIER_UNPRICED','Only standard provider pricing is authorized.');
    if(request.config?.tools?.length||request.tools?.length)throw fail('BUDGET_TOOLS_UNPRICED','Priced external tools are not enabled.');
-   return transact(ledger=>{
+   return transact(async ledger=>{
+    // Check under the same lock used by migration, including for existing
+    // processes. A marker of any shape fails closed; only Sites may reserve now.
+    const migrated=await fs.lstat(migrationPath).then(()=>true,error=>{if(error.code==='ENOENT')return false;throw error;});
+    if(migrated)throw fail('BUDGET_MIGRATED','Provider accounting has moved to Sites. New local provider calls are disabled to preserve the shared spending limit.');
     if(ledger.settledKrw+reserved(ledger)+reservationKrw>=BUDGET_POLICY.operatingLimitKrw)throw fail('BUDGET_LIMIT','The next call could exceed the conservative project cost limit.');
     const id=randomUUID();ledger.reservations[id]={id,model,reservedKrw:reservationKrw,reservedAt:new Date().toISOString()};return {...ledger.reservations[id]};
    });

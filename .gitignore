@@ -21,6 +21,8 @@ dist/
 logs/
 *.log
 *.tsbuildinfo
+.wrangler/
+.dev.vars*
 __pycache__/
 *.pyc
 *.pyo
