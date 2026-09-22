@@ -1,5 +1,7 @@
 import {cp,readFile,readdir} from 'node:fs/promises';
 import {join} from 'node:path';
+// Fail the deployment build if a live provider SDK is missing from root installs.
+await Promise.all([import('e2b'), import('@google/genai')]);
 // Vercel's Git LFS checkout must resolve originals before copying public assets.
 const roots=['golden','ralph-golden-v3','architecture','artifacts'];
 for(const root of roots){
